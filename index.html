@@ -15,7 +15,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;-
 .wrap{max-width:960px;margin:0 auto;padding:96px 24px}
 h1{font-size:44px;font-weight:300;letter-spacing:-1px;line-height:1.15}
 h1 span{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
 a.card{display:flex;flex-direction:column;gap:8px;padding:24px;border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none;background:#fff;transition:box-shadow .2s,border-color .2s}
 a.card:hover{border-color:#C9D1DC;box-shadow:0 18px 36px -18px rgba(50,50,93,.3)}
 .tag{font-size:13px;font-weight:500;color:var(--primary)}
@@ -29,11 +29,12 @@ a.card:hover{border-color:#C9D1DC;box-shadow:0 18px 36px -18px rgba(50,50,93,.3)
 </head>
 <body>
 <main class="wrap">
-  <h1>FLIK landing page. <span>Three prototype directions for the new homepage.</span></h1>
+  <h1>FLIK landing page. <span>Three prototype directions for the new homepage, plus a dashboard screen.</span></h1>
   <div class="grid">
     <a class="card" href="/v1/"><span class="tag">Version 1</span><b>Product page layout</b><p>Inspired by stripe.com/managed-payments: centred hero with a dotted globe, product deep dives and FAQ.</p><span class="go">Open v1 ›</span></a>
     <a class="card" href="/v2/"><span class="tag">Version 2</span><b>3D carousel hero</b><p>Hero with a 3D carousel of product highlights that turns into the 3 product cards as you scroll.</p><span class="go">Open v2 ›</span></a>
     <a class="card" href="/v3/"><span class="tag">Version 3</span><b>stripe.com homepage layout</b><p>Left-aligned hero with an animated ribbon, product tiles, stats, segments and developer section.</p><span class="go">Open v3 ›</span></a>
+    <a class="card" href="/dashboard/"><span class="tag">Dashboard</span><b>Transactions page</b><p>FLIK merchant dashboard in the Stripe dashboard style: filters, sorting, payment details, refunds and CSV export.</p><span class="go">Open dashboard ›</span></a>
   </div>
   <p class="note">Content source: <a href="https://github.com/raam-flik/landing-page/blob/main/docs/FLIK_Landing_Page_Reference.md">FLIK Landing Page Reference</a>. Prototype only: data and placeholder content are dummy.</p>
 </main>

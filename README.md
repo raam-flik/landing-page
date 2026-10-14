@@ -7,8 +7,9 @@ Clickable prototypes for the new FLIK landing page (flik.co.id), covering the 3 
 | `/v1/` | Version 1 | Product page layout inspired by stripe.com/managed-payments |
 | `/v2/` | Version 2 | v1 with a 3D carousel hero that turns into the product cards on scroll |
 | `/v3/` | Version 3 | Layout of the stripe.com homepage |
+| `/dashboard/` | Dashboard | Transactions page of the FLIK merchant dashboard, in the Stripe dashboard style |
 
-The site root (`/`) links to all three.
+The site root (`/`) links to all of them.
 
 ## Content
 Product facts, marketing copy, the sitemap and the SEO plan are in [`docs/FLIK_Landing_Page_Reference.md`](docs/FLIK_Landing_Page_Reference.md). Every page follows it.
