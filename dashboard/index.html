@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Transactions | FLIK Dashboard</title>
+<title>FLIK Dashboard</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,6 +211,49 @@ tbody tr.sel td{background:#F7F5FF}
   .kv{grid-template-columns:120px 1fr}
   h1{font-size:24px}
 }
+
+/* ===== Home ===== */
+[hidden]{display:none!important}
+h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-spacing:-.2px}
+.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.qa{display:flex;align-items:center;gap:14px;padding:16px;border-radius:8px;box-shadow:var(--sh);background:#fff;text-align:left;width:100%;transition:box-shadow .15s}
+.qa:hover{box-shadow:0 0 0 1px rgba(64,68,82,.14),0 4px 12px rgba(64,68,82,.1)}
+.qic{width:40px;height:40px;border-radius:8px;background:var(--search);color:var(--text);display:flex;align-items:center;justify-content:center;flex:none}
+.qa .qt{flex:1;min-width:0}
+.qa .qt b{display:block;font-weight:600;color:var(--ink);font-size:14.5px}
+.qa .qt span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.qa .btn{flex:none}
+.card{box-shadow:var(--sh);border-radius:8px;padding:20px 20px 12px;margin-top:12px;background:#fff}
+.kpi-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.kpi-v{display:flex;align-items:center;gap:10px}
+.kpi-v b{font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-.4px}
+.kpi-l{color:var(--muted);font-size:13.5px}
+.delta{font-size:12.5px;font-weight:500;padding:2px 7px;border-radius:5px}
+.delta.up{background:var(--ok-bg);color:var(--ok-tx)}
+.delta.down{background:var(--bad-bg);color:var(--bad-tx)}
+.kpi-ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.seg{display:inline-flex;background:var(--search);border-radius:8px;padding:3px}
+.seg button{height:28px;padding:0 12px;border-radius:6px;font-weight:500;color:var(--muted);font-size:13.5px}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:var(--sh)}
+.chart{position:relative;margin-top:16px;height:300px}
+.chart svg{width:100%;height:100%;overflow:visible}
+.chart .gl{stroke:var(--line)}
+.chart .ax{fill:var(--faint);font-size:11.5px;font-family:var(--font)}
+.chart .cur-line{stroke:var(--line-2);stroke-dasharray:3 3}
+.tip{position:absolute;pointer-events:none;background:#fff;border-radius:8px;box-shadow:var(--pop);padding:8px 10px;font-size:12.5px;white-space:nowrap;transform:translate(-50%,-100%);margin-top:-12px;display:none}
+.tip b{display:block;color:var(--ink);font-size:13.5px;font-weight:600}
+.tip span{color:var(--muted)}
+.amtopts{display:flex;gap:8px;flex-wrap:wrap}
+.amtopts button{height:30px;padding:0 12px;border-radius:999px;box-shadow:var(--sh);font-size:13px;font-weight:500}
+.amtopts button.on{box-shadow:0 0 0 1.5px var(--primary);color:var(--primary)}
+.paylist{display:grid;gap:6px}
+.payopt{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;box-shadow:var(--sh);text-align:left;width:100%}
+.payopt.on{box-shadow:0 0 0 1.5px var(--primary)}
+.vabox{background:var(--search);border-radius:8px;padding:14px;display:grid;gap:4px}
+.vabox b{font-size:20px;color:var(--ink);letter-spacing:1px}
+.trk-tl{display:grid;margin-top:4px}
+@media (max-width:1380px){.qa-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.qa-grid{grid-template-columns:1fr}.chart{height:240px}.qa .qt span{white-space:normal}}
 </style>
 </head>
 <body>
@@ -240,7 +283,23 @@ tbody tr.sel td{background:#F7F5FF}
       </div>
     </header>
 
-    <main class="content">
+    <main class="content" id="view-home" hidden>
+      <h1>Home</h1>
+      <h2 class="sec">Quick access</h2>
+      <div class="qa-grid" id="qa"></div>
+      <h2 class="sec">Sales summary</h2>
+      <section class="card">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v"><b class="num" id="kpi">0</b><span class="delta" id="delta"></span></div><span class="kpi-l" id="kpi-l">Last 7 days</span></div>
+          <div class="kpi-ctl">
+            <button class="chip set" id="range"><span>Period</span> <span class="val" id="range-v">Last 7 days</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 10 5 5 5-5"/></svg></button>
+            <div class="seg" role="tablist"><button class="on" data-m="count">Transactions</button><button data-m="gmv">Total GMV</button></div>
+          </div>
+        </div>
+        <div class="chart" id="chart"></div>
+      </section>
+    </main>
+    <main class="content" id="view-tx">
       <h1>Transactions</h1>
       <div class="tabs" id="tabs" role="tablist"></div>
 
@@ -312,7 +371,7 @@ paintIcons(document);
 
 /* ===== Sidebar ===== */
 const NAV=[
-  {i:'home',t:'Home'},{i:'bal',t:'Balances'},{i:'tx',t:'Transactions',on:true},{i:'user',t:'Customers'},{i:'box',t:'Product catalog'},
+  {i:'home',t:'Home',v:'home'},{i:'bal',t:'Balances'},{i:'tx',t:'Transactions',v:'tx'},{i:'user',t:'Customers'},{i:'box',t:'Product catalog'},
   {h:'Products'},
   {i:'cart',t:'Checkout',sub:['Orders','Payment methods','Checkout personalization','Order analytics']},
   {i:'truck',t:'Shipping',sub:['Shipments','Bulk shipping','Warehouses','Courier performance']},
@@ -321,7 +380,7 @@ const NAV=[
   {i:'more',t:'More',sub:['Developers','Settings']}
 ];
 const nav=document.getElementById('nav');
-nav.innerHTML=NAV.map(n=>n.h?`<div class="navh">${n.h}</div>`:n.sub?`<div class="grp"><button class="ni">${ic(n.i)}${n.t}<span class="chev">${ic('chev',14)}</span></button><div class="sub">${n.sub.map(s=>`<button class="ni" data-toast="Opens ${s}">${s}</button>`).join('')}</div></div>`:`<button class="ni${n.on?' on':''}" ${n.on?'':`data-toast="Opens ${n.t}"`}>${ic(n.i)}${n.t}</button>`).join('');
+nav.innerHTML=NAV.map(n=>n.h?`<div class="navh">${n.h}</div>`:n.sub?`<div class="grp"><button class="ni">${ic(n.i)}${n.t}<span class="chev">${ic('chev',14)}</span></button><div class="sub">${n.sub.map(s=>`<button class="ni" data-toast="Opens ${s}">${s}</button>`).join('')}</div></div>`:n.v?`<button class="ni" data-view="${n.v}">${ic(n.i)}${n.t}</button>`:`<button class="ni" data-toast="Opens ${n.t}">${ic(n.i)}${n.t}</button>`).join('');
 nav.querySelectorAll('.grp>.ni').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
 const side=document.getElementById('side'),sscrim=document.getElementById('sidescrim');
 const setSide=o=>{side.classList.toggle('open',o);sscrim.classList.toggle('open',o)};
@@ -349,8 +408,8 @@ const CITY=['Jakarta','Bandung','Surabaya','Medan','Denpasar','Makassar','Yogyak
 const SRC=['FLIK Checkout','FLIK Checkout','FLIK Checkout','FLIK Checkout','Payment link','Invoice'];
 const NOW=new Date(2026,9,14,16,20);
 const PAY=[];let t=NOW.getTime();
-for(let i=0;i<64;i++){
-  t-=Math.floor((1+rnd()*30)*3600*1000);
+for(let i=0;i<380;i++){
+  t-=Math.floor((.5+rnd()*8)*3600*1000);
   const m=pick(MKEYS),r=rnd();
   let st=r<.74?'succeeded':r<.82?'refunded':r<.88?'pending':r<.94?'canceled':'failed';
   if(m==='cod'&&st==='failed')st='canceled';
@@ -444,7 +503,7 @@ const DATE_OPTS=[['today','Today'],['7d','Last 7 days'],['30d','Last 30 days'],[
 const STATUS_OPTS=['succeeded','pending','refunded','canceled','failed'];
 const METHOD_OPTS=['QRIS','E-wallet','Virtual account','Card','COD'];
 function renderChips(){
-  document.querySelectorAll('.chip').forEach(ch=>{
+  document.querySelectorAll('#filters .chip').forEach(ch=>{
     const f=ch.dataset.f,base={date:'Date and time',status:'Status',method:'Payment method'}[f];
     let val='';
     if(f==='date'&&S.date)val=DATE_OPTS.find(o=>o[0]===S.date)[1];
@@ -578,6 +637,110 @@ function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeo
 document.addEventListener('click',e=>{const a=e.target.closest('[data-toast]');if(a){toast(a.dataset.toast);if(a.closest('#side'))setSide(false)}});
 
 render();
+
+/* ===== Home ===== */
+const QA=[
+  ['inv','Online invoice','Create an invoice with your choice of payment methods','+ Invoice',()=>toast('Opens the new invoice form')],
+  ['pkg','Send a package','Many couriers and services to choose from','+ Shipment',()=>toast('Opens the new shipment form')],
+  ['form','Order form','Create a landing page and order form for selling online','+ Order form',()=>toast('Opens the new order form builder')],
+  ['tag','Add a promo','Create a shipping or product promo','+ Promo',()=>toast('Opens the new promo form')],
+  ['wallet','Top up balance','Add balance to create shipments','+ Balance',topupModal],
+  ['track','Track shipments','Check the status of one package or many at once','Track',trackModal]
+];
+Object.assign(P,{
+  inv:'<path d="M7 3.5h8l3 3V20.5H7z"/><path d="M15 3.5v3h3M10 10h5M10 13.5h5M10 17h3"/>',
+  pkg:'<path d="M4 8 12 4l8 4v8l-8 4-8-4z"/><path d="m4 8 8 4 8-4M12 12v8M8 6l8 4"/>',
+  form:'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M8 13h8M8 16.5h5"/>',
+  tag:'<path d="M3.5 12.5V4.5a1 1 0 0 1 1-1h8l8 8-9 9z"/><circle cx="8.5" cy="8.5" r="1.5"/>',
+  wallet:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 9.5h18M16 14h2"/>',
+  track:'<circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5M11 8v3l2 1.5"/>'
+});
+document.getElementById('qa').innerHTML=QA.map((q,i)=>`<div class="qa"><span class="qic">${ic(q[0],20,1.6)}</span><span class="qt"><b>${q[1]}</b><span>${q[2]}</span></span><button class="btn btn-o" data-qa="${i}">${q[3]}</button></div>`).join('');
+document.querySelectorAll('[data-qa]').forEach(b=>b.onclick=e=>{e.stopPropagation();QA[+b.dataset.qa][4]()});
+
+/* Sales summary chart (from the same dummy payments as Transactions) */
+const H={metric:'count',days:7};
+function series(days,offset=0){
+  const out=[];for(let i=days-1;i>=0;i--){const d0=new Date(NOW);d0.setHours(0,0,0,0);d0.setDate(d0.getDate()-i-offset);const d1=new Date(d0);d1.setDate(d1.getDate()+1);
+    const ps=PAY.filter(p=>p.status==='succeeded'&&p.created>=d0&&p.created<d1);out.push({d:d0,count:ps.length,gmv:ps.reduce((a,p)=>a+p.amount,0)})}
+  return out;
+}
+const compact=n=>n>=1e9?'Rp '+(n/1e9).toLocaleString('id-ID',{maximumFractionDigits:1})+' M':n>=1e6?'Rp '+(n/1e6).toLocaleString('id-ID',{maximumFractionDigits:1})+' jt':n>=1e3?'Rp '+Math.round(n/1e3)+' rb':'Rp '+n;
+function niceMax(v){if(v<=0)return H.metric==='count'?6:1000000;const p=Math.pow(10,Math.floor(Math.log10(v)));for(const m of[1,1.2,1.5,2,2.5,3,4,5,6,8,10])if(m*p>=v)return m*p;return 10*p}
+function drawChart(){
+  const el=document.getElementById('chart');const W=el.clientWidth,Hh=el.clientHeight;if(!W)return;
+  const data=series(H.days),prev=series(H.days,H.days),key=H.metric;
+  const total=data.reduce((a,x)=>a+x[key],0),ptotal=prev.reduce((a,x)=>a+x[key],0);
+  document.getElementById('kpi').textContent=key==='count'?total.toLocaleString('id-ID'):rp(total);
+  document.getElementById('kpi-l').textContent=`Last ${H.days} days`;document.getElementById('range-v').textContent=`Last ${H.days} days`;
+  const dl=document.getElementById('delta');if(ptotal){const pc=(total-ptotal)/ptotal*100;dl.className='delta '+(pc>=0?'up':'down');dl.textContent=(pc>=0?'+':'')+pc.toLocaleString('id-ID',{maximumFractionDigits:1})+'%';dl.title='Compared with the previous '+H.days+' days'}else{dl.className='delta';dl.textContent=''}
+  const L=key==='count'?28:64,R=12,T=12,B=28,iw=W-L-R,ih=Hh-T-B;
+  const max=niceMax(Math.max(...data.map(x=>x[key]),...prev.map(x=>x[key]))),ticks=6;
+  const X=i=>L+(data.length===1?iw/2:i*iw/(data.length-1)),Y=v=>T+ih-(v/max)*ih;
+  let g='';for(let i=0;i<=ticks;i++){const v=max*i/ticks,y=Y(v);g+=`<line class="gl" x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text class="ax" x="${L-8}" y="${y+4}" text-anchor="end">${key==='count'?Math.round(v):compact(v)}</text>`}
+  const step=Math.ceil(data.length/8);data.forEach((x,i)=>{if(i%step===0||i===data.length-1)g+=`<text class="ax" x="${X(i)}" y="${Hh-6}" text-anchor="middle">${x.d.getDate()} ${MON[x.d.getMonth()]}</text>`});
+  // smooth curve through the points (Catmull-Rom to Bezier, clamped so it never dips below 0)
+  const smooth=pts=>pts.map((p,i)=>{if(!i)return`M${p[0].toFixed(1)},${p[1].toFixed(1)}`;const p0=pts[i-2]||pts[i-1],p1=pts[i-1],p3=pts[i+1]||p;const c1=[p1[0]+(p[0]-p0[0])/6,Math.min(T+ih,p1[1]+(p[1]-p0[1])/6)],c2=[p[0]-(p3[0]-p1[0])/6,Math.min(T+ih,p[1]-(p3[1]-p1[1])/6)];return`C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p[0].toFixed(1)},${p[1].toFixed(1)}`}).join(' ');
+  const line=smooth(data.map((x,i)=>[X(i),Y(x[key])]));
+  const pline=smooth(prev.map((x,i)=>[X(i),Y(x[key])]));
+  const area=line+` L${X(data.length-1)},${T+ih} L${X(0)},${T+ih} Z`;
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${Hh}"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#533AFD" stop-opacity=".18"/><stop offset="1" stop-color="#533AFD" stop-opacity="0"/></linearGradient></defs>${g}
+    <path d="${pline}" fill="none" stroke="#C0C8D2" stroke-width="1.5" stroke-dasharray="4 4"/><path d="${area}" fill="url(#ag)"/><path d="${line}" fill="none" stroke="#533AFD" stroke-width="2"/>
+    <line class="cur-line" id="hl" y1="${T}" y2="${T+ih}" style="display:none"/><circle id="hp" r="4.5" fill="#fff" stroke="#533AFD" stroke-width="2" style="display:none"/>
+    <rect x="${L}" y="${T}" width="${iw}" height="${ih}" fill="transparent" id="hit"/></svg><div class="tip" id="tip"></div>`;
+  const hit=el.querySelector('#hit'),hl=el.querySelector('#hl'),hp=el.querySelector('#hp'),tip=el.querySelector('#tip');
+  const show=e=>{const r=el.getBoundingClientRect(),x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;const i=Math.max(0,Math.min(data.length-1,Math.round((x-L)/(iw/(Math.max(1,data.length-1))))));const d=data[i],px=X(i),py=Y(d[key]);
+    hl.setAttribute('x1',px);hl.setAttribute('x2',px);hl.style.display='';hp.setAttribute('cx',px);hp.setAttribute('cy',py);hp.style.display='';
+    tip.innerHTML=`<b>${key==='count'?d.count+' transactions':rp(d.gmv)}</b><span>${d.d.getDate()} ${MON[d.d.getMonth()]} ${d.d.getFullYear()} · prev. ${key==='count'?prev[i].count:compact(prev[i].gmv)}</span>`;tip.style.display='block';tip.style.left=Math.max(70,Math.min(W-70,px))+'px';tip.style.top=py+'px'};
+  hit.addEventListener('mousemove',show);hit.addEventListener('touchstart',show,{passive:true});hit.addEventListener('mouseleave',()=>{hl.style.display=hp.style.display='none';tip.style.display='none'});
+}
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.seg button').forEach(x=>x.classList.toggle('on',x===b));H.metric=b.dataset.m;drawChart()});
+document.getElementById('range').onclick=e=>{e.stopPropagation();const b=e.currentTarget;if(popFor===b){closePop();return}popFor=b;
+  pop.innerHTML=`<h6>Period</h6>${[7,14,30].map(n=>`<button class="opt" data-n="${n}"><span class="rdo${H.days===n?' on':''}"></span>Last ${n} days</button>`).join('')}`;
+  pop.querySelectorAll('[data-n]').forEach(o=>o.onclick=()=>{H.days=+o.dataset.n;closePop();drawChart()});placePop(b,true)};
+addEventListener('resize',()=>{if(!document.getElementById('view-home').hidden)drawChart()});
+
+/* Top up balance */
+function topupModal(){
+  let amt=1000000,via='bca';
+  const draw=()=>{modal.innerHTML=`<div class="mh"><h3>Top up balance</h3><button class="ib" data-mclose aria-label="Close">${ic('x',18)}</button></div>
+  <div class="mb"><div class="fld"><label for="tamt">Amount</label><input id="tamt" class="num" value="${amt.toLocaleString('id-ID')}"></div>
+  <div class="amtopts">${[100000,500000,1000000,5000000].map(v=>`<button class="${v===amt?'on':''}" data-a="${v}">${rp(v)}</button>`).join('')}</div>
+  <div class="fld"><label>Pay with</label><div class="paylist">${[['bca','BCA virtual account'],['mandiri','Mandiri virtual account'],['qris','QRIS']].map(m=>`<button class="payopt${via===m[0]?' on':''}" data-v="${m[0]}">${pmBadge(m[0])}<span style="flex:1">${m[1]}</span><span class="rdo${via===m[0]?' on':''}"></span></button>`).join('')}</div></div></div>
+  <div class="mf"><button class="btn btn-o" data-mclose>Cancel</button><button class="btn btn-p" id="tgo">Continue</button></div>`;
+  const inp=document.getElementById('tamt'),go=document.getElementById('tgo');
+  inp.oninput=()=>{amt=+inp.value.replace(/\D/g,'');go.disabled=!(amt>=10000)};
+  modal.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{amt=+b.dataset.a;draw()});
+  modal.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{via=b.dataset.v;draw()});
+  go.onclick=()=>{modal.innerHTML=`<div class="mh"><h3>Complete your top up</h3><button class="ib" data-mclose aria-label="Close">${ic('x',18)}</button></div><div class="mb"><div class="vabox">${via==='qris'?`<span class="kpi-l">Scan with any banking or e-wallet app</span><b>QRIS · ${rp(amt)}</b>`:`<span class="kpi-l">${via==='bca'?'BCA':'Mandiri'} virtual account number</span><b class="num">8808 0812 3456 7890</b><span class="kpi-l">Transfer exactly ${rp(amt)}</span>`}</div><p class="kpi-l">Your balance updates automatically after payment.</p></div><div class="mf"><button class="btn btn-o" data-mclose>Close</button><button class="btn btn-p" id="tdone">I've paid</button></div>`;
+    document.getElementById('tdone').onclick=()=>{closeModal();toast(`Top up of ${rp(amt)} is being confirmed`)}};
+  };
+  draw();mscrim.classList.add('open');
+}
+/* Track shipments */
+function trackModal(){
+  modal.innerHTML=`<div class="mh"><h3>Track shipments</h3><button class="ib" data-mclose aria-label="Close">${ic('x',18)}</button></div>
+  <div class="mb"><div class="fld"><label for="tno">Tracking numbers</label><input id="tno" value="${PAY[0].awb}" placeholder="One or more, separated by commas"></div><div id="tres"></div></div>
+  <div class="mf"><button class="btn btn-o" data-mclose>Close</button><button class="btn btn-p" id="tgo2">Track</button></div>`;
+  mscrim.classList.add('open');
+  const run=()=>{const nos=document.getElementById('tno').value.split(/[,\s]+/).filter(Boolean);
+    document.getElementById('tres').innerHTML=nos.length?nos.map(n=>`<div class="dsec" style="margin-top:6px"><h5 style="font-size:13.5px">${n}</h5><div class="tl">${[['Out for delivery','Surabaya · 14 Oct 2026, 08:12','pu'],['Arrived at sorting hub','Surabaya · 13 Oct 2026, 22:40',''],['Picked up by courier','Jakarta · 12 Oct 2026, 15:30','']].map(x=>`<div class="tli ${x[2]}"><i></i><div><b>${x[0]}</b><span>${x[1]}</span></div></div>`).join('')}</div></div>`).join(''):'<p class="kpi-l">Enter at least one tracking number.</p>'};
+  document.getElementById('tgo2').onclick=run;
+}
+
+/* ===== Simple router: #home / #transactions ===== */
+function show(view){
+  const home=view!=='tx';
+  document.getElementById('view-home').hidden=!home;document.getElementById('view-tx').hidden=home;
+  document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('on',b.dataset.view===(home?'home':'tx')));
+  document.title=(home?'Home':'Transactions')+' | FLIK Dashboard';
+  if(home)drawChart();
+  closeDetail();setSide(false);scrollTo(0,0);
+}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{location.hash=b.dataset.view==='home'?'home':'transactions'});
+addEventListener('hashchange',()=>show(location.hash==='#transactions'?'tx':'home'));
+show(location.hash==='#transactions'?'tx':'home');
+
 </script>
 </body>
 </html>
