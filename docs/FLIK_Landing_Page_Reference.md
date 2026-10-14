@@ -296,3 +296,62 @@ Products (Checkout · Shipping · Funding) | Solutions | Developers | Resources 
 - Funding: are there more items (for example top-up or withdrawals)?
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the dummy page.
+
+---
+
+## Colours (approved 2026-10-14)
+
+These are the only brand colours, used for the landing page and the new dashboard prototypes. They replace the Stripe purple (`#533AFD`) used in the first prototypes. Every other brand colour is a tint or shade of these four.
+
+| Name | Hex | Main use |
+|---|---|---|
+| **Pink** | `#AE1D7C` | Gradient start, emphasis, decorative accents |
+| **Purple** | `#9E4DC8` | Primary actions: buttons, links, active tab, icons, focus, chart line |
+| **Blue** (FLIK Blue) | `#002D5D` | Headlines and dark text, dark sections, top bar text |
+| **Orange** | `#F16223` | Warm start of the brand gradient, decorative accents. Almost the same as the logo orange `#F26324`. Not for text or buttons. |
+
+### Scales
+| Step | Pink | Purple | Blue | Orange |
+|---|---|---|---|---|
+| 50 (backgrounds) | `#FBEFF6` | `#F6EFFA` | `#EAF0F6` | `#FEF0EA` |
+| 100 | `#F5D6E9` | `#ECDDF5` | `#CCD8E6` | `#FDDACB` |
+| 200 | `#EBAED5` | `#DABDEB` | `#99B0CB` | `#FAB598` |
+| 300 | `#D872B0` | `#C28FDD` | `#5C7C9F` | `#F68A5E` |
+| **500 (base)** | **`#AE1D7C`** | **`#9E4DC8`** | **`#002D5D`** | **`#F16223`** |
+| 600 (hover) | `#951668` | `#8A3DB3` | `#00244B` | `#D24E14` |
+| 700 | `#7A1155` | `#7A2FA3` | `#001A37` | `#A93D0F` |
+
+### Roles
+- **Primary button:** Purple 500 fill with white text. Hover is Purple 600, disabled is `#CDA8E3`.
+- **Secondary button and links:** Purple 500 text.
+- **Selected and soft backgrounds:** Purple 50 `#F6EFFA`. Selected table row: `#FAF5FC`.
+- **Text:**
+  - headlines: Blue 500 `#002D5D`
+  - body: `#3E5675` (`#2E4460` in the dashboard)
+  - secondary: `#61758E`
+  - placeholder and hint: `#8A9BB0`
+- **Dark sections:**
+  - background: Blue 500 `#002D5D`
+  - raised panels: `#0B3A6E`
+  - divider lines: `#1C4573`
+  - secondary text: `#B7C6D8`
+  - accent text: Purple 200 `#DABDEB`
+- **Gradients:**
+  - **Brand gradient:** Orange 500 → Pink 500 → Purple 500 → Blue 500. The v3 hero ribbon and the globe use all four. The FLIK Checkout pill and the dark v2 cards use Purple → Pink → Orange.
+  - **Light panel gradient** (behind product mockups): Orange 50 → Pink 100 → Purple 200 → Purple 300.
+  - **Cool panel gradient:** Blue 50 → Blue 100 → Purple 300 → Pink 100.
+  - **Dark banner glow:** Orange 500, Purple 500 and Pink 500 glows on Blue 500.
+  - **Art cards** (stories, news, case studies): any 2–3 neighbours from the brand gradient, for example Orange → Pink or Pink → Orange.
+- **Not changed by this palette:**
+  - status colours: green success, yellow pending, red failed, grey canceled
+  - payment brand badges: BCA, GoPay, Visa and the others
+  - code highlighting
+  - the FLIK logo, which keeps its own orange `#F26324` and navy and is never recoloured
+
+### Contrast (on white)
+- Blue 500: 14.0:1
+- Pink 500: 6.4:1
+- Purple 500: 4.8:1
+- Orange 500: 3.2:1
+
+Blue, pink and purple pass WCAG AA for normal text. **Orange does not**, so use it only for large text (24px and up), graphics and gradients, never for body text or button labels. Use Purple 600 or darker for small text on Purple 50.
