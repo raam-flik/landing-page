@@ -59,10 +59,10 @@ svg{display:block;flex:none}
 .search:focus-within{box-shadow:0 0 0 2px rgba(83,58,253,.35);background:#fff}
 .search kbd{font-family:var(--font);font-size:11.5px;border:1px solid var(--line-2);border-radius:4px;padding:0 5px;color:var(--faint);background:#fff}
 .tools{display:flex;align-items:center;gap:6px;margin-left:auto}
-.ib{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--muted);position:relative}
+.ib{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--muted);position:relative}
 .ib:hover{background:var(--hover);color:var(--text)}
-.ib .dot{position:absolute;top:6px;right:7px;width:7px;height:7px;border-radius:50%;background:#DF1B41;border:1.5px solid #fff}
-.plus{width:34px;height:34px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;margin-left:4px}
+.ib .dot{position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:#DF1B41;border:1.5px solid #fff}
+.plus{width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;margin-left:4px}
 .plus:hover{background:var(--primary-h)}
 
 .content{padding:8px 28px 48px}
@@ -307,7 +307,7 @@ const P={
   link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'
 };
 const ic=(n,s=16,w=1.7)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
-const paintIcons=root=>root.querySelectorAll('[data-ic]').forEach(e=>{e.innerHTML=ic(e.dataset.ic,e.dataset.ic==='plus'?18:16,e.dataset.ic==='plus'?2.2:1.7)});
+const paintIcons=root=>root.querySelectorAll('[data-ic]').forEach(e=>{const k=e.dataset.ic,top=!!e.closest('.ib');e.innerHTML=ic(k,k==='plus'?20:top?22:16,k==='plus'?2.2:top?1.6:1.7)});
 paintIcons(document);
 
 /* ===== Sidebar ===== */
