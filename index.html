@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLIK Landing Page Prototypes</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#061B31;--muted:#64748D;--primary:#533AFD;--line:#E3E8EE;--bg-alt:#F8FAFD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:96px 24px}
+h1{font-size:44px;font-weight:300;letter-spacing:-1px;line-height:1.15}
+h1 span{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+a.card{display:flex;flex-direction:column;gap:8px;padding:24px;border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none;background:#fff;transition:box-shadow .2s,border-color .2s}
+a.card:hover{border-color:#C9D1DC;box-shadow:0 18px 36px -18px rgba(50,50,93,.3)}
+.tag{font-size:13px;font-weight:500;color:var(--primary)}
+.card b{font-size:18px;font-weight:500}
+.card p{font-size:14.5px;color:var(--muted);line-height:1.55;flex:1}
+.go{font-size:15px;font-weight:500;color:var(--primary)}
+.note{margin-top:40px;font-size:14px;color:var(--muted)}
+.note a{color:var(--primary)}
+@media (max-width:760px){.wrap{padding:56px 16px}h1{font-size:32px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>FLIK landing page. <span>Three prototype directions for the new homepage.</span></h1>
+  <div class="grid">
+    <a class="card" href="/v1/"><span class="tag">Version 1</span><b>Product page layout</b><p>Inspired by stripe.com/managed-payments: centred hero with a dotted globe, product deep dives and FAQ.</p><span class="go">Open v1 ›</span></a>
+    <a class="card" href="/v2/"><span class="tag">Version 2</span><b>3D carousel hero</b><p>Hero with a 3D carousel of product highlights that turns into the 3 product cards as you scroll.</p><span class="go">Open v2 ›</span></a>
+    <a class="card" href="/v3/"><span class="tag">Version 3</span><b>stripe.com homepage layout</b><p>Left-aligned hero with an animated ribbon, product tiles, stats, segments and developer section.</p><span class="go">Open v3 ›</span></a>
+  </div>
+  <p class="note">Content source: <a href="https://github.com/raam-flik/landing-page/blob/main/docs/FLIK_Landing_Page_Reference.md">FLIK Landing Page Reference</a>. Prototype only: data and placeholder content are dummy.</p>
+</main>
+</body>
+</html>
