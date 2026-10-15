@@ -795,6 +795,48 @@ section:has(> .wrap > .seg){container-type:inline-size}
 .seg{--bleed:calc(max(0px,50cqw - 590px) + 32px - max(16px,50cqw - 633px));margin-left:calc(var(--bleed)*-1);margin-right:calc(var(--bleed)*-1);padding-left:var(--bleed);padding-right:var(--bleed)}
 @media (max-width:1080px){.seg{--bleed:16px}}
 @media (max-width:760px){.seg{--bleed:0px}}
+
+/* ===== Developers: connect to existing systems (like stripe.com) ===== */
+.dx{margin-top:96px}
+.dx-h{font-size:24px;line-height:1.35;font-weight:400;letter-spacing:-.3px;color:#fff;max-width:760px}
+.dx-h span{color:#AAB4CC}
+.dx-fit{position:relative;margin-top:48px;overflow:hidden}
+.dx-stage{position:absolute;left:0;top:0;width:1000px;height:430px;transform-origin:0 0}
+.dx-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.2px);background-size:16px 16px;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,#000 40%,transparent 100%);mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,#000 40%,transparent 100%)}
+.dx-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.dx-lines path,.dx-lines line{fill:none;vector-effect:non-scaling-stroke}
+.dx-lines .mid{stroke:#6E62FF;stroke-dasharray:2 2;opacity:.7}
+.dx-lines .base path{stroke:#3A4677;stroke-dasharray:2 2}
+.dx-lines .live path{stroke:#8C7BFF;stroke-width:1.5;stroke-dasharray:18 140;stroke-dashoffset:158;animation:dx-run 2.6s linear infinite}
+@keyframes dx-run{to{stroke-dashoffset:0}}
+.dx-col{position:absolute;top:150px;display:grid;grid-template-columns:repeat(3,44px);gap:14px}
+.dx-col.left{left:40px}.dx-col.right{right:40px;grid-template-columns:repeat(3,44px)}
+.dx-tile{width:44px;height:44px;perspective:300px}
+.dx-tile span{position:absolute;width:44px;height:44px;border-radius:8px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;transition:transform .7s cubic-bezier(.2,.8,.2,1);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.dx-tile span svg{width:20px;height:20px}
+.dx-tile .b{transform:rotateX(180deg)}
+.dx-tile.flip .f{transform:rotateX(-180deg)}.dx-tile.flip .b{transform:rotateX(0)}
+.dx-sys{position:absolute;left:250px;top:18px;width:500px;height:86px;border-radius:8px;background:#132055;border:1px solid #2A3560;display:grid;align-content:center;gap:8px;padding:10px}
+.dx-sys div{display:flex;justify-content:center;gap:8px}
+.dx-sys span{padding:4px 12px;border-radius:5px;font-size:13px;color:#C9D2E8;background:#1A2A66;transition:background .4s,color .4s}
+.dx-sys span.hl{background:#3B3399;color:#fff}
+.dx-b,.dx-o,.dx-btn{position:absolute;transform:translateX(-50%);white-space:nowrap;height:32px;display:flex;align-items:center;padding:0 14px;border-radius:5px;font-size:13.5px;color:#DCE3F3;background:#101D51;border:1px solid #2A3560}
+.dx-o{top:342px;height:30px;padding:0 12px;font-size:13px;background:#132055}
+.dx-btn{background:var(--primary);border-color:var(--primary);color:#fff;font-weight:500;gap:6px;transition:background .2s}
+.dx-btn:hover{background:var(--primary-hover)}
+.dx-btn span{display:flex}.dx-btn svg{width:13px;height:13px}
+.dx-flik{position:absolute;left:468px;top:190px;width:64px;height:64px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(140,123,255,.18),0 12px 32px rgba(83,58,253,.45);animation:dx-glow 3s ease-in-out infinite}
+.dx-flik svg{width:34px;height:34px}
+@keyframes dx-glow{50%{box-shadow:0 0 0 12px rgba(140,123,255,.08),0 12px 40px rgba(83,58,253,.6)}}
+@media (max-width:760px){.dx{margin-top:64px}.dx-h{font-size:19px}.dx-col{display:none}}
+@media (prefers-reduced-motion:reduce){.dx-lines .live{display:none}.dx-flik{animation:none}}
+
+/* Developers section order: intro → diagram → setup → quick links */
+.dv-intro{max-width:760px}
+.dark .dx{margin-top:64px}
+.dv-setup{margin-top:112px;align-items:start}
+.dv-setup .dx-h{max-width:420px}
+@media (max-width:760px){.dv-setup{margin-top:72px}}
 </style>
 </head>
 <body>
@@ -1071,17 +1113,46 @@ section:has(> .wrap > .seg){container-type:inline-size}
 <!-- ===== Developers (dark) ===== -->
 <section class="pad dark guides">
   <div class="wrap">
-    <div class="split">
-      <div class="split-text">
+    <div class="dv-intro">
         <h2 style="color:#fff">Reliable, flexible integration for every store.</h2>
         <p class="lead" style="margin-top:16px">Connect FLIK with a plugin, build with the API, or run everything from the dashboard with no code.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a href="#" class="btn btn-light" data-page="Developer docs">View developer docs <span class="chev">›</span></a></div>
+    </div>
+
+    <!-- Connect to existing systems (like stripe.com) -->
+    <div class="dx">
+      <h3 class="dx-h">Connect to the systems you already use. <span>Every order from your store flows through FLIK Checkout and Shipping, out to every payment method and courier.</span></h3>
+      <div class="dx-fit" id="dx-fit">
+        <div class="dx-stage" id="dx-stage" role="img" aria-label="Your store and business systems connect to FLIK through plugins, the FLIK API or the dashboard. FLIK then handles checkout and shipping across QRIS, e-wallets, virtual accounts and couriers.">
+          <div class="dx-dots" aria-hidden="true"></div>
+          <svg class="dx-lines" viewBox="0 0 1000 430" aria-hidden="true"><line x1="0" y1="222" x2="1000" y2="222" class="mid"/><g class="base"><path d="M400 104 V118 Q400 124 394 124 H336 Q330 124 330 130 V134"/><path d="M600 104 V118 Q600 124 606 124 H664 Q670 124 670 130 V134"/><path d="M330 166 V176 Q330 182 336 182 H486 Q492 182 492 188 V190"/><path d="M670 166 V176 Q670 182 664 182 H514 Q508 182 508 188 V190"/><path d="M500 254 V266"/><path d="M470 298 V312 Q470 318 464 318 H386 Q380 318 380 324 V342"/><path d="M490 298 V318 Q490 324 484 324 H466 Q460 324 460 330 V342"/><path d="M510 298 V318 Q510 324 516 324 H534 Q540 324 540 330 V342"/><path d="M530 298 V312 Q530 318 536 318 H614 Q620 318 620 324 V342"/></g><g class="live"><path d="M400 104 V118 Q400 124 394 124 H336 Q330 124 330 130 V134" style="animation-delay:0.00s"/><path d="M600 104 V118 Q600 124 606 124 H664 Q670 124 670 130 V134" style="animation-delay:0.45s"/><path d="M330 166 V176 Q330 182 336 182 H486 Q492 182 492 188 V190" style="animation-delay:0.90s"/><path d="M670 166 V176 Q670 182 664 182 H514 Q508 182 508 188 V190" style="animation-delay:1.35s"/><path d="M500 254 V266" style="animation-delay:1.80s"/><path d="M470 298 V312 Q470 318 464 318 H386 Q380 318 380 324 V342" style="animation-delay:2.25s"/><path d="M490 298 V318 Q490 324 484 324 H466 Q460 324 460 330 V342" style="animation-delay:2.70s"/><path d="M510 298 V318 Q510 324 516 324 H534 Q540 324 540 330 V342" style="animation-delay:3.15s"/><path d="M530 298 V312 Q530 318 536 318 H614 Q620 318 620 324 V342" style="animation-delay:3.60s"/></g></svg>
+          <div class="dx-col left" aria-hidden="true"><div class="dx-tile"><span class="f" style="--c:#533AFD" data-ic="qris"></span><span class="b" style="--c:#FF5FA2" data-ic="phone"></span></div><div class="dx-tile"><span class="f" style="--c:#FF7A59" data-ic="card"></span><span class="b" style="--c:#5E8BFF" data-ic="bank"></span></div><div class="dx-tile"><span class="f" style="--c:#A26BFF" data-ic="cash"></span><span class="b" style="--c:#FFB547" data-ic="wallet"></span></div><div class="dx-tile"><span class="f" style="--c:#FF5FA2" data-ic="phone"></span><span class="b" style="--c:#533AFD" data-ic="qris"></span></div><div class="dx-tile"><span class="f" style="--c:#5E8BFF" data-ic="bank"></span><span class="b" style="--c:#FF7A59" data-ic="card"></span></div><div class="dx-tile"><span class="f" style="--c:#FFB547" data-ic="wallet"></span><span class="b" style="--c:#A26BFF" data-ic="cash"></span></div></div>
+          <div class="dx-col right" aria-hidden="true"><div class="dx-tile"><span class="f" style="--c:#FF7A59" data-ic="truck"></span><span class="b" style="--c:#533AFD" data-ic="pin"></span></div><div class="dx-tile"><span class="f" style="--c:#5E8BFF" data-ic="boxes"></span><span class="b" style="--c:#FF5FA2" data-ic="truck"></span></div><div class="dx-tile"><span class="f" style="--c:#A26BFF" data-ic="pin"></span><span class="b" style="--c:#FFB547" data-ic="boxes"></span></div></div>
+          <div class="dx-sys" aria-hidden="true">
+            <div><span>Shopify</span><span class="hl">WooCommerce</span><span>Your website</span></div>
+            <div><span class="hl">Order system</span><span>Warehouse</span></div>
+          </div>
+          <span class="dx-b" style="left:330px;top:134px">Plugins</span>
+          <span class="dx-b" style="left:670px;top:134px">FLIK API</span>
+          <a href="#" class="dx-btn" style="left:330px;top:206px" data-page="Developer docs">API docs <span data-ic="chev-r"></span></a>
+          <span class="dx-b" style="left:670px;top:206px">Dashboard</span>
+          <div class="dx-flik" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg></div>
+          <span class="dx-b" style="left:500px;top:266px">Checkout &amp; Shipping</span>
+          <span class="dx-o" style="left:380px">QRIS</span><span class="dx-o" style="left:460px">E-wallet</span><span class="dx-o" style="left:540px">VA</span><span class="dx-o" style="left:620px">Couriers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="split dv-setup">
+      <div class="split-text">
+        <h3 class="dx-h">Get set up your way. <span>Choose no code, a plugin or the API, then follow three steps.</span></h3>
       </div>
       <div>
         <div class="itabs" id="itabs" role="tablist"></div>
         <div class="ipanel" id="ipanel"></div>
       </div>
     </div>
+
     <div class="paths">
       <div><span class="icd" data-ic="cart"></span><h4>Shopify</h4><p>Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
       <div><span class="icd" data-ic="globe"></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
@@ -1166,6 +1237,7 @@ const P={
   plus:'<path d="M12 5v14M5 12h14"/>',
   x:'<path d="M6 6l12 12M18 6 6 18"/>',
   down:'<path d="m6 9 6 6 6-6"/>',
+  'chev-r':'<path d="M4 12h16M14 6l6 6-6 6"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'
 };
 const ic=(n,s=18,w=1.7)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
@@ -1480,6 +1552,9 @@ function salesModal(pre){
 }
 
 /* ===== Global click actions ===== */
+/* Local routes (pages that exist in this prototype) */
+const ROUTES={'/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]){e.preventDefault();e.stopImmediatePropagation();location.href=ROUTES[a.dataset.page]}},true);
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
   if(!a)return;
@@ -1560,7 +1635,7 @@ const BD={
     stat:['3%','COD fee, lower than the rest'],stat2:['2×','delivery attempts before a return'],
     det:[['cash','Pay shipping and COD fees in advance. The COD amount is credited after a successful delivery.'],['wallet','Get your money in real time, right after the package is delivered.'],['chart','Track courier performance by region and choose the best one to cut failed deliveries.']],
     more:['shipping','track','funding'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
-  funding:{t:'Fund your inventory, repaid automatically as you sell',d:'FLIK Merchant Cash Advance gives selected brands upfront funding for inventory. Settlement is deducted automatically as your products sell.',cta:['Talk to the FLIK team',null,'sales'],
+  funding:{t:'Fund your inventory, repaid automatically as you sell',d:'FLIK Merchant Cash Advance gives selected brands upfront funding for inventory. Settlement is deducted automatically as your products sell.',cta:['Explore Merchant Cash Advance','/funding/merchant-cash-advance'],
     list:['Consultation with the FLIK team','Easy integration with your store','Upfront funding to stock inventory','Sell as usual, settled automatically'],
     stat:['10+','growing businesses trust Merchant Cash Advance'],stat2:['0','hidden fees'],
     det:[['coins','Dedicated cash flow for inventory and marketing, so sales keep moving.'],['check','Clear margins with no hidden fees.'],['chart','Track the outstanding amount and the latest payments in your dashboard.']],
@@ -1696,6 +1771,20 @@ document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard"
     const b=document.querySelectorAll('#steps .step'),cur=[...b].findIndex(x=>x.classList.contains('on'));
     b[(cur+1)%b.length]?.click();
   },2400);
+})();
+
+/* ===== Developers diagram: fit to width, flip tiles, highlight systems ===== */
+(function(){
+  const fit=document.getElementById('dx-fit'),st=document.getElementById('dx-stage');if(!fit)return;
+  function size(){const narrow=innerWidth<=760,W=narrow?560:1000,off=narrow?220:0,k=Math.min(1,fit.clientWidth/W),pad=Math.max(0,(fit.clientWidth-W*k)/2);st.style.transform=`translateX(${pad}px) scale(${k}) translateX(${-off}px)`;fit.style.height=(430*k)+'px'}
+  size();addEventListener('resize',size);
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const tiles=[...document.querySelectorAll('.dx-tile')],chips=[...document.querySelectorAll('.dx-sys span')];
+  setInterval(()=>{if(document.hidden)return;
+    const t=tiles[Math.floor(Math.random()*tiles.length)];t.classList.toggle('flip');
+    chips.forEach(c=>c.classList.remove('hl'));
+    [...chips].sort(()=>Math.random()-.5).slice(0,2).forEach(c=>c.classList.add('hl'));
+  },1400);
 })();
 </script>
 </body>
