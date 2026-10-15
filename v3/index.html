@@ -788,6 +788,13 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
   .bd-quote q{font-size:18px}
 }
 @media (prefers-reduced-motion:reduce){.bd,.bd-scrim{transition:none}.bd-art::before{animation:none}}
+
+/* Segment divider lines meet the vertical guide lines at every width.
+   bleed = content edge (wrap padding) - guide line position, measured against the section width (cqw). */
+section:has(> .wrap > .seg){container-type:inline-size}
+.seg{--bleed:calc(max(0px,50cqw - 590px) + 32px - max(16px,50cqw - 633px));margin-left:calc(var(--bleed)*-1);margin-right:calc(var(--bleed)*-1);padding-left:var(--bleed);padding-right:var(--bleed)}
+@media (max-width:1080px){.seg{--bleed:16px}}
+@media (max-width:760px){.seg{--bleed:0px}}
 </style>
 </head>
 <body>
