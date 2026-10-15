@@ -602,6 +602,29 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .ribbon{z-index:2}
 .hero-in{z-index:3}
 .s-hero.guides::before,.s-hero.guides::after{z-index:3}
+
+/* ===== Button liveness ===== */
+/* Hover lifts, press sinks */
+.btn{position:relative;transition:background .15s,color .15s,border-color .15s,box-shadow .2s,transform .2s cubic-bezier(.2,.8,.2,1)}
+.btn:not(:disabled):hover{transform:translateY(-1px)}
+.btn:not(:disabled):active{transform:translateY(0) scale(.98);transition-duration:.06s}
+.btn-primary:not(:disabled):hover{box-shadow:0 6px 14px -4px rgba(158,77,200,.45),0 2px 4px rgba(0,45,93,.08)}
+.btn-secondary:not(:disabled):hover{box-shadow:inset 0 0 0 1px #C5CEDA,0 4px 10px -4px rgba(0,45,93,.18)}
+.btn-light:not(:disabled):hover{box-shadow:0 6px 14px -4px rgba(0,0,0,.35)}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(158,77,200,.35)}
+/* Hover arrow (Stripe style): the › chevron grows a stem and slides right */
+.chev.ha{display:inline-flex;align-items:center;transform:none!important}
+.ha svg{display:block;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ha .ha-l{opacity:0;transition:opacity .15s}
+.ha .ha-t{transition:transform .15s}
+.btn:hover .ha .ha-l,.link:hover .ha .ha-l,.link-l:hover .ha .ha-l,.ncard:hover .ha .ha-l{opacity:1}
+.btn:hover .ha .ha-t,.link:hover .ha .ha-t,.link-l:hover .ha .ha-t,.ncard:hover .ha .ha-t{transform:translateX(3px)}
+/* Main CTAs: a soft light sweep every few seconds, so the page feels alive at rest */
+.btn.live{overflow:hidden;isolation:isolate}
+.btn.live::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 5s cubic-bezier(.4,0,.2,1) 1.2s infinite}
+.btn.live:hover::after{animation-play-state:paused;opacity:0}
+@keyframes sweep{0%{transform:translateX(-120%)}22%,100%{transform:translateX(120%)}}
+@media (prefers-reduced-motion:reduce){.btn:hover,.btn:active{transform:none}.btn.live::after{display:none}}
 </style>
 </head>
 <body>
@@ -639,7 +662,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
     <h1>Commerce infrastructure to grow your sales.</h1>
     <p class="lead">Accept payments, ship with every courier and fund your inventory, from your first order to your millionth.</p>
     <div class="hero-cta">
-      <button class="btn btn-primary" data-act="start">Get started <span class="chev">›</span></button>
+      <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
       <button class="btn btn-secondary" data-act="sales">Contact sales <span class="chev">›</span></button>
     </div>
   </div>
@@ -947,7 +970,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
       <h3>Ready to get started?</h3>
       <p class="txt">Create an account in minutes, or talk to our team about the right setup for your brand.</p>
       <div class="acts">
-        <button class="btn btn-primary" data-act="start">Get started <span class="chev">›</span></button>
+        <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
         <button class="btn btn-secondary" data-act="sales">Contact sales <span class="chev">›</span></button>
       </div>
     </div>
@@ -1294,6 +1317,13 @@ const NEWS=[
   ['Guide','Funding inventory without hidden fees','How Merchant Cash Advance works, step by step.','linear-gradient(135deg,#F16223,#9E4DC8)','/funding/merchant-cash-advance']
 ];
 document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard" data-page="${n[4]}"><div class="nart" style="background:${n[3]}"></div><div class="nb"><span class="nt">${n[0]}</span><h4>${n[1]}</h4><p>${n[2]}</p><span class="link">Read more <span class="chev">›</span></span></div></a>`).join('');
+/* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
+(function(){
+  const SVG='<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path class="ha-l" d="M0 5h7"/><path class="ha-t" d="M1 1l4 4-4 4"/></svg>';
+  const up=root=>root.querySelectorAll&&root.querySelectorAll('.chev:not(.ha)').forEach(c=>{if(c.textContent.trim()==='›'){c.classList.add('ha');c.innerHTML=SVG}});
+  up(document);
+  new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>n.nodeType===1&&up(n.parentNode||n)))).observe(document.body,{childList:true,subtree:true});
+})();
 </script>
 </body>
 </html>
