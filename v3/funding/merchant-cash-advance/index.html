@@ -1577,7 +1577,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../../';
-const ROUTES={'/':'','/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
+const ROUTES={'/':'','/checkout':'checkout/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]!==undefined){e.preventDefault();e.stopImmediatePropagation();location.href=ROOT+ROUTES[a.dataset.page]}},true);
 
 const rp=n=>'Rp '+n.toLocaleString('id-ID');

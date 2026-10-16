@@ -1553,7 +1553,7 @@ function salesModal(pre){
 
 /* ===== Global click actions ===== */
 /* Local routes (pages that exist in this prototype) */
-const ROUTES={'/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
+const ROUTES={'/checkout':'checkout/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]){e.preventDefault();e.stopImmediatePropagation();location.href=ROUTES[a.dataset.page]}},true);
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
