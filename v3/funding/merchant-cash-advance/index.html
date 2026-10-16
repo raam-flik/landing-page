@@ -1105,6 +1105,7 @@ html{scroll-padding-top:88px}
 .tc-g .own-ring{width:76px;height:76px}.tc-g .own-ring::before{inset:8px}.tc-g .own-ring span{font-size:17px}
 .tc .wk{height:84px;gap:5px}
 #terms .ethic{margin-top:16px}
+#terms{padding-bottom:0}
 
 /* Success story: one featured testimony */
 .story{margin:48px 0 0;display:grid;grid-template-columns:5fr 7fr;border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--sh)}
@@ -1134,6 +1135,100 @@ html{scroll-padding-top:88px}
   .stats-sec{padding-bottom:72px}
   .uses-marq{margin-top:40px}
   .terms4{grid-template-columns:1fr}
+}
+
+/* ===== Hero product preview (like wayflyer.com): tabbed steps in a FLIK dashboard ===== */
+.mh .hero-cta+.mca-facts{margin-bottom:0}
+.pv-stage{position:relative;margin-top:56px;padding-bottom:72px}
+.pv-stage .wrap{position:relative;z-index:1}
+.pv{position:relative;z-index:1;max-width:1064px;margin:0 auto;background:#fff;border:1px solid var(--line);box-shadow:var(--sh-lg);border-radius:12px;overflow:hidden}
+.pv-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.pv-tabs button{position:relative;height:52px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14.5px;color:var(--muted);transition:color .2s,background .2s}
+.pv-tabs button+button{border-left:1px solid var(--line)}
+.pv-tabs button:hover{color:var(--ink)}
+.pv-tabs button.on{color:var(--ink);background:var(--bg-alt)}
+.pv-tabs .n{font-family:var(--mono);font-size:12px;color:var(--faint)}
+.pv-tabs button.on .n{color:var(--primary)}
+.pv-tabs i{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--primary)}
+.pv-tabs button.on i{animation:pv-fill var(--dur,6.5s) linear forwards}
+.pv-tabs button.done i{width:100%;background:var(--primary-soft)}
+.pv.paused .pv-tabs button.on i{animation-play-state:paused}
+@keyframes pv-fill{to{width:100%}}
+.pv-app{display:grid;grid-template-columns:200px 1fr;height:500px;font-size:13px}
+.pv-side{border-right:1px solid var(--line);background:#FCFCFD;padding:16px 10px;display:flex;flex-direction:column;gap:2px}
+.pv-brand{display:flex;align-items:center;gap:8px;padding:4px 8px 16px}
+.pv-brand b{font-weight:600;font-size:13.5px}
+.pv-side>span{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;color:var(--body)}
+.pv-side>span i{display:flex;color:var(--muted)}
+.pv-side>span.on{background:var(--primary-soft);color:var(--primary);font-weight:500}
+.pv-side>span.on i{color:var(--primary)}
+.pv-main{display:flex;flex-direction:column;min-width:0}
+.pv-top{height:48px;border-bottom:1px solid var(--line-soft);display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.pv-search{display:flex;align-items:center;gap:8px;height:30px;padding:0 12px;width:260px;border:1px solid var(--line);border-radius:6px;color:var(--faint);font-size:12.5px}
+.pv-search i{display:flex}
+.pv-av{width:28px;height:28px;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.pv-body{flex:1;display:grid;grid-template-columns:1fr 280px;gap:32px;padding:32px 40px;min-height:0;animation:pv-in .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes pv-in{from{opacity:0;transform:translateY(10px)}}
+.pv-f h4{font-size:22px;font-weight:400;letter-spacing:-.4px}
+.pv-f>p{color:var(--muted);margin:4px 0 22px}
+.pv-fl{display:grid;gap:14px;max-width:420px}
+.pv-fl label{display:block;font-size:12px;font-weight:500;color:var(--body);margin-bottom:5px}
+.pv-in{height:38px;border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;gap:6px;padding:0 12px;font-size:13.5px;transition:border-color .2s,box-shadow .2s}
+.pv-in.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.pv-in .m{color:var(--muted)}
+.pv-in .caret{display:inline-block;width:1.5px;height:15px;background:var(--primary);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.pv-chips{display:flex;gap:6px;flex-wrap:wrap}
+.pv-chips span{height:30px;display:inline-flex;align-items:center;gap:6px;padding:0 12px;border-radius:999px;border:1px solid var(--line);font-size:12.5px;color:var(--body);transition:all .25s}
+.pv-chips span.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary)}
+.pv-btns{display:flex;justify-content:flex-end;gap:8px;margin-top:22px;max-width:420px}
+.pv-btns span{height:32px;padding:0 14px;border-radius:6px;display:inline-flex;align-items:center;font-size:12.5px;font-weight:500;border:1px solid var(--line);transition:transform .15s,background .2s}
+.pv-btns span.p{background:var(--primary);border-color:var(--primary);color:#fff}
+.pv-btns span.tap{transform:scale(.95);background:var(--primary-hover)}
+.pv-card{border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;align-self:start}
+.pv-card+.pv-card{margin-top:12px}
+.pv-card h5{font-size:13.5px;font-weight:500;display:flex;justify-content:space-between;align-items:center}
+.pv-ck{display:grid;gap:8px}
+.pv-ck div{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.pv-ck div i{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+.pv-ck div.done{color:var(--ink)}
+.pv-ck div.done i{background:var(--ok);border-color:var(--ok);color:#fff}
+.pv-ck div.cur{color:var(--ink)}
+.pv-ck div.cur i{border-color:var(--primary);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 10px var(--primary)}
+.pv-cn{display:grid;gap:8px;max-width:460px}
+.pv-cn>div{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.pv-cn>div.in{opacity:1;transform:none}
+.pv-cn .lg2{width:32px;height:32px;border-radius:8px;background:var(--bg-alt);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;flex:none}
+.pv-cn b{display:block;font-weight:500}
+.pv-cn small{color:var(--muted);font-size:11.5px}
+.pv-cn .grow{flex:1;min-width:0}
+.pv-cn .pill{flex:none}
+.pv-spin{width:14px;height:14px;border:2px solid var(--primary-soft);border-top-color:var(--primary);border-radius:50%;animation:sp .7s linear infinite;flex:none}
+.pv-bars{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;align-items:end;height:90px}
+.pv-bars i{border-radius:3px 3px 1px 1px;background:var(--primary);opacity:.85;height:0;transition:height .6s cubic-bezier(.2,.8,.2,1)}
+.pv-offer{border:1px solid var(--line);border-radius:12px;padding:22px;max-width:460px;position:relative;overflow:hidden}
+.pv-offer::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,#C9C1FF,transparent);opacity:.6}
+.pv-offer>*{position:relative}
+.pv-offer small{color:var(--muted)}
+.pv-amt{display:block;font-size:34px;font-weight:300;letter-spacing:-.8px;margin:4px 0 14px}
+.pv-offer .co-row{padding:6px 0;border-top:1px solid var(--line-soft)}
+.pv-mgr{display:flex;gap:10px;align-items:center}
+.pv-mgr .pv-av{width:34px;height:34px}
+.pv-mgr b{display:block;font-weight:500}.pv-mgr small{color:var(--muted);font-size:11.5px}
+@media (max-width:1080px){.pv-app{grid-template-columns:1fr}.pv-side{display:none}.pv-body{grid-template-columns:1fr 240px;padding:24px}}
+@media (max-width:760px){
+  .pv-stage{margin-top:40px;padding-bottom:48px}
+  .pv-tabs{grid-template-columns:1fr 52px 52px;transition:grid-template-columns .3s}
+  .pv-tabs[data-on="1"]{grid-template-columns:52px 1fr 52px}
+  .pv-tabs[data-on="2"]{grid-template-columns:52px 52px 1fr}
+  .pv-tabs button:not(.on) .t{display:none}
+  .pv-tabs button.on .n{display:none}
+  .pv-tabs button{font-size:13px;padding:0 8px;white-space:nowrap;overflow:hidden}
+  .pv-app{height:560px}
+  .pv-top{padding:0 14px}.pv-search{width:auto;flex:1;margin-right:10px}
+  .pv-body{grid-template-columns:1fr;padding:20px 16px;gap:16px;overflow:hidden}
+  .pv-f h4{font-size:19px}
+  .pv-aside{display:none}
 }
 </style>
 </head>
@@ -1165,12 +1260,13 @@ html{scroll-padding-top:88px}
       <button class="btn btn-secondary" data-act="sales" data-interest="Funding">Talk to the FLIK team</button>
     </div>
     <ul class="mca-facts">
-      <li><span data-ic="check-s"></span>Trusted by 10+ growing businesses</li>
+      <li><span data-ic="check-s"></span>Apply in under 10 minutes</li>
+      <li><span data-ic="check-s"></span>Funding from Rp 100 million to Rp 5 billion</li>
       <li><span data-ic="check-s"></span>One fixed margin, no hidden fees</li>
-      <li><span data-ic="check-s"></span>Repaid as your products sell</li>
     </ul>
   </div>
-  <div class="mh-stage">
+  <!-- Product preview (like wayflyer.com): three onboarding steps that play on their own -->
+  <div class="pv-stage">
     <svg class="mh-wave" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <linearGradient id="wg" x1="0" y1="1" x2="1" y2="0">
@@ -1192,36 +1288,24 @@ html{scroll-padding-top:88px}
       </g>
     </svg>
     <div class="wrap">
-      <div class="mh-win" aria-hidden="true">
-        <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/funding</span></div>
-        <div class="mh-body">
-          <div class="mh-main">
-            <div class="mh-st"><span class="mh-dot" data-ic="coins"></span>Merchant Cash Advance <span class="pill ok">Active</span></div>
-            <div class="mh-card">
-              <small>Funding</small>
-              <div class="fund-big num">Rp 250.000.000</div>
-              <div class="bar"><i id="mh-bar" style="width:62%"></i></div>
-              <div class="co-row"><span class="m">Settled</span><span class="num" id="mh-pct">62%</span></div>
-            </div>
-            <div class="mh-card">
-              <div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Recent settlements</b><span class="m" style="font-size:12px">From sales</span></div>
-              <div id="mh-list"></div>
-            </div>
-          </div>
-          <div class="mh-side">
-            <small class="mh-cap">Funding summary</small>
-            <div class="mh-tot num" id="mh-rem">Rp 100.700.000</div>
-            <span class="m" style="font-size:12.5px">Remaining to settle</span>
-            <div class="mh-sum">
-              <div class="co-row"><span class="m">Funding</span><span class="num">Rp 250.000.000</span></div>
-              <div class="co-row"><span class="m">Fixed margin</span><span class="num">Rp 15.000.000</span></div>
-              <div class="co-row"><b style="font-weight:500">Total to settle</b><b class="num" style="font-weight:500">Rp 265.000.000</b></div>
-            </div>
-            <div class="mh-sum">
-              <div class="co-row"><span class="m">Settled so far</span><span class="num" id="mh-rep">Rp 164.300.000</span></div>
-              <div class="co-row"><span class="m">Hidden fees</span><span class="num">None</span></div>
-            </div>
-            <div class="fstate"><span data-ic="check-s"></span>Auto settlement is running</div>
+      <div class="pv" id="pv" role="img" aria-label="Product preview of the FLIK funding application">
+        <div class="pv-tabs" id="pv-tabs" role="tablist">
+          <button class="on" data-i="0" role="tab"><span class="n">01</span><span class="t">Tell us about your business</span><i></i></button>
+          <button data-i="1" role="tab"><span class="n">02</span><span class="t">Connect your sales</span><i></i></button>
+          <button data-i="2" role="tab"><span class="n">03</span><span class="t">Get your funding offer</span><i></i></button>
+        </div>
+        <div class="pv-app">
+          <aside class="pv-side">
+            <div class="pv-brand"><svg viewBox="0 0 30 30" width="20" height="20" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><b>Aruna Studio</b></div>
+            <span><i data-ic="home-s"></i>Home</span>
+            <span class="on"><i data-ic="coins-s"></i>Funding</span>
+            <span><i data-ic="cart-s"></i>Checkout</span>
+            <span><i data-ic="truck-s"></i>Shipping</span>
+            <span><i data-ic="wallet-s"></i>Balance</span>
+          </aside>
+          <div class="pv-main">
+            <div class="pv-top"><span class="pv-search"><i data-ic="globe-s"></i>Search anything</span><span class="pv-av">RP</span></div>
+            <div class="pv-body" id="pv-body"></div>
           </div>
         </div>
       </div>
@@ -1352,21 +1436,6 @@ html{scroll-padding-top:88px}
   </div>
 </section>
 
-<!-- ===== Step selector: list left, panel right ===== -->
-<section class="pad guides" id="how">
-  <div class="wrap">
-    <span class="label"><i></i>How it works</span>
-    <h2 class="seg-h">From consultation to stocked shelves.</h2>
-    <p class="txt seg-p">Tell us about your business, connect your sales, and get funded. Four steps, with the FLIK team beside you from the first call. After that, you sell as usual and settlement runs on its own.</p>
-    <div class="split" style="margin-top:40px">
-      <div class="split-text">
-        <div class="steps" id="steps" style="margin-top:0"></div>
-      </div>
-      <div class="panel"><div class="fund" id="fund"></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== Underwriting (like wayflyer.com): sticky, scroll-driven stack ===== -->
 <section class="pad guides uw-sec" id="decide">
   <div class="wrap">
@@ -1427,8 +1496,8 @@ html{scroll-padding-top:88px}
         <div class="ap-card ap-2" id="ap-2">
           <div class="ap-head"><p class="ap-t"><span class="ap-n">2</span>Submit an application</p><p class="ap-d">Share a few more details so the FLIK team can review your business.</p></div>
           <form class="ap-mail" id="ap-mail" novalidate>
-            <div class="fld"><label for="ap-email">Work email</label><input id="ap-email" type="email" placeholder="rina@brand.co.id" autocomplete="email" disabled></div>
-            <button type="submit" class="btn btn-primary" id="ap-go" disabled>Apply now <span class="chev">›</span></button>
+            <div class="fld"><label for="ap-email">Work email</label><input id="ap-email" type="email" placeholder="rina@brand.co.id" autocomplete="email"></div>
+            <button type="submit" class="btn btn-primary" id="ap-go">Apply now <span class="chev">›</span></button>
           </form>
           <p class="ap-ok" id="ap-ok"><span data-ic="check-s"></span>Thanks! The FLIK team will contact you within one business day.</p>
         </div>
@@ -1531,7 +1600,7 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 /* ===== Sitemap data (v5) ===== */
 const MENU=[
   {k:'Products',w:860,cols:[
-    {h:'Checkout',items:[['Checkout','30-second checkout','/checkout'],['Payment Methods','Access to 15 methods','/checkout/payment-methods'],['FLIK Account','Saved details across every store','/checkout/flik-account'],['WhatsApp OTP Login','No more forgotten passwords','/checkout/otp-login'],['Rewards','Auto-applied at checkout','/checkout/rewards'],['Checkout Personalization','Your payments, your couriers','/checkout/personalization'],['Order Analytics','Every order in one report','/checkout/analytics']]},
+    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
     {h:'Shipping',items:[['Shipping','All couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Lower RTO, fewer failed deliveries','/shipping/returns'],['Cross-Border Shipping','Ship to customers abroad','/shipping/cross-border']]},
     {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Repay as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Financing','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
@@ -1577,7 +1646,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../../';
-const ROUTES={'/':'','/checkout':'checkout/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
+const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/'};
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]!==undefined){e.preventDefault();e.stopImmediatePropagation();location.href=ROOT+ROUTES[a.dataset.page]}},true);
 
 const rp=n=>'Rp '+n.toLocaleString('id-ID');
@@ -1600,21 +1669,21 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
     const digits=sales.value.replace(/\D/g,'').slice(0,13);sales.value=digits?(+digits).toLocaleString('id-ID'):'';
     [ch,cat,age].forEach(x=>x.classList.toggle('empty',!x.value));
     const m=(+digits||0)/1e6,f=+age.value;
-    clearTimeout(timer);cancelAnimationFrame(raf);ok=false;email.disabled=true;go.disabled=true;
+    clearTimeout(timer);cancelAnimationFrame(raf);ok=false;
     if(!digits||!ch.value||!cat.value||!age.value){show('idle');return}
     // a short "calculating" state first; it restarts while the user is still typing
     show('calc');
     timer=setTimeout(()=>{
       if(f===0||m<50){show('no');return}
-      const lo=Math.round(m*.5*f/10)*10,hi=Math.round(m*f/10)*10,el=document.getElementById('ap-range'),t0=performance.now();
-      show('ok');ok=true;email.disabled=false;go.disabled=!valid();
-      const tick=now=>{const k=Math.min(1,(now-t0)/700),e=1-Math.pow(1-k,3);el.textContent=short(Math.round(lo*e))+' – '+short(Math.round(hi*e));if(k<1)raf=requestAnimationFrame(tick)};
-      if(reduce)el.textContent=short(lo)+' – '+short(hi);else raf=requestAnimationFrame(tick);
+      const lo=Math.min(5000,Math.max(100,Math.round(m*.5*f/10)*10)),hi=Math.min(5000,Math.max(100,Math.round(m*f/10)*10)),el=document.getElementById('ap-range'),t0=performance.now();
+      show('ok');ok=true;
+      const tick=now=>{const k=Math.min(1,(now-t0)/700),e=1-Math.pow(1-k,3);el.textContent=lo>=hi?'Up to '+short(Math.round(hi*e)):short(Math.round(lo*e))+' – '+short(Math.round(hi*e));if(k<1)raf=requestAnimationFrame(tick)};
+      if(reduce)el.textContent=lo>=hi?'Up to '+short(hi):short(lo)+' – '+short(hi);else raf=requestAnimationFrame(tick);
     },reduce?0:1100);
   }
   [sales,ch,cat,age].forEach(x=>{x.addEventListener('input',calc);x.addEventListener('change',calc)});
-  email.addEventListener('input',()=>{go.disabled=!ok||!valid()});
-  document.getElementById('ap-mail').addEventListener('submit',e=>{e.preventDefault();if(!go.disabled)card2.classList.add('sent')});
+    // the application stays open even without an estimate
+  document.getElementById('ap-mail').addEventListener('submit',e=>{e.preventDefault();if(!valid()){email.focus();toast('Enter your work email to apply.');return}card2.classList.add('sent')});
   calc();
 })();
 
@@ -1634,6 +1703,71 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
 })();
 
 
+
+/* ===== Hero product preview: three steps that play on their own (example data) ===== */
+(function(){
+  const pv=document.getElementById('pv'),body=document.getElementById('pv-body'),tabsBox=document.getElementById('pv-tabs'),tabs=[...tabsBox.children];
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,DUR=6500;
+  let cur=0,timers=[],vis=false,start=0,left=DUR;
+  const later=(ms,fn)=>timers.push(setTimeout(fn,reduce?0:ms));
+  const clear=()=>{timers.forEach(clearTimeout);timers=[]};
+  const ck=(k)=>`<div class="pv-ck">${['Business details','Sales connected','Funding offer'].map((x,i)=>`<div class="${i<k?'done':i===k?'cur':''}"><i>${i<k?ic('check',11,2.6):''}</i>${x}</div>`).join('')}</div>`;
+  const S=[
+    ()=>`<div class="pv-f"><h4>Tell us about your business</h4><p>We use this to prepare your funding estimate.</p>
+      <div class="pv-fl">
+        <div><label>Business name</label><div class="pv-in" id="pv-n"><span id="pv-nt"></span></div></div>
+        <div><label>Monthly sales</label><div class="pv-in" id="pv-s"><span class="m">Rp</span><span id="pv-st"></span></div></div>
+        <div><label>Where you sell</label><div class="pv-chips" id="pv-ch"><span>Online</span><span>Physical store</span></div></div>
+      </div>
+      <div class="pv-btns"><span>Back</span><span class="p" id="pv-go">Continue</span></div></div>
+      <div class="pv-aside"><div class="pv-card"><h5>Application <span class="pill pu">Step 1 of 3</span></h5>${ck(0)}</div></div>`,
+    ()=>`<div class="pv-f"><h4>Connect your sales</h4><p>Read-only access. We only look at your sales history.</p>
+      <div class="pv-cn" id="pv-cn">
+        <div><span class="lg2">SH</span><span class="grow"><b>Shopify</b><small>arunastudio.co.id</small></span><span class="pill ok">Connected</span></div>
+        <div><span class="lg2">${ic('cart',15)}</span><span class="grow"><b>FLIK Checkout</b><small>Online orders</small></span><span class="pill ok">Connected</span></div>
+        <div id="pv-pos"><span class="lg2">${ic('home',15)}</span><span class="grow"><b>Cashier system</b><small>2 outlets in Bandung</small></span><span class="pv-spin"></span></div>
+        <div><span class="lg2">WC</span><span class="grow"><b>WooCommerce</b><small>Not used</small></span><span class="pill gr">Connect</span></div>
+      </div></div>
+      <div class="pv-aside"><div class="pv-card"><h5>Sales found <span class="m" style="font-size:11.5px;font-weight:400">12 months</span></h5><div class="pv-bars" id="pv-bars">${'<i></i>'.repeat(12)}</div></div>
+      <div class="pv-card"><h5>Application <span class="pill pu">Step 2 of 3</span></h5>${ck(1)}</div></div>`,
+    ()=>`<div class="pv-f"><h4>Your funding offer</h4><p>Reviewed with you by the FLIK team.</p>
+      <div class="pv-offer"><small>Available funding</small><b class="pv-amt num" id="pv-amt">Rp 0</b>
+        <div class="co-row"><span class="m">Fixed margin</span><span class="num">Rp 15.000.000</span></div>
+        <div class="co-row"><span class="m">Settlement</span><span>A share of each sale</span></div>
+        <div class="co-row"><span class="m">Hidden fees</span><span>None</span></div>
+        <div class="pv-btns" style="max-width:none;margin-top:14px"><span class="p" id="pv-acc">Accept offer</span></div>
+      </div></div>
+      <div class="pv-aside"><div class="pv-card"><h5>Application <span class="pill ok">Approved</span></h5>${ck(3)}</div>
+      <div class="pv-card"><small class="m" style="font-size:11.5px">Your funding team</small><div class="pv-mgr"><span class="pv-av">FT</span><span><b>FLIK funding team</b><small>Mon–Fri, 09:00–18:00 WIB</small></span></div></div></div>`
+  ];
+  const type=(el,txt,ms,done)=>{let i=0;const step=()=>{el.textContent=txt.slice(0,++i);if(i<txt.length)later(ms,step);else done&&done()};later(ms,step)};
+  const PLAY=[
+    ()=>{const n=document.getElementById('pv-n'),s=document.getElementById('pv-s');n.classList.add('on');n.insertAdjacentHTML('beforeend','<i class="caret"></i>');
+      later(300,()=>type(document.getElementById('pv-nt'),'Aruna Studio',70,()=>{n.classList.remove('on');n.querySelector('.caret').remove();s.classList.add('on');
+        type(document.getElementById('pv-st'),'300.000.000',70,()=>{s.classList.remove('on');const c=document.querySelectorAll('#pv-ch span');later(250,()=>c[0].classList.add('on'));later(650,()=>c[1].classList.add('on'));
+          later(1300,()=>{const g=document.getElementById('pv-go');g.classList.add('tap');later(200,()=>g.classList.remove('tap'))})})}))},
+    ()=>{const rows=[...document.querySelectorAll('#pv-cn>div')];rows.forEach((r,i)=>later(150+i*220,()=>r.classList.add('in')));
+      later(2300,()=>{const p=document.querySelector('#pv-pos .pv-spin');if(p)p.outerHTML='<span class="pill ok">Connected</span>'});
+      const H=[38,42,40,51,47,55,60,58,66,72,69,80];document.querySelectorAll('#pv-bars i').forEach((b,i)=>later(400+i*90,()=>b.style.height=H[i]+'%'))},
+    ()=>{const el=document.getElementById('pv-amt'),T=250000000,t0=performance.now();const tick=now=>{const k=Math.min(1,(now-t0)/1100),e=1-Math.pow(1-k,3);el.textContent=rp(Math.round(T*e/100000)*100000);if(k<1&&document.body.contains(el))requestAnimationFrame(tick)};
+      if(reduce)el.textContent=rp(T);else later(250,()=>requestAnimationFrame(tick));
+      later(3600,()=>{const a=document.getElementById('pv-acc');if(a){a.classList.add('tap');later(200,()=>a.classList.remove('tap'))}})}
+  ];
+  function go(k){
+    clear();cur=k;tabsBox.dataset.on=k;
+    tabs.forEach((t,i)=>{t.classList.toggle('on',i===k);t.classList.toggle('done',i<k);t.setAttribute('aria-selected',i===k);const bar=t.querySelector('i');bar.style.animation='none';void bar.offsetWidth;bar.style.animation=''});
+    body.innerHTML=S[k]();body.style.animation='none';void body.offsetWidth;body.style.animation='';
+    body.querySelectorAll('[data-ic]').forEach(e=>e.innerHTML=ic(e.dataset.ic.replace(/-s$/,''),15));
+    PLAY[k]();start=Date.now();left=DUR;
+  }
+  tabs.forEach((t,i)=>t.onclick=()=>go(i));
+  // advance when the active tab's bar is full; pause while the preview is off screen
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting;pv.classList.toggle('paused',!vis)}).observe(pv);
+  setInterval(()=>{if(reduce)return;if(!vis||document.hidden){start=Date.now()-(DUR-left);return}left=DUR-(Date.now()-start);if(left<=0)go((cur+1)%3)},200);
+  pv.style.setProperty('--dur',DUR+'ms');
+  go(0);
+})();
+
 /* ===== Small motions: weekly settlement, campaign bars, hero dashboard ===== */
 (function(){
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1644,15 +1778,6 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
   roll();every(2200,roll);
   const ub=[...document.querySelectorAll('.ubar i')],base=ub.map(i=>parseFloat(i.style.getPropertyValue('--w')));
   every(2600,()=>ub.forEach((i,k)=>i.style.setProperty('--w',Math.max(15,Math.min(95,base[k]+(Math.random()*20-10))).toFixed(0)+'%')));
-  // hero: a new settlement from sales arrives, and the totals update
-  const TOT=265000000,list=document.getElementById('mh-list');
-  const SALES=[['Order FLK-20481','17 Okt 2026, 14:20',1250000],['Order FLK-20482','17 Okt 2026, 14:22',2180000],['Order FLK-20483','17 Okt 2026, 14:25',1640000],['Order FLK-20484','17 Okt 2026, 14:31',2950000],['Order FLK-20485','17 Okt 2026, 14:36',890000]];
-  const row=x=>`<div class="co-row"><span><b style="font-weight:500;display:block">${x[0]}</b><span class="m" style="font-size:12px">${x[1]}</span></span><span class="num">−${rp(x[2])}</span></div>`;
-  list.innerHTML=SALES.slice(0,3).map(row).join('');
-  let pct=62,k=3;
-  const paint=()=>{const paid=Math.round(TOT*pct/100/100000)*100000;document.getElementById('mh-bar').style.width=pct+'%';document.getElementById('mh-pct').textContent=pct+'%';document.getElementById('mh-rep').textContent=rp(paid);document.getElementById('mh-rem').textContent=rp(TOT-paid)};
-  paint();
-  every(2600,()=>{const x=SALES[k++%SALES.length];list.insertAdjacentHTML('afterbegin',row(x));while(list.children.length>3)list.lastElementChild.remove();pct=pct>=80?62:pct+2;paint()});
 })();
 
 /* ===== Underwriting stack: scroll-driven on desktop, auto-play on smaller screens ===== */
@@ -1706,31 +1831,10 @@ const FAQ=[
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
-/* ===== Funding steps + dashboard ===== */
-const STEPS=[['Consultation with the FLIK team','We learn about your business and its needs.'],['Easy integration','Activate the system online or at your cashier.'],['Upfront product purchase','Receive funding in advance to stock inventory.'],['Sell as usual','Settlement is deducted automatically as your products sell.']];
-const FUND=[
-  {state:'Reviewing your business information',pct:0,out:'—',rep:'—',list:[]},
-  {state:'Connecting your sales to FLIK',pct:0,out:'—',rep:'—',list:[]},
-  {state:'Funding sent to your balance',pct:0,out:250000000,rep:0,list:[['10 Okt 2026','Funding received','+Rp 250.000.000']]},
-  {state:'Auto settlement is running',pct:62,out:95000000,rep:155000000,list:[['14 Okt 2026','Auto settlement','−Rp 1.250.000'],['13 Okt 2026','Auto settlement','−Rp 2.180.000'],['12 Okt 2026','Auto settlement','−Rp 1.640.000']]}
-];
-let step=3;
-function renderFund(){
-  document.getElementById('steps').innerHTML=STEPS.map((s,i)=>`<button class="step${i===step?' on':''}" data-i="${i}"><span class="n">${i+1}</span><span><b>${s[0]}</b><span>${s[1]}</span></span></button>`).join('');
-  document.querySelectorAll('#steps .step').forEach(b=>b.onclick=()=>{step=+b.dataset.i;renderFund()});
-  const f=FUND[step];
-  document.getElementById('fund').innerHTML=`<div class="fund-h"><div><small>Merchant Cash Advance</small><div class="fund-big num">Rp 250.000.000</div></div><span class="pill ${step<2?'gr':'ok'}">${step<2?'In progress':'Active'}</span></div>
-   <div class="bar"><i style="width:${f.pct}%"></i></div>
-   <div class="co-row"><span class="m">Repaid</span><span class="num">${f.pct}%</span></div>
-   <div class="fund-kv"><div><small>Outstanding</small><b class="num">${typeof f.out==='number'?rp(f.out):f.out}</b></div><div><small>Repaid so far</small><b class="num">${typeof f.rep==='number'?rp(f.rep):f.rep}</b></div></div>
-   <div class="fund-list">${f.list.length?f.list.map(l=>`<div class="co-row"><span><b style="font-weight:500;display:block">${l[1]}</b><span class="m" style="font-size:12px">${l[0]}</span></span><span class="num">${l[2]}</span></div>`).join(''):'<p class="txt" style="font-size:12.5px;padding:6px 0">No transactions yet.</p>'}</div>
-   <div class="fstate">${ic('check',15,2)}${f.state} · No hidden fees</div>`;
-}
-renderFund();
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
-  MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/checkout','/checkout/payment-methods','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
+  MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
   `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="#" data-toast="Opens an email to support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="#" data-toast="Opens WhatsApp chat with FLIK support" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/legal/terms" style="margin-top:10px">Terms of Service</a><a href="#" data-page="/legal/privacy">Privacy Policy</a><a href="#" data-page="/sitemap">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
@@ -1781,21 +1885,6 @@ document.addEventListener('click',e=>{
   new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>n.nodeType===1&&up(n.parentNode||n)))).observe(document.body,{childList:true,subtree:true});
 })();
 
-/* ===== Funding steps auto-play: 1 → 2 → 3 → 4 → back to 1; pauses on hover or after a click ===== */
-(function(){
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const box=document.getElementById('steps')?.closest('.split');if(!box)return;
-  let hold=0,vis=false;
-  box.addEventListener('mouseenter',()=>hold=Infinity);
-  box.addEventListener('mouseleave',()=>hold=Date.now()+1500);
-  box.addEventListener('click',e=>{if(e.isTrusted)hold=Date.now()+8000},true);
-  new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(box);
-  setInterval(()=>{
-    if(!vis||hold>Date.now()||document.hidden)return;
-    const b=document.querySelectorAll('#steps .step'),cur=[...b].findIndex(x=>x.classList.contains('on'));
-    b[(cur+1)%b.length]?.click();
-  },2400);
-})();
 </script>
 </body>
 </html>
