@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ship for Up to 40% Less, All Couriers | FLIK Shipping</title>
-<meta name="description" content="FLIK Shipping compares every courier in one dashboard. Ship anywhere in Indonesia for up to 40% less, single or bulk, with a 3% COD fee and real-time tracking.">
+<meta name="description" content="FLIK Shipping compares every courier in one dashboard. Ship across Indonesia, Malaysia and Singapore for up to 40% less, single or bulk, with a 3% COD fee and real-time tracking.">
 <link rel="canonical" href="https://flik.co.id/shipping">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/shipping">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/shipping">
@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"FLIK Shipping","serviceType":"Shipping aggregator","areaServed":"ID","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"description":"Compare every courier, ship single or bulk across Indonesia, COD with a 3% fee."}
+{"@context":"https://schema.org","@type":"Service","name":"FLIK Shipping","serviceType":"Shipping aggregator","areaServed":["ID","MY","SG"],"provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"description":"Compare every courier, ship single or bulk across Indonesia, COD with a 3% fee."}
 </script>
 <style>
 /* ===== Tokens (Stripe-style palette, landing page only) ===== */
@@ -1152,8 +1152,8 @@ html{scroll-padding-top:88px}
   <div class="wrap sh-in sh-c">
     <div class="sh-t">
       <p class="eyebrow">FLIK Shipping</p>
-      <h1 class="sh-h">Ship anywhere in Indonesia. <span class="soft">Every courier, up to 40% less.</span></h1>
-      <p class="lead">Compare rates from every courier, create shipments one by one or in bulk, and track every package from one dashboard.</p>
+      <h1 class="sh-h">Every courier, one dashboard. <span class="soft">Up to 40% less.</span></h1>
+      <p class="lead">Ship across Indonesia, Malaysia and Singapore. Compare rates, ship one by one or in bulk, and track every package.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="start">Start shipping free <span class="chev">›</span></button>
         <button class="btn btn-secondary" data-act="sales" data-interest="Shipping">Contact sales</button>
@@ -1164,7 +1164,7 @@ html{scroll-padding-top:88px}
         <li><span data-ic="check-s"></span>99% of shipments created successfully</li>
       </ul>
     </div>
-    <div class="sh-globe" role="img" aria-label="A merchant ships orders from Jakarta across Indonesia. For each order FLIK picks the best-priced courier, the package is tracked to delivery, and COD money is credited to the balance.">
+    <div class="sh-globe" role="img" aria-label="A merchant ships orders from Jakarta across Indonesia, Malaysia and Singapore. For each order FLIK picks the best-priced courier, the package is tracked to delivery, and COD money is credited to the balance.">
       <div class="sh-gstage" aria-hidden="true"><canvas id="sh-globe"></canvas><div id="sh-globe-ui"></div></div>
     </div>
     <p class="sh-cour" id="sh-cour"></p>
@@ -1182,7 +1182,7 @@ html{scroll-padding-top:88px}
       <div class="stat"><b class="num">40%</b><span>off shipping, at most</span></div>
       <div class="stat"><b class="num">3%</b><span>COD fee, and nothing else to withdraw</span></div>
       <div class="stat"><b class="num">99%</b><span>of shipments created successfully</span></div>
-      <div class="stat"><b>All of</b><span>Indonesia covered, from Sabang to Merauke</span></div>
+      <div class="stat"><b class="num">3</b><span>countries covered: Indonesia, Malaysia and Singapore</span></div>
     </div>
   </div>
 </section>
@@ -1581,7 +1581,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
 })();
 
 
-/* ===== Hero globe: shipments from a Jakarta warehouse across Indonesia (example data) ===== */
+/* ===== Hero globe: shipments from a Jakarta warehouse across Indonesia, Malaysia and Singapore (example data) ===== */
 (function(){
   const cv=document.getElementById('sh-globe'),ctx=cv.getContext('2d'),ui=document.getElementById('sh-globe-ui');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1590,19 +1590,20 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
   const LOGO={jne:'img/jne.png',spx:'img/spx.png',lion:'img/lionparcel.png',aa:'img/anteraja.png'};
   document.getElementById('sh-cour').innerHTML='<span>Every courier, one dashboard</span><img src="img/jne-wide.png" alt="JNE" class="w"><img src="img/spx.png" alt="SPX Express"><img src="img/lionparcel-wide.png" alt="Lion Parcel" class="w"><img src="img/anteraja.png" alt="AnterAja"><span>and more</span>';
   let W,H,R,cx,cy,dpr,pts=[],running=true,t0=performance.now();
-  const N=22000,ga=Math.PI*(3-Math.sqrt(5)),D=Math.PI/180;
+  const N=30000,ga=Math.PI*(3-Math.sqrt(5)),D=Math.PI/180;
   const ctr=[Math.cos(-30*D)*Math.sin(120*D),Math.sin(-30*D),Math.cos(-30*D)*Math.cos(120*D)];
   for(let i=0;i<N;i++){const y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),t=ga*i,p=[Math.cos(t)*r,y,Math.sin(t)*r];if(p[0]*ctr[0]+p[1]*ctr[1]+p[2]*ctr[2]>-.45)pts.push(p)}
   const C=[[83,58,253],[180,90,245],[245,110,200],[255,160,90]];
   const col=t=>{t=Math.max(0,Math.min(.999,t))*(C.length-1);const i=Math.floor(t),f=t-i,a=C[i],b=C[i+1];return a.map((v,k)=>Math.round(v+(b[k]-v)*f))};
   const v3=(lat,lon)=>[Math.cos(lat*D)*Math.sin(lon*D),Math.sin(lat*D),Math.cos(lat*D)*Math.cos(lon*D)];
   const HUB=v3(-1.6,113.6);
-  const CITY={Jakarta:v3(-6.2,106.8),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4),Jayapura:v3(-2.55,140.7),Denpasar:v3(-8.65,115.2),Balikpapan:v3(-1.25,116.85),Surabaya:v3(-7.25,112.75)};
+  const CITY={Jakarta:v3(-6.2,106.8),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4),Jayapura:v3(-2.55,140.7),Denpasar:v3(-8.65,115.2),'Kuala Lumpur':v3(3.14,101.69),Singapore:v3(1.35,103.82),Balikpapan:v3(-1.25,116.85),Surabaya:v3(-7.25,112.75)};
   const DESTS=Object.keys(CITY).filter(k=>k!=='Jakarta');
   // one shipment per scenario: courier picked → in transit → delivered (→ COD credited)
   const SC=[
     {city:'Medan',cour:'JNE Reguler',logo:LOGO.jne,price:24000,off:32,awb:'FLK2610170041',eta:'2–3 days'},
     {city:'Makassar',cour:'SPX Express',logo:LOGO.spx,price:27500,off:25,awb:'FLK2610170058',eta:'2–3 days'},
+    {city:'Kuala Lumpur',cour:'SPX Express',logo:LOGO.spx,price:68000,off:22,awb:'FLK2610170066',eta:'3–5 days'},
     {city:'Denpasar',cour:'Lion Parcel',logo:LOGO.lion,price:19000,off:28,awb:'FLK2610170063',eta:'2–3 days',cod:1940000},
     {city:'Jayapura',cour:'AnterAja Reguler',logo:LOGO.aa,price:58000,off:40,awb:'FLK2610170077',eta:'5–7 days'},
   ];
@@ -1763,7 +1764,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
 
 /* ===== FAQ ===== */
 const FAQ=[
-  ['What is FLIK Shipping?','A shipping service that helps businesses ship for less through one dashboard, with access to many couriers across Indonesia.'],
+  ['What is FLIK Shipping?','A shipping service that helps businesses ship for less through one dashboard, with access to many couriers across Indonesia, Malaysia and Singapore.'],
   ['How does it work?','Enter the delivery addresses, one by one or in bulk, and FLIK shows every available rate. Choose the service (regular, same day, next day, instant or cargo) and a pickup time.'],
   ['How much does it cost?','Joining is free and there is no registration fee. You pay for each shipment from your FLIK balance before it is created.'],
   ['Do I pay the COD shipping fee upfront?','Yes. Shipping and the 3% COD fee are paid in advance. The COD amount is credited to your balance after the package is delivered.'],
