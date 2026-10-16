@@ -856,7 +856,7 @@ html{scroll-padding-top:88px}
 .ubar i{height:8px;border-radius:999px;background:linear-gradient(90deg,var(--primary),#F56EC8);width:var(--w);transition:width .8s cubic-bezier(.2,.8,.2,1)}
 .ubar b{font-weight:500}
 /* Stats x4 (like stripe.com/billing): ruled grid that runs to the guide lines */
-.stats-sec{container-type:inline-size}
+.stats-sec{container-type:inline-size;padding-bottom:112px}
 .stats-h{max-width:760px}
 .stats4{--bleed:calc(max(0px,50cqw - 590px) + 32px - max(16px,50cqw - 633px));display:grid;grid-template-columns:repeat(4,1fr);margin:64px calc(var(--bleed)*-1) 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
 .stats4 .stat{display:flex;flex-direction:column;gap:12px;padding:36px 16px;border-right:1px solid var(--line-soft)}
@@ -1050,6 +1050,91 @@ html{scroll-padding-top:88px}
   .ap-mail{flex-direction:column;align-items:stretch}
   .ethic{padding:24px}
 }
+
+/* Use of funds: one full-width band */
+.uses-band{background:var(--bg-alt);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:96px 0 0;overflow:hidden}
+.uses-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.uses-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:4px}
+.uses-list li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:10px;cursor:default;transition:background .2s,box-shadow .2s}
+.uses-list li.on{background:#fff;box-shadow:var(--sh)}
+.uses-list b{display:block;font-weight:500;font-size:16px;color:var(--ink)}
+.uses-list li div span{display:block;color:var(--muted);font-size:14.5px;margin-top:2px}
+.uses-ic{width:36px;height:36px;border-radius:8px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.uses-g{position:relative;display:flex;justify-content:center;padding:40px 0}
+.uses-g::before{content:"";position:absolute;inset:-10% -20%;background:radial-gradient(40% 50% at 30% 65%,#FF8FD1,transparent 70%),radial-gradient(45% 55% at 72% 35%,#B98CFF,transparent 70%);filter:blur(40px);opacity:.6}
+.uses-card{position:relative;width:100%;max-width:420px;padding:22px}
+.uses-amt{font-size:32px;font-weight:300;letter-spacing:-.6px;margin:10px 0 16px}
+.uses-stack{display:flex;gap:3px;height:12px;border-radius:999px;overflow:hidden}
+.uses-stack i{width:var(--w);background:var(--c);opacity:.35;transition:opacity .3s}
+.uses-stack i:nth-child(1),.uses-leg div:nth-child(1){--c:var(--primary)}
+.uses-stack i:nth-child(2),.uses-leg div:nth-child(2){--c:#F56EC8}
+.uses-stack i:nth-child(3),.uses-leg div:nth-child(3){--c:#6FB8FF}
+.uses-stack i:nth-child(4),.uses-leg div:nth-child(4){--c:#FFB86B}
+.uses-stack i.on{opacity:1}
+.uses-leg{display:grid;gap:2px;margin-top:14px}
+.uses-leg div{display:flex;justify-content:space-between;padding:7px 8px;border-radius:6px;transition:background .3s}
+.uses-leg div.on{background:var(--bg-alt)}
+.uses-leg span{display:flex;align-items:center;gap:8px;color:var(--body)}
+.uses-leg i{width:10px;height:10px;border-radius:3px;background:var(--c)}
+.uses-leg b{font-weight:500}
+.uses-marq{position:relative;margin-top:72px;border-top:1px solid var(--line-soft);background:#fff;padding:18px 0}
+.uses-marq::before,.uses-marq::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line-soft);z-index:1;pointer-events:none}
+.uses-marq::before{left:max(16px,calc(50% - 633px))}
+.uses-marq::after{right:max(16px,calc(50% - 633px))}
+.uses-clip{max-width:1266px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 64px,#000 calc(100% - 64px),transparent);mask-image:linear-gradient(90deg,transparent,#000 64px,#000 calc(100% - 64px),transparent)}
+@media (max-width:1080px){.uses-clip{margin:0 16px}.uses-marq::before{left:16px}.uses-marq::after{right:16px}}
+@media (max-width:760px){.uses-clip{margin:0}.uses-marq::before,.uses-marq::after{display:none}}
+.uses-track{display:flex;gap:12px;width:max-content;animation:marq 48s linear infinite;padding-left:12px}
+.uchip{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px;color:var(--body);white-space:nowrap}
+.uchip em{font-style:normal;font-size:12px;color:var(--primary);background:var(--primary-soft);border-radius:999px;padding:2px 8px}
+.uchip em.off{color:#0E6E48;background:var(--ok-soft)}
+
+/* Simple terms: four cards in a row */
+.terms4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.tc{background:var(--bg-alt);border-radius:12px;padding:24px 24px 0;display:flex;flex-direction:column;gap:8px;overflow:hidden;position:relative}
+.tc h3{font-size:20px;font-weight:400;letter-spacing:-.3px;line-height:1.3;margin-top:6px}
+.tc .txt{font-size:15px}
+.tc-g{position:relative;margin:16px -24px 0;padding:20px 20px 24px;flex:1;display:flex;align-items:flex-end;justify-content:center}
+.tc-g::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-40%;height:85%;border-radius:50%;filter:blur(36px);opacity:.7}
+.tc:nth-child(1) .tc-g::before{background:radial-gradient(closest-side,#FF8FD1,#B98CFF 60%,transparent)}
+.tc:nth-child(2) .tc-g::before{background:radial-gradient(closest-side,#FFB86B,#FF7AB8 60%,transparent)}
+.tc:nth-child(3) .tc-g::before{background:radial-gradient(closest-side,#C79BFF,#FFA8D8 60%,transparent)}
+.tc:nth-child(4) .tc-g::before{background:radial-gradient(closest-side,#9C8CFF,#6FB8FF 60%,transparent)}
+.tc-g .minip{position:relative;width:100%;min-height:118px;display:flex;flex-direction:column;justify-content:center}
+.tc-g .own{flex-direction:row;gap:16px}
+.tc-g .own-ring{width:76px;height:76px}.tc-g .own-ring::before{inset:8px}.tc-g .own-ring span{font-size:17px}
+.tc .wk{height:84px;gap:5px}
+#terms .ethic{margin-top:16px}
+
+/* Success story: one featured testimony */
+.story{margin:48px 0 0;display:grid;grid-template-columns:5fr 7fr;border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--sh)}
+.story-ph{position:relative;min-height:440px;background:var(--bg-alt)}
+.story-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.story-tag{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.92);font-size:13px;color:var(--ink);box-shadow:var(--sh)}
+.story-tag [data-ic],.story-tag svg{color:var(--primary)}
+.story-t{padding:48px;display:flex;flex-direction:column;gap:20px}
+.story blockquote{margin:0}
+.story-q{font-size:22px;font-weight:300;line-height:1.5;letter-spacing:-.2px;color:var(--ink)}
+.story-who b{display:block;font-weight:500;font-size:16px}
+.story-who span{color:var(--muted);font-size:14px}
+.story-res{display:grid;grid-template-columns:repeat(3,1fr);margin-top:auto;border-top:1px solid var(--line-soft)}
+.story-res div{display:flex;flex-direction:column;gap:6px;padding:20px 16px 0 0}
+.story-res div+div{padding-left:16px;border-left:1px solid var(--line-soft)}
+.story-res b{font-size:28px;font-weight:300;letter-spacing:-.5px}
+.story-res span{color:var(--muted);font-size:13.5px;line-height:1.4}
+@media (max-width:1080px){.story{grid-template-columns:1fr}.story-ph{min-height:360px}.story-t{padding:32px}}
+@media (max-width:760px){.story-ph{min-height:300px}.story-t{padding:24px}.story-q{font-size:18px}.story-res{grid-template-columns:1fr}.story-res div+div{padding-left:0;border-left:0;border-top:1px solid var(--line-soft);padding-top:14px}.story-res div{padding-top:14px}}
+@media (prefers-reduced-motion: reduce){.uses-track{animation:none}.uses-clip{overflow-x:auto}}
+@media (max-width:1080px){
+  .terms4{grid-template-columns:1fr 1fr}
+  .uses-in{grid-template-columns:1fr;gap:16px}
+}
+@media (max-width:760px){
+  .uses-band{padding-top:64px}
+  .stats-sec{padding-bottom:72px}
+  .uses-marq{margin-top:40px}
+  .terms4{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -1161,109 +1246,109 @@ html{scroll-padding-top:88px}
 </section>
 
 <!-- ===== Product cards (3 columns) ===== -->
-<section class="pad-t guides" id="uses">
+<section class="uses-band guides" id="uses">
+  <div class="wrap uses-in">
+    <div class="uses-t">
+      <h2 class="sec-h">Use it where it grows your sales. <span class="soft">One funding amount, spent where your business needs it most.</span></h2>
+      <ul class="uses-list" id="uses-list">
+        <li data-u="0"><span class="uses-ic" data-ic="boxes"></span><div><b>Inventory financing</b><span>Buy stock upfront so best sellers never run out.</span></div></li>
+        <li data-u="1"><span class="uses-ic" data-ic="chart"></span><div><b>Marketing budget</b><span>Fund the campaigns that bring buyers to you, online or in store.</span></div></li>
+        <li data-u="2"><span class="uses-ic" data-ic="home"></span><div><b>Outlet expansion</b><span>Open your next store, kiosk or pop-up.</span></div></li>
+        <li data-u="3"><span class="uses-ic" data-ic="bolt"></span><div><b>Seasonal stock</b><span>Get ready for Ramadan, 11.11 and year-end peaks.</span></div></li>
+      </ul>
+    </div>
+    <div class="uses-g">
+      <div class="minip uses-card">
+        <div class="co-row"><b style="font-weight:500">Funding plan</b><span class="pill ok">Approved</span></div>
+        <p class="uses-amt num">Rp 250.000.000</p>
+        <div class="uses-stack" id="uses-stack"><i style="--w:44%"></i><i style="--w:22%"></i><i style="--w:24%"></i><i style="--w:10%"></i></div>
+        <div class="uses-leg" id="uses-leg">
+          <div data-u="0"><span><i></i>Inventory</span><b class="num">Rp 110.000.000</b></div>
+          <div data-u="1"><span><i></i>Marketing</span><b class="num">Rp 55.000.000</b></div>
+          <div data-u="2"><span><i></i>New outlet</span><b class="num">Rp 60.000.000</b></div>
+          <div data-u="3"><span><i></i>Seasonal stock</span><b class="num">Rp 25.000.000</b></div>
+        </div>
+        <p class="ex">Example only.</p>
+      </div>
+    </div>
+  </div>
+  <div class="uses-marq" aria-label="Businesses that can apply">
+    <div class="uses-clip"><div class="uses-track" id="uses-track"></div></div>
+  </div>
+</section>
+
+<!-- ===== Simple terms: four short cards side by side ===== -->
+<section class="pad guides" id="terms">
   <div class="wrap">
-    <h2 class="sec-h">Use it where it grows your sales. <span class="soft">Stock up before demand peaks, fund the campaigns that sell it, or open your next outlet.</span></h2>
-    <div class="pcards3">
-      <article class="pc3">
-        <span class="label"><i></i>Inventory financing</span>
-        <h3>Buy stock upfront so best sellers never run out.</h3>
-        <a href="#" class="link" data-page="/funding/inventory-financing">Learn more <span class="chev">›</span></a>
-        <div class="pc3-vis g1"><div class="minip uf">
-          <div class="co-row" style="margin-bottom:6px"><b style="font-weight:500">Purchase order PO-1042</b><span class="pill ok">Funded</span></div>
-          <div class="co-row"><span>Linen Shirt × 600</span><span class="num">Rp 120.000.000</span></div>
-          <div class="co-row"><span>Canvas Tote Bag × 400</span><span class="num">Rp 48.000.000</span></div>
-          <div class="co-total"><span>Total stock</span><span class="num">Rp 168.000.000</span></div>
+    <h2 class="sec-h">Simple terms, priced fairly. <span class="soft">Know exactly what you will pay before you sign.</span></h2>
+    <div class="terms4">
+      <article class="tc">
+        <span class="label"><i></i>Pricing</span>
+        <h3>One fixed margin.</h3>
+        <p class="txt">Agreed upfront and never changes. No compounding interest and no hidden fees.</p>
+        <div class="tc-g"><div class="minip">
+          <div class="co-row"><span class="m">Funding</span><span class="num">Rp 250 jt</span></div>
+          <div class="co-row"><span class="m">Fixed margin</span><span class="num">Rp 15 jt</span></div>
+          <div class="co-total"><span>To settle</span><span class="num">Rp 265 jt</span></div>
         </div></div>
       </article>
-      <article class="pc3">
-        <span class="label"><i></i>Marketing budget</span>
-        <h3>Fund the campaigns that bring buyers to your store.</h3>
-        <a href="#" class="link" data-page="/funding/marketing-budget">Learn more <span class="chev">›</span></a>
-        <div class="pc3-vis g2"><div class="minip uf">
-          <div class="co-row" style="margin-bottom:10px"><b style="font-weight:500">Campaign budget</b><span class="pill pu">This month</span></div>
-          <div class="ubar"><span>Social ads</span><i style="--w:72%"></i><b class="num">Rp 36 jt</b></div>
-          <div class="ubar"><span>Live shopping</span><i style="--w:48%"></i><b class="num">Rp 24 jt</b></div>
-          <div class="ubar"><span>Creators</span><i style="--w:30%"></i><b class="num">Rp 15 jt</b></div>
+      <article class="tc">
+        <span class="label"><i></i>Settlement</span>
+        <h3>Settled as you sell.</h3>
+        <p class="txt">A share of each sale, online or in store, goes toward settlement automatically.</p>
+        <div class="tc-g"><div class="minip">
+          <div class="co-row"><span><b style="font-weight:500;display:block">Online order</b><span class="m" style="font-size:12px">14 Okt 2026</span></span><span class="num">−Rp 1.250.000</span></div>
+          <div class="co-row"><span><b style="font-weight:500;display:block">In-store sale</b><span class="m" style="font-size:12px">14 Okt 2026</span></span><span class="num">−Rp 860.000</span></div>
         </div></div>
       </article>
-      <article class="pc3">
-        <span class="label"><i></i>Outlet expansion</span>
-        <h3>Cash to open your next store, kiosk or pop-up.</h3>
-        <a href="#" class="link" data-page="/funding/outlet-expansion">Learn more <span class="chev">›</span></a>
-        <div class="pc3-vis g3"><div class="minip uf">
-          <div class="co-row" style="margin-bottom:6px"><b style="font-weight:500">New outlet · Bandung</b><span class="pill gr">Opening soon</span></div>
-          <div class="co-row"><span class="m">Fit-out</span><span class="num">Rp 85.000.000</span></div>
-          <div class="co-row"><span class="m">Opening stock</span><span class="num">Rp 60.000.000</span></div>
-          <div class="co-total"><span>Funded</span><span class="num">Rp 145.000.000</span></div>
+      <article class="tc">
+        <span class="label"><i></i>Flexibility</span>
+        <h3>Slow weeks never squeeze you.</h3>
+        <p class="txt">Repayment follows your sales, so lower sales mean lower settlement.</p>
+        <div class="tc-g"><div class="minip">
+          <div class="wk" id="wk"></div>
         </div></div>
       </article>
+      <article class="tc">
+        <span class="label"><i></i>Ownership</span>
+        <h3>Your brand stays yours.</h3>
+        <p class="txt">FLIK funds your stock, not your shares. You keep full ownership.</p>
+        <div class="tc-g"><div class="minip own">
+          <div class="own-ring"><span class="num">100%</span><small>yours</small></div>
+          <div class="own-leg"><span><i class="you"></i>You</span><span><i></i>FLIK · 0%</span></div>
+        </div></div>
+      </article>
+    </div>
+    <div class="ethic">
+      <span class="tbadge"><span data-ic="check-s"></span>Ethical pricing</span>
+      <h3>We grow when you grow.</h3>
+      <p class="txt">Pricing is clear from day one. Because settlement comes from your sales, you never pay more when business is quiet, and there are no surprises at the end.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== Simple terms: alternating text and graphic ===== -->
-<section class="pad guides" id="terms">
-  <div class="wrap rows">
-    <h2 class="sec-h">Simple terms, priced fairly. <span class="soft">Know exactly what you will pay before you sign.</span></h2>
-
-    <div class="row2">
-      <div class="row2-t">
-        <span class="label"><i></i>Pricing</span>
-        <h3 class="row2-h">One fixed margin.</h3>
-        <p class="txt">Agreed upfront and never changes. No compounding interest and no hidden fees.</p>
+<!-- ===== Success story: one featured testimony (PLACEHOLDER: fictional merchant, Unsplash stock photo; replace with a real, approved story) ===== -->
+<section class="pad-t guides" id="stories">
+  <div class="wrap">
+    <h2 class="sec-h">Built with the people behind the brands. <span class="soft">Online sellers and shop owners who used FLIK funding to grow.</span></h2>
+    <figure class="story">
+      <div class="story-ph">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Maya Sari, founder of Rumah Kue Maya" loading="lazy">
+        <span class="story-tag"><span data-ic="home"></span>3 outlets in Bandung + online store</span>
       </div>
-      <div class="row2-g g1"><div class="minip uf">
-        <div class="co-row"><span class="m">Funding</span><span class="num">Rp 250.000.000</span></div>
-        <div class="co-row"><span class="m">Fixed margin</span><span class="num">Rp 15.000.000</span></div>
-        <div class="co-total"><span>Total to settle</span><span class="num">Rp 265.000.000</span></div>
-        <p class="ex">Example only. Your margin is set after the consultation.</p>
-      </div></div>
-    </div>
-
-    <div class="row2 flip">
-      <div class="row2-t">
-        <span class="label"><i></i>Settlement</span>
-        <h3 class="row2-h">Settled as you sell.</h3>
-        <p class="txt">A share of each sale goes toward settlement automatically. Track the outstanding amount and every payment in your dashboard.</p>
+      <div class="story-t">
+        <span class="label"><i></i>Rumah Kue Maya · Bakery</span>
+        <blockquote>
+          <p class="story-q">“Ramadan is almost half of our year. We used to turn down hampers orders because we couldn't buy flour, butter and boxes early enough. This year we stocked up three weeks ahead, opened our third outlet, and the settlement just came out of daily sales. In the quiet month after Lebaran we paid less, which is exactly when we needed it.”</p>
+        </blockquote>
+        <figcaption class="story-who"><b>Maya Sari</b><span>Founder, Rumah Kue Maya</span></figcaption>
+        <div class="story-res">
+          <div><b class="num">Rp 250 jt</b><span>funded for Ramadan stock and a new outlet</span></div>
+          <div><b class="num">1.8×</b><span>Ramadan sales vs. last year</span></div>
+          <div><b class="num">0</b><span>days out of stock</span></div>
+        </div>
       </div>
-      <div class="row2-g g2"><div class="minip uf">
-        <div class="co-row"><span><b style="font-weight:500;display:block">From sales</b><span class="m" style="font-size:12px">14 Okt 2026</span></span><span class="num">−Rp 1.250.000</span></div>
-        <div class="co-row"><span><b style="font-weight:500;display:block">From sales</b><span class="m" style="font-size:12px">13 Okt 2026</span></span><span class="num">−Rp 2.180.000</span></div>
-        <div class="co-row"><span><b style="font-weight:500;display:block">From sales</b><span class="m" style="font-size:12px">12 Okt 2026</span></span><span class="num">−Rp 1.640.000</span></div>
-      </div></div>
-    </div>
-
-    <div class="row2">
-      <div class="row2-t">
-        <span class="label"><i></i>Flexibility</span>
-        <h3 class="row2-h">Slow weeks never squeeze you.</h3>
-        <p class="txt">Repayment follows your sales, so lower sales mean lower settlement.</p>
-      </div>
-      <div class="row2-g g4"><div class="minip uf">
-        <div class="co-row" style="margin-bottom:10px"><b style="font-weight:500">Settlement this week</b></div>
-        <div class="wk" id="wk"></div>
-        <div class="fstate" style="margin-top:10px"><span data-ic="check-s"></span>Lower sales, lower settlement</div>
-      </div></div>
-    </div>
-
-    <div class="row2 flip">
-      <div class="row2-t">
-        <span class="label"><i></i>Ownership</span>
-        <h3 class="row2-h">Your brand stays yours.</h3>
-        <p class="txt">FLIK funds your stock, not your shares. You keep full ownership of your business.</p>
-      </div>
-      <div class="row2-g g3"><div class="minip uf own">
-        <div class="own-ring"><span class="num">100%</span><small>yours</small></div>
-        <div class="own-leg"><span><i class="you"></i>You</span><span><i></i>FLIK · 0%</span></div>
-      </div></div>
-    </div>
-
-    <div class="ethic">
-      <span class="tbadge"><span data-ic="check-s"></span>Ethical pricing</span>
-      <h3>We grow when you grow.</h3>
-      <p class="txt">Pricing is clear from day one. Because settlement comes from your sales, you never pay more when business is quiet, and there are no surprise charges along the way.</p>
-    </div>
+    </figure>
   </div>
 </section>
 
@@ -1272,7 +1357,7 @@ html{scroll-padding-top:88px}
   <div class="wrap">
     <span class="label"><i></i>How it works</span>
     <h2 class="seg-h">From consultation to stocked shelves.</h2>
-    <p class="txt seg-p">Tell us about your business, connect your store, and get funded. Four steps, with the FLIK team beside you from the first call. After that, you sell as usual and settlement runs on its own.</p>
+    <p class="txt seg-p">Tell us about your business, connect your sales, and get funded. Four steps, with the FLIK team beside you from the first call. After that, you sell as usual and settlement runs on its own.</p>
     <div class="split" style="margin-top:40px">
       <div class="split-text">
         <div class="steps" id="steps" style="margin-top:0"></div>
@@ -1325,15 +1410,16 @@ html{scroll-padding-top:88px}
         <div class="ap-body">
           <form class="ap-form" id="ap-form" onsubmit="return false" novalidate>
             <div class="ap-f"><label for="ap-sales">Monthly sales</label><div class="ap-in"><span>Rp</span><input id="ap-sales" inputmode="numeric" placeholder="300.000.000" autocomplete="off"></div></div>
+            <div class="ap-f"><label for="ap-ch">Where you sell</label><div class="ap-sel"><select id="ap-ch"><option value="">Select a channel</option><option>Online</option><option>Physical store</option><option>Online and physical store</option></select></div></div>
             <div class="ap-f"><label for="ap-cat">Category</label><div class="ap-sel"><select id="ap-cat"><option value="">Select a category</option><option>Fashion</option><option>Beauty</option><option>Home appliances</option><option>Food &amp; beverage</option><option>Other</option></select></div></div>
-            <div class="ap-f"><label for="ap-age">Selling online for</label><div class="ap-sel"><select id="ap-age"><option value="">Select a period</option><option value="0">Under 6 months</option><option value="1">6–12 months</option><option value="1.2">Over 1 year</option></select></div></div>
+            <div class="ap-f"><label for="ap-age">In business for</label><div class="ap-sel"><select id="ap-age"><option value="">Select a period</option><option value="0">Under 6 months</option><option value="1">6–12 months</option><option value="1.2">Over 1 year</option></select></div></div>
           </form>
           <div class="ap-res" id="ap-res" aria-live="polite">
             <span class="ap-wm" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="currentColor"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="currentColor"/></svg></span>
             <div class="ap-st on" data-st="idle"><span class="ap-ic" data-ic="coins"></span><p>Complete the form to get an estimate of how much you could access.</p></div>
             <div class="ap-st" data-st="calc"><span class="ap-ic"><span class="ap-spin"></span></span><div><p>Calculating your estimate…</p><span class="ap-sk"><i></i><i></i></span><small>Checking your sales, category and selling history.</small></div></div>
             <div class="ap-st" data-st="ok"><span class="ap-ic ok" data-ic="check"></span><div><p>Looks like you could be eligible.</p><b class="num" id="ap-range">Rp 150 jt – Rp 300 jt</b><small>Illustrative estimate. Your offer follows a review by the FLIK team.</small></div></div>
-            <div class="ap-st" data-st="no"><span class="ap-ic no" data-ic="x"></span><div><p>We can't offer funding just yet.</p><small>Brands usually need at least 6 months of online sales. Talk to us and we'll keep you posted.</small></div></div>
+            <div class="ap-st" data-st="no"><span class="ap-ic no" data-ic="x"></span><div><p>We can't offer funding just yet.</p><small>Businesses usually need at least 6 months of sales, online or in store. Talk to us and we'll keep you posted.</small></div></div>
           </div>
         </div>
       </div>
@@ -1503,7 +1589,7 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
 
 /* ===== Application process: eligibility → apply → approved ===== */
 (function(){
-  const sales=document.getElementById('ap-sales'),cat=document.getElementById('ap-cat'),age=document.getElementById('ap-age');
+  const sales=document.getElementById('ap-sales'),cat=document.getElementById('ap-cat'),age=document.getElementById('ap-age'),ch=document.getElementById('ap-ch');
   const res=document.getElementById('ap-res'),email=document.getElementById('ap-email'),go=document.getElementById('ap-go'),card2=document.getElementById('ap-2');
   const short=n=>n>=1000?('Rp '+(n/1000).toLocaleString('id-ID',{maximumFractionDigits:1})+' M'):('Rp '+Math.round(n)+' jt');
   const show=k=>res.querySelectorAll('.ap-st').forEach(x=>x.classList.toggle('on',x.dataset.st===k));
@@ -1512,10 +1598,10 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
   function calc(){
     // keep the sales field formatted as Rupiah
     const digits=sales.value.replace(/\D/g,'').slice(0,13);sales.value=digits?(+digits).toLocaleString('id-ID'):'';
-    [cat,age].forEach(x=>x.classList.toggle('empty',!x.value));
+    [ch,cat,age].forEach(x=>x.classList.toggle('empty',!x.value));
     const m=(+digits||0)/1e6,f=+age.value;
     clearTimeout(timer);cancelAnimationFrame(raf);ok=false;email.disabled=true;go.disabled=true;
-    if(!digits||!cat.value||!age.value){show('idle');return}
+    if(!digits||!ch.value||!cat.value||!age.value){show('idle');return}
     // a short "calculating" state first; it restarts while the user is still typing
     show('calc');
     timer=setTimeout(()=>{
@@ -1526,11 +1612,27 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
       if(reduce)el.textContent=short(lo)+' – '+short(hi);else raf=requestAnimationFrame(tick);
     },reduce?0:1100);
   }
-  [sales,cat,age].forEach(x=>{x.addEventListener('input',calc);x.addEventListener('change',calc)});
+  [sales,ch,cat,age].forEach(x=>{x.addEventListener('input',calc);x.addEventListener('change',calc)});
   email.addEventListener('input',()=>{go.disabled=!ok||!valid()});
   document.getElementById('ap-mail').addEventListener('submit',e=>{e.preventDefault();if(!go.disabled)card2.classList.add('sent')});
   calc();
 })();
+
+
+/* ===== Use of funds band: cycle the uses, chip marquee ===== */
+(function(){
+  const li=[...document.querySelectorAll('#uses-list li')],seg=[...document.querySelectorAll('#uses-stack i')],leg=[...document.querySelectorAll('#uses-leg div')];
+  let cur=0,hold=false;
+  const set=k=>{cur=k;[li,seg,leg].forEach(g=>g.forEach((x,i)=>x.classList.toggle('on',i===k)))};
+  li.forEach((x,i)=>{x.addEventListener('mouseenter',()=>{hold=true;set(i)});x.addEventListener('mouseleave',()=>{hold=false})});
+  set(0);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!hold&&!document.hidden)set((cur+1)%li.length)},2600);
+  // businesses that can apply: online, physical stores, or both
+  const BIZ=[['Fashion brand','Online'],['Coffee shop','Store'],['Skincare brand','Online'],['Bakery with 3 outlets','Store'],['Home appliances','Online + store'],['Minimarket','Store'],['Batik label','Online + store'],['Kitchenware','Online'],['Beauty clinic','Store'],['Sneaker store','Online + store'],['Frozen food','Online'],['Furniture showroom','Store']];
+  const chip=b=>`<span class="uchip">${b[0]}<em${b[1]==='Store'?' class="off"':''}>${b[1]}</em></span>`;
+  const h=BIZ.map(chip).join('');document.getElementById('uses-track').innerHTML=h+h;
+})();
+
 
 /* ===== Small motions: weekly settlement, campaign bars, hero dashboard ===== */
 (function(){
@@ -1556,7 +1658,7 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
 /* ===== Underwriting stack: scroll-driven on desktop, auto-play on smaller screens ===== */
 (function(){
   const STEPS=[
-    ['01 · Sales data in','Connect your store so we can see your sales history and performance. FLIK may ask for some extra business information.'],
+    ['01 · Sales data in','Connect your online store or cashier system so we can see your sales history and performance. FLIK may ask for some extra business information.'],
     ['02 · Review by the FLIK team','Our team reviews your business with you during the consultation, then confirms whether you are eligible.'],
     ['03 · Funding out','Funding lands in your FLIK balance, with a fixed margin and settlement set around how you sell.']
   ];
@@ -1593,22 +1695,22 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
 /* ===== FAQ ===== */
 const FAQ=[
   ['What is a Merchant Cash Advance?','Upfront funding for your business. FLIK provides the money to stock inventory and grow, and settlement is deducted automatically from your product sales.'],
-  ['Who is it for?','Selected brand owners who sell online, for example on their own Shopify or WooCommerce store or with FLIK Checkout.'],
+  ['Who is it for?','Selected brand owners who sell online, in physical stores, or both. For example on their own Shopify or WooCommerce store, with FLIK Checkout, or through a cashier system in their outlets.'],
   ['How do I know if I am eligible?','Start with a consultation. The FLIK team learns about your business, and we may ask for some business information to decide whether you are eligible.'],
   ['What can I use the funding for?','Growth: buying inventory, marketing campaigns, opening a new outlet, or keeping cash flow steady through busy seasons.'],
   ['How do I repay?','You sell as usual. A share of each sale goes toward settlement automatically, and you can track the outstanding amount and the latest payments in your dashboard.'],
   ['What does it cost?','One fixed margin, agreed before you sign. It does not compound and there are no hidden fees.'],
   ['Do I give up ownership of my business?','No. FLIK funds your stock, not your shares, so you keep full ownership of your brand.'],
-  ['How long does it take?','The process has four steps: a consultation, a simple integration with your store, the upfront funding, and then selling as usual. The FLIK team will give you a timeline during the consultation.']
+  ['How long does it take?','The process has four steps: a consultation, a simple integration with your online store or cashier system, the upfront funding, and then selling as usual. The FLIK team will give you a timeline during the consultation.']
 ];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
 /* ===== Funding steps + dashboard ===== */
-const STEPS=[['Consultation with the FLIK team','We learn about your business and its needs.'],['Easy integration','Activate the system in your store.'],['Upfront product purchase','Receive funding in advance to stock inventory.'],['Sell as usual','Settlement is deducted automatically as your products sell.']];
+const STEPS=[['Consultation with the FLIK team','We learn about your business and its needs.'],['Easy integration','Activate the system online or at your cashier.'],['Upfront product purchase','Receive funding in advance to stock inventory.'],['Sell as usual','Settlement is deducted automatically as your products sell.']];
 const FUND=[
   {state:'Reviewing your business information',pct:0,out:'—',rep:'—',list:[]},
-  {state:'Connecting your store to FLIK',pct:0,out:'—',rep:'—',list:[]},
+  {state:'Connecting your sales to FLIK',pct:0,out:'—',rep:'—',list:[]},
   {state:'Funding sent to your balance',pct:0,out:250000000,rep:0,list:[['10 Okt 2026','Funding received','+Rp 250.000.000']]},
   {state:'Auto settlement is running',pct:62,out:95000000,rep:155000000,list:[['14 Okt 2026','Auto settlement','−Rp 1.250.000'],['13 Okt 2026','Auto settlement','−Rp 2.180.000'],['12 Okt 2026','Auto settlement','−Rp 1.640.000']]}
 ];
