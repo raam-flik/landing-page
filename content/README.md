@@ -5,10 +5,10 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | File | Page | Live page |
 |---|---|---|
 | [00-menu-and-footer.md](00-menu-and-footer.md) | Top menu and footer (shared by every page) | – |
-| [01-homepage.md](01-homepage.md) | Homepage | [/v4/](https://landing-page-raams-projects-2709477f.vercel.app/v4/) |
-| [02-checkout.md](02-checkout.md) | Checkout | [/v4/checkout/](https://landing-page-raams-projects-2709477f.vercel.app/v4/checkout/) |
-| [03-shipping.md](03-shipping.md) | Shipping | [/v4/shipping/](https://landing-page-raams-projects-2709477f.vercel.app/v4/shipping/) |
-| [04-merchant-cash-advance.md](04-merchant-cash-advance.md) | Merchant Cash Advance | [/v4/funding/merchant-cash-advance/](https://landing-page-raams-projects-2709477f.vercel.app/v4/funding/merchant-cash-advance/) |
+| [01-homepage.md](01-homepage.md) | Homepage | [/](https://landing-page-raams-projects-2709477f.vercel.app/) |
+| [02-checkout.md](02-checkout.md) | Checkout | [/checkout/](https://landing-page-raams-projects-2709477f.vercel.app/checkout/) |
+| [03-shipping.md](03-shipping.md) | Shipping | [/shipping/](https://landing-page-raams-projects-2709477f.vercel.app/shipping/) |
+| [04-merchant-cash-advance.md](04-merchant-cash-advance.md) | Merchant Cash Advance | [/funding/merchant-cash-advance/](https://landing-page-raams-projects-2709477f.vercel.app/funding/merchant-cash-advance/) |
 | [product-facts.md](product-facts.md) | What each product does, and the claims we can make | – |
 | [AI-GUIDE.md](AI-GUIDE.md) | Instructions for the AI that applies your edits | – |
 

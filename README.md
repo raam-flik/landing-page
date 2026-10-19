@@ -1,16 +1,14 @@
 # FLIK Landing Page
 
-The new FLIK landing page (flik.co.id), covering the 3 core products: **Checkout**, **Shipping** and **Funding** (Merchant Cash Advance).
-
-**Version 4 is the final design.** It lives in `v4/`, and the site root (`/`) opens it.
+Clickable prototype of the new FLIK landing page (flik.co.id), covering the 3 core products: **Checkout**, **Shipping** and **Funding** (Merchant Cash Advance).
 
 | Page | Path | File |
 |---|---|---|
-| Homepage | `/v4/` | `v4/index.html` |
-| Checkout | `/v4/checkout/` | `v4/checkout/index.html` |
-| Shipping | `/v4/shipping/` | `v4/shipping/index.html` |
-| Merchant Cash Advance | `/v4/funding/merchant-cash-advance/` | `v4/funding/merchant-cash-advance/index.html` |
-| Merchant dashboard | `/v4/dashboard/` | `v4/dashboard/index.html` |
+| Homepage | `/` | `index.html` |
+| Checkout | `/checkout/` | `checkout/index.html` |
+| Shipping | `/shipping/` | `shipping/index.html` |
+| Merchant Cash Advance | `/funding/merchant-cash-advance/` | `funding/merchant-cash-advance/index.html` |
+| Merchant dashboard | `/dashboard/` | `dashboard/index.html` |
 
 Live: https://landing-page-raams-projects-2709477f.vercel.app/ (Vercel deploys every push to `main`).
 
@@ -22,8 +20,8 @@ All page text is in [`content/`](content/), one Markdown file per page, so the c
 
 - Each page is a single self-contained HTML file with inline CSS and JS. The Inter font loads from Google Fonts.
 - The homepage, Checkout, Shipping and Merchant Cash Advance pages link to each other through a small `ROUTES` table near the end of each file. Links to pages that don't exist yet show a "Page not in this prototype yet" toast.
-- Courier logos are in `v4/shipping/img/` and `v4/dashboard/img/`.
-- `vercel.json` sends `/` to `/v4/` and forwards old prototype links (`/v1/`, `/v2/`, `/v3/…`, `/brand/…`, `/dashboard/`) to their v4 page.
+- Courier logos are in `shipping/img/` and `dashboard/img/`.
+- `vercel.json` forwards links from earlier prototype rounds to the matching page.
 
 ## Style
 
@@ -34,11 +32,11 @@ All page text is in [`content/`](content/), one Markdown file per page, so the c
 
 ## Placeholders
 
-These are still prototypes. Mockup data (the store "Aruna Studio", prices, tracking numbers), news posts, the API code samples and the Merchant Cash Advance success story (a made-up merchant with a stock photo) are placeholders. Each page's open questions are listed under **Things to confirm** in its `content/` file.
+This is still a prototype. Mockup data (the store "Aruna Studio", prices, tracking numbers), news posts, the API code samples and the Merchant Cash Advance success story (a made-up merchant with a stock photo) are placeholders. Each page's open questions are listed under **Things to confirm** in its `content/` file.
 
 ## Run locally
 
 ```bash
 python3 -m http.server 8080
-# open http://localhost:8080/v4/
+# open http://localhost:8080/
 ```

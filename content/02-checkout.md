@@ -1,7 +1,7 @@
 # Checkout
 
-- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/v4/checkout/
-- **Page file:** `v4/checkout/index.html`
+- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/checkout/
+- **Page file:** `checkout/index.html`
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 

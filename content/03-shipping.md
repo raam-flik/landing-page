@@ -1,7 +1,7 @@
 # Shipping
 
-- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/v4/shipping/
-- **Page file:** `v4/shipping/index.html`
+- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/shipping/
+- **Page file:** `shipping/index.html`
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 

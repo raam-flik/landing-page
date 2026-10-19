@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>30-Second Checkout, 3× Faster | FLIK Checkout</title>
-<meta name="description" content="FLIK Checkout replaces the checkout on your Shopify or WooCommerce store. WhatsApp OTP login, saved details across every FLIK store, and multiple payment methods including QRIS, e-wallets and COD.">
-<link rel="canonical" href="https://flik.co.id/checkout">
-<link rel="alternate" hreflang="en" href="https://flik.co.id/checkout">
-<link rel="alternate" hreflang="id" href="https://flik.co.id/id/checkout">
-<link rel="alternate" hreflang="x-default" href="https://flik.co.id/checkout">
+<title>Ship for Up to 40% Less, All Couriers | FLIK Shipping</title>
+<meta name="description" content="FLIK Shipping compares every courier in one dashboard. Ship across Indonesia, Malaysia and Singapore for up to 40% less, single or bulk, with a 3% COD fee and real-time tracking.">
+<link rel="canonical" href="https://flik.co.id/shipping">
+<link rel="alternate" hreflang="en" href="https://flik.co.id/shipping">
+<link rel="alternate" hreflang="id" href="https://flik.co.id/id/shipping">
+<link rel="alternate" hreflang="x-default" href="https://flik.co.id/shipping">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FLIK Checkout","applicationCategory":"BusinessApplication","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"description":"A 30-second checkout for Shopify and WooCommerce stores with WhatsApp OTP login and multiple payment methods."}
+{"@context":"https://schema.org","@type":"Service","name":"FLIK Shipping","serviceType":"Shipping aggregator","areaServed":["ID","MY","SG"],"provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"description":"Compare every courier, ship single or bulk across Indonesia, COD with a 3% fee."}
 </script>
 <style>
 /* ===== Tokens (Stripe-style palette, landing page only) ===== */
@@ -419,7 +419,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 }
 @keyframes marq{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-/* ===== v3: stripe.com homepage layout ===== */
+/* ===== stripe.com homepage layout ===== */
 .pad-t{padding-top:112px}
 .sec-h{max-width:1100px}
 /* Hero */
@@ -793,279 +793,226 @@ section:has(> .wrap > .seg){container-type:inline-size}
 @media (max-width:1080px){.seg{--bleed:16px}}
 @media (max-width:760px){.seg{--bleed:0px}}
 
-/* ===== Checkout page (content follows stripe.com/payments/checkout) ===== */
+/* ===== Shipping page (content from biteship.com and shiprocket.in, FLIK facts only) ===== */
 html{scroll-padding-top:88px}
 .hdr{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background .2s,border-color .2s}
 .hdr:hover,.hdr:focus-within,.hdr.scrolled{background:#fff}
 
-/* Hero: text left, phone right, soft mesh behind the phone (clipped at the guide lines) */
-.ch{position:relative;overflow:hidden;margin-top:-69px;padding-top:150px}
-.ch::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(106,75,255,.13) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);clip-path:inset(0 max(16px,calc(50% - 633px)))}
-.ch.guides::before,.ch.guides::after{z-index:3}
-.ch-in{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
-.ch-h{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px}
-.ch-h .soft{color:var(--muted)}
-.ch .lead{max-width:540px;margin-top:22px}
-.ch .hero-cta{justify-content:flex-start;margin-top:32px}
+/* Form fields (same as the MCA application) */
+.ap-in,.ap-sel{height:42px;border:1px solid var(--line);border-radius:6px;background:#fff;display:flex;align-items:center;gap:6px;padding:0 12px;transition:border-color .15s,box-shadow .15s}
+.ap-in:focus-within,.ap-sel:focus-within{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.ap-in span{font-size:14px;color:var(--muted)}
+.ap-in input{border:0;outline:0;flex:1;min-width:0;font-size:15px;background:transparent}
+.ap-sel{padding:0;position:relative}
+.ap-sel::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.ap-sel select{appearance:none;-webkit-appearance:none;border:0;outline:0;background:transparent;width:100%;height:100%;padding:0 30px 0 12px;font-size:14.5px;color:var(--ink);cursor:pointer}
+
+/* Small shared controls (same as Checkout) */
 .ch-facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:14px;color:var(--body)}
 .ch-facts li{display:flex;align-items:center;gap:8px}
 .ch-facts li span{color:var(--primary);display:flex}
-.ch-stage{position:relative;height:600px;display:flex;align-items:center;justify-content:center}
-.ch-glow{position:absolute;inset:4% -6% 0 4%;border-radius:40% 60% 55% 45%;background:radial-gradient(40% 45% at 30% 65%,#FF7A2E,transparent 70%),radial-gradient(45% 50% at 70% 30%,#00E5FF,transparent 70%),radial-gradient(40% 45% at 65% 75%,#FF2DB8,transparent 70%);filter:blur(50px);opacity:.55;animation:ch-glow 12s ease-in-out infinite alternate}
-@keyframes ch-glow{to{transform:rotate(8deg) scale(1.06)}}
-.ch-cart{position:absolute;left:-8px;top:110px;z-index:3;width:210px;background:#fff;border-radius:10px;box-shadow:var(--sh-lg);padding:14px;font-size:12.5px;display:grid;gap:8px}
-.ch-cart small{font-size:11px}
-.ch-cart-btn{height:30px;border-radius:6px;background:var(--ink);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}
-.ch-cart-btn.tap{transform:scale(.95);background:var(--primary)}
-.ch-timer{position:absolute;right:0;bottom:110px;z-index:3;display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;box-shadow:var(--sh-lg);padding:10px 16px 10px 12px;font-size:13px;color:var(--muted)}
-.ch-timer>span:first-child{width:26px;height:26px;border-radius:50%;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center}
-.ch-timer b{font-size:18px;font-weight:500;color:var(--ink);min-width:38px}
-
-/* Phone mockup */
-.ph{position:relative;z-index:2;width:290px;height:560px;background:#fff;border-radius:40px;box-shadow:0 0 0 10px #002D5D,var(--sh-lg);padding:44px 18px 18px;font-size:13px;overflow:hidden;display:flex;flex-direction:column}
-.ph-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:24px;border-radius:999px;background:#002D5D}
-.ph-top{display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--line-soft)}
-.ph-top b{font-weight:600;font-size:14px}
-.ph-logo{width:24px;height:24px;border-radius:6px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.ph-sec{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:11px;color:var(--muted)}
-.ph-item{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line-soft)}
-.ph-item b{display:block;font-weight:500}.ph-item small{color:var(--muted);font-size:11.5px}
-.ph-item .num{margin-left:auto;font-weight:500}
-.ph-thumb{width:38px;height:38px;border-radius:8px;flex:none;background:linear-gradient(135deg,#EEEAFF,#FFC2EA)}
-.ph-thumb.t2{background:linear-gradient(135deg,#FFE4D2,#FFB384)}
-.ph-screens{position:relative;flex:1;margin-top:14px}
-.ph-s{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateX(16px);transition:opacity .35s,transform .35s;pointer-events:none}
-.ph-s.on{opacity:1;transform:none}
-.ph-s label{font-size:12px;font-weight:500;color:var(--body)}
-.ph-in{height:40px;border:1px solid var(--primary);box-shadow:0 0 0 1px var(--primary);border-radius:8px;display:flex;align-items:center;gap:6px;padding:0 12px;font-size:14px}
-.ph-in .cc{color:var(--muted)}
-.caret{display:inline-block;width:1.5px;height:16px;background:var(--primary);animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.ph-btn{height:40px;border-radius:8px;background:var(--primary);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}
-.ph-btn.tap{transform:scale(.96);background:var(--primary-hover)}
-.ph-note{font-size:12px;color:var(--muted);text-align:center;line-height:1.5}
-.ph-otp{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.ph-otp i{height:44px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:18px;font-weight:500;transition:border-color .2s}
-.ph-otp i.f{border-color:var(--primary)}
-.ph-ok{display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:8px;background:var(--ok-soft);color:#0E6E48;font-size:12px}
-.ph-r{display:grid;grid-template-columns:1fr auto;gap:0 8px;padding:7px 0;border-bottom:1px solid var(--line-soft);opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
-.ph-r.in{opacity:1;transform:none}
-.ph-r small{grid-column:1/-1;font-size:11px;color:var(--muted);display:flex;gap:6px;align-items:center}
-.ph-r small em{font-style:normal;font-size:10px;color:var(--primary);background:var(--primary-soft);padding:0 6px;border-radius:999px}
-.ph-r b{font-weight:500;font-size:12.5px}
-.ph-r.rw .num{color:var(--ok)}
-.ph-tot{display:flex;justify-content:space-between;font-weight:600;font-size:14px;margin-top:auto}
-.ph-s[data-s="3"]{align-items:center;justify-content:center;text-align:center}
-.ph-done{font-size:18px;font-weight:500}
-
-/* Reduce friction */
-.fx{display:grid;grid-template-columns:330px 1fr;gap:48px;margin-top:56px;align-items:center}
-.fx-list{list-style:none;display:grid;gap:2px}
-.fx-list li{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;cursor:pointer;transition:background .2s,box-shadow .2s}
-.fx-list li:hover{background:var(--bg-alt)}
-.fx-list li.on{background:#fff;box-shadow:var(--sh)}
-.fx-list b{display:block;font-weight:500;font-size:15px}
-.fx-list li div span{display:block;color:var(--muted);font-size:13.5px;margin-top:1px}
-.fx-ic{width:32px;height:32px;border-radius:8px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none;transition:background .2s,color .2s}
-.fx-list li.on .fx-ic{background:var(--primary);color:#fff}
-.fx-g{position:relative;padding:40px;border-radius:16px;background:var(--bg-alt);overflow:hidden}
-.fx-g::before{content:"";position:absolute;inset:-10%;background:radial-gradient(40% 50% at 15% 85%,#FFA26B,transparent 70%),radial-gradient(45% 55% at 85% 20%,#8B73FF,transparent 70%);filter:blur(40px);opacity:.55}
-.fx-win{position:relative;background:#fff;border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
-.fx-win .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
-.fx-win .co-bar{position:relative}
-.fx-body{display:grid;grid-template-columns:1.25fr 1fr}
-.fx-form{padding:22px;display:grid;gap:12px;align-content:start}
-.fx-sum{padding:22px;background:var(--bg-alt);border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
-.fx-el{position:relative;border-radius:8px;transition:opacity .3s,box-shadow .3s,background .3s}
-.fx-win.hl .fx-el{opacity:.45}
-.fx-win.hl .fx-el.on{opacity:1;box-shadow:0 0 0 2px var(--primary),0 0 0 7px rgba(106,75,255,.14);background:#fff}
-.fx-el label{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-bottom:4px}
-.fx-in{height:36px;border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 10px;font-size:13px;white-space:nowrap;overflow:hidden}
-.fx-in.warn{border-color:var(--warn)}
-.fx-hint{display:block;font-size:11.5px;color:#8A5A12;margin-top:4px}
-.fx-hint b{font-weight:600}
-.fx-acc{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px}
-.fx-acc b{display:block;font-weight:500}.fx-acc small{color:var(--muted);font-size:11.5px}.fx-acc .pill{margin-left:auto}
-.fx-av{width:30px;height:30px;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-size:11.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.fx-in .caret{height:14px;margin-right:auto;margin-left:-6px}
-.fx-sug{display:none;position:absolute;left:0;right:0;top:100%;margin-top:4px;z-index:2;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:var(--sh-lg);padding:4px}
-.fx-sug>span{display:flex;align-items:center;gap:6px;padding:7px 8px;border-radius:6px;font-size:12.5px}
-.fx-sug>span:first-child{background:var(--primary-soft)}
-.fx-sug [data-ic]{color:var(--muted);display:flex}
-.fx-el.fx-addr.on .fx-sug{display:block}
-.fx-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fx-items{display:grid;gap:8px;padding:4px}
-.fx-it{display:flex;align-items:center;gap:8px}
-.fx-it .ph-thumb{width:32px;height:32px}
-.fx-it b{display:block;font-weight:500;font-size:12.5px}.fx-it small{color:var(--muted);font-size:11px}
-.fx-it .grow{flex:1;min-width:0}
-.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:6px;height:24px}
-.qty i{font-style:normal;width:20px;text-align:center;color:var(--muted)}
-.qty b{font-size:12px;min-width:12px;text-align:center}
-.fx-rew{padding:2px 4px}
-.fx-rew .co-row span:first-child{display:flex;align-items:center;gap:6px;color:var(--ok)}
-.fx-rew .num{color:var(--ok)}
-.fx-sum .ph-btn{margin-top:auto;height:38px}
-.fx-sum .co-total{margin-top:2px}
-
-/* Paths band (full width) */
-.band{background:var(--bg-alt);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:112px 0}
-.flow{display:grid;grid-template-columns:1fr 64px 1fr 80px 1.15fr;align-items:center;margin-top:56px}
-.fl-n{background:#fff;border:1px solid var(--line-soft);border-radius:12px;box-shadow:var(--sh);padding:20px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
-.fl-n small{font-size:12px;color:var(--muted)}
-.fl-n b{font-weight:500;font-size:16px}
-.fl-n>span:last-child{font-size:13.5px;color:var(--muted);line-height:1.5}
-.fl-ic{width:34px;height:34px;border-radius:8px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
-.fl-mid{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),var(--sh-lg)}
-.fl-mid .fl-ic{background:var(--primary);color:#fff}
-.fl-c{height:2px;position:relative;background:repeating-linear-gradient(90deg,#D2C8FF 0 6px,transparent 6px 12px)}
-.fl-c i{position:absolute;top:50%;left:0;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--primary);animation:fl-dot 2.4s linear infinite}
-@keyframes fl-dot{to{left:calc(100% - 8px)}}
-.fl-split{align-self:stretch;position:relative}
-.fl-split svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.fl-split path{fill:none;stroke:#D2C8FF;stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;animation:fl-dash 1.2s linear infinite}
-@keyframes fl-dash{to{stroke-dashoffset:-12}}
-.fl-col{display:grid;gap:16px}
-
-/* Payment methods (dark) */
-#methods{overflow:hidden}
-#methods .sec-h .soft{color:#AAB4CC}
-.pmx{display:grid;grid-template-columns:1fr 330px 1fr;gap:40px;align-items:center;margin-top:56px}
-.pmx-tabs{display:grid;gap:4px}
-.pmx-tabs button{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:12px 14px;border-radius:10px;color:#AAB4CC;transition:background .2s,color .2s}
-.pmx-tabs button:hover{background:rgba(255,255,255,.04)}
-.pmx-tabs button.on{background:var(--dark-2);color:#fff;box-shadow:inset 0 0 0 1px var(--dark-line)}
-.pmx-tabs b{display:block;font-weight:500;font-size:15px}
-.pmx-tabs small{display:block;font-size:13px;color:#7F8BAE;margin-top:2px}
-.pmx-tabs .pi{width:32px;height:32px;border-radius:8px;background:rgba(0,229,255,.16);color:#7FF3FF;display:flex;align-items:center;justify-content:center;flex:none}
-.pmx-tabs button.on .pi{background:#00E5FF;color:#fff}
-.pmx-stage{position:relative;display:flex;justify-content:center}
-.pmx-stage::before{content:"";position:absolute;inset:10% -30%;background:radial-gradient(40% 45% at 35% 60%,#FF2DB8,transparent 70%),radial-gradient(40% 45% at 65% 40%,#6A4BFF,transparent 70%);filter:blur(50px);opacity:.55}
-.pmx-ribbon{position:absolute;left:calc(50% - 50vw);width:100vw;top:-22%;height:120%;opacity:.3;filter:blur(28px);pointer-events:none;z-index:0}
-.pmx-stage .ph{z-index:1}
-.pmx-tabs,.pmx-side{position:relative;z-index:2}
-.ph.ph-sm{height:520px;box-shadow:0 0 0 10px #1c4573,0 30px 60px -12px rgba(0,0,0,.5);color:var(--ink)}
-.pmx-scr{flex:1;display:flex;flex-direction:column;gap:10px;padding-top:14px;animation:pmx-in .35s ease}
-@keyframes pmx-in{from{opacity:0;transform:translateY(8px)}}
-.pmx-scr h6{font-size:12px;font-weight:500;color:var(--muted)}
-.pmx-amt{font-size:24px;font-weight:300;letter-spacing:-.4px}
-.pmx-qr{width:150px;height:150px;margin:4px auto;padding:8px;border:1px solid var(--line);border-radius:10px}
-.pmx-qr svg{width:100%;height:100%}
-.pmx-c{text-align:center;font-size:12px;color:var(--muted)}
-.pmx-c b{color:var(--ink);font-weight:500}
-.pmx-va{border:1px dashed var(--line);border-radius:8px;padding:12px;text-align:center}
-.pmx-va b{display:block;font-family:var(--mono);font-size:16px;letter-spacing:.5px;margin-top:2px}
-.pmx-copy{font-size:12px;color:var(--primary);font-weight:500}
-.pmx-side{color:#AAB4CC}
-.pmx-n{display:block;font-size:56px;font-weight:300;letter-spacing:-2px;line-height:1;color:#fff}
-.pmx-side p{margin-top:12px;font-size:15px;line-height:1.6}
-.pmx-side p b{color:#fff;font-weight:500}
-.pmx-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.pmx-chips span{height:30px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;border:1px solid var(--dark-line);font-size:13px;color:#D7DEF0;transition:border-color .2s,background .2s,color .2s}
-.pmx-chips span.on{border-color:#00E5FF;background:rgba(0,229,255,.16);color:#fff}
-
-/* Dashboard */
-.dsh-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--line-soft);margin-top:40px}
+.mh-cap{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.dseg{display:inline-flex;border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px;background:#fff}
+.dseg button{height:28px;padding:0 12px;border-radius:6px;font-size:12.5px;color:var(--muted)}
+.dseg button.on{background:var(--primary-soft);color:var(--primary);font-weight:500}
+.dsh-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--line-soft)}
 .dsh-tabs button{display:flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:7px;font-size:14.5px;font-weight:500;color:var(--muted);transition:background .2s,color .2s,box-shadow .2s}
 .dsh-tabs button.on{background:#fff;color:var(--ink);box-shadow:var(--sh)}
 .dsh-tabs button.on [data-ic]{color:var(--primary)}
 .dsh-tabs [data-ic]{display:flex}
-.dsh-win{margin-top:20px;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;background:#fff;font-size:13px}
-.dsh-win .co-bar{position:relative}
-.dsh-win .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
-.dsh-body{display:grid;grid-template-columns:220px 1fr;min-height:420px}
-.dsh-side{border-right:1px solid var(--line);background:var(--bg-alt);padding:18px 12px;display:flex;flex-direction:column;gap:2px}
-.dsh-f{margin:0 8px 14px}
-.dsh-side small{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;padding:12px 10px 6px}
-.dsh-side>span[data-t]{padding:8px 10px;border-radius:6px;color:var(--body);cursor:pointer;transition:background .2s,color .2s}
-.dsh-side>span[data-t].on{background:#fff;color:var(--primary);font-weight:500;box-shadow:var(--sh)}
-.dsh-panel{padding:26px;animation:pmx-in .35s ease}
-.dsh-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.dsh-h b{font-size:17px;font-weight:500}
-.dsh-cz{display:grid;grid-template-columns:1fr 280px;gap:28px}
-.dsh-cz h6{font-size:12px;font-weight:500;color:var(--muted);margin:0 0 8px}
-.dsh-cz h6+*{margin-bottom:18px}
-.sw{display:flex;gap:8px}
-.sw button{width:30px;height:30px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 2px #fff;outline:1px solid var(--line);transition:outline-color .2s}
-.sw button.on{outline:2px solid var(--c)}
-.tgl{display:grid;gap:6px}
-.tgl button{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;text-align:left}
-.tgl button span{display:flex;align-items:center;gap:8px}
-.tgl button small{color:var(--muted);font-size:12px}
-.pv{border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--sh);display:grid;gap:8px;align-content:start;--acc:var(--primary)}
-.pv-h{display:flex;align-items:center;gap:8px;font-weight:600}
-.pv-h i{width:22px;height:22px;border-radius:6px;background:var(--acc);transition:background .3s}
-.pv-o{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:12.5px}
-.pv-o.on{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
-.pv-o .rd{width:12px;height:12px;border-radius:50%;border:1.5px solid #B7C0CD}
-.pv-o.on .rd{border:4px solid var(--acc)}
-.pv-b{height:36px;border-radius:7px;background:var(--acc);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:background .3s;margin-top:4px}
-.kpi{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:10px;margin-bottom:20px}
-.kpi div{padding:14px 16px}
-.kpi div+div{border-left:1px solid var(--line)}
-.kpi small{display:block;color:var(--muted);font-size:12px}
-.kpi b{display:block;font-size:24px;font-weight:300;letter-spacing:-.4px;margin-top:2px}
-.kpi em{font-style:normal;font-size:12px;color:var(--ok)}
-.fun{display:grid;gap:10px}
-.fun div{display:grid;grid-template-columns:140px 1fr 44px;gap:12px;align-items:center}
-.fun span{color:var(--body)}
-.fun i{height:22px;border-radius:5px;background:linear-gradient(90deg,var(--primary),#8B73FF);width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
-.fun b{font-weight:500;text-align:right}
-.shp{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.shp>div{min-width:0}
-.wh>span:last-child{min-width:0}
-.shp h6{font-size:12px;font-weight:500;color:var(--muted);margin:0 0 8px}
-.wh{border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;gap:10px;align-items:flex-start;margin-bottom:18px}
-.wh [data-ic]{color:var(--primary);display:flex}
-.wh b{display:block;font-weight:500}.wh small{color:var(--muted);font-size:12px}
-.dseg{display:inline-flex;border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
-.dseg button{height:30px;padding:0 12px;border-radius:6px;font-size:12.5px;color:var(--muted)}
-.dseg button.on{background:var(--primary-soft);color:var(--primary);font-weight:500}
+.rc-ex{font-size:12px;color:var(--faint)}
 
-/* After the payment: ruled flow with a running progress line */
-.flow4{position:relative}
-.flow4::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:var(--p,0%);background:var(--primary);transition:width .6s cubic-bezier(.2,.8,.2,1)}
-.flow4 .stat{gap:10px;transition:background .3s}
-.flow4 .stat b{font-size:28px;letter-spacing:-.5px}
-.flow4 .stat span:not(.f4-n):not(.f4-ic){font-size:15px}
-.f4-n{font-family:var(--mono);font-size:12px!important;color:var(--faint)!important}
-.stats4 .stat .f4-ic{padding:0}
-.f4-ic{width:36px;height:36px;border-radius:50%;background:var(--bg-alt);color:var(--muted);display:flex!important;align-items:center;justify-content:center;transition:background .3s,color .3s}
-.flow4 .stat.on .f4-ic{background:var(--primary);color:#fff}
-.flow4 .stat.done .f4-ic{background:var(--primary-soft);color:var(--primary)}
-#after{padding-bottom:0}
-#after+section{padding-top:112px}
-#dash{padding-bottom:0}
+/* Hero: text left, rate checker right, route lines behind (clipped at the guide lines) */
+.sh{position:relative;overflow:hidden;margin-top:-69px;padding-top:150px}
+.sh.guides::before,.sh.guides::after{z-index:3}
+.sh-route{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;clip-path:inset(0 max(16px,calc(50% - 633px)))}
+.sh-route path{fill:none;stroke:url(#rg);stroke-width:2;stroke-dasharray:2 10;stroke-linecap:round;opacity:.55;animation:sh-dash 2.4s linear infinite}
+.sh-route path.r2{opacity:.3;animation-duration:3.4s}
+@keyframes sh-dash{to{stroke-dashoffset:-48}}
+.sh-in{display:grid;grid-template-columns:1fr 470px;gap:56px;align-items:center;position:relative;z-index:2}
+.sh-h{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px}
+.sh-h .soft{color:var(--muted)}
+.sh .lead{max-width:540px;margin-top:22px}
+.sh .hero-cta{justify-content:flex-start;margin-top:32px}
+.sh-stage{position:relative;padding:24px 0 40px}
+.sh-glow{position:absolute;inset:-6% -14% 0 -8%;background:radial-gradient(40% 45% at 25% 70%,#FF7A2E,transparent 70%),radial-gradient(45% 50% at 75% 25%,#00E5FF,transparent 70%),radial-gradient(40% 45% at 70% 80%,#FF2DB8,transparent 70%);filter:blur(50px);opacity:.5;animation:ch-glow 12s ease-in-out infinite alternate}
+@keyframes ch-glow{to{transform:rotate(-6deg) scale(1.06)}}
 
-/* Pick your path */
+/* Rate checker */
+.rc{position:relative;background:#fff;border-radius:14px;box-shadow:var(--sh-lg);padding:20px;font-size:13px}
+.rc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.rc-h b{font-size:16px;font-weight:500}
+.rc-f{display:grid;grid-template-columns:1fr 32px 1fr 92px;gap:8px;align-items:end}
+.rc-in label{display:block;font-size:12px;font-weight:500;color:var(--muted);margin-bottom:5px}
+.rc-in .ap-in,.rc-in .ap-sel{height:40px}
+.rc-in .ap-in input{font-size:14.5px}
+.rc-sw{width:32px;height:40px;border-radius:6px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.rc-sw:hover{background:var(--bg-alt);color:var(--primary)}
+.rc-routes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.rc-routes button{height:26px;padding:0 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--body);transition:border-color .15s,background .15s,color .15s}
+.rc-routes button.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary)}
+.rc-sort{display:flex;align-items:center;justify-content:space-between;margin:14px 0 8px;font-size:12.5px}
+.rc-list{display:grid;gap:6px;min-height:276px;align-content:start}
+.rr{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px;animation:rr-in .35s cubic-bezier(.2,.8,.2,1) both}
+.rr:first-child{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+@keyframes rr-in{from{opacity:0;transform:translateY(6px)}}
+.rr-lg{width:34px;height:34px;border-radius:8px;background:var(--tile,#EEF3F9);color:var(--ink);font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:-.2px}
+.rr b{display:block;font-weight:500}
+.rr small{color:var(--muted);font-size:11.5px}
+.rr-p{text-align:right}
+.rr-p b{font-variant-numeric:tabular-nums}
+.rr-p s{display:block;color:var(--faint);font-size:11px}
+.rr .pill{margin-left:6px;height:18px;font-size:10.5px}
+
+/* Services: five cards in a row */
+.sv5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:48px}
+.sv{background:var(--bg-alt);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden;transition:background .25s,box-shadow .25s,transform .25s}
+.sv:hover{background:#fff;box-shadow:0 18px 36px -18px rgba(50,50,93,.28),0 8px 16px -10px rgba(0,0,0,.12);transform:translateY(-2px)}
+.sv-ic{width:36px;height:36px;border-radius:10px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh);margin-bottom:6px}
+.sv h3{font-size:19px;font-weight:400;letter-spacing:-.3px}
+.sv p{font-size:14px;color:var(--body);line-height:1.5}
+.sv-meter{margin-top:auto;padding-top:14px;display:grid;gap:6px;font-size:11.5px;color:var(--muted)}
+.sv-meter div{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center}
+.sv-meter i{height:6px;border-radius:999px;background:var(--line);position:relative;overflow:hidden}
+.sv-meter i::after{content:"";position:absolute;inset:0;width:var(--v);border-radius:inherit;background:var(--primary)}
+.sv-meter div:last-child i::after{background:#FF2DB8}
+.sv-pk{font-size:12px;color:var(--primary);background:var(--primary-soft);border-radius:999px;padding:3px 10px;align-self:flex-start}
+
+/* Single / bulk band */
+.band{background:var(--bg-alt);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:112px 0}
+.bk{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.bk .lead{margin:18px 0 28px}
+.bk-pts{list-style:none;display:grid;gap:10px;margin-top:24px}
+.bk-pts li{display:flex;gap:10px;font-size:15px;color:var(--body);animation:rr-in .35s both}
+.bk-pts li span{color:var(--primary);display:flex;margin-top:3px}
+.bk-g{position:relative;background:#fff;border:1px solid var(--line-soft);border-radius:16px;box-shadow:var(--sh);padding:20px}
+.bk-svg{width:100%;height:auto;display:block}
+.bk-svg .ln{fill:none;stroke:#D2C8FF;stroke-width:1.6;stroke-dasharray:5 6;animation:sh-dash 1.6s linear infinite}
+.bk-svg .nd rect{fill:#fff;stroke:var(--line)}
+.bk-svg .wh rect{fill:var(--primary-soft);stroke:var(--primary)}
+.bk-svg text{font:500 12px var(--font);fill:var(--ink)}
+.bk-svg text.s{font-weight:400;font-size:10.5px;fill:var(--muted)}
+.bk-svg .dot{fill:var(--primary)}
+.bk-svg g{animation:bk-in .4s both}
+@keyframes bk-in{from{opacity:0}}
+.bk-bar{display:flex;align-items:center;gap:12px;margin-top:12px;box-shadow:none;border:1px solid var(--line);flex-wrap:wrap}
+.bk-bar .grow{flex:1;min-width:160px}
+.bk-bar b{display:block;font-weight:500}
+.bk-bar small{color:var(--muted);font-size:12px}
+.bk-bar .btn{height:34px;font-size:13.5px;padding:0 14px}
+
+/* Courier performance */
+.cp{display:grid;grid-template-columns:240px 1fr;gap:32px;margin-top:48px;align-items:start}
+.cp-regions{display:grid;gap:4px}
+.cp-regions button{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;text-align:left;font-size:15px;color:var(--body);transition:background .2s,box-shadow .2s,color .2s}
+.cp-regions button:hover{background:var(--bg-alt)}
+.cp-regions button.on{background:#fff;box-shadow:var(--sh);color:var(--ink);font-weight:500}
+.cp-regions small{font-size:12px;color:var(--faint);font-weight:400}
+.cp-win{border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;background:#fff;font-size:13px}
+.cp-win .co-bar{position:relative}
+.cp-win .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.cp-head,.cp-row{display:grid;grid-template-columns:1.3fr 1.4fr 1.4fr 80px;gap:16px;align-items:center;padding:12px 20px}
+.cp-head{background:var(--bg-alt);color:var(--muted);font-size:12px;border-bottom:1px solid var(--line)}
+.cp-row{border-bottom:1px solid var(--line-soft);animation:rr-in .35s both}
+.cp-row .who4{display:flex;align-items:center;gap:10px}
+.cp-row .who4 b{font-weight:500}
+.cp-row .pill{margin-left:4px}
+.cp-bar{display:grid;grid-template-columns:1fr 40px;gap:8px;align-items:center}
+.cp-bar i{height:8px;border-radius:999px;background:var(--line-soft);position:relative;overflow:hidden}
+.cp-bar i::after{content:"";position:absolute;inset:0;width:var(--v);background:var(--primary);border-radius:inherit;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.cp-bar.b2 i::after{background:#8B73FF}
+.cp-bar span{text-align:right;font-variant-numeric:tabular-nums}
+
+/* COD (dark) */
+#cod{overflow:hidden}
+#cod .sec-h .soft{color:#AAB4CC}
+.cod{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.cod-fee{display:flex;align-items:baseline;gap:16px;margin-top:36px;padding-top:28px;border-top:1px solid var(--dark-line)}
+.cod-fee b{font-size:72px;font-weight:300;letter-spacing:-2px;line-height:1}
+.cod-fee span{color:#AAB4CC;font-size:16px;max-width:220px}
+.cod-pts{list-style:none;display:grid;gap:10px;margin:24px 0}
+.cod-pts li{display:flex;gap:10px;color:#D7DEF0;font-size:15px}
+.cod-pts li span{color:#00E5FF;display:flex;margin-top:3px}
+.link.lt{color:#7FF3FF}
+.link.lt:hover{color:#fff}
+.cod-g{position:relative}
+.cod-g::before{content:"";position:absolute;inset:-10% -10%;background:radial-gradient(40% 45% at 35% 60%,#FF2DB8,transparent 70%),radial-gradient(40% 45% at 70% 35%,#6A4BFF,transparent 70%);filter:blur(50px);opacity:.45}
+.cod-card{position:relative;background:var(--dark-2);border:1px solid var(--dark-line);border-radius:14px;padding:26px;color:#fff;box-shadow:0 30px 60px -12px rgba(0,0,0,.5)}
+.cod-card>small{color:#AAB4CC;font-size:12.5px}
+.cod-bal{display:block;font-size:36px;font-weight:300;letter-spacing:-.8px;margin:4px 0 18px}
+.cod-list{display:grid;min-height:228px;align-content:start}
+.cod-it{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--dark-line);animation:mh-in .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes mh-in{from{opacity:0;transform:translateY(-8px)}}
+.cod-it i{width:32px;height:32px;border-radius:50%;background:rgba(0,229,255,.16);color:#7FF3FF;display:flex;align-items:center;justify-content:center}
+.cod-it b{display:block;font-weight:500;font-size:13.5px}
+.cod-it small{color:#7F8BAE;font-size:12px}
+.cod-it .num{font-size:13.5px}
+.cod-it .up{color:#5BD6A0}
+.cod-act{display:flex;gap:8px;margin-top:16px}
+.cod-act .btn{height:36px;font-size:14px;cursor:default}
+
+/* Tracking + RTO */
+.tk{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.tk-card{border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-lg);padding:24px;background:#fff}
+.tk-h{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.tk-h b{display:block;font-weight:500;font-size:16px}.tk-h small{color:var(--muted);font-size:13px}
+.tk-ic{width:36px;height:36px;border-radius:10px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.tk-f{display:flex;gap:8px}
+.tk-f .ap-in{flex:1}
+.tk-f .ap-in input{font-family:var(--mono);font-size:14px}
+.tk-f .btn{height:42px}
+.tk-res{margin-top:18px;min-height:300px}
+.tk-sum{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:var(--bg-alt);margin-bottom:14px}
+.tk-sum b{display:block;font-weight:500}.tk-sum small{color:var(--muted);font-size:12px}
+.tl2{display:grid}
+.tl2>div{display:grid;grid-template-columns:16px 1fr auto;gap:12px;position:relative;padding-bottom:14px;animation:rr-in .35s both}
+.tl2>div::before{content:"";position:absolute;left:7px;top:16px;bottom:0;width:1.5px;background:var(--line)}
+.tl2>div:last-child::before{display:none}
+.tl2 i{width:15px;height:15px;border-radius:50%;border:2px solid #C5CEDA;background:#fff;margin-top:2px}
+.tl2>div.cur i{border-color:var(--primary);background:var(--primary);box-shadow:0 0 0 4px var(--primary-soft)}
+.tl2 b{display:block;font-weight:500;font-size:13.5px}
+.tl2 span{font-size:12.5px;color:var(--muted)}
+.tl2 time{font-size:12px;color:var(--faint);white-space:nowrap}
+.tk-side{display:grid;gap:22px}
+.tk-pt{display:flex;gap:14px}
+.tk-pt b{display:block;font-weight:500;font-size:16px;margin-bottom:2px}
+.tk-rto{box-shadow:none;border:1px solid var(--line);padding:18px}
+.tk-rto .pill small{font-weight:400;margin-left:4px;opacity:.8}
+.tk-bars{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end;height:110px;margin-top:14px}
+.tk-bars div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%;font-size:11px;color:var(--muted)}
+.tk-bars i{width:100%;max-width:30px;border-radius:5px 5px 2px 2px;background:var(--primary-soft);height:0;transition:height .9s cubic-bezier(.2,.8,.2,1)}
+.tk-bars div:last-child i{background:var(--primary)}
+
+/* Integrations (same cards as Checkout) */
 .pk3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
 .pk{border:1px solid var(--line);border-radius:12px;padding:0 0 24px;display:flex;flex-direction:column;gap:8px;overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .2s}
 .pk:hover{border-color:transparent;box-shadow:0 18px 36px -18px rgba(50,50,93,.28),0 8px 16px -10px rgba(0,0,0,.12);transform:translateY(-2px)}
 .pk>*:not(.pk-g){margin:0 24px}
-.pk-g{height:190px;margin-bottom:16px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden}
+.pk-g{height:190px;margin-bottom:16px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px}
 .pk-g .minip{width:100%;max-width:280px;display:grid;gap:8px}
-.pk-g.dk{background:var(--dark);align-items:center;justify-content:flex-start}
-.pk-g.dk .code{font-size:12px;line-height:1.7}
 .pk h3{font-size:20px;font-weight:400;letter-spacing:-.3px;margin-top:6px}
 .pk .link{margin-top:auto;padding-top:6px;font-style:normal}
 .pk:hover .ha .ha-l{opacity:1}.pk:hover .ha .ha-t{transform:translateX(3px)}
-.pk-tg{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px solid var(--line-soft);font-size:12.5px}
+.pk-tg{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line-soft);font-size:12.5px}
 .pk-pl{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line-soft)}
 .pk-pl b{display:block;font-weight:500;font-size:12.5px}.pk-pl small{color:var(--muted);font-size:11.5px}
 .pk-pl .grow{flex:1;min-width:0}
 .pk-ic{width:28px;height:28px;border-radius:6px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
 
-/* At a glance */
-.gl3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.gl{background:#fff;border:1px solid var(--line-soft);border-radius:12px;padding:28px}
-.gl h3{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500;padding-bottom:16px;margin-bottom:8px;border-bottom:1px solid var(--line-soft)}
-.gl h3 [data-ic],.gl h3 svg{color:var(--primary)}
-.gl ul{list-style:none;display:grid}
-.gl li{display:flex;gap:10px;padding:8px 0;font-size:14.5px;color:var(--body);line-height:1.45}
-.gl li svg{color:var(--primary);flex:none;margin-top:2px}
+/* Who it is for */
+.sg3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.sg{border-radius:12px;background:var(--bg-alt);padding:28px;display:flex;flex-direction:column;gap:8px;transition:background .25s,box-shadow .25s,transform .25s}
+.sg:hover{background:#fff;box-shadow:0 18px 36px -18px rgba(50,50,93,.28),0 8px 16px -10px rgba(0,0,0,.12);transform:translateY(-2px)}
+.sg:hover .ha .ha-l{opacity:1}.sg:hover .ha .ha-t{transform:translateX(3px)}
+.sg-ic{width:40px;height:40px;border-radius:10px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh);margin-bottom:8px}
+.sg>b{font-size:20px;font-weight:400;letter-spacing:-.3px}
+.sg>span:not(.sg-ic){font-size:15px;color:var(--body);line-height:1.55}
+.sg-k{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+.sg-k span{font-size:12.5px;color:var(--muted);line-height:1.4}
+.sg-k b{display:block;font-size:16px;font-weight:500;color:var(--ink)}
+.sg .link{margin-top:auto}
 
-/* Shared pieces from the MCA page */
-.mh-cap{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+/* Shared pieces (same as MCA and Checkout) */
 .stats-sec{container-type:inline-size;padding-bottom:112px}
 .stats-h{max-width:820px}
 .stats4{--bleed:calc(max(0px,50cqw - 590px) + 32px - max(16px,50cqw - 633px));display:grid;grid-template-columns:repeat(4,1fr);margin:64px calc(var(--bleed)*-1) 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
@@ -1074,10 +1021,10 @@ html{scroll-padding-top:88px}
 .stats4 .stat:first-child{padding-left:var(--bleed)}
 .stats4 .stat b{display:block;font-size:48px;font-weight:300;letter-spacing:-.96px;line-height:1.03;color:var(--ink)}
 .stats4 .stat span{display:block;margin:0;padding-right:16px;color:#50617A;font-size:16px;font-weight:300;line-height:1.4}
-.ch .logos-band{position:relative;z-index:2;margin-top:24px;background:#fff}
-.ch .logos-band::before,.ch .logos-band::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:#E5EDF5;z-index:1;pointer-events:none}
-.ch .logos-band::before{left:max(16px,calc(50% - 633px))}
-.ch .logos-band::after{right:max(16px,calc(50% - 633px))}
+.sh .logos-band{position:relative;z-index:2;margin-top:40px;background:#fff}
+.sh .logos-band::before,.sh .logos-band::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:#E5EDF5;z-index:1;pointer-events:none}
+.sh .logos-band::before{left:max(16px,calc(50% - 633px))}
+.sh .logos-band::after{right:max(16px,calc(50% - 633px))}
 .faq1{max-width:820px}
 .faq1 #faq{margin-top:28px;border-top:1px solid var(--line)}
 .res-h{font-size:22px;font-weight:400;letter-spacing:-.3px;margin-bottom:20px}
@@ -1096,77 +1043,84 @@ html{scroll-padding-top:88px}
 .fin .hero-cta{margin-top:28px}
 .fin-price{margin-top:48px;padding-top:28px;border-top:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;font-size:15px;color:var(--body)}
 .fin-price b{font-weight:600;color:var(--ink)}
+#faq-sec+section{padding-top:72px}
 
 /* Responsive */
 @media (max-width:1080px){
-  .ch .logos-band::before{left:16px}.ch .logos-band::after{right:16px}
-  .ch::after{clip-path:inset(0 16px)}
-  .ch-in{grid-template-columns:1fr;gap:24px}
-  .ch-h{font-size:46px}
-  .ch-stage{height:620px}
-  .fx{grid-template-columns:1fr;gap:28px}
-  .fx-list{grid-template-columns:1fr 1fr}
-  .flow{grid-template-columns:1fr;gap:0;max-width:520px}
-  .fl-c,.fl-split{height:40px;width:2px;margin:0 auto;background:repeating-linear-gradient(180deg,#D2C8FF 0 6px,transparent 6px 12px)}
-  .fl-c i{animation:fl-dot-v 2.4s linear infinite;left:50%;margin-left:-4px;top:0;margin-top:0}
-  @keyframes fl-dot-v{to{top:calc(100% - 8px)}}
-  .fl-split svg{display:none}
-  .pmx{grid-template-columns:1fr 1fr;gap:32px}
-  .pmx-side{grid-column:1/-1}
+  .sh .logos-band::before{left:16px}.sh .logos-band::after{right:16px}
+  .sh-route{clip-path:inset(0 16px)}
+  .sh-in{grid-template-columns:1fr;gap:16px}
+  .sh-stage{max-width:520px}
+  .sh-h{font-size:46px}
+  .sv5{grid-template-columns:repeat(3,1fr)}
+  .bk,.cod,.tk{grid-template-columns:1fr;gap:40px}
+  .cp{grid-template-columns:1fr;gap:20px}
+  .cp-regions{display:flex;overflow-x:auto;gap:6px}
+  .cp-regions button{white-space:nowrap;gap:8px}
   .stats4{--bleed:16px;grid-template-columns:1fr 1fr}
   .stats4 .stat:nth-child(2){border-right:0}
   .stats4 .stat:nth-child(3){padding-left:var(--bleed)}
   .stats4 .stat:nth-child(n+3){border-top:1px solid var(--line-soft)}
-  .dsh-body{grid-template-columns:1fr}
-  .dsh-side{display:none}
-  .pk3,.gl3,.res3{grid-template-columns:1fr 1fr}
+  .pk3,.sg3,.res3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
-  .ch{padding-top:110px}
-  .ch-h{font-size:34px;letter-spacing:-.8px}
-  .ch .hero-cta{flex-direction:column;align-items:stretch;max-width:none}
-  .ch-stage{height:600px;margin:0 -16px}
-  .ch-cart{top:20px;left:12px;width:170px}
-  .ch-timer{right:12px;bottom:30px}
-  .ch .logos-band::before,.ch .logos-band::after{display:none}
-  .fx-list{grid-template-columns:1fr}
-  .fx-g{padding:16px;margin:0 -16px;border-radius:0}
-  .fx-body{grid-template-columns:1fr}
-  .fx-sum{border-left:0;border-top:1px solid var(--line)}
-  .fx-two{grid-template-columns:1fr}
+  .sh{padding-top:110px}
+  .sh-h{font-size:34px;letter-spacing:-.8px}
+  .sh .hero-cta{flex-direction:column;align-items:stretch;max-width:none}
+  .sh .logos-band::before,.sh .logos-band::after{display:none}
+  .rc{padding:16px}
+  .rc-f{grid-template-columns:1fr 32px 1fr}
+  .rc-w{grid-column:1/-1}
+  .sv5{grid-template-columns:1fr 1fr}
   .band{padding:72px 0}
-  .pmx{grid-template-columns:1fr}
-  .pmx-tabs{grid-template-columns:1fr 1fr}
-  .pmx-tabs small{display:none}
-  .pmx-n{font-size:44px}
-  .dsh-tabs{display:flex;width:100%}
-  .dsh-tabs button{flex:1;justify-content:center;padding:0 8px}
-  .dsh-panel{padding:16px}
-  .dsh-cz,.shp{grid-template-columns:1fr}
-  .kpi{grid-template-columns:1fr}
-  .kpi div+div{border-left:0;border-top:1px solid var(--line)}
-  .fun div{grid-template-columns:100px 1fr 40px}
+  .cp-head,.cp-row{grid-template-columns:1.2fr 1fr 1fr;padding:12px 14px;gap:10px}
+  .cp-head span:last-child,.cp-row>span:last-child{display:none}
+  .cp-bar{grid-template-columns:1fr}
+  .cp-bar span{text-align:left;font-size:12px}
+  .cod-fee b{font-size:56px}
+  .tk-f{flex-direction:column}
   .stats4{--bleed:0px;margin-top:40px}
   .stats4 .stat{padding:28px 16px}
   .stats4 .stat:nth-child(odd){padding-left:0}
   .stats4 .stat b{font-size:40px;letter-spacing:-.4px}
-  .flow4 .stat b{font-size:22px}
-  .pk3,.gl3,.res3{grid-template-columns:1fr}
+  .pk3,.sg3,.res3{grid-template-columns:1fr}
   .fin h2{font-size:30px}
-  #after+section{padding-top:72px}
 }
+@media (max-width:420px){.sv5{grid-template-columns:1fr}}
 
-/* Pricing grid (like Stripe's "Know what you'll pay") */
-.prg{margin-top:48px;display:grid;gap:40px}
-.prg-h{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.prg-h h3{font-size:20px;font-weight:500;letter-spacing:-.2px}
-.prg-b{display:grid;grid-template-columns:1fr 320px;gap:32px;padding-top:20px;align-items:start}
-.prg-b .txt{max-width:560px;font-size:16px}
-.prg-p b{display:block;font-size:40px;font-weight:300;letter-spacing:-.8px;line-height:1.1;color:var(--ink)}
-.prg-p span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px}
-.prg-r:hover .ha .ha-l{opacity:1}
-#pricing+section{padding-top:0}
-@media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
+/* ===== Hero: centred text, shipping globe below (reuses the homepage globe) ===== */
+.sh-route{display:none}
+.sh-in.sh-c{grid-template-columns:1fr;gap:0;justify-items:center;text-align:center}
+.sh-c .sh-t{display:flex;flex-direction:column;align-items:center;max-width:880px}
+.sh-c .sh-h{font-size:56px}
+.sh-c .lead{margin-left:auto;margin-right:auto;max-width:620px}
+.sh-c .hero-cta{justify-content:center}
+.sh-c .ch-facts{justify-content:center}
+.sh-globe{position:relative;width:100%;height:420px;margin-top:-8px}
+.sh-gstage{position:absolute;left:50%;top:0;transform:translateX(-50%);width:1040px;height:420px}
+#sh-globe{display:block;width:100%;height:100%;cursor:grab;touch-action:pan-y;-webkit-mask-image:radial-gradient(ellipse 58% 92% at 50% 28%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 58% 92% at 50% 28%,#000 55%,transparent 100%)}
+#sh-globe.grabbing{cursor:grabbing}
+#sh-globe-ui{position:absolute;inset:0;pointer-events:none}
+.gp-pick .gp-ic{background:var(--primary-soft);color:var(--primary)}
+.sh-cour{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px;margin-top:4px;font-size:13px;color:var(--muted)}
+.sh-cour{gap:10px 16px}
+.sh-cour img{height:30px;width:30px;border-radius:7px;object-fit:cover;box-shadow:0 0 0 1px var(--line-soft)}
+.sh-cour img.w{width:auto;height:22px;border-radius:0;box-shadow:none}
+.gp-ic img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.gp-pick .gp-ic,.gp-ship .gp-ic{background:#fff}
+.sh-hub{position:absolute;left:0;top:0;width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--line),0 10px 24px -8px rgba(50,50,93,.35);display:flex;align-items:center;justify-content:center;z-index:2;transition:box-shadow .3s}
+.sh-hub svg{width:26px;height:26px}
+.sh-hub::before,.sh-hub::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(106,75,255,.3);animation:hub-ring 3s ease-out infinite}
+.sh-hub::after{animation-delay:1.5s}
+.sh-hub.on{box-shadow:0 0 0 2px var(--primary),0 10px 24px -8px rgba(106,75,255,.45)}
+@keyframes hub-ring{from{transform:scale(.9);opacity:1}to{transform:scale(1.6);opacity:0}}
+@media (max-width:1080px){.sh-gstage{width:820px}}
+@media (max-width:760px){.sh-c .sh-h{font-size:34px}.sh-globe{height:330px}.sh-gstage{width:560px;height:330px}.sh-cour{font-size:12px;gap:4px 12px}}
+/* Rate checker section */
+#rates{padding-top:0;overflow:hidden}
+.rates{display:grid;grid-template-columns:1fr 470px;gap:56px;align-items:center}
+.rates .bk-pts{margin-top:28px}
+@media (max-width:1080px){.rates{grid-template-columns:1fr;gap:16px}.rates-g{max-width:520px}}
 </style>
 </head>
 <body>
@@ -1188,64 +1142,32 @@ html{scroll-padding-top:88px}
 
 <main id="top">
 
-<!-- ===== Hero: text left, a phone running the 30-second checkout on the right ===== -->
-<section class="ch guides">
-  <div class="wrap ch-in">
-    <div class="ch-t">
-      <p class="eyebrow">FLIK Checkout</p>
-      <h1 class="ch-h">Checkout in 30 seconds. <span class="soft">We built it so you don't have to.</span></h1>
-      <p class="lead">Replace the checkout on your Shopify or WooCommerce store. Shoppers log in with a WhatsApp code, their details fill in, and they pay with the method they already use.</p>
+<!-- ===== Hero: text left, a working rate checker on the right ===== -->
+<section class="sh guides">
+  <svg class="sh-route" viewBox="0 0 1600 700" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".5" stop-color="#FF2DB8"/><stop offset="1" stop-color="#6A4BFF"/></linearGradient></defs>
+    <path d="M820 600 C 980 420, 1120 520, 1260 300 S 1480 140, 1600 120"/>
+    <path class="r2" d="M760 680 C 960 560, 1180 640, 1340 460 S 1520 330, 1600 300"/>
+  </svg>
+  <div class="wrap sh-in sh-c">
+    <div class="sh-t">
+      <p class="eyebrow">FLIK Shipping</p>
+      <h1 class="sh-h">Every courier, one dashboard. <span class="soft">Up to 40% less.</span></h1>
+      <p class="lead">Ship across Indonesia, Malaysia and Singapore. Compare rates, ship one by one or in bulk, and track every package.</p>
       <div class="hero-cta">
-        <button class="btn btn-primary live" data-act="sales" data-interest="Checkout">Contact sales <span class="chev">›</span></button>
-        <a href="#friction" class="btn btn-secondary">See how it works <span class="chev">›</span></a>
+        <button class="btn btn-primary live" data-act="start">Start shipping free <span class="chev">›</span></button>
+        <button class="btn btn-secondary" data-act="sales" data-interest="Shipping">Contact sales</button>
       </div>
       <ul class="ch-facts">
-        <li><span data-ic="check-s"></span>3× faster than a standard checkout</li>
-        <li><span data-ic="check-s"></span>Multiple payment methods</li>
-        <li><span data-ic="check-s"></span>No passwords to remember</li>
+        <li><span data-ic="check-s"></span>No registration fee</li>
+        <li><span data-ic="check-s"></span>COD fee only 3%</li>
+        <li><span data-ic="check-s"></span>99% of shipments created successfully</li>
       </ul>
     </div>
-    <div class="ch-stage" aria-hidden="true">
-      <div class="ch-glow"></div>
-      <div class="ch-cart">
-        <small class="m">arunastudio.co.id</small>
-        <div class="co-row"><span>Linen Shirt</span><span class="num">Rp 349.000</span></div>
-        <span class="ch-cart-btn" id="ph-cartbtn">Checkout</span>
-      </div>
-      <div class="ph" id="ph">
-        <div class="ph-notch"></div>
-        <div class="ph-top"><span class="ph-logo">A</span><b>Aruna Studio</b><span class="ph-sec"><span data-ic="lock-s"></span>FLIK</span></div>
-        <div class="ph-item"><span class="ph-thumb"></span><span><b>Linen Shirt</b><small>Size M · 1 item</small></span><span class="num">Rp 349.000</span></div>
-        <div class="ph-screens">
-          <div class="ph-s on" data-s="0">
-            <label>WhatsApp number</label>
-            <div class="ph-in"><span class="cc">+62</span><span id="ph-wa"></span><i class="caret"></i></div>
-            <span class="ph-btn">Send code via WhatsApp</span>
-            <p class="ph-note">No password needed.</p>
-          </div>
-          <div class="ph-s" data-s="1">
-            <label>Enter the code from WhatsApp</label>
-            <div class="ph-otp" id="ph-otp"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <p class="ph-note">Sent to +62 812-3456-7890</p>
-          </div>
-          <div class="ph-s" data-s="2">
-            <div class="ph-ok"><span data-ic="check-s"></span>Welcome back, Rina. Details filled in.</div>
-            <div class="ph-r"><small>Deliver to</small><b>Jl. Kemang Raya 12, Jakarta Selatan</b></div>
-            <div class="ph-r"><small>Courier <em>Auto</em></small><b>JNE Reguler · 2–3 days</b><span class="num">Rp 12.000</span></div>
-            <div class="ph-r"><small>Payment <em>Auto</em></small><b>QRIS</b></div>
-            <div class="ph-r rw"><small>Reward applied</small><b>Member reward</b><span class="num">−Rp 20.000</span></div>
-            <div class="ph-tot"><span>Total</span><b class="num">Rp 341.000</b></div>
-            <span class="ph-btn" id="ph-pay">Pay Rp 341.000</span>
-          </div>
-          <div class="ph-s" data-s="3">
-            <div class="okc" data-ic="check-l"></div>
-            <b class="ph-done">Payment received</b>
-            <p class="ph-note">Order ARN-1042 is on its way with FLIK Shipping. Track it in the FLIK app.</p>
-          </div>
-        </div>
-      </div>
-      <div class="ch-timer"><span data-ic="bolt-s"></span><b class="num" id="ph-t">0:00</b><span>checkout time</span></div>
+    <div class="sh-globe" role="img" aria-label="A merchant ships orders from Jakarta across Indonesia, Malaysia and Singapore. For each order FLIK picks the best-priced courier, the package is tracked to delivery, and COD money is credited to the balance.">
+      <div class="sh-gstage" aria-hidden="true"><canvas id="sh-globe"></canvas><div id="sh-globe-ui"></div></div>
     </div>
+    <p class="sh-cour" id="sh-cour"></p>
   </div>
   <div class="logos-band">
     <div class="logos-clip"><div class="logos-track" id="logos"></div></div>
@@ -1255,220 +1177,197 @@ html{scroll-padding-top:88px}
 <!-- ===== Stats: ruled grid to the guide lines ===== -->
 <section class="pad-t guides stats-sec">
   <div class="wrap">
-    <h2 class="sec-h stats-h">Faster checkout, more finished orders. <span class="soft">Every step a shopper skips is one less reason to leave.</span></h2>
+    <h2 class="sec-h stats-h">One dashboard for every shipment. <span class="soft">From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.</span></h2>
     <div class="stats4">
-      <div class="stat"><b class="num">30s</b><span>to check out with a FLIK account</span></div>
-      <div class="stat"><b class="num">3×</b><span>faster than a standard checkout</span></div>
-      <div class="stat"><b class="num">5</b><span>types of payment in one checkout, from QRIS to COD</span></div>
-      <div class="stat"><b class="num">1</b><span>account for every store that uses FLIK</span></div>
+      <div class="stat"><b class="num">40%</b><span>off shipping, at most</span></div>
+      <div class="stat"><b class="num">3%</b><span>COD fee, and nothing else to withdraw</span></div>
+      <div class="stat"><b class="num">99%</b><span>of shipments created successfully</span></div>
+      <div class="stat"><b class="num">3</b><span>countries covered: Indonesia, Malaysia and Singapore</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===== Reduce friction: feature list drives highlights on one checkout window ===== -->
-<section class="pad guides" id="friction">
-  <div class="wrap">
-    <h2 class="sec-h">Designed to remove every extra step. <span class="soft">Most shoppers only type their phone number. Everything else fills in, and mistakes are caught as they type.</span></h2>
-    <div class="fx">
-      <ul class="fx-list" id="fx-list">
-        <li data-f="wa"><span class="fx-ic" data-ic="chat"></span><div><b>WhatsApp OTP login</b><span>A one-time code instead of a password.</span></div></li>
-        <li data-f="acc"><span class="fx-ic" data-ic="user"></span><div><b>Saved FLIK account</b><span>Details fill in on every FLIK store.</span></div></li>
-        <li data-f="addr"><span class="fx-ic" data-ic="pin"></span><div><b>Address auto-complete</b><span>Suggestions as the shopper types.</span></div></li>
-        <li data-f="cour"><span class="fx-ic" data-ic="truck"></span><div><b>Courier picked for you</b><span>From the couriers you switched on.</span></div></li>
-        <li data-f="pay"><span class="fx-ic" data-ic="card"></span><div><b>Payment method picked for you</b><span>The method the shopper used last.</span></div></li>
-        <li data-f="rew"><span class="fx-ic" data-ic="gift"></span><div><b>Rewards applied automatically</b><span>No codes to copy and paste.</span></div></li>
-        <li data-f="qty"><span class="fx-ic" data-ic="plus"></span><div><b>Adjustable quantities</b><span>Change the order without going back.</span></div></li>
-        <li data-f="val"><span class="fx-ic" data-ic="check"></span><div><b>Real-time checks</b><span>Typos are flagged before payment.</span></div></li>
+<!-- ===== Rate checker: compare every courier ===== -->
+<section class="pad-t guides" id="rates">
+  <div class="wrap rates">
+    <div class="rates-t">
+      <h2 class="sec-h">Compare every courier in seconds. <span class="soft">Pick a route and a weight, then sort by the cheapest or the fastest.</span></h2>
+      <ul class="bk-pts">
+        <li><span data-ic="check-s"></span>Regular, next day, same day, instant and cargo</li>
+        <li><span data-ic="check-s"></span>Discounted rates on every route</li>
+        <li><span data-ic="check-s"></span>Live rates in your dashboard</li>
       </ul>
-      <div class="fx-g">
-        <div class="fx-win" id="fx-win">
-          <div class="co-bar"><i></i><i></i><i></i><span>checkout.flik.co.id</span></div>
-          <div class="fx-body">
-            <div class="fx-form">
-              <div class="fx-el fx-acc" data-f="acc"><span class="fx-av">RP</span><span><b>Rina Putri</b><small>Checking out with a FLIK account</small></span><span class="pill ok">Saved</span></div>
-              <div class="fx-el" data-f="wa"><label>WhatsApp number</label><div class="fx-in">+62 812-3456-7890<span class="pill ok">Verified</span></div></div>
-              <div class="fx-el" data-f="val"><label>Email</label><div class="fx-in warn">rina.putri@gmial.com</div><small class="fx-hint">Did you mean <b>gmail.com</b>?</small></div>
-              <div class="fx-el fx-addr" data-f="addr"><label>Address</label><div class="fx-in">Jl. Kemang Ra<i class="caret"></i></div>
-                <div class="fx-sug"><span><span data-ic="pin-s"></span>Jl. Kemang Raya 12, Jakarta Selatan</span><span><span data-ic="pin-s"></span>Jl. Kemang Raya 45, Jakarta Selatan</span></div>
-              </div>
-              <div class="fx-two">
-                <div class="fx-el" data-f="cour"><label>Courier</label><div class="fx-in"><span>JNE Reguler · 2–3 days</span><span class="pill pu">Auto</span></div></div>
-                <div class="fx-el" data-f="pay"><label>Payment</label><div class="fx-in"><span>QRIS</span><span class="pill pu">Auto</span></div></div>
-              </div>
-            </div>
-            <div class="fx-sum">
-              <small class="mh-cap">Order summary</small>
-              <div class="fx-el fx-items" data-f="qty">
-                <div class="fx-it"><span class="ph-thumb"></span><span class="grow"><b>Linen Shirt</b><small>Size M</small></span><span class="qty"><i>−</i><b id="fx-q">1</b><i>+</i></span><span class="num" id="fx-p1">Rp 349.000</span></div>
-                <div class="fx-it"><span class="ph-thumb t2"></span><span class="grow"><b>Canvas Tote</b><small>Natural</small></span><span class="qty"><i>−</i><b>1</b><i>+</i></span><span class="num">Rp 120.000</span></div>
-              </div>
-              <div class="co-row"><span class="m">Shipping</span><span class="num">Rp 12.000</span></div>
-              <div class="fx-el fx-rew" data-f="rew"><div class="co-row"><span><span data-ic="gift-s"></span>Member reward</span><span class="num">−Rp 20.000</span></div></div>
-              <div class="co-total"><span>Total</span><span class="num" id="fx-tot">Rp 461.000</span></div>
-              <span class="ph-btn">Pay now</span>
-            </div>
-          </div>
+    </div>
+    <div class="sh-stage rates-g">
+      <div class="sh-glow"></div>
+      <div class="rc" id="rc">
+        <div class="rc-h"><b>Check shipping rates</b><span class="pill pu">Every courier</span></div>
+        <div class="rc-f">
+          <div class="rc-in"><label for="rc-from">From</label><div class="ap-sel"><select id="rc-from"></select></div></div>
+          <button class="rc-sw" id="rc-sw" type="button" aria-label="Swap origin and destination"><span data-ic="swap"></span></button>
+          <div class="rc-in"><label for="rc-to">To</label><div class="ap-sel"><select id="rc-to"></select></div></div>
+          <div class="rc-in rc-w"><label for="rc-kg">Weight</label><div class="ap-in"><input id="rc-kg" value="1" inputmode="decimal" autocomplete="off"><span>kg</span></div></div>
+        </div>
+        <div class="rc-routes" id="rc-routes"></div>
+        <div class="rc-sort"><span class="m" id="rc-count"></span><div class="dseg" id="rc-sort"><button class="on" data-s="price">Cheapest</button><button data-s="eta">Fastest</button></div></div>
+        <div class="rc-list" id="rc-list" aria-live="polite"></div>
+        <p class="rc-ex">Example rates. Your live rates appear in the dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services: five speeds in one row ===== -->
+<section class="pad guides" id="services">
+  <div class="wrap">
+    <h2 class="sec-h">The right speed for every order. <span class="soft">Instant, same day, next day, regular or cargo. Pick one per order, or let FLIK pick the cheapest or fastest.</span></h2>
+    <div class="sv5" id="sv5"></div>
+  </div>
+</section>
+
+<!-- ===== Single or bulk: full-width band with a live diagram ===== -->
+<section class="band guides" id="bulk">
+  <div class="wrap bk">
+    <div class="bk-t">
+      <h2 class="sec-h">One package or a thousand.</h2>
+      <p class="lead">Ship from one warehouse to one or many addresses, or from all your warehouses at once. Every shipment is paid from your FLIK balance before it is created.</p>
+      <div class="dsh-tabs" id="bk-tabs" role="tablist">
+        <button class="on" data-m="single"><span data-ic="boxes-s"></span>Single</button>
+        <button data-m="bulk"><span data-ic="truck-s"></span>Bulk</button>
+      </div>
+      <ul class="bk-pts" id="bk-pts"></ul>
+    </div>
+    <div class="bk-g">
+      <svg class="bk-svg" id="bk-svg" viewBox="0 0 560 360" aria-hidden="true"></svg>
+      <div class="bk-bar minip" id="bk-bar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Courier performance by region ===== -->
+<section class="pad guides" id="performance">
+  <div class="wrap">
+    <h2 class="sec-h">Pick the best courier for every region. <span class="soft">See how each courier performs where your shoppers live, and send each order with the one that delivers.</span></h2>
+    <div class="cp">
+      <div class="cp-regions" id="cp-regions" role="tablist"></div>
+      <div class="cp-win">
+        <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/shipping/performance</span></div>
+        <div class="cp-body">
+          <div class="cp-head"><span>Courier</span><span>On time</span><span>Delivered</span><span>Avg. days</span></div>
+          <div id="cp-rows"></div>
+          <p class="rc-ex" style="padding:0 20px 16px">Example data.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Guest or FLIK account: full-width band with a flow diagram ===== -->
-<section class="band guides" id="paths">
-  <div class="wrap">
-    <h2 class="sec-h">One account, every store. <span class="soft">Shoppers can check out as a guest or with a FLIK account. With an account, their details are ready on every store that uses FLIK Checkout.</span></h2>
-    <div class="flow">
-      <div class="fl-n"><span class="fl-ic" data-ic="cart"></span><small>Wherever you sell</small><b>Shopper taps Checkout</b><span>Chat, social media or your storefront</span></div>
-      <div class="fl-c"><i></i></div>
-      <div class="fl-n fl-mid"><span class="fl-ic" data-ic="lock"></span><small>FLIK Checkout</small><b>Redirected to FLIK</b><span>Your products, your prices, a faster form</span></div>
-      <div class="fl-split">
-        <svg viewBox="0 0 80 200" preserveAspectRatio="none"><path d="M0 100 C40 100 40 40 80 40"/><path d="M0 100 C40 100 40 160 80 160"/></svg>
-      </div>
-      <div class="fl-col">
-        <div class="fl-n"><span class="pill ok">FLIK session found</span><b>Straight to payment</b><span>Address, courier and payment are already filled in.</span></div>
-        <div class="fl-n"><span class="pill gr">New shopper</span><b>Guest checkout or FLIK account</b><span>Register with a WhatsApp code once, and skip the form on any FLIK store next time.</span></div>
-      </div>
+<!-- ===== COD: dark section with a balance ledger ===== -->
+<section class="pad dark guides" id="cod">
+  <div class="wrap cod">
+    <div class="cod-t">
+      <h2 class="sec-h">COD that pays you back fast. <span class="soft">Offer cash on delivery across Indonesia. The money lands in your FLIK balance as soon as the package is delivered.</span></h2>
+      <div class="cod-fee"><b class="num">3%</b><span>COD fee. No other withdrawal costs.</span></div>
+      <ul class="cod-pts">
+        <li><span data-ic="check-s"></span>Shipping and the COD fee are paid upfront from your balance.</li>
+        <li><span data-ic="check-s"></span>The COD amount is credited automatically after delivery.</li>
+        <li><span data-ic="check-s"></span>Use the same balance to pay for your next shipments.</li>
+      </ul>
+      <a href="#" class="link lt" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a>
     </div>
-  </div>
-</section>
-
-<!-- ===== Payment methods: dark section, tabs drive a phone ===== -->
-<section class="pad dark guides" id="methods">
-  <div class="wrap">
-    <h2 class="sec-h">Every way Indonesia pays. <span class="soft">QRIS, e-wallets, virtual accounts, cards and cash on delivery, in one checkout.</span></h2>
-    <div class="pmx">
-      <div class="pmx-tabs" id="pmx-tabs" role="tablist"></div>
-      <div class="pmx-stage"><svg class="pmx-ribbon" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
-        <defs><linearGradient id="pr" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".35" stop-color="#FF2DB8"/><stop offset=".7" stop-color="#00E5FF"/><stop offset="1" stop-color="#6A4BFF"/><animate attributeName="x1" values="0;.3;0" dur="10s" repeatCount="indefinite"/></linearGradient></defs>
-        <path fill="url(#pr)"><animate attributeName="d" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" values="M0,280 C220,190 380,160 600,180 C820,200 980,110 1200,20 L1200,400 C980,500 820,580 600,570 C380,560 220,590 0,600 Z;M0,240 C240,160 400,200 620,160 C840,120 1000,80 1200,50 L1200,440 C1000,470 840,540 620,550 C400,560 240,600 0,600 Z;M0,280 C220,190 380,160 600,180 C820,200 980,110 1200,20 L1200,400 C980,500 820,580 600,570 C380,560 220,590 0,600 Z"/></path>
-        <path fill="none" stroke="url(#pr)" stroke-width="3" opacity=".6"><animate attributeName="d" dur="13s" repeatCount="indefinite" values="M0,560 C260,470 420,430 640,440 C860,450 1000,360 1200,300;M0,540 C260,480 440,400 660,420 C880,440 1020,330 1200,330;M0,560 C260,470 420,430 640,440 C860,450 1000,360 1200,300"/></path>
-      </svg><div class="ph ph-sm"><div class="ph-notch"></div><div class="ph-top"><span class="ph-logo">A</span><b>Aruna Studio</b><span class="ph-sec"><span data-ic="lock-s"></span>FLIK</span></div><div id="pmx-scr" class="pmx-scr"></div></div></div>
-      <div class="pmx-side">
-        <b class="pmx-n">Multiple</b>
-        <p>payment methods. Switch each one on or off in <b>Personalisasi Checkout</b>, and FLIK shows each shopper the one they used last.</p>
-        <div class="pmx-chips" id="pmx-chips"></div>
+    <div class="cod-g">
+      <div class="cod-card">
+        <small>FLIK balance</small>
+        <b class="cod-bal num" id="cod-bal">Rp 18.240.500</b>
+        <div class="cod-list" id="cod-list"></div>
+        <div class="cod-act"><span class="btn btn-primary">Withdraw</span><span class="btn btn-dark-outline">Top up</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== After the payment: ruled four-step flow to the guide lines ===== -->
-<section class="pad-t guides stats-sec" id="after">
+<!-- ===== Tracking + fewer returns ===== -->
+<section class="pad guides" id="track">
   <div class="wrap">
-    <h2 class="sec-h stats-h">After the payment, it keeps going. <span class="soft">Checkout connects to FLIK Shipping and your FLIK balance, so one order flows from cart to cash.</span></h2>
-    <div class="stats4 flow4" id="flow4">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="card"></span><b>Paid</b><span>The order shows up in Laporan &amp; Analisis the moment the shopper pays.</span></div>
-      <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="truck"></span><b>Shipped</b><span>It ships from your warehouse with FLIK Shipping, using the couriers you chose.</span></div>
-      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="bell"></span><b>Tracked</b><span>Shoppers get an email at every status change and can follow it in the FLIK app.</span></div>
-      <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="wallet"></span><b>In your balance</b><span>Once the package arrives, the money lands in your FLIK balance. COD orders too.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Personalization: payment methods and couriers ===== -->
-<section class="pad guides" id="dash">
-  <div class="wrap">
-    <h2 class="sec-h">Your checkout, your choices. <span class="soft">Choose which payment methods and couriers your shoppers see, and change them anytime from your dashboard.</span></h2>
-    <div class="dsh-tabs" id="dsh-tabs" role="tablist">
-      <button class="on" data-t="0"><span data-ic="card-s"></span>Payment methods</button>
-      <button data-t="1"><span data-ic="truck-s"></span>Couriers</button>
-    </div>
-    <div class="dsh-win">
-      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/checkout</span></div>
-      <div class="dsh-body">
-        <aside class="dsh-side" id="dsh-side">
-          <span class="dsh-f"><svg viewBox="0 0 30 30" width="22" height="22" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg></span>
-          <small>FLIK Checkout</small>
-          <span data-t="0">Personalisasi Checkout</span>
-          <small>FLIK Shipping</small>
-          <span data-t="1">Pengaturan Pengiriman</span>
-        </aside>
-        <div class="dsh-panel" id="dsh-panel"></div>
+    <h2 class="sec-h">Every package tracked. <span class="soft">Fewer coming back.</span></h2>
+    <div class="tk">
+      <div class="tk-card">
+        <div class="tk-h"><span class="tk-ic" data-ic="pin"></span><span><b>Track a package</b><small>Any courier, one search</small></span></div>
+        <form class="tk-f" id="tk-f"><div class="ap-in"><input id="tk-in" value="FLK2026101700428" aria-label="Tracking number" autocomplete="off"></div><button class="btn btn-primary">Track</button></form>
+        <div class="tk-res" id="tk-res"></div>
+      </div>
+      <div class="tk-side">
+        <div class="tk-pt"><span class="tk-ic" data-ic="bolt"></span><div><b>Tracking numbers right away</b><p class="txt">The AWB is ready the moment you create a shipment, so shoppers can follow it from the start.</p></div></div>
+        <div class="tk-pt"><span class="tk-ic" data-ic="refresh"></span><div><b>A second try before returning</b><p class="txt">If a delivery fails, the courier tries again the next day, up to two attempts.</p></div></div>
+        <div class="tk-pt"><span class="tk-ic" data-ic="chart"></span><div><b>Lower RTO</b><p class="txt">See failed deliveries early in the dashboard, and switch to the courier that delivers best in that region.</p></div></div>
+        <div class="tk-rto minip">
+          <div class="co-row"><b style="font-weight:500">Returned to origin</b><span class="pill ok">−38% <small>example</small></span></div>
+          <div class="tk-bars" id="tk-bars"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Pick your path: three integrations ===== -->
-<section class="pad guides" id="integrate">
+<!-- ===== Integrations ===== -->
+<section class="pad-t guides" id="integrate">
   <div class="wrap">
-    <h2 class="sec-h">Pick your path. <span class="soft">Connect the store you already have. Your products, prices and orders stay where they are.</span></h2>
+    <h2 class="sec-h">Orders flow in on their own. <span class="soft">Connect your store and every new order is ready to ship in the FLIK dashboard.</span></h2>
     <div class="pk3">
       <a href="#" class="pk" data-page="/integrations/shopify">
         <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">FLIK Checkout</b><span class="pill ok">Installed</span></div>
-          <div class="pk-tg"><span>Use FLIK as your checkout</span><i class="tg on"></i></div>
-          <div class="pk-tg"><span>Ship with FLIK Shipping</span><i class="tg on"></i></div>
+          <div class="co-row"><b style="font-weight:500">New orders</b><span class="pill pu">Shopify</span></div>
+          <div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>#1042 · Linen Shirt</b><small>Jakarta → Bandung</small></span><span class="pill ok">Ready</span></div>
+          <div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>#1043 · Canvas Tote</b><small>Jakarta → Medan</small></span><span class="pill ok">Ready</span></div>
         </div></div>
         <span class="label"><i></i>Shopify</span>
-        <h3>Install the FLIK app.</h3>
-        <p class="txt">FLIK replaces the Shopify checkout. Shoppers are redirected to FLIK when they tap Checkout.</p>
+        <h3>Orders sync from Shopify.</h3>
+        <p class="txt">New orders appear in your FLIK Shipping dashboard, ready to ship.</p>
         <em class="link">Shopify integration <span class="chev">›</span></em>
       </a>
       <a href="#" class="pk" data-page="/integrations/woocommerce">
         <div class="pk-g"><div class="minip">
           <div class="co-row"><b style="font-weight:500">Plugins</b><span class="m" style="font-size:12px">WordPress</span></div>
-          <div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>FLIK Checkout for WooCommerce</b><small>Version 2.4</small></span><span class="pill pu">Active</span></div>
+          <div class="pk-pl"><span class="pk-ic" data-ic="truck-s"></span><span class="grow"><b>FLIK Shipping for WooCommerce</b><small>Rates shown at checkout</small></span><span class="pill pu">Active</span></div>
         </div></div>
         <span class="label"><i></i>WooCommerce</span>
         <h3>Add the FLIK plugin.</h3>
-        <p class="txt">Activate the plugin, sign in to FLIK, and your WooCommerce orders go through FLIK Checkout.</p>
+        <p class="txt">Your WooCommerce store connects straight to the FLIK Shipping dashboard.</p>
         <em class="link">WooCommerce integration <span class="chev">›</span></em>
       </a>
-      <a href="#" class="pk" data-page="Developer docs">
-        <div class="pk-g dk"><pre class="code"><span class="c">// create a checkout session</span>
-<span class="k">const</span> s = <span class="k">await</span> flik.checkout.create({
-  items: [{ sku: <span class="s">'LS-M'</span>, qty: <span class="p">1</span> }],
-});
-redirect(s.url);</pre></div>
-        <span class="label"><i></i>API</span>
-        <h3>Build it your way.</h3>
-        <p class="txt">For custom stores: create a checkout session and send shoppers to FLIK.</p>
-        <em class="link">Developer docs <span class="chev">›</span></em>
+      <a href="#" class="pk" data-page="/checkout">
+        <div class="pk-g"><div class="minip">
+          <div class="co-row"><b style="font-weight:500">FLIK Checkout</b><span class="pill ok">Paid</span></div>
+          <div class="pk-tg"><span>Courier picked at checkout</span><b style="font-weight:500">JNE Reguler</b></div>
+          <div class="pk-tg"><span>Ships from</span><b style="font-weight:500">Gudang Jakarta Barat</b></div>
+        </div></div>
+        <span class="label"><i></i>FLIK Checkout</span>
+        <h3>Sold with FLIK, shipped with FLIK.</h3>
+        <p class="txt">Checkout orders ship through FLIK Shipping with the couriers you set in Pengaturan Pengiriman.</p>
+        <em class="link">Explore Checkout <span class="chev">›</span></em>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ===== Checkout at a glance ===== -->
-<section class="pad alt guides" id="glance">
+<!-- ===== Who it is for ===== -->
+<section class="pad guides" id="who">
   <div class="wrap">
-    <h2 class="sec-h">Checkout at a glance.</h2>
-    <div class="gl3" id="gl3"></div>
-  </div>
-</section>
-
-<!-- ===== Pricing (like stripe.com/payments/checkout "Know what you'll pay") ===== -->
-<section class="pad guides" id="pricing">
-  <div class="wrap">
-    <span class="label"><i></i>Pricing</span>
-    <h2 class="sec-h" style="margin-top:14px">Know what you'll pay. <span class="soft">You only pay when the package reaches your shopper.</span></h2>
-    <div class="prg">
-      <div class="prg-r">
-        <div class="prg-h"><h3>Success fee</h3><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
-        <div class="prg-b">
-          <p class="txt">A small fee on each order that is paid and delivered. The exact rate depends on your payment methods and volume.</p>
-          <div class="prg-p"><b class="num">0–2%</b><span>per successfully delivered order</span></div>
-        </div>
-      </div>
-      <div class="prg-r">
-        <div class="prg-h"><h3>Failed delivery</h3></div>
-        <div class="prg-b">
-          <p class="txt">If the package isn't delivered, there is no success fee on that order.</p>
-          <div class="prg-p"><b>Free</b><span>no charge on undelivered orders</span></div>
-        </div>
-      </div>
+    <h2 class="sec-h">Built for brands that ship every day.</h2>
+    <div class="sg3">
+      <a href="#" class="sg" data-page="/use-cases/d2c-brands"><span class="sg-ic" data-ic="home"></span><b>D2C brands</b><span>Selling on your own website and shipping from your own warehouse.</span><div class="sg-k"><span><b>Single + bulk</b>shipments</span><span><b>Shopify</b>and WooCommerce</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
+      <a href="#" class="sg" data-page="/use-cases/cod-sellers"><span class="sg-ic" data-ic="cash"></span><b>COD sellers</b><span>Most of your shoppers pay when the package arrives.</span><div class="sg-k"><span><b>3%</b>COD fee</span><span><b>After delivery</b>money in balance</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
+      <a href="#" class="sg" data-page="/use-cases/scaling-brands"><span class="sg-ic" data-ic="chart"></span><b>Scaling brands</b><span>Many warehouses, peak seasons, and thousands of orders a day.</span><div class="sg-k"><span><b>Bulk</b>from every warehouse</span><span><b>By region</b>courier performance</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ (single column) ===== -->
-<section class="pad guides" id="faq-sec">
+<section class="pad alt guides" id="faq-sec">
   <div class="wrap faq1">
     <h2 class="sec-h">Questions, answered.</h2>
     <div id="faq"></div>
-    <p class="txt" style="margin-top:20px">Can't find what you need? <a href="#" class="link" data-act="sales" data-interest="Checkout">Talk to the FLIK team <span class="chev">›</span></a></p>
+    <p class="txt" style="margin-top:20px">Can't find what you need? <a href="#" class="link" data-act="sales" data-interest="Shipping">Talk to the FLIK team <span class="chev">›</span></a></p>
   </div>
 </section>
 
@@ -1477,9 +1376,9 @@ redirect(s.url);</pre></div>
   <div class="wrap">
     <h3 class="res-h">More from FLIK</h3>
     <div class="res3">
-      <a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Ship every checkout order</b><span>All couriers in one dashboard, for up to 40% less.</span><em>Explore Shipping <span class="chev">›</span></em></a>
-      <a href="#" class="res" data-page="/funding/merchant-cash-advance"><span class="rtag"><span data-ic="coins"></span>Product</span><b>Fund the stock you sell</b><span>Merchant Cash Advance is settled automatically from your sales.</span><em>Explore Funding <span class="chev">›</span></em></a>
-      <a href="#" class="res" data-page="/checkout/payment-methods"><span class="rtag"><span data-ic="card"></span>Guide</span><b>All payment methods</b><span>What each method costs, and when shoppers use it.</span><em>Read more <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/checkout"><span class="rtag"><span data-ic="cart"></span>Product</span><b>Sell with a 30-second checkout</b><span>FLIK Checkout orders ship through FLIK Shipping automatically.</span><em>Explore Checkout <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/funding/merchant-cash-advance"><span class="rtag"><span data-ic="coins"></span>Product</span><b>Fund the stock you ship</b><span>Merchant Cash Advance is settled automatically from your sales.</span><em>Explore Funding <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/shipping/track"><span class="rtag"><span data-ic="pin"></span>Tool</span><b>Track any package</b><span>Check the status of any shipment, from any courier.</span><em>Track a package <span class="chev">›</span></em></a>
     </div>
   </div>
 </section>
@@ -1487,13 +1386,13 @@ redirect(s.url);</pre></div>
 <!-- ===== Final CTA (centered) ===== -->
 <section class="pad alt guides">
   <div class="wrap fin">
-    <h2>Give your shoppers a 30-second checkout.</h2>
-    <p class="txt">Tell us about your store. We will help you switch over without changing how you sell.</p>
+    <h2>Start shipping for less today.</h2>
+    <p class="txt">Create a free account, connect your store, and send your first shipment in minutes.</p>
     <div class="hero-cta" style="justify-content:center">
-      <button class="btn btn-primary live" data-act="sales" data-interest="Checkout">Contact sales <span class="chev">›</span></button>
-      <button class="btn btn-secondary" data-act="start">Create an account</button>
+      <button class="btn btn-primary live" data-act="start">Start shipping free <span class="chev">›</span></button>
+      <button class="btn btn-secondary" data-act="sales" data-interest="Shipping">Contact sales</button>
     </div>
-    <div class="fin-price"><b>Pricing</b><span>Success fee from 0–2%, only on delivered orders.</span><a href="#pricing" class="link">See pricing <span class="chev">›</span></a></div>
+    <div class="fin-price"><b>Pricing</b><span>Free to join. You pay per shipment from your FLIK balance.</span><a href="#" class="link" data-page="/pricing">See pricing <span class="chev">›</span></a></div>
   </div>
 </section>
 
@@ -1544,6 +1443,10 @@ const P={
   chat:'<path d="M4 19.5 5.3 15A8 8 0 1 1 9 18.7z"/><path d="M9 10.5c.5 1.6 1.9 3 3.5 3.5l1.2-1.1 2 .9"/>',
   sliders:'<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
   bell:'<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+  swap:'<path d="M7 7h12l-3-3M17 17H5l3 3"/>',
+  refresh:'<path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/>',
+  calendar:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'
 };
 const ic=(n,s=18,w=1.7)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
@@ -1617,143 +1520,259 @@ const lgHtml=LOGOS.map(l=>`<span class="lg ${l[1]}">${l[0]}</span>`).join('');
 document.getElementById('logos').innerHTML=lgHtml+lgHtml;
 
 
+
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const wait=ms=>new Promise(r=>setTimeout(r,REDUCE?0:ms));
-const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersecting}).observe(el);return()=>v&&!document.hidden};
+const onScreen=el=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersecting}).observe(el);return()=>v&&!document.hidden};
+// small stable pseudo-random numbers, so example data stays the same between visits
+const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return((h>>>0)%1000)/1000};
 
-/* ===== Hero: the phone runs a 30-second checkout on a loop ===== */
+/* ===== Hero: rate checker (example rates) ===== */
 (function(){
-  const ph=document.getElementById('ph'),scr=[...ph.querySelectorAll('.ph-s')],wa=document.getElementById('ph-wa'),otp=[...document.querySelectorAll('#ph-otp i')];
-  const rows=[...ph.querySelectorAll('.ph-r')],cart=document.getElementById('ph-cartbtn'),pay=document.getElementById('ph-pay'),t=document.getElementById('ph-t');
-  const visible=onScreen(ph);
-  const show=k=>scr.forEach((s,i)=>s.classList.toggle('on',i===k));
-  const tap=async el=>{el.classList.add('tap');await wait(220);el.classList.remove('tap')};
-  // the timer shows checkout time; the demo is sped up so it reaches about 0:27
-  let sec=0,tick;
-  const fmt=s=>'0:'+String(s).padStart(2,'0');
-  const startClock=()=>{clearInterval(tick);sec=0;t.textContent=fmt(0);tick=setInterval(()=>{if(sec<27){sec++;t.textContent=fmt(sec)}},REDUCE?1:190)};
-  async function run(){
-    while(true){
-      if(!visible()){await wait(600);continue}
-      show(0);wa.textContent='';otp.forEach(i=>{i.textContent='';i.classList.remove('f')});rows.forEach(r=>r.classList.remove('in'));t.textContent=fmt(0);
-      await wait(700);await tap(cart);startClock();
-      for(const ch of '812-3456-7890'){wa.textContent+=ch;await wait(70)}
-      await wait(350);await tap(ph.querySelector('[data-s="0"] .ph-btn'));
-      show(1);await wait(450);
-      for(const [i,d] of [...'482915'].entries()){otp[i].textContent=d;otp[i].classList.add('f');await wait(140)}
-      await wait(400);show(2);
-      for(const r of rows){await wait(260);r.classList.add('in')}
-      await wait(1100);await tap(pay);
-      await wait(300);show(3);clearInterval(tick);sec=27;t.textContent=fmt(27);
-      await wait(3200);
+  const CITIES=[['Jakarta',-6.2,106.8],['Bandung',-6.9,107.6],['Semarang',-7.0,110.4],['Yogyakarta',-7.8,110.4],['Surabaya',-7.25,112.75],['Denpasar',-8.65,115.2],['Medan',3.6,98.7],['Makassar',-5.15,119.4],['Balikpapan',-1.25,116.85],['Jayapura',-2.55,140.7]];
+  // [short logo, courier, service, type, price factor, discount]
+  const C=[
+    ['JNE','JNE','Reguler','reg',1.0,.32],['J&T','J&T Express','EZ','reg',.97,.28],['SCP','SiCepat','REG','reg',.92,.4],['AA','AnterAja','Reguler','reg',.94,.3],['NJV','Ninja Xpress','Standard','reg',.9,.22],['IDX','ID Express','Standard','reg',.88,.18],
+    ['JNE','JNE','YES','next',1.9,.2],['SCP','SiCepat','BEST','next',1.75,.25],
+    ['J&T','J&T Cargo','Cargo','cargo',.55,.15],['JNE','JNE','Trucking','cargo',.6,.2],
+    ['GO','GoSend','Instant','inst',1,.1],['GRB','GrabExpress','Instant','inst',1.05,.08],['GO','GoSend','Same Day','same',1,.12],['PXL','Paxel','Same Day','same',.95,.15]
+  ];
+  const ROUTES=[['Jakarta','Denpasar'],['Semarang','Jakarta'],['Surabaya','Bandung'],['Medan','Jakarta'],['Jakarta','Jakarta']];
+  const from=document.getElementById('rc-from'),to=document.getElementById('rc-to'),kg=document.getElementById('rc-kg'),list=document.getElementById('rc-list'),count=document.getElementById('rc-count'),routes=document.getElementById('rc-routes');
+  const opts=CITIES.map(c=>`<option>${c[0]}</option>`).join('');from.innerHTML=opts;to.innerHTML=opts;
+  routes.innerHTML=ROUTES.map((r,i)=>`<button type="button" data-i="${i}">${r[0]===r[1]?r[0]+' (same city)':r[0]+' – '+r[1]}</button>`).join('');
+  let sort='price',auto=0,hold=false;
+  const km=(a,b)=>{const R=6371,r=x=>x*Math.PI/180,dl=r(b[1]-a[1]),dn=r(b[2]-a[2]),h=Math.sin(dl/2)**2+Math.cos(r(a[1]))*Math.cos(r(b[1]))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))};
+  const r500=n=>Math.max(500,Math.round(n/500)*500);
+  function calc(){
+    const a=CITIES.find(c=>c[0]===from.value),b=CITIES.find(c=>c[0]===to.value),w=Math.max(1,Math.ceil(parseFloat(String(kg.value).replace(',','.'))||1)),d=km(a,b),same=a===b;
+    const rows=[];
+    for(const c of C){
+      const t=c[3];
+      if(same&&!['inst','same','reg'].includes(t))continue;
+      if(!same&&['inst','same'].includes(t))continue;
+      if(t==='cargo'&&w<5)continue;
+      if(t==='next'&&d>1300)continue;
+      let price,eta,lab;
+      if(t==='inst'){price=r500((14000+w*2500)*c[4]);eta=2;lab='1–3 hours'}
+      else if(t==='same'){price=r500((10000+w*2000)*c[4]);eta=7;lab='6–8 hours'}
+      else{
+        const base=same?7000:8000+d*9;
+        price=r500(base*w*c[4]*(t==='cargo'?1:1));
+        const days=d<200?[1,2]:d<900?[2,3]:d<2000?[3,5]:[5,8];
+        if(t==='next'){eta=24;lab='1 day'}else{const x=t==='cargo'?[days[0]+2,days[1]+3]:days;eta=x[0]*24+(c[4]>.95?0:6);lab=x[0]+'–'+x[1]+' days'}
+      }
+      rows.push({c,price,was:r500(price/(1-c[5])),eta,lab});
     }
+    rows.sort((x,y)=>sort==='price'?x.price-y.price:x.eta-y.eta||x.price-y.price);
+    count.textContent=`${rows.length} options · ${w} kg`;
+    const best=rows[0];
+    list.innerHTML=rows.slice(0,5).map((r,i)=>`<div class="rr" style="animation-delay:${i*50}ms"><span class="rr-lg">${r.c[0]}</span><span><b>${r.c[1]} ${r.c[2]}${r===best?`<span class="pill ${sort==='price'?'ok':'pu'}">${sort==='price'?'Cheapest':'Fastest'}</span>`:''}</b><small>${r.lab}</small></span><span class="rr-p"><b>${rp(r.price)}</b><s>${rp(r.was)}</s></span></div>`).join('');
+    routes.querySelectorAll('button').forEach((x,i)=>x.classList.toggle('on',ROUTES[i][0]===from.value&&ROUTES[i][1]===to.value));
   }
-  if(REDUCE){show(2);rows.forEach(r=>r.classList.add('in'));t.textContent=fmt(27)}else run();
+  const setRoute=i=>{from.value=ROUTES[i][0];to.value=ROUTES[i][1];calc()};
+  routes.onclick=e=>{const b=e.target.closest('button');if(b){hold=true;setRoute(+b.dataset.i)}};
+  [from,to,kg].forEach(x=>{x.addEventListener('input',()=>{hold=true;calc()});x.addEventListener('change',calc)});
+  document.getElementById('rc-sw').onclick=()=>{hold=true;[from.value,to.value]=[to.value,from.value];calc()};
+  document.getElementById('rc-sort').onclick=e=>{const b=e.target.closest('button');if(!b)return;hold=true;sort=b.dataset.s;e.currentTarget.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));calc()};
+  setRoute(0);
+  // while nobody touches it, it walks through the popular routes
+  const visible=onScreen(document.getElementById('rc'));
+  if(!REDUCE)setInterval(()=>{if(!hold&&visible()){auto=(auto+1)%ROUTES.length;setRoute(auto)}},4200);
 })();
 
-/* ===== Reduce friction: list highlights one part of the checkout window ===== */
-(function(){
-  const li=[...document.querySelectorAll('#fx-list li')],win=document.getElementById('fx-win'),els=[...win.querySelectorAll('.fx-el')];
-  const visible=onScreen(win);let cur=0,hold=0;
-  const set=k=>{cur=k;const f=li[k].dataset.f;li.forEach((x,i)=>x.classList.toggle('on',i===k));win.classList.add('hl');els.forEach(e=>e.classList.toggle('on',e.dataset.f===f))};
-  li.forEach((x,i)=>{x.addEventListener('mouseenter',()=>{hold=Infinity;set(i)});x.addEventListener('mouseleave',()=>{hold=Date.now()+2000});x.addEventListener('click',()=>{hold=Date.now()+6000;set(i)})});
-  set(0);
-  // adjustable quantity: the stepper ticks while it is highlighted
-  const q=document.getElementById('fx-q'),p1=document.getElementById('fx-p1'),tot=document.getElementById('fx-tot');let n=1;
-  if(!REDUCE)setInterval(()=>{
-    if(li[cur].dataset.f==='qty'){n=n===1?2:1;q.textContent=n;p1.textContent=rp(349000*n);tot.textContent=rp(349000*n+120000+12000-20000)}
-    if(hold<Date.now()&&visible())set((cur+1)%li.length);
-  },2400);
-})();
 
-/* ===== Payment methods: tabs drive the phone ===== */
+/* ===== Hero globe: shipments from a Jakarta warehouse across Indonesia, Malaysia and Singapore (example data) ===== */
 (function(){
-  const qr=()=>{let s='';const r=(x,y)=>((x*7+y*13+x*y*3)%5)<2;for(let y=0;y<21;y++)for(let x=0;x<21;x++){const f=(x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13);if(f){const e=Math.max(Math.abs((x%14)-3),Math.abs((y%14)-3));if(e!==2&&e<4)s+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}else if(r(x,y))s+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}return `<svg viewBox="0 0 21 21" fill="#002D5D" shape-rendering="crispEdges">${s}</svg>`};
-  const amt='<h6>Total</h6><div class="pmx-amt num">Rp 341.000</div>';
-  const opt=(a,on,sub='')=>`<div class="opt${on?' on':''}"><span class="rd"></span><span class="grow">${a}${sub?`<br><small>${sub}</small>`:''}</span></div>`;
-  const M=[
-    {k:'QRIS',ic:'qris',d:'Scan with any bank or e-wallet app',chips:['QRIS'],
-     h:()=>amt+`<div class="pmx-qr">${qr()}</div><p class="pmx-c">Scan with any bank or e-wallet app<br>Expires in <b class="num">14:59</b></p>`},
-    {k:'E-wallet',ic:'phone',d:'Pay in the app shoppers already use',chips:['GoPay','OVO','DANA','ShopeePay','LinkAja'],
-     h:()=>amt+`<div class="opts">${opt('GoPay',1,'Last used')}${opt('OVO')}${opt('DANA')}${opt('ShopeePay')}</div><span class="ph-btn">Open GoPay</span>`},
-    {k:'Virtual account',ic:'bank',d:'Transfer from any major bank',chips:['BCA','Mandiri','BNI','BRI','Permata'],
-     h:()=>amt+`<div class="opts">${opt('BCA Virtual Account',1)}</div><div class="pmx-va"><small class="m">Virtual account number</small><b>8077 0812 3456 7890</b><span class="pmx-copy">Copy</span></div><p class="pmx-c">Pay before <b>17 Okt 2026, 23:59</b></p>`},
-    {k:'Card',ic:'card',d:'Credit and debit cards',chips:['Visa','Mastercard','JCB'],
-     h:()=>amt+`<div class="fld"><label>Card number</label><div class="fx-in"><span class="num">4111 1111 1111 1111</span><span class="pill gr">VISA</span></div></div><div class="fx-two"><div class="fx-in">12 / 28</div><div class="fx-in">•••</div></div><span class="ph-btn">Pay Rp 341.000</span>`},
-    {k:'Cash on delivery',ic:'cash',d:'Pay the courier when it arrives',chips:['COD'],
-     h:()=>`<h6>Pay when it arrives</h6><div class="pmx-amt num">Rp 351.230</div><div class="co-row"><span class="m">Order</span><span class="num">Rp 341.000</span></div><div class="co-row"><span class="m">COD fee (3%)</span><span class="num">Rp 10.230</span></div><p class="pmx-c" style="text-align:left">The courier collects the payment. It lands in your FLIK balance after delivery.</p><span class="ph-btn">Confirm order</span>`}
+  const cv=document.getElementById('sh-globe'),ctx=cv.getContext('2d'),ui=document.getElementById('sh-globe-ui');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const PRI=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim()||'#6A4BFF';
+  // couriers under the globe
+  const LOGO={jne:'img/jne.png',spx:'img/spx.png',lion:'img/lionparcel.png',aa:'img/anteraja.png'};
+  document.getElementById('sh-cour').innerHTML='<span>Every courier, one dashboard</span><img src="img/jne-wide.png" alt="JNE" class="w"><img src="img/spx.png" alt="SPX Express"><img src="img/lionparcel-wide.png" alt="Lion Parcel" class="w"><img src="img/anteraja.png" alt="AnterAja"><span>and more</span>';
+  let W,H,R,cx,cy,dpr,pts=[],running=true,t0=performance.now();
+  const N=30000,ga=Math.PI*(3-Math.sqrt(5)),D=Math.PI/180;
+  const ctr=[Math.cos(-30*D)*Math.sin(120*D),Math.sin(-30*D),Math.cos(-30*D)*Math.cos(120*D)];
+  for(let i=0;i<N;i++){const y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),t=ga*i,p=[Math.cos(t)*r,y,Math.sin(t)*r];if(p[0]*ctr[0]+p[1]*ctr[1]+p[2]*ctr[2]>-.45)pts.push(p)}
+  const C=[[0,229,255],[106,75,255],[255,45,184],[255,122,46]];
+  const col=t=>{t=Math.max(0,Math.min(.999,t))*(C.length-1);const i=Math.floor(t),f=t-i,a=C[i],b=C[i+1];return a.map((v,k)=>Math.round(v+(b[k]-v)*f))};
+  const v3=(lat,lon)=>[Math.cos(lat*D)*Math.sin(lon*D),Math.sin(lat*D),Math.cos(lat*D)*Math.cos(lon*D)];
+  const HUB=v3(-1.6,113.6);
+  const CITY={Jakarta:v3(-6.2,106.8),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4),Jayapura:v3(-2.55,140.7),Denpasar:v3(-8.65,115.2),'Kuala Lumpur':v3(3.14,101.69),Singapore:v3(1.35,103.82),Balikpapan:v3(-1.25,116.85),Surabaya:v3(-7.25,112.75)};
+  const DESTS=Object.keys(CITY).filter(k=>k!=='Jakarta');
+  // one shipment per scenario: courier picked → in transit → delivered (→ COD credited)
+  const SC=[
+    {city:'Medan',cour:'JNE Reguler',logo:LOGO.jne,price:24000,off:32,awb:'FLK2610170041',eta:'2–3 days'},
+    {city:'Makassar',cour:'SPX Express',logo:LOGO.spx,price:27500,off:25,awb:'FLK2610170058',eta:'2–3 days'},
+    {city:'Kuala Lumpur',cour:'SPX Express',logo:LOGO.spx,price:68000,off:22,awb:'FLK2610170066',eta:'3–5 days'},
+    {city:'Denpasar',cour:'Lion Parcel',logo:LOGO.lion,price:19000,off:28,awb:'FLK2610170063',eta:'2–3 days',cod:1940000},
+    {city:'Jayapura',cour:'AnterAja Reguler',logo:LOGO.aa,price:58000,off:40,awb:'FLK2610170077',eta:'5–7 days'},
   ];
-  const tabs=document.getElementById('pmx-tabs'),scr=document.getElementById('pmx-scr'),chips=document.getElementById('pmx-chips');
-  tabs.innerHTML=M.map((m,i)=>`<button role="tab" data-i="${i}"><span class="pi">${ic(m.ic,17)}</span><span><b>${m.k}</b><small>${m.d}</small></span></button>`).join('');
-  chips.innerHTML=M.map((m,i)=>m.chips.map(c=>`<span data-i="${i}">${c}</span>`).join('')).join('');
-  const btns=[...tabs.children];let cur=0,hold=0;
-  const set=k=>{cur=k;btns.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-selected',i===k)});chips.querySelectorAll('span').forEach(c=>c.classList.toggle('on',+c.dataset.i===k));scr.innerHTML=M[k].h();scr.style.animation='none';void scr.offsetWidth;scr.style.animation=''};
-  btns.forEach((b,i)=>b.onclick=()=>{hold=Date.now()+8000;set(i)});
-  set(0);
-  const visible=onScreen(tabs);
-  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%M.length)},3200);
-})();
-
-/* ===== Personalization: switch payment methods and couriers on or off, with a live preview ===== */
-(function(){
-  const panel=document.getElementById('dsh-panel'),tabs=[...document.querySelectorAll('#dsh-tabs button')],side=[...document.querySelectorAll('#dsh-side [data-t]')];
-  const st={pm:{QRIS:1,'E-wallet':1,'Virtual account':1,Card:0,COD:1},cr:{'JNE Reguler':1,'J&T Express':1,'SiCepat REG':0,'AnterAja':1,'GoSend Same Day':0}};
-  const CR={'JNE Reguler':['2–3 days','Rp 12.000'],'J&T Express':['2–3 days','Rp 11.000'],'SiCepat REG':['2–3 days','Rp 10.500'],'AnterAja':['2–4 days','Rp 10.000'],'GoSend Same Day':['Today','Rp 25.000']};
-  const tgl=(o,key)=>`<div class="tgl">${Object.keys(o).map(k=>`<button data-${key}="${k}"><span>${k}</span><i class="tg${o[k]?' on':''}"></i></button>`).join('')}</div>`;
-  const opts=(o,sub)=>{const on=Object.keys(o).filter(k=>o[k]);return on.length?on.map((k,i)=>`<div class="pv-o${i===0?' on':''}"><span class="rd"></span><span style="flex:1">${k}</span>${sub?`<small class="m">${sub(k)}</small>`:''}</div>`).join(''):'<p class="txt" style="font-size:12.5px">Switch on at least one.</p>'};
-  const T=[
-    ()=>`<div class="dsh-h"><b>Personalisasi Checkout</b><span class="pill ok">Live</span></div>
-      <div class="dsh-cz"><div><h6>Payment methods shown to shoppers</h6>${tgl(st.pm,'pm')}</div>
-      <div class="pv"><div class="pv-h"><i></i>Aruna Studio</div><small class="m">Preview · Payment</small>${opts(st.pm)}<span class="pv-b">Pay Rp 341.000</span></div></div>`,
-    ()=>`<div class="dsh-h"><b>Pengaturan Pengiriman</b><span class="pill pu">FLIK Shipping</span></div>
-      <div class="dsh-cz"><div><h6>Couriers shown to shoppers</h6>${tgl(st.cr,'cr')}</div>
-      <div class="pv"><div class="pv-h"><i></i>Aruna Studio</div><small class="m">Preview · Courier</small>${opts(st.cr,k=>CR[k][0]+' · '+CR[k][1])}<span class="pv-b">Continue to payment</span></div></div>`
-  ];
-  let cur=0,hold=0;
-  function set(k){
-    cur=k;tabs.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-selected',i===k)});side.forEach(x=>x.classList.toggle('on',+x.dataset.t===k));
-    panel.innerHTML=T[k]();panel.style.animation='none';void panel.offsetWidth;panel.style.animation='';
-  }
-  panel.addEventListener('click',e=>{
-    const b=e.target.closest('button');if(!b)return;hold=Date.now()+10000;
-    if(b.dataset.pm)st.pm[b.dataset.pm]^=1;else if(b.dataset.cr)st.cr[b.dataset.cr]^=1;
-    set(cur);
+  const rp=n=>'Rp '+n.toLocaleString('id-ID');
+  let lon0=120,lat0=-14,baseLat=-14,dLon=0,dLat=0,vLon=0,vLat=0,drag=null,lastTouch=-1e9;
+  function view(p){const cl=Math.cos(-lon0*D),sl=Math.sin(-lon0*D);let x=p[0]*cl+p[2]*sl,z=-p[0]*sl+p[2]*cl,y=p[1];const ct=Math.cos(lat0*D),st=Math.sin(lat0*D);const y2=y*ct-z*st;z=y*st+z*ct;return[x,y2,z]}
+  const proj=(p,h=1)=>{const v=view(p);return[cx+v[0]*R*h,cy-v[1]*R*h,v[2]]};
+  function size(){dpr=Math.min(2,devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);R=W*1.0;cx=W/2;cy=R+18;baseLat=lat0=-4-Math.asin(Math.max(-.9,Math.min(.9,(cy-H*.3)/R)))/D}
+  function slerp(a,b,t){const d=Math.acos(Math.min(1,a[0]*b[0]+a[1]*b[1]+a[2]*b[2]));if(d<1e-6)return a;const s=Math.sin(d),k1=Math.sin((1-t)*d)/s,k2=Math.sin(t*d)/s;return[a[0]*k1+b[0]*k2,a[1]*k1+b[1]*k2,a[2]*k1+b[2]*k2]}
+  function arcPts(a,b){const out=[];for(let i=0;i<=48;i++){const t=i/48;out.push(proj(slerp(a,b,t),1+.05*Math.sin(Math.PI*t)))}return out}
+  const STEPS=[];
+  SC.forEach((o,n)=>{
+    STEPS.push({n,k:'in',fromP:CITY.Jakarta,toP:HUB,dur:1500,color:PRI,icon:'boxes',b:'New order',s:'Aruna Studio · Jakarta warehouse'});
+    STEPS.push({n,k:'pick',atP:HUB,dur:1700,logo:o.logo,b:o.cour+' picked',s:`Best price · ${rp(o.price)} · −${o.off}%`});
+    STEPS.push({n,k:'ship',fromP:HUB,toP:CITY[o.city],dur:2400,color:'#FF7A2E',logo:o.logo,b:'On the way to '+o.city,s:o.eta+' · '+o.awb});
+    STEPS.push({n,k:'done',atP:CITY[o.city],dur:1500,icon:'check',b:'Delivered',s:o.city+' · '+o.cour});
+    if(o.cod)STEPS.push({n,k:'bal',atP:CITY.Jakarta,dur:1800,icon:'wallet',b:'+'+rp(Math.round(o.cod*.97)),s:'COD credited to balance · 3% fee'});
   });
-  [...tabs,...side].forEach(b=>b.addEventListener('click',()=>{hold=Date.now()+10000;set(+b.dataset.t)}));
-  set(0);
-  const visible=onScreen(panel);
-  // while idle, switch between payment methods and couriers
-  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%2)},5000);
+  const TOTAL=STEPS.reduce((a,s)=>a+s.dur,0);
+  const brand=document.createElement('div');brand.className='gp gp-brand';brand.innerHTML='<span class="gp-ic gp-k">A</span><span><b>Aruna Studio</b><small>Warehouse · Jakarta</small></span>';ui.appendChild(brand);
+  const hubEl=document.createElement('div');hubEl.className='sh-hub';hubEl.innerHTML='<svg viewBox="0 0 30 30" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg>';ui.appendChild(hubEl);
+  const pill=document.createElement('div');pill.className='gp';ui.appendChild(pill);
+  let lastStep=-1;
+  const place=(el,x,y)=>{el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`};
+  function drawDots(){for(const p of pts){const[x,y,z]=view(p);if(z<0)continue;const sx=cx+x*R,sy=cy-y*R;if(sy>H+4)continue;const c=col((x+1)/2*.85+(1-z)*.15);ctx.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${.22+z*.5})`;const s=.7+z*1.3;ctx.beginPath();ctx.arc(sx,sy,s,0,6.283);ctx.fill()}}
+  function cityDot(name,on){const[x,y]=proj(CITY[name]);ctx.beginPath();ctx.arc(x,y,on?7:4,0,6.283);ctx.fillStyle='rgba(255,255,255,.9)';ctx.fill();ctx.lineWidth=on?2:1.2;ctx.strokeStyle=on?PRI:'rgba(97,117,142,.6)';ctx.stroke();ctx.beginPath();ctx.arc(x,y,on?2.4:1.8,0,6.283);ctx.fillStyle=on?PRI:'#61758E';ctx.fill()}
+  // the network: a faint route from the warehouse to every city
+  function drawNet(){ctx.save();ctx.setLineDash([3,5]);ctx.lineWidth=1;ctx.strokeStyle='rgba(106,75,255,.3)';for(const c of ['Jakarta',...DESTS]){const ap=arcPts(HUB,CITY[c]);ctx.beginPath();ctx.moveTo(ap[0][0],ap[0][1]);for(let i=1;i<ap.length;i++)ctx.lineTo(ap[i][0],ap[i][1]);ctx.stroke()}ctx.restore()}
+  function drawArc(ap,prog,color,fade){const n=Math.max(1,Math.round(prog*(ap.length-1)));ctx.save();ctx.globalAlpha=fade;ctx.lineCap='round';ctx.strokeStyle=color;ctx.lineWidth=2.2;ctx.beginPath();ctx.moveTo(ap[0][0],ap[0][1]);for(let i=1;i<=n;i++)ctx.lineTo(ap[i][0],ap[i][1]);ctx.stroke();const hd=ap[n];ctx.beginPath();ctx.arc(hd[0],hd[1],4,0,6.283);ctx.fillStyle=color;ctx.fill();ctx.beginPath();ctx.arc(hd[0],hd[1],9,0,6.283);ctx.globalAlpha=fade*.18;ctx.fill();ctx.restore();return hd}
+  function frame(now){
+    const el=reduce?STEPS[0].dur+STEPS[1].dur+STEPS[2].dur*.9:(now-t0)%TOTAL;
+    if(!drag){dLon+=vLon;dLat+=vLat;vLon*=.92;vLat*=.92;if(now-lastTouch>2500){dLon*=.97;dLat*=.97}}
+    dLon=Math.max(-35,Math.min(35,dLon));dLat=Math.max(-20,Math.min(20,dLat));
+    lon0=120+(reduce?0:3*Math.sin((now-t0)/9000))+dLon;lat0=baseLat+dLat;
+    ctx.clearRect(0,0,W,H);drawDots();drawNet();
+    let acc=0,i=0;while(i<STEPS.length-1&&acc+STEPS[i].dur<=el){acc+=STEPS[i].dur;i++}
+    const st=STEPS[i],p=(el-acc)/st.dur;
+    const sc=SC[st.n];
+    DESTS.forEach(c=>cityDot(c,c===sc.city));cityDot('Jakarta',true);
+    let px,py;
+    if(st.fromP){const ap=arcPts(st.fromP,st.toP);const prog=Math.min(1,p/.6),fade=p>.85?1-(p-.85)/.15:1;const hd=drawArc(ap,prog,st.color,fade);px=hd[0];py=hd[1]-18}
+    else{const[x,y]=proj(st.atP);px=x;py=y-(st.k==='pick'?30:14);const r=6+p*26;ctx.beginPath();ctx.arc(x,y,r,0,6.283);ctx.strokeStyle=st.k==='done'?'#1EA672':PRI;ctx.globalAlpha=Math.max(0,1-p);ctx.lineWidth=1.5;ctx.stroke();ctx.globalAlpha=1}
+    if(i!==lastStep){lastStep=i;pill.className='gp gp-'+st.k;pill.innerHTML=`<span class="gp-ic">${st.logo?`<img src="${st.logo}" alt="">`:ic(st.icon,13,2)}</span><span><b class="num">${st.b}</b><small>${st.s}</small></span>`}
+    pill.style.opacity=(p<.08?p/.08:p>.9?(1-p)/.1:1).toFixed(2);
+    const hw=pill.offsetWidth/2+6;px=Math.max(hw,Math.min(W-hw,px));place(pill,px,py);
+    const[bx,by]=proj(CITY.Jakarta);brand.style.transform=`translate(${bx.toFixed(1)}px,${(by+14).toFixed(1)}px) translate(-50%,0)`;
+    brand.classList.toggle('dim',st.k==='done');
+    const[hx,hy]=proj(HUB);hubEl.style.transform=`translate(${hx.toFixed(1)}px,${hy.toFixed(1)}px) translate(-50%,-50%)`;hubEl.classList.toggle('on',st.k==='in'||st.k==='pick');
+  }
+  function loop(now){if(!running)return;frame(now);requestAnimationFrame(loop)}
+  cv.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};vLon=vLat=0;cv.setPointerCapture(e.pointerId);cv.classList.add('grabbing')});
+  cv.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag={x:e.clientX,y:e.clientY};vLon=-(dx/R)/D;vLat=(dy/R)/D;dLon+=vLon;dLat+=vLat;lastTouch=performance.now();if(reduce)frame(lastTouch)});
+  const end=()=>{if(!drag)return;drag=null;lastTouch=performance.now();cv.classList.remove('grabbing');if(reduce){vLon=vLat=0}};
+  cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
+  size();frame(performance.now());
+  addEventListener('resize',()=>{size();frame(performance.now())});
+  if(!reduce){new IntersectionObserver(es=>{running=es[0].isIntersecting;if(running)requestAnimationFrame(loop)}).observe(cv)}
 })();
 
-/* ===== After the payment: the progress line walks through the four steps ===== */
+/* ===== Services ===== */
 (function(){
-  const box=document.getElementById('flow4'),s=[...box.children];let k=0;
-  const paint=()=>{s.forEach((x,i)=>{x.classList.toggle('on',i===k);x.classList.toggle('done',i<k)});box.style.setProperty('--p',((k+1)/s.length*100)+'%')};
-  paint();const visible=onScreen(box);
-  if(!REDUCE)setInterval(()=>{if(visible()){k=(k+1)%s.length;paint()}},1800);
-})();
-
-/* ===== Checkout at a glance ===== */
-(function(){
-  const G=[
-    ['user','For shoppers',['Checkout in about 30 seconds','WhatsApp OTP login, no passwords','Guest checkout or a FLIK account','Details saved across every FLIK store','Address auto-complete','Rewards applied automatically','An email at every status change','Order tracking in the FLIK app']],
-    ['card','Payment methods',['QRIS','E-wallets','Bank virtual accounts','Credit and debit cards','Cash on delivery','The shopper\'s last-used method picked first','Methods switched on or off from your dashboard']],
-    ['chart','For your team',['Shopify and WooCommerce integration','Checkout Personalization: payment methods and couriers','Order Analytics in Laporan & Analisis','Shipping from your warehouse with FLIK Shipping','Payments in your FLIK balance after delivery','One dashboard for Checkout, Shipping and Funding']]
+  const S=[
+    ['bolt','Instant','Within the city, delivered in hours by motorbike.','Pickup right after the AWB',100,92],
+    ['clock','Same day','Delivered the same day within the city.','Pickup in 1–4 hours',82,72],
+    ['calendar','Next day','Delivered the next day to nearby cities.','',62,52],
+    ['truck','Regular','Everyday orders to anywhere in Indonesia.','Pickup in 3–5 hours',40,26],
+    ['boxes','Cargo','Heavy and bulky items at a lower rate per kg.','',20,14]
   ];
-  document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
+  document.getElementById('sv5').innerHTML=S.map(s=>`<div class="sv"><span class="sv-ic">${ic(s[0],18)}</span><h3>${s[1]}</h3><p>${s[2]}</p>${s[3]?`<span class="sv-pk">${s[3]}</span>`:''}<div class="sv-meter"><div><span>Speed</span><i style="--v:${s[4]}%"></i></div><div><span>Cost</span><i style="--v:${s[5]}%"></i></div></div></div>`).join('');
+})();
+
+/* ===== Single or bulk ===== */
+(function(){
+  const svg=document.getElementById('bk-svg'),bar=document.getElementById('bk-bar'),pts=document.getElementById('bk-pts'),tabs=[...document.querySelectorAll('#bk-tabs button')];
+  const DEST=[['Bandung','3 orders'],['Surabaya','5 orders'],['Medan','2 orders'],['Makassar','4 orders'],['Denpasar','1 order'],['Balikpapan','2 orders']];
+  const M={
+    single:{wh:[['Gudang Jakarta Barat',150]],links:[[0,0],[0,1],[0,2],[0,3],[0,4],[0,5]],
+      bar:`<span class="pk-ic">${ic('boxes',15)}</span><span class="grow"><b>17 orders from 1 warehouse</b><small>JNE Reguler · paid from balance</small></span><span class="btn btn-primary">Create shipments</span>`,
+      pts:['One warehouse to one or many addresses','Choose the service and a pickup time','Paid from your FLIK balance before it is created']},
+    bulk:{wh:[['Gudang Jakarta Barat',40],['Gudang Surabaya',150],['Gudang Medan',260]],links:[[0,0],[0,4],[1,1],[1,3],[1,5],[2,2]],
+      bar:`<span class="pk-ic">${ic('truck',15)}</span><span class="grow"><b>248 orders from 3 warehouses</b><small>orders.csv · Rp 3.214.500 from balance</small></span><span class="btn btn-primary">Create 248 shipments</span>`,
+      pts:['Many warehouses to many destinations at once','Upload a file, or pull orders from your store','Top up your balance if it runs low, then ship']}
+  };
+  const dy=i=>8+i*58;
+  function draw(k){
+    const m=M[k];let h='';
+    m.links.forEach(([w,d],i)=>{const y1=m.wh[w][1]+30,y2=dy(d)+21,p=`M182 ${y1} C 290 ${y1}, 290 ${y2}, 392 ${y2}`;h+=`<g style="animation-delay:${i*60}ms"><path class="ln" d="${p}"/>${REDUCE?'':`<circle r="3.5" class="dot"><animateMotion dur="${1.8+i*.25}s" repeatCount="indefinite" path="${p}"/></circle>`}</g>`});
+    m.wh.forEach(w=>{h+=`<g class="wh"><rect x="12" y="${w[1]}" width="170" height="60" rx="10"/><text x="28" y="${w[1]+26}">${w[0]}</text><text class="s" x="28" y="${w[1]+44}">Warehouse</text></g>`});
+    DEST.forEach((d,i)=>{h+=`<g class="nd"><rect x="392" y="${dy(i)}" width="156" height="42" rx="8"/><text x="406" y="${dy(i)+18}">${d[0]}</text><text class="s" x="406" y="${dy(i)+33}">${d[1]}</text></g>`});
+    svg.innerHTML=h;bar.innerHTML=m.bar;pts.innerHTML=m.pts.map(p=>`<li><span>${ic('check',15)}</span>${p}</li>`).join('');
+    tabs.forEach(t=>{t.classList.toggle('on',t.dataset.m===k);t.setAttribute('aria-selected',t.dataset.m===k)});
+  }
+  let cur='single',hold=0;
+  tabs.forEach(t=>t.onclick=()=>{hold=Date.now()+10000;cur=t.dataset.m;draw(cur)});
+  draw(cur);
+  const visible=onScreen(svg);
+  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible()){cur=cur==='single'?'bulk':'single';draw(cur)}},5200);
+})();
+
+/* ===== Courier performance by region (example data) ===== */
+(function(){
+  const R=['Jabodetabek','Jawa Barat','Jawa Tengah & DIY','Jawa Timur','Bali & Nusa Tenggara','Sumatera','Kalimantan','Sulawesi','Papua & Maluku'];
+  const K=[['JNE','JNE'],['J&T','J&T Express'],['SCP','SiCepat'],['AA','AnterAja'],['NJV','Ninja Xpress']];
+  const box=document.getElementById('cp-regions'),rows=document.getElementById('cp-rows');
+  box.innerHTML=R.map((r,i)=>`<button role="tab" data-i="${i}">${r}<small class="num">${(400+Math.round(hash(r)*2400)).toLocaleString('id-ID')}</small></button>`).join('');
+  const btns=[...box.children];let cur=0,hold=0;
+  function set(k){
+    cur=k;btns.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-selected',i===k)});
+    const far=k>=5,data=K.map(c=>{const a=hash(R[k]+c[0]),b=hash(c[0]+R[k]+'d');return{c,on:Math.round(far?78+a*16:86+a*12),ok:+(far?92+b*6:95+b*4.5).toFixed(1),days:(far?3.2+a*2.2:1.4+b*1.4).toFixed(1)}});
+    const best=[...data].sort((x,y)=>(y.on+y.ok)-(x.on+x.ok))[0];
+    rows.innerHTML=data.map((d,i)=>`<div class="cp-row" style="animation-delay:${i*50}ms"><span class="who4"><span class="rr-lg">${d.c[0]}</span><b>${d.c[1]}</b>${d===best?'<span class="pill ok">Best here</span>':''}</span><span class="cp-bar"><i style="--v:0%" data-v="${d.on}"></i><span>${d.on}%</span></span><span class="cp-bar b2"><i style="--v:0%" data-v="${d.ok}"></i><span>${String(d.ok).replace('.',',')}%</span></span><span class="num">${d.days.replace('.',',')}</span></div>`).join('');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>rows.querySelectorAll('.cp-bar i').forEach(i=>i.style.setProperty('--v',i.dataset.v+'%'))));
+  }
+  btns.forEach((b,i)=>b.onclick=()=>{hold=Date.now()+10000;set(i)});
+  set(0);
+  const visible=onScreen(rows);
+  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%R.length)},3600);
+})();
+
+/* ===== COD ledger ===== */
+(function(){
+  const list=document.getElementById('cod-list'),bal=document.getElementById('cod-bal');
+  const EV=[
+    ['cash','COD collected · ARN-1042','Delivered in Bandung',351230],
+    ['coins','COD fee 3% · ARN-1042','Paid upfront',-10537],
+    ['truck','Shipping · ARN-1051','JNE Reguler to Medan',-24000],
+    ['cash','COD collected · ARN-1043','Delivered in Surabaya',489000],
+    ['coins','COD fee 3% · ARN-1043','Paid upfront',-14670],
+    ['cash','COD collected · ARN-1044','Delivered in Denpasar',275500]
+  ];
+  let total=18240500,k=0;
+  const row=e=>`<div class="cod-it"><i>${ic(e[0],16)}</i><span><b>${e[1]}</b><small>${e[2]}</small></span><span class="num ${e[3]>0?'up':''}">${e[3]>0?'+':'−'}${rp(Math.abs(e[3]))}</span></div>`;
+  list.innerHTML=EV.slice(0,4).map(row).join('');k=4;
+  const visible=onScreen(list);
+  if(!REDUCE)setInterval(()=>{if(!visible())return;const e=EV[k++%EV.length];list.insertAdjacentHTML('afterbegin',row(e));while(list.children.length>4)list.lastElementChild.remove();total+=e[3];bal.textContent=rp(total)},2600);
+})();
+
+/* ===== Track a package (demo) + RTO chart ===== */
+(function(){
+  const res=document.getElementById('tk-res'),f=document.getElementById('tk-f'),inp=document.getElementById('tk-in');
+  const T=[['Shipment created','AWB ready · Gudang Jakarta Barat','17 Okt, 09:12'],['Picked up','By JNE courier','17 Okt, 12:40'],['At sorting hub','Jakarta','17 Okt, 18:05'],['On the way','To Bandung','18 Okt, 06:30'],['Out for delivery','Bandung','18 Okt, 10:15'],['Delivered','Received by Rina','18 Okt, 13:02']];
+  let step=3,awb=inp.value;
+  function paint(){
+    const done=step===T.length-1;
+    res.innerHTML=`<div class="tk-sum"><span><b class="num">${awb}</b><small>JNE Reguler · Jakarta → Bandung</small></span><span class="pill ${done?'ok':'pu'}">${T[step][0]}</span></div>
+      <div class="tl2">${T.map((t,i)=>`<div class="${i===step?'cur':''}" style="${i>step?'opacity:.45':''}"><i></i><span><b>${t[0]}</b><span>${t[1]}</span></span><time>${i<=step?t[2]:''}</time></div>`).join('')}</div>`;
+  }
+  f.onsubmit=e=>{e.preventDefault();const v=inp.value.trim().toUpperCase();if(!v){toast('Enter a tracking number.');return}awb=v;step=3;paint()};
+  paint();
+  const visible=onScreen(res);
+  if(!REDUCE)setInterval(()=>{if(visible()&&document.activeElement!==inp){step=step>=T.length-1?2:step+1;paint()}},3000);
+  // RTO bars grow when they come into view
+  const V=[['Mei',9.2],['Jun',8.4],['Jul',7.9],['Agu',7.1],['Sep',6.3],['Okt',5.7]];
+  const bars=document.getElementById('tk-bars');
+  bars.innerHTML=V.map(v=>`<div><i data-h="${(v[1]/10*100).toFixed(0)}"></i>${v[0]}</div>`).join('');
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){bars.querySelectorAll('i').forEach(i=>i.style.height=i.dataset.h+'%');o.disconnect()}}).observe(bars);
 })();
 
 /* ===== FAQ ===== */
 const FAQ=[
-  ['What is FLIK Checkout?','A checkout page that replaces the one on your online store. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay with the method they prefer.'],
-  ['Does it work with my store?','Yes, if you sell on Shopify or WooCommerce. Install the FLIK app or plugin and shoppers are redirected to FLIK when they tap Checkout. Custom stores can use the API.'],
-  ['Do shoppers need a FLIK account?','No. They can check out as a guest. With a FLIK account, their details are saved, so next time they check out faster on any store that uses FLIK.'],
-  ['How do shoppers log in?','With a one-time code sent to their WhatsApp number. There is no password to create or forget.'],
-  ['Which payment methods can I offer?','QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery. You choose which ones to show in Personalisasi Checkout.'],
-  ['How are orders shipped?','Orders ship through FLIK Shipping from your warehouse. You pick the couriers in Pengaturan Pengiriman, and FLIK selects one for each shopper.'],
-  ['When do I receive the money?','Once the shopper has paid and the package has arrived, the money lands in your FLIK balance. COD payments too.'],
-  ['How much does it cost?','A success fee from 0–2% on each order that is paid and delivered. The exact rate depends on your payment methods and volume. If a package is not delivered, there is no fee on that order.']
+  ['What is FLIK Shipping?','A shipping service that helps businesses ship for less through one dashboard, with access to many couriers across Indonesia, Malaysia and Singapore.'],
+  ['How does it work?','Enter the delivery addresses, one by one or in bulk, and FLIK shows every available rate. Choose the service (regular, same day, next day, instant or cargo) and a pickup time.'],
+  ['How much does it cost?','Joining is free and there is no registration fee. You pay for each shipment from your FLIK balance before it is created.'],
+  ['Do I pay the COD shipping fee upfront?','Yes. Shipping and the 3% COD fee are paid in advance. The COD amount is credited to your balance after the package is delivered.'],
+  ['How do I receive COD funds?','They are credited to your FLIK balance automatically once the delivery is complete.'],
+  ['Can I cancel a shipment?','Yes, until the courier picks up the package.'],
+  ['What happens if a delivery fails?','The courier tries again the next day, up to two attempts. If it still fails, the package is returned to you. Courier-direct services don\'t retry: undelivered packages are returned right away.'],
+  ['How long does pickup take?','Pickup starts once the AWB is ready: 3–5 hours for regular, 1–4 hours for same day, and right away for instant.'],
+  ['How do I contact FLIK support?','Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.']
 ];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');

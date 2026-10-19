@@ -1,7 +1,7 @@
 # Homepage
 
-- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/v4/
-- **Page file:** `v4/index.html`
+- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/
+- **Page file:** `index.html`
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 
@@ -15,7 +15,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** FLIK | Commerce Infrastructure to Grow Your Sales (v4)
+- **Page title:** FLIK | Commerce Infrastructure to Grow Your Sales
 - **Description:** FLIK gives online brands a 30-second checkout, shipping with every courier for up to 40% less, and inventory funding, all from one dashboard.
 
 ## 1. Hero
