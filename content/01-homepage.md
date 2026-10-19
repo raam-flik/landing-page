@@ -15,15 +15,15 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** FLIK | Commerce Infrastructure to Grow Your Sales
+- **Page title:** FLIK | Merchant Growth Platform for Growing Brands
 - **Description:** FLIK gives online brands a 30-second checkout, shipping with every courier for up to 40% less, and inventory funding, all from one dashboard.
 
 ## 1. Hero
 <!-- html: Hero (Stripe homepage style: left-aligned, ribbon top right) -->
 
 - **Small text above headline:** Shoppers in the FLIK ecosystem: 10M+
-- **Headline (H1):** Commerce infrastructure to grow your sales.
-- **Intro text:** Accept payments, ship with every courier and fund your inventory, from your first order to your millionth.
+- **Headline (H1):** Merchant Growth Platform<br>for Growing Brands
+- **Intro text:** Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.
 - **Button:** Get started
 - **Button:** Contact sales
 

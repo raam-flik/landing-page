@@ -12,16 +12,16 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** Ship for Up to 40% Less, All Couriers | FLIK Shipping
+- **Page title:** The Shipping Engine for Growing Brands | FLIK Shipping
 - **Description:** FLIK Shipping compares every courier in one dashboard. Ship across Indonesia, Malaysia and Singapore for up to 40% less, single or bulk, with a 3% COD fee and real-time tracking.
 
 ## 1. Hero
 <!-- html: Hero: text left, a working rate checker on the right -->
 
 - **Small text above headline:** FLIK Shipping
-- **Headline (H1):** Every courier, one dashboard.
-  - **Grey part:** Up to 40% less.
-- **Intro text:** Ship across Indonesia, Malaysia and Singapore. Compare rates, ship one by one or in bulk, and track every package.
+- **Headline (H1):** The shipping engine for growing brands.
+  - **Grey part:** Every courier, up to 40% less.
+- **Intro text:** Turning every order into a tracked delivery across Indonesia, Malaysia and Singapore. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
 - **Button:** Start shipping free
 - **Button:** Contact sales
 - **List item:** No registration fee

@@ -13,16 +13,16 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** 30-Second Checkout, 3× Faster | FLIK Checkout
+- **Page title:** The Checkout Engine for Growing Brands | FLIK Checkout
 - **Description:** FLIK Checkout replaces the checkout on your Shopify or WooCommerce store. WhatsApp OTP login, saved details across every FLIK store, and multiple payment methods including QRIS, e-wallets and COD.
 
 ## 1. Hero
 <!-- html: Hero: text left, a phone running the 30-second checkout on the right -->
 
 - **Small text above headline:** FLIK Checkout
-- **Headline (H1):** Checkout in 30 seconds.
-  - **Grey part:** We built it so you don't have to.
-- **Intro text:** Replace the checkout on your Shopify or WooCommerce store. Shoppers log in with a WhatsApp code, their details fill in, and they pay with the method they already use.
+- **Headline (H1):** The checkout engine for growing brands.
+  - **Grey part:** Paid in 30 seconds.
+- **Intro text:** Turning every cart on your Shopify or WooCommerce store into a completed order. Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they already do. You build the store, we close the sale.
 - **Button:** Contact sales
 - **Button:** See how it works
 - **List item:** 3× faster than a standard checkout

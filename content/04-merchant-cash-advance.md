@@ -13,14 +13,15 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** Inventory Funding, No Hidden Fees | FLIK Merchant Cash Advance
+- **Page title:** The Funding Engine for Growing Brands | FLIK Merchant Cash Advance
 - **Description:** FLIK Merchant Cash Advance gives growing brands upfront funding for inventory, marketing and new outlets, settled automatically as products sell. One fixed margin, no hidden fees.
 
 ## 1. Hero
 <!-- html: Hero: centred text, browser mockup on an animated wave (like stripe.com/billing) -->
 
-- **Headline (H1):** Funding built for growing brands.
+- **Headline (H1):** The funding engine for growing brands.
   - **Grey part:** Stock up now, repay as you sell.
+- **Intro text:** Turning your sales into the funding for your next stock. You grow the demand, we fund the supply.
 - **Button:** Check your estimate
 - **Button:** Talk to the FLIK team
 - **List item:** Apply in under 10 minutes
