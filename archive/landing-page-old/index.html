@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLIK Landing Page Prototypes</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#061B31;--muted:#64748D;--line:#E3E8EE;--bg-alt:#F8FAFD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:88px 24px 96px}
+h1{font-size:44px;font-weight:300;letter-spacing:-1px;line-height:1.15;max-width:820px}
+h1 span{color:var(--muted)}
+.entry{margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
+.eh{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.eh .lbl{font-size:13px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+.eh h2{font-size:26px;font-weight:400;letter-spacing:-.4px;margin-top:6px}
+.eh p{color:var(--muted);font-size:15px;margin-top:6px;max-width:560px;line-height:1.55}
+.sw{display:flex;gap:8px;align-items:center}
+.sw i{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);display:block}
+.sw .tag{font-size:12.5px;color:var(--muted);margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+a.card{display:flex;flex-direction:column;gap:8px;padding:22px;border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none;background:#fff;transition:box-shadow .2s,border-color .2s;position:relative;overflow:hidden}
+a.card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px}
+a.card:hover{border-color:#C9D1DC;box-shadow:0 18px 36px -18px rgba(50,50,93,.3)}
+.tag2{font-size:12.5px;font-weight:600}
+.card b{font-size:17px;font-weight:500}
+.card p{font-size:14px;color:var(--muted);line-height:1.55;flex:1}
+.go{font-size:14.5px;font-weight:500}
+/* Entry 1: Stripe purple (live) */
+.e1 .lbl,.e1 .tag2,.e1 .go{color:#533AFD}
+.e1 a.card::before{background:linear-gradient(90deg,#533AFD,#FF5FA2,#FFB547)}
+/* Entry 2: FLIK brand colours (new) */
+.e2 .lbl,.e2 .tag2,.e2 .go{color:#9E4DC8}
+.e2 h2{color:#002D5D}
+.e2 a.card::before{background:linear-gradient(90deg,#F16223,#AE1D7C,#9E4DC8,#002D5D)}
+.note{margin-top:48px;font-size:14px;color:var(--muted);line-height:1.6}
+.note a{color:#9E4DC8}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.wrap{padding:56px 16px 72px}h1{font-size:32px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>FLIK landing page. <span>Eight prototypes: the same four designs in two colour sets.</span></h1>
+
+  <section class="entry e1">
+    <div class="eh">
+      <div>
+        <span class="lbl">Entry 1 · Current colours</span>
+        <h2>Stripe purple</h2>
+        <p>The version that's live now, with Stripe's purple accent and the orange, pink and blue ribbon.</p>
+      </div>
+      <div class="sw" aria-label="Palette"><i style="background:#533AFD"></i><i style="background:#FF5FA2"></i><i style="background:#FFB547"></i><i style="background:#0D1738"></i><span class="tag">#533AFD</span></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="v1/"><span class="tag2">Version 1</span><b>Product page layout</b><p>Centred hero with a dotted globe, product deep dives and FAQ.</p><span class="go">Open ›</span></a>
+      <a class="card" href="v2/"><span class="tag2">Version 2</span><b>3D carousel hero</b><p>A 3D carousel of product highlights that turns into the product cards on scroll.</p><span class="go">Open ›</span></a>
+      <a class="card" href="v3/"><span class="tag2">Version 3</span><b>stripe.com homepage layout</b><p>Left-aligned hero with an animated ribbon, product tiles, stats and segments.</p><span class="go">Open ›</span></a>
+      <a class="card" href="dashboard/"><span class="tag2">Dashboard</span><b>Merchant dashboard</b><p>Home and Transactions, in the Stripe dashboard style.</p><span class="go">Open ›</span></a>
+    </div>
+  </section>
+
+  <section class="entry e2">
+    <div class="eh">
+      <div>
+        <span class="lbl">Entry 2 · New colours</span>
+        <h2>FLIK brand colours</h2>
+        <p>The same four designs with the FLIK palette: purple for actions, FLIK Blue for headlines, and an orange → pink → purple → blue brand gradient.</p>
+      </div>
+      <div class="sw" aria-label="Palette"><i style="background:#F16223"></i><i style="background:#AE1D7C"></i><i style="background:#9E4DC8"></i><i style="background:#002D5D"></i><span class="tag">#9E4DC8</span></div>
+    </div>
+    <div class="grid">
+      <a class="card" href="brand/v1/"><span class="tag2">Version 1</span><b>Product page layout</b><p>Centred hero with a dotted globe, product deep dives and FAQ.</p><span class="go">Open ›</span></a>
+      <a class="card" href="brand/v2/"><span class="tag2">Version 2</span><b>3D carousel hero</b><p>A 3D carousel of product highlights that turns into the product cards on scroll.</p><span class="go">Open ›</span></a>
+      <a class="card" href="brand/v3/"><span class="tag2">Version 3</span><b>stripe.com homepage layout</b><p>Left-aligned hero with an animated ribbon, product tiles, stats and segments.</p><span class="go">Open ›</span></a>
+      <a class="card" href="brand/dashboard/"><span class="tag2">Dashboard</span><b>Merchant dashboard</b><p>Home and Transactions, in the Stripe dashboard style.</p><span class="go">Open ›</span></a>
+    </div>
+  </section>
+
+  <p class="note">Content source: <a href="https://github.com/raam-flik/landing-page/blob/main/docs/FLIK_Landing_Page_Reference.md">FLIK Landing Page Reference</a> (products, sitemap, SEO and colour guideline). These are prototypes, so data and placeholder content are dummy.</p>
+</main>
+</body>
+</html>

@@ -48,4 +48,4 @@ Compare line by line. Each line is `- **Label:** text`. A changed text means: fi
 
 ## House style
 
-English, calm and plain (stripe.com tone). Money `Rp 1.250.000`, dates `12 Okt 2026`, phone `+62 812-3456-7890`. The brand colours and logo are fixed; never change them for a text edit. `product-facts.md` lists what each product does and which claims can be made.
+English, calm and plain (stripe.com tone). Money `Rp1.250.000`, dates `12 Oct 2026`, phone `+62 812-3456-7890`. The brand colours and logo are fixed; never change them for a text edit. `product-facts.md` lists what each product does and which claims can be made.

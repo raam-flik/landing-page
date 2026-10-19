@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLIK | Commerce Infrastructure to Grow Your Sales (v3)</title>
+<meta name="description" content="FLIK gives online brands a 30-second checkout, shipping with every courier for up to 40% less, and inventory funding, all from one dashboard.">
+<link rel="canonical" href="https://flik.co.id/">
+<link rel="alternate" hreflang="en" href="https://flik.co.id/">
+<link rel="alternate" hreflang="id" href="https://flik.co.id/id/">
+<link rel="alternate" hreflang="x-default" href="https://flik.co.id/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"FLIK","url":"https://flik.co.id/","email":"support@flik.co.id"},
+ {"@type":"WebSite","name":"FLIK","url":"https://flik.co.id/"}
+]}
+</script>
+<style>
+/* ===== Tokens (Stripe-style palette, landing page only) ===== */
+:root{
+  --ink:#002D5D; --body:#3E5675; --muted:#61758E; --faint:#8A9BB0;
+  --primary:#9E4DC8; --primary-hover:#8A3DB3; --primary-soft:#F6EFFA;
+  --line:#E3E8EE; --line-soft:#EEF2F7;
+  --bg:#FFFFFF; --bg-alt:#F8FAFD; --dark:#002D5D; --dark-2:#0B3A6E; --dark-line:#1C4573;
+  --ok:#1EA672; --ok-soft:#E7F7EF; --warn:#C4862D; --warn-soft:#FDF4E5; --bad:#DF1B41; --bad-soft:#FDECEF;
+  --r-btn:4px; --r-card:8px; --r-lg:12px;
+  --sh:0 2px 5px rgba(50,50,93,.08),0 1px 2px rgba(0,0,0,.06);
+  --sh-lg:0 30px 60px -12px rgba(50,50,93,.25),0 18px 36px -18px rgba(0,0,0,.3);
+  --grad:linear-gradient(135deg,#FEF0EA 0%,#F5D6E9 30%,#DABDEB 60%,#C28FDD 100%);
+  --grad-2:linear-gradient(135deg,#EAF0F6 0%,#CCD8E6 35%,#C28FDD 70%,#F5D6E9 100%);
+  --font:'Inter',-apple-system,system-ui,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+svg{display:block}
+.num{font-variant-numeric:tabular-nums}
+
+/* Layout: container with faint guide lines, like Stripe */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px;position:relative}
+.guides{position:relative}
+.guides::before,.guides::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line-soft);pointer-events:none}
+.guides::before{left:max(16px,calc(50% - var(--wrap)/2 + 16px))}
+.guides::after{right:max(16px,calc(50% - var(--wrap)/2 + 16px))}
+section{position:relative}
+.alt{background:var(--bg-alt)}
+.pad{padding:112px 0}
+.pad-s{padding:72px 0}
+
+/* Type */
+h1,.h1{font-size:56px;line-height:1.1;font-weight:300;letter-spacing:-1.4px}
+h2,.h2{font-size:36px;line-height:1.15;font-weight:300;letter-spacing:-.8px}
+h2 .soft,.h2 .soft{color:var(--muted)}
+h3{font-size:16px;line-height:1.4;font-weight:500}
+.lead{font-size:20px;line-height:1.45;font-weight:300;color:var(--muted);letter-spacing:-.2px}
+.txt{font-size:15px;line-height:1.6;color:var(--body)}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink)}
+.label i{width:10px;height:10px;background:var(--primary);border-radius:2px;display:block}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 18px;border-radius:var(--r-btn);font-size:15px;font-weight:500;white-space:nowrap;transition:background .15s,color .15s,border-color .15s,box-shadow .15s}
+.btn .chev{transition:transform .15s}
+.btn:hover .chev{transform:translateX(2px)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-primary:disabled{background:#CDA8E3;cursor:not-allowed}
+.btn-secondary{background:#fff;color:var(--primary);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-secondary:hover{box-shadow:inset 0 0 0 1px #C5CEDA;color:var(--primary-hover)}
+.btn-dark-outline{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.btn-dark-outline:hover{box-shadow:inset 0 0 0 1px #fff}
+.link{display:inline-flex;align-items:center;gap:4px;color:var(--primary);font-weight:500;font-size:15px}
+.link:hover{color:var(--primary-hover)}
+.link:hover .chev{transform:translateX(2px)}
+.chev{transition:transform .15s}
+
+/* ===== Header / mega menu ===== */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.hdr.scrolled{border-bottom-color:var(--line)}
+.hdr-in{height:68px;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center}
+.logo svg{height:30px;width:auto}
+.nav{display:flex;gap:4px;align-items:center}
+.nav-item{position:relative}
+.nav-btn{display:flex;align-items:center;gap:4px;height:36px;padding:0 10px;border-radius:6px;font-size:15px;font-weight:500;color:var(--ink)}
+.nav-btn:hover,.nav-item.open .nav-btn{color:var(--muted)}
+.nav-btn svg{transition:transform .15s}
+.nav-item.open .nav-btn svg{transform:rotate(180deg)}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.hdr-right .btn{height:36px;font-size:14px;padding:0 14px}
+.signin{font-size:15px;font-weight:500;color:var(--primary);padding:0 10px}
+.signin:hover{color:var(--primary-hover)}
+.burger{display:none;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px}
+
+.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,transform .15s,visibility .15s}
+.nav-item.open .mega{opacity:1;visibility:visible;transform:none}
+.mega-cols{display:grid;gap:36px}
+.mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.mega a.mi{display:block;padding:7px 0}
+.mega a.mi b{display:block;font-size:15px;font-weight:500;color:var(--primary)}
+.mega a.mi span{display:block;font-size:14px;color:var(--muted);margin-top:1px}
+.mega a.mi:hover b{color:var(--primary-hover)}
+.mega a.mi:hover span{color:var(--body)}
+
+/* Mobile drawer */
+.drawer{position:fixed;inset:0;z-index:80;background:#fff;transform:translateX(100%);transition:transform .25s;overflow-y:auto;padding:0 16px 32px}
+.drawer.open{transform:none}
+.drawer-top{height:68px;display:flex;align-items:center;justify-content:space-between}
+.dgroup{border-bottom:1px solid var(--line)}
+.dgroup>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:17px;font-weight:500}
+.dgroup .dlist{display:none;padding:0 0 14px}
+.dgroup.open .dlist{display:block}
+.dgroup.open>button svg{transform:rotate(180deg)}
+.dlist h5{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:12px 0 4px}
+.dlist a{display:block;padding:8px 0;color:var(--primary);font-weight:500;font-size:15px}
+.drawer .btns{display:grid;gap:10px;margin-top:24px}
+.drawer .btns .btn{height:46px}
+
+/* ===== Hero ===== */
+.hero{padding:96px 0 0;text-align:center;overflow:hidden}
+.hero h1{max-width:820px;margin:0 auto}
+.hero .lead{max-width:600px;margin:20px auto 0}
+.hero-cta{display:flex;gap:12px;justify-content:center;margin-top:32px}
+.globe-wrap{position:relative;height:430px;margin-top:40px}
+#globe{position:absolute;left:50%;top:0;transform:translateX(-50%);width:1000px;height:430px}
+.float{position:absolute;display:flex;align-items:center;gap:12px;background:#fff;border-radius:var(--r-card);box-shadow:var(--sh-lg);padding:12px 16px 12px 12px;text-align:left;animation:bob 6s ease-in-out infinite}
+.float .ic{width:36px;height:36px;border-radius:8px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.float b{display:block;font-size:14px;font-weight:500}
+.float span{display:block;font-size:13px;color:var(--muted)}
+.f1{left:calc(50% - 470px);top:120px}
+.f2{right:calc(50% - 470px);top:200px;animation-delay:-2s}
+.f3{left:calc(50% - 150px);top:300px;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+/* Logo strip */
+.logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.logos-in{display:flex;justify-content:space-between;align-items:center;gap:24px;height:96px;overflow:hidden}
+.lg{font-size:22px;color:#7A8699;white-space:nowrap;user-select:none}
+.lg.l1{font-weight:800;letter-spacing:3px}
+.lg.l2{font-weight:600;font-style:italic}
+.lg.l3{font-weight:300;letter-spacing:6px;font-size:18px}
+.lg.l4{font-weight:700;font-size:20px}
+.lg.l5{font-weight:400;letter-spacing:-.5px}
+.lg.l6{font-weight:600;font-size:20px;letter-spacing:1px}
+
+/* 3 product cards */
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:40px;padding-bottom:96px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,border-color .2s}
+.pcard:hover{box-shadow:var(--sh);border-color:#D5DCE5}
+.pcard .tag{font-size:13px;font-weight:500;color:var(--muted)}
+.icbox{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--primary);background:#fff}
+.pcard p{font-size:15px;color:var(--ink);font-weight:400;flex:1;text-wrap:balance}
+
+/* Opportunity */
+.opp .statement{font-size:30px;line-height:1.3;font-weight:300;letter-spacing:-.6px;max-width:900px;margin-top:20px}
+.opp .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+
+/* Split feature section */
+.split{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
+.split.rev{grid-template-columns:1.05fr 1fr}
+.split.rev .split-text{order:2}
+.feats{display:grid;gap:22px;margin-top:36px}
+.feat h3{margin-bottom:4px}
+.panel{border-radius:var(--r-lg);background:var(--grad);padding:40px;position:relative;min-height:520px;display:flex;align-items:center;justify-content:center}
+.panel.p2{background:var(--grad-2)}
+.panel.wide{margin-top:48px;min-height:0;padding:48px 56px 0;align-items:flex-end;overflow:hidden}
+.panel.wide .dash{max-width:980px;border-radius:10px 10px 0 0}
+.split h2{font-size:32px}
+
+/* Checkout mockup */
+.co{width:100%;max-width:400px;background:#fff;border-radius:10px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
+.co-bar{height:34px;background:#F4F6FA;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 12px}
+.co-bar i{width:9px;height:9px;border-radius:50%;background:#D7DDE6}
+.co-bar span{margin:0 auto;font-size:11.5px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:4px;padding:2px 10px}
+.co-body{padding:18px 18px 16px}
+.co-store{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.co-store .sl{width:24px;height:24px;border-radius:6px;background:var(--ink);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center}
+.co-acc{margin-top:12px;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;background:var(--ok-soft);color:#0E6E48;font-size:12.5px}
+.co-sec{margin-top:14px}
+.co-sec h5{font-size:11.5px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.co-row{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.co-row .m{color:var(--muted)}
+.co-row.green span:last-child{color:var(--ok)}
+.co-total{display:flex;justify-content:space-between;padding-top:10px;margin-top:6px;border-top:1px solid var(--line);font-weight:600;font-size:14px}
+.opts{display:grid;gap:6px}
+.opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;text-align:left;width:100%;transition:border-color .15s,box-shadow .15s}
+.opt:hover{border-color:#C9D1DC}
+.opt.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.opt .rd{width:14px;height:14px;border-radius:50%;border:1.5px solid #B7C0CD;flex:none;position:relative}
+.opt.on .rd{border-color:var(--primary)}
+.opt.on .rd::after{content:"";position:absolute;inset:2.5px;border-radius:50%;background:var(--primary)}
+.opt .grow{flex:1}
+.opt small{color:var(--muted);font-size:12px}
+.pay-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.pm{border:1px solid var(--line);border-radius:6px;padding:8px 2px 6px;font-size:11px;font-weight:500;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--body);transition:border-color .15s,box-shadow .15s}
+.pm svg{color:var(--muted)}
+.pm.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary);color:var(--primary)}
+.pm.on svg{color:var(--primary)}
+.co-pay{margin-top:14px;width:100%;height:40px;border-radius:6px;background:var(--primary);color:#fff;font-weight:500;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.co-pay:hover{background:var(--primary-hover)}
+.co-foot{text-align:center;font-size:11.5px;color:var(--faint);margin-top:10px}
+.co-done{padding:44px 24px;text-align:center;display:none}
+.co.done .co-body{display:none}
+.co.done .co-done{display:block}
+.okc{width:52px;height:52px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.spin{width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:96px;padding-top:40px;border-top:1px solid var(--line)}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+.stat b{display:block;font-size:44px;line-height:1.1;font-weight:300;letter-spacing:-1px}
+.stat span{display:block;font-size:15px;color:var(--muted);margin-top:8px;max-width:260px}
+
+/* Mini-UI cards (shipping) */
+.mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.mcard .mui{background:var(--bg-alt);border:1px solid var(--line-soft);border-radius:var(--r-card);height:300px;padding:20px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.mcard h3{margin-top:20px}
+.mcard .txt{margin-top:6px}
+.mcard .link{margin-top:14px}
+.minip{background:#fff;border-radius:8px;box-shadow:var(--sh);padding:14px;font-size:13px}
+.rate{display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:6px;cursor:pointer;transition:background .15s}
+.rate:hover{background:var(--bg-alt)}
+.rate.on{background:var(--primary-soft)}
+.rate .grow{flex:1}
+.rate small{display:block;color:var(--muted);font-size:11.5px}
+.pill{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:500;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:#0E6E48}
+.pill.pu{background:var(--primary-soft);color:var(--primary)}
+.pill.warn{background:var(--warn-soft);color:#8A5A12}
+.pill.bad{background:var(--bad-soft);color:#A3112E}
+.pill.gr{background:#EEF1F5;color:var(--body)}
+.trk{display:flex;gap:6px}
+.trk input{flex:1;min-width:0;height:34px;border:1px solid var(--line);border-radius:6px;padding:0 10px;font-size:13px;outline:none}
+.trk input:focus{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.trk button{height:34px;padding:0 12px;border-radius:6px;background:var(--primary);color:#fff;font-size:13px;font-weight:500}
+.tl{margin-top:12px;display:grid;gap:0}
+.tl-i{display:grid;grid-template-columns:14px 1fr;gap:10px;position:relative;padding-bottom:10px}
+.tl-i::before{content:"";position:absolute;left:6px;top:14px;bottom:0;width:1.5px;background:var(--line)}
+.tl-i:last-child::before{display:none}
+.tl-i i{width:13px;height:13px;border-radius:50%;border:2px solid #C5CEDA;background:#fff;margin-top:2px}
+.tl-i.cur i{border-color:var(--primary);background:var(--primary)}
+.tl-i b{font-weight:500;font-size:12.5px;display:block}
+.tl-i span{font-size:11.5px;color:var(--muted)}
+
+/* Dashboard mockup */
+.dash{width:100%;background:#fff;border-radius:10px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px;display:grid;grid-template-columns:180px 1fr}
+.dash-side{border-right:1px solid var(--line-soft);padding:14px 10px;background:#FCFDFE}
+.dash-side .brand{display:flex;align-items:center;gap:8px;font-weight:600;padding:4px 6px 14px}
+.dash-side .brand span{width:22px;height:22px;border-radius:6px;background:var(--ink);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center}
+.dash-side a{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;color:var(--body);font-size:12.5px}
+.dash-side a.on{background:var(--primary-soft);color:var(--primary);font-weight:500}
+.dash-side h6{font-size:11px;color:var(--faint);font-weight:500;margin:12px 8px 4px}
+.dash-main{padding:16px 18px;min-width:0}
+.dash-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.dash-top h4{font-size:18px;font-weight:600}
+.dtabs{display:flex;gap:4px;margin:12px 0;flex-wrap:wrap}
+.dtab{height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;color:var(--body);border:1px solid var(--line)}
+.dtab.on{background:var(--primary-soft);color:var(--primary);border-color:transparent}
+.dtable{width:100%;border-collapse:collapse}
+.dtable th{text-align:left;font-size:11.5px;font-weight:500;color:var(--muted);padding:8px 8px;border-bottom:1px solid var(--line)}
+.dtable td{padding:9px 8px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+.dtable tr:last-child td{border-bottom:0}
+.dscroll{overflow-x:auto}
+
+/* Funding */
+.steps{display:grid;gap:4px;margin-top:32px}
+.step{display:grid;grid-template-columns:32px 1fr;gap:14px;text-align:left;padding:14px 16px;border-radius:var(--r-card);transition:background .15s;width:100%}
+.step:hover{background:var(--bg-alt)}
+.step.on{background:#fff;box-shadow:var(--sh)}
+.step .n{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--muted)}
+.step.on .n{background:var(--primary);color:#fff;border-color:var(--primary)}
+.step b{font-weight:500;display:block}
+.step span{font-size:14px;color:var(--muted)}
+.fund{width:100%;max-width:440px;background:#fff;border-radius:10px;box-shadow:var(--sh-lg);padding:20px;font-size:13px}
+.fund-h{display:flex;justify-content:space-between;align-items:flex-start}
+.fund-h small{color:var(--muted);font-size:12px}
+.fund-big{font-size:28px;font-weight:300;letter-spacing:-.6px;margin-top:2px}
+.bar{height:8px;background:#EEF1F5;border-radius:999px;overflow:hidden;margin:14px 0 8px}
+.bar i{display:block;height:100%;background:var(--primary);border-radius:999px;transition:width .6s}
+.fund-kv{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.fund-kv small{color:var(--muted);font-size:12px;display:block}
+.fund-kv b{font-weight:500;font-size:14px}
+.fund-list{margin-top:14px;border-top:1px solid var(--line);padding-top:8px}
+.fund-list .co-row{padding:6px 0}
+.fstate{margin-top:14px;padding:10px 12px;border-radius:6px;background:var(--bg-alt);font-size:12.5px;color:var(--body);display:flex;gap:8px;align-items:center}
+
+/* Audiences */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+.aud .icbox{margin-bottom:18px}
+.aud h3{margin-bottom:6px}
+
+/* Quotes */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;background:#fff}
+.quote p{font-size:20px;line-height:1.45;font-weight:300;letter-spacing:-.2px}
+.who{display:flex;align-items:center;gap:12px}
+.who .av{width:40px;height:40px;border-radius:50%;background:var(--primary-soft);color:var(--primary);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:14px}
+.who b{display:block;font-weight:500;font-size:15px}
+.who span{font-size:14px;color:var(--muted)}
+.who .used{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+
+/* Dark integrate section */
+.dark{background:var(--dark);color:#fff}
+.dark .lead{color:#B7C6D8}
+.itabs{display:flex;gap:4px;border-bottom:1px solid var(--dark-line);margin-bottom:0}
+.itab{padding:10px 14px;font-size:14px;font-weight:500;color:#B7C6D8;border-bottom:2px solid transparent;margin-bottom:-1px}
+.itab.on{color:#fff;border-bottom-color:#C28FDD}
+.ipanel{background:var(--dark-2);border:1px solid var(--dark-line);border-top:0;border-radius:0 0 10px 10px;padding:22px;min-height:290px}
+.code{font-family:var(--mono);font-size:13px;line-height:1.75;color:#D7DEF0;white-space:pre;overflow-x:auto}
+.code .k{color:#C792EA}.code .s{color:#A5E075}.code .c{color:#6B7899}.code .p{color:#82AAFF}
+.isteps{display:grid;gap:16px}
+.istep{display:grid;grid-template-columns:28px 1fr;gap:12px}
+.istep .n{width:26px;height:26px;border-radius:50%;background:rgba(158,77,200,.18);color:#DABDEB;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500}
+.istep b{font-weight:500;display:block}
+.istep span{color:#B7C6D8;font-size:14px}
+.ex{font-size:12px;color:#6B7899;margin-top:12px}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1.6fr;gap:64px}
+.qa{border-bottom:1px solid var(--line)}
+.qa>button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;padding:20px 0;font-size:17px;font-weight:400}
+.qa>button .pl{width:24px;height:24px;border-radius:4px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none;transition:transform .2s}
+.qa.open>button .pl{transform:rotate(45deg)}
+.qa .ans{display:none;padding:0 40px 22px 0;color:var(--body);font-size:15px;line-height:1.65}
+.qa.open .ans{display:block}
+.qa .ans ul{list-style:none;display:grid;gap:8px;margin-top:10px}
+.qa .ans li{display:flex;gap:10px}
+.qa .ans li svg{color:var(--primary);flex:none;margin-top:3px}
+
+/* Final CTA */
+.fcta{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+.fcta h3{font-size:22px;font-weight:400;letter-spacing:-.3px;margin-bottom:10px}
+.fcta .acts{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+
+/* Footer */
+.foot{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg-alt)}
+.fcols{display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:32px}
+.fcols h6{font-size:14px;font-weight:500;margin-bottom:14px}
+.fcols a{display:block;font-size:14px;color:var(--muted);padding:4px 0}
+.fcols a:hover{color:var(--ink)}
+.fcols .sup{font-size:14px;color:var(--muted);line-height:1.7}
+.fbot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);flex-wrap:wrap}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.lang button{height:30px;padding:0 12px;font-size:13px;font-weight:500;color:var(--muted)}
+.lang button.on{background:var(--ink);color:#fff}
+
+/* Modal + toast */
+.scrim{position:fixed;inset:0;background:rgba(0,45,93,.45);z-index:90;display:none;align-items:center;justify-content:center;padding:16px}
+.scrim.open{display:flex}
+.modal{background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);width:100%;max-width:460px;max-height:calc(100vh - 32px);overflow-y:auto}
+.modal-h{display:flex;justify-content:space-between;align-items:center;padding:22px 24px 4px}
+.modal-h h3{font-size:20px;font-weight:500}
+.modal-b{padding:16px 24px 4px;display:grid;gap:14px}
+.modal-f{padding:18px 24px 22px;display:flex;justify-content:flex-end;gap:10px}
+.x{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.x:hover{background:var(--bg-alt);color:var(--ink)}
+.fld label{display:block;font-size:13.5px;font-weight:500;margin-bottom:6px}
+.fld label em{font-style:normal;color:var(--muted);font-weight:400}
+.fld input,.fld textarea{width:100%;height:42px;border:1px solid var(--line);border-radius:6px;padding:0 12px;font-size:15px;outline:none;background:#fff}
+.fld textarea{height:84px;padding:10px 12px;resize:vertical}
+.fld input:focus,.fld textarea:focus{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:32px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--body)}
+.chip.on{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
+.sent{text-align:center;padding:28px 24px 30px}
+.sent h3{font-size:20px;font-weight:500;margin-bottom:6px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:8px;font-size:14px;z-index:100;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ===== Responsive ===== */
+@media (max-width:1080px){
+  .nav,.hdr-right .signin{display:none}
+  .burger{display:flex}
+  .split,.split.rev{grid-template-columns:1fr;gap:48px}
+  .split.rev .split-text{order:0}
+  .fcols{grid-template-columns:repeat(3,1fr)}
+  .fcols .fbrand{grid-column:1/-1}
+  .f1{left:24px}.f2{right:24px}
+}
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .guides::before,.guides::after{display:none}
+  h1,.h1{font-size:38px;letter-spacing:-.8px}
+  h2,.h2{font-size:28px;letter-spacing:-.5px}
+  .lead{font-size:18px}
+  .pad{padding:72px 0}
+  .hero{padding-top:56px}
+  .hero-cta{flex-direction:column;align-items:stretch;max-width:320px;margin-left:auto;margin-right:auto}
+  .hero-cta .btn{height:46px}
+  .hdr-right .btn-primary{display:none}
+  .globe-wrap{height:300px}
+  #globe{width:640px;height:300px}
+  .float{padding:9px 12px 9px 9px}
+  .float .ic{width:30px;height:30px}
+  .f1{left:8px;top:40px}.f2{right:8px;top:140px}.f3{display:none}
+  .logos-in{justify-content:flex-start;gap:36px;animation:marq 22s linear infinite;width:max-content}
+  .logos{overflow:hidden}
+  .pcards,.mcards,.aud,.quotes,.opp .cols,.fcta{grid-template-columns:1fr}
+  .stats,.stats.four{grid-template-columns:1fr 1fr;gap:28px 20px;margin-top:64px}
+  .stat b{font-size:34px}
+  .panel{padding:20px 14px;min-height:0}
+  .panel.wide{padding:20px 12px 0}
+  .split h2{font-size:28px}
+  .opp .statement{font-size:24px}
+  .dash{grid-template-columns:1fr}
+  .dash-side{display:none}
+  .faq{grid-template-columns:1fr;gap:24px}
+  .quote{padding:24px}
+  .quote p{font-size:18px}
+  .who{flex-wrap:wrap}
+  .who .used{margin-left:52px;justify-content:flex-start}
+  .fcols{grid-template-columns:1fr 1fr}
+  .itabs{overflow-x:auto}
+}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* ===== v3: stripe.com homepage layout ===== */
+.pad-t{padding-top:112px}
+.sec-h{max-width:1100px}
+/* Hero */
+.s-hero{position:relative;overflow:hidden;padding:120px 0 0}
+.ribbon{position:absolute;top:-131px;right:20px;width:1150px;height:940px;pointer-events:none}
+.hero-in{position:relative;z-index:1}
+.s-hero h1{max-width:720px;font-weight:400;letter-spacing:-1.6px;font-size:60px}
+.s-hero .lead{max-width:600px;margin-top:22px}
+.s-hero .hero-cta{justify-content:flex-start;margin-top:32px}
+.eyebrow{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:22px}
+.eyebrow .num{color:var(--muted);font-weight:400}
+.logos-band{position:relative;z-index:1;margin-top:96px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.logos-track{display:flex;gap:72px;align-items:center;height:96px;width:max-content;animation:marq 32s linear infinite;padding-left:72px}
+.logos-track .lg{font-size:22px}
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:56px}
+.bc{background:var(--bg-alt);border-radius:12px;padding:28px 28px 0;display:flex;flex-direction:column;min-height:500px;overflow:hidden;position:relative;scroll-margin-top:90px}
+.bc.s4{grid-column:span 4}.bc.s2{grid-column:span 2}.bc.s3{grid-column:span 3}
+.bc h3{font-size:20px;font-weight:400;letter-spacing:-.3px;line-height:1.3;max-width:300px;padding-right:40px;text-wrap:balance}
+.exp{position:absolute;top:22px;right:22px;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--primary);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:300;line-height:1;transition:transform .2s,background .2s}
+.exp:hover{transform:rotate(90deg);background:var(--primary);color:#fff}
+.vis{position:relative;flex:1;display:flex;align-items:flex-end;justify-content:center;margin:28px -28px 0;padding:32px 28px 0;overflow:hidden}
+.vis::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-40%;height:85%;border-radius:50%;filter:blur(40px);opacity:.75;pointer-events:none}
+.vis.g1::before{background:radial-gradient(closest-side,#EBAED5,#C28FDD 60%,transparent)}
+.vis.g2::before{background:radial-gradient(closest-side,#FAB598,#D872B0 60%,transparent)}
+.vis.g3::before{background:radial-gradient(closest-side,#C28FDD,#99B0CB 60%,transparent)}
+.vis.g4::before{background:radial-gradient(closest-side,#DABDEB,#F5D6E9 60%,transparent)}
+.vis>*{position:relative;margin-bottom:28px}
+.vis .co{max-width:380px}
+.vis-dash{align-items:flex-end;padding-left:28px;padding-right:0}
+.vis-dash .dash{margin-bottom:0;border-radius:10px 0 0 0;box-shadow:var(--sh-lg)}
+.fund.static{max-width:420px}
+.pmlist{width:100%;max-width:260px}
+.pmi{display:flex;align-items:center;gap:10px;padding:9px 6px;border-bottom:1px solid var(--line-soft);font-size:13px}
+.pmi:last-child{border-bottom:0}
+.pmi .pmic{width:30px;height:30px;border-radius:7px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.pmi .grow{flex:1}
+.tg{width:30px;height:18px;border-radius:99px;background:#D7DDE6;position:relative;flex:none;transition:background .15s}
+.tg::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .15s}
+.tg.on{background:var(--primary)}
+.tg.on::after{transform:translateX(12px)}
+/* Banner */
+.banner{position:relative;overflow:hidden;border-radius:16px;background:var(--dark);min-height:380px;display:flex;align-items:flex-end}
+.banner-glow{position:absolute;inset:0;background:radial-gradient(60% 90% at 85% 20%,rgba(241,98,35,.85),transparent 60%),radial-gradient(55% 80% at 70% 70%,rgba(158,77,200,.9),transparent 60%),radial-gradient(40% 60% at 95% 85%,rgba(174,29,124,.85),transparent 60%);animation:glow 14s ease-in-out infinite alternate}
+@keyframes glow{to{transform:translateX(-6%) scale(1.08)}}
+.banner-in{position:relative;padding:56px;max-width:640px}
+.banner h2{color:#fff;font-size:44px;line-height:1.1;letter-spacing:-1px;font-weight:400;margin-bottom:28px}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{background:#EEF1F5}
+/* Stats + globe */
+.stats-sec{overflow:hidden}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.stats2{display:grid;grid-template-columns:1fr 1fr;gap:40px 32px;margin-top:48px}
+.stats2 .stat{border-left:1px solid var(--primary);padding-left:16px}
+.stats2 .stat b{font-size:48px}
+.globe-box{position:relative;height:500px}
+.globe-box #globe{position:absolute;left:50%;top:0;transform:translateX(-50%);width:620px;height:500px}
+/* Segments */
+.seg{padding:72px 0;border-bottom:1px solid var(--line)}
+.seg:first-of-type{padding-top:56px}
+.seg-h{font-size:36px;font-weight:300;letter-spacing:-.8px;line-height:1.15;margin-top:16px;max-width:760px}
+.seg-p{max-width:620px;margin-top:14px;font-size:17px}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.case{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:200px 1fr;background:#fff}
+.case-art{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px;letter-spacing:2px}
+.case-art.a1{background:linear-gradient(160deg,#002D5D,#9E4DC8)}
+.case-art.a2{background:linear-gradient(160deg,#AE1D7C,#F16223)}
+.case-b{padding:26px;display:flex;flex-direction:column;gap:16px}
+.case-b p{font-size:16px;line-height:1.5;font-weight:300}
+.case-meta{display:flex;flex-direction:column;gap:2px;font-size:14px}
+.case-meta .m{color:var(--muted);font-size:13px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+.svc h4,.offer h4,.benefits h4{font-size:16px;font-weight:500;margin-bottom:6px}
+.svc .link{margin-top:10px}
+.stories-wrap{position:relative;margin-top:40px}
+.stories,.news{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.stories::-webkit-scrollbar,.news::-webkit-scrollbar{display:none}
+.story{scroll-snap-align:start;display:flex;flex-direction:column;gap:14px}
+.story-art{aspect-ratio:4/5;border-radius:12px;display:flex;align-items:flex-end;padding:18px;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px}
+.story.s1 .story-art{background:radial-gradient(circle at 30% 30%,#D872B0,#9E4DC8 60%,#002D5D)}
+.story.s2 .story-art{background:radial-gradient(circle at 70% 20%,#F68A5E,#AE1D7C 55%,#7A1155)}
+.story.s3 .story-art{background:linear-gradient(200deg,#99B0CB,#9E4DC8 70%)}
+.story.s4 .story-art{background:linear-gradient(160deg,#002D5D,#00244B 50%,#F16223)}
+.story p{font-size:15px;line-height:1.5;color:var(--ink)}
+.car-nav{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}
+.cbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--primary);display:flex;align-items:center;justify-content:center;background:#fff}
+.cbtn:hover{border-color:var(--primary)}
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.offer{background:var(--bg-alt);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.offer .btn{margin-top:14px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+/* Dark dev */
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:72px;padding-top:48px;border-top:1px solid var(--dark-line)}
+.paths h4{color:#fff;font-size:16px;font-weight:500;margin:14px 0 6px}
+.paths p{color:#B7C6D8;font-size:15px;line-height:1.6}
+.icd{width:36px;height:36px;border-radius:8px;background:rgba(158,77,200,.18);color:#DABDEB;display:flex;align-items:center;justify-content:center}
+.link-l{display:inline-flex;gap:4px;color:#DABDEB;font-weight:500;font-size:15px;margin-top:12px}
+.link-l:hover{color:#fff}
+/* News */
+.news-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.news-head .car-nav{margin:0}
+.news{margin-top:40px;grid-auto-columns:calc((100% - 32px)/3)}
+.ncard{scroll-snap-align:start;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.ncard .nart{height:180px}
+.ncard .nb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ncard .nt{font-size:12.5px;font-weight:500;color:var(--primary)}
+.ncard h4{font-size:18px;font-weight:400;letter-spacing:-.2px;line-height:1.35}
+.ncard p{font-size:14.5px;color:var(--muted);line-height:1.55;flex:1}
+.pmodal ul{list-style:none;display:grid;gap:8px;margin-top:6px}
+.pmodal li{display:flex;gap:10px;font-size:15px;color:var(--body)}
+.pmodal li svg{color:var(--primary);flex:none;margin-top:3px}
+@media (max-width:1080px){
+  .bento{grid-template-columns:1fr 1fr}
+  .bc.s4,.bc.s3,.bc.s2{grid-column:span 1}
+  .bc.s4{grid-column:1/-1}
+  .stories{grid-auto-columns:calc((100% - 16px)/2.4)}
+  .news{grid-auto-columns:calc((100% - 16px)/2.2)}
+  .stats-grid{grid-template-columns:1fr}
+  .globe-box{height:340px}
+  .case{grid-template-columns:1fr}
+  .case-art{height:120px}
+}
+@media (max-width:760px){
+  .s-hero{padding-top:56px}
+  .s-hero h1{font-size:40px;letter-spacing:-1px}
+  .ribbon{top:-50px;right:-65px;width:600px;height:520px;opacity:.5}
+  .s-hero .hero-cta{flex-direction:column;align-items:stretch;max-width:none}
+  .s-hero .hero-cta .btn{height:46px}
+  .logos-band{margin-top:56px}
+  .pad-t{padding-top:72px}
+  .bento{grid-template-columns:1fr}
+  .bc.s4,.bc.s3,.bc.s2{grid-column:1/-1}
+  .bc{min-height:0;padding:22px 20px 0}
+  .vis{margin:20px -20px 0;padding:24px 16px 0}
+  .vis-dash{padding-right:0}
+  .banner{min-height:300px}
+  .banner-in{padding:28px}
+  .banner h2{font-size:30px}
+  .stats2{gap:28px 16px}
+  .stats2 .stat b{font-size:34px}
+  .globe-box{height:260px}
+  .globe-box #globe{width:420px;height:260px}
+  .seg-h{font-size:28px}
+  .cases,.svc,.offers,.benefits,.paths{grid-template-columns:1fr;gap:24px}
+  .stories{grid-auto-columns:78%}
+  .news{grid-auto-columns:86%}
+  .news-head{flex-direction:column;align-items:flex-start}
+}
+
+/* Guide lines like stripe.com: 1266px apart, continuous from header to footer */
+.guides::before,.guides::after{background:#E5EDF5;z-index:0}
+.guides::before{left:max(16px,calc(50% - 633px))}
+.guides::after{right:max(16px,calc(50% - 633px))}
+.dark.guides::before,.dark.guides::after{background:#1C4573}
+.hdr{border-bottom-color:var(--line)}
+.s-hero.guides::before,.s-hero.guides::after{z-index:2}
+.logos-band{-webkit-mask-image:none;mask-image:none}
+@media (max-width:1080px){.guides::before{left:16px}.guides::after{right:16px}}
+
+/* Logos only show between the guide lines, fading out as they reach them */
+.logos-clip{max-width:1266px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 64px,#000 calc(100% - 64px),transparent);mask-image:linear-gradient(90deg,transparent,#000 64px,#000 calc(100% - 64px),transparent)}
+@media (max-width:1080px){.logos-clip{margin:0 16px}}
+@media (max-width:760px){.logos-clip{margin:0}}
+
+/* Top bar: no colour over the hero, turns white on hover (and once the page scrolls, so text stays readable) */
+.hdr{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background .2s,border-color .2s}
+.hdr:hover,.hdr:focus-within,.hdr.scrolled{background:#fff}
+.s-hero{margin-top:-69px;padding-top:189px}
+@media (max-width:760px){.s-hero{padding-top:125px}}
+
+/* Ribbon runs down through the logo strip to its bottom-right corner */
+.ribbon{overflow:visible}
+.logos-band{background:transparent}
+
+/* Logo strip sits behind the ribbon; headline and buttons stay in front */
+.logos-band{z-index:1}
+.ribbon{z-index:2}
+.hero-in{z-index:3}
+.s-hero.guides::before,.s-hero.guides::after{z-index:3}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="#top" class="logo" aria-label="FLIK home" id="logo"></a>
+    <nav class="nav" id="nav" aria-label="Main"></nav>
+    <div class="hdr-right">
+      <a href="#" class="signin" data-act="signin">Sign in</a>
+      <button class="btn btn-primary" data-act="sales">Contact sales <span class="chev">›</span></button>
+      <button class="burger" id="burger" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-hidden="true"></div>
+
+<main id="top">
+
+<!-- ===== Hero (Stripe homepage style: left-aligned, ribbon top right) ===== -->
+<section class="s-hero guides">
+  <svg class="ribbon" id="ribbon" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F68A5E"/><stop offset=".28" stop-color="#F16223"/><stop offset=".52" stop-color="#AE1D7C"/><stop offset=".76" stop-color="#9E4DC8"/><stop offset="1" stop-color="#002D5D"/>
+      </linearGradient>
+      <filter id="rblur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter>
+    </defs>
+    <path id="rfill" fill="url(#rg)" opacity=".7" filter="url(#rblur)"/>
+    <g id="rlines" fill="none" stroke="url(#rg)" stroke-width="3"></g>
+  </svg>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Shoppers in the FLIK ecosystem: <span class="num">10M+</span></p>
+    <h1>Commerce infrastructure to grow your sales.</h1>
+    <p class="lead">Accept payments, ship with every courier and fund your inventory, from your first order to your millionth.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" data-act="start">Get started <span class="chev">›</span></button>
+      <button class="btn btn-secondary" data-act="sales">Contact sales <span class="chev">›</span></button>
+    </div>
+  </div>
+  <div class="logos-band">
+    <div class="logos-clip"><div class="logos-track" id="logos"></div></div>
+  </div>
+</section>
+
+<!-- ===== Solutions bento ===== -->
+<section class="pad-t guides" id="solutions">
+  <div class="wrap">
+    <h2 class="sec-h">Flexible solutions for every way you sell. <span class="soft">Grow your brand with checkout, shipping and funding tools that work on their own or together.</span></h2>
+
+    <div class="bento">
+      <!-- Checkout -->
+      <article class="bc s4" id="checkout">
+        <h3>Accept payments in a 30-second checkout</h3>
+        <button class="exp" data-prod="checkout" aria-label="More about Checkout">+</button>
+        <div class="vis g1">
+          <div class="co" id="co">
+            <div class="co-bar"><i></i><i></i><i></i><span>checkout.flik.co.id</span></div>
+            <div class="co-body">
+              <div class="co-store"><span class="sl">A</span>Aruna Studio</div>
+              <div class="co-acc"><span data-ic="check-s"></span>Logged in with FLIK · +62 812-3456-7890</div>
+              <div class="co-sec">
+                <h5>Order</h5>
+                <div class="co-row"><span>Linen Shirt, Sand, M</span><span class="num">Rp 349.000</span></div>
+                <div class="co-row"><span>Canvas Tote Bag</span><span class="num">Rp 189.000</span></div>
+              </div>
+              <div class="co-sec">
+                <h5>Delivery</h5>
+                <div class="opts" id="ship-opts">
+                  <button class="opt on" data-ship="12000"><span class="rd"></span><span class="grow">Regular<br><small>2–3 days</small></span><span class="num">Rp 12.000</span></button>
+                  <button class="opt" data-ship="28000"><span class="rd"></span><span class="grow">Same day<br><small>Arrives today</small></span><span class="num">Rp 28.000</span></button>
+                </div>
+              </div>
+              <div class="co-sec"><h5>Payment</h5><div class="pay-grid" id="pay-grid"></div></div>
+              <div class="co-sec">
+                <div class="co-row"><span class="m">Subtotal</span><span class="num">Rp 538.000</span></div>
+                <div class="co-row"><span class="m">Shipping</span><span class="num" id="co-ship">Rp 12.000</span></div>
+                <div class="co-row green"><span class="m">Reward applied</span><span class="num">−Rp 10.000</span></div>
+                <div class="co-total"><span>Total</span><span class="num" id="co-total">Rp 540.000</span></div>
+              </div>
+              <button class="co-pay" id="co-pay">Pay Rp 540.000</button>
+              <div class="co-foot">Secured by FLIK</div>
+            </div>
+            <div class="co-done">
+              <div class="okc" data-ic="check-l"></div>
+              <h3 style="font-size:18px;font-weight:500;max-width:none">Payment successful</h3>
+              <p class="txt" style="margin-top:4px" id="co-done-txt">Order FLK-20481 · Completed in 28 seconds</p>
+              <button class="btn btn-secondary" style="margin-top:20px" id="co-reset">Try again</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Payment methods -->
+      <article class="bc s2">
+        <h3>Offer 15 payment methods</h3>
+        <button class="exp" data-prod="payments" aria-label="More about payment methods">+</button>
+        <div class="vis g2">
+          <div class="minip pmlist" id="pmlist"></div>
+        </div>
+      </article>
+
+      <!-- Rates -->
+      <article class="bc s2" id="shipping">
+        <h3>Ship with every courier for up to 40% less</h3>
+        <button class="exp" data-prod="shipping" aria-label="More about Shipping">+</button>
+        <div class="vis g3"><div class="minip" id="rates" style="width:100%;max-width:300px"></div></div>
+      </article>
+
+      <!-- Shipments dashboard -->
+      <article class="bc s4">
+        <h3>Manage single and bulk shipments in one place</h3>
+        <button class="exp" data-prod="bulk" aria-label="More about bulk shipping">+</button>
+        <div class="vis g4 vis-dash">
+          <div class="dash">
+            <div class="dash-side">
+              <div class="brand"><span>F</span>FLIK</div>
+              <a href="#" onclick="return false"><span data-ic="home-s"></span>Home</a>
+              <h6>Checkout</h6>
+              <a href="#" onclick="return false"><span data-ic="cart-s"></span>Orders</a>
+              <h6>Shipping</h6>
+              <a href="#" class="on" onclick="return false"><span data-ic="truck-s"></span>Shipments</a>
+              <a href="#" onclick="return false"><span data-ic="pin-s"></span>Warehouses</a>
+              <h6>Funding</h6>
+              <a href="#" onclick="return false"><span data-ic="coins-s"></span>Cash advance</a>
+            </div>
+            <div class="dash-main">
+              <div class="dash-top"><h4>Shipments</h4><button class="btn btn-primary" style="height:30px;font-size:12.5px;padding:0 10px" data-toast="In the dashboard, this opens the new shipment form.">+ New shipment</button></div>
+              <div class="dtabs" id="dtabs"></div>
+              <div class="dscroll"><table class="dtable"><thead><tr><th>Tracking no.</th><th>Destination</th><th>Service</th><th>Status</th><th>Date</th></tr></thead><tbody id="dbody"></tbody></table></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tracking -->
+      <article class="bc s3">
+        <h3>Track any package in real time</h3>
+        <button class="exp" data-prod="track" aria-label="More about tracking">+</button>
+        <div class="vis g2">
+          <div class="minip" style="width:100%;max-width:360px">
+            <form class="trk" id="trk"><input id="trk-in" placeholder="Tracking number" value="FLK2610140012" aria-label="Tracking number"><button>Track</button></form>
+            <div class="tl" id="tl"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- COD -->
+      <article class="bc s3">
+        <h3>Sell with COD for only a 3% fee</h3>
+        <button class="exp" data-prod="cod" aria-label="More about COD">+</button>
+        <div class="vis g1">
+          <div class="minip" style="width:100%;max-width:340px">
+            <div class="co-row" style="margin-bottom:6px"><b style="font-weight:500">COD payout</b><span class="pill ok">Delivered</span></div>
+            <div class="co-row"><span class="m">Order total</span><span class="num">Rp 540.000</span></div>
+            <div class="co-row"><span class="m">COD fee (3%)</span><span class="num">−Rp 16.200</span></div>
+            <div class="co-total"><span>Added to balance</span><span class="num">Rp 523.800</span></div>
+            <div class="fstate" style="margin-top:12px"><span data-ic="bolt"></span>Credited right after delivery</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Funding -->
+      <article class="bc s4" id="funding">
+        <h3>Fund your inventory with a merchant cash advance</h3>
+        <button class="exp" data-prod="funding" aria-label="More about Funding">+</button>
+        <div class="vis g3">
+          <div class="fund static">
+            <div class="fund-h"><div><small>Merchant Cash Advance</small><div class="fund-big num">Rp 250.000.000</div></div><span class="pill ok">Active</span></div>
+            <div class="bar"><i style="width:62%"></i></div>
+            <div class="co-row"><span class="m">Repaid</span><span class="num">62%</span></div>
+            <div class="fund-kv"><div><small>Outstanding</small><b class="num">Rp 95.000.000</b></div><div><small>Repaid so far</small><b class="num">Rp 155.000.000</b></div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Auto settlement -->
+      <article class="bc s2">
+        <h3>Repay automatically as you sell</h3>
+        <button class="exp" data-prod="settle" aria-label="More about auto settlement">+</button>
+        <div class="vis g4">
+          <div class="minip" style="width:100%;max-width:300px">
+            <div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Auto settlement</b></div>
+            <div class="co-row"><span><b style="font-weight:500;display:block">From sales</b><span class="m" style="font-size:12px">14 Okt 2026</span></span><span class="num">−Rp 1.250.000</span></div>
+            <div class="co-row"><span><b style="font-weight:500;display:block">From sales</b><span class="m" style="font-size:12px">13 Okt 2026</span></span><span class="num">−Rp 2.180.000</span></div>
+            <div class="co-row"><span><b style="font-weight:500;display:block">From sales</b><span class="m" style="font-size:12px">12 Okt 2026</span></span><span class="num">−Rp 1.640.000</span></div>
+            <div class="fstate" style="margin-top:10px"><span data-ic="check-s"></span>No hidden fees</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Feature banner ===== -->
+<section class="pad-s guides">
+  <div class="wrap">
+    <div class="banner">
+      <div class="banner-glow" aria-hidden="true"></div>
+      <div class="banner-in">
+        <h2>Building commerce infrastructure for growing brands</h2>
+        <button class="btn btn-light" data-act="sales">Book a demo <span class="chev">›</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats + globe ===== -->
+<section class="pad guides stats-sec">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div>
+        <h2>The backbone of growing brands</h2>
+        <div class="stats2">
+          <div class="stat"><b class="num">10M+</b><span>shoppers in the FLIK ecosystem</span></div>
+          <div class="stat"><b class="num">200+</b><span>brands selling with FLIK</span></div>
+          <div class="stat"><b class="num">99%</b><span>shipment creation success rate</span></div>
+          <div class="stat"><b class="num">15</b><span>payment methods in one checkout</span></div>
+        </div>
+      </div>
+      <div class="globe-box" aria-hidden="true"><canvas id="globe"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Segments ===== -->
+<section class="pad guides">
+  <div class="wrap">
+    <h2 class="sec-h">Powering brands at every stage. <span class="soft">Run your business on a platform that grows with you.</span></h2>
+
+    <!-- A: brand websites -->
+    <div class="seg">
+      <span class="label"><i></i>FLIK for brand websites</span>
+      <h3 class="seg-h">Turn more of your traffic into orders.</h3>
+      <p class="txt seg-p">Brands on Shopify and WooCommerce use FLIK Checkout to give shoppers a faster way to pay, with every payment method and courier built in.</p>
+      <div class="cases">
+        <article class="case">
+          <div class="case-art a1"><span>Kuvings</span></div>
+          <div class="case-b">
+            <p>“Before using FLIK, many customers canceled their purchases because the checkout process was too complicated. Now the process is much more practical.”</p>
+            <div class="case-meta"><span class="m">Products used</span><span>Checkout</span></div>
+            <a href="#" class="link" data-page="Kuvings case study">Read the story <span class="chev">›</span></a>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-art a2"><span>JAMISE</span></div>
+          <div class="case-b">
+            <p>“The checkout process is much faster, customers can choose their preferred payment methods, and we can easily offer cashback promotions.”</p>
+            <div class="case-meta"><span class="m">Products used</span><span>Checkout</span></div>
+            <a href="#" class="link" data-page="Jamise case study">Read the story <span class="chev">›</span></a>
+          </div>
+        </article>
+      </div>
+      <div class="svc">
+        <div><h4>Shopify</h4><p class="txt">Add FLIK Checkout and Shipping to your Shopify store.</p><a href="#" class="link" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
+        <div><h4>WooCommerce</h4><p class="txt">Connect your WordPress store in a few steps.</p><a href="#" class="link" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
+        <div><h4>FLIK API</h4><p class="txt">Build your own checkout and shipping flows.</p><a href="#" class="link" data-page="Developer docs">Read the docs <span class="chev">›</span></a></div>
+      </div>
+    </div>
+
+    <!-- B: shipping at volume -->
+    <div class="seg">
+      <span class="label"><i></i>FLIK for sellers shipping at volume</span>
+      <h3 class="seg-h">Ship more, and spend less on every package.</h3>
+      <p class="txt seg-p">From one parcel to thousands, FLIK Shipping compares every courier, handles COD and pays you right after delivery.</p>
+      <div class="stories-wrap">
+        <div class="stories" id="stories">
+          <article class="story s1"><div class="story-art"><span>ERIGO</span></div><p>Erigo runs delivery, payment and returns from one place with FLIK.</p><a href="#" class="link" data-page="Erigo case study">Read Erigo's story <span class="chev">›</span></a></article>
+          <article class="story s2"><div class="story-art"><span>ZMNow.id</span></div><p>ZMNow.id handles payments, shipping and rewards without juggling systems.</p><a href="#" class="link" data-page="ZMNow.id case study">Read ZMNow.id's story <span class="chev">›</span></a></article>
+          <article class="story s3"><div class="story-art"><span>3%</span></div><p>COD with a 3% fee, credited to your balance after delivery.</p><a href="#" class="link" data-page="/shipping/cod">Explore COD shipping <span class="chev">›</span></a></article>
+          <article class="story s4"><div class="story-art"><span>40%</span></div><p>Save up to 40% on shipping with every courier in one dashboard.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
+        </div>
+        <div class="car-nav"><button class="cbtn" data-car="stories" data-dir="-1" aria-label="Previous">‹</button><button class="cbtn" data-car="stories" data-dir="1" aria-label="Next">›</button></div>
+      </div>
+      <div class="offers">
+        <div class="offer"><h4>Free to register.</h4><p class="txt">There's no registration fee to use FLIK Shipping.</p><button class="btn btn-primary" data-act="start">Get started <span class="chev">›</span></button></div>
+        <div class="offer"><h4>Bulk shipping.</h4><p class="txt">Send from many warehouses to many destinations at once.</p><a href="#" class="btn btn-secondary" data-page="/shipping/bulk">Learn more <span class="chev">›</span></a></div>
+      </div>
+    </div>
+
+    <!-- C: scaling -->
+    <div class="seg" style="border-bottom:0">
+      <span class="label"><i></i>FLIK for brands ready to scale</span>
+      <h3 class="seg-h">Fund the next stage of your growth.</h3>
+      <p class="txt seg-p">FLIK Merchant Cash Advance gives selected brands upfront funding for inventory, settled automatically as products sell. Trusted by 10+ growing businesses.</p>
+      <div class="split" style="margin-top:40px">
+        <div class="split-text">
+          <div class="steps" id="steps" style="margin-top:0"></div>
+          <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-primary" data-act="sales" data-interest="Funding">Talk to the FLIK team <span class="chev">›</span></button>
+            <a href="#" class="btn btn-secondary" data-page="/funding/merchant-cash-advance">Learn more</a>
+          </div>
+        </div>
+        <div class="panel"><div class="fund" id="fund"></div></div>
+      </div>
+      <div class="benefits">
+        <div><h4>Increased sales.</h4><p class="txt">Keep sales moving with dedicated cash flow for inventory and marketing.</p></div>
+        <div><h4>Transparent system.</h4><p class="txt">Clear margins with no hidden fees.</p></div>
+        <div><h4>Settled as you sell.</h4><p class="txt">Repayment is deducted automatically from your product sales.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Developers (dark) ===== -->
+<section class="pad dark guides">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text">
+        <h2 style="color:#fff">Reliable, flexible integration for every store.</h2>
+        <p class="lead" style="margin-top:16px">Connect FLIK with a plugin, build with the API, or run everything from the dashboard with no code.</p>
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a href="#" class="btn btn-light" data-page="Developer docs">View developer docs <span class="chev">›</span></a></div>
+      </div>
+      <div>
+        <div class="itabs" id="itabs" role="tablist"></div>
+        <div class="ipanel" id="ipanel"></div>
+      </div>
+    </div>
+    <div class="paths">
+      <div><span class="icd" data-ic="home"></span><h4>Don't code?</h4><p>Create shipments, set up checkout and manage your balance right from the FLIK dashboard.</p><a href="#" class="link-l" data-act="start">Get started <span class="chev">›</span></a></div>
+      <div><span class="icd" data-ic="boxes"></span><h4>Use a plugin.</h4><p>Connect your Shopify or WooCommerce store and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/shopify">See integrations <span class="chev">›</span></a></div>
+      <div><span class="icd" data-ic="globe"></span><h4>Build your own.</h4><p>Use the FLIK API to create checkouts and shipments from your own systems.</p><a href="#" class="link-l" data-page="API reference">API reference <span class="chev">›</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== What's happening ===== -->
+<section class="pad guides">
+  <div class="wrap">
+    <div class="news-head">
+      <h2 class="sec-h" style="margin:0">What's happening <span class="soft" style="display:block">See the latest from FLIK.</span></h2>
+      <div class="car-nav"><button class="cbtn" data-car="news" data-dir="-1" aria-label="Previous">‹</button><button class="cbtn" data-car="news" data-dir="1" aria-label="Next">›</button></div>
+    </div>
+    <div class="news" id="news"></div>
+  </div>
+</section>
+
+<!-- ===== Final CTA ===== -->
+<section class="pad alt guides">
+  <div class="wrap fcta">
+    <div>
+      <h3>Ready to get started?</h3>
+      <p class="txt">Create an account in minutes, or talk to our team about the right setup for your brand.</p>
+      <div class="acts">
+        <button class="btn btn-primary" data-act="start">Get started <span class="chev">›</span></button>
+        <button class="btn btn-secondary" data-act="sales">Contact sales <span class="chev">›</span></button>
+      </div>
+    </div>
+    <div>
+      <h3>See what you'll pay</h3>
+      <p class="txt">Free to register, with transparent pricing and no hidden fees.</p>
+      <div class="acts"><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
+    </div>
+    <div>
+      <h3>Start building</h3>
+      <p class="txt">Connect your store with our plugins or the FLIK API.</p>
+      <div class="acts"><a href="#" class="link" data-page="Developer docs">Integration options <span class="chev">›</span></a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ===== Footer ===== -->
+<footer class="foot guides">
+  <div class="wrap">
+    <div class="fcols" id="fcols"></div>
+    <div class="fbot">
+      <span>© 2026 FLIK. All rights reserved.</span>
+      <div class="lang" role="group" aria-label="Language"><button class="on" data-lang="en">English</button><button data-lang="id">Bahasa Indonesia</button></div>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== Icons ===== */
+const P={
+  cart:'<circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.2L21 7H6.3"/>',
+  truck:'<path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 10h4l3.5 3.5V16h-7.5"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+  wallet:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 9.5h18M16 14h2"/><path d="M6 6l9-3 1 3"/>',
+  coins:'<ellipse cx="9" cy="7" rx="5.5" ry="2.5"/><path d="M3.5 7v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V7"/><path d="M9.5 16.5c.9.3 1.9.5 3 .5 3 0 5.5-1.1 5.5-2.5v-4"/><path d="M14.5 10.6c2 .3 3.5 1.1 3.5 2"/><path d="M3.5 11v4c0 1.4 2.5 2.5 5.5 2.5"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+  boxes:'<path d="M3.5 13.5h7v7h-7zM13.5 13.5h7v7h-7zM8.5 3.5h7v7h-7z"/>',
+  chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  bolt:'<path d="M13 2.5 4.5 13.5H12l-1 8 8.5-11H12z"/>',
+  check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  qris:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M20 20h-3M14 20v.01"/>',
+  phone:'<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18h2"/>',
+  card:'<rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19M6 15h4"/>',
+  bank:'<path d="M3 9.5 12 4l9 5.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20.5h18"/>',
+  cash:'<rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9.5v.01M18 14.5v.01"/>',
+  home:'<path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/>',
+  pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  x:'<path d="M6 6l12 12M18 6 6 18"/>',
+  down:'<path d="m6 9 6 6 6-6"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'
+};
+const ic=(n,s=18,w=1.7)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
+document.querySelectorAll('[data-ic]').forEach(e=>{
+  const v=e.dataset.ic;
+  if(v.endsWith('-s'))e.innerHTML=ic(v.slice(0,-2),15);
+  else if(v==='check-l')e.innerHTML=ic('check',26,2.2);
+  else e.innerHTML=ic(v,18);
+});
+
+/* ===== Logo (real FLIK.svg) ===== */
+document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="0 0 90 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M53.0687 4.36523V21.2411C53.0687 24.7038 52.7067 27.6382 59.5548 27.6382V10.7623C59.5548 7.29956 58.8615 4.36523 53.0687 4.36523Z" fill="#232356"/><path d="M40.0576 21.9117V10.7673L40.0438 10.7619C40.0438 7.29914 39.3505 4.36482 33.5578 4.36482L33.5547 4.36328V23.4387C33.5547 25.758 35.4352 27.6385 37.7545 27.6385H50.5586V21.9125H40.0576V21.9117Z" fill="#232356"/><path d="M74.8642 15.0687L83.0789 4.36523H76.1005L69.1788 12.7426V10.7623C69.1788 7.29956 68.4855 4.36523 62.6928 4.36523V21.2411C62.6928 24.7038 62.3308 27.6382 69.1788 27.6382V20.6981L70.9397 18.9939L76.5231 27.6382H83.5882L74.8649 15.0687H74.8642Z" fill="#222255"/><path d="M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z" fill="#F26324"/><path d="M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z" fill="#F26324"/></svg>';
+
+/* ===== Sitemap data (v5) ===== */
+const MENU=[
+  {k:'Products',w:860,cols:[
+    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
+    {h:'Shipping',items:[['Shipping','All couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Lower RTO, fewer failed deliveries','/shipping/returns']]},
+    {h:'Funding',items:[['Merchant Cash Advance','Inventory financing','/funding/merchant-cash-advance'],['Auto Settlement','Repay as your products sell','/funding/auto-settlement'],['Balance & Payouts','Real-time payout after delivery','/funding/balance']]}
+  ]},
+  {k:'Solutions',w:560,cols:[
+    {h:'By use case',items:[['D2C brands','Sell on your own website','/use-cases/d2c-brands'],['COD sellers','Cash on delivery at scale','/use-cases/cod-sellers'],['Scaling brands','Fund inventory to grow','/use-cases/scaling-brands']]},
+    {h:'By industry',items:[['Fashion','Apparel and accessories','/industries/fashion'],['Home appliances','Kitchen and home','/industries/home-appliances']]}
+  ]},
+  {k:'Developers',w:560,cols:[
+    {h:'Build',items:[['Documentation','Guides to get started','Developer docs'],['API reference','Endpoints and objects','API reference'],['Developer resources','SDKs and tools','Developer resources']]},
+    {h:'Integrations',items:[['Shopify','Checkout and Shipping for Shopify','/integrations/shopify'],['WooCommerce','Checkout and Shipping for WooCommerce','/integrations/woocommerce']]}
+  ]},
+  {k:'Resources',w:560,cols:[
+    {h:'Learn',items:[['Blog','News and guides','/blog'],['Promo','Current offers','/promo'],['Help center','FAQ and support','/help']]},
+    {h:'Company',items:[['About','Our story','/about'],['Contact','Get in touch','/contact'],['Book a demo','See FLIK in action','/demo']]}
+  ]}
+];
+const nav=document.getElementById('nav');
+nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false">${m.k}${ic('down',14,2)}</button>
+  <div class="mega" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
+let navTimer;
+nav.querySelectorAll('.nav-item').forEach(it=>{
+  const open=()=>{clearTimeout(navTimer);nav.querySelectorAll('.nav-item').forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)})};
+  const close=()=>{navTimer=setTimeout(()=>{it.classList.remove('open');it.querySelector('.nav-btn').setAttribute('aria-expanded','false')},140)};
+  it.addEventListener('mouseenter',open);it.addEventListener('mouseleave',close);
+  it.querySelector('.nav-btn').addEventListener('click',e=>{e.stopPropagation();it.classList.contains('open')?it.classList.remove('open'):open()});
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.nav-item'))nav.querySelectorAll('.nav-item').forEach(o=>o.classList.remove('open'))});
+
+/* Mobile drawer */
+const drawer=document.getElementById('drawer');
+drawer.innerHTML=`<div class="drawer-top"><span class="logo">${document.getElementById('logo').innerHTML}</span><button class="x" id="dclose" aria-label="Close menu">${ic('x',20)}</button></div>`+
+  MENU.map(m=>`<div class="dgroup"><button>${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>`<h5>${c.h}</h5>${c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}`).join('')}</div></div>`).join('')+
+  `<div class="dgroup"><button data-page="/pricing">Pricing</button></div><div class="btns"><button class="btn btn-primary" data-act="start">Get started</button><button class="btn btn-secondary" data-act="sales">Contact sales</button><button class="btn btn-secondary" data-act="signin">Sign in</button></div>`;
+const setDrawer=o=>{drawer.classList.toggle('open',o);drawer.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''};
+document.getElementById('burger').onclick=()=>setDrawer(true);
+document.getElementById('dclose').onclick=()=>setDrawer(false);
+drawer.querySelectorAll('.dgroup>button:not([data-page])').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+
+/* Header border on scroll */
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passive:true});
+
+/* ===== Logos (placeholder wordmarks) ===== */
+const LOGOS=[['ERIGO','l1'],['Kuvings','l2'],['JAMISE','l3'],['ZMNow.id','l4'],['HumanGreatness','l5'],['RYŪ','l6']];
+const lgHtml=LOGOS.map(l=>`<span class="lg ${l[1]}">${l[0]}</span>`).join('');
+document.getElementById('logos').innerHTML=lgHtml+lgHtml;
+
+/* ===== Globe (dot sphere) ===== */
+(function(){
+  const cv=document.getElementById('globe'),ctx=cv.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W,H,R,cx,cy,dpr,pts=[],rot=0,running=true;
+  const N=4200,ga=Math.PI*(3-Math.sqrt(5));
+  for(let i=0;i<N;i++){const y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),t=ga*i;pts.push([Math.cos(t)*r,y,Math.sin(t)*r])}
+  const C=[[0,45,93],[158,77,200],[174,29,124],[241,98,35]];
+  const col=t=>{t=Math.max(0,Math.min(.999,t))*(C.length-1);const i=Math.floor(t),f=t-i,a=C[i],b=C[i+1];return a.map((v,k)=>Math.round(v+(b[k]-v)*f))};
+  function size(){dpr=Math.min(2,devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);R=W*.42;cx=W/2;cy=R+40}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const cr=Math.cos(rot),sr=Math.sin(rot),tilt=-.35,ct=Math.cos(tilt),st=Math.sin(tilt);
+    for(const p of pts){
+      let x=p[0]*cr-p[2]*sr,z=p[0]*sr+p[2]*cr,y=p[1];
+      const y2=y*ct-z*st;z=y*st+z*ct;
+      if(z<0)continue;
+      const sx=cx+x*R,sy=cy+y2*R;
+      if(sy>H+4)continue;
+      const c=col((x+1)/2*.85+(1-z)*.15);
+      ctx.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${.35+z*.65})`;
+      const s=.7+z*1.6;ctx.beginPath();ctx.arc(sx,sy,s,0,6.283);ctx.fill();
+    }
+  }
+  function loop(){if(!running)return;rot+=.0016;draw();requestAnimationFrame(loop)}
+  size();draw();
+  addEventListener('resize',()=>{size();draw()});
+  if(!reduce){new IntersectionObserver(es=>{running=es[0].isIntersecting;if(running)loop()}).observe(cv)}
+})();
+
+/* ===== Checkout mockup ===== */
+const rp=n=>'Rp '+n.toLocaleString('id-ID');
+const PAY=[['qris','QRIS'],['phone','E-Wallet'],['card','Card'],['bank','VA'],['cash','COD']];
+const pg=document.getElementById('pay-grid');
+pg.innerHTML=PAY.map((p,i)=>`<button class="pm${i===0?' on':''}" data-pay="${p[1]}">${ic(p[0],16)}${p[1]}</button>`).join('');
+let ship=12000,pay='QRIS';
+const SUB=538000,REW=10000;
+function coCalc(){const t=SUB+ship-REW;document.getElementById('co-ship').textContent=rp(ship);document.getElementById('co-total').textContent=rp(t);document.getElementById('co-pay').textContent=(pay==='COD'?'Place order · ':'Pay ')+rp(t)}
+document.querySelectorAll('#ship-opts .opt').forEach(o=>o.onclick=()=>{document.querySelectorAll('#ship-opts .opt').forEach(x=>x.classList.toggle('on',x===o));ship=+o.dataset.ship;coCalc()});
+pg.querySelectorAll('.pm').forEach(b=>b.onclick=()=>{pg.querySelectorAll('.pm').forEach(x=>x.classList.toggle('on',x===b));pay=b.dataset.pay;coCalc()});
+const coPay=document.getElementById('co-pay'),co=document.getElementById('co');
+coPay.onclick=()=>{coPay.innerHTML='<span class="spin"></span>Processing';coPay.disabled=true;
+  setTimeout(()=>{document.getElementById('co-done-txt').textContent=`Order FLK-20481 · ${pay==='COD'?'Pay on delivery':'Paid with '+pay} · 28 seconds`;co.classList.add('done');coPay.disabled=false;coCalc()},1100)};
+document.getElementById('co-reset').onclick=()=>co.classList.remove('done');
+
+/* ===== Shipping rates ===== */
+const RATES=[['Regular','2–3 days',15000,'Cheapest'],['Next day','Tomorrow',24000,''],['Same day','Today',32000,''],['Instant','Within 3 hours',45000,''],['Cargo','4–6 days · from 10 kg',60000,'']];
+const rates=document.getElementById('rates');
+rates.innerHTML=`<div class="co-row" style="margin-bottom:6px"><b style="font-weight:500">Jakarta → Bandung · 1 kg</b></div>`+RATES.map((r,i)=>`<div class="rate${i===0?' on':''}" data-i="${i}"><span class="grow">${r[0]}<small>${r[1]}</small></span>${r[3]?`<span class="pill ok">${r[3]}</span>`:''}<b class="num" style="font-weight:500">${rp(r[2])}</b></div>`).join('');
+rates.querySelectorAll('.rate').forEach(r=>r.onclick=()=>rates.querySelectorAll('.rate').forEach(x=>x.classList.toggle('on',x===r)));
+
+/* ===== Tracking ===== */
+const TL=[['Out for delivery','Surabaya · 14 Okt 2026, 08:12'],['Arrived at sorting hub','Surabaya · 13 Okt 2026, 22:40'],['In transit','Jakarta → Surabaya · 13 Okt 2026, 09:05'],['Picked up by courier','Jakarta · 12 Okt 2026, 15:30']];
+function track(v){
+  const tl=document.getElementById('tl');
+  if(!v.trim()){tl.innerHTML='<p class="txt" style="font-size:12.5px;margin-top:4px">Enter a tracking number.</p>';return}
+  tl.innerHTML=TL.map((t,i)=>`<div class="tl-i${i===0?' cur':''}"><i></i><div><b>${t[0]}</b><span>${t[1]}</span></div></div>`).join('');
+}
+document.getElementById('trk').onsubmit=e=>{e.preventDefault();track(document.getElementById('trk-in').value)};
+track('FLK2610140012');
+
+/* ===== Shipments table ===== */
+const SH=[['FLK2610140012','Surabaya','Regular','transit','14 Okt 2026'],['FLK2610140011','Bandung','Same day','delivered','14 Okt 2026'],['FLK2610140010','Medan','Cargo','pickup','14 Okt 2026'],['FLK2610130098','Denpasar','Next day','delivered','13 Okt 2026'],['FLK2610130097','Makassar','Regular','returned','13 Okt 2026'],['FLK2610130096','Yogyakarta','Instant','delivered','13 Okt 2026'],['FLK2610130095','Semarang','Regular','transit','13 Okt 2026']];
+const ST={pickup:['Awaiting pickup','warn'],transit:['In transit','pu'],delivered:['Delivered','ok'],returned:['Returned','bad']};
+const TABS=[['all','All'],['pickup','Awaiting pickup'],['transit','In transit'],['delivered','Delivered'],['returned','Returned']];
+let tab='all';
+function renderShip(){
+  document.getElementById('dtabs').innerHTML=TABS.map(t=>`<button class="dtab${t[0]===tab?' on':''}" data-t="${t[0]}">${t[1]} <span class="num" style="opacity:.6">${t[0]==='all'?SH.length:SH.filter(s=>s[3]===t[0]).length}</span></button>`).join('');
+  document.querySelectorAll('#dtabs .dtab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;renderShip()});
+  document.getElementById('dbody').innerHTML=SH.filter(s=>tab==='all'||s[3]===tab).map(s=>`<tr><td class="num">${s[0]}</td><td>${s[1]}</td><td>${s[2]}</td><td><span class="pill ${ST[s[3]][1]}">${ST[s[3]][0]}</span></td><td>${s[4]}</td></tr>`).join('');
+}
+renderShip();
+
+/* ===== Funding steps + dashboard ===== */
+const STEPS=[['Consultation with the FLIK team','We learn about your business and its needs.'],['Easy integration','Activate the system in your store.'],['Upfront product purchase','Receive funding in advance to stock inventory.'],['Sell as usual','Settlement is deducted automatically as your products sell.']];
+const FUND=[
+  {state:'Reviewing your business information',pct:0,out:'—',rep:'—',list:[]},
+  {state:'Connecting your store to FLIK',pct:0,out:'—',rep:'—',list:[]},
+  {state:'Funding sent to your balance',pct:0,out:250000000,rep:0,list:[['10 Okt 2026','Funding received','+Rp 250.000.000']]},
+  {state:'Auto settlement is running',pct:62,out:95000000,rep:155000000,list:[['14 Okt 2026','Auto settlement','−Rp 1.250.000'],['13 Okt 2026','Auto settlement','−Rp 2.180.000'],['12 Okt 2026','Auto settlement','−Rp 1.640.000']]}
+];
+let step=3;
+function renderFund(){
+  document.getElementById('steps').innerHTML=STEPS.map((s,i)=>`<button class="step${i===step?' on':''}" data-i="${i}"><span class="n">${i+1}</span><span><b>${s[0]}</b><span>${s[1]}</span></span></button>`).join('');
+  document.querySelectorAll('#steps .step').forEach(b=>b.onclick=()=>{step=+b.dataset.i;renderFund()});
+  const f=FUND[step];
+  document.getElementById('fund').innerHTML=`<div class="fund-h"><div><small>Merchant Cash Advance</small><div class="fund-big num">Rp 250.000.000</div></div><span class="pill ${step<2?'gr':'ok'}">${step<2?'In progress':'Active'}</span></div>
+   <div class="bar"><i style="width:${f.pct}%"></i></div>
+   <div class="co-row"><span class="m">Repaid</span><span class="num">${f.pct}%</span></div>
+   <div class="fund-kv"><div><small>Outstanding</small><b class="num">${typeof f.out==='number'?rp(f.out):f.out}</b></div><div><small>Repaid so far</small><b class="num">${typeof f.rep==='number'?rp(f.rep):f.rep}</b></div></div>
+   <div class="fund-list">${f.list.length?f.list.map(l=>`<div class="co-row"><span><b style="font-weight:500;display:block">${l[1]}</b><span class="m" style="font-size:12px">${l[0]}</span></span><span class="num">${l[2]}</span></div>`).join(''):'<p class="txt" style="font-size:12.5px;padding:6px 0">No transactions yet.</p>'}</div>
+   <div class="fstate">${ic('check',15,2)}${f.state} · No hidden fees</div>`;
+}
+renderFund();
+
+/* ===== Integration tabs ===== */
+const ITABS={
+  'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'Shopify':`<div class="isteps">${[['Install the FLIK plugin','Connect your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'WooCommerce':`<div class="isteps">${[['Install the FLIK plugin','Add FLIK to your WordPress site.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with every courier','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'API':`<div class="code"><span class="c">// Create a shipment (illustrative example)</span>
+<span class="k">const</span> shipment = <span class="k">await</span> flik.shipments.<span class="p">create</span>({
+  warehouse_id: <span class="s">'wh_jakarta_01'</span>,
+  destination: {
+    name: <span class="s">'Rina Putri'</span>,
+    phone: <span class="s">'+62 812-3456-7890'</span>,
+    city: <span class="s">'Surabaya'</span>,
+  },
+  service: <span class="s">'regular'</span>,
+  cod: { enabled: <span class="k">true</span>, amount: <span class="p">540000</span> },
+});</div><p class="ex">Illustrative only. See the developer docs for the real API.</p>`
+};
+let itab='No code';
+function renderI(){
+  document.getElementById('itabs').innerHTML=Object.keys(ITABS).map(k=>`<button class="itab${k===itab?' on':''}" role="tab" aria-selected="${k===itab}">${k}</button>`).join('');
+  document.querySelectorAll('#itabs .itab').forEach(b=>b.onclick=()=>{itab=b.textContent;renderI()});
+  document.getElementById('ipanel').innerHTML=ITABS[itab];
+}
+renderI();
+
+/* ===== Footer ===== */
+document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
+  MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter((it,i)=>m.k!=='Products'||[0,1,7,9,10,14].includes(i)).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="#" data-toast="Opens an email to support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="#" data-toast="Opens WhatsApp chat with FLIK support" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/legal/terms" style="margin-top:10px">Terms of Service</a><a href="#" data-page="/legal/privacy">Privacy Policy</a><a href="#" data-page="/sitemap">Sitemap</a></div>`;
+
+/* ===== Toast ===== */
+const toastEl=document.getElementById('toast');let tt;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),2600)}
+
+/* ===== Modals ===== */
+const scrim=document.getElementById('scrim'),modal=document.getElementById('modal');
+function openModal(html){modal.innerHTML=html;scrim.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>modal.querySelector('input')?.focus(),30)}
+function closeModal(){scrim.classList.remove('open');if(!drawer.classList.contains('open'))document.body.style.overflow=''}
+scrim.addEventListener('click',e=>{if(e.target===scrim||e.target.closest('[data-close]'))closeModal()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();setDrawer(false)}});
+const head=t=>`<div class="modal-h"><h3>${t}</h3><button class="x" data-close aria-label="Close">${ic('x',18)}</button></div>`;
+const fld=(id,l,ph,type='text',opt=false)=>`<div class="fld"><label for="${id}">${l}${opt?' <em>(optional)</em>':''}</label><input id="${id}" type="${type}" placeholder="${ph}" ${opt?'':'required'}></div>`;
+const done=(t,s)=>`<div class="sent"><div class="okc">${ic('check',26,2.2)}</div><h3>${t}</h3><p class="txt">${s}</p><button class="btn btn-primary" style="margin-top:22px" data-close>Done</button></div>`;
+function validate(form,btn){const ok=[...form.querySelectorAll('input[required]')].every(i=>i.type==='email'?/\S+@\S+\.\S+/.test(i.value):i.value.trim().length>1);btn.disabled=!ok}
+
+function startModal(){
+  openModal(head('Create your FLIK account')+`<form id="fstart"><div class="modal-b">${fld('s-name','Full name','Rina Putri')}${fld('s-email','Business email','rina@brand.co.id','email')}${fld('s-wa','WhatsApp number','+62 812-3456-7890','tel')}${fld('s-web','Store website','brand.co.id','text',true)}</div><div class="modal-f"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button class="btn btn-primary" id="s-go" disabled>Create account</button></div></form>`);
+  const f=document.getElementById('fstart'),b=document.getElementById('s-go');
+  f.oninput=()=>validate(f,b);
+  f.onsubmit=e=>{e.preventDefault();modal.innerHTML=done('Check your WhatsApp','We sent a one-time code to verify your number. In the live site, this continues in the merchant dashboard.')};
+}
+function salesModal(pre){
+  const picks=new Set(pre?[pre]:[]);
+  openModal(head('Contact sales')+`<form id="fsales"><div class="modal-b">${fld('c-name','Full name','Rina Putri')}${fld('c-email','Work email','rina@brand.co.id','email')}${fld('c-co','Company','Aruna Studio')}<div class="fld"><label>Interested in</label><div class="chips" id="c-chips">${['Checkout','Shipping','Funding'].map(p=>`<button type="button" class="chip${picks.has(p)?' on':''}">${p}</button>`).join('')}</div></div><div class="fld"><label for="c-msg">Message <em>(optional)</em></label><textarea id="c-msg" placeholder="Tell us about your business"></textarea></div></div><div class="modal-f"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button class="btn btn-primary" id="c-go" disabled>Send</button></div></form>`);
+  const f=document.getElementById('fsales'),b=document.getElementById('c-go');
+  f.querySelectorAll('.chip').forEach(c=>c.onclick=()=>c.classList.toggle('on'));
+  f.oninput=()=>validate(f,b);
+  f.onsubmit=e=>{e.preventDefault();modal.innerHTML=done('Thanks, we\'ll be in touch','Our team will contact you within one business day.')};
+}
+
+/* ===== Global click actions ===== */
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
+  if(!a)return;
+  if(a.closest('#drawer')&&(a.dataset.page||a.dataset.act))setDrawer(false);
+  if(a.dataset.act){e.preventDefault();({start:startModal,sales:()=>salesModal(a.dataset.interest),signin:()=>toast('Opens the merchant dashboard sign-in.')})[a.dataset.act]()}
+  else if(a.dataset.page){e.preventDefault();toast(a.dataset.page.startsWith('/')?`Page not in this prototype yet: ${a.dataset.page}`:`Opens ${a.dataset.page}`)}
+  else if(a.dataset.toast){e.preventDefault();toast(a.dataset.toast)}
+  else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on',b===a));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}
+});
+/* ===== v3: ribbon (thin gradient lines forming a twisting sheet, top right) ===== */
+(function(){
+  const g=document.getElementById('rlines'),fill=document.getElementById('rfill');
+  const N=64,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
+  const pt=(s,t)=>{const w1=70*Math.sin(t*.45+s*2.2),w2=60*Math.cos(t*.37+s*1.7),w3=40*Math.sin(t*.29+s*3);
+    return [[360+s*600,-40],[400+(1-s)*440+w1,250+s*90],[1000-s*400+w2,420+(1-s)*140],[CX-s*70,CY]]};
+  // End point: bottom-right corner of the visible logo strip (where it meets the right guide line)
+  const svgEl=document.getElementById('ribbon'),clipEl=document.querySelector('.logos-clip');let CX=1080,CY=780;
+  function setCorner(){const r=clipEl.getBoundingClientRect(),m=svgEl.getScreenCTM();if(!m)return;const q=svgEl.createSVGPoint();q.x=r.right;q.y=r.bottom;const v=q.matrixTransform(m.inverse());CX=v.x;CY=v.y}
+  setCorner();addEventListener('resize',setCorner);document.fonts&&document.fonts.ready.then(setCorner);
+  const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
+  let vis=true;
+  function draw(t){
+    if(vis){t/=1000;
+      paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
+      const a=pt(0,t),b=pt(1,t);
+      fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`);
+    }
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(document.getElementById('ribbon'));
+  draw(0);if(!reduce)requestAnimationFrame(draw);
+})();
+
+/* Payment method toggles */
+(function(){
+  const L=[['qris','QRIS'],['phone','E-wallets'],['card','Credit and debit cards'],['bank','Bank virtual accounts'],['cash','Cash on delivery']];
+  const el=document.getElementById('pmlist');
+  el.innerHTML=`<div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Payment methods</b><span class="pill pu">15 methods</span></div>`+L.map(m=>`<div class="pmi"><span class="pmic">${ic(m[0],15)}</span><span class="grow">${m[1]}</span><button class="tg on" aria-label="Toggle ${m[1]}"></button></div>`).join('');
+  el.querySelectorAll('.tg').forEach(t=>t.onclick=()=>t.classList.toggle('on'));
+})();
+
+/* Product detail modals (the + buttons) */
+const PROD={
+  checkout:['FLIK Checkout','A checkout that takes 30 seconds, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
+  payments:['Payment Methods','Accept 15 payment methods in one checkout.',['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],'/checkout/payment-methods'],
+  shipping:['FLIK Shipping','Compare every courier and ship for up to 40% less.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
+  bulk:['Bulk Shipping','Send from one warehouse or many, to one destination or thousands.',['Single and bulk shipments','Manage pickup warehouses','Every status in one table','Low return-to-origin rates'],'/shipping/bulk'],
+  track:['Shipment Tracking','Let your customers follow every package.',['Tracking number ready the moment a shipment is created','Status from pickup to delivery','Works across every courier'],'/shipping/track'],
+  cod:['COD Shipping','Offer cash on delivery with a 3% fee.',['Pay shipping and COD fees upfront','COD amount credited after delivery','Real-time payout to your balance'],'/shipping/cod'],
+  funding:['Merchant Cash Advance','Upfront funding for inventory, for selected brands.',['Consultation with the FLIK team','Easy integration with your store','Funding for stock in advance','Settled automatically as you sell'],'/funding/merchant-cash-advance'],
+  settle:['Auto Settlement','Repay your advance from your sales, automatically.',['Deducted as products sell','Track outstanding and payments in the dashboard','Clear margins, no hidden fees'],'/funding/auto-settlement']
+};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.exp');if(!b)return;
+  const p=PROD[b.dataset.prod];
+  openModal(head(p[0])+`<div class="modal-b pmodal"><p class="txt">${p[1]}</p><ul>${p[2].map(x=>`<li>${ic('check',15,2.2)}${x}</li>`).join('')}</ul></div><div class="modal-f"><button class="btn btn-secondary" data-close>Close</button><a href="#" class="btn btn-primary" data-page="${p[3]}">Explore ${p[0]} <span class="chev">›</span></a></div>`);
+});
+
+/* Carousels */
+document.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
+
+/* What's happening (placeholder posts) */
+const NEWS=[
+  ['Promo','Ship for less this month','Get extra cashback on shipments created from the FLIK dashboard.','linear-gradient(135deg,#F16223,#AE1D7C)','/promo'],
+  ['Product','15 payment methods in one checkout','QRIS, e-wallets, cards, virtual accounts and COD, all in FLIK Checkout.','linear-gradient(135deg,#9E4DC8,#AE1D7C)','/checkout/payment-methods'],
+  ['Guide','How to sell with COD and get paid faster','What to know about COD fees, failed deliveries and payouts.','linear-gradient(135deg,#002D5D,#9E4DC8)','/blog'],
+  ['Product','Bulk shipping from many warehouses','Send to many destinations at once from one dashboard.','linear-gradient(135deg,#99B0CB,#C28FDD)','/shipping/bulk'],
+  ['Guide','Funding inventory without hidden fees','How Merchant Cash Advance works, step by step.','linear-gradient(135deg,#F16223,#9E4DC8)','/funding/merchant-cash-advance']
+];
+document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard" data-page="${n[4]}"><div class="nart" style="background:${n[3]}"></div><div class="nb"><span class="nt">${n[0]}</span><h4>${n[1]}</h4><p>${n[2]}</p><span class="link">Read more <span class="chev">›</span></span></div></a>`).join('');
+</script>
+</body>
+</html>

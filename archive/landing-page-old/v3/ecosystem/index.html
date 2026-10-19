@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLIK Ecosystem 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{--ink:#061B31;--body:#425466;--muted:#64748D;--faint:#8898AA;--primary:#533AFD;--primary-soft:#F1EFFF;--line:#E3E8EE;--line-soft:#EEF2F7;
+  --sh-lg:0 30px 60px -12px rgba(50,50,93,.25),0 18px 36px -18px rgba(0,0,0,.3);--font:'Inter',-apple-system,system-ui,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--font);color:var(--ink);background:#fff;overflow:hidden;-webkit-font-smoothing:antialiased}
+.eco-stage{position:relative;width:100vw;height:100vh;height:100dvh}
+.eco-stage::before{content:"";position:absolute;left:10%;right:10%;top:20%;bottom:8%;background:radial-gradient(45% 50% at 30% 60%,rgba(255,181,71,.35),transparent 70%),radial-gradient(45% 50% at 70% 45%,rgba(162,107,255,.35),transparent 70%),radial-gradient(40% 45% at 55% 75%,rgba(255,95,162,.3),transparent 70%);filter:blur(40px);z-index:0}
+#eco-cv{position:relative;z-index:1;display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+#eco-cv.grabbing{cursor:grabbing}
+#eco-ui{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.eco-l{position:absolute;left:0;top:0;will-change:transform;transition:opacity .2s}
+.eco-in{display:flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;background:#fff;border-radius:999px;box-shadow:0 6px 16px -4px rgba(50,50,93,.22),0 2px 4px rgba(0,0,0,.06);white-space:nowrap;font-size:12px;line-height:1.25;transition:box-shadow .3s,transform .3s}
+.eco-in i{width:10px;height:10px;border-radius:3px;flex:none}
+.eco-in b{display:block;font-weight:600;font-size:13px}
+.eco-in small{display:block;color:var(--muted);font-size:11px}
+.eco-l.on .eco-in{box-shadow:0 0 0 2px var(--primary),0 10px 22px -6px rgba(83,58,253,.35);transform:translateY(-4px)}
+.eco-cap{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line-soft);border-radius:14px;box-shadow:var(--sh-lg);padding:12px 16px;font-size:13px;white-space:nowrap}
+.eco-cap b{display:block;font-weight:500;font-size:14px}
+.eco-cap small{display:block;color:var(--muted);font-size:12px}
+.eco-step{font-family:var(--mono);font-size:12px;color:var(--primary);background:var(--primary-soft);border-radius:999px;padding:3px 8px}
+.eco-dots{display:flex;gap:5px;margin-left:6px}
+.eco-dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.eco-dots i.on{background:var(--primary)}
+.nogl #eco-cv{display:none}
+@media (max-width:760px){.eco-cap{bottom:16px;padding:10px 12px;gap:10px;max-width:calc(100% - 24px)}.eco-cap small{white-space:normal}.eco-dots{display:none}.eco-in{padding:5px 10px 5px 7px}.eco-in small{display:none}}
+</style>
+</head>
+<body>
+<div class="eco-stage" id="eco" role="img" aria-label="A 3D view of the FLIK hub with Checkout, Shipping and Funding around it. A shopper pays at Checkout, the order ships with FLIK Shipping, the money lands in the FLIK balance after delivery, sales unlock Funding, and the funding buys stock to sell more.">
+  <canvas id="eco-cv"></canvas>
+  <div id="eco-ui"></div>
+  <div class="eco-cap" id="eco-cap" aria-live="polite"></div>
+</div>
+<script>
+
+/* ===== Ecosystem: 3D scene (three.js r128) of Checkout, Shipping and Funding around the FLIK hub ===== */
+(function(){
+  const host=document.getElementById('eco'),cv=document.getElementById('eco-cv'),ui=document.getElementById('eco-ui'),cap=document.getElementById('eco-cap');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let renderer;
+  try{if(!window.THREE)throw 0;renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}
+  catch(e){host.classList.add('nogl');cap.innerHTML='<b>Checkout → Shipping → Funding</b><small>3D view needs WebGL</small>';return}
+  const V=(x,y,z)=>new THREE.Vector3(x,y,z),D=Math.PI/180;
+  renderer.setPixelRatio(Math.min(2,devicePixelRatio||1));
+  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,100),world=new THREE.Group();scene.add(world);
+
+  // light: soft sky plus one sun for gentle shadows
+  scene.add(new THREE.HemisphereLight(0xffffff,0xDCD6FF,.9));
+  const sun=new THREE.DirectionalLight(0xffffff,.7);sun.position.set(4,11,7);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);
+  Object.assign(sun.shadow.camera,{left:-7,right:7,top:7,bottom:-7,near:1,far:30});sun.shadow.radius=5;sun.shadow.bias=-.0006;scene.add(sun);
+
+  const M=(c,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:.55,metalness:.04},o));
+  const at=(m,x,y,z)=>{m.position.set(x,y,z);return m};
+  const mesh=(g,m,cast=true)=>{const x=new THREE.Mesh(g,m);x.castShadow=cast;x.receiveShadow=true;return x};
+  function rbox(w,h,d,r){
+    const s=new THREE.Shape(),x=-w/2,y=-h/2;
+    s.moveTo(x+r,y);s.lineTo(x+w-r,y);s.quadraticCurveTo(x+w,y,x+w,y+r);s.lineTo(x+w,y+h-r);s.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    s.lineTo(x+r,y+h);s.quadraticCurveTo(x,y+h,x,y+h-r);s.lineTo(x,y+r);s.quadraticCurveTo(x,y,x+r,y);
+    const g=new THREE.ExtrudeGeometry(s,{depth:d,bevelEnabled:true,bevelThickness:Math.min(.025,d/3),bevelSize:Math.min(.025,r/2),bevelSegments:3,curveSegments:10});
+    g.translate(0,0,-d/2);return g;
+  }
+  const tex=(w,h,draw)=>{const c=document.createElement('canvas');c.width=w;c.height=h;draw(c.getContext('2d'),w,h);const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;return t};
+  const rr=(g,x,y,w,h,r)=>{g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()};
+
+  // platform
+  const base=mesh(new THREE.CylinderGeometry(5.3,5.45,.3,96),M(0xF7F5FF,{roughness:.85}));base.position.y=-.15;world.add(base);
+  const rim=mesh(new THREE.TorusGeometry(5.31,.022,8,160),M(0xC9C1FF),false);rim.rotation.x=Math.PI/2;world.add(rim);
+  const dots=[];for(const r of [2.15,4.7]){const n=Math.round(r*34);for(let i=0;i<n;i++){const a=i/n*Math.PI*2;dots.push(Math.cos(a)*r,.012,Math.sin(a)*r)}}
+  const dg=new THREE.BufferGeometry();dg.setAttribute('position',new THREE.Float32BufferAttribute(dots,3));
+  world.add(new THREE.Points(dg,new THREE.PointsMaterial({color:0xB9AEFF,size:.055})));
+
+  // FLIK hub
+  const hub=new THREE.Group();world.add(hub);
+  hub.add(at(mesh(new THREE.CylinderGeometry(1,1.08,.5,72),M(0xffffff,{roughness:.4})),0,.25,0));
+  const logo=tex(512,512,(g,w)=>{g.fillStyle='#fff';g.fillRect(0,0,w,w);g.translate(w*.2,w*.19);g.scale(w*.6/30,w*.6/30);g.fillStyle='#F26324';
+    g.fill(new Path2D('M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z'));
+    g.fill(new Path2D('M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z'))});
+  const top=new THREE.Mesh(new THREE.CircleGeometry(.98,72),new THREE.MeshStandardMaterial({map:logo,roughness:.5}));top.rotation.x=-Math.PI/2;top.position.y=.502;hub.add(top);
+  const hubRing=new THREE.Mesh(new THREE.TorusGeometry(1.14,.035,12,96),M(0x533AFD,{emissive:0x533AFD,emissiveIntensity:.35}));hubRing.rotation.x=Math.PI/2;hubRing.position.y=.06;hub.add(hubRing);
+  const pulse=new THREE.Mesh(new THREE.RingGeometry(1.1,1.16,72),new THREE.MeshBasicMaterial({color:0x533AFD,transparent:true,opacity:.5,side:THREE.DoubleSide}));pulse.rotation.x=-Math.PI/2;pulse.position.y=.02;hub.add(pulse);
+
+  // three product stations
+  const R=3.5;
+  const ST={
+    checkout:{a:150,col:0x533AFD,hex:'#533AFD',name:'Checkout',sub:'30-second checkout',page:'/payment/checkout'},
+    shipping:{a:30,col:0xF26A4B,hex:'#F26A4B',name:'Shipping',sub:'Every courier, one dashboard',page:'/shipping'},
+    funding:{a:-90,col:0xE0559B,hex:'#E0559B',name:'Funding',sub:'Merchant Cash Advance',page:'/funding/merchant-cash-advance'}
+  };
+  for(const k in ST){const s=ST[k];s.pos=V(R*Math.cos(s.a*D),0,R*Math.sin(s.a*D));const g=new THREE.Group();g.position.copy(s.pos);world.add(g);s.g=g;
+    g.add(at(mesh(new THREE.CylinderGeometry(1.2,1.3,.32,72),M(0xffffff,{roughness:.45})),0,.16,0));
+    s.ring=new THREE.Mesh(new THREE.TorusGeometry(1.215,.03,10,96),M(s.col,{emissive:s.col,emissiveIntensity:.15}));s.ring.rotation.x=Math.PI/2;s.ring.position.y=.32;g.add(s.ring);
+    s.obj=new THREE.Group();s.obj.position.y=.32;g.add(s.obj);
+    // face the camera side a little
+    g.rotation.y=-(s.a-90)*D*.35;
+  }
+
+  // Checkout: a phone with a checkout screen, and a card
+  {const o=ST.checkout.obj;
+    const phone=new THREE.Group();phone.position.set(-.1,.86,0);phone.rotation.set(-.14,.25,0);o.add(phone);
+    phone.add(mesh(rbox(.86,1.62,.1,.14),M(0x161A36,{roughness:.3})));
+    const scr=tex(300,570,(g,w,h)=>{g.fillStyle='#fff';g.fillRect(0,0,w,h);g.fillStyle='#061B31';g.font='600 22px Inter, sans-serif';g.fillText('Aruna Studio',28,64);
+      g.fillStyle='#EEF2F7';rr(g,28,92,244,70,12);g.fill();g.fillStyle='#E9E5FF';rr(g,40,104,46,46,8);g.fill();g.fillStyle='#061B31';g.font='500 17px Inter, sans-serif';g.fillText('Linen Shirt',98,124);g.fillStyle='#64748D';g.font='15px Inter, sans-serif';g.fillText('Rp 349.000',98,146);
+      [['WhatsApp','+62 812-3456-7890'],['Courier','JNE Reguler'],['Payment','QRIS']].forEach((r,i)=>{const y=196+i*74;g.fillStyle='#64748D';g.font='14px Inter, sans-serif';g.fillText(r[0],28,y);g.strokeStyle='#E3E8EE';g.lineWidth=2;rr(g,28,y+10,244,40,8);g.stroke();g.fillStyle='#061B31';g.font='16px Inter, sans-serif';g.fillText(r[1],42,y+36)});
+      g.fillStyle='#061B31';g.font='600 18px Inter, sans-serif';g.fillText('Total',28,438);g.textAlign='right';g.fillText('Rp 341.000',272,438);g.textAlign='left';
+      g.fillStyle='#533AFD';rr(g,28,462,244,52,10);g.fill();g.fillStyle='#fff';g.font='600 18px Inter, sans-serif';g.textAlign='center';g.fillText('Pay Rp 341.000',150,495)});
+    const sp=new THREE.Mesh(new THREE.PlaneGeometry(.76,1.46),new THREE.MeshBasicMaterial({map:scr}));sp.position.z=.078;phone.add(sp);
+    const card=mesh(rbox(.9,.57,.035,.07),M(0x533AFD,{roughness:.25,metalness:.25}));card.position.set(.72,.62,.35);card.rotation.set(-.5,-.4,.25);o.add(card);
+    const chip=mesh(new THREE.BoxGeometry(.14,.1,.01),M(0xF5C76A,{metalness:.5,roughness:.3}));chip.position.set(-.22,.06,.03);card.add(chip);
+    ST.checkout.anim=t=>{card.position.y=.62+Math.sin(t*1.6)*.06;card.rotation.z=.25+Math.sin(t*1.2)*.05;phone.position.y=.86+Math.sin(t*1.1+1)*.025};
+  }
+  // Shipping: a truck and a stack of parcels
+  {const o=ST.shipping.obj,tr=new THREE.Group();tr.rotation.y=-.55;tr.position.set(.05,0,.15);o.add(tr);
+    tr.add(at(mesh(new THREE.BoxGeometry(1.1,.64,.64),M(0xffffff,{roughness:.4})),-.18,.46,0));
+    tr.add(at(mesh(new THREE.BoxGeometry(1.115,.08,.655),M(0xF26A4B)),-.18,.36,0));
+    tr.add(at(mesh(new THREE.BoxGeometry(.44,.5,.62),M(0xF26A4B,{roughness:.4})),.6,.39,0));
+    tr.add(at(mesh(new THREE.BoxGeometry(.03,.2,.5),M(0x1C2240,{roughness:.2})),.82,.5,0));
+    const wheels=[];[[-.5,.31],[-.5,-.31],[.55,.31],[.55,-.31]].forEach(p=>{const w=mesh(new THREE.CylinderGeometry(.14,.14,.1,24),M(0x1C2240,{roughness:.7}));w.rotation.x=Math.PI/2;w.position.set(p[0],.14,p[1]);tr.add(w);wheels.push(w)});
+    const box=(x,y,z,s,r=0)=>{const b=mesh(new THREE.BoxGeometry(s,s*.8,s),M(0xE6C49A,{roughness:.8}));b.position.set(x,y+s*.4,z);b.rotation.y=r;o.add(b);
+      const tape=mesh(new THREE.BoxGeometry(s*1.01,.03,s*.2),M(0xC9A274,{roughness:.8}),false);tape.position.y=s*.4;b.add(tape);return b};
+    box(-.62,0,-.5,.38,.3);box(-.2,0,-.72,.34,-.2);box(-.45,.3,-.6,.3,.5);
+    ST.shipping.anim=t=>{tr.position.y=Math.abs(Math.sin(t*6))*.012;wheels.forEach(w=>w.rotation.y=t*2)};
+  }
+  // Funding: coin stacks and growing bars
+  {const o=ST.funding.obj,coinM=M(0xF5B942,{metalness:.45,roughness:.32});
+    const stack=(x,z,n)=>{for(let i=0;i<n;i++){const c=mesh(new THREE.CylinderGeometry(.27,.27,.075,40),coinM);c.position.set(x+(i%2?.01:-.01),.04+i*.08,z);o.add(c)}};
+    stack(-.55,.35,6);stack(-.08,.6,4);stack(-.62,-.2,3);
+    const bars=[];[0xFFB547,0xFF7A8A,0xC86BFF,0x533AFD].forEach((c,i)=>{const g=new THREE.BoxGeometry(.2,1,.2);g.translate(0,.5,0);const b=mesh(g,M(c,{roughness:.4}));b.position.set(.15+i*.27,0,-.25+i*.05);o.add(b);bars.push(b)});
+    const H=[.45,.75,1.05,1.4];
+    ST.funding.anim=t=>{const k=(Math.sin(t*.8)+1)/2;bars.forEach((b,i)=>b.scale.y=H[i]*(.55+.45*Math.min(1,k*1.4-i*.12+.4)))};
+  }
+
+  // connections: hub to every station, and a loop between stations
+  const lineM=new THREE.MeshStandardMaterial({color:0xD3CCFF,roughness:.6});
+  const edge=(s,toward,dist,y)=>{const d=toward.clone().sub(s).setY(0).normalize();return s.clone().add(d.multiplyScalar(dist)).setY(y)};
+  const q=(a,b,lift,out=0)=>{const m=a.clone().add(b).multiplyScalar(.5);if(out){const n=m.clone().setY(0);if(n.length()<.01)n.set(0,0,1);m.add(n.normalize().multiplyScalar(out))}m.y+=lift;return new THREE.QuadraticBezierCurve3(a,m,b)};
+  const O=V(0,0,0),C={};
+  for(const k in ST){C['hub-'+k]=q(edge(O,ST[k].pos,1.05,.42),edge(ST[k].pos,O,1.2,.42),.6)}
+  C['checkout-shipping']=q(edge(ST.checkout.pos,ST.shipping.pos,1.2,.42),edge(ST.shipping.pos,ST.checkout.pos,1.2,.42),.55,.9);
+  C['shipping-funding']=q(edge(ST.shipping.pos,ST.funding.pos,1.2,.42),edge(ST.funding.pos,ST.shipping.pos,1.2,.42),.55,.9);
+  C['funding-checkout']=q(edge(ST.funding.pos,ST.checkout.pos,1.2,.42),edge(ST.checkout.pos,ST.funding.pos,1.2,.42),.55,.9);
+  for(const k in C){const t=mesh(new THREE.TubeGeometry(C[k],48,.022,8,false),lineM,false);world.add(t)}
+  const rev=c=>new THREE.QuadraticBezierCurve3(c.v2.clone(),c.v1.clone(),c.v0.clone());
+
+  // the story: one order around the ecosystem
+  const SHOP=V(-5.4,1.4,4.6);
+  const STEPS=[
+    {st:'checkout',col:0x533AFD,curve:q(SHOP,ST.checkout.pos.clone().setY(1.3),1.2),b:'Shopper pays',s:'Checkout · QRIS · Rp 341.000'},
+    {st:'shipping',col:0xF26A4B,curve:C['checkout-shipping'],b:'Order ships',s:'Shipping · JNE Reguler · AWB ready'},
+    {st:'hub',col:0x1EA672,curve:rev(C['hub-shipping']),b:'Delivered. Money in your balance',s:'FLIK balance · +Rp 341.000'},
+    {st:'funding',col:0xE0559B,curve:C['hub-funding'],b:'Sales unlock funding',s:'Merchant Cash Advance · offer ready'},
+    {st:'checkout',col:0x533AFD,curve:C['funding-checkout'],b:'Stock up, sell more',s:'Funding buys stock for your next sales'}
+  ];
+  const DUR=2.8;
+  // travelling package with a soft glow and a short trail
+  const glowTex=tex(128,128,(g,w)=>{const r=g.createRadialGradient(w/2,w/2,0,w/2,w/2,w/2);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.35,'rgba(255,255,255,.5)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,w,w)});
+  const pkM=new THREE.MeshStandardMaterial({color:0x533AFD,emissive:0x533AFD,emissiveIntensity:.8,roughness:.3});
+  const pk=new THREE.Mesh(new THREE.SphereGeometry(.11,24,16),pkM);world.add(pk);
+  const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex,color:0x533AFD,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));glow.scale.set(.9,.9,.9);world.add(glow);
+  const trail=[...Array(6)].map((_,i)=>{const m=new THREE.Mesh(new THREE.SphereGeometry(.07-i*.008,12,8),new THREE.MeshBasicMaterial({color:0x533AFD,transparent:true,opacity:.5-i*.07}));world.add(m);return m});
+
+  // HTML labels above each station, the hub and the shopper
+  const lab=(name,sub,hex,page)=>{const e=document.createElement('div');e.className='eco-l';
+    e.innerHTML=`<span class="eco-in"><i style="background:${hex}"></i><span><b>${name}</b>${sub?`<small>${sub}</small>`:''}</span></span>`;ui.appendChild(e);return e};
+  for(const k in ST){const s=ST[k];s.label=lab(s.name,s.sub,s.hex,s.page);s.anchor=s.pos.clone().setY(k==='checkout'?2.05:k==='funding'?2.05:1.55)}
+  const hubLabel=lab('FLIK','Your balance','#F26324');const hubAnchor=V(0,.95,0);
+  const shopLabel=lab('Shopper','','#64748D');
+  const project=(v,el,dy=0)=>{const p=v.clone();world.localToWorld(p);p.project(cam);const w=cv.clientWidth,h=cv.clientHeight;
+    el.style.transform=`translate(${((p.x+1)/2*w).toFixed(1)}px,${((1-p.y)/2*h+dy).toFixed(1)}px) translate(-50%,-100%)`;el.style.opacity=p.z<1?1:0};
+
+  // camera framing that keeps the whole platform in view
+  let dist=14;
+  function size(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;
+    const hv=Math.tan(15*D)*cam.aspect;dist=Math.max(13,6.2/hv);cam.updateProjectionMatrix()}
+  size();addEventListener('resize',size);
+
+  // drag to rotate, then drift back
+  let rot=0,vel=0,drag=null,last=-1e9;
+  cv.addEventListener('pointerdown',e=>{drag=e.clientX;vel=0;cv.setPointerCapture(e.pointerId);cv.classList.add('grabbing')});
+  cv.addEventListener('pointermove',e=>{if(drag===null)return;const dx=e.clientX-drag;drag=e.clientX;vel=dx*.006;rot+=vel;last=performance.now()});
+  const end=()=>{if(drag===null)return;drag=null;last=performance.now();cv.classList.remove('grabbing')};
+  cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
+
+  let step=-1,running=true;const t0=performance.now();
+  function frame(now){
+    const t=(now-t0)/1000;
+    if(drag===null){rot+=vel;vel*=.94;if(now-last>3000)rot*=.985}
+    world.rotation.y=rot+(reduce?0:Math.sin(t*.12)*.12);
+    const el=30*D;cam.position.set(0,Math.sin(el)*dist+.4,Math.cos(el)*dist);cam.lookAt(0,.7,0);
+    for(const k in ST)ST[k].anim&&ST[k].anim(reduce?0:t);
+    // story step
+    const T=reduce?DUR*2.5:t,si=Math.floor(T/DUR)%STEPS.length,p=(T%DUR)/DUR,s=STEPS[si];
+    if(si!==step){step=si;pkM.color.setHex(s.col);pkM.emissive.setHex(s.col);glow.material.color.setHex(s.col);trail.forEach(m=>m.material.color.setHex(s.col));
+      cap.innerHTML=`<span class="eco-step">${si+1}/${STEPS.length}</span><span><b>${s.b}</b><small>${s.s}</small></span><span class="eco-dots">${STEPS.map((_,i)=>`<i class="${i===si?'on':''}"></i>`).join('')}</span>`;
+      for(const k in ST)ST[k].label.classList.toggle('on',k===s.st);hubLabel.classList.toggle('on',s.st==='hub');}
+    const e=p<.7?(p/.7):1,ease=e<.5?2*e*e:1-Math.pow(-2*e+2,2)/2;
+    const pos=s.curve.getPoint(ease);pk.position.copy(pos);glow.position.copy(pos);
+    const vis=p<.85?1:Math.max(0,1-(p-.85)/.15);pk.scale.setScalar(vis);glow.material.opacity=vis*.9;
+    trail.forEach((m,i)=>{m.position.copy(s.curve.getPoint(Math.max(0,ease-(i+1)*.035)));m.visible=ease<1&&vis>0});
+    // highlight the active station and the hub
+    for(const k in ST){const on=k===s.st,a=ST[k];a.obj.scale.lerp(V(on?1.08:1,on?1.08:1,on?1.08:1),.08);a.ring.material.emissiveIntensity+=((on?.9:.15)-a.ring.material.emissiveIntensity)*.1}
+    hubRing.material.emissiveIntensity+=((s.st==='hub'?1:.35)-hubRing.material.emissiveIntensity)*.1;
+    const pp=(t%2.4)/2.4;pulse.scale.setScalar(1+pp*.6);pulse.material.opacity=.45*(1-pp);
+    shopLabel.style.visibility=si===0?'visible':'hidden';
+    renderer.render(scene,cam);
+    for(const k in ST)project(ST[k].anchor,ST[k].label);project(hubAnchor,hubLabel);project(SHOP,shopLabel,-6);
+  }
+  function loop(now){if(!running)return;frame(now);requestAnimationFrame(loop)}
+  frame(performance.now());
+  if(!reduce)new IntersectionObserver(es=>{running=es[0].isIntersecting;if(running)requestAnimationFrame(loop)}).observe(host);
+})();
+</script>
+</body>
+</html>

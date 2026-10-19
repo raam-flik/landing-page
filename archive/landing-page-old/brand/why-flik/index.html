@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why FLIK | Payment section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* FLIK brand tokens (see docs/FLIK_Landing_Page_Reference.md › Colours) */
+:root{
+  --ink:#002D5D; --body:#3E5675; --muted:#61758E; --faint:#8A9BB0;
+  --primary:#9E4DC8; --primary-soft:#F6EFFA;
+  --line:#E3E8EE; --line-soft:#EEF2F7; --bg:#FFFFFF; --bg-alt:#F8FAFD;
+  --font:'Inter',-apple-system,system-ui,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ===== Why FLIK: payment core diagram ===== */
+.why{display:grid;grid-template-columns:minmax(0,3fr) minmax(280px,1fr);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.why-art{position:relative;padding:16px;border-right:1px solid var(--line-soft);min-width:0}
+.why-art svg{width:100%;height:auto;display:block;overflow:visible}
+.why-copy{display:flex;flex-direction:column;justify-content:center;padding:40px 24px}
+.why-copy h2{font-size:17px;line-height:1.45;font-weight:600;letter-spacing:-.1px}
+.why-copy p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--body)}
+.why-detail{margin-top:28px;padding-top:20px;border-top:1px solid var(--line-soft);min-height:104px}
+.why-detail .k{display:flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--primary)}
+.why-detail .k::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.why-detail .v{margin-top:10px;font-size:15px;line-height:1.55;color:var(--body);transition:opacity .25s}
+.why-detail.fade .v,.why-detail.fade .k{opacity:0}
+
+/* SVG parts */
+.grid line{stroke:#E9EEF4;stroke-width:1}
+.tile{fill:var(--primary-soft)}
+.wire{fill:none;stroke:#C7D1DD;stroke-width:1;transition:stroke .3s}
+.wire.on{stroke:var(--primary);stroke-width:1.4}
+.pulse{fill:none;stroke:var(--primary);stroke-width:1.6;stroke-linecap:round}
+.float{animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.node{cursor:pointer;outline:none}
+.node .lift{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.node .top{fill:#fff;stroke:#CCD8E6;stroke-width:1;transition:fill .3s,stroke .3s}
+.node .left{fill:#EEF2F7;stroke:#CCD8E6;stroke-width:1}
+.node .right{fill:#F8FAFD;stroke:#CCD8E6;stroke-width:1}
+.node.tint .left{fill:#ECDDF5}
+.node .lbl{font:400 10.5px var(--mono);fill:var(--body);letter-spacing:.02em;transition:fill .3s}
+.node.on .lift{transform:translateY(-8px)}
+.node.on .top{fill:var(--primary-soft);stroke:var(--primary)}
+.node.on .lbl{fill:var(--primary)}
+.node:focus-visible .top{stroke:var(--primary);stroke-width:2}
+
+@media (max-width:900px){
+  .why{grid-template-columns:1fr}
+  .why-art{border-right:0;border-bottom:1px solid var(--line-soft);padding:16px}
+  .why-copy{padding:32px 16px 40px}
+  .why-detail{min-height:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .node .lift,.why-detail .v{transition:none}
+  .float{animation:none}
+}
+</style>
+</head>
+<body>
+
+<section class="why" aria-labelledby="why-title">
+  <div class="why-art">
+    <svg id="why-svg" viewBox="-620 -300 1240 450" role="img" aria-label="FLIK at the center, connected to payment acceptance, smart routing, fraud prevention, tokenization, payment recovery, reconciliation, payouts and insights"></svg>
+  </div>
+  <div class="why-copy">
+    <h2 id="why-title">Built-in intelligence for every part of your payment.</h2>
+    <p>Each part connects, protects and optimizes a different step of the payment lifecycle: acceptance, routing, fraud, recovery, reconciliation, payouts and more.</p>
+    <div class="why-detail" id="why-detail" aria-live="polite">
+      <div class="k" id="why-k"></div>
+      <div class="v" id="why-v"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const NS='http://www.w3.org/2000/svg';
+  const svg=document.getElementById('why-svg');
+  const S=36, C=0.866;                       // grid cell size, cos 30°
+  const P=(u,v,h=0)=>[(u-v)*C*S,(u+v)*0.5*S-h];
+  const pt=p=>p.map(n=>n.toFixed(1)).join(',');
+  const el=(tag,attrs={},parent=svg)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e};
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Checkout and payment cases. (u,v) = grid position; path = ground route into the core.
+  const NODES=[
+    {k:"Payment acceptance",lines:["Payment", "acceptance"],u:-10,v:0,tint:0,path:[[-10,0],[-7,0],[-7,-1],[0,-1]],
+     d:"Accept QRIS, e-wallets, virtual accounts, cards and COD in one checkout."},
+    {k:"Smart routing",lines:["Smart", "routing"],u:-10,v:4,tint:1,path:[[-10,4],[-10,2],[0,2]],
+     d:"Each payment goes through the provider most likely to approve it."},
+    {k:"Fraud prevention",lines:["Fraud", "prevention"],u:-6,v:4,tint:0,path:[[-6,4],[-2,4],[-2,3],[0,3]],
+     d:"Risky transactions are flagged and stopped before they go through."},
+    {k:"Tokenization",lines:["Tokenization"],u:-5,v:9,tint:0,path:[[-5,9],[-5,6],[-1,6],[-1,0]],
+     d:"Card and shopper details are stored as secure tokens, never as raw data."},
+    {k:"Payment recovery",lines:["Payment", "recovery"],u:0,v:-10,tint:1,path:[[0,-10],[0,-7],[-1,-7],[-1,0]],
+     d:"Failed payments are retried and abandoned checkouts followed up automatically."},
+    {k:"Reconciliation",lines:["Reconciliation"],u:4,v:-10,tint:0,path:[[4,-10],[2,-10],[2,0]],
+     d:"Every payment is matched to its order and settlement automatically."},
+    {k:"Payouts",lines:["Payouts"],u:4,v:-6,tint:0,path:[[4,-6],[4,-2],[3,-2],[3,0]],
+     d:"Funds land in your balance, with real-time payout after delivery."},
+    {k:"Insights",lines:["Insights"],u:9,v:-5,tint:1,path:[[9,-5],[6,-5],[6,-1],[0,-1]],
+     d:"Approval rates, payment methods and revenue in one report."},
+  ];
+
+  // Defs: grid fade + brand gradient for the core band
+  const defs=el('defs');
+  defs.innerHTML=`
+    <radialGradient id="fade" cx=".5" cy=".48" r=".5">
+      <stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridmask"><rect x="-700" y="-400" width="1400" height="700" fill="url(#fade)"/></mask>
+    <linearGradient id="band" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#F16223"/><stop offset=".35" stop-color="#AE1D7C"/>
+      <stop offset=".7" stop-color="#9E4DC8"/><stop offset="1" stop-color="#002D5D"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>`;
+
+  // Isometric grid
+  const grid=el('g',{class:'grid',mask:'url(#gridmask)'});
+  for(let i=-18;i<=18;i++){
+    const [a,b]=[P(i,-18),P(i,18)],[c,d]=[P(-18,i),P(18,i)];
+    el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1]},grid);
+    el('line',{x1:c[0],y1:c[1],x2:d[0],y2:d[1]},grid);
+  }
+  const cell=(u,v)=>[P(u,v),P(u+1,v),P(u+1,v+1),P(u,v+1)].map(pt).join(' ');
+  [[-9,2],[-4,-7],[5,-3],[2,6],[-8,7],[7,-8],[10,-1]].forEach(([u,v])=>el('polygon',{class:'tile',points:cell(u,v)},grid));
+
+  // Wires + pulses
+  const wires=el('g'), pulses=el('g');
+  NODES.forEach(n=>{
+    const d='M'+n.path.map(([u,v])=>pt(P(u,v))).join(' L');
+    n.wire=el('path',{class:'wire',d},wires);
+    if(!reduce){
+      const p=el('path',{class:'pulse',d},pulses), len=p.getTotalLength(), seg=36;
+      p.style.strokeDasharray=`${seg} ${len+seg}`;
+      p.animate([{strokeDashoffset:seg},{strokeDashoffset:-len}],
+        {duration:len*9,iterations:Infinity,delay:Math.random()*3000,easing:'linear'});
+      p.style.strokeDashoffset=seg;
+    }
+  });
+
+  // Core: stacked discs (base, brand band, glass top) with the FLIK mark
+  const R=4, rx=R*Math.SQRT2*C*S, ry=R*Math.SQRT2*0.5*S;
+  const core=el('g');
+  const side=(h0,h1)=>`M${-rx},${-h1} A${rx} ${ry} 0 0 0 ${rx},${-h1} L${rx},${-h0} A${rx} ${ry} 0 0 1 ${-rx},${-h0} Z`;
+  el('path',{d:side(0,46),fill:'#F3F5F8',stroke:'#8A9BB0','stroke-width':.8},core);
+  el('ellipse',{cx:0,cy:-46,rx,ry,fill:'#F8FAFD',stroke:'#C7D1DD','stroke-dasharray':'2 3'},core);
+  el('path',{d:side(46,86),fill:'url(#band)'},core);
+  el('path',{d:`M${-rx},-62 C${-rx*.4},-40 ${rx*.3},-98 ${rx},-70 L${rx},-86 A${rx} ${ry} 0 0 1 ${-rx},-86 Z`,fill:'url(#sheen)',opacity:.6},core);
+  el('ellipse',{cx:0,cy:-86,rx,ry,fill:'url(#band)'},core);
+  el('path',{d:side(86,114),fill:'rgba(255,255,255,.6)',stroke:'#CCD8E6','stroke-width':.8},core);
+  el('ellipse',{cx:0,cy:-114,rx,ry,fill:'rgba(248,250,253,.94)',stroke:'#9E4DC8','stroke-width':1},core);
+  el('ellipse',{cx:0,cy:-176,rx:rx+8,ry:ry+5,fill:'none',stroke:'#B7C2D0','stroke-dasharray':'2 4'},core);
+  // FLIK "F" mark (from design/flik.js), standing upright above the top face, with a soft shadow
+  el('ellipse',{cx:0,cy:-114,rx:46,ry:26,fill:'#9E4DC8',opacity:.08},core);
+  el('ellipse',{cx:0,cy:-114,rx:24,ry:13,fill:'#9E4DC8',opacity:.10},core);
+  const float=el('g',{class:'float'},core);
+  const logo=el('g',{transform:'translate(0 -150) scale(2.2) translate(-14.7 -14.6)'},float);
+  logo.innerHTML='<path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/>';
+
+  // Boxes
+  const H=22, D=1.6;
+  const boxes=el('g');
+  NODES.forEach((n,i)=>{
+    const g=el('g',{class:'node'+(n.tint?' tint':''),tabindex:0,role:'button','aria-label':n.k},boxes);
+    const lift=el('g',{class:'lift'},g);
+    const T=P(n.u-D,n.v-D,H), Rt=P(n.u+D,n.v-D,H), B=P(n.u+D,n.v+D,H), L=P(n.u-D,n.v+D,H);
+    const down=p=>[p[0],p[1]+H];
+    el('polygon',{class:'left',points:[L,B,down(B),down(L)].map(pt).join(' ')},lift);
+    el('polygon',{class:'right',points:[B,Rt,down(Rt),down(B)].map(pt).join(' ')},lift);
+    el('polygon',{class:'top',points:[T,Rt,B,L].map(pt).join(' ')},lift);
+    const [cx,cy]=P(n.u,n.v,H);
+    const t=el('text',{class:'lbl','text-anchor':'middle',transform:`matrix(${C} .5 ${-C} .5 ${cx.toFixed(1)} ${cy.toFixed(1)})`},lift);
+    n.lines.forEach((s,j)=>{const ts=el('tspan',{x:0,y:(j-(n.lines.length-1)/2)*14+4},t);ts.textContent=s});
+    n.g=g;
+    g.addEventListener('mouseenter',()=>{hover=true;setActive(i)});
+    g.addEventListener('mouseleave',()=>{hover=false});
+    g.addEventListener('focus',()=>{hover=true;setActive(i)});
+    g.addEventListener('blur',()=>{hover=false});
+    g.addEventListener('click',()=>setActive(i));
+  });
+
+  // Draw order: grid, wires, pulses, core, boxes (boxes behind the core first)
+  [grid,wires,pulses,core].forEach(g=>svg.appendChild(g));
+  [...boxes.children].sort((x,y)=>{
+    const nx=NODES.find(n=>n.g===x), ny=NODES.find(n=>n.g===y);
+    return (nx.u+nx.v)-(ny.u+ny.v);
+  }).forEach(g=>boxes.appendChild(g));
+  svg.appendChild(boxes);
+
+  // Active node: lifts, wire turns purple, detail text updates. Auto-cycles until hovered.
+  const det=document.getElementById('why-detail'), K=document.getElementById('why-k'), V=document.getElementById('why-v');
+  let active=-1, hover=false;
+  function setActive(i){
+    if(i===active) return;
+    if(active>=0){NODES[active].g.classList.remove('on');NODES[active].wire.classList.remove('on')}
+    active=i; const n=NODES[i];
+    n.g.classList.add('on'); n.wire.classList.add('on');
+    det.classList.add('fade');
+    setTimeout(()=>{K.textContent=n.k;V.textContent=n.d;det.classList.remove('fade')},reduce?0:180);
+  }
+  setActive(0);
+  if(!reduce) setInterval(()=>{if(!hover) setActive((active+1)%NODES.length)},2800);
+})();
+</script>
+</body>
+</html>

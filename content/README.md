@@ -27,7 +27,7 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 
 - **English first.** The Bahasa Indonesia version (`/id/`) comes after the English copy is approved.
 - **Tone:** calm and clear, like stripe.com. Short sentences, no hype.
-- **Money:** `Rp 1.250.000` or `Rp 250 jt`. **Dates:** `12 Okt 2026`. **Phone:** `+62 812-3456-7890`.
+- **Money:** `Rp1.250.000` or `Rp250 jt` (words in prose are fine: "Rp 100 million"). **Dates:** `12 Oct 2026`. **Phone:** `+62 812-3456-7890`.
 - Only use numbers and customer names we are allowed to show publicly. This folder is **public on GitHub**.
 
 ## When you're done
@@ -38,4 +38,4 @@ Pick whichever is easiest:
 - **Send the files:** download the files you changed and send them to the team, or upload them to an AI chat together with `AI-GUIDE.md`.
 - **Send the link:** give an AI this folder's GitHub link and ask it to *"apply the content edits in `content/` to the pages, following `content/AI-GUIDE.md`"*.
 
-The text here was copied from the live pages on 16 Okt 2026.
+The text here was copied from the live pages on 16 Oct 2026.
