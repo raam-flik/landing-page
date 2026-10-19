@@ -1,45 +1,44 @@
 # FLIK Landing Page
 
-Clickable prototypes for the new FLIK landing page (flik.co.id), covering the 3 core products: **Checkout**, **Shipping** and **Funding** (Merchant Cash Advance).
+The new FLIK landing page (flik.co.id), covering the 3 core products: **Checkout**, **Shipping** and **Funding** (Merchant Cash Advance).
 
-The site has **8 prototypes**: the same 4 designs in 2 colour sets. The root page (`/`) is the entry point to all of them.
+**Version 4 is the final design.** It lives in `v4/`, and the site root (`/`) opens it.
 
-| Design | Entry 1: current colours (Stripe purple) | Entry 2: new FLIK brand colours |
+| Page | Path | File |
 |---|---|---|
-| Version 1: product page layout (stripe.com/managed-payments) | `/v1/` | `/brand/v1/` |
-| Version 2: 3D carousel hero | `/v2/` | `/brand/v2/` |
-| Version 3: stripe.com homepage layout | `/v3/` | `/brand/v3/` |
-| Merchant dashboard: Home (`#home`) and Transactions (`#transactions`) | `/dashboard/` | `/brand/dashboard/` |
+| Homepage | `/v4/` | `v4/index.html` |
+| Checkout | `/v4/checkout/` | `v4/checkout/index.html` |
+| Shipping | `/v4/shipping/` | `v4/shipping/index.html` |
+| Merchant Cash Advance | `/v4/funding/merchant-cash-advance/` | `v4/funding/merchant-cash-advance/index.html` |
+| Merchant dashboard | `/v4/dashboard/` | `v4/dashboard/index.html` |
 
-**FLIK brand colours (Entry 2):**
-- Purple `#9E4DC8`: actions (buttons, links, icons).
-- Blue `#002D5D`: headlines and dark sections.
-- Pink `#AE1D7C` and orange `#F16223`: gradients and accents.
+Live: https://landing-page-raams-projects-2709477f.vercel.app/ (Vercel deploys every push to `main`).
 
-Orange is never used for text. The full scales are in the colour guideline.
+## Text content
 
-## Content
-Product facts, marketing copy, the sitemap and the SEO plan are in [`docs/FLIK_Landing_Page_Reference.md`](docs/FLIK_Landing_Page_Reference.md). Every page follows it.
+All page text is in [`content/`](content/), one Markdown file per page, so the copy can be edited without touching HTML. [`content/AI-GUIDE.md`](content/AI-GUIDE.md) explains how an AI applies those edits back to the pages.
 
-Rules:
-- **Language:** English first at `/`, Bahasa Indonesia second at `/id/`.
-- **Tone:** calm and factual, like stripe.com.
-- **Colours:** Entry 1 uses Stripe purple `#533AFD`. Entry 2 follows the FLIK colour guideline in the reference doc.
+## How it fits together
 
-## Notes
 - Each page is a single self-contained HTML file with inline CSS and JS. The Inter font loads from Google Fonts.
-- These are prototypes. The following are placeholders:
-  - mockup data (the store "Aruna Studio", prices, tracking numbers)
-  - news posts
-  - brand art
-  - the API code sample
-- Links to pages that don't exist yet show a toast instead.
+- The homepage, Checkout, Shipping and Merchant Cash Advance pages link to each other through a small `ROUTES` table near the end of each file. Links to pages that don't exist yet show a "Page not in this prototype yet" toast.
+- Courier logos are in `v4/shipping/img/` and `v4/dashboard/img/`.
+- `vercel.json` sends `/` to `/v4/` and forwards old prototype links (`/v1/`, `/v2/`, `/v3/…`, `/brand/…`, `/dashboard/`) to their v4 page.
+
+## Style
+
+- **Colours:** FLIK Blue `#002D5D` for headlines and dark sections, purple `#6A4BFF` for actions, pink and violet only in gradients. Never recolour the FLIK logo.
+- **Language:** English first at `/`, Bahasa Indonesia later at `/id/`.
+- **Tone:** calm and factual, like stripe.com.
+- **Formats:** money `Rp 1.250.000`, dates `12 Okt 2026`, phone `+62 812-3456-7890`.
+
+## Placeholders
+
+These are still prototypes. Mockup data (the store "Aruna Studio", prices, tracking numbers), news posts, the API code samples and the Merchant Cash Advance success story (a made-up merchant with a stock photo) are placeholders. Each page's open questions are listed under **Things to confirm** in its `content/` file.
 
 ## Run locally
+
 ```bash
 python3 -m http.server 8080
+# open http://localhost:8080/v4/
 ```
-Then open http://localhost:8080.
-
-## Deploy
-Vercel deploys every push to `main`. It's a static site with no build step.

@@ -1,7 +1,7 @@
 # Merchant Cash Advance
 
-- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/v3/funding/merchant-cash-advance/
-- **Page file:** `v3/funding/merchant-cash-advance/index.html`
+- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/v4/funding/merchant-cash-advance/
+- **Page file:** `v4/funding/merchant-cash-advance/index.html`
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 

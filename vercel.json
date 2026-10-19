@@ -1,3 +1,12 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/", "destination": "/v4/", "permanent": false },
+    { "source": "/v3/:path*", "destination": "/v4/:path*", "permanent": false },
+    { "source": "/brand/dashboard/:path*", "destination": "/v4/dashboard/", "permanent": false },
+    { "source": "/brand/:path*", "destination": "/v4/", "permanent": false },
+    { "source": "/dashboard/:path*", "destination": "/v4/dashboard/", "permanent": false },
+    { "source": "/v1/:path*", "destination": "/v4/", "permanent": false },
+    { "source": "/v2/:path*", "destination": "/v4/", "permanent": false }
+  ]
 }
