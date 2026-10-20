@@ -60,7 +60,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .lead{font-size:20px;line-height:1.45;font-weight:300;color:var(--muted);letter-spacing:-.2px}
 .txt{font-size:15px;line-height:1.6;color:var(--body)}
 .label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink)}
-.label-lg{width:20px;height:20px;border-radius:5px;background:#fff;box-shadow:0 0 0 1px var(--line-soft);object-fit:contain;flex:none}
+.label-lg{width:20px;height:20px;border-radius:5px;object-fit:contain;flex:none}
 .label i{width:10px;height:10px;background:var(--primary);border-radius:2px;display:block}
 
 /* Buttons */
@@ -963,6 +963,7 @@ html{scroll-padding-top:88px}
 .pmx-side p b{color:#fff;font-weight:500}
 .pmx-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .pmx-chips span{height:30px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;border:1px solid var(--dark-line);font-size:13px;color:#D7DEF0;transition:border-color .2s,background .2s,color .2s}
+.pmx-chips span{gap:6px}.pmx-chips span:has(img){padding-left:7px}.pmx-chips img{width:18px;height:18px;border-radius:4px;background:#fff;object-fit:contain}
 .pmx-chips span.on{border-color:#00E5FF;background:rgba(0,229,255,.16);color:#fff}
 
 /* Dashboard */
@@ -1687,7 +1688,8 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
   ];
   const tabs=document.getElementById('pmx-tabs'),scr=document.getElementById('pmx-scr'),chips=document.getElementById('pmx-chips');
   tabs.innerHTML=M.map((m,i)=>`<button role="tab" data-i="${i}"><span class="pi">${ic(m.ic,17)}</span><span><b>${m.k}</b><small>${m.d}</small></span></button>`).join('');
-  chips.innerHTML=M.map((m,i)=>m.chips.map(c=>`<span data-i="${i}">${c}</span>`).join('')).join('');
+  const CLG={QRIS:'qris',GoPay:'gopay',OVO:'ovo',DANA:'dana',ShopeePay:'shopeepay',BCA:'bca',Mandiri:'mandiri',BNI:'bni',BRI:'bri',Permata:'permata'};
+  chips.innerHTML=M.map((m,i)=>m.chips.map(c=>`<span data-i="${i}">${CLG[c]?`<img src="../assets/logos/payment/${CLG[c]}.png" alt="">`:''}${c}</span>`).join('')).join('');
   const btns=[...tabs.children];let cur=0,hold=0;
   const set=k=>{cur=k;btns.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-selected',i===k)});chips.querySelectorAll('span').forEach(c=>c.classList.toggle('on',+c.dataset.i===k));scr.innerHTML=M[k].h();scr.style.animation='none';void scr.offsetWidth;scr.style.animation=''};
   btns.forEach((b,i)=>b.onclick=()=>{hold=Date.now()+8000;set(i)});
