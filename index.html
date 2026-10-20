@@ -458,7 +458,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .pmlist{width:100%;max-width:260px}
 .pmi{display:flex;align-items:center;gap:10px;padding:9px 6px;border-bottom:1px solid var(--line-soft);font-size:13px}
 .pmi:last-child{border-bottom:0}
-.pmi .pmic{width:30px;height:30px;border-radius:7px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.pmi .pml{display:flex;gap:4px;margin-top:4px}.pml img{width:20px;height:20px;border-radius:5px;background:#fff;box-shadow:0 0 0 1px var(--line-soft);object-fit:contain}
+.pmic{width:30px;height:30px;border-radius:7px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
 .pmi .grow{flex:1}
 .tg{width:30px;height:18px;border-radius:99px;background:#D7DDE6;position:relative;flex:none;transition:background .15s}
 .tg::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .15s}
@@ -1592,9 +1593,9 @@ document.addEventListener('click',e=>{
 
 /* Payment method toggles */
 (function(){
-  const L=[['qris','QRIS'],['phone','E-wallets'],['card','Credit and debit cards'],['bank','Bank virtual accounts'],['cash','Cash on delivery']];
+  const L=[['qris','QRIS',['qris']],['phone','E-wallets',['gopay','ovo','dana','shopeepay']],['card','Credit and debit cards',[]],['bank','Bank virtual accounts',['bca','mandiri','bni','bri']],['cash','Cash on delivery',[]]];
   const el=document.getElementById('pmlist');
-  el.innerHTML=`<div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Payment methods</b><span class="pill pu">15 methods</span></div>`+L.map(m=>`<div class="pmi"><span class="pmic">${ic(m[0],15)}</span><span class="grow">${m[1]}</span><button class="tg on" aria-label="Toggle ${m[1]}"></button></div>`).join('');
+  el.innerHTML=`<div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Payment methods</b><span class="pill pu">15 methods</span></div>`+L.map(m=>`<div class="pmi"><span class="pmic">${ic(m[0],15)}</span><span class="grow">${m[1]}${m[2].length?`<span class="pml">${m[2].map(k=>`<img src="assets/logos/payment/${k}.png" alt="">`).join('')}</span>`:''}</span><button class="tg on" aria-label="Toggle ${m[1]}"></button></div>`).join('');
   el.querySelectorAll('.tg').forEach(t=>t.onclick=()=>t.classList.toggle('on'));
 })();
 

@@ -853,10 +853,10 @@ html{scroll-padding-top:88px}
 .rc-routes button.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary)}
 .rc-sort{display:flex;align-items:center;justify-content:space-between;margin:14px 0 8px;font-size:12.5px}
 .rc-list{display:grid;gap:6px;min-height:276px;align-content:start}
-.rr{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px;animation:rr-in .35s cubic-bezier(.2,.8,.2,1) both}
+.rr{display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:center;padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px;animation:rr-in .35s cubic-bezier(.2,.8,.2,1) both}
 .rr:first-child{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
 @keyframes rr-in{from{opacity:0;transform:translateY(6px)}}
-.rr-lg{width:34px;height:34px;border-radius:8px;background:var(--tile,#EEF3F9);color:var(--ink);font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:-.2px}
+.rr-lg{width:32px;height:32px;border-radius:8px;background:#fff;box-shadow:0 0 0 1px var(--line-soft);object-fit:contain;display:block;flex:none}
 .rr b{display:block;font-weight:500}
 .rr small{color:var(--muted);font-size:11.5px}
 .rr-p{text-align:right}
@@ -1104,7 +1104,7 @@ html{scroll-padding-top:88px}
 .gp-pick .gp-ic{background:var(--primary-soft);color:var(--primary)}
 .sh-cour{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px;margin-top:4px;font-size:13px;color:var(--muted)}
 .sh-cour{gap:10px 16px}
-.sh-cour img{height:30px;width:30px;border-radius:7px;object-fit:cover;box-shadow:0 0 0 1px var(--line-soft)}
+.sh-cour img{height:32px;width:32px;border-radius:8px;object-fit:contain;background:#fff;box-shadow:0 0 0 1px var(--line-soft)}
 .sh-cour img.w{width:auto;height:22px;border-radius:0;box-shadow:none}
 .gp-ic img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 1px var(--line)}
 .gp-pick .gp-ic,.gp-ship .gp-ic{background:#fff}
@@ -1566,7 +1566,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
     rows.sort((x,y)=>sort==='price'?x.price-y.price:x.eta-y.eta||x.price-y.price);
     count.textContent=`${rows.length} options · ${w} kg`;
     const best=rows[0];
-    list.innerHTML=rows.slice(0,5).map((r,i)=>`<div class="rr" style="animation-delay:${i*50}ms"><span class="rr-lg">${r.c[0]}</span><span><b>${r.c[1]} ${r.c[2]}${r===best?`<span class="pill ${sort==='price'?'ok':'pu'}">${sort==='price'?'Cheapest':'Fastest'}</span>`:''}</b><small>${r.lab}</small></span><span class="rr-p"><b>${rp(r.price)}</b><s>${rp(r.was)}</s></span></div>`).join('');
+    list.innerHTML=rows.slice(0,5).map((r,i)=>`<div class="rr" style="animation-delay:${i*50}ms">${cImg(r.c[0])}<span><b>${r.c[1]} ${r.c[2]}${r===best?`<span class="pill ${sort==='price'?'ok':'pu'}">${sort==='price'?'Cheapest':'Fastest'}</span>`:''}</b><small>${r.lab}</small></span><span class="rr-p"><b>${rp(r.price)}</b><s>${rp(r.was)}</s></span></div>`).join('');
     routes.querySelectorAll('button').forEach((x,i)=>x.classList.toggle('on',ROUTES[i][0]===from.value&&ROUTES[i][1]===to.value));
   }
   const setRoute=i=>{from.value=ROUTES[i][0];to.value=ROUTES[i][1];calc()};
@@ -1588,7 +1588,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
   const PRI=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim()||'#6A4BFF';
   // couriers under the globe
   const LOGO={jne:'img/jne.png',spx:'img/spx.png',lion:'img/lionparcel.png',aa:'img/anteraja.png'};
-  document.getElementById('sh-cour').innerHTML='<span>Every courier, one dashboard</span><img src="img/jne-wide.png" alt="JNE" class="w"><img src="img/spx.png" alt="SPX Express"><img src="img/lionparcel-wide.png" alt="Lion Parcel" class="w"><img src="img/anteraja.png" alt="AnterAja"><span>and more</span>';
+  document.getElementById('sh-cour').innerHTML='<span>Every courier, one dashboard</span>'+[['jne','JNE'],['jnt','J&T Express'],['sicepat','SiCepat'],['anteraja','AnterAja'],['lionparcel','Lion Parcel'],['ninjaxpress','Ninja Xpress'],['spx','SPX Express']].map(c=>`<img src="../assets/logos/courier/${c[0]}.png" alt="${c[1]}">`).join('')+'<span>and more</span>';
   let W,H,R,cx,cy,dpr,pts=[],running=true,t0=performance.now();
   const N=30000,ga=Math.PI*(3-Math.sqrt(5)),D=Math.PI/180;
   const ctr=[Math.cos(-30*D)*Math.sin(120*D),Math.sin(-30*D),Math.cos(-30*D)*Math.cos(120*D)];
@@ -1703,6 +1703,9 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
   if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible()){cur=cur==='single'?'bulk':'single';draw(cur)}},5200);
 })();
 
+/* Courier logos (design-system/assets/Logos/courier) for the short keys used in the mockups */
+function cImg(k){const f={'JNE':'jne','J&T':'jnt','SCP':'sicepat','AA':'anteraja','NJV':'ninjaxpress','IDX':'idexpress','GO':'gosend','GRB':'grabexpress','PXL':'paxel'}[k];return`<img class="rr-lg" src="../assets/logos/courier/${f}.png" alt="">`}
+
 /* ===== Courier performance by region (example data) ===== */
 (function(){
   const R=['Jabodetabek','Jawa Barat','Jawa Tengah & DIY','Jawa Timur','Bali & Nusa Tenggara','Sumatera','Kalimantan','Sulawesi','Papua & Maluku'];
@@ -1714,7 +1717,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
     cur=k;btns.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-selected',i===k)});
     const far=k>=5,data=K.map(c=>{const a=hash(R[k]+c[0]),b=hash(c[0]+R[k]+'d');return{c,on:Math.round(far?78+a*16:86+a*12),ok:+(far?92+b*6:95+b*4.5).toFixed(1),days:(far?3.2+a*2.2:1.4+b*1.4).toFixed(1)}});
     const best=[...data].sort((x,y)=>(y.on+y.ok)-(x.on+x.ok))[0];
-    rows.innerHTML=data.map((d,i)=>`<div class="cp-row" style="animation-delay:${i*50}ms"><span class="who4"><span class="rr-lg">${d.c[0]}</span><b>${d.c[1]}</b>${d===best?'<span class="pill ok">Best here</span>':''}</span><span class="cp-bar"><i style="--v:0%" data-v="${d.on}"></i><span>${d.on}%</span></span><span class="cp-bar b2"><i style="--v:0%" data-v="${d.ok}"></i><span>${String(d.ok).replace('.',',')}%</span></span><span class="num">${d.days.replace('.',',')}</span></div>`).join('');
+    rows.innerHTML=data.map((d,i)=>`<div class="cp-row" style="animation-delay:${i*50}ms"><span class="who4">${cImg(d.c[0])}<b>${d.c[1]}</b>${d===best?'<span class="pill ok">Best here</span>':''}</span><span class="cp-bar"><i style="--v:0%" data-v="${d.on}"></i><span>${d.on}%</span></span><span class="cp-bar b2"><i style="--v:0%" data-v="${d.ok}"></i><span>${String(d.ok).replace('.',',')}%</span></span><span class="num">${d.days.replace('.',',')}</span></div>`).join('');
     requestAnimationFrame(()=>requestAnimationFrame(()=>rows.querySelectorAll('.cp-bar i').forEach(i=>i.style.setProperty('--v',i.dataset.v+'%'))));
   }
   btns.forEach((b,i)=>b.onclick=()=>{hold=Date.now()+10000;set(i)});
