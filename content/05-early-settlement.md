@@ -16,6 +16,7 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 - [ ] **Eligible transactions:** QRIS, e-wallets, virtual accounts and cards; COD settles after delivery. Is that right?
 - [ ] **Where the money goes:** FLIK balance or a bank account?
 - [ ] **Automatic early settlement** ("Settle early automatically, every day at 17:00 WIB"): does this option exist?
+- [ ] **Standard schedule per payment method:** the "Same payment, two timelines" diagram shows QRIS and e-wallets T+1, virtual accounts T+2, cards T+3. Confirm the real schedule.
 - [ ] **Standard schedule in the examples:** the hero assumes T+2 (sales from 19 Oct arrive 21 Oct). Which schedule does FLIK use today? (FLIK Payments shows a daily settlement engine.)
 - [ ] "No collateral or loan paperwork" (At a glance).
 
@@ -49,15 +50,29 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 - Sales 20 Oct — QRIS and e-wallets — Rp21.300.000 — Arrives 22 Oct / Available today
 - 2 days sooner
 
-## 2. The waiting gap
-<!-- html: The waiting gap: ruled four-step flow to the guide lines #gap -->
+## 2. Same payment, two timelines
+<!-- html: Same payment, two timelines: one payment forks into the early and the standard lane (inspired by xendit.co early settlement; example schedule) #gap -->
 
-- **Section heading:** Close the gap between paid and paid out.
-  - **Grey part:** A paid order usually waits for its settlement date. Early Settlement lets you skip the wait when it matters.
-- **Step:** 01 — Paid — A shopper pays by QRIS, e-wallet, virtual account or card.
-- **Step:** 02 — Pending — The sale shows in your balance as pending settlement.
-- **Step:** 03 — Settled early — Ask for an early payout. The fee shows before you confirm.
-- **Step:** 04 — Paid out — The money reaches your FLIK balance or bank, ahead of schedule.
+- **Section heading:** Same payment, two timelines.
+  - **Grey part:** With Early Settlement, a shopper's payment is yours to use the day it is paid, not days later.
+- **Lane label:** With Early Settlement
+- **Lane label:** Standard schedule
+- **Heading:** With Early Settlement
+- **List item:** Use the money the same day the shopper pays.
+- **List item:** Pay out to your FLIK balance or bank account.
+- **List item:** See the fee before every payout.
+- **Heading:** On the standard schedule
+- **List item:** Money arrives one to three days after payment, depending on the method.
+- **List item:** No fee: the standard schedule stays free.
+- **List item:** Settles automatically, with nothing to request.
+
+*Example text inside the diagram (only change if needed):*
+
+- Shopper pays — Rp3.000.000 — QRIS, e-wallet, virtual account or card
+- Early settlement · same day
+- QRIS and e-wallets · T+1 — Virtual accounts · T+2 — Cards · T+3
+- FLIK balance — Waiting / Rp3.000.000 available
+- Waiting — Today — Day 1 — Day 2 — Day 3
 
 ## 3. In control of every payout
 <!-- html: In control: feature list drives highlights on one settle-early window (example data) #control -->

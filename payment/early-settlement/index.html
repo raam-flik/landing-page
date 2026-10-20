@@ -1199,6 +1199,38 @@ html{scroll-padding-top:88px}
 .es-stage .ch-timer{bottom:60px;transition:opacity .3s,transform .3s}
 .es-chip.off{opacity:0;transform:translateY(6px)}
 .es-chip b{min-width:0}
+/* Same payment, two timelines (flow fork + chips + destination cards) */
+.cmp{display:grid;grid-template-columns:230px 72px 1fr;align-items:center;margin-top:56px}
+.cmp-src{transition:border-color .3s,box-shadow .3s}
+.cmp-src.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),var(--sh-lg)}
+.cmp-src b{font-size:22px;font-weight:400}
+.cmp .fl-split{align-self:stretch}
+.cmp-lanes{display:grid;gap:20px}
+.lane{border-radius:var(--r-lg);padding:18px 20px 20px;display:grid;gap:14px;background:var(--bg-alt);border:1px solid var(--line-soft)}
+.lane.early{background:var(--primary-soft);border-color:var(--primary-soft)}
+.lane-h{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lane-r{display:flex;align-items:center;gap:8px}
+.lane-r .fl-c{flex:1;min-width:20px}
+.lane .chip{display:inline-flex;align-items:center;white-space:nowrap;background:var(--surface);flex:none;transition:background .3s,border-color .3s,color .3s}
+.lane .chip.done{border-color:var(--primary);color:var(--primary)}
+.lane.early .chip.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.lane .chip.on{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
+.dest{display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:10px;box-shadow:var(--sh);padding:10px 14px;min-width:210px;flex:none;transition:box-shadow .3s}
+.dest b{display:block;font-weight:500;font-size:14px}
+.dest small{display:block;color:var(--muted);font-size:12.5px}
+.dest.got{box-shadow:0 0 0 2px var(--primary),var(--sh-lg)}
+.dest.got small{color:var(--ink)}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.cmp2 .gl h3 [data-ic]{display:flex}
+.cmp2 .gl li [data-ic]{color:var(--primary);display:flex;margin-top:2px;flex:none}
+@media (max-width:1080px){
+  .cmp{grid-template-columns:1fr;gap:16px}
+  .cmp .fl-split{display:none}
+  .lane-r{flex-wrap:wrap}
+  .lane-r .fl-c{display:none}
+  .dest{flex:1 1 100%}
+}
+@media (max-width:760px){.cmp2{grid-template-columns:1fr}.lane{padding:16px}}
 /* Settle early window (feature list) */
 .fx-dest{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .fx-in .pm-n{display:flex;align-items:center;gap:8px}
@@ -1293,15 +1325,48 @@ html{scroll-padding-top:88px}
   </div>
 </section>
 
-<!-- ===== The waiting gap: ruled four-step flow to the guide lines ===== -->
-<section class="pad-t guides stats-sec" id="gap">
+<!-- ===== Same payment, two timelines: one payment forks into the early and the standard lane (inspired by xendit.co early settlement; example schedule) ===== -->
+<!-- PLACEHOLDER schedule (FLI-46): T+1 / T+2 / T+3 per payment method is an example until the real settlement schedule is confirmed -->
+<section class="pad guides" id="gap">
   <div class="wrap">
-    <h2 class="sec-h stats-h">Close the gap between paid and paid out. <span class="soft">A paid order usually waits for its settlement date. Early Settlement lets you skip the wait when it matters.</span></h2>
-    <div class="stats4 flow4" id="flow4">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="card"></span><b>Paid</b><span>A shopper pays by QRIS, e-wallet, virtual account or card.</span></div>
-      <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="clock"></span><b>Pending</b><span>The sale shows in your balance as pending settlement.</span></div>
-      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>Settled early</b><span>Ask for an early payout. The fee shows before you confirm.</span></div>
-      <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="wallet"></span><b>Paid out</b><span>The money reaches your FLIK balance or bank, ahead of schedule.</span></div>
+    <h2 class="sec-h">Same payment, two timelines. <span class="soft">With Early Settlement, a shopper's payment is yours to use the day it is paid, not days later.</span></h2>
+    <div class="cmp" id="cmp" role="img" aria-label="Example: a Rp3.000.000 payment reaches the FLIK balance the same day with Early Settlement, and after up to 3 days on the standard schedule">
+      <div class="fl-n cmp-src" id="cmp-src"><span class="fl-ic" data-ic="user"></span><small>Shopper pays</small><b class="num">Rp3.000.000</b><span>QRIS, e-wallet, virtual account or card</span></div>
+      <div class="fl-split" aria-hidden="true"><svg viewBox="0 0 80 300" preserveAspectRatio="none"><path d="M0 150 C40 150 40 72 80 72"/><path d="M0 150 C40 150 40 228 80 228"/></svg></div>
+      <div class="cmp-lanes">
+        <div class="lane early" id="lane-a">
+          <div class="lane-h"><span class="label"><i></i>With Early Settlement</span><span class="pill gr" id="day-a">Waiting</span></div>
+          <div class="lane-r">
+            <span class="fl-c"><i></i></span>
+            <span class="chip" data-s="0">Early settlement · same day</span>
+            <span class="fl-c"><i></i></span>
+            <div class="dest"><svg viewBox="0 0 30 30" width="26" height="26" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><span><b>FLIK balance</b><small>Waiting</small></span></div>
+          </div>
+        </div>
+        <div class="lane" id="lane-b">
+          <div class="lane-h"><span class="label"><i></i>Standard schedule</span><span class="pill gr" id="day-b">Waiting</span></div>
+          <div class="lane-r">
+            <span class="fl-c"><i></i></span>
+            <span class="chip" data-s="1">QRIS and e-wallets · T+1</span>
+            <span class="chip" data-s="2">Virtual accounts · T+2</span>
+            <span class="chip" data-s="3">Cards · T+3</span>
+            <span class="fl-c"><i></i></span>
+            <div class="dest"><svg viewBox="0 0 30 30" width="26" height="26" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><span><b>FLIK balance</b><small>Waiting</small></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cmp2">
+      <div class="gl"><h3><span data-ic="bolt"></span>With Early Settlement</h3><ul>
+        <li><span data-ic="check-s"></span>Use the money the same day the shopper pays.</li>
+        <li><span data-ic="check-s"></span>Pay out to your FLIK balance or bank account.</li>
+        <li><span data-ic="check-s"></span>See the fee before every payout.</li>
+      </ul></div>
+      <div class="gl"><h3><span data-ic="clock"></span>On the standard schedule</h3><ul>
+        <li><span data-ic="check-s"></span>Money arrives one to three days after payment, depending on the method.</li>
+        <li><span data-ic="check-s"></span>No fee: the standard schedule stays free.</li>
+        <li><span data-ic="check-s"></span>Settles automatically, with nothing to request.</li>
+      </ul></div>
     </div>
   </div>
 </section>
@@ -1597,12 +1662,27 @@ const rpx=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
   if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%li.length)},2400);
 })();
 
-/* ===== The waiting gap: the progress line walks through the four steps ===== */
+/* ===== Same payment, two timelines: the early lane lands today, the standard lane steps through its days (example schedule) ===== */
 (function(){
-  const box=document.getElementById('flow4'),s=[...box.children];let k=0;
-  const paint=()=>{s.forEach((x,i)=>{x.classList.toggle('on',i===k);x.classList.toggle('done',i<k)});box.style.setProperty('--p',((k+1)/s.length*100)+'%')};
-  paint();const visible=onScreen(box);
-  if(!REDUCE)setInterval(()=>{if(visible()){k=(k+1)%s.length;paint()}},1800);
+  const box=document.getElementById('cmp'),src=document.getElementById('cmp-src'),A=document.getElementById('lane-a'),B=document.getElementById('lane-b');
+  const dayA=document.getElementById('day-a'),dayB=document.getElementById('day-b'),chips=[...box.querySelectorAll('.chip')],dA=A.querySelector('.dest'),dB=B.querySelector('.dest');
+  const pill=(el,cls,t)=>{el.className='pill '+cls;el.textContent=t};
+  const land=(d,t)=>{d.classList.add('got');d.querySelector('small').textContent=t};
+  function reset(){src.classList.remove('on');chips.forEach(c=>c.classList.remove('on','done'));[dA,dB].forEach(d=>{d.classList.remove('got');d.querySelector('small').textContent='Waiting'});pill(dayA,'gr','Waiting');pill(dayB,'gr','Waiting')}
+  function final(){chips[0].classList.add('on');chips.slice(1).forEach(c=>c.classList.add('done'));land(dA,'Rp3.000.000 available');land(dB,'Rp3.000.000 available');pill(dayA,'pu','Today');pill(dayB,'gr','Day 3')}
+  if(REDUCE){final();return}
+  const visible=onScreen(box);
+  async function run(){
+    while(true){
+      if(!visible()){await wait(600);continue}
+      reset();await wait(500);src.classList.add('on');await wait(600);
+      chips[0].classList.add('on');pill(dayA,'pu','Today');await wait(500);land(dA,'Rp3.000.000 available');
+      for(let d=1;d<=3;d++){await wait(1000);chips.slice(1).forEach((c,i)=>{c.classList.toggle('on',i===d-1);c.classList.toggle('done',i<d-1)});pill(dayB,'gr','Day '+d)}
+      await wait(800);chips[3].classList.replace('on','done');land(dB,'Rp3.000.000 available');
+      await wait(3200);
+    }
+  }
+  run();
 })();
 
 /* ===== Payment methods: today's early payouts, one method at a time (example data) ===== */
