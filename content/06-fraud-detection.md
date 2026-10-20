@@ -11,6 +11,10 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 
 - [ ] **Decision before approval:** the page says each payment is checked before it is approved, with three outcomes: Approved, Held for review, Blocked. Is that how FDS works, or does it only flag after the fact?
 - [ ] **Signals:** Device, Location, Behaviour (speed, frequency, amount) and History (FLIK account). Which of these will FDS use?
+- [ ] **Every step of the order:** checks at sign-up, checkout, payment, shipping (COD) and after delivery (refused packages, refunds). Which stages will FDS and the Transaction Monitoring System cover?
+- [ ] **Risk score and reasons:** a 0–100 score with ranked reasons per held order. Will FDS show a score and explain its decisions?
+- [ ] **Strictness setting:** Relaxed, Balanced, Strict. Can merchants choose how strict the checks are?
+- [ ] **Ready from day one:** "FLIK's checks switched on by default, no setup or code to start".
 - [ ] **Merchant rules:** "Your own rules on top" and the example rules (COD over Rp5.000.000, 5 failed payments in 10 minutes, first orders to a new address, 3× the average order). Can merchants set rules?
 - [ ] **Review queue:** can merchants approve or decline held payments themselves, or does the FLIK team review them?
 - [ ] **COD:** holding suspicious COD orders before shipping. Is COD in scope?
@@ -63,17 +67,51 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 - **Outcome:** Unusual — Held for review — It waits in your review queue until you decide.
 - **Outcome:** High risk — Blocked — The payment is stopped before the order ships.
 
-## 3. The signals
-<!-- html: The signals: ruled four-column grid to the guide lines, one column lit at a time #signals -->
+## 3. Every step of the order
+<!-- html: Every step of the order: ruled five-step flow, the progress line walks and an example check follows (structure from seon.io "protect every step"; example data) #steps -->
 
-- **Section heading:** More than the amount.
-  - **Grey part:** A payment is judged on who is paying, from where, and how.
-- **Signal:** Device — Has this phone or browser paid before, and how was it used?
-- **Signal:** Location — Does the payment's location fit the delivery address?
-- **Signal:** Behaviour — How fast, how often and how much is this shopper paying?
-- **Signal:** History — Has this FLIK account paid for and received orders before?
+- **Section heading:** Protected at every step of the order.
+  - **Grey part:** Fraud doesn't only happen at payment. FLIK can look for risk from the first sign-up to after the package arrives.
+- **Step:** 01 — Sign-up — New FLIK accounts that share a phone number or device with others.
+- **Step:** 02 — Checkout — Delivery addresses and contact details that don't add up.
+- **Step:** 03 — Payment — Many failed tries, unusual amounts or a burst of payments.
+- **Step:** 04 — Shipping — Risky COD orders held before you pay to ship them.
+- **Step:** 05 — After delivery — Addresses that keep refusing packages, and repeated refunds.
 
-## 4. Fake COD orders
+*Example text inside the example card (only change if needed):*
+
+- Example · Sign-up — Phone number already on 3 FLIK accounts — Review
+- Example · Checkout — Delivery address in Medan, phone area code in Jayapura — Review
+- Example · Payment — 6 failed card tries in 4 minutes — Blocked
+- Example · Shipping — COD order of Rp2.150.000 from a new account — Held
+- Example · After delivery — 3 refused COD packages at this address — Blocked
+
+## 4. Know why
+<!-- html: Know why: the list highlights the reasons behind one held order (structure from seon.io score explainability; example data) #signals -->
+
+- **Section heading:** Know why, every time.
+  - **Grey part:** Every decision comes with its reasons, ranked by how much they counted, so you can act with confidence.
+- **Heading:** Behaviour
+- **Text:** Several orders in a few minutes.
+- **Heading:** Location
+- **Text:** Paid far from the delivery address.
+- **Heading:** History
+- **Text:** A new account with no delivered orders.
+- **Heading:** Device
+- **Text:** A phone already used on other accounts.
+
+*Example text inside the product mockup (only change if needed):*
+
+- Order ARN-1054 · Cash on delivery — Rp2.150.000 — Held for review
+- 72 — risk score — 0 low · 100 high (example)
+- Why it was held
+- 4 orders in 12 minutes — Behaviour
+- Paid 800 km from the delivery address — Location
+- Account created today — History
+- Phone used by 2 other accounts — Device
+- Review order
+
+## 5. Fake COD orders
 <!-- html: Fake COD orders: dark band with a ledger of held orders (example data) #cod-risk -->
 
 - **Section heading:** Fewer fake COD orders.
@@ -92,7 +130,7 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 - ARN-2058 · Rp2.400.000 — Address with earlier refused deliveries
 - ARN-2063 · Rp1.150.000 — 6 orders in 10 minutes
 
-## 5. Your rules, your call
+## 6. Your rules, your call
 <!-- html: Your rules, your review queue: tabs drive one dashboard window (example data) #dash -->
 
 - **Section heading:** Your rules, your call.
@@ -103,19 +141,21 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 *Example text inside the product mockup (only change if needed):*
 
 - Rules — Example rules
+- How strict — Relaxed / Balanced / Strict
+- Fewer orders held. Only clear risks are stopped. / The default: unusual orders go to your review queue. / More orders wait for review before they ship.
 - Your rules, on top of FLIK's checks
 - Review COD orders over Rp5.000.000
 - Block 5 failed payments within 10 minutes
 - Review first orders to a new address
 - Review orders over 3× your average
-- Last 7 days (example) — Payments checked 1.284 — Held for review 23 — Blocked 6
+- Last 7 days (example) — Payments checked 1.284 — Held for review 9 / 23 / 41 — Blocked 4 / 6 / 9 (Relaxed / Balanced / Strict)
 - Review queue — 3 waiting
 - ARN-1054 · Rp2.150.000 — Cash on delivery · 4th address today
 - ARN-1061 · Rp6.400.000 — Cash on delivery · over Rp5.000.000
 - ARN-1066 · Rp3.900.000 — GoPay · 3× your average order
 - Tap to decide — Needs review / Approved / Declined
 
-## 6. Works where you sell
+## 7. Works where you sell
 <!-- html: Works where you sell: three product cards #where -->
 
 - **Section heading:** Works where you sell.
@@ -130,7 +170,24 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 - Payment link — Review — GoPay · Rp4.500.000 — Much larger than usual
 - Counter 1 · Bandung — Approved — Card · Rp1.250.000 — Risk check passed
 
-## 7. FAQ
+## 8. At a glance
+<!-- html: Fraud Detection at a glance (structure from cybersource.com Fraud Management Essentials features; PLACEHOLDER scope) #glance -->
+
+- **Section heading:** Fraud Detection at a glance.
+- **Heading:** Ready from day one
+- **List item:** FLIK's checks switched on by default
+- **List item:** No setup or code to start
+- **List item:** Covers Checkout, Payment Link and In-Store Payment
+- **Heading:** Your strategy
+- **List item:** Choose how strict the checks are
+- **List item:** Add your own rules on top
+- **List item:** Approve or decline held orders in one queue
+- **Heading:** No friction for genuine shoppers
+- **List item:** No extra step at checkout
+- **List item:** WhatsApp OTP login works as before
+- **List item:** Most payments go straight through
+
+## 9. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
 
 - **Section heading:** Questions, answered.
@@ -144,6 +201,10 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
   - **Answer:** It waits in your review queue. You approve or decline it, and the order only ships once it is approved.
 - **Question:** What happens to a blocked payment?
   - **Answer:** The payment is stopped and the order is not created, so you don't ship goods that won't be paid for.
+- **Question:** Why was an order held?
+  - **Answer:** Every held order shows its reasons, ranked by how much they counted, such as several orders in a few minutes or a new account.
+- **Question:** Can I make it more or less strict?
+  - **Answer:** Yes. Choose Relaxed, Balanced or Strict. Stricter settings send more orders to your review queue.
 - **Question:** Can I add my own rules?
   - **Answer:** Yes. Add rules for how your business sells, such as reviewing COD orders above an amount, on top of FLIK's own checks.
 - **Question:** Does it help with COD?
@@ -152,7 +213,7 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
   - **Answer:** The FLIK team will share pricing when Fraud Detection launches.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
-## 8. Resources
+## 10. Resources
 <!-- html: Resources: 3 cards -->
 
 - **Small heading:** More from FLIK
@@ -160,7 +221,7 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 - **Card:** Product — COD with fewer returns — Cash on delivery across Indonesia for a 3% fee. — Explore COD Shipping
 - **Card:** Guide — Spotting fake orders — The patterns behind most payment fraud, and what to do about them. — Read more
 
-## 9. Final call to action
+## 11. Final call to action
 <!-- html: Final CTA (centered) -->
 
 - **Heading:** Sell with confidence.
