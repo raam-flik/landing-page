@@ -519,6 +519,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:72px;padding-top:48px;border-top:1px solid var(--dark-line)}
 .paths h4{color:#fff;font-size:16px;font-weight:500;margin:14px 0 6px}
 .paths p{color:#AAB4CC;font-size:15px;line-height:1.6}
+.icd.icd-lg{background:#fff}.icd-lg img{width:28px;height:28px;border-radius:6px}
+.itlg{width:16px;height:16px;border-radius:4px;background:#fff;margin-right:6px;vertical-align:-3px}
 .icd{width:36px;height:36px;border-radius:8px;background:rgba(0,229,255,.18);color:#7FF3FF;display:flex;align-items:center;justify-content:center}
 .link-l{display:inline-flex;gap:4px;color:#7FF3FF;font-weight:500;font-size:15px;margin-top:12px}
 .link-l:hover{color:#fff}
@@ -1156,8 +1158,8 @@ section:has(> .wrap > .seg){container-type:inline-size}
     </div>
 
     <div class="paths">
-      <div><span class="icd" data-ic="cart"></span><h4>Shopify</h4><p>Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
-      <div><span class="icd" data-ic="globe"></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
+      <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
+      <div><span class="icd icd-lg"><img src="assets/logos/platform/woocommerce.png" alt=""></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
       <div><span class="icd" data-ic="code"></span><h4>FLIK API</h4><p>Build your own checkout and shipping flows from your own systems.</p><a href="#" class="link-l" data-page="API reference">Read the docs <span class="chev">›</span></a></div>
     </div>
   </div>
@@ -1512,7 +1514,8 @@ const ITABS={
 };
 let itab='No code';
 function renderI(){
-  document.getElementById('itabs').innerHTML=Object.keys(ITABS).map(k=>`<button class="itab${k===itab?' on':''}" role="tab" aria-selected="${k===itab}">${k}</button>`).join('');
+  const ITLG={Shopify:'shopify',WooCommerce:'woocommerce'};
+  document.getElementById('itabs').innerHTML=Object.keys(ITABS).map(k=>`<button class="itab${k===itab?' on':''}" role="tab" aria-selected="${k===itab}">${ITLG[k]?`<img class="itlg" src="assets/logos/platform/${ITLG[k]}.png" alt="">`:''}${k}</button>`).join('');
   document.querySelectorAll('#itabs .itab').forEach(b=>b.onclick=()=>{itab=b.textContent;renderI()});
   document.getElementById('ipanel').innerHTML=ITABS[itab];
 }

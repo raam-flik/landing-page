@@ -1199,7 +1199,8 @@ html{scroll-padding-top:88px}
 .pv-cn{display:grid;gap:8px;max-width:460px}
 .pv-cn>div{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
 .pv-cn>div.in{opacity:1;transform:none}
-.pv-cn .lg2{width:32px;height:32px;border-radius:8px;background:var(--bg-alt);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;flex:none}
+.pv-cn img.lg2{background:#fff;box-shadow:0 0 0 1px var(--line-soft);object-fit:contain}
+.lg2{width:32px;height:32px;border-radius:8px;background:var(--bg-alt);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;flex:none}
 .pv-cn b{display:block;font-weight:500}
 .pv-cn small{color:var(--muted);font-size:11.5px}
 .pv-cn .grow{flex:1;min-width:0}
@@ -1725,10 +1726,10 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
       <div class="pv-aside"><div class="pv-card"><h5>Application <span class="pill pu">Step 1 of 3</span></h5>${ck(0)}</div></div>`,
     ()=>`<div class="pv-f"><h4>Connect your sales</h4><p>Read-only access. We only look at your sales history.</p>
       <div class="pv-cn" id="pv-cn">
-        <div><span class="lg2">SH</span><span class="grow"><b>Shopify</b><small>arunastudio.co.id</small></span><span class="pill ok">Connected</span></div>
+        <div><img class="lg2" src="../../assets/logos/platform/shopify.png" alt=""><span class="grow"><b>Shopify</b><small>arunastudio.co.id</small></span><span class="pill ok">Connected</span></div>
         <div><span class="lg2">${ic('cart',15)}</span><span class="grow"><b>FLIK Checkout</b><small>Online orders</small></span><span class="pill ok">Connected</span></div>
         <div id="pv-pos"><span class="lg2">${ic('home',15)}</span><span class="grow"><b>Cashier system</b><small>2 outlets in Bandung</small></span><span class="pv-spin"></span></div>
-        <div><span class="lg2">WC</span><span class="grow"><b>WooCommerce</b><small>Not used</small></span><span class="pill gr">Connect</span></div>
+        <div><img class="lg2" src="../../assets/logos/platform/woocommerce.png" alt=""><span class="grow"><b>WooCommerce</b><small>Not used</small></span><span class="pill gr">Connect</span></div>
       </div></div>
       <div class="pv-aside"><div class="pv-card"><h5>Sales found <span class="m" style="font-size:11.5px;font-weight:400">12 months</span></h5><div class="pv-bars" id="pv-bars">${'<i></i>'.repeat(12)}</div></div>
       <div class="pv-card"><h5>Application <span class="pill pu">Step 2 of 3</span></h5>${ck(1)}</div></div>`,
