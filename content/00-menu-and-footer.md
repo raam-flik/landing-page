@@ -16,6 +16,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - **Invoice:** Send invoices and get paid faster
 - **Payment Link:** Share a link in chat or social media
 - **Payment Methods:** QRIS, e-wallets, VA, cards and COD
+- **Fraud Detection:** Screen payments for fraud and risk
 - **FLIK Account:** Saved details across every store
 - **Checkout Personalization:** Your payment methods, your couriers
 
@@ -91,6 +92,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - In-Store Payment
 - Checkout
 - Payment Link
+- Fraud Detection
 - Shipping
 - COD Shipping
 - Shipment Tracking

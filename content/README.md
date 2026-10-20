@@ -9,6 +9,7 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [02-checkout.md](02-checkout.md) | Checkout | [/checkout/](https://landing-page-raams-projects-2709477f.vercel.app/checkout/) |
 | [03-shipping.md](03-shipping.md) | Shipping | [/shipping/](https://landing-page-raams-projects-2709477f.vercel.app/shipping/) |
 | [04-merchant-cash-advance.md](04-merchant-cash-advance.md) | Merchant Cash Advance | [/funding/merchant-cash-advance/](https://landing-page-raams-projects-2709477f.vercel.app/funding/merchant-cash-advance/) |
+| [06-fraud-detection.md](06-fraud-detection.md) | Fraud Detection | [/payment/fraud-detection/](https://landing-page-raams-projects-2709477f.vercel.app/payment/fraud-detection/) |
 | [product-facts.md](product-facts.md) | What each product does, and the claims we can make | – |
 | [AI-GUIDE.md](AI-GUIDE.md) | Instructions for the AI that applies your edits | – |
 
