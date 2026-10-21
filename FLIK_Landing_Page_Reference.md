@@ -217,7 +217,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 │   │   ├── /shipping                     Shipping
 │   │   ├── /shipping/bulk                Bulk Shipping
 │   │   ├── /shipping/cod                 COD Shipping
-│   │   ├── /shipping/track               Shipment Tracking (cek resi tool)
+│   │   ├── /shipping/track               Shipment Tracking, cek resi (prototype: /shipping/track/; results at ?id=, noindex)
 │   │   ├── /shipping/courier-performance Courier Performance
 │   │   ├── /shipping/warehouses          Warehouses
 │   │   ├── /shipping/returns             Return Management
@@ -314,6 +314,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the dummy page.
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
+- Shipping: Shipment Tracking got its public cek resi page at `/shipping/track` (2026-10-21, Linear FLI-49) with example data. Live status needs a public tracking API; privacy, noindex and rate-limit rules are in `content/11-shipment-tracking.md`. The current cekresi.flik.co.id shows shoppers' names, phone numbers and addresses publicly and should be fixed or retired.
 - Resources: Help center (`/help`) got a prototype page (2026-10-21): search, contact cards, questions by topic (from the Checkout, Shipping and Merchant Cash Advance FAQs) and the consumer protection contacts from flik.co.id/en/help. See `content/10-help.md`.
 - Resources: Promo (`/promo`) and Blog (`/blog`) got prototype pages (2026-10-21) with the current content of flik.co.id/en/promo and flik.co.id/en/blog. Promo terms open in a modal; blog articles open at `/blog/?post=<slug>`. Covers are FLIK tiles, not the stock photos from the CMS. See `content/08-promo.md` and `content/09-blog.md`.
 - Payment: In-Store Payment got a prototype page at `/payment/in-store` (2026-10-21), with a 3D model of the FLIK EDC (Smart POS T10) in the hero. Device features, card types and pricing are placeholders; see `content/07-in-store-payment.md`.
