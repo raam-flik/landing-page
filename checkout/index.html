@@ -1611,7 +1611,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../';
-const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/'};
+const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/'};
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]!==undefined){e.preventDefault();e.stopImmediatePropagation();location.href=ROOT+ROUTES[a.dataset.page]}},true);
 
 const rp=n=>'Rp '+n.toLocaleString('id-ID');

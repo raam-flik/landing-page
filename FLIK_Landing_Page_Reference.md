@@ -203,7 +203,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 ├── PRODUCTS
 │   ├── PAYMENT
 │   │   ├── /payment                      Payment
-│   │   ├── /payment/in-store             In-Store Payment
+│   │   ├── /payment/in-store             In-Store Payment (prototype: /payment/in-store/)
 │   │   ├── /payment/checkout             Checkout (prototype: /v3/checkout/)
 │   │   ├── /payment/invoice              Invoice
 │   │   ├── /payment/payment-link         Payment Link
@@ -274,6 +274,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 | `/` | FLIK: Checkout, Shipping & Funding for Online Brands | FLIK: Checkout, Pengiriman & Modal untuk Brand Online | ecommerce checkout platform / platform checkout, ekspedisi online |
 | `/payment/checkout` | 30-Second Checkout, 3× Faster \| FLIK Checkout | Checkout 30 Detik, 3× Lebih Cepat \| FLIK Checkout | fast checkout, Shopify checkout Indonesia / checkout cepat |
 | `/payment/methods` | Every Payment Method in One Checkout \| FLIK | Semua Metode Pembayaran dalam Satu Checkout \| FLIK | QRIS, e-wallet, virtual account payments / metode pembayaran online, pembayaran QRIS |
+| `/payment/in-store` | Accept QRIS and Card Payments In Store \| FLIK | Terima Pembayaran QRIS dan Kartu di Toko \| FLIK | EDC QRIS, mesin EDC, card payments in store / mesin EDC, terima QRIS di toko |
 | `/payment/early-settlement` | Get Paid Before Your Settlement Date \| FLIK Early Settlement | Dana Cair Lebih Cepat dari Jadwal Settlement \| FLIK | early settlement, faster payout / pencairan dana lebih cepat, settlement lebih awal |
 | `/payment/fraud-detection` | Fraud Detection for Every Payment \| FLIK | Deteksi Fraud untuk Setiap Pembayaran \| FLIK | payment fraud detection, COD fraud / deteksi fraud pembayaran, order fiktif COD |
 | `/shipping` | Ship for Up to 40% Less, All Couriers \| FLIK Shipping | Ongkir Hemat hingga 40%, Semua Kurir \| FLIK Shipping | courier aggregator Indonesia / ekspedisi online murah |
@@ -312,6 +313,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the dummy page.
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
+- Payment: In-Store Payment got a prototype page at `/payment/in-store` (2026-10-21), with a 3D model of the FLIK EDC (Smart POS T10) in the hero. Device features, card types and pricing are placeholders; see `content/07-in-store-payment.md`.
 - Payment: Fraud Detection was added (2026-10-20, Linear FLI-47) with a prototype page at `/payment/fraud-detection`. What FLIK offers depends on the FDS and Transaction Monitoring System projects (Backlog), so every feature on the page is a placeholder; see `content/06-fraud-detection.md`.
 
 ---
