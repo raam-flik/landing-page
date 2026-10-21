@@ -1255,7 +1255,7 @@ a.hc:hover{box-shadow:0 18px 36px -18px rgba(50,50,93,.28),0 8px 16px -10px rgba
   <div class="wrap">
     <div class="hc3">
       <a class="hc" href="mailto:support@flik.co.id"><span class="fx-ic" data-ic="mail"></span><b>Email</b><span>support@flik.co.id</span><em>Send an email <span class="chev">›</span></em></a>
-      <a class="hc" href="https://wa.me/6281292012668" target="_blank" rel="noopener"><span class="fx-ic" data-ic="chat"></span><b>WhatsApp</b><span>+62 812-9201-2668</span><em>Chat with support <span class="chev">›</span></em></a>
+      <a class="hc" href="https://wa.me/6281292012668" target="_blank" rel="noopener"><span class="fx-ic" data-ic="whatsapp"></span><b>WhatsApp</b><span>+62 812-9201-2668</span><em>Chat with support <span class="chev">›</span></em></a>
       <div class="hc"><span class="fx-ic" data-ic="clock"></span><b>Support hours</b><span>Monday to Friday, 09:00–18:00 WIB</span></div>
     </div>
   </div>
@@ -1317,6 +1317,7 @@ const P={
   tag:'<path d="M3.5 12.5V4.5a1 1 0 0 1 1-1h8l8 8-9 9z"/><circle cx="8.5" cy="8.5" r="1.5"/>',
   copy:'<rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/>',
   shield:'<path d="M12 3 5 6v5.5c0 4.3 2.9 8 7 9.5 4.1-1.5 7-5.2 7-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>',
+  whatsapp:'<path d="M3.6 20.4 4.9 16.5A8.5 8.5 0 1 1 8 19.2z"/><path d="M9.3 8.3c.3-.4.8-.4 1 .1l.7 1.5c.1.3 0 .6-.2.8l-.5.5c.5 1.1 1.4 2 2.5 2.5l.5-.5c.2-.2.5-.3.8-.2l1.5.7c.5.2.5.7.1 1-.8.8-2 1-3 .5a8.6 8.6 0 0 1-3.8-3.8c-.5-1-.3-2.2.4-3.1z"/>',
   bolt:'<path d="M13 2.5 4.5 13.5H12l-1 8 8.5-11H12z"/>',
   check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
   qris:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M20 20h-3M14 20v.01"/>',
@@ -1410,7 +1411,7 @@ const ROOT='../';
 const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'checkout/#integrate','/integrations/woocommerce':'checkout/#integrate',
-  '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/#track','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
+  '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
   '/funding/auto-settlement':'funding/merchant-cash-advance/#terms','/funding/flexibility':'funding/merchant-cash-advance/#terms','/funding/inventory-financing':'funding/merchant-cash-advance/#uses','/funding/outlet-expansion':'funding/merchant-cash-advance/#uses','/funding/marketing-budget':'funding/merchant-cash-advance/#uses'};
 // arriving with #section (from a menu item that has no page yet): scroll there once the page has rendered
 addEventListener('load',()=>{const t=location.hash&&document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>t.scrollIntoView({behavior:'instant'}),60)});
