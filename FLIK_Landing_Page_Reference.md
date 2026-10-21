@@ -300,6 +300,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
    - use case and industry pages link to the products they use
    - blog posts link to their product page
 6. **Thin pages:** FLIK Account, Checkout Personalization, Warehouses and Auto Settlement can start as sections on their parent product page. The menu link jumps to that section; they become full pages once there's enough content.
+   - **In the prototype (2026-10-21):** Payment Methods, FLIK Account, Checkout Personalization, Shopify and WooCommerce → sections on Checkout; Bulk Shipping, COD Shipping, Shipment Tracking, Return Management, Courier Performance → sections on Shipping; Auto Settlement, Flexibility, Inventory Financing, Outlet Expansion, Marketing Budget → sections on Merchant Cash Advance. The `ROUTES` map in every page file holds this list. Items with no matching section (Payment, Invoice, Payment Link, Warehouses, Cross-Border Shipping, Pricing, Solutions, Developers docs, Resources) still show "Page not in this prototype yet".
 7. **Cek resi results:** `noindex` the result pages. Only `/shipping/track` itself is indexed.
 8. **Existing URLs:** the current site serves English under `/en/...`. Add 301 redirects from `/en/*` to `/*`.
 9. **Speed:** WebP images with explicit sizes, and alt text in both languages.

@@ -1564,7 +1564,13 @@ function salesModal(pre){
 
 /* ===== Global click actions ===== */
 /* Local routes (pages that exist in this prototype) */
-const ROUTES={'/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/'};
+const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/',
+  // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
+  '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'checkout/#integrate','/integrations/woocommerce':'checkout/#integrate',
+  '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/#track','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
+  '/funding/auto-settlement':'funding/merchant-cash-advance/#terms','/funding/flexibility':'funding/merchant-cash-advance/#terms','/funding/inventory-financing':'funding/merchant-cash-advance/#uses','/funding/outlet-expansion':'funding/merchant-cash-advance/#uses','/funding/marketing-budget':'funding/merchant-cash-advance/#uses'};
+// arriving with #section (from a menu item that has no page yet): scroll there once the page has rendered
+addEventListener('load',()=>{const t=location.hash&&document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>t.scrollIntoView({behavior:'instant'}),60)});
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]){e.preventDefault();e.stopImmediatePropagation();location.href=ROUTES[a.dataset.page]}},true);
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
