@@ -14,7 +14,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Current cekresi.flik.co.id leaks personal data.** On 21 Oct 2026 its result pages showed the recipient's name, full phone number, full street address (RT/RW and house number), the sender and the COD payment type to anyone with the number. Fix or retire it before linking it anywhere.
 - [ ] **noindex:** result pages (`?id=`) must be `noindex`. The prototype adds the meta tag with JavaScript; the server should also send `X-Robots-Tag: noindex` for any URL with `?id=`. Only `/shipping/track` itself is indexed.
 - [ ] **Rate limit and enumeration:** the prototype blocks more than 5 searches a minute in the browser only. The API must rate-limit by IP, and return the same "No tracking yet" answer for unknown and invalid numbers.
-- [ ] **Courier detection:** the number patterns in `COURIERS` are guesses (for example SPXID… = SPX Express, 1100… 14 digits = AnterAja). Replace them with the shipping backend's rules.
+- [ ] **Courier detection:** there is no courier picker; the backend detects the courier from the number. The patterns in `COURIERS` only serve the prototype.
 - [ ] **Status names:** the page maps every courier event to Created, Picked up, At hub, Out for delivery, Delivered, Delivery failed or Returned to sender. The backend must send these instead of raw codes such as "DELIVERY_FAILED" or "Invalid Status".
 - [ ] **Event text:** courier events arrive in Bahasa Indonesia. The English page shows them in English; the `/id/` page can show the originals.
 - [ ] **Courier staff names** in event text (for example "SATRIA sudah ditugaskan") should be removed by the API.
@@ -31,11 +31,9 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small text above headline:** Shipment tracking
 - **Headline (H1):** Track any package.
   - **Grey part:** Every courier, one search.
-- **Intro text:** Enter the order number or AWB (resi). FLIK finds the courier and shows where your package is, without signing in.
+- **Intro text:** Enter the order number or AWB (resi). FLIK detects the courier and shows where your package is, without signing in.
 - **Form label:** Order number or AWB
 - **Placeholder:** e.g. JX2026102100428
-- **Form label:** Courier
-- **Dropdown option:** Detect automatically / Detected: <courier>
 - **Button:** Track
 - **Error:** Enter the full order number or AWB (resi).
 - **Error:** Too many searches. Try again in a minute.
@@ -53,8 +51,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small heading:** Tracking history
 - **Note:** For privacy this page shows the city only, never the shopper's name, phone, address or order details. Questions about the order? Contact the store you bought from.
 - **No result heading:** No tracking for <number> yet.
-- **No result text:** If the number is right, tracking can take a few hours to appear after the sender creates the shipment. Check the number with the sender, or pick the courier and try again.
-- **Button:** Pick a courier
+- **No result text:** If the number is right, tracking can take a few hours to appear after the sender creates the shipment. Check the number with the sender and try again.
+- **Button:** Check the number
 - **Button:** Get help
 
 *Example shipments (only change if needed):*
@@ -82,8 +80,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Questions, answered.
 - **Question:** Where do I find my AWB (resi)?
   - **Answer:** In the shipping confirmation from the store, on the order page of the store you bought from, or on the label of the package. Some stores send a tracking link instead.
-- **Question:** Do I need to pick the courier?
-  - **Answer:** Usually not. FLIK recognises most couriers from the number. If it can't, pick the courier from the list and search again.
+- **Question:** Do I need to know the courier?
+  - **Answer:** No. FLIK detects the courier from the order number or AWB.
 - **Question:** Why is there no tracking yet?
   - **Answer:** Tracking can take a few hours to appear after the sender creates the shipment. If it still doesn't show, check the number with the store.
 - **Question:** What happens if a delivery fails?

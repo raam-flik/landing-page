@@ -1132,11 +1132,11 @@ html{scroll-padding-top:88px}
 .th h1{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px;max-width:820px}
 .th h1 .soft{color:var(--muted)}
 .th .lead{max-width:620px;margin-top:20px}
-.tf{display:grid;grid-template-columns:1fr 240px auto;gap:10px;margin-top:32px;padding:10px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh-lg)}
+.tf{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:32px;padding:10px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh-lg)}
 .tf .fld{display:grid;gap:4px;padding:6px 10px;border-radius:var(--r-card);transition:background .2s}
 .tf .fld:focus-within{background:var(--bg-alt)}
 .tf label{font-size:12px;font-weight:500;color:var(--muted)}
-.tf input,.tf select{border:0;outline:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);min-width:0;width:100%;padding:0}
+.tf input{border:0;outline:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);min-width:0;width:100%;padding:0}
 .tf input{font-family:var(--mono);font-size:15px;letter-spacing:.2px}
 .tf input::placeholder{font-family:var(--font);letter-spacing:0;color:var(--faint)}
 .tf .fld+.fld{border-left:1px solid var(--line-soft)}
@@ -1229,10 +1229,9 @@ html{scroll-padding-top:88px}
   <div class="wrap">
     <p class="eyebrow">Shipment tracking</p>
     <h1>Track any package. <span class="soft">Every courier, one search.</span></h1>
-    <p class="lead">Enter the order number or AWB (resi). FLIK finds the courier and shows where your package is, without signing in.</p>
+    <p class="lead">Enter the order number or AWB (resi). FLIK detects the courier and shows where your package is, without signing in.</p>
     <form class="tf" id="tf" novalidate>
       <div class="fld"><label for="tq">Order number or AWB</label><input id="tq" placeholder="e.g. JX2026102100428" autocomplete="off" spellcheck="false" maxlength="40"></div>
-      <div class="fld"><label for="tc">Courier</label><select id="tc"><option value="">Detect automatically</option></select></div>
       <button class="btn btn-primary" id="tgo">Track <span class="chev">›</span></button>
     </form>
     <p class="tf-err" id="terr" role="alert"></p>
@@ -1445,8 +1444,7 @@ const GUIDE=[
   ['warn','Returned to sender','After failed attempts, the package goes back to the sender.']
 ];
 (function(){
-  const f=document.getElementById('tf'),q=document.getElementById('tq'),sel=document.getElementById('tc'),err=document.getElementById('terr'),tr=document.getElementById('tr');
-  sel.innerHTML+=COURIERS.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');
+  const f=document.getElementById('tf'),q=document.getElementById('tq'),err=document.getElementById('terr'),tr=document.getElementById('tr');
   document.getElementById('tex').innerHTML=Object.keys(DEMO).map(k=>`<button type="button" class="chip" data-ex="${k}">${k}</button>`).join('');
   document.getElementById('tco').innerHTML='Works with '+COURIERS.map(c=>`<span><img class="fl-plogo" src="../../assets/logos/courier/${c[0]}.png" alt="">${c[1]}</span>`).join('')+'<span>and more</span>';
   document.getElementById('sg').innerHTML=GUIDE.map(g=>`<div><span class="pill ${g[0]}">${g[1]}</span><p>${g[2]}</p></div>`).join('');
@@ -1460,12 +1458,12 @@ const GUIDE=[
     const v=id.trim().toUpperCase().replace(/\s+/g,'');
     if(v.length<6){err.textContent='Enter the full order number or AWB (resi).';err.classList.add('on');q.focus();return}
     if(limited()){err.textContent='Too many searches. Try again in a minute.';err.classList.add('on');return}
-    q.value=v;const c=courier||detect(v);sel.value=courier||'';
+    q.value=v;
     const url=new URL(location.href);url.search='';url.searchParams.set('id',v);if(courier)url.searchParams.set('courier',courier);
     history[push?'pushState':'replaceState'](null,'',url);robots(true);
     const d=DEMO[v];
     if(!d){ // same message for unknown and invalid numbers, so numbers can't be enumerated
-      tr.innerHTML=`<div class="tr-empty"><b>No tracking for ${v.replace(/[<>&]/g,'')} yet.</b><p class="txt">If the number is right, tracking can take a few hours to appear after the sender creates the shipment. Check the number with the sender, or pick the courier and try again.</p><div class="hero-cta"><button class="btn btn-secondary" data-retry>Pick a courier</button><a class="btn btn-secondary" href="../../help/">Get help <span class="chev">›</span></a></div></div>`;
+      tr.innerHTML=`<div class="tr-empty"><b>No tracking for ${v.replace(/[<>&]/g,'')} yet.</b><p class="txt">If the number is right, tracking can take a few hours to appear after the sender creates the shipment. Check the number with the sender and try again.</p><div class="hero-cta"><button class="btn btn-secondary" data-retry>Check the number</button><a class="btn btn-secondary" href="../../help/">Get help <span class="chev">›</span></a></div></div>`;
     } else {
       const s=ST[d.st],step=s[2],latest=d.ev[0];
       tr.innerHTML=`<div class="tr-card">
@@ -1485,13 +1483,13 @@ const GUIDE=[
     tr.classList.add('on');tr.querySelectorAll('[data-ic]').forEach(e=>e.innerHTML=ic(e.dataset.ic.replace(/-s$/,''),14));
     document.getElementById('result').scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'});
   }
-  f.addEventListener('submit',e=>{e.preventDefault();show(q.value,sel.value,true)});
+  f.addEventListener('submit',e=>{e.preventDefault();show(q.value,'',true)});
   document.getElementById('tex').addEventListener('click',e=>{const b=e.target.closest('[data-ex]');if(b)show(b.dataset.ex,'',true)});
   tr.addEventListener('click',e=>{
     if(e.target.closest('[data-copy]')){const b=e.target.closest('[data-copy]');const ok=()=>{toast('Tracking link copied');b.innerHTML=ic('check',14,2)+'Copied';setTimeout(()=>b.innerHTML=ic('copy',14)+'Copy link',1600)};navigator.clipboard?navigator.clipboard.writeText(location.href).then(ok,ok):ok()}
-    if(e.target.closest('[data-retry]')){sel.focus();window.scrollTo({top:0,behavior:REDUCE?'auto':'smooth'})}
+    if(e.target.closest('[data-retry]')){q.focus();q.select();window.scrollTo({top:0,behavior:REDUCE?'auto':'smooth'})}
   });
-  q.addEventListener('input',()=>{err.classList.remove('on');const c=detect(q.value.trim().toUpperCase());sel.options[0].textContent=c?'Detected: '+CN[c]:'Detect automatically'});
+  q.addEventListener('input',()=>err.classList.remove('on'));
   const fromUrl=()=>{const p=new URLSearchParams(location.search);if(p.get('id'))show(p.get('id'),p.get('courier')||'',false);else{tr.classList.remove('on');tr.innerHTML='';robots(false)}};
   addEventListener('popstate',fromUrl);
   fromUrl();
@@ -1500,7 +1498,7 @@ const GUIDE=[
 /* ===== FAQ ===== */
 const FAQ=[
   ['Where do I find my AWB (resi)?','In the shipping confirmation from the store, on the order page of the store you bought from, or on the label of the package. Some stores send a tracking link instead.'],
-  ['Do I need to pick the courier?','Usually not. FLIK recognises most couriers from the number. If it can\'t, pick the courier from the list and search again.'],
+  ['Do I need to know the courier?','No. FLIK detects the courier from the order number or AWB.'],
   ['Why is there no tracking yet?','Tracking can take a few hours to appear after the sender creates the shipment. If it still doesn\'t show, check the number with the store.'],
   ['What happens if a delivery fails?','The courier usually tries again the next day, up to two attempts. If it still fails, the package goes back to the sender.'],
   ['Why don\'t I see the name or address?','To protect shoppers, this public page only shows the city. The store you bought from can see the full details.'],
