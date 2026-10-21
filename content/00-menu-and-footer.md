@@ -17,6 +17,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - **Payment Link:** Share a link in chat or social media
 - **Payment Methods:** QRIS, e-wallets, VA, cards and COD
 - **Early Settlement:** Get paid before your settlement date
+- **Fraud Detection:** Screen payments for fraud and risk
 - **FLIK Account:** Saved details across every store
 - **Checkout Personalization:** Your payment methods, your couriers
 
@@ -93,6 +94,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - Checkout
 - Payment Link
 - Early Settlement
+- Fraud Detection
 - Shipping
 - COD Shipping
 - Shipment Tracking

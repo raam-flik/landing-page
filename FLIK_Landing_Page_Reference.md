@@ -190,7 +190,8 @@ Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pric
 | **Payment Link**<br>Share a link in chat or social media | **Courier Performance**<br>Best courier per region | **Outlet Expansion**<br>Cash to open your next outlet |
 | **Payment Methods**<br>QRIS, e-wallets, VA, cards and COD | **Warehouses**<br>Manage pickup origins | **Marketing Budget**<br>Fund campaigns that drive sales |
 | **Early Settlement**<br>Get paid before your settlement date | **Return Management**<br>Lower RTO, fewer failed deliveries |  |
-| **FLIK Account**<br>Saved details across every store | **Cross-Border Shipping**<br>Ship to customers abroad |  |
+| **Fraud Detection**<br>Screen payments for fraud and risk | **Cross-Border Shipping**<br>Ship to customers abroad |  |
+| **FLIK Account**<br>Saved details across every store |  |  |
 | **Checkout Personalization**<br>Your payment methods, your couriers |  |  |
 
 WhatsApp OTP login and Rewards are no longer separate menu items; they are features on the Checkout page. **Open:** In-Store Payment, Invoice and Payment Link are new products in the menu, so confirm their scope before their pages are written.
@@ -208,6 +209,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 │   │   ├── /payment/payment-link         Payment Link
 │   │   ├── /payment/methods              Payment Methods
 │   │   ├── /payment/early-settlement     Early Settlement (prototype: /payment/early-settlement/)
+│   │   ├── /payment/fraud-detection      Fraud Detection (prototype: /payment/fraud-detection/)
 │   │   ├── /payment/flik-account         FLIK Account
 │   │   └── /payment/personalization      Checkout Personalization
 │   │
@@ -273,6 +275,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 | `/payment/checkout` | 30-Second Checkout, 3× Faster \| FLIK Checkout | Checkout 30 Detik, 3× Lebih Cepat \| FLIK Checkout | fast checkout, Shopify checkout Indonesia / checkout cepat |
 | `/payment/methods` | Every Payment Method in One Checkout \| FLIK | Semua Metode Pembayaran dalam Satu Checkout \| FLIK | QRIS, e-wallet, virtual account payments / metode pembayaran online, pembayaran QRIS |
 | `/payment/early-settlement` | Get Paid Before Your Settlement Date \| FLIK Early Settlement | Dana Cair Lebih Cepat dari Jadwal Settlement \| FLIK | early settlement, faster payout / pencairan dana lebih cepat, settlement lebih awal |
+| `/payment/fraud-detection` | Fraud Detection for Every Payment \| FLIK | Deteksi Fraud untuk Setiap Pembayaran \| FLIK | payment fraud detection, COD fraud / deteksi fraud pembayaran, order fiktif COD |
 | `/shipping` | Ship for Up to 40% Less, All Couriers \| FLIK Shipping | Ongkir Hemat hingga 40%, Semua Kurir \| FLIK Shipping | courier aggregator Indonesia / ekspedisi online murah |
 | `/shipping/cod` | COD Shipping with Only 3% Fee \| FLIK Shipping | Kirim COD dengan Fee Hanya 3% \| FLIK Shipping | COD shipping / kirim paket COD |
 | `/shipping/track` | Track Your Package, All Couriers \| FLIK | Cek Resi Semua Kurir \| FLIK | track package Indonesia / cek resi (very high search volume) |
@@ -309,6 +312,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the dummy page.
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
+- Payment: Fraud Detection was added (2026-10-20, Linear FLI-47) with a prototype page at `/payment/fraud-detection`. What FLIK offers depends on the FDS and Transaction Monitoring System projects (Backlog), so every feature on the page is a placeholder; see `content/06-fraud-detection.md`.
 
 ---
 
