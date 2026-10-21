@@ -11,6 +11,7 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [04-merchant-cash-advance.md](04-merchant-cash-advance.md) | Merchant Cash Advance | [/funding/merchant-cash-advance/](https://landing-page-raams-projects-2709477f.vercel.app/funding/merchant-cash-advance/) |
 | [05-early-settlement.md](05-early-settlement.md) | Early Settlement | [/payment/early-settlement/](https://landing-page-raams-projects-2709477f.vercel.app/payment/early-settlement/) |
 | [06-fraud-detection.md](06-fraud-detection.md) | Fraud Detection | [/payment/fraud-detection/](https://landing-page-raams-projects-2709477f.vercel.app/payment/fraud-detection/) |
+| [07-in-store-payment.md](07-in-store-payment.md) | In-Store Payment | [/payment/in-store/](https://landing-page-raams-projects-2709477f.vercel.app/payment/in-store/) |
 | [product-facts.md](product-facts.md) | What each product does, and the claims we can make | – |
 | [AI-GUIDE.md](AI-GUIDE.md) | Instructions for the AI that applies your edits | – |
 

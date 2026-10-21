@@ -1561,7 +1561,7 @@ function salesModal(pre){
 
 /* ===== Global click actions ===== */
 /* Local routes (pages that exist in this prototype) */
-const ROUTES={'/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/'};
+const ROUTES={'/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/'};
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]){e.preventDefault();e.stopImmediatePropagation();location.href=ROUTES[a.dataset.page]}},true);
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
