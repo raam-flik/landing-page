@@ -13,6 +13,8 @@ You are updating the FLIK landing page with text edits made in the Markdown file
 | `content/04-merchant-cash-advance.md` | `funding/merchant-cash-advance/index.html` |
 | `content/05-early-settlement.md` | `payment/early-settlement/index.html` |
 | `content/06-fraud-detection.md` | `payment/fraud-detection/index.html` |
+| `content/08-promo.md` | `promo/index.html` (promos are in the `PROMOS` list in the page script) |
+| `content/09-blog.md` | `blog/index.html` (articles are in the `POSTS` list in the page script) |
 | `content/07-in-store-payment.md` | `payment/in-store/index.html` |
 
 ## How to find what changed
