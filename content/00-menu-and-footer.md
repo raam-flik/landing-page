@@ -16,6 +16,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - **Invoice:** Send invoices and get paid faster
 - **Payment Link:** Share a link in chat or social media
 - **Payment Methods:** QRIS, e-wallets, VA, cards and COD
+- **Early Settlement:** Get paid before your settlement date
 - **FLIK Account:** Saved details across every store
 - **Checkout Personalization:** Your payment methods, your couriers
 
@@ -91,6 +92,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - In-Store Payment
 - Checkout
 - Payment Link
+- Early Settlement
 - Shipping
 - COD Shipping
 - Shipment Tracking

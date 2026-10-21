@@ -6,11 +6,12 @@ You are updating the FLIK landing page with text edits made in the Markdown file
 
 | Content file | Page file |
 |---|---|
-| `content/00-menu-and-footer.md` | The `MENU` array and the footer script. They are duplicated in **all four** page files, so update every copy identically. |
+| `content/00-menu-and-footer.md` | The `MENU` array and the footer script. They are duplicated in **every** page file, so update every copy identically. |
 | `content/01-homepage.md` | `index.html` |
 | `content/02-checkout.md` | `checkout/index.html` |
 | `content/03-shipping.md` | `shipping/index.html` |
 | `content/04-merchant-cash-advance.md` | `funding/merchant-cash-advance/index.html` |
+| `content/05-early-settlement.md` | `payment/early-settlement/index.html` |
 
 ## How to find what changed
 
