@@ -10,7 +10,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 In-Store Payment is in the menu but its scope was never written down (see the sitemap's open points). The device and the home screen come from the real FLIK EDC (Smart POS T10), but these points need product confirmation:
 
 - [ ] **Cards:** "debit or credit cards" and "card reader". Chip, swipe, tap (NFC)? Which card networks?
-- [ ] **QRIS apps:** the page lists GoPay, OVO, DANA, ShopeePay, BCA mobile, Livin' by Mandiri, BNI Mobile, BRImo, BSI Mobile and PermataMobile as apps that can scan QRIS. QRIS works with any QRIS app, but confirm we may show these logos.
 - [ ] **Hardware:** Android touchscreen, built-in thermal receipt printer, scanner on the back for barcodes and QR codes, rechargeable battery with USB-C charging.
 - [ ] **One balance:** in-store sales land in the same FLIK balance as Checkout and Payment Link.
 - [ ] **Reports:** "sales by channel, outlet and payment method" in the dashboard.
@@ -75,24 +74,13 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - +Rp350.000 — In your FLIK balance
 
 ## 3. Every way they pay
-<!-- html: Every way they pay: partner tiles light up as payments arrive #ways -->
+<!-- html: Every way they pay: three tiles light up in turn #ways -->
 
 - **Section heading:** Every way they pay.
-  - **Grey part:** QRIS from any bank or e-wallet app, and debit or credit cards, on one device.
-- **Tile:** QRIS — One code for every app below
+  - **Grey part:** QRIS and debit or credit cards on one device, with a receipt for every sale.
+- **Tile:** QRIS — Any QRIS app can pay
 - **Tile:** Debit and credit cards — Read by the card reader on the device
 - **Tile:** Receipt — Printed every time
-- **Small heading:** Customers can scan your QRIS with
-- **Tile:** GoPay
-- **Tile:** OVO
-- **Tile:** DANA
-- **Tile:** ShopeePay
-- **Tile:** BCA mobile
-- **Tile:** Livin' by Mandiri
-- **Tile:** BNI Mobile
-- **Tile:** BRImo
-- **Tile:** BSI Mobile
-- **Tile:** PermataMobile
 
 ## 4. One balance
 <!-- html: One balance: online and in-store payments merge into one FLIK balance #one -->

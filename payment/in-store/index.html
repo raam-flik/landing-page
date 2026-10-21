@@ -99,6 +99,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 
 .mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,transform .15s,visibility .15s}
 .nav-item.open .mega{opacity:1;visibility:visible;transform:none}
+.mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px} /* hover bridge over the gap under the menu button */
 .mega-cols{display:grid;gap:36px}
 .mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
 .mega a.mi{display:block;padding:7px 0}
@@ -1185,10 +1186,11 @@ html{scroll-padding-top:88px}
 .edc-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;font-size:12.5px;color:var(--muted)}
 /* A sale at the counter: steps drive a printing receipt */
 .rc{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:56px;align-items:center}
-.rc-g{position:relative;padding:40px;border-radius:16px;background:var(--bg-alt);display:flex;justify-content:center;min-height:500px;align-items:flex-start;overflow:hidden}
-.rc-slot{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:300px;height:10px;border-radius:999px;background:var(--line)}
-.rcpt{position:relative;margin-top:4px;width:260px;background:var(--surface);box-shadow:var(--sh);padding:22px 20px 26px;font-size:12.5px;color:var(--body);max-height:0;overflow:hidden;transition:max-height 1.6s steps(14,end);border-radius:0 0 4px 4px}
-.rcpt.on{max-height:460px}
+.rc-g{position:relative;padding:40px 40px 84px;border-radius:16px;background:var(--bg-alt);display:flex;justify-content:center;align-items:flex-start;overflow:hidden}
+.rc-slot{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:300px;height:10px;border-radius:999px;background:var(--line);z-index:2}
+.rc-feed{position:relative;overflow:hidden;margin-top:-6px;padding:0 16px 24px} /* the paper comes out of the slot */
+.rcpt{position:relative;width:260px;background:var(--surface);box-shadow:var(--sh);padding:22px 20px 26px;font-size:12.5px;color:var(--body);border-radius:0 0 4px 4px;transform:translateY(-101%);opacity:0;transition:opacity .25s ease,transform 0s linear .25s}
+.rcpt.on{transform:none;opacity:1;transition:transform 1.3s cubic-bezier(.3,.05,.25,1),opacity .15s ease}
 .rcpt b{color:var(--ink);font-weight:600}
 .rcpt .c{text-align:center}
 .rcpt .co-row{padding:4px 0}
@@ -1199,12 +1201,10 @@ html{scroll-padding-top:88px}
 .rc-bal.on{opacity:1;transform:none}
 .rc-bal b{display:block;font-weight:500}.rc-bal small{color:var(--muted);font-size:12px}
 /* Every way they pay: partner tiles */
-.pt{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:48px}
+.pt{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
 .pt-t{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid var(--line-soft);border-radius:var(--r-lg);background:var(--surface);font-size:14.5px;font-weight:500;color:var(--ink);transition:border-color .3s,box-shadow .3s}
 .pt-t small{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
 .pt-t.on{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
-.pt-t.wide{grid-column:span 2}
-.pt-h{grid-column:1/-1;font-size:13px;font-weight:500;color:var(--muted);margin-top:8px}
 /* One balance: flow that merges online and in store */
 .flow.flow-merge{grid-template-columns:1.15fr 80px 1fr 64px 1fr}
 /* Close the day: dark band with a settlement card */
@@ -1226,13 +1226,11 @@ html{scroll-padding-top:88px}
 .st-r .num{font-size:13.5px}
 .st-act{display:flex;align-items:center;gap:12px;margin-top:16px}
 .st-act .btn{height:36px;font-size:14px;cursor:default}
-@media (max-width:1080px){.cod,.rc{grid-template-columns:1fr;gap:40px}.pt{grid-template-columns:repeat(3,1fr)}.flow.flow-merge{grid-template-columns:1fr}}
+@media (max-width:1080px){.cod,.rc{grid-template-columns:1fr;gap:40px}.pt{grid-template-columns:1fr}.flow.flow-merge{grid-template-columns:1fr}}
 @media (max-width:760px){
   .edc-stage{height:520px}
   .edc-stage .ch-timer{bottom:40px;right:12px}
-  .rc-g{padding:24px 16px;margin:0 -16px;border-radius:0;min-height:480px}
-  .pt{grid-template-columns:1fr 1fr}
-  .pt-t.wide,.pt-t:nth-child(3){grid-column:1/-1}
+  .rc-g{padding:24px 16px 72px;margin:0 -16px;border-radius:0}
   .cod-card{padding:20px}
 }
 </style>
@@ -1299,7 +1297,7 @@ html{scroll-padding-top:88px}
       </ul>
       <div class="rc-g" aria-hidden="true">
         <span class="rc-slot"></span>
-        <div class="rcpt" id="rcpt">
+        <div class="rc-feed"><div class="rcpt" id="rcpt">
           <p class="c"><b>Aruna Studio</b><br>Jl. Braga 21, Bandung</p>
           <hr>
           <div class="co-row"><span>21 Oct 2026, 10:42</span><span>Counter 1</span></div>
@@ -1311,32 +1309,21 @@ html{scroll-padding-top:88px}
           <span class="pill ok">Payment received</span>
           <hr>
           <p class="c">Thank you for shopping</p>
-        </div>
+        </div></div>
         <div class="rc-bal" id="rc-bal"><span class="fl-plogo fl-plogo--icon" data-ic="wallet-s"></span><span><b>+Rp350.000</b><small>In your FLIK balance</small></span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Every way they pay: partner tiles light up as payments arrive ===== -->
+<!-- ===== Every way they pay: three tiles light up in turn ===== -->
 <section class="pad alt guides" id="ways">
   <div class="wrap">
-    <h2 class="sec-h">Every way they pay. <span class="soft">QRIS from any bank or e-wallet app, and debit or credit cards, on one device.</span></h2>
+    <h2 class="sec-h">Every way they pay. <span class="soft">QRIS and debit or credit cards on one device, with a receipt for every sale.</span></h2>
     <div class="pt" id="pt">
-      <div class="pt-t wide"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/qris.png" alt=""><span>QRIS<small>One code for every app below</small></span></div>
-      <div class="pt-t wide"><span class="fl-plogo fl-plogo--lg fl-plogo--icon" data-ic="card-s"></span><span>Debit and credit cards<small>Read by the card reader on the device</small></span></div>
+      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/qris.png" alt=""><span>QRIS<small>Any QRIS app can pay</small></span></div>
+      <div class="pt-t"><span class="fl-plogo fl-plogo--lg fl-plogo--icon" data-ic="card-s"></span><span>Debit and credit cards<small>Read by the card reader on the device</small></span></div>
       <div class="pt-t"><span class="fl-plogo fl-plogo--lg fl-plogo--icon" data-ic="printer-s"></span><span>Receipt<small>Printed every time</small></span></div>
-      <p class="pt-h">Customers can scan your QRIS with</p>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/gopay.png" alt="">GoPay</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/ovo.png" alt="">OVO</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/dana.png" alt="">DANA</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/shopeepay.png" alt="">ShopeePay</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/bca.png" alt="">BCA mobile</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/mandiri.png" alt="">Livin' by Mandiri</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/bni.png" alt="">BNI Mobile</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/bri.png" alt="">BRImo</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/bsi.png" alt="">BSI Mobile</div>
-      <div class="pt-t"><img class="fl-plogo fl-plogo--lg" src="../../assets/logos/payment/permata.png" alt="">PermataMobile</div>
     </div>
   </div>
 </section>
@@ -1512,8 +1499,10 @@ nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class
   <div class="mega" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
 let navTimer;
 nav.querySelectorAll('.nav-item').forEach(it=>{
-  const open=()=>{clearTimeout(navTimer);nav.querySelectorAll('.nav-item').forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)})};
-  const close=()=>{navTimer=setTimeout(()=>{it.classList.remove('open');it.querySelector('.nav-btn').setAttribute('aria-expanded','false')},140)};
+  // open at once when nothing is open; when another menu is open, wait a moment so passing over a neighbour on the way to a panel doesn't switch menus
+  const show=()=>nav.querySelectorAll('.nav-item').forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)});
+  const open=()=>{clearTimeout(navTimer);const other=nav.querySelector('.nav-item.open:not([data-i="'+it.dataset.i+'"])');if(other)navTimer=setTimeout(show,120);else show()};
+  const close=()=>{clearTimeout(navTimer);navTimer=setTimeout(()=>{it.classList.remove('open');it.querySelector('.nav-btn').setAttribute('aria-expanded','false')},300)};
   it.addEventListener('mouseenter',open);it.addEventListener('mouseleave',close);
   it.querySelector('.nav-btn').addEventListener('click',e=>{e.stopPropagation();it.classList.contains('open')?it.classList.remove('open'):open()});
 });
@@ -1559,19 +1548,22 @@ window.addEventListener('load',()=>{if(window.FlikEDC)FlikEDC.mount(document.get
 /* ===== A sale in four steps: the list drives the receipt (example data) ===== */
 (function(){
   const li=[...document.querySelectorAll('#rc-list li')],rc=document.getElementById('rcpt'),bal=document.getElementById('rc-bal'),m=document.getElementById('rc-m');
-  const visible=onScreen(rc);let cur=0,hold=0,n=0;
+  const visible=onScreen(rc.closest('.rc-g'));let cur=0,hold=0,n=0; // watch the area: the receipt itself starts hidden in the slot
   const set=k=>{cur=k;li.forEach((x,i)=>x.classList.toggle('on',i===k));rc.classList.toggle('on',k>=2);bal.classList.toggle('on',k===3)};
   li.forEach((x,i)=>{x.addEventListener('mouseenter',()=>{hold=Infinity;set(i)});x.addEventListener('mouseleave',()=>{hold=Date.now()+2000});x.addEventListener('click',()=>{hold=Date.now()+6000;set(i)})});
   if(REDUCE){set(3);li.forEach(x=>x.classList.remove('on'));return}
   set(0);
-  setInterval(()=>{if(hold<Date.now()&&visible()){const k=(cur+1)%li.length;if(k===0)m.textContent=(++n%2)?'Card':'QRIS';set(k)}},2200);
+  // each step gets its own time: quick for the first two, longer while the receipt prints and on the result
+  const D=[1200,1200,1600,2400];
+  const next=()=>{if(hold<Date.now()&&visible()){const k=(cur+1)%li.length;if(k===0)m.textContent=(++n%2)?'Card':'QRIS';set(k)}setTimeout(next,D[cur])};
+  setTimeout(next,D[0]);
 })();
 
-/* ===== Every way they pay: tiles light up as payments arrive ===== */
+/* ===== Every way they pay: tiles light up in turn ===== */
 (function(){
   const t=[...document.querySelectorAll('#pt .pt-t')],box=document.getElementById('pt'),visible=onScreen(box);let k=0;
   if(REDUCE)return;
-  setInterval(()=>{if(!visible())return;t.forEach(x=>x.classList.remove('on'));const i=k++%t.length;t[i].classList.add('on');if(i>3)t[0].classList.add('on')},1100);
+  setInterval(()=>{if(!visible())return;t.forEach(x=>x.classList.remove('on'));t[k++%t.length].classList.add('on')},1400);
 })();
 
 /* ===== Close the day: totals count up, then the receipt prints (example data) ===== */

@@ -98,6 +98,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 
 .mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,transform .15s,visibility .15s}
 .nav-item.open .mega{opacity:1;visibility:visible;transform:none}
+.mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px} /* hover bridge over the gap under the menu button */
 .mega-cols{display:grid;gap:36px}
 .mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
 .mega a.mi{display:block;padding:7px 0}
@@ -1625,8 +1626,10 @@ nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class
   <div class="mega" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
 let navTimer;
 nav.querySelectorAll('.nav-item').forEach(it=>{
-  const open=()=>{clearTimeout(navTimer);nav.querySelectorAll('.nav-item').forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)})};
-  const close=()=>{navTimer=setTimeout(()=>{it.classList.remove('open');it.querySelector('.nav-btn').setAttribute('aria-expanded','false')},140)};
+  // open at once when nothing is open; when another menu is open, wait a moment so passing over a neighbour on the way to a panel doesn't switch menus
+  const show=()=>nav.querySelectorAll('.nav-item').forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)});
+  const open=()=>{clearTimeout(navTimer);const other=nav.querySelector('.nav-item.open:not([data-i="'+it.dataset.i+'"])');if(other)navTimer=setTimeout(show,120);else show()};
+  const close=()=>{clearTimeout(navTimer);navTimer=setTimeout(()=>{it.classList.remove('open');it.querySelector('.nav-btn').setAttribute('aria-expanded','false')},300)};
   it.addEventListener('mouseenter',open);it.addEventListener('mouseleave',close);
   it.querySelector('.nav-btn').addEventListener('click',e=>{e.stopPropagation();it.classList.contains('open')?it.classList.remove('open'):open()});
 });
