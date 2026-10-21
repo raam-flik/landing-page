@@ -97,8 +97,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .signin:hover{color:var(--primary-hover)}
 .burger{display:none;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px}
 
-.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,transform .15s,visibility .15s}
-.nav-item.open .mega{opacity:1;visibility:visible;transform:none}
+.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s linear .2s}
+.nav-item.open .mega{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s}
 .mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px} /* hover bridge over the gap under the menu button */
 .mega-cols{display:grid;gap:36px}
 .mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
@@ -588,7 +588,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 
 /* Top bar: no colour over the hero, turns white on hover (and once the page scrolls, so text stays readable) */
 .hdr{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background .2s,border-color .2s}
-.hdr:hover,.hdr:focus-within,.hdr.scrolled{background:#fff}
+.hdr:hover,.hdr:focus-within,.hdr.scrolled,.hdr:has(.nav-item.open){background:#fff} /* stays white while a menu is open */
 .s-hero{margin-top:-69px;padding-top:189px}
 @media (max-width:760px){.s-hero{padding-top:125px}}
 
@@ -798,7 +798,7 @@ section:has(> .wrap > .seg){container-type:inline-size}
 /* ===== Checkout page (content follows stripe.com/payments/checkout) ===== */
 html{scroll-padding-top:88px}
 .hdr{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background .2s,border-color .2s}
-.hdr:hover,.hdr:focus-within,.hdr.scrolled{background:#fff}
+.hdr:hover,.hdr:focus-within,.hdr.scrolled,.hdr:has(.nav-item.open){background:#fff} /* stays white while a menu is open */
 
 /* Hero: text left, phone right, soft mesh behind the phone (clipped at the guide lines) */
 .ch{position:relative;overflow:hidden;margin-top:-69px;padding-top:150px}
@@ -1583,16 +1583,22 @@ const MENU=[
 const nav=document.getElementById('nav');
 nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false">${m.k}${ic('down',14,2)}</button>
   <div class="mega" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
-let navTimer;
-nav.querySelectorAll('.nav-item').forEach(it=>{
-  // open at once when nothing is open; when another menu is open, wait a moment so passing over a neighbour on the way to a panel doesn't switch menus
-  const show=()=>nav.querySelectorAll('.nav-item').forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)});
-  const open=()=>{clearTimeout(navTimer);const other=nav.querySelector('.nav-item.open:not([data-i="'+it.dataset.i+'"])');if(other)navTimer=setTimeout(show,120);else show()};
-  const close=()=>{clearTimeout(navTimer);navTimer=setTimeout(()=>{it.classList.remove('open');it.querySelector('.nav-btn').setAttribute('aria-expanded','false')},300)};
-  it.addEventListener('mouseenter',open);it.addEventListener('mouseleave',close);
-  it.querySelector('.nav-btn').addEventListener('click',e=>{e.stopPropagation();it.classList.contains('open')?it.classList.remove('open'):open()});
+let navTimer,openItem=null,lastY=0,headingDown=false;
+const navItems=[...nav.querySelectorAll('.nav-item')];
+const setOpen=it=>{openItem=it;navItems.forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)})};
+// menu aim: with a menu open, crossing another button on the way to the panel doesn't switch;
+// it switches only once the cursor rests on that button (longer while the cursor is heading down)
+nav.addEventListener('mousemove',e=>{headingDown=e.clientY>lastY;lastY=e.clientY},{passive:true});
+const pend=it=>{clearTimeout(navTimer);navTimer=setTimeout(()=>setOpen(it),headingDown?400:180)};
+navItems.forEach(it=>{
+  it.addEventListener('mouseenter',()=>{clearTimeout(navTimer);if(!openItem||openItem===it)setOpen(it);else pend(it)});
+  it.addEventListener('mousemove',()=>{if(openItem&&openItem!==it)pend(it)});
+  it.addEventListener('mouseleave',()=>{clearTimeout(navTimer);navTimer=setTimeout(()=>setOpen(null),350)});
+  it.querySelector('.nav-btn').addEventListener('click',e=>{e.stopPropagation();clearTimeout(navTimer);setOpen(openItem===it?null:it)});
 });
-document.addEventListener('click',e=>{if(!e.target.closest('.nav-item'))nav.querySelectorAll('.nav-item').forEach(o=>o.classList.remove('open'))});
+// close on a real click outside the menu only: page demos click their own buttons (e.g. the homepage bento), which must not close it
+document.addEventListener('click',e=>{if(e.isTrusted&&!e.target.closest('.nav-item'))setOpen(null)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openItem){const b=openItem.querySelector('.nav-btn');setOpen(null);b.focus()}});
 
 /* Mobile drawer */
 const drawer=document.getElementById('drawer');
