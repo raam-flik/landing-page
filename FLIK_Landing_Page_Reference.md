@@ -191,6 +191,7 @@ Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pric
 | **Payment Methods**<br>QRIS, e-wallets, VA, cards and COD | **Warehouses**<br>Manage pickup origins | **Marketing Budget**<br>Fund campaigns that drive sales |
 | **Early Settlement**<br>Get paid before your settlement date | **Return Management**<br>Lower RTO, fewer failed deliveries |  |
 | **Fraud Detection**<br>Screen payments for fraud and risk | **Cross-Border Shipping**<br>Ship to customers abroad |  |
+| **FLIK Connect**<br>Split each payment across wallets |  |  |
 | **FLIK Account**<br>Saved details across every store |  |  |
 | **Checkout Personalization**<br>Your payment methods, your couriers |  |  |
 
@@ -210,6 +211,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 │   │   ├── /payment/methods              Payment Methods
 │   │   ├── /payment/early-settlement     Early Settlement (prototype: /payment/early-settlement/)
 │   │   ├── /payment/fraud-detection      Fraud Detection (prototype: /payment/fraud-detection/)
+│   │   ├── /payment/connect              FLIK Connect, Split Payments (prototype: /payment/connect/; coming soon)
 │   │   ├── /payment/flik-account         FLIK Account
 │   │   └── /payment/personalization      Checkout Personalization
 │   │
@@ -276,6 +278,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 | `/payment/methods` | Every Payment Method in One Checkout \| FLIK | Semua Metode Pembayaran dalam Satu Checkout \| FLIK | QRIS, e-wallet, virtual account payments / metode pembayaran online, pembayaran QRIS |
 | `/payment/in-store` | Accept QRIS and Card Payments In Store \| FLIK | Terima Pembayaran QRIS dan Kartu di Toko \| FLIK | EDC QRIS, mesin EDC, card payments in store / mesin EDC, terima QRIS di toko |
 | `/payment/early-settlement` | Get Paid Before Your Settlement Date \| FLIK Early Settlement | Dana Cair Lebih Cepat dari Jadwal Settlement \| FLIK | early settlement, faster payout / pencairan dana lebih cepat, settlement lebih awal |
+| `/payment/connect` | Split Payments Across Wallets \| FLIK Connect | Bagi Pembayaran ke Banyak Dompet \| FLIK Connect | split payments, payment splitting Indonesia / bagi hasil pembayaran, split payment |
 | `/payment/fraud-detection` | Fraud Detection for Every Payment \| FLIK | Deteksi Fraud untuk Setiap Pembayaran \| FLIK | payment fraud detection, COD fraud / deteksi fraud pembayaran, order fiktif COD |
 | `/shipping` | Ship for Up to 40% Less, All Couriers \| FLIK Shipping | Ongkir Hemat hingga 40%, Semua Kurir \| FLIK Shipping | courier aggregator Indonesia / ekspedisi online murah |
 | `/shipping/cod` | COD Shipping with Only 3% Fee \| FLIK Shipping | Kirim COD dengan Fee Hanya 3% \| FLIK Shipping | COD shipping / kirim paket COD |
@@ -314,6 +317,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the dummy page.
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
+- Payment: FLIK Connect (Split Payments) got a prototype page at `/payment/connect` (2026-10-22, Linear FLI-51). Not live: "Coming soon" with a waitlist CTA until launch (wallet service and PJP licensing). Pricing 3% + VAT of the whole transaction, paid by the main merchant. See `content/12-flik-connect.md`.
 - Shipping: Shipment Tracking got its public cek resi page at `/shipping/track` (2026-10-21, Linear FLI-49) with example data. Live status needs a public tracking API; privacy, noindex and rate-limit rules are in `content/11-shipment-tracking.md`. The current cekresi.flik.co.id shows shoppers' names, phone numbers and addresses publicly and should be fixed or retired.
 - Resources: Help center (`/help`) got a prototype page (2026-10-21): search, contact cards, questions by topic (from the Checkout, Shipping and Merchant Cash Advance FAQs) and the consumer protection contacts from flik.co.id/en/help. See `content/10-help.md`.
 - Resources: Promo (`/promo`) and Blog (`/blog`) got prototype pages (2026-10-21) with the current content of flik.co.id/en/promo and flik.co.id/en/blog. Promo terms open in a modal; blog articles open at `/blog/?post=<slug>`. Covers are FLIK tiles, not the stock photos from the CMS. See `content/08-promo.md` and `content/09-blog.md`.

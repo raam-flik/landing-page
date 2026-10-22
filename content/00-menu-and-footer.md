@@ -18,6 +18,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - **Payment Methods:** QRIS, e-wallets, VA, cards and COD
 - **Early Settlement:** Get paid before your settlement date
 - **Fraud Detection:** Screen payments for fraud and risk
+- **FLIK Connect:** Split each payment across wallets
 - **FLIK Account:** Saved details across every store
 - **Checkout Personalization:** Your payment methods, your couriers
 
@@ -95,6 +96,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - Payment Link
 - Early Settlement
 - Fraud Detection
+- FLIK Connect
 - Shipping
 - COD Shipping
 - Shipment Tracking
