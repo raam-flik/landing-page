@@ -13,6 +13,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Translation gap:** in "The Importance of a Website for a Brand", one heading was still in Bahasa Indonesia ("4. Bisa Diintegrasikan dengan Layanan Lain"). The page shows "4. Can Be Integrated with Other Services".
 - [ ] **Excerpts:** two articles have no SEO description in the CMS; their card text is the first sentence of the article.
 - [ ] **Article images:** the checkout article has one inline photo in the CMS; it is left out.
+- [x] **Claims check (AG rules, 24 Oct 2026):** the four articles have no 10M+/200+/>50% figures, no RTO or return-rate claims, no Malaysia/Singapore coverage and no COD fee wording, so nothing in them was changed. The final call to action now says "all major couriers" instead of "every courier".
+- [ ] **No newsletter sign-up** on this page. If one is added, it needs a privacy notice, an unticked opt-in and "Unsubscribe at any time".
 
 ## Search results (SEO)
 
@@ -49,6 +51,7 @@ The article bodies are the English texts from the FLIK CMS. Edit them in the CMS
 <!-- html: Final CTA (centered) -->
 
 - **Heading:** Sell on your own website with FLIK.
-- **Text:** A 30-second checkout, every courier and funding for your stock, from one dashboard.
+- **Text:** A 30-second checkout, all major couriers and funding for your stock, from one dashboard.
 - **Button:** Talk to the FLIK team
 - **Button:** Explore Checkout
+- **Button (below the buttons):** Pause animations

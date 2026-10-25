@@ -9,6 +9,16 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so every fact below is a **placeholder** until the product team confirms it.
 
+Since 24 Oct 2026 (AG) the page makes no timing, fee or eligibility promise: specific values are replaced with neutral wording ("sooner", "before your standard settlement date") or with visible `[[confirm: …]]` placeholders. Replace each placeholder once product confirms:
+
+- [ ] `[[confirm: timing]]`: early settlement timing (diagram chip, FAQ).
+- [ ] `[[T+?]]`: standard schedule per payment method (three diagram chips).
+- [ ] `[[confirm: standard schedule]]`: the "On the standard schedule" list.
+- [ ] `[[confirm: fee]]` and `[[confirm: fee structure and rate]]`: hero note, payout summary, At a glance, Pricing, FAQ.
+- [ ] `[[confirm: eligible payment methods]]`: payment methods section and FAQ.
+- [ ] `[[confirm: eligibility criteria]]`: FAQ "Who is it for?".
+- [ ] `[[confirm: automatic option]]`: "Automatic, if you want", the settle-early window and At a glance.
+
 - [ ] **Who it's for:** "Merchants who accept payments with FLIK, online or in store." Is it open to every merchant, or only selected ones (minimum sales, time on FLIK)?
 - [ ] **Timing:** "Paid as soon as the same day" and the big "T+0" in the payment methods section. Is it same day, T+0 or T+1? Does it depend on the payment method?
 - [ ] **Fee:** "One flat fee per early payout". Is it a flat fee, a percentage, or per day early? The page shows an **example rate of 1%** in the hero, the settle-early window and Pricing.
@@ -23,56 +33,57 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 ## Search results (SEO)
 
 - **Page title:** Get Paid Before Your Settlement Date | FLIK Early Settlement
-- **Description:** FLIK Early Settlement pays out your sales before the standard settlement date, so cash from paid orders is ready when your business needs it. One flat fee, shown before you confirm.
+- **Description:** FLIK Early Settlement pays out your sales before the standard settlement date, so cash from paid orders is ready when your business needs it. The fee is shown before you confirm.
 
 ## 1. Hero
 <!-- html: Hero: text left, a balance window switching between the standard and the early schedule (example data) -->
 
 - **Small text above headline:** FLIK Early Settlement
-- **Headline (H1):** Sold today, paid today.
-  - **Grey part:** No waiting for settlement.
-- **Intro text:** Turning paid orders into cash you can use right away. You keep selling, FLIK speeds up the payout.
+- **Headline (H1):** Sold today, paid sooner.
+  - **Grey part:** Less waiting for settlement.
+- **Intro text:** Turning paid orders into cash you can use sooner. You keep selling, FLIK speeds up the payout.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
-- **List item:** Paid as soon as the same day
-- **List item:** One flat fee, shown before you confirm
+- **Button (below logo strip):** Pause animations
+- **List item:** Paid before your standard settlement date
+- **List item:** The fee is shown before you confirm
 - **List item:** Not a loan, nothing to repay
 
 *Example text inside the product mockup (only change if needed):*
 
 - Balance
 - Standard — Early settlement
-- Available today
+- Available balance · Example
 - Sales from 18 Oct, settled on schedule
-- Includes an example fee of Rp397.000
+- Before the early settlement fee [[confirm: fee]]
 - Sales 18 Oct — QRIS and e-wallets — Rp12.400.000 — In your balance
-- Sales 19 Oct — Cards and virtual accounts — Rp18.400.000 — Arrives 21 Oct / Available today
-- Sales 20 Oct — QRIS and e-wallets — Rp21.300.000 — Arrives 22 Oct / Available today
-- 2 days sooner
+- Sales 19 Oct — Cards and virtual accounts — Rp18.400.000 — On schedule / Settled early
+- Sales 20 Oct — QRIS and e-wallets — Rp21.300.000 — On schedule / Settled early
+- Sooner — than the standard schedule
 
 ## 2. Same payment, two timelines
 <!-- html: Same payment, two timelines: one payment forks into the early and the standard lane (inspired by xendit.co early settlement; example schedule) #gap -->
 
 - **Section heading:** Same payment, two timelines.
-  - **Grey part:** With Early Settlement, a shopper's payment is yours to use the day it is paid, not days later.
+  - **Grey part:** With Early Settlement, a shopper's payment is yours to use before the standard settlement date.
 - **Lane label:** With Early Settlement
 - **Lane label:** Standard schedule
 - **Heading:** With Early Settlement
-- **List item:** Use the money the same day the shopper pays.
+- **List item:** Use the money before the standard settlement date.
 - **List item:** Pay out to your FLIK balance or bank account.
 - **List item:** See the fee before every payout.
 - **Heading:** On the standard schedule
-- **List item:** Money arrives one to three days after payment, depending on the method.
-- **List item:** No fee: the standard schedule stays free.
+- **List item:** Money arrives on the standard schedule for each payment method. [[confirm: standard schedule]]
+- **List item:** No early settlement fee on the standard schedule.
 - **List item:** Settles automatically, with nothing to request.
 
 *Example text inside the diagram (only change if needed):*
 
 - Shopper pays — Rp3.000.000 — QRIS, e-wallet, virtual account or card
-- Early settlement · same day
-- QRIS and e-wallets · T+1 — Virtual accounts · T+2 — Cards · T+3
+- Early settlement · [[timing]]
+- QRIS and e-wallets · [[T+?]] — Virtual accounts · [[T+?]] — Cards · [[T+?]]
 - FLIK balance — Waiting / Rp3.000.000 available
-- Waiting — Today — Day 1 — Day 2 — Day 3
+- Waiting — Early — Pending — On schedule
 
 ## 3. In control of every payout
 <!-- html: In control: feature list drives highlights on one settle-early window (example data) #control -->
@@ -86,7 +97,7 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 - **Heading:** Fee before you confirm
 - **Text:** See exactly what you will receive.
 - **Heading:** Automatic, if you want
-- **Text:** Settle early every day without asking.
+- **Text:** Settle early without asking each time. [[confirm: automatic option]]
 - **Heading:** Every payout on record
 - **Text:** Each early payout is listed in your reports.
 
@@ -94,12 +105,12 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 
 - Amount — Rp50.000.000 — Max Rp86.500.000
 - Pay out to — FLIK balance — BCA ··· 4021
-- Settle early automatically — Every day at 17:00 WIB
-- Payout summary
+- Settle early automatically — [[confirm: automatic option]]
+- Payout summary · Example
 - Pending settlement — Rp86.500.000
 - Amount — Rp50.000.000
-- Fee (example, 1%) — −Rp500.000
-- You receive — Rp49.500.000
+- Early settlement fee — [[confirm: fee]]
+- You receive — Rp50.000.000 minus the fee
 - Recent early payouts — 17 Oct 2026 — Rp24.750.000 — Paid
 - 13 Oct 2026 — Rp31.680.000 — Paid
 - Confirm payout
@@ -108,8 +119,8 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 <!-- html: Payment methods: a settlement ledger (the Shipping COD pattern, on white so partner logos keep their colours; example data) #settle-methods -->
 
 - **Section heading:** Early, from every way Indonesia pays.
-  - **Grey part:** QRIS, e-wallets, virtual accounts and cards can settle early. Cash on delivery settles once the package is delivered.
-- **Big number:** T+0 — as soon as the same day you ask
+  - **Grey part:** QRIS, e-wallets, virtual accounts and cards can settle early [[confirm: eligible payment methods]]. Cash on delivery settles once the package is delivered.
+- **Big number:** Sooner — than the standard settlement date
 - **List item:** Pending sales from every payment method, in one balance.
 - **List item:** Each early payout shows the original settlement date.
 - **List item:** Use the money for stock, suppliers, ads or payroll.
@@ -117,8 +128,8 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 
 *Example text inside the product mockup (only change if needed):*
 
-- Settled early today
-- QRIS — Due 21 Oct — +Rp9.800.000 — Paid today
+- Settled early · Example
+- QRIS — Due 21 Oct — +Rp9.800.000 — Paid early
 - GoPay — Due 21 Oct — +Rp4.250.000
 - BCA virtual account — Due 22 Oct — +Rp6.120.000
 - Credit and debit cards — Due 23 Oct — +Rp7.400.000
@@ -132,11 +143,11 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 
 - **Section heading:** Early Settlement at a glance.
 - **Heading:** Your cash flow
-- **List item:** Paid as soon as the same day you ask
+- **List item:** Paid before your standard settlement date
 - **List item:** Settle all pending sales or part of them
 - **List item:** Pay out to your FLIK balance or bank account
-- **List item:** Settle once, or automatically every day
-- **List item:** The standard schedule stays free
+- **List item:** Settle once, or automatically [[confirm: automatic option]]
+- **List item:** No early settlement fee on the standard schedule
 - **Heading:** Payment methods
 - **List item:** QRIS
 - **List item:** E-wallets
@@ -144,7 +155,7 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 - **List item:** Credit and debit cards
 - **List item:** Cash on delivery settles after delivery
 - **Heading:** Clear terms
-- **List item:** One flat fee per early payout
+- **List item:** A fee per early payout [[confirm: fee]]
 - **List item:** The fee shows before you confirm
 - **List item:** Not a loan: nothing to repay
 - **List item:** No collateral or loan paperwork
@@ -155,14 +166,14 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 
 - **Label:** Pricing
 - **Section heading:** Know what you'll pay.
-  - **Grey part:** The standard schedule stays free. You only pay when you settle early.
+  - **Grey part:** You only pay the early settlement fee when you settle early.
 - **Heading:** Early settlement
 - **Link:** Pricing details
-- **Text:** One flat fee on each early payout, shown on screen before you confirm. No interest, no subscription.
-- **Price:** 1% — per early payout (example rate)
+- **Text:** A fee on each early payout, shown on screen before you confirm.
+- **Price:** [[confirm: fee]] — per early payout
 - **Heading:** Standard settlement
 - **Text:** Sales you don't settle early arrive on the usual schedule, at no extra cost.
-- **Price:** Free — on the standard schedule
+- **Price:** No extra fee — on the standard schedule
 
 ## 7. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
@@ -171,15 +182,15 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 - **Question:** What is Early Settlement?
   - **Answer:** It pays out your sales before the standard settlement date, so money from paid orders is ready sooner.
 - **Question:** Who is it for?
-  - **Answer:** Merchants who accept payments with FLIK, online or in store. The FLIK team confirms eligibility for each account.
+  - **Answer:** Merchants who accept payments with FLIK can ask the FLIK team, which confirms eligibility for each account. [[confirm: eligibility criteria]]
 - **Question:** How fast do I get paid?
-  - **Answer:** As soon as the same day you ask. The exact timing depends on the payment method and is confirmed when it is turned on.
+  - **Answer:** Before your standard settlement date. The exact timing is confirmed when Early Settlement is turned on for your account. [[confirm: timing]]
 - **Question:** What does it cost?
-  - **Answer:** One flat fee per early payout, shown before you confirm. There is no interest and no subscription. The standard schedule stays free.
+  - **Answer:** A fee per early payout, shown before you confirm. [[confirm: fee structure and rate]] There is no early settlement fee on the standard schedule.
 - **Question:** Is it a loan?
   - **Answer:** No. Early Settlement pays out money from sales you already made, so there is nothing to repay.
 - **Question:** Which transactions can I settle early?
-  - **Answer:** Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards. Cash on delivery orders settle after the package is delivered.
+  - **Answer:** Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards [[confirm: eligible payment methods]]. Cash on delivery orders settle after the package is delivered.
 - **Question:** Can I keep the standard schedule?
   - **Answer:** Yes. Early Settlement is optional. Use it on the days you need it and keep the standard schedule the rest of the time.
 - **Question:** How is it different from Merchant Cash Advance?
@@ -201,6 +212,7 @@ Early Settlement is new (Linear FLI-46). It is not in `product-facts.md` yet, so
 - **Text:** Start with a conversation. The FLIK team will check your account and turn on early settlement in your dashboard.
 - **Button:** Talk to the FLIK team
 - **Button:** Create an account
+- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Label:** Pricing
-- **Text:** One flat fee per early payout. The standard schedule is free.
+- **Text:** A fee per early payout, shown before you confirm. No extra fee on the standard schedule.
 - **Link:** See pricing

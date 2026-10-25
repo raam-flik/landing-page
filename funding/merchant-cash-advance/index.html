@@ -4,18 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Funding Engine for Growing Brands | FLIK Merchant Cash Advance</title>
-<meta name="description" content="FLIK Merchant Cash Advance gives growing brands upfront funding for inventory, marketing and new outlets, settled automatically as products sell. One fixed margin, no hidden fees.">
+<meta name="description" content="FLIK Merchant Cash Advance gives growing brands upfront funding for inventory, marketing and new outlets, settled automatically as products sell. Offered to selected merchants.">
 <link rel="canonical" href="https://flik.co.id/funding/merchant-cash-advance">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/funding/merchant-cash-advance">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/funding/merchant-cash-advance">
 <link rel="alternate" hreflang="x-default" href="https://flik.co.id/funding/merchant-cash-advance">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<!-- ===== kit: fonts ===== -->
+<link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"FLIK Merchant Cash Advance","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"Upfront inventory funding for growing brands, settled automatically as products sell."}
 </script>
 <style>
+/* ===== kit: fonts ===== */
+/* Self-hosted (AG, 24 Oct 2026). Paths are relative to the site root; from a page in a subfolder prefix ROOT (../, ../../). Weights 300-600 match the old Google Fonts request (700 maps to 600, as before). Licences: fonts/OFL-*.txt */
+@font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url('../../fonts/Inter-latin-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../../fonts/JetBrainsMono-Regular.woff2') format('woff2')}
+/* ===== /kit: fonts ===== */
 /* ===== Tokens (Stripe-style palette, landing page only) ===== */
 :root{
   --ink:#002D5D; --body:#425466; --muted:#64748D; --faint:#8898AA;
@@ -953,7 +958,7 @@ html{scroll-padding-top:88px}
 .ap-mail input:disabled{background:#F3F5F8;cursor:not-allowed}
 .ap-ok{display:none;align-items:center;gap:8px;font-size:14px;color:#0E6E48;background:var(--ok-soft);border-radius:8px;padding:12px 14px}
 .ap-ok span{display:flex}
-.ap-2.sent .ap-mail{display:none}.ap-2.sent .ap-ok{display:flex;margin-top:auto}
+.ap-2.sent .ap-mail,.ap-2.sent .ap-legal{display:none}.ap-2.sent .ap-ok{display:flex;margin-top:auto}
 /* ===== Underwriting stack (like wayflyer.com) ===== */
 .uw-track{height:300vh;position:relative}
 .uw-sticky{position:sticky;top:96px;display:flex;flex-direction:column;gap:32px}
@@ -1233,9 +1238,83 @@ html{scroll-padding-top:88px}
   .pv-f h4{font-size:19px}
   .pv-aside{display:none}
 }
+
+/* ===== kit: contrast ===== */
+/* WCAG AA fixes (25 Oct 2026) for this page's own colours, using darker shades already in this palette (same replacements as the homepage for the same pairs). Text >= 4.5:1, UI >= 3:1. --faint (#8898AA, 2.95:1 on #fff) is for non-text decoration only. */
+:root{--field-line:#64748D}
+.ex,.pv-tabs .n,.pv-search,.ap-sel select.empty{color:var(--muted)} /* #64748D on #fff 4.75:1, on #F8FAFD 4.5:1 (was #6B7899 4.4:1 / #8898AA 2.95:1) */
+.ap-in,.ap-sel,.fld input{border-color:var(--field-line)}           /* field edge 4.75:1 (was #E3E8EE 1.2:1) */
+/* ===== /kit: contrast ===== */
+
+/* ===== kit: a11y ===== */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:16px;top:-64px;z-index:200;background:#fff;color:var(--ink);padding:10px 16px;border-radius:6px;box-shadow:var(--sh-lg);font-size:15px;font-weight:500;transition:top .15s}
+.skip:focus{top:12px}
+/* Focus ring in this page's purple: #6A4BFF is 5.2:1 on #fff, 4.9:1 on #F8FAFD, 4.6:1 on #F2EFFF */
+:is(a,button,input,select,textarea,summary,[tabindex]:not([tabindex="-1"]),[role="button"]):focus-visible{outline:2px solid var(--primary)!important;outline-offset:2px!important}
+/* #6A4BFF is only 2.65:1 on #002D5D, so dark areas use the lighter #C4B8FF (7.6:1 on #002D5D, 6.3:1 on #0B3A6E) */
+:is(.dark,.banner,.bd-stat.dark) :is(a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])):focus-visible{outline-color:#C4B8FF!important}
+[tabindex="-1"]:focus{outline:none}
+button.rate{width:100%;text-align:left;font-size:inherit}
+.signin{height:36px}
+.motion-row{position:relative;z-index:3;display:flex;justify-content:flex-end;padding-top:12px}
+.motion-toggle{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:500;color:var(--muted)}
+.motion-toggle:hover{color:var(--ink)}
+html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animation-play-state:paused!important}
+.logos-band:hover .logos-track{animation-play-state:paused}
+.cta-note{margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted)}
+.cta-note a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px}
+/* ===== /kit: a11y ===== */
+
+/* ===== kit: footer-legal ===== */
+.flegal{margin-top:20px;display:grid;gap:6px;font-size:13px;line-height:1.6;color:var(--muted)}
+.flegal b{font-weight:500;color:var(--ink)}
+.flegal-links{list-style:none;display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:6px}
+.flegal-links a,.flegal-links button{font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.flegal-links a:hover,.flegal-links button:hover{color:var(--ink)}
+/* ===== /kit: footer-legal ===== */
+
+/* ===== kit: forms ===== */
+.fld fieldset{border:0;padding:0;margin:0;min-width:0}
+.fld legend{display:block;padding:0;margin-bottom:6px;font-size:13.5px;font-weight:500}
+.fld-err{margin-top:6px;font-size:13px;color:#A3112E}               /* this palette's error red, 7.8:1 on #fff */
+.fld input[aria-invalid="true"],.fld textarea[aria-invalid="true"]{border-color:#A3112E}
+.fnote{font-size:13px;line-height:1.55;color:var(--muted)}
+.fnote a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px}
+.fchk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:var(--body);cursor:pointer}
+.fchk input{width:16px;height:16px;margin-top:2px;flex:none;accent-color:var(--primary)}
+/* ===== /kit: forms ===== */
+
+/* ===== kit: cookie-consent ===== */
+.cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:flex;justify-content:center;pointer-events:none}
+.cc[hidden]{display:none}
+.cc-card{pointer-events:auto;width:100%;max-width:720px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);padding:20px 22px}
+.cc-h{font-size:17px;font-weight:500;line-height:1.3;margin-bottom:6px;letter-spacing:0}
+.cc-p{font-size:14px;line-height:1.55;color:var(--body)}
+.cc-card a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px}
+.cc-prefs{margin-top:12px;border-top:1px solid var(--line)}
+.cc-prefs[hidden]{display:none}
+.cc-prefs fieldset{border:0;padding:0;margin:0}
+.cc-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft);cursor:pointer}
+.cc-row b{display:block;font-size:14px;font-weight:500}
+.cc-row small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.cc-sw{appearance:none;-webkit-appearance:none;width:36px;height:20px;margin-top:2px;border-radius:999px;background:var(--field-line,#64748D);position:relative;flex:none;cursor:pointer;transition:background .15s}
+.cc-sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .15s}
+.cc-sw:checked{background:var(--primary)}
+.cc-sw:checked::after{transform:translateX(16px)}
+.cc-sw:disabled{cursor:not-allowed}
+.cc-btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.cc-btns .cc-main{min-width:132px}
+.cc-btns .cc-pref{margin-left:auto}
+.cc-btns [hidden]{display:none}
+@media (max-width:560px){.cc{left:8px;right:8px;bottom:8px}.cc-card{padding:16px}.cc-btns .cc-main{flex:1 1 0;min-width:0}.cc-btns .cc-pref{margin-left:0;flex:1 1 100%}}
+/* ===== /kit: cookie-consent ===== */
 </style>
 </head>
 <body>
+<!-- ===== kit: a11y (skip link) ===== -->
+<a class="skip" href="#top">Skip to main content</a>
+<!-- ===== /kit: a11y ===== -->
 
 <!-- ===== Header ===== -->
 <header class="hdr" id="hdr">
@@ -1243,30 +1322,30 @@ html{scroll-padding-top:88px}
     <a href="../../" class="logo" aria-label="FLIK home" id="logo"></a>
     <nav class="nav" id="nav" aria-label="Main"></nav>
     <div class="hdr-right">
-      <a href="#" class="signin" data-act="signin">Sign in</a>
+      <button type="button" class="signin" data-act="signin">Sign in</button>
       <button class="btn btn-primary" data-act="sales">Contact sales <span class="chev">›</span></button>
-      <button class="burger" id="burger" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>
-<div class="drawer" id="drawer" aria-hidden="true"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert></div>
 
 
-<main id="top">
+<main id="top" tabindex="-1">
 
 <!-- ===== Hero: centred text, browser mockup on an animated wave (like stripe.com/billing) ===== -->
 <section class="mh guides">
   <div class="wrap mh-text">
-    <h1 class="mh-h">The funding engine for growing brands.<br><span class="soft">Stock up now, repay as you sell.</span></h1>
+    <h1 class="mh-h">The funding engine for growing brands.<br><span class="soft">Stock up now, settled as you sell.</span></h1>
     <p class="lead">Turning your sales into the funding for your next stock. You grow the demand, we fund the supply.</p>
     <div class="hero-cta">
-      <a href="#estimate" class="btn btn-primary live">Check your estimate <span class="chev">›</span></a>
+      <a href="#estimate" class="btn btn-primary live">Check your eligibility <span class="chev">›</span></a>
       <button class="btn btn-secondary" data-act="sales" data-interest="Funding">Talk to the FLIK team</button>
     </div>
     <ul class="mca-facts">
-      <li><span data-ic="check-s"></span>Apply in under 10 minutes</li>
-      <li><span data-ic="check-s"></span>Funding from Rp 100 million to Rp 5 billion</li>
-      <li><span data-ic="check-s"></span>One fixed margin, no hidden fees</li>
+      <li><span data-ic="check-s"></span>Settled automatically from your sales</li>
+      <li><span data-ic="check-s"></span>Offered to selected merchants</li>
+      <li><span data-ic="check-s"></span>You keep full ownership</li>
     </ul>
   </div>
   <!-- Product preview (like wayflyer.com): three onboarding steps that play on their own -->
@@ -1292,7 +1371,7 @@ html{scroll-padding-top:88px}
       </g>
     </svg>
     <div class="wrap">
-      <div class="pv" id="pv" role="img" aria-label="Product preview of the FLIK funding application">
+      <div class="pv" id="pv" role="img" aria-label="Example product preview of the FLIK funding application, with sample data for Aruna Studio">
         <div class="pv-tabs" id="pv-tabs" role="tablist">
           <button class="on" data-i="0" role="tab"><span class="n">01</span><span class="t">Tell us about your business</span><i></i></button>
           <button data-i="1" role="tab"><span class="n">02</span><span class="t">Connect your sales</span><i></i></button>
@@ -1318,6 +1397,9 @@ html{scroll-padding-top:88px}
   <div class="logos-band">
     <div class="logos-clip"><div class="logos-track" id="logos"></div></div>
   </div>
+  <!-- ===== kit: a11y (motion toggle: one per page, pauses marquee, auto-play demos and decorative motion) ===== -->
+  <div class="wrap motion-row"><button type="button" class="motion-toggle" id="motion-toggle">Pause animations</button></div>
+  <!-- ===== /kit: a11y ===== -->
 </section>
 
 <!-- ===== Stats row ===== -->
@@ -1326,8 +1408,8 @@ html{scroll-padding-top:88px}
     <h2 class="sec-h stats-h">Merchant Cash Advance grows with you. <span class="soft">Fund the next stage of your brand on a platform built for selling.</span></h2>
     <div class="stats4">
       <div class="stat"><b class="num">10+</b><span>growing businesses trust Merchant Cash Advance</span></div>
-      <div class="stat"><b class="num">1</b><span>fixed margin, agreed upfront</span></div>
-      <div class="stat"><b class="num">0</b><span>hidden fees</span></div>
+      <div class="stat"><b class="num">15</b><span>payment methods in one checkout, all feeding settlement</span></div>
+      <div class="stat"><b class="num">30 sec</b><span>to check out with FLIK Checkout</span></div>
       <div class="stat"><b class="num">100%</b><span>ownership stays with you</span></div>
     </div>
   </div>
@@ -1339,7 +1421,7 @@ html{scroll-padding-top:88px}
     <div class="uses-t">
       <h2 class="sec-h">Use it where it grows your sales. <span class="soft">One funding amount, spent where your business needs it most.</span></h2>
       <ul class="uses-list" id="uses-list">
-        <li data-u="0"><span class="uses-ic" data-ic="boxes"></span><div><b>Inventory financing</b><span>Buy stock upfront so best sellers never run out.</span></div></li>
+        <li data-u="0"><span class="uses-ic" data-ic="boxes"></span><div><b>Inventory funding</b><span>Buy stock upfront so best sellers never run out.</span></div></li>
         <li data-u="1"><span class="uses-ic" data-ic="chart"></span><div><b>Marketing budget</b><span>Fund the campaigns that bring buyers to you, online or in store.</span></div></li>
         <li data-u="2"><span class="uses-ic" data-ic="home"></span><div><b>Outlet expansion</b><span>Open your next store, kiosk or pop-up.</span></div></li>
         <li data-u="3"><span class="uses-ic" data-ic="bolt"></span><div><b>Seasonal stock</b><span>Get ready for Ramadan, 11.11 and year-end peaks.</span></div></li>
@@ -1347,7 +1429,7 @@ html{scroll-padding-top:88px}
     </div>
     <div class="uses-g">
       <div class="minip uses-card">
-        <div class="co-row"><b style="font-weight:500">Funding plan</b><span class="pill ok">Approved</span></div>
+        <div class="co-row"><b style="font-weight:500">Funding plan</b><span class="pill ok">Offer</span></div>
         <p class="uses-amt num">Rp 250.000.000</p>
         <div class="uses-stack" id="uses-stack"><i style="--w:44%"></i><i style="--w:22%"></i><i style="--w:24%"></i><i style="--w:10%"></i></div>
         <div class="uses-leg" id="uses-leg">
@@ -1368,16 +1450,16 @@ html{scroll-padding-top:88px}
 <!-- ===== Simple terms: four short cards side by side ===== -->
 <section class="pad guides" id="terms">
   <div class="wrap">
-    <h2 class="sec-h">Simple terms, priced fairly. <span class="soft">Know exactly what you will pay before you sign.</span></h2>
+    <h2 class="sec-h">Simple terms, clear costs. <span class="soft">Know exactly what you will pay before you sign.</span></h2>
     <div class="terms4">
       <article class="tc">
         <span class="label"><i></i>Pricing</span>
-        <h3>One fixed margin.</h3>
-        <p class="txt">Agreed upfront and never changes. No compounding interest and no hidden fees.</p>
+        <h3>What it costs.</h3>
+        <p class="txt">A monthly platform fee (<em>Biaya Platform</em>) as a % of the funded amount, for the funding period, plus a one-time 1% administration fee per placement. All fees exclude PPN.</p>
         <div class="tc-g"><div class="minip">
-          <div class="co-row"><span class="m">Funding</span><span class="num">Rp 250 jt</span></div>
-          <div class="co-row"><span class="m">Fixed margin</span><span class="num">Rp 15 jt</span></div>
-          <div class="co-total"><span>To settle</span><span class="num">Rp 265 jt</span></div>
+          <div class="co-row"><span class="m">Platform fee (<em>Biaya Platform</em>)</span><span class="num">[[set per offer]] / month</span></div>
+          <div class="co-row"><span class="m">Administration fee</span><span class="num">1% per placement</span></div>
+          <div class="co-total"><span>PPN</span><span>Not included</span></div>
         </div></div>
       </article>
       <article class="tc">
@@ -1391,8 +1473,8 @@ html{scroll-padding-top:88px}
       </article>
       <article class="tc">
         <span class="label"><i></i>Flexibility</span>
-        <h3>Slow weeks never squeeze you.</h3>
-        <p class="txt">Repayment follows your sales, so lower sales mean lower settlement.</p>
+        <h3>Settlement follows your sales.</h3>
+        <p class="txt">A share of each sale goes toward settlement, so slower sales mean smaller settlements. [[GC: confirm public disclosure]]</p>
         <div class="tc-g"><div class="minip">
           <div class="wk" id="wk"></div>
         </div></div>
@@ -1408,37 +1490,13 @@ html{scroll-padding-top:88px}
       </article>
     </div>
     <div class="ethic">
-      <span class="tbadge"><span data-ic="check-s"></span>Ethical pricing</span>
       <h3>We grow when you grow.</h3>
-      <p class="txt">Pricing is clear from day one. Because settlement comes from your sales, you never pay more when business is quiet, and there are no surprises at the end.</p>
+      <p class="txt">Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter. [[GC: confirm public disclosure]]</p>
     </div>
   </div>
 </section>
 
-<!-- ===== Success story: one featured testimony (PLACEHOLDER: fictional merchant, Unsplash stock photo; replace with a real, approved story) ===== -->
-<section class="pad-t guides" id="stories">
-  <div class="wrap">
-    <h2 class="sec-h">Built with the people behind the brands. <span class="soft">Online sellers and shop owners who used FLIK funding to grow.</span></h2>
-    <figure class="story">
-      <div class="story-ph">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&amp;q=80&amp;auto=format&amp;fit=crop" alt="Maya Sari, founder of Rumah Kue Maya" loading="lazy">
-        <span class="story-tag"><span data-ic="home"></span>3 outlets in Bandung + online store</span>
-      </div>
-      <div class="story-t">
-        <span class="label"><i></i>Rumah Kue Maya · Bakery</span>
-        <blockquote>
-          <p class="story-q">“Ramadan is almost half of our year. We used to turn down hampers orders because we couldn't buy flour, butter and boxes early enough. This year we stocked up three weeks ahead, opened our third outlet, and the settlement just came out of daily sales. In the quiet month after Lebaran we paid less, which is exactly when we needed it.”</p>
-        </blockquote>
-        <figcaption class="story-who"><b>Maya Sari</b><span>Founder, Rumah Kue Maya</span></figcaption>
-        <div class="story-res">
-          <div><b class="num">Rp 250 jt</b><span>funded for Ramadan stock and a new outlet</span></div>
-          <div><b class="num">1.8×</b><span>Ramadan sales vs. last year</span></div>
-          <div><b class="num">0</b><span>days out of stock</span></div>
-        </div>
-      </div>
-    </figure>
-  </div>
-</section>
+<!-- ===== Success story: removed (fictional merchant and hotlinked stock photo, AG 24 Oct 2026). Add back only with a real merchant who has agreed to their name, photo and quote being shown. ===== -->
 
 <!-- ===== Underwriting (like wayflyer.com): sticky, scroll-driven stack ===== -->
 <section class="pad guides uw-sec" id="decide">
@@ -1489,9 +1547,9 @@ html{scroll-padding-top:88px}
           </form>
           <div class="ap-res" id="ap-res" aria-live="polite">
             <span class="ap-wm" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="currentColor"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="currentColor"/></svg></span>
-            <div class="ap-st on" data-st="idle"><span class="ap-ic" data-ic="coins"></span><p>Complete the form to get an estimate of how much you could access.</p></div>
-            <div class="ap-st" data-st="calc"><span class="ap-ic"><span class="ap-spin"></span></span><div><p>Calculating your estimate…</p><span class="ap-sk"><i></i><i></i></span><small>Checking your sales, category and selling history.</small></div></div>
-            <div class="ap-st" data-st="ok"><span class="ap-ic ok" data-ic="check"></span><div><p>Looks like you could be eligible.</p><b class="num" id="ap-range">Rp 150 jt – Rp 300 jt</b><small>Illustrative estimate. Your offer follows a review by the FLIK team.</small></div></div>
+            <div class="ap-st on" data-st="idle"><span class="ap-ic" data-ic="coins"></span><p>Complete the form to check whether you could be eligible.</p></div>
+            <div class="ap-st" data-st="calc"><span class="ap-ic"><span class="ap-spin"></span></span><div><p>Checking your details…</p><span class="ap-sk"><i></i><i></i></span><small>Checking your sales, category and selling history.</small></div></div>
+            <div class="ap-st" data-st="ok"><span class="ap-ic ok" data-ic="check"></span><div><p>Looks like you could be eligible.</p><small>Merchant Cash Advance is offered to selected merchants. Any offer follows a review by the FLIK team, and its terms are set out in the offer letter.</small></div></div>
             <div class="ap-st" data-st="no"><span class="ap-ic no" data-ic="x"></span><div><p>We can't offer funding just yet.</p><small>Businesses usually need at least 6 months of sales, online or in store. Talk to us and we'll keep you posted.</small></div></div>
           </div>
         </div>
@@ -1500,13 +1558,17 @@ html{scroll-padding-top:88px}
         <div class="ap-card ap-2" id="ap-2">
           <div class="ap-head"><p class="ap-t"><span class="ap-n">2</span>Submit an application</p><p class="ap-d">Share a few more details so the FLIK team can review your business.</p></div>
           <form class="ap-mail" id="ap-mail" novalidate>
-            <div class="fld"><label for="ap-email">Work email</label><input id="ap-email" type="email" placeholder="rina@brand.co.id" autocomplete="email"></div>
+            <div class="fld"><label for="ap-email">Work email</label><input id="ap-email" name="ap-email" type="email" placeholder="rina@brand.co.id" autocomplete="email" required aria-required="true"><p class="fld-err" id="ap-email-err" hidden></p></div>
             <button type="submit" class="btn btn-primary" id="ap-go">Apply now <span class="chev">›</span></button>
           </form>
+          <div class="ap-legal">
+            <p class="fnote" style="margin-top:10px">We'll use your email only to follow up on your application. <a href="/legal/privacy" data-page="/legal/privacy" target="_blank" rel="noopener">Privacy Policy</a></p>
+            <label class="fchk" style="margin-top:10px"><input type="checkbox" id="ap-news" name="ap-news" form="ap-mail"><span>Send me product news from FLIK. You can unsubscribe at any time. <em style="font-style:normal;color:var(--muted)">(optional)</em></span></label>
+          </div>
           <p class="ap-ok" id="ap-ok"><span data-ic="check-s"></span>Thanks! The FLIK team will contact you within one business day.</p>
         </div>
         <div class="ap-card ap-3">
-                    <div class="ap-head"><p class="ap-t"><span class="ap-n">3</span>Get approved for funding</p><p class="ap-d">A clear answer after your consultation. Know your amount and fixed margin before you sign.</p></div>
+                    <div class="ap-head"><p class="ap-t"><span class="ap-n">3</span>Receive your offer</p><p class="ap-d">A clear answer after your consultation. Your offer letter sets out the amount, the fees and how settlement works before you sign.</p></div>
         </div>
       </div>
     </div>
@@ -1527,9 +1589,9 @@ html{scroll-padding-top:88px}
   <div class="wrap">
     <h3 class="res-h">More from FLIK</h3>
     <div class="res3">
-      <a href="#" class="res" data-page="/blog"><span class="rtag"><span data-ic="mail"></span>Guide</span><b>Funding inventory without hidden fees</b><span>How Merchant Cash Advance works, step by step.</span><em>Read more <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/blog"><span class="rtag"><span data-ic="mail"></span>Guide</span><b>Funding your inventory</b><span>How Merchant Cash Advance works, step by step.</span><em>Read more <span class="chev">›</span></em></a>
       <a href="#" class="res" data-page="/checkout"><span class="rtag"><span data-ic="cart"></span>Product</span><b>Sell with FLIK Checkout</b><span>A 30-second checkout with 15 payment methods. Your sales feed settlement automatically.</span><em>Explore Checkout <span class="chev">›</span></em></a>
-      <a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Ship with every courier</b><span>Send the stock you funded for up to 40% less, from one dashboard.</span><em>Explore Shipping <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Ship with all major couriers</b><span>Send the stock you funded for up to 40% less, from one dashboard.</span><em>Explore Shipping <span class="chev">›</span></em></a>
     </div>
   </div>
 </section>
@@ -1541,9 +1603,9 @@ html{scroll-padding-top:88px}
     <p class="txt">Start with a conversation. We will learn about your business and walk you through the options.</p>
     <div class="hero-cta" style="justify-content:center">
       <button class="btn btn-primary live" data-act="sales" data-interest="Funding">Talk to the FLIK team <span class="chev">›</span></button>
-      <a href="#estimate" class="btn btn-secondary">Check your estimate <span class="chev">›</span></a>
+      <a href="#estimate" class="btn btn-secondary">Check your eligibility <span class="chev">›</span></a>
     </div>
-    <div class="fin-price"><b>Pricing</b><span>One fixed margin, agreed upfront. No hidden fees.</span><a href="#terms" class="link">See how pricing works <span class="chev">›</span></a></div>
+    <div class="fin-price"><b>Pricing</b><span>A monthly platform fee plus a one-time 1% administration fee per placement, excl. PPN. Offered to selected merchants; terms are set out in each offer letter.</span><a href="#terms" class="link">See how pricing works <span class="chev">›</span></a></div>
   </div>
 </section>
 
@@ -1556,15 +1618,69 @@ html{scroll-padding-top:88px}
     <div class="fcols" id="fcols"></div>
     <div class="fbot">
       <span>© 2026 FLIK. All rights reserved.</span>
-      <div class="lang" role="group" aria-label="Language"><button class="on" data-lang="en">English</button><button data-lang="id">Bahasa Indonesia</button></div>
+      <div class="lang" role="group" aria-label="Language"><button class="on" data-lang="en" aria-pressed="true">English</button><button data-lang="id" aria-pressed="false">Bahasa Indonesia</button></div>
     </div>
+    <!-- ===== kit: footer-legal ===== -->
+    <div class="flegal">
+      <p><b>PT Flik Teknologi Indonesia</b> · Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560</p>
+      <p>Payments are processed by licensed payment partners. FLIK is not a bank.</p>
+      <ul class="flegal-links" aria-label="Legal">
+        <li><a href="/legal/terms" data-page="/legal/terms">Terms of Service</a></li>
+        <li><a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a></li>
+        <li><a href="/legal/refund" data-page="/legal/refund">Refund Policy</a></li>
+        <li><a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></li>
+        <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+        <li><a href="/legal/data-request" data-page="/legal/data-request">Data request</a></li>
+        <li><a href="mailto:privacy@flik.co.id">privacy@flik.co.id</a></li>
+      </ul>
+    </div>
+    <!-- ===== /kit: footer-legal ===== -->
   </div>
 </footer>
 
-<div class="scrim" id="scrim"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
-<div class="toast" id="toast"></div>
+<div class="scrim" id="scrim"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== kit: cookie-consent ===== -->
+<div class="cc" id="cc" hidden>
+  <div class="cc-card" id="cc-card" role="dialog" aria-modal="false" aria-labelledby="cc-title" aria-describedby="cc-desc" tabindex="-1">
+    <h2 class="cc-h" id="cc-title">Cookies on FLIK</h2>
+    <p class="cc-p" id="cc-desc">We store only your cookie choice in your browser, which the site needs to work. With your permission, we'd also use analytics cookies to see how the site is used, and marketing cookies to measure our ads. You can change your choice at any time under "Cookie settings" in the footer. <a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></p>
+    <div class="cc-prefs" id="cc-prefs" hidden>
+      <fieldset>
+        <legend class="sr-only">Cookie preferences</legend>
+        <label class="cc-row"><span><b>Strictly necessary</b><small>Needed for the site to work, such as remembering this choice. Always on.</small></span><input type="checkbox" class="cc-sw" role="switch" checked disabled aria-label="Strictly necessary cookies, always on"></label>
+        <label class="cc-row"><span><b>Analytics</b><small>Help us understand which pages are used, so we can improve them.</small></span><input type="checkbox" class="cc-sw" role="switch" id="cc-analytics" aria-label="Analytics cookies"></label>
+        <label class="cc-row"><span><b>Marketing</b><small>Measure our ads and show more relevant ones on other sites.</small></span><input type="checkbox" class="cc-sw" role="switch" id="cc-marketing" aria-label="Marketing cookies"></label>
+      </fieldset>
+    </div>
+    <div class="cc-btns">
+      <button type="button" class="btn btn-primary cc-main" data-cc="reject">Reject all</button>
+      <button type="button" class="btn btn-primary cc-main" data-cc="accept">Accept all</button>
+      <button type="button" class="btn btn-secondary cc-pref" data-cc="prefs" aria-expanded="false" aria-controls="cc-prefs">Preferences</button>
+      <button type="button" class="btn btn-secondary cc-pref" data-cc="save" hidden>Save my choices</button>
+    </div>
+  </div>
+</div>
+<!-- ===== /kit: cookie-consent ===== -->
 
 <script>
+/* ===== kit: a11y-motion ===== */
+/* One "Pause animations" toggle per page (#motion-toggle). Adds html.anim-paused (CSS pauses keyframes) and fires 'flik:motion'.
+   JS-driven motion checks motionPaused(). prefers-reduced-motion handling stays as it was. Choice kept per viewer in localStorage. */
+const motionPaused=()=>document.documentElement.classList.contains('anim-paused');
+(function(){
+  const KEY='flik_motion_paused',btn=document.getElementById('motion-toggle');
+  const set=(p,save)=>{document.documentElement.classList.toggle('anim-paused',p);
+    if(btn){btn.textContent=p?'Play animations':'Pause animations';btn.setAttribute('aria-pressed',String(p))}
+    if(save){try{p?localStorage.setItem(KEY,'1'):localStorage.removeItem(KEY)}catch(_){}}
+    dispatchEvent(new CustomEvent('flik:motion',{detail:{paused:p}}))};
+  let start=false;try{start=localStorage.getItem(KEY)==='1'}catch(_){}
+  set(start,false);
+  if(btn)btn.addEventListener('click',()=>set(!motionPaused(),true));
+})();
+/* ===== /kit: a11y-motion ===== */
+
 /* ===== Icons ===== */
 const P={
   cart:'<circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.2L21 7H6.3"/>',
@@ -1590,7 +1706,7 @@ const P={
   'chev-r':'<path d="M4 12h16M14 6l6 6-6 6"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'
 };
-const ic=(n,s=18,w=1.7)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
+const ic=(n,s=18,w=1.7)=>`<svg aria-hidden="true" focusable="false" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
 document.querySelectorAll('[data-ic]').forEach(e=>{
   const v=e.dataset.ic;
   if(v.endsWith('-s'))e.innerHTML=ic(v.slice(0,-2),15);
@@ -1605,8 +1721,8 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 const MENU=[
   {k:'Products',w:860,cols:[
     {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Screen payments for fraud and risk','/payment/fraud-detection'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
-    {h:'Shipping',items:[['Shipping','All couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Lower RTO, fewer failed deliveries','/shipping/returns'],['Cross-Border Shipping','Ship to customers abroad','/shipping/cross-border']]},
-    {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Repay as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Financing','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
+    {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns'],['Cross-Border Shipping','Ship to customers abroad','/shipping/cross-border']]},
+    {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Settled as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Funding','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
   {k:'Solutions',w:560,cols:[
     {h:'By use case',items:[['D2C brands','Sell on your own website','/use-cases/d2c-brands'],['COD sellers','Cash on delivery at scale','/use-cases/cod-sellers'],['Scaling brands','Fund inventory to grow','/use-cases/scaling-brands']]},
@@ -1622,8 +1738,11 @@ const MENU=[
   ]}
 ];
 const nav=document.getElementById('nav');
-nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false">${m.k}${ic('down',14,2)}</button>
-  <div class="mega" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
+nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false" aria-controls="mega-${i}">${m.k}${ic('down',14,2)}</button>
+  <div class="mega" id="mega-${i}" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
+/* ===== kit: a11y-menu ===== */
+/* Mega menu (this page keeps its menu-aim hover logic): Escape closes and returns focus to the button, focus leaving an item closes it,
+   a mouse leaving doesn't close a menu that still holds keyboard focus, and setOpen keeps aria-expanded in sync. */
 let navTimer,openItem=null,lastY=0,headingDown=false;
 const navItems=[...nav.querySelectorAll('.nav-item')];
 const setOpen=it=>{openItem=it;navItems.forEach(o=>{o.classList.toggle('open',o===it);o.querySelector('.nav-btn').setAttribute('aria-expanded',o===it)})};
@@ -1634,22 +1753,33 @@ const pend=it=>{clearTimeout(navTimer);navTimer=setTimeout(()=>setOpen(it),headi
 navItems.forEach(it=>{
   it.addEventListener('mouseenter',()=>{clearTimeout(navTimer);if(!openItem||openItem===it)setOpen(it);else pend(it)});
   it.addEventListener('mousemove',()=>{if(openItem&&openItem!==it)pend(it)});
-  it.addEventListener('mouseleave',()=>{clearTimeout(navTimer);navTimer=setTimeout(()=>setOpen(null),350)});
+  it.addEventListener('mouseleave',()=>{clearTimeout(navTimer);navTimer=setTimeout(()=>{if(openItem===it&&!it.contains(document.activeElement))setOpen(null)},350)});
   it.querySelector('.nav-btn').addEventListener('click',e=>{e.stopPropagation();clearTimeout(navTimer);setOpen(openItem===it?null:it)});
+  it.addEventListener('focusout',e=>{if(openItem===it&&!it.contains(e.relatedTarget)){clearTimeout(navTimer);setOpen(null)}});
 });
 // close on a real click outside the menu only: page demos click their own buttons (e.g. the homepage bento), which must not close it
 document.addEventListener('click',e=>{if(e.isTrusted&&!e.target.closest('.nav-item'))setOpen(null)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openItem){const b=openItem.querySelector('.nav-btn');setOpen(null);b.focus()}});
+/* ===== /kit: a11y-menu ===== */
 
 /* Mobile drawer */
 const drawer=document.getElementById('drawer');
 drawer.innerHTML=`<div class="drawer-top"><span class="logo">${document.getElementById('logo').innerHTML}</span><button class="x" id="dclose" aria-label="Close menu">${ic('x',20)}</button></div>`+
-  MENU.map(m=>`<div class="dgroup"><button>${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>`<h5>${c.h}</h5>${c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}`).join('')}</div></div>`).join('')+
+  MENU.map(m=>`<div class="dgroup"><button aria-expanded="false">${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>`<h5>${c.h}</h5>${c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}`).join('')}</div></div>`).join('')+
   `<div class="dgroup"><button data-page="/pricing">Pricing</button></div><div class="btns"><button class="btn btn-primary" data-act="start">Get started</button><button class="btn btn-secondary" data-act="sales">Contact sales</button><button class="btn btn-secondary" data-act="signin">Sign in</button></div>`;
-const setDrawer=o=>{drawer.classList.toggle('open',o);drawer.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''};
-document.getElementById('burger').onclick=()=>setDrawer(true);
+/* ===== kit: a11y-drawer ===== */
+/* Mobile drawer: inert while closed; focus moves in on open and back to the burger on close. setDrawer(false) on a closed drawer does nothing. */
+const burger=document.getElementById('burger');
+const setDrawer=o=>{
+  const was=drawer.classList.contains('open');if(was===o)return;
+  drawer.classList.toggle('open',o);drawer.setAttribute('aria-hidden',String(!o));drawer.inert=!o;
+  burger.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';
+  if(o)setTimeout(()=>document.getElementById('dclose').focus(),30);else if(burger.getClientRects().length)burger.focus({preventScroll:true});
+};
+burger.onclick=()=>setDrawer(true);
 document.getElementById('dclose').onclick=()=>setDrawer(false);
-drawer.querySelectorAll('.dgroup>button:not([data-page])').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+drawer.querySelectorAll('.dgroup>button:not([data-page])').forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',String(b.parentElement.classList.toggle('open'))));
+/* ===== /kit: a11y-drawer ===== */
 
 /* Header border on scroll */
 const hdr=document.getElementById('hdr');
@@ -1662,27 +1792,29 @@ const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/s
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'checkout/#integrate','/integrations/woocommerce':'checkout/#integrate',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
-  '/funding/auto-settlement':'funding/merchant-cash-advance/#terms','/funding/flexibility':'funding/merchant-cash-advance/#terms','/funding/inventory-financing':'funding/merchant-cash-advance/#uses','/funding/outlet-expansion':'funding/merchant-cash-advance/#uses','/funding/marketing-budget':'funding/merchant-cash-advance/#uses'};
+  '/funding/auto-settlement':'funding/merchant-cash-advance/#terms','/funding/flexibility':'funding/merchant-cash-advance/#terms','/funding/inventory-financing':'funding/merchant-cash-advance/#uses','/funding/outlet-expansion':'funding/merchant-cash-advance/#uses','/funding/marketing-budget':'funding/merchant-cash-advance/#uses',
+  /* ===== kit: footer-legal (routes; pages live at legal/<slug>/, from the site root) ===== */
+  '/legal/terms':'legal/terms/','/legal/privacy':'legal/privacy/','/legal/refund':'legal/refund/','/legal/cookies':'legal/cookies/','/legal/data-request':'legal/data-request/'
+  /* ===== /kit: footer-legal ===== */
+};
 // arriving with #section (from a menu item that has no page yet): scroll there once the page has rendered
 addEventListener('load',()=>{const t=location.hash&&document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>t.scrollIntoView({behavior:'instant'}),60)});
-document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]!==undefined){e.preventDefault();e.stopImmediatePropagation();location.href=ROOT+ROUTES[a.dataset.page]}},true);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]!==undefined){e.preventDefault();e.stopImmediatePropagation();if(a.target==='_blank')open(ROOT+ROUTES[a.dataset.page],'_blank','noopener');else location.href=ROOT+ROUTES[a.dataset.page]}},true);
 
 const rp=n=>'Rp '+n.toLocaleString('id-ID');
 
 /* ===== Logos ===== */
 /* Merchant logos (design-system/assets/Logos/merchant), shown with permission */
-const LOGOS=[['kuvings','Kuvings'],['jamise','Jamise'],['zmnow','ZMNow'],['ryusei','Ryusei'],['mayora','Mayora'],['keychron','Keychron'],['nuphy','NuPhy'],['elzatta','Elzatta'],['oxygen-denim','Oxygen Denim'],['roughneck','Roughneck'],['andall','Andall'],['cottonology','Cottonology'],['fertig','Fertig'],['gio-cardin','Gio Cardin'],['vincencio','Vincencio'],['makeblock','Makeblock'],['emrys','Emrys'],['hanoon','Hanoon'],['trooper','Trooper'],['moire','Moire']];
+const LOGOS=[['zmnow','ZMNow'],['ryusei','Ryusei'],['mayora','Mayora'],['keychron','Keychron'],['nuphy','NuPhy'],['elzatta','Elzatta'],['oxygen-denim','Oxygen Denim'],['roughneck','Roughneck'],['andall','Andall'],['cottonology','Cottonology'],['fertig','Fertig'],['gio-cardin','Gio Cardin'],['vincencio','Vincencio'],['makeblock','Makeblock'],['emrys','Emrys'],['hanoon','Hanoon'],['trooper','Trooper'],['moire','Moire']];
 const lgHtml=LOGOS.map(l=>`<img class="lg" src="../../assets/logos/merchant/${l[0]}.png" alt="${l[1]}" loading="lazy">`).join('');
-document.getElementById('logos').innerHTML=lgHtml+lgHtml;
+document.getElementById('logos').innerHTML=lgHtml+'<span style="display:contents" aria-hidden="true">'+lgHtml.replace(/alt="[^"]*"/g,'alt=""')+'</span>';
 
-/* ===== Application process: eligibility → apply → approved ===== */
+/* ===== Application process: eligibility → apply → offer ===== */
 (function(){
   const sales=document.getElementById('ap-sales'),cat=document.getElementById('ap-cat'),age=document.getElementById('ap-age'),ch=document.getElementById('ap-ch');
-  const res=document.getElementById('ap-res'),email=document.getElementById('ap-email'),go=document.getElementById('ap-go'),card2=document.getElementById('ap-2');
-  const short=n=>n>=1000?('Rp '+(n/1000).toLocaleString('id-ID',{maximumFractionDigits:1})+' M'):('Rp '+Math.round(n)+' jt');
+  const res=document.getElementById('ap-res'),card2=document.getElementById('ap-2');
   const show=k=>res.querySelectorAll('.ap-st').forEach(x=>x.classList.toggle('on',x.dataset.st===k));
   let ok=false,timer,raf;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const valid=()=>/\S+@\S+\.\S+/.test(email.value);
   function calc(){
     // keep the sales field formatted as Rupiah
     const digits=sales.value.replace(/\D/g,'').slice(0,13);sales.value=digits?(+digits).toLocaleString('id-ID'):'';
@@ -1694,15 +1826,13 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
     show('calc');
     timer=setTimeout(()=>{
       if(f===0||m<50){show('no');return}
-      const lo=Math.min(5000,Math.max(100,Math.round(m*.5*f/10)*10)),hi=Math.min(5000,Math.max(100,Math.round(m*f/10)*10)),el=document.getElementById('ap-range'),t0=performance.now();
       show('ok');ok=true;
-      const tick=now=>{const k=Math.min(1,(now-t0)/700),e=1-Math.pow(1-k,3);el.textContent=lo>=hi?'Up to '+short(Math.round(hi*e)):short(Math.round(lo*e))+' – '+short(Math.round(hi*e));if(k<1)raf=requestAnimationFrame(tick)};
-      if(reduce)el.textContent=lo>=hi?'Up to '+short(hi):short(lo)+' – '+short(hi);else raf=requestAnimationFrame(tick);
     },reduce?0:1100);
   }
   [sales,ch,cat,age].forEach(x=>{x.addEventListener('input',calc);x.addEventListener('change',calc)});
     // the application stays open even without an estimate
-  document.getElementById('ap-mail').addEventListener('submit',e=>{e.preventDefault();if(!valid()){email.focus();toast('Enter your work email to apply.');return}card2.classList.add('sent')});
+  // inline errors and the privacy notice come from the kit's forms block (wireForm)
+  wireForm(document.getElementById('ap-mail'),()=>card2.classList.add('sent'));
   calc();
 })();
 
@@ -1714,7 +1844,7 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
   const set=k=>{cur=k;[li,seg,leg].forEach(g=>g.forEach((x,i)=>x.classList.toggle('on',i===k)))};
   li.forEach((x,i)=>{x.addEventListener('mouseenter',()=>{hold=true;set(i)});x.addEventListener('mouseleave',()=>{hold=false})});
   set(0);
-  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!hold&&!document.hidden)set((cur+1)%li.length)},2600);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!hold&&!document.hidden&&!motionPaused())set((cur+1)%li.length)},2600);
   // businesses that can apply: online, physical stores, or both
   const BIZ=[['Fashion brand','Online'],['Coffee shop','Store'],['Skincare brand','Online'],['Bakery with 3 outlets','Store'],['Home appliances','Online + store'],['Minimarket','Store'],['Batik label','Online + store'],['Kitchenware','Online'],['Beauty clinic','Store'],['Sneaker store','Online + store'],['Frozen food','Online'],['Furniture showroom','Store']];
   const chip=b=>`<span class="uchip">${b[0]}<em${b[1]==='Store'?' class="off"':''}>${b[1]}</em></span>`;
@@ -1751,12 +1881,12 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
       <div class="pv-card"><h5>Application <span class="pill pu">Step 2 of 3</span></h5>${ck(1)}</div></div>`,
     ()=>`<div class="pv-f"><h4>Your funding offer</h4><p>Reviewed with you by the FLIK team.</p>
       <div class="pv-offer"><small>Available funding</small><b class="pv-amt num" id="pv-amt">Rp 0</b>
-        <div class="co-row"><span class="m">Fixed margin</span><span class="num">Rp 15.000.000</span></div>
+        <div class="co-row"><span class="m">Platform fee</span><span class="num">[[set per offer]] / month</span></div>
+        <div class="co-row"><span class="m">Administration fee</span><span class="num">1% per placement</span></div>
         <div class="co-row"><span class="m">Settlement</span><span>A share of each sale</span></div>
-        <div class="co-row"><span class="m">Hidden fees</span><span>None</span></div>
         <div class="pv-btns" style="max-width:none;margin-top:14px"><span class="p" id="pv-acc">Accept offer</span></div>
       </div></div>
-      <div class="pv-aside"><div class="pv-card"><h5>Application <span class="pill ok">Approved</span></h5>${ck(3)}</div>
+      <div class="pv-aside"><div class="pv-card"><h5>Application <span class="pill ok">Offer ready</span></h5>${ck(3)}</div>
       <div class="pv-card"><small class="m" style="font-size:11.5px">Your funding team</small><div class="pv-mgr"><span class="pv-av">FT</span><span><b>FLIK funding team</b><small>Mon–Fri, 09:00–18:00 WIB</small></span></div></div></div>`
   ];
   const type=(el,txt,ms,done)=>{let i=0;const step=()=>{el.textContent=txt.slice(0,++i);if(i<txt.length)later(ms,step);else done&&done()};later(ms,step)};
@@ -1782,15 +1912,17 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
   tabs.forEach((t,i)=>t.onclick=()=>go(i));
   // advance when the active tab's bar is full; pause while the preview is off screen
   new IntersectionObserver(es=>{vis=es[0].isIntersecting;pv.classList.toggle('paused',!vis)}).observe(pv);
-  setInterval(()=>{if(reduce)return;if(!vis||document.hidden){start=Date.now()-(DUR-left);return}left=DUR-(Date.now()-start);if(left<=0)go((cur+1)%3)},200);
+  setInterval(()=>{if(reduce)return;if(!vis||document.hidden||motionPaused()){start=Date.now()-(DUR-left);return}left=DUR-(Date.now()-start);if(left<=0)go((cur+1)%3)},200);
   pv.style.setProperty('--dur',DUR+'ms');
+  // the hero wave is SVG animation (not CSS), so pause it with the motion toggle too
+  const wave=document.querySelector('.mh-wave'),smil=p=>{try{p?wave.pauseAnimations():wave.unpauseAnimations()}catch(_){}};smil(motionPaused());addEventListener('flik:motion',e=>smil(e.detail.paused));
   go(0);
 })();
 
 /* ===== Small motions: weekly settlement, campaign bars, hero dashboard ===== */
 (function(){
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const every=(ms,fn)=>{if(!reduce)setInterval(()=>{if(!document.hidden)fn()},ms)};
+  const every=(ms,fn)=>{if(!reduce)setInterval(()=>{if(!document.hidden&&!motionPaused())fn()},ms)};
   const wk=document.getElementById('wk'),D=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   wk.innerHTML=D.map(d=>`<div><i></i>${d}</div>`).join('');
   const bars=[...wk.querySelectorAll('i')],roll=()=>bars.forEach(b=>b.style.height=(25+Math.random()*75).toFixed(0)+'%');
@@ -1804,7 +1936,7 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
   const STEPS=[
     ['01 · Sales data in','Connect your online store or cashier system so we can see your sales history and performance. FLIK may ask for some extra business information.'],
     ['02 · Review by the FLIK team','Our team reviews your business with you during the consultation, then confirms whether you are eligible.'],
-    ['03 · Funding out','Funding lands in your FLIK balance, with a fixed margin and settlement set around how you sell.']
+    ['03 · Funding out','Funding lands in your FLIK balance, with the fees and settlement set out in your offer letter.']
   ];
   const copy=document.getElementById('uw-copy'),track=document.getElementById('uw-track'),tk=document.getElementById('uw-tk-on');
   copy.innerHTML=STEPS.map((x,i)=>`<div class="uw-step${i?'':' on'}"><small>${x[0]}</small><p>${x[1]}</p></div>`).join('');
@@ -1831,7 +1963,7 @@ document.getElementById('logos').innerHTML=lgHtml+lgHtml;
   const P=[.15,.7,1];let auto=0;
   const panel=document.querySelector('.uw-panel');
   function run(i){panel.classList.toggle('uw-auto',!reduce);paint(P[i])}
-  setInterval(()=>{if(!wide()&&!document.hidden){auto=(auto+1)%3;if(auto===0){panel.classList.remove('uw-auto');paint(0);void panel.offsetWidth}run(auto)}},3200);
+  setInterval(()=>{if(!wide()&&!document.hidden&&!motionPaused()){auto=(auto+1)%3;if(auto===0){panel.classList.remove('uw-auto');paint(0);void panel.offsetWidth}run(auto)}},3200);
   if(wide())paint(fromScroll());else run(0);
   addEventListener('resize',()=>{if(wide())paint(fromScroll())});
 })();
@@ -1842,8 +1974,8 @@ const FAQ=[
   ['Who is it for?','Selected brand owners who sell online, in physical stores, or both. For example on their own Shopify or WooCommerce store, with FLIK Checkout, or through a cashier system in their outlets.'],
   ['How do I know if I am eligible?','Start with a consultation. The FLIK team learns about your business, and we may ask for some business information to decide whether you are eligible.'],
   ['What can I use the funding for?','Growth: buying inventory, marketing campaigns, opening a new outlet, or keeping cash flow steady through busy seasons.'],
-  ['How do I repay?','You sell as usual. A share of each sale goes toward settlement automatically, and you can track the outstanding amount and the latest payments in your dashboard.'],
-  ['What does it cost?','One fixed margin, agreed before you sign. It does not compound and there are no hidden fees.'],
+  ['How is it settled?','You sell as usual. A share of each sale goes toward settlement automatically, and you can track the outstanding amount and the latest payments in your dashboard.'],
+  ['What does it cost?','A monthly platform fee (Biaya Platform) as a % of the funded amount for the funding period, set in each offer, plus a one-time 1% administration fee per placement. All fees exclude PPN. Terms are set out in each offer letter.'],
   ['Do I give up ownership of my business?','No. FLIK funds your stock, not your shares, so you keep full ownership of your brand.'],
   ['How long does it take?','The process has four steps: a consultation, a simple integration with your online store or cashier system, the upfront funding, and then selling as usual. The FLIK team will give you a timeline during the consultation.']
 ];
@@ -1854,37 +1986,88 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="#" data-toast="Opens an email to support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="#" data-toast="Opens WhatsApp chat with FLIK support" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/legal/terms" style="margin-top:10px">Terms of Service</a><a href="#" data-page="/legal/privacy">Privacy Policy</a><a href="#" data-page="/sitemap">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;
 function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),2600)}
 
 /* ===== Modals ===== */
-const scrim=document.getElementById('scrim'),modal=document.getElementById('modal');
-function openModal(html){modal.innerHTML=html;scrim.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>modal.querySelector('input')?.focus(),30)}
-function closeModal(){scrim.classList.remove('open');if(!drawer.classList.contains('open'))document.body.style.overflow=''}
+/* Guard: this page has no product dialog (#bd). The kit's a11y-modal block checks bdScrim, so give it a closed stand-in. */
+const bdScrim=document.getElementById('bd-scrim')||{classList:{contains:()=>false}},bd=document.getElementById('bd'),bdClose=()=>{};
+/* ===== kit: a11y-modal ===== */
+/* Dialogs (#modal forms, #bd product dialog, #drawer): labelled by their heading, focus trapped while open, Escape closes the top one,
+   focus returns to the opener (#bd already returns focus via bdFrom). One keydown handler for all three. */
+const FOCUSABLE='a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+function trapFocus(box,e){
+  const f=[...box.querySelectorAll(FOCUSABLE)].filter(el=>el.getClientRects().length&&!el.closest('[inert]'));
+  if(!f.length){e.preventDefault();box.focus();return}
+  const first=f[0],last=f[f.length-1],a=document.activeElement;
+  if(e.shiftKey&&(a===first||!box.contains(a))){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&(a===last||!box.contains(a))){e.preventDefault();first.focus()}
+}
+const scrim=document.getElementById('scrim'),modal=document.getElementById('modal');let modalFrom=null;
+function openModal(html){
+  if(!scrim.classList.contains('open'))modalFrom=document.activeElement;
+  modal.innerHTML=html;scrim.classList.add('open');document.body.style.overflow='hidden';
+  setTimeout(()=>(modal.querySelector('input,textarea')||modal).focus(),30);
+}
+function closeModal(){
+  if(!scrim.classList.contains('open'))return;
+  scrim.classList.remove('open');if(!drawer.classList.contains('open'))document.body.style.overflow='';
+  const to=modalFrom;modalFrom=null;if(to&&to.isConnected&&to.getClientRects().length)to.focus({preventScroll:true});
+}
 scrim.addEventListener('click',e=>{if(e.target===scrim||e.target.closest('[data-close]'))closeModal()});
-addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();setDrawer(false)}});
-const head=t=>`<div class="modal-h"><h3>${t}</h3><button class="x" data-close aria-label="Close">${ic('x',18)}</button></div>`;
-const fld=(id,l,ph,type='text',opt=false)=>`<div class="fld"><label for="${id}">${l}${opt?' <em>(optional)</em>':''}</label><input id="${id}" type="${type}" placeholder="${ph}" ${opt?'':'required'}></div>`;
-const done=(t,s)=>`<div class="sent"><div class="okc">${ic('check',26,2.2)}</div><h3>${t}</h3><p class="txt">${s}</p><button class="btn btn-primary" style="margin-top:22px" data-close>Done</button></div>`;
-function validate(form,btn){const ok=[...form.querySelectorAll('input[required]')].every(i=>i.type==='email'?/\S+@\S+\.\S+/.test(i.value):i.value.trim().length>1);btn.disabled=!ok}
+addEventListener('keydown',e=>{
+  const bdOpenNow=bdScrim.classList.contains('open');
+  if(e.key==='Escape'){
+    if(scrim.classList.contains('open'))closeModal();
+    else if(bdOpenNow)bdClose();
+    else if(drawer.classList.contains('open'))setDrawer(false);
+    return;
+  }
+  if(e.key!=='Tab')return;
+  if(scrim.classList.contains('open'))trapFocus(modal,e);
+  else if(bdOpenNow)trapFocus(bd,e);
+  else if(drawer.classList.contains('open'))trapFocus(drawer,e);
+});
+const head=t=>`<div class="modal-h"><h3 id="modal-title">${t}</h3><button type="button" class="x" data-close aria-label="Close">${ic('x',18)}</button></div>`;
+/* Done screen replaces the form: keep focus inside the dialog, on the new heading */
+const done=(t,s)=>`<div class="sent"><div class="okc">${ic('check',26,2.2)}</div><h3 id="modal-title" tabindex="-1">${t}</h3><p class="txt">${s}</p><button class="btn btn-primary" style="margin-top:22px" data-close>Done</button></div>`;
+function showDone(t,s){modal.innerHTML=done(t,s);modal.querySelector('#modal-title').focus()}
+/* ===== /kit: a11y-modal ===== */
+
+/* ===== kit: forms ===== */
+/* On this page Get started and Contact sales open the registration and Calendly links (commit 186b7c0), so these two forms are
+   not wired to any button today. They're kept compliant in case they come back: inline errors instead of a silently disabled
+   submit, a privacy notice, an optional unticked marketing opt-in, and no optional "Store website" field. */
+const fld=(id,l,ph,type='text',opt=false,extra='')=>`<div class="fld"><label for="${id}">${l}${opt?' <em>(optional)</em>':''}</label><input id="${id}" name="${id}" type="${type}" placeholder="${ph}" ${opt?'':'required aria-required="true"'} ${extra}><p class="fld-err" id="${id}-err" hidden></p></div>`;
+const FERR={text:'Enter at least 2 characters.',email:'Enter an email address, like name@brand.co.id.',tel:'Enter a WhatsApp number with at least 9 digits, like +62 812-3456-7890.'};
+function fieldOk(i){const v=i.value.trim();if(!i.required&&!v)return true;if(i.type==='email')return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);if(i.type==='tel')return /^\+?[\d\s-]+$/.test(v)&&v.replace(/\D/g,'').length>=9;return v.length>1}
+function setErr(i,msg){const err=document.getElementById(i.id+'-err');if(!err)return;
+  if(msg){i.setAttribute('aria-invalid','true');i.setAttribute('aria-describedby',err.id);err.textContent=msg;err.hidden=false}
+  else{i.removeAttribute('aria-invalid');i.removeAttribute('aria-describedby');err.textContent='';err.hidden=true}}
+function checkForm(form){let first=null;form.querySelectorAll('.fld input').forEach(i=>{const ok=fieldOk(i);setErr(i,ok?'':(FERR[i.type]||FERR.text));if(!ok&&!first)first=i});if(first)first.focus();return !first}
+function wireForm(form,onOk){
+  form.noValidate=true;
+  form.addEventListener('input',e=>{const i=e.target;if(i.matches('.fld input')&&i.getAttribute('aria-invalid')==='true'&&fieldOk(i))setErr(i,'')});
+  form.addEventListener('focusout',e=>{const i=e.target;if(i.matches('.fld input')&&i.value.trim()&&!fieldOk(i))setErr(i,FERR[i.type]||FERR.text)});
+  form.onsubmit=e=>{e.preventDefault();if(checkForm(form))onOk()};
+}
+const legalLink=(slug,label)=>`<a href="/legal/${slug}" data-page="/legal/${slug}" target="_blank" rel="noopener">${label}</a>`;
 
 function startModal(){
-  openModal(head('Create your FLIK account')+`<form id="fstart"><div class="modal-b">${fld('s-name','Full name','Rina Putri')}${fld('s-email','Business email','rina@brand.co.id','email')}${fld('s-wa','WhatsApp number','+62 812-3456-7890','tel')}${fld('s-web','Store website','brand.co.id','text',true)}</div><div class="modal-f"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button class="btn btn-primary" id="s-go" disabled>Create account</button></div></form>`);
-  const f=document.getElementById('fstart'),b=document.getElementById('s-go');
-  f.oninput=()=>validate(f,b);
-  f.onsubmit=e=>{e.preventDefault();modal.innerHTML=done('Check your WhatsApp','We sent a one-time code to verify your number. In the live site, this continues in the merchant dashboard.')};
+  openModal(head('Create your FLIK account')+`<form id="fstart"><div class="modal-b">${fld('s-name','Full name','Rina Putri','text',false,'autocomplete="name"')}${fld('s-email','Business email','rina@brand.co.id','email',false,'autocomplete="email"')}${fld('s-wa','WhatsApp number','+62 812-3456-7890','tel',false,'autocomplete="tel"')}<p class="fnote">By continuing you agree to the ${legalLink('terms','Terms')} and ${legalLink('privacy','Privacy Policy')}. We'll send a one-time code to your WhatsApp.</p></div><div class="modal-f"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button type="submit" class="btn btn-primary" id="s-go">Create account</button></div></form>`);
+  wireForm(document.getElementById('fstart'),()=>showDone('Check your WhatsApp','We sent a one-time code to verify your number. In the live site, this continues in the merchant dashboard.'));
 }
 function salesModal(pre){
   const picks=new Set(pre?[pre]:[]);
-  openModal(head('Contact sales')+`<form id="fsales"><div class="modal-b">${fld('c-name','Full name','Rina Putri')}${fld('c-email','Work email','rina@brand.co.id','email')}${fld('c-co','Company','Aruna Studio')}<div class="fld"><label>Interested in</label><div class="chips" id="c-chips">${['Checkout','Shipping','Funding'].map(p=>`<button type="button" class="chip${picks.has(p)?' on':''}">${p}</button>`).join('')}</div></div><div class="fld"><label for="c-msg">Message <em>(optional)</em></label><textarea id="c-msg" placeholder="Tell us about your business"></textarea></div></div><div class="modal-f"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button class="btn btn-primary" id="c-go" disabled>Send</button></div></form>`);
-  const f=document.getElementById('fsales'),b=document.getElementById('c-go');
-  f.querySelectorAll('.chip').forEach(c=>c.onclick=()=>c.classList.toggle('on'));
-  f.oninput=()=>validate(f,b);
-  f.onsubmit=e=>{e.preventDefault();modal.innerHTML=done('Thanks, we\'ll be in touch','Our team will contact you within one business day.')};
+  openModal(head('Contact sales')+`<form id="fsales"><div class="modal-b">${fld('c-name','Full name','Rina Putri','text',false,'autocomplete="name"')}${fld('c-email','Work email','rina@brand.co.id','email',false,'autocomplete="email"')}${fld('c-co','Company','Aruna Studio','text',false,'autocomplete="organization"')}<div class="fld"><fieldset><legend>Interested in <em style="font-style:normal;color:var(--muted);font-weight:400">(optional)</em></legend><div class="chips" id="c-chips">${['Checkout','Shipping','Funding'].map(p=>`<button type="button" class="chip${picks.has(p)?' on':''}" aria-pressed="${picks.has(p)}">${p}</button>`).join('')}</div></fieldset></div><div class="fld"><label for="c-msg">Message <em>(optional)</em></label><textarea id="c-msg" name="c-msg" placeholder="Tell us about your business"></textarea></div><p class="fnote">We'll use these details only to reply to your enquiry. ${legalLink('privacy','Privacy Policy')}</p><label class="fchk"><input type="checkbox" id="c-news" name="c-news"><span>Send me product news from FLIK. You can unsubscribe at any time. <em style="font-style:normal;color:var(--muted)">(optional)</em></span></label></div><div class="modal-f"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button type="submit" class="btn btn-primary" id="c-go">Send</button></div></form>`);
+  const f=document.getElementById('fsales');
+  f.querySelectorAll('.chip').forEach(c=>c.onclick=()=>c.setAttribute('aria-pressed',String(c.classList.toggle('on'))));
+  wireForm(f,()=>showDone('Thanks, we\'ll be in touch','Our team will contact you within one business day.'));
 }
+/* ===== /kit: forms ===== */
 
 /* ===== Global click actions ===== */
 // Get started opens merchant registration, Contact sales opens the intro call booking, both in a new tab
@@ -1896,7 +2079,7 @@ document.addEventListener('click',e=>{
   if(a.dataset.act){e.preventDefault();({start:()=>open(REGISTER_URL,'_blank','noopener'),sales:()=>open(SALES_URL,'_blank','noopener'),signin:()=>toast('Opens the merchant dashboard sign-in.')})[a.dataset.act]()}
   else if(a.dataset.page){e.preventDefault();toast(a.dataset.page.startsWith('/')?`Page not in this prototype yet: ${a.dataset.page}`:`Opens ${a.dataset.page}`)}
   else if(a.dataset.toast){e.preventDefault();toast(a.dataset.toast)}
-  else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on',b===a));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}
+  else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.classList.toggle('on',b===a))));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}
 });
 /* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
 (function(){
@@ -1906,6 +2089,59 @@ document.addEventListener('click',e=>{
   new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>n.nodeType===1&&up(n.parentNode||n)))).observe(document.body,{childList:true,subtree:true});
 })();
 
+
+/* ===== kit: cookie-consent ===== */
+/* Stored in localStorage 'flik_consent' as {v:1, analytics, marketing, ts}. Nothing non-essential runs before a choice.
+   window.flikConsent.get() returns the stored choice, or null when there is none (treat null as analytics:false, marketing:false).
+   window.flikConsent.open() reopens the banner. Each choice (and a stored choice on page load) fires window 'flik:consent'
+   and pushes {event:'consent_update', analytics, marketing} to dataLayer.
+   This page loads no analytics or ad tags today. Any added later (GA4, GTM, Meta Pixel) may load only when flikConsent.get()?.analytics / .marketing === true. */
+(function(){
+  const KEY='flik_consent',VER=1;
+  const cc=document.getElementById('cc');if(!cc)return;
+  const card=document.getElementById('cc-card'),prefs=document.getElementById('cc-prefs');
+  const an=document.getElementById('cc-analytics'),mk=document.getElementById('cc-marketing');
+  const bPrefs=cc.querySelector('[data-cc="prefs"]'),bSave=cc.querySelector('[data-cc="save"]');
+  let opener=null;
+  function read(){
+    try{const c=JSON.parse(localStorage.getItem(KEY)||'null');
+      return c&&c.v===VER&&typeof c.analytics==='boolean'&&typeof c.marketing==='boolean'?c:null}
+    catch(_){return null}
+  }
+  let current=read();
+  function announce(c){
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'consent_update',analytics:c.analytics,marketing:c.marketing});
+    dispatchEvent(new CustomEvent('flik:consent',{detail:{...c}}));
+  }
+  function showPrefs(on){prefs.hidden=!on;bPrefs.hidden=on;bSave.hidden=!on;bPrefs.setAttribute('aria-expanded',String(on))}
+  function show(withPrefs){
+    an.checked=!!(current&&current.analytics);mk.checked=!!(current&&current.marketing);
+    showPrefs(!!withPrefs);cc.hidden=false;
+    // move focus only when a visitor reopened the banner; on first load it's shown, not focused
+    if(opener)(withPrefs?an:card).focus({preventScroll:true});
+  }
+  function hide(){cc.hidden=true;const to=opener;opener=null;if(to&&to.isConnected&&to.getClientRects().length)to.focus({preventScroll:true})}
+  function save(analytics,marketing){
+    current={v:VER,analytics:!!analytics,marketing:!!marketing,ts:new Date().toISOString()};
+    try{localStorage.setItem(KEY,JSON.stringify(current))}catch(_){}
+    announce(current);hide();
+  }
+  cc.addEventListener('click',e=>{
+    const b=e.target.closest('[data-cc]');if(!b)return;
+    const k=b.dataset.cc;
+    if(k==='accept')save(true,true);
+    else if(k==='reject')save(false,false);
+    else if(k==='save')save(an.checked,mk.checked);
+    else if(k==='prefs'){showPrefs(true);an.focus()}
+  });
+  /* Escape never dismisses the banner without a choice. It is not a focus trap: Tab moves on to the rest of the page. */
+  cc.addEventListener('keydown',e=>{if(e.key==='Escape')e.stopPropagation()});
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-cookie-settings]');if(!b)return;e.preventDefault();opener=b;show(true)});
+  window.flikConsent={get:()=>current?{...current}:null,open:()=>{opener=document.activeElement;show(true)}};
+  if(current)announce(current);else show(false);
+})();
+/* ===== /kit: cookie-consent ===== */
 </script>
 </body>
 </html>

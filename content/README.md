@@ -16,6 +16,11 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [10-help.md](10-help.md) | Help center | [/help/](https://landing-page-raams-projects-2709477f.vercel.app/help/) |
 | [09-blog.md](09-blog.md) | Blog | [/blog/](https://landing-page-raams-projects-2709477f.vercel.app/blog/) |
 | [07-in-store-payment.md](07-in-store-payment.md) | In-Store Payment | [/payment/in-store/](https://landing-page-raams-projects-2709477f.vercel.app/payment/in-store/) |
+| [12-privacy.md](12-privacy.md) | Privacy Policy (website and merchants). Draft for legal review | Not deployed yet (`/legal/privacy/`) |
+| [13-terms.md](13-terms.md) | Terms of Use, with a merchant terms summary. Draft for legal review | Not deployed yet (`/legal/terms/`) |
+| [14-refund.md](14-refund.md) | Refund Policy. Draft for legal review | Not deployed yet (`/legal/refund/`) |
+| [15-cookies.md](15-cookies.md) | Cookie Policy. Draft for legal review | Not deployed yet (`/legal/cookies/`) |
+| [16-data-request.md](16-data-request.md) | Personal data request form. Draft for legal review | Not deployed yet (`/legal/data-request/`) |
 | [product-facts.md](product-facts.md) | What each product does, and the claims we can make | – |
 | [AI-GUIDE.md](AI-GUIDE.md) | Instructions for the AI that applies your edits | – |
 

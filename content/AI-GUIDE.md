@@ -18,6 +18,13 @@ You are updating the FLIK landing page with text edits made in the Markdown file
 | `content/10-help.md` | `help/index.html` (questions are in the `TOPICS` list in the page script) |
 | `content/09-blog.md` | `blog/index.html` (articles are in the `POSTS` list in the page script) |
 | `content/07-in-store-payment.md` | `payment/in-store/index.html` |
+| `content/12-privacy.md` | `legal/privacy/index.html` |
+| `content/13-terms.md` | `legal/terms/index.html` |
+| `content/14-refund.md` | `legal/refund/index.html` |
+| `content/15-cookies.md` | `legal/cookies/index.html` |
+| `content/16-data-request.md` | `legal/data-request/index.html` |
+
+**Legal pages (12–16)** are drafts for counsel. Their text is legal wording: change only what an edit or note asks for, and never remove a `[[…]]` placeholder or a `†` unless the edit answers it. Counsel's review notes are kept privately, not in this public repo.
 
 ## How to find what changed
 

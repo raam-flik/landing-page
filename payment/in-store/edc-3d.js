@@ -134,9 +134,10 @@
     const T=window.THREE;let gl=null;
     try{const c=document.createElement('canvas');gl=c.getContext('webgl2')||c.getContext('webgl')}catch(e){}
     const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const paused=()=>typeof motionPaused==='function'&&motionPaused(); // the page's "Pause animations" toggle (kit: a11y-motion)
     if(!T||!gl){ // no 3D: show the screen as a flat device
       screen.canvas.className='edc-flat';el.appendChild(screen.canvas);
-      if(!reduce)setInterval(()=>{if(!document.hidden)screen.sale()},3200);return;
+      if(!reduce)setInterval(()=>{if(!document.hidden&&!paused())screen.sale()},3200);return;
     }
     const r=new T.WebGLRenderer({antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));
     r.outputEncoding=T.sRGBEncoding;r.toneMapping=T.ACESFilmicToneMapping;r.toneMappingExposure=0.98;
@@ -156,7 +157,7 @@
     const end=()=>{drag=null};el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
     el.addEventListener('pointerleave',()=>{px=py=0});
     function frame(now){
-      requestAnimationFrame(frame);if(!vis||document.hidden)return;
+      requestAnimationFrame(frame);if(!vis||document.hidden||paused())return;
       const t=(now-t0)/1000;if(drag==null)dx*=0.94;
       const sway=reduce?0:Math.sin(t*0.45)*0.32;
       edc.rotation.y+=((base.y+sway+dx+px*0.35)-edc.rotation.y)*0.08;
@@ -165,7 +166,7 @@
       r.render(scene,cam);
     }
     requestAnimationFrame(frame);
-    if(!reduce)setInterval(()=>{if(vis&&!document.hidden)screen.sale()},3200);
+    if(!reduce)setInterval(()=>{if(vis&&!document.hidden&&!paused())screen.sale()},3200);
     return (el.edc={edc,scene,cam,renderer:r,screen});
   }
   window.FlikEDC={mount,createEdcModel,createScreen};

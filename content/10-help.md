@@ -12,6 +12,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Consumer protection block** is copied word for word from flik.co.id/en/help. The Ditjen PKTN number links to WhatsApp (wa.me/6285311111010).
 - [ ] **Topics for shoppers:** there are no shopper questions yet (FLIK app, FLIK Points, refunds). Add them when the content exists.
 - [ ] Early Settlement, Fraud Detection and In-Store Payment questions are not included while their answers are placeholders.
+- [ ] **Answers changed for the AG rules (24 Oct 2026):** COD fee wording, "all major couriers", "credited to your balance after delivery", and Malaysia/Singapore removed from "What is FLIK Shipping?". The COD question now reads "Do I pay the COD fee upfront?" (answer: no, it's deducted after delivery). The Checkout and Shipping page FAQs still need the same change.
+- [ ] **Privacy and your data:** new entry under General. It links to /legal/privacy and /legal/data-request, which must exist before launch.
 
 ## Search results (SEO)
 
@@ -41,10 +43,22 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Topic:** General
   - **Question:** How do I contact FLIK support?
     - **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.
+    - **Links:** Email support (mailto:support@flik.co.id) · Chat on WhatsApp (https://wa.me/6281292012668)
+  - **Question:** Privacy and your data
+    - **Answer:** Our Privacy Policy explains what personal data FLIK collects and how we use it. To ask for a copy of your data, or to correct or delete it, send a data request or email privacy@flik.co.id.
+    - **Links:** Privacy Policy (/legal/privacy) · Data request (/legal/data-request) · privacy@flik.co.id
   - **Question:** Where can I file a consumer complaint?
     - **Answer:** Contact FLIK first at support@flik.co.id. You can also reach the Directorate General of Consumer Protection and Trade Order (Ditjen PKTN) of the Ministry of Trade on WhatsApp at 0853 1111 1010.
-- **Topic:** Checkout and payments (the 8 questions from `content/02-checkout.md`)
-- **Topic:** Shipping (the questions from `content/03-shipping.md`, without the support-contact question, which is under General)
+- **Topic:** Checkout and payments (the 8 questions from `content/02-checkout.md`), with this change:
+  - **Question:** When do I receive the money?
+    - **Answer:** Once the shopper has paid and the package has arrived, the money is credited to your balance after delivery. COD payments too, with the 3% COD fee (excl. PPN) deducted.
+- **Topic:** Shipping (the questions from `content/03-shipping.md`, without the support-contact question, which is under General), with these changes:
+  - **Question:** What is FLIK Shipping?
+    - **Answer:** A shipping service that helps businesses ship for less through one dashboard, with all major couriers across Indonesia.
+  - **Question:** Do I pay the COD fee upfront?
+    - **Answer:** No. The COD fee is 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. Shipping is paid from your FLIK balance before the shipment is created, as for any shipment.
+  - **Question:** How do I receive COD funds?
+    - **Answer:** The COD amount is credited to your balance after delivery, with the 3% COD fee (excl. PPN) deducted.
 - **Topic:** Funding (the 8 questions from `content/04-merchant-cash-advance.md`)
 - **Text (no results):** No answers for "…". Try another word, or ask the support team.
 - **Button:** Clear search

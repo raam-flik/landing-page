@@ -7,9 +7,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] Pricing: the "success fee from 0–2%" in the Pricing section and the FAQ needs the real rate.
+- [ ] Pricing: the Checkout success fee is not set yet, so the page says "See pricing" instead of a rate (AG, 24 Oct 2026). [[confirm: Checkout success fee rate for the pricing page]]
+- [x] Pricing: the "0–2%" rate and the "no fee if not delivered" promise were removed. The page now says the Checkout fee is earned when the payment succeeds and isn't refunded (AG, 24 Oct 2026).
 - [ ] Claims: "30 seconds" and "3× faster" come from the current flik.co.id.
-- [ ] Stat: "5 types of payment". The menu and other pages say "15 payment methods". Pick one way to say it.
+- [x] Stat: now "15 payment methods", the approved claim used across the site (AG, 24 Oct 2026).
+- [x] The lock + FLIK badge in the phone mockups now says "Payments processed by licensed partners", and mockup amounts are labelled "Example" (AG, 24 Oct 2026).
+- [x] COD in the payment methods phone: the 3% COD fee is no longer added to the shopper's total. It is paid by the merchant (AG, 24 Oct 2026).
 
 ## Search results (SEO)
 
@@ -25,12 +28,15 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** Turning every cart on your Shopify or WooCommerce store into a completed order. Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they already do. You build the store, we close the sale.
 - **Button:** Contact sales
 - **Button:** See how it works
+- **Button (below logo strip):** Pause animations
 - **List item:** 3× faster than a standard checkout
 - **List item:** Multiple payment methods
 - **List item:** No passwords to remember
 
 *Example text inside the product mockup (only change if needed):*
 
+- arunastudio.co.id · Example
+- Payments processed by licensed partners
 - WhatsApp number
 - No password needed.
 - Enter the code from WhatsApp
@@ -44,7 +50,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Every step a shopper skips is one less reason to leave.
 - **Stat:** 30s — to check out with a FLIK account
 - **Stat:** 3× — faster than a standard checkout
-- **Stat:** 5 — types of payment in one checkout, from QRIS to COD
+- **Stat:** 15 — payment methods in one checkout, from QRIS to COD
 - **Stat:** 1 — account for every store that uses FLIK
 
 ## 3. Reduce friction
@@ -52,6 +58,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** Designed to remove every extra step.
   - **Grey part:** Most shoppers only type their phone number. Everything else fills in, and mistakes are caught as they type.
+- **Small heading:** Order summary · Example
 - **Form label:** WhatsApp number
 - **Form label:** Email
 - **Form label:** Address
@@ -69,8 +76,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** Every way Indonesia pays.
   - **Grey part:** QRIS, e-wallets, virtual accounts, cards and cash on delivery, in one checkout.
-- **Small heading:** Total
+- **Small heading:** Total · Example
 - **Text:** Scan with any bank or e-wallet app — Expires in 14:59
+- **Small heading:** Pay when it arrives · Example
+- **Text:** The courier collects the payment. COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.
 - **Text:** payment methods. Switch each one on or off in Personalisasi Checkout, and FLIK shows each shopper the one they used last.
 
 ## 6. After the payment
@@ -91,6 +100,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Payment methods
 - **Button:** Couriers
 - **Small heading:** Payment methods shown to shoppers
+- **Small text:** Example preview · Payment
+- **Small text:** Example preview · Courier
 - **Button:** QRIS
 - **Button:** E-wallet
 - **Button:** Virtual account
@@ -149,12 +160,14 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Label:** Pricing
 - **Section heading:** Know what you'll pay.
-  - **Grey part:** You only pay when the package reaches your shopper.
+  - **Grey part:** You pay a success fee when a payment succeeds.
 - **Heading:** Success fee
 - **Link:** Pricing details
-- **Text:** A small fee on each order that is paid and delivered. The exact rate depends on your payment methods and volume.
-- **Heading:** Failed delivery
-- **Text:** If the package isn't delivered, there is no success fee on that order.
+- **Text:** A fee on each successful payment. See pricing for the current Checkout fee.
+- **Price:** See pricing — for the current Checkout success fee
+- **Heading:** When the fee applies
+- **Text:** The Checkout fee is earned when the payment succeeds. It isn't refunded.
+- **Price:** On success — earned when the payment succeeds, not refunded
 
 ## 11. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
@@ -175,7 +188,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** When do I receive the money?
 - **Answer:** Once the shopper has paid and the package has arrived, the money lands in your FLIK balance. COD payments too.
 - **Button:** How much does it cost?
-- **Answer:** A success fee from 0–2% on each order that is paid and delivered. The exact rate depends on your payment methods and volume. If a package is not delivered, there is no fee on that order.
+- **Answer:** A success fee on each successful payment. The fee is earned when the payment succeeds and isn't refunded. See pricing for the current rate.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
 ## 12. Resources
@@ -192,4 +205,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Tell us about your store. We will help you switch over without changing how you sell.
 - **Button:** Contact sales
 - **Button:** Create an account
+- **Small text:** By continuing you agree to the Terms and Privacy Policy.
+- **Label:** Pricing
+- **Text:** A success fee on each successful payment, earned when the payment succeeds.
 - **Link:** See pricing
