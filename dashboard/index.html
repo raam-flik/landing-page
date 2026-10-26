@@ -631,20 +631,30 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 .rf-bar i{display:block;height:100%;background:var(--primary);border-radius:3px}
 .rf-fund.big{flex-direction:column;align-items:stretch;gap:8px;white-space:normal;font-size:13.5px;color:var(--text)}
 .rf-fund.big .rf-bar{width:100%;height:8px}
-.rf-pay{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:8px;background:var(--hover);margin-bottom:12px}
+.rf-pay{padding:12px 14px;border-radius:8px;background:var(--hover);margin-bottom:12px}
 .rf-pay b{display:block;color:var(--ink);font-weight:600}
-.rf-pay span{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.rf-pay .rf-sub{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;color:var(--muted);font-size:12.5px;margin-top:4px}
+.rf-pay .rf-m{display:inline;white-space:nowrap}
+.rf-pay .rf-m .plg{margin-left:6px;vertical-align:middle}
 .rf-kv{margin-bottom:12px}
-.rf-h{margin:6px 0 8px}
-.rf-sel{max-width:none;margin-top:0}
+.rf-sec{display:grid;gap:8px;margin-top:4px}
+.rf-sec .rf-wf,.mb>.rf-wf{margin-top:0}
+.rf-pay .rf-sub+.rf-sub{margin-top:2px}
+.rf-sw{display:block}
 .fld textarea{width:100%;min-height:72px;border-radius:6px;border:0;box-shadow:var(--sh);padding:8px 10px;font:inherit;outline:none;resize:vertical;background:#fff}
 .fld textarea:focus{box-shadow:0 0 0 2px rgba(106,75,255,.4)}
 .fld .hint.err{color:var(--bad-tx)}
-.rf-code{letter-spacing:6px;max-width:180px}
+/* one-time code: six boxes in the form-field style */
+.otp{display:flex;gap:8px}
+.fld .otp input{width:44px;height:48px;padding:0;text-align:center;font-size:20px;font-weight:600;color:var(--ink)}
+.rf-wf{margin-top:0;max-width:none}
+.rf-wf dt{color:var(--muted)}
+.rf-wf .t{color:var(--ink)}
 .modal .sx-note{margin:4px 0 0}
 /* drawer notes: space from the buttons above, icon on the first line */
 .db>.sx-note{margin:16px 0 0;align-items:flex-start}
-.db>.sx-note>svg{flex:none;margin-top:2px}
+.mb>.sx-note{align-items:flex-start}
+.db>.sx-note>svg,.mb>.sx-note>svg{flex:none;margin-top:2px}
 .db>.sx-note .lnk{align-self:center;flex:none}
 .dp-why b{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
 .dp-why{margin:0;color:var(--muted);font-size:13.5px}
@@ -868,8 +878,8 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 .sp-x.tt::after{left:auto;right:calc(100% + 6px);bottom:auto;top:50%;transform:translate(2px,-50%)}
 .sp-x.tt:hover::after,.sp-x.tt:focus-visible::after{transform:translate(0,-50%)}
 .sp-tbl td.sel::after{content:'';position:absolute;right:14px;top:50%;margin-top:-5px;width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);pointer-events:none}
-.sp-tbl select,.cr-ro select{appearance:none;-webkit-appearance:none;width:100%;height:36px;border:0;border-radius:6px;box-shadow:var(--sh);padding:0 30px 0 10px;font:inherit;font-size:13.5px;background:#fff;color:var(--ink);outline:none;cursor:pointer;text-overflow:ellipsis}
-.sp-tbl select:focus,.cr-ro select:focus{box-shadow:0 0 0 2px rgba(106,75,255,.4)}
+.sp-tbl select,.cr-ro select,.rf-sel{appearance:none;-webkit-appearance:none;width:100%;height:36px;border:0;border-radius:6px;box-shadow:var(--sh);padding:0 30px 0 10px;font:inherit;font-size:13.5px;background:#fff;color:var(--ink);outline:none;cursor:pointer;text-overflow:ellipsis}
+.sp-tbl select:focus,.cr-ro select:focus,.rf-sel:focus{box-shadow:0 0 0 2px rgba(106,75,255,.4)}
 #sp-sum{margin:0}
 @media (max-width:820px){.sp-wrap{max-height:none;overflow:visible}.sp-tbl,.sp-tbl tbody{display:block;min-width:0;width:100%}.sp-tbl thead{display:none}.sp-tbl tr{display:grid;grid-template-columns:auto auto minmax(0,1fr);justify-content:start;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}.sp-tbl select{min-width:0;max-width:100%}.sp-tbl tbody td,.sp-tbl tbody td:last-child{display:block;padding:0;border:0;height:auto;min-width:0!important;max-width:none!important;width:auto!important}.sp-tbl td:first-child,.sp-tbl td.sel{grid-column:1/-1;min-width:0}.sp-tbl tbody td.sel{padding:4px 2px 0}.sp-tbl td.sel::after{right:16px;margin-top:-3px}}
 #sp-sum b{color:var(--ink);font-weight:600}
@@ -1601,7 +1611,7 @@ const rfWindow=p=>({Card:180,QRIS:30,'E-wallet':30}[METHODS[p.mk].cat]||null);
 const rfOf=p=>REFUNDS.filter(r=>r.pay===p.id);
 const rfLeft=p=>p.amount-rfOf(p).filter(r=>r.st!=='cancelled').reduce((a,r)=>a+r.amount,0);
 function rfPlan(p,amt){let left=amt;const from=[],take=(l,avail)=>{const x=Math.min(left,Math.max(0,avail));if(x>0){from.push([l,x]);left-=x}};
-  if(NOW-p.created<2*dayMs)take('Pending: this payment isn\'t released to you yet',p.amount);
+  if(NOW-p.created<2*dayMs)take('Pending (not released to you yet)',p.amount);
   take('Reserve',RF_FUNDS.reserve);take('Active balance',RF_FUNDS.active);return{from,left}}
 const REFUNDS=[],DISPUTES=[];
 (()=>{const CARDS=PAY.filter(p=>p.status==='succeeded'&&(p.mk==='visa'||p.mk==='mc')),OKP=PAY.filter(p=>p.status==='succeeded'&&p.mk!=='cod'&&p.mk!=='visa'&&p.mk!=='mc');
@@ -1848,13 +1858,13 @@ function refundFlow(id){const p=PAY.find(x=>x.id===id);if(!p)return;
   const head=t=>`<div class="mh"><h3>${t}</h3><button class="ib" data-mclose aria-label="Close">${ic('x',18)}</button></div>`;
   const draw=()=>{const plan=rfPlan(p,R.amt),cost=rfCost(p,R.amt),costT=cost.reduce((a,c)=>a+c[1],0),d20=fday2(addWD(NOW,20));
     if(R.step===0){modal.innerHTML=head('Refund payment')+`<div class="mb">
-      <div class="rf-pay">${pmBadge(p.mk)}<div><b class="num">${rp(p.amount)} · ${p.customer}</b><span>${p.method} · ${fdateY(p.created)} · ${p.id}</span></div></div>
-      <dl class="sum-kv rf-kv"><dt>Already refunded</dt><dd class="num">${rp(p.amount-left)}</dd><dt>Refundable remaining</dt><dd class="num"><b>${rp(left)}</b></dd></dl>
+      <div class="rf-pay"><b class="num">${rp(p.amount)} · ${p.customer}</b><span class="rf-sub"><span class="rf-m">${p.method}${pmBadge(p.mk)}</span></span><span class="rf-sub">${fdateY(p.created)} · ${p.id}</span></div>
+      <dl class="bl-wf rf-wf"><dt>Already refunded</dt><dd>${rp(p.amount-left)}</dd><dt class="t">Refundable remaining</dt><dd class="t">${rp(left)}</dd></dl>
       ${block==='dispute'?`<div class="sx-note bad">${ic('warn',16)}<span>A dispute is open on this payment (${dsp.id}), so it can't be refunded until the dispute closes.</span></div>`
        :block==='window'?`<div class="sx-note bad">${ic('warn',16)}<span>${cat} payments can be refunded for ${win} days. This one was ${age} days ago, so FLIK support needs to handle it.</span></div>`
        :block==='done'?`<div class="sx-note bad">${ic('warn',16)}<span>This payment is already fully refunded.</span></div>`
        :`<div class="fld"><label for="rf-amt">Amount</label><input id="rf-amt" class="num" inputmode="numeric" value="${R.amt.toLocaleString('id-ID')}"><p class="hint" id="rf-amth">Full or partial, up to ${rp(left)}.</p></div>
-      <div class="fld"><label for="rf-why">Reason</label><select class="sx-sel rf-sel" id="rf-why"><option value="">Choose a reason</option>${Object.entries(RF_REASON).map(([k,l])=>`<option value="${k}" ${R.why===k?'selected':''}>${l}</option>`).join('')}</select></div>
+      <div class="fld"><label for="rf-why">Reason</label><span class="sp-sw rf-sw"><select class="rf-sel" id="rf-why"><option value="">Choose a reason</option>${Object.entries(RF_REASON).map(([k,l])=>`<option value="${k}" ${R.why===k?'selected':''}>${l}</option>`).join('')}</select></span></div>
       <div class="fld" id="rf-notew" ${R.why==='other'?'':'hidden'}><label for="rf-note">Note</label><textarea id="rf-note" placeholder="Why you're refunding this payment">${R.note}</textarea></div>
       ${cat==='Virtual account'?`<div class="sx-note info">${ic('help',16)}<span>Virtual account payments can't be refunded through the bank, so FLIK pays the shopper by bank transfer. You don't need to do anything else.</span></div>`:''}`}</div>
       <div class="mf"><button class="btn btn-o" data-mclose>Cancel</button><button class="btn btn-p" id="rf-next" disabled>Review refund</button></div>`;
@@ -1865,19 +1875,24 @@ function refundFlow(id){const p=PAY.find(x=>x.id===id);if(!p)return;
       why.onchange=()=>{R.why=why.value;document.getElementById('rf-notew').hidden=R.why!=='other';chk()};note.oninput=()=>{R.note=note.value;chk()};
       go.onclick=()=>{R.step=1;draw()};chk();return}
     if(R.step===1){modal.innerHTML=head('Review refund')+`<div class="mb">
-      <dl class="sum-kv rf-kv"><dt>Refund to the shopper</dt><dd class="num"><b>${rp(R.amt)}</b></dd><dt>Paid back to</dt><dd>${cat==='Virtual account'?'Shopper\'s bank account, by FLIK transfer':p.method}</dd><dt>Reason</dt><dd>${RF_REASON[R.why]}${R.why==='other'?`: ${R.note}`:''}</dd></dl>
-      <div class="kpi-l rf-h">Where the money comes from</div>
-      <dl class="sum-kv rf-kv">${plan.from.map(f=>`<dt>${f[0]}</dt><dd class="num">${rp(f[1])}</dd>`).join('')}${plan.left?`<dt>Waits for funds</dt><dd class="num">${rp(plan.left)}</dd>`:''}</dl>
-      <div class="kpi-l rf-h">Costs you bear</div>
-      <dl class="sum-kv rf-kv">${cost.map(c=>`<dt>${c[0]}</dt><dd class="num">${rp(c[1])}</dd>`).join('')}<dt><b>Total from your balance</b></dt><dd class="num"><b>${rp(R.amt+costT)}</b></dd></dl>
+      <div class="rf-pay"><b class="num">${rp(R.amt)} back to ${p.customer}</b><span class="rf-sub"><span class="rf-m">${cat==='Virtual account'?'Bank transfer by FLIK':p.method}${pmBadge(p.mk)}</span><span>· ${RF_REASON[R.why]}${R.why==='other'?`: ${R.note}`:''}</span></span></div>
+      <div class="rf-sec"><div class="kpi-l">Where the money comes from</div>
+      <dl class="bl-wf rf-wf">${plan.from.map(f=>`<dt>${f[0]}</dt><dd>${rp(f[1])}</dd>`).join('')}${plan.left?`<dt>Waits for funds</dt><dd>${rp(plan.left)}</dd>`:''}</dl></div>
+      <div class="rf-sec"><div class="kpi-l">What it costs you</div>
+      <dl class="bl-wf rf-wf">${cost.map(c=>`<dt>${c[0]}</dt><dd>${rp(c[1])}</dd>`).join('')}<dt class="t">Total from your balance</dt><dd class="t">${rp(R.amt+costT)}</dd></dl></div>
       ${plan.left?`<div class="sx-note">${ic('clock',16)}<span>${rp(plan.left)} waits for funds. It's taken from money coming in, ahead of financing repayment. If it's still short on ${d20} (working day 20), FLIK pays the shopper and the rest becomes a charge due.</span></div>`:''}</div>
       <div class="mf"><button class="btn btn-o" id="rf-back">Back</button><button class="btn btn-p" id="rf-next">Continue</button></div>`;
       document.getElementById('rf-back').onclick=()=>{R.step=0;draw()};document.getElementById('rf-next').onclick=()=>{R.step=2;draw()};return}
     modal.innerHTML=head('Confirm with a code')+`<div class="mb"><p class="bk-mp">We sent a 6-digit code to your WhatsApp, +62 812-•••-7890. Refunds need a code, like withdrawals.</p>
-      <div class="fld"><label for="rf-code">Code</label><input id="rf-code" class="num rf-code" inputmode="numeric" maxlength="6" autocomplete="one-time-code" value="${R.code}"><p class="hint">Any 6 digits work in this prototype. <button class="lnk" data-toast="New code sent to your WhatsApp">Send a new code</button></p></div></div>
+      <div class="fld"><label id="rf-codel">Code</label><div class="otp" role="group" aria-labelledby="rf-codel">${[0,1,2,3,4,5].map(i=>`<input class="num" inputmode="numeric" maxlength="1" ${i?'':'autocomplete="one-time-code"'} aria-label="Digit ${i+1}" data-otp="${i}" value="${R.code[i]||''}">`).join('')}</div><p class="hint">Any 6 digits work in this prototype. <button class="lnk" data-toast="New code sent to your WhatsApp">Send a new code</button></p></div></div>
       <div class="mf"><button class="btn btn-o" id="rf-back">Back</button><button class="btn btn-p" id="rf-go" disabled>Refund ${rp(R.amt)}</button></div>`;
-    const code=document.getElementById('rf-code'),go=document.getElementById('rf-go');
-    code.oninput=()=>{code.value=code.value.replace(/\D/g,'').slice(0,6);R.code=code.value;go.disabled=R.code.length!==6};code.oninput();setTimeout(()=>code.focus(),0);
+    const go=document.getElementById('rf-go'),B=[...modal.querySelectorAll('[data-otp]')];
+    const sync=()=>{R.code=B.map(b=>b.value).join('');go.disabled=R.code.length!==6};
+    const fill=(from,digits)=>{digits.split('').forEach((d,k)=>{if(B[from+k])B[from+k].value=d});B[Math.min(5,from+digits.length)].focus();sync()};
+    B.forEach((b,i)=>{b.oninput=()=>{const d=b.value.replace(/\D/g,'');b.value='';if(d)fill(i,d.slice(0,6-i));else sync()};
+      b.onkeydown=e=>{if(e.key==='Backspace'&&!b.value&&i){B[i-1].value='';B[i-1].focus();sync();e.preventDefault()}if(e.key==='ArrowLeft'&&i)B[i-1].focus();if(e.key==='ArrowRight'&&i<5)B[i+1].focus();if(e.key==='Enter'&&!go.disabled)go.click()};
+      b.onpaste=e=>{e.preventDefault();fill(i,(e.clipboardData.getData('text')||'').replace(/\D/g,'').slice(0,6-i))};b.onfocus=()=>b.select()});
+    sync();setTimeout(()=>B[Math.min(5,R.code.length)].focus(),0);
     document.getElementById('rf-back').onclick=()=>{R.step=1;draw()};
     go.onclick=()=>{const id='R-2610-'+String(22+REFUNDS.filter(r=>r.mine).length).padStart(4,'0'),now=new Date(NOW.getTime()+60000);
       const r={id,pay:p.id,amount:R.amt,reason:R.why,note:R.note,st:plan.left?'funding':'sent',src:'you',ref:'',funded:R.amt-plan.left,from:plan.from,cost,created:now,by:'Raam (Owner)',dev:'Chrome on macOS',mine:1};
