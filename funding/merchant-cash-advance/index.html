@@ -1286,28 +1286,38 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 /* ===== /kit: forms ===== */
 
 /* ===== kit: cookie-consent ===== */
+/* Compact bar (Raam, 26 Oct 2026): one row on desktop, text + one button row on phones. Preferences is an icon button; opening it expands the card. */
 .cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:flex;justify-content:center;pointer-events:none}
 .cc[hidden]{display:none}
-.cc-card{pointer-events:auto;width:100%;max-width:720px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);padding:20px 22px}
-.cc-h{font-size:17px;font-weight:500;line-height:1.3;margin-bottom:6px;letter-spacing:0}
-.cc-p{font-size:14px;line-height:1.55;color:var(--body)}
-.cc-card a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px}
-.cc-prefs{margin-top:12px;border-top:1px solid var(--line)}
+.cc-card{pointer-events:auto;width:100%;max-width:960px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);padding:12px 12px 12px 20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 20px}
+.cc-card.cc-open{grid-template-columns:1fr;padding:20px 22px}
+.cc-p{font-size:14px;line-height:1.5;color:var(--body)}
+.cc-p b{font-weight:500;color:var(--ink)}
+.cc-card a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.cc-prefs{border-top:1px solid var(--line)}
 .cc-prefs[hidden]{display:none}
 .cc-prefs fieldset{border:0;padding:0;margin:0}
 .cc-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft);cursor:pointer}
 .cc-row b{display:block;font-size:14px;font-weight:500}
 .cc-row small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.cc-note{font-size:13px;color:var(--muted);margin-top:10px}
 .cc-sw{appearance:none;-webkit-appearance:none;width:36px;height:20px;margin-top:2px;border-radius:999px;background:var(--field-line,#64748D);position:relative;flex:none;cursor:pointer;transition:background .15s}
 .cc-sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .15s}
 .cc-sw:checked{background:var(--primary)}
 .cc-sw:checked::after{transform:translateX(16px)}
 .cc-sw:disabled{cursor:not-allowed}
-.cc-btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
-.cc-btns .cc-main{min-width:132px}
-.cc-btns .cc-pref{margin-left:auto}
+.cc-btns{display:flex;gap:8px;align-items:center}
+.cc-open .cc-btns{margin-top:4px;flex-wrap:wrap}
 .cc-btns [hidden]{display:none}
-@media (max-width:560px){.cc{left:8px;right:8px;bottom:8px}.cc-card{padding:16px}.cc-btns .cc-main{flex:1 1 0;min-width:0}.cc-btns .cc-pref{margin-left:0;flex:1 1 100%}}
+.cc-ic{width:40px;padding:0;flex:none}
+.cc-open .cc-save{margin-left:auto}
+@media (max-width:760px){
+  .cc{left:8px;right:8px;bottom:8px}
+  .cc-card,.cc-card.cc-open{grid-template-columns:1fr;padding:14px 14px 12px;gap:10px}
+  .cc-p{font-size:13.5px}
+  .cc-btns .cc-main{flex:1 1 0;min-width:0;padding:0 12px}
+  .cc-open .cc-save{margin-left:0;flex:1 1 100%}
+}
 /* ===== /kit: cookie-consent ===== */
 </style>
 </head>
@@ -1644,8 +1654,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== kit: cookie-consent ===== -->
 <div class="cc" id="cc" hidden>
   <div class="cc-card" id="cc-card" role="dialog" aria-modal="false" aria-labelledby="cc-title" aria-describedby="cc-desc" tabindex="-1">
-    <h2 class="cc-h" id="cc-title">Cookies on FLIK</h2>
-    <p class="cc-p" id="cc-desc">We store only your cookie choice in your browser, which the site needs to work. With your permission, we'd also use analytics cookies to see how the site is used, and marketing cookies to measure our ads. You can change your choice at any time under "Cookie settings" in the footer. <a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></p>
+    <p class="cc-p" id="cc-desc"><b id="cc-title">Cookies on FLIK.</b> We use essential cookies to run this site. With your OK, we'd also use analytics and marketing cookies. <a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></p>
     <div class="cc-prefs" id="cc-prefs" hidden>
       <fieldset>
         <legend class="sr-only">Cookie preferences</legend>
@@ -1653,12 +1662,13 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
         <label class="cc-row"><span><b>Analytics</b><small>Help us understand which pages are used, so we can improve them.</small></span><input type="checkbox" class="cc-sw" role="switch" id="cc-analytics" aria-label="Analytics cookies"></label>
         <label class="cc-row"><span><b>Marketing</b><small>Measure our ads and show more relevant ones on other sites.</small></span><input type="checkbox" class="cc-sw" role="switch" id="cc-marketing" aria-label="Marketing cookies"></label>
       </fieldset>
+      <p class="cc-note">You can change your choice at any time under "Cookie settings" in the footer.</p>
     </div>
     <div class="cc-btns">
-      <button type="button" class="btn btn-primary cc-main" data-cc="reject">Reject all</button>
-      <button type="button" class="btn btn-primary cc-main" data-cc="accept">Accept all</button>
-      <button type="button" class="btn btn-secondary cc-pref" data-cc="prefs" aria-expanded="false" aria-controls="cc-prefs">Preferences</button>
-      <button type="button" class="btn btn-secondary cc-pref" data-cc="save" hidden>Save my choices</button>
+      <button type="button" class="btn btn-secondary cc-ic" data-cc="prefs" aria-expanded="false" aria-controls="cc-prefs" aria-label="Cookie preferences" title="Cookie preferences"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></button>
+      <button type="button" class="btn btn-secondary cc-main" data-cc="reject">Reject all</button>
+      <button type="button" class="btn btn-secondary cc-main" data-cc="accept">Accept all</button>
+      <button type="button" class="btn btn-primary cc-save" data-cc="save" hidden>Save my choices</button>
     </div>
   </div>
 </div>
@@ -2114,7 +2124,7 @@ document.addEventListener('click',e=>{
     window.dataLayer.push({event:'consent_update',analytics:c.analytics,marketing:c.marketing});
     dispatchEvent(new CustomEvent('flik:consent',{detail:{...c}}));
   }
-  function showPrefs(on){prefs.hidden=!on;bPrefs.hidden=on;bSave.hidden=!on;bPrefs.setAttribute('aria-expanded',String(on))}
+  function showPrefs(on){card.classList.toggle('cc-open',on);prefs.hidden=!on;bPrefs.hidden=on;bSave.hidden=!on;bPrefs.setAttribute('aria-expanded',String(on))}
   function show(withPrefs){
     an.checked=!!(current&&current.analytics);mk.checked=!!(current&&current.marketing);
     showPrefs(!!withPrefs);cc.hidden=false;

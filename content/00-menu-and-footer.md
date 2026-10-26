@@ -145,17 +145,18 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 ## Cookie banner (every page)
 
-Shown on first visit. "Accept all" and "Reject all" look the same. "Cookie settings" in the footer reopens it.
+Shown on first visit as a compact bar (one row on desktop; text and one row of buttons on phones). "Accept all" and "Reject all" look the same (both secondary buttons). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
 
-- **Heading:** Cookies on FLIK
-- **Text:** We store only your cookie choice in your browser, which the site needs to work. With your permission, we'd also use analytics cookies to see how the site is used, and marketing cookies to measure our ads. You can change your choice at any time under "Cookie settings" in the footer.
+- **Heading (bold, start of the text):** Cookies on FLIK.
+- **Text:** We use essential cookies to run this site. With your OK, we'd also use analytics and marketing cookies.
 - **Link:** Cookie Policy (/legal/cookies)
 - **Button:** Reject all
 - **Button:** Accept all
-- **Button:** Preferences
+- **Icon button:** Cookie preferences
 - **Toggle:** Strictly necessary — Needed for the site to work, such as remembering this choice. Always on.
 - **Toggle:** Analytics — Help us understand which pages are used, so we can improve them. (Off until chosen.)
 - **Toggle:** Marketing — Measure our ads and show more relevant ones on other sites. (Off until chosen.)
+- **Text (under the switches):** You can change your choice at any time under "Cookie settings" in the footer.
 - **Button:** Save my choices
 
 ## Accessibility controls (every page)
