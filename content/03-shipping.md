@@ -7,27 +7,34 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] Coverage: this page says Indonesia, Malaysia and Singapore. The older product docs say Indonesia only. Please confirm.
-- [ ] Claims: "up to 40% less", "COD fee 3%" and "99% of shipments created successfully" come from the current flik.co.id.
+- [x] Coverage: Malaysia and Singapore removed everywhere, including the search data (`areaServed` is now Indonesia only). Coverage is "across Indonesia" (AG, 24 Oct 2026).
+- [x] Claims: "up to 40% less", "COD fee 3% (excl. PPN)" and "99% of shipments created successfully" are allowed (AG, 24 Oct 2026). The "3 countries" stat is replaced with "15 payment methods".
+- [x] Struck-through "was" prices and invented discounts removed from the rate checker and the globe. Prices are labelled "Example" (AG, 24 Oct 2026).
+- [x] "Lower RTO", "Fewer coming back", the −38% badge and the returns chart removed. The page now uses neutral copy about tracking every parcel and handling returns (AG, 24 Oct 2026).
+- [x] COD: "paid upfront" and "No other withdrawal costs" removed. The COD ledger mockup now shows a "PPN on fee (example, 11%)" row so the balance adds up (AG, 24 Oct 2026).
+- [ ] "COD that pays you back fast" (COD heading) is kept as Raam wrote it. Please confirm "fast" is OK next to "credited after delivery".
+- [ ] PPN rate in the COD mockups is shown as an example (11%). Please confirm the rate to show.
 
 ## Search results (SEO)
 
 - **Page title:** The Shipping Engine for Growing Brands | FLIK Shipping
-- **Description:** FLIK Shipping compares every courier in one dashboard. Ship across Indonesia, Malaysia and Singapore for up to 40% less, single or bulk, with a 3% COD fee and real-time tracking.
+- **Description:** FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 40% less, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.
 
 ## 1. Hero
 <!-- html: Hero: text left, a working rate checker on the right -->
 
 - **Small text above headline:** FLIK Shipping
 - **Headline (H1):** The shipping engine for growing brands.
-  - **Grey part:** Every courier, up to 40% less.
-- **Intro text:** Turning every order into a tracked delivery across Indonesia, Malaysia and Singapore. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
+  - **Grey part:** All major couriers, up to 40% less.
+- **Intro text:** Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
 - **Button:** Start shipping free
 - **Button:** Contact sales
+- **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.
 - **List item:** No registration fee
-- **List item:** COD fee only 3%
+- **List item:** COD fee 3% (excl. PPN)
 - **List item:** 99% of shipments created successfully
-- **Text:** Every courier, one dashboard — and more
+- **Text:** All major couriers, one dashboard — and more
+- **Button (below logo strip):** Pause animations
 
 ## 2. Stats
 <!-- html: Stats: ruled grid to the guide lines -->
@@ -35,18 +42,19 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** One dashboard for every shipment.
   - **Grey part:** From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.
 - **Stat:** 40% — off shipping, at most
-- **Stat:** 3% — COD fee, and nothing else to withdraw
+- **Stat:** 3% — COD fee (excl. PPN), paid by the merchant
 - **Stat:** 99% — of shipments created successfully
-- **Stat:** 3 — countries covered: Indonesia, Malaysia and Singapore
+- **Stat:** 15 — payment methods in one checkout
 
 ## 3. Rate checker
-<!-- html: Rate checker: compare every courier #rates -->
+<!-- html: Rate checker: compare all major couriers #rates -->
 
-- **Section heading:** Compare every courier in seconds.
+- **Section heading:** Compare all major couriers in seconds.
   - **Grey part:** Pick a route and a weight, then sort by the cheapest or the fastest.
 - **List item:** Regular, next day, same day, instant and cargo
-- **List item:** Discounted rates on every route
+- **List item:** Up to 40% off shipping rates
 - **List item:** Live rates in your dashboard
+- **Label (top of rate checker):** Example
 - **Form label:** From
 - **Dropdown option:** Jakarta
 - **Dropdown option:** Bandung
@@ -126,21 +134,30 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: COD: dark section with a balance ledger #cod -->
 
 - **Section heading:** COD that pays you back fast.
-  - **Grey part:** Offer cash on delivery across Indonesia. The money lands in your FLIK balance as soon as the package is delivered.
-- **List item:** Shipping and the COD fee are paid upfront from your balance.
-- **List item:** The COD amount is credited automatically after delivery.
+  - **Grey part:** Offer cash on delivery across Indonesia. The COD amount is credited to your FLIK balance after delivery.
+- **Text:** 3% — COD fee (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.
+- **List item:** Shipping is paid from your balance when you create the shipment.
+- **List item:** The COD amount is credited automatically after delivery, minus the 3% COD fee (excl. PPN).
 - **List item:** Use the same balance to pay for your next shipments.
 - **Link:** COD Shipping
 
-## 8. Tracking + fewer returns
-<!-- html: Tracking + fewer returns #track -->
+*Example text inside the COD mockup (only change if needed):*
+
+- FLIK balance · Example
+- COD fee 3% · Deducted when credited
+- PPN on fee (example, 11%) · On the COD fee
+
+## 8. Tracking + returns
+<!-- html: Tracking + returns #track -->
 
 - **Section heading:** Every package tracked.
-  - **Grey part:** Fewer coming back.
+  - **Grey part:** Returns handled in the same place.
+- **Small text:** All major couriers, one search
 - **Button:** Track
 - **Text:** The AWB is ready the moment you create a shipment, so shoppers can follow it from the start.
 - **Text:** If a delivery fails, the courier tries again the next day, up to two attempts.
-- **Text:** See failed deliveries early in the dashboard, and switch to the courier that delivers best in that region.
+- **Heading:** Returns in one place
+- **Text:** Follow every parcel, including the ones that come back. See failed deliveries in the dashboard, and switch to the courier that delivers best in that region.
 
 ## 9. Integrations
 <!-- html: Integrations #integrate -->
@@ -164,6 +181,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Who it is for #who -->
 
 - **Section heading:** Built for brands that ship every day.
+- **Text (COD sellers card):** 3% — COD fee (excl. PPN)
 - **Link:** Learn more
 
 ## 11. FAQ
@@ -171,13 +189,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** Questions, answered.
 - **Button:** What is FLIK Shipping?
-- **Answer:** A shipping service that helps businesses ship for less through one dashboard, with access to many couriers across Indonesia, Malaysia and Singapore.
+- **Answer:** A shipping service that helps businesses ship for less through one dashboard, with access to many couriers across Indonesia.
 - **Button:** How does it work?
 - **Answer:** Enter the delivery addresses, one by one or in bulk, and FLIK shows every available rate. Choose the service (regular, same day, next day, instant or cargo) and a pickup time.
 - **Button:** How much does it cost?
 - **Answer:** Joining is free and there is no registration fee. You pay for each shipment from your FLIK balance before it is created.
-- **Button:** Do I pay the COD shipping fee upfront?
-- **Answer:** Yes. Shipping and the 3% COD fee are paid in advance. The COD amount is credited to your balance after the package is delivered.
+- **Button:** When is the COD fee charged?
+- **Answer:** The COD fee is 3% (excl. PPN), paid by the merchant. It is deducted when the COD amount is credited to your balance after delivery. Shipping is paid from your balance when you create the shipment.
 - **Button:** How do I receive COD funds?
 - **Answer:** They are credited to your FLIK balance automatically once the delivery is complete.
 - **Button:** Can I cancel a shipment?
@@ -196,6 +214,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Heading:** More from FLIK
 - **Tag:** Product
 - **Tag:** Tool
+- **Text:** Check the status of any shipment, from all major couriers.
 
 ## 13. Final CTA
 <!-- html: Final CTA (centered) -->
@@ -204,4 +223,5 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Create a free account, connect your store, and send your first shipment in minutes.
 - **Button:** Start shipping free
 - **Button:** Contact sales
+- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Link:** See pricing

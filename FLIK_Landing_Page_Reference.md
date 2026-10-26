@@ -175,7 +175,7 @@ Modelled on stripe.com: a short top menu, a Products menu split into product col
 - **Product groups** use the product names: **Payment**, **Shipping**, **Funding**. Never job verbs such as Sell, Ship or Fund. (v7: the Checkout group became Payment; Checkout is now one product inside it.)
 - **Solutions** means by use case and by industry. Integrations belong under Developers.
 - **Not in the sitemap:** a customers / case studies page, a shopper page, Smart QRIS, Order Form.
-- **Pricing** (`/pricing`, FLI-50, 2026-10-22): tabs for Payments (rate table with fee, VAT, total and settlement per method; Checkout, COD and FLIK Connect fees; VAT note), Shipping and Funding. Rates are placeholders until AG / finance supply the rate card; see `content/13-pricing.md`.
+- **Pricing** (`/pricing`, FLI-50, 2026-10-22): tabs for Payments (rate table with fee, VAT, total and settlement per method; Checkout, COD and FLIK Connect fees; VAT note), Shipping and Funding. Rates are placeholders until AG / finance supply the rate card; see `content/18-pricing.md`.
 
 ### Top bar
 Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pricing · *(right side)* Sign in · Book a Demo · **Register Free**
@@ -317,7 +317,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the placeholders on `/pricing` (rate card from AG / finance, FLI-50).
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
-- Payment: FLIK Connect (Split Payments) got a prototype page at `/payment/connect` (2026-10-22, Linear FLI-51). Not live: "Coming soon" with a waitlist CTA until launch (wallet service and PJP licensing). Pricing 3% + VAT of the whole transaction, paid by the main merchant. See `content/12-flik-connect.md`.
+- Payment: FLIK Connect (Split Payments) got a prototype page at `/payment/connect` (2026-10-22, Linear FLI-51). Not live: "Coming soon" with a waitlist CTA until launch (wallet service and PJP licensing). Pricing 3% + VAT of the whole transaction, paid by the main merchant. See `content/17-flik-connect.md`.
 - Shipping: Shipment Tracking got its public cek resi page at `/shipping/track` (2026-10-21, Linear FLI-49) with example data. Live status needs a public tracking API; privacy, noindex and rate-limit rules are in `content/11-shipment-tracking.md`. The current cekresi.flik.co.id shows shoppers' names, phone numbers and addresses publicly and should be fixed or retired.
 - Resources: Help center (`/help`) got a prototype page (2026-10-21): search, contact cards, questions by topic (from the Checkout, Shipping and Merchant Cash Advance FAQs) and the consumer protection contacts from flik.co.id/en/help. See `content/10-help.md`.
 - Resources: Promo (`/promo`) and Blog (`/blog`) got prototype pages (2026-10-21) with the current content of flik.co.id/en/promo and flik.co.id/en/blog. Promo terms open in a modal; blog articles open at `/blog/?post=<slug>`. Covers are FLIK tiles, not the stock photos from the CMS. See `content/08-promo.md` and `content/09-blog.md`.

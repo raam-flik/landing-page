@@ -24,21 +24,21 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 **Shipping**
 
-- **Shipping:** All couriers, one dashboard
+- **Shipping:** All major couriers, one dashboard
 - **Bulk Shipping:** Many warehouses to many destinations
-- **COD Shipping:** Cash on delivery, 3% fee
+- **COD Shipping:** Cash on delivery, 3% fee (excl. PPN)
 - **Shipment Tracking:** Track any package
 - **Courier Performance:** Best courier per region
 - **Warehouses:** Manage pickup origins
-- **Return Management:** Lower RTO, fewer failed deliveries
+- **Return Management:** Track every parcel, including returns
 - **Cross-Border Shipping:** Ship to customers abroad
 
 **Funding**
 
 - **Merchant Cash Advance:** Upfront funding for selected brands
-- **Auto Settlement:** Repay as your products sell
+- **Auto Settlement:** Settled as your products sell
 - **Flexibility:** Funding that fits your sales cycle
-- **Inventory Financing:** Stock up before demand peaks
+- **Inventory Funding:** Stock up before demand peaks
 - **Outlet Expansion:** Cash to open your next outlet
 - **Marketing Budget:** Fund campaigns that drive sales
 
@@ -130,11 +130,35 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 **Support**
 
-- Mon–Fri, 09:00–18:00 WIB — support@flik.co.id — +62 812-9201-2668
-- support@flik.co.id
-- +62 812-9201-2668
-- Terms of Service
-- Privacy Policy
+- Mon–Fri, 09:00–18:00 WIB
+- support@flik.co.id (link: mailto:support@flik.co.id)
+- +62 812-9201-2668 (link: https://wa.me/6281292012668, opens WhatsApp)
 - Sitemap
 
 - **Copyright line:** © 2026 FLIK. All rights reserved.
+
+**Legal block (bottom of every page)**
+
+- **Company line:** PT Flik Teknologi Indonesia · Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560
+- **Licence line:** Payments are processed by licensed payment partners. FLIK is not a bank. (Generic for now, AG, 24 Oct 2026.)
+- **Links:** Terms of Service (/legal/terms) — Privacy Policy (/legal/privacy) — Refund Policy (/legal/refund) — Cookie Policy (/legal/cookies) — Cookie settings (button, reopens the cookie banner) — Data request (/legal/data-request) — privacy@flik.co.id
+
+## Cookie banner (every page)
+
+Shown on first visit. "Accept all" and "Reject all" look the same. "Cookie settings" in the footer reopens it.
+
+- **Heading:** Cookies on FLIK
+- **Text:** We store only your cookie choice in your browser, which the site needs to work. With your permission, we'd also use analytics cookies to see how the site is used, and marketing cookies to measure our ads. You can change your choice at any time under "Cookie settings" in the footer.
+- **Link:** Cookie Policy (/legal/cookies)
+- **Button:** Reject all
+- **Button:** Accept all
+- **Button:** Preferences
+- **Toggle:** Strictly necessary — Needed for the site to work, such as remembering this choice. Always on.
+- **Toggle:** Analytics — Help us understand which pages are used, so we can improve them. (Off until chosen.)
+- **Toggle:** Marketing — Measure our ads and show more relevant ones on other sites. (Off until chosen.)
+- **Button:** Save my choices
+
+## Accessibility controls (every page)
+
+- **Skip link:** Skip to main content
+- **Motion button:** Pause animations / Play animations (only on pages with animation)

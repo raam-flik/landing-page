@@ -12,12 +12,17 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [05-early-settlement.md](05-early-settlement.md) | Early Settlement | [/payment/early-settlement/](https://landing-page-raams-projects-2709477f.vercel.app/payment/early-settlement/) |
 | [06-fraud-detection.md](06-fraud-detection.md) | Fraud Detection | [/payment/fraud-detection/](https://landing-page-raams-projects-2709477f.vercel.app/payment/fraud-detection/) |
 | [08-promo.md](08-promo.md) | Promo | [/promo/](https://landing-page-raams-projects-2709477f.vercel.app/promo/) |
-| [13-pricing.md](13-pricing.md) | Pricing | [/pricing/](https://landing-page-raams-projects-2709477f.vercel.app/pricing/) |
-| [12-flik-connect.md](12-flik-connect.md) | FLIK Connect | [/payment/connect/](https://landing-page-raams-projects-2709477f.vercel.app/payment/connect/) |
+| [18-pricing.md](18-pricing.md) | Pricing | [/pricing/](https://landing-page-raams-projects-2709477f.vercel.app/pricing/) |
+| [17-flik-connect.md](17-flik-connect.md) | FLIK Connect | [/payment/connect/](https://landing-page-raams-projects-2709477f.vercel.app/payment/connect/) |
 | [11-shipment-tracking.md](11-shipment-tracking.md) | Shipment tracking (cek resi) | [/shipping/track/](https://landing-page-raams-projects-2709477f.vercel.app/shipping/track/) |
 | [10-help.md](10-help.md) | Help center | [/help/](https://landing-page-raams-projects-2709477f.vercel.app/help/) |
 | [09-blog.md](09-blog.md) | Blog | [/blog/](https://landing-page-raams-projects-2709477f.vercel.app/blog/) |
 | [07-in-store-payment.md](07-in-store-payment.md) | In-Store Payment | [/payment/in-store/](https://landing-page-raams-projects-2709477f.vercel.app/payment/in-store/) |
+| [12-privacy.md](12-privacy.md) | Privacy Policy (website and merchants). Draft for legal review | Not deployed yet (`/legal/privacy/`) |
+| [13-terms.md](13-terms.md) | Terms of Use, with a merchant terms summary. Draft for legal review | Not deployed yet (`/legal/terms/`) |
+| [14-refund.md](14-refund.md) | Refund Policy. Draft for legal review | Not deployed yet (`/legal/refund/`) |
+| [15-cookies.md](15-cookies.md) | Cookie Policy. Draft for legal review | Not deployed yet (`/legal/cookies/`) |
+| [16-data-request.md](16-data-request.md) | Personal data request form. Draft for legal review | Not deployed yet (`/legal/data-request/`) |
 | [product-facts.md](product-facts.md) | What each product does, and the claims we can make | – |
 | [AI-GUIDE.md](AI-GUIDE.md) | Instructions for the AI that applies your edits | – |
 
