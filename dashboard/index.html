@@ -143,6 +143,9 @@ tbody tr.sel td{background:#F8F6FF}
 .amt{font-weight:600;color:var(--ink);text-align:left;width:1%;padding-right:24px;white-space:nowrap}
 .cur{color:var(--muted);width:1%;padding-right:24px}
 .c-st{width:150px}
+/* in tables the status is a soft pill: tint only, no border or icon, a little smaller, so it doesn't pull the eye from the row (CEO, 26 Oct) */
+td .st,td .st:is(.ok,.warn,.bad,.gr,.pu){border-color:transparent;height:20px;padding:0 6px;border-radius:4px;font-size:12px}
+td .st svg{display:none}
 .st{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 7px;border-radius:5px;font-size:12.5px;font-weight:500;border:1px solid}
 .st.ok{background:var(--ok-bg);color:var(--ok-tx);border-color:var(--ok-bd)}
 .st.gr{background:var(--gr-bg);color:var(--gr-tx);border-color:var(--gr-bd)}
