@@ -109,6 +109,30 @@ h1{font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-.4px;margin-t
 .pop{position:absolute;z-index:60;background:#fff;border-radius:10px;box-shadow:var(--pop);min-width:230px;padding:6px;display:none}
 .pop.open{display:block}
 .pop.in-d{z-index:85}
+/* Check rate: the payment toggle hugs its options, the To list opens under its field, results tidied */
+#view-cr .cr-g .sx-seg{width:max-content}
+#view-cr .ad-s{position:relative}
+#view-cr .ad-s .ie-dd{min-width:320px}
+#view-cr .cr-h{margin-top:20px}
+#view-cr .cr-h h2.sec{margin-top:0}
+#view-cr .cr-meta{margin-top:2px}
+#view-cr .cr-note{margin-top:14px}
+#view-cr .cr-tabrow{display:flex;align-items:flex-end;gap:8px 16px;flex-wrap:wrap;margin-top:16px;border-bottom:1px solid var(--line)}
+#view-cr .cr-tabrow .tabs.cr-tabs2{margin-top:0;border-bottom:0;margin-bottom:-1px;align-self:flex-end}
+#view-cr .cr-tabrow .fright{display:flex;align-items:center;gap:8px;margin-left:auto;margin-bottom:3px}
+#view-cr .cr-tabrow #cr-sl{white-space:nowrap}
+@media (max-width:1000px){#view-cr .cr-tabrow{border-bottom:0;flex-direction:column;align-items:stretch}#view-cr .cr-tabrow .tabs.cr-tabs2{border-bottom:1px solid var(--line);margin-bottom:0;align-self:stretch}#view-cr .cr-tabrow .fright{margin:4px 0 0;flex-wrap:wrap}}
+#view-cr .cr-t td{padding-block:12px}
+#view-cr .cr-t .sx-cl{align-items:center}
+#view-cr .cr-t .sx-cl>span{display:grid;gap:4px}
+#view-cr .cr-t .cr-tags{display:flex;gap:4px;flex-wrap:wrap}
+#view-cr .cr-t .cr-p{font-size:14px;font-weight:600}
+#view-cr .cr-t s{font-size:12.5px}
+#view-cr .cr-t .cr-sr{display:flex;align-items:center;white-space:nowrap}
+#view-cr .cr-t td .src{display:block;margin-top:2px}
+#view-cr .cr-t .cr-srw{display:inline-block;cursor:help;border-radius:4px;outline:none}
+#view-cr .cr-t .cr-srw .src{text-decoration:underline dotted var(--faint);text-underline-offset:3px}
+#view-cr .cr-t .cr-srw:focus-visible{box-shadow:0 0 0 2px var(--primary)}
 /* All shipments: a button under an empty or error message */
 #view-mon .empty .ms-eb{display:flex;margin:12px auto 0}
 /* ticket panel: a normal panel body, the conversation keeps its chat layout */
@@ -1314,8 +1338,8 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 .modal .mb>.rf-pay{margin-bottom:0}
 #view-mon .mon-card{margin-top:24px;padding:20px 20px 16px}
 #view-mon .mon-card h2.sec{margin-top:0}
-#view-mon .mon-h{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
-#view-mon .mon-h .fright{display:flex;gap:8px;margin-left:auto}
+#view-cr .mon-h,#view-mon .mon-h{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
+#view-cr .mon-h .fright,#view-mon .mon-h .fright{display:flex;gap:8px;margin-left:auto}
 #view-mon .mon-card .filters{margin-top:12px}
 #view-mon .mon-card .tbl-wrap{margin:12px -20px 0}
 #view-mon .mon-card table th:first-child,#view-mon .mon-card table td:first-child{padding-left:20px}
@@ -1327,7 +1351,7 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 #view-mon td.act{white-space:nowrap;text-align:right}
 #view-mon td.act>.btn,#view-mon td.act>.dots-b{display:inline-flex;vertical-align:middle}
 #view-mon td.act>.dots-b{margin-left:4px}
-#view-mon h2.sec .src{display:inline-flex;vertical-align:-2px;margin-left:4px;cursor:help}
+#view-cr h2.sec .src,#view-mon h2.sec .src{display:inline-flex;vertical-align:-2px;margin-left:4px;cursor:help}
 @media (max-width:900px){#view-mon .mon-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}#view-mon .mon-kpis .dn-k:nth-child(3){border-right:0}#view-mon .mon-kpis .dn-k:nth-child(-n+3){border-bottom:1px solid var(--line)}}
 @media (max-width:600px){#view-mon .mon-kpis{grid-template-columns:1fr 1fr}#view-mon .mon-kpis .dn-k{border-right:0;border-bottom:1px solid var(--line)}#view-mon .mon-kpis .dn-k:nth-child(odd){border-right:1px solid var(--line)}#view-mon .mon-kpis .dn-k:last-child{border-bottom:0;grid-column:1/-1;border-right:0}}
 /* Monitoring, quieter (26 Oct): help icons instead of paragraphs, one-line cells, counts beside titles */
@@ -1379,7 +1403,7 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .vf-steps i.on{background:var(--primary)}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .vf-lead{color:var(--muted);font-size:13.5px}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .vf-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-:is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .fld select{width:100%;height:36px;border-radius:6px;border:0;box-shadow:var(--sh);padding:0 8px;font:inherit;background:#fff;outline:none}
+:is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .fld select{width:100%;height:36px;border-radius:6px;border:0;box-shadow:var(--sh);padding:0 30px 0 10px;font:inherit;background:#fff;outline:none}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .fld select:focus{box-shadow:0 0 0 2px rgba(106,75,255,.4)}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .vf-up{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;border:1.5px dashed var(--line-2);color:var(--muted);width:100%;text-align:left}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .vf-up.set{border-style:solid;border-color:var(--ok-bd);background:var(--ok-bg);color:var(--ok-tx)}
@@ -1520,7 +1544,7 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .fld .pre input{padding-left:36px}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .fld .pre em{position:absolute;left:10px;top:9px;font-style:normal;color:var(--muted);font-size:13.5px}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .cr-f{padding:18px 20px}
-:is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .cr-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) 100px minmax(0,1fr) 196px auto;gap:12px;align-items:end}
+:is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .cr-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) 100px minmax(0,1fr) max-content auto;gap:12px;align-items:end}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .cr-g .sx-sel{margin-top:0}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .cr-d{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 :is(#view-mon,#view-cr,#view-ana,#drawer,#modal) .unit{position:relative}
