@@ -41,7 +41,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Try an example:
 - **Text:** Works with JNE, J&T Express, SPX Express, AnterAja, SiCepat, Ninja Xpress, ID Express, Lion Parcel and more
 - **Text:** Tracking details come from the courier. We show only what's needed to follow the parcel.
-- **Button:** Pause animations
 
 ## 2. Result
 <!-- html: Result (example data). Public page: city or kecamatan only, masked recipient, no name, phone, full address, items or COD amount (FLI-49). Result URLs are noindex: the prototype adds the meta tag in JS, and the server must also send X-Robots-Tag: noindex for /shipping/track?id=… #result -->

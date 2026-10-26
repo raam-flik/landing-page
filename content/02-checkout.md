@@ -28,7 +28,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** Turning every cart on your Shopify or WooCommerce store into a completed order. Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they already do. You build the store, we close the sale.
 - **Button:** Contact sales
 - **Button:** See how it works
-- **Button (below logo strip):** Pause animations
 - **List item:** 3× faster than a standard checkout
 - **List item:** Multiple payment methods
 - **List item:** No passwords to remember

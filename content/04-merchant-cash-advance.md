@@ -47,7 +47,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Row:** Administration fee — 1% per placement
 - **Row:** Settlement — A share of each sale
 - **Label:** Application — Offer ready
-- **Button (below logo strip):** Pause animations
 
 ## 2. Stats row
 <!-- html: Stats row -->

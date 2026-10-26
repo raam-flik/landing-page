@@ -34,7 +34,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Headline (H1):** Points everywhere, every checkout.
   - **Grey part:** #UseFLIK
 - **Intro text:** Shop on brand websites and get original products, discounts and cashback [[confirm: no promo below pays cashback; name one with its terms, or drop the word]] with FLIK. One account for every merchant, direct checkout and unlimited rewards [[confirm: are rewards really unlimited?]].
-- **Button (below the header):** Pause animations
 
 ## 2. Promos
 <!-- html: Promos: filter tabs and cards; each card opens its terms (content from flik.co.id/en/promo) #promos -->

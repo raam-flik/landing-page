@@ -145,7 +145,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 ## Cookie banner (every page)
 
-Shown on first visit as a compact bar (one row on desktop; text and one row of buttons on phones). "Accept all" and "Reject all" look the same (both secondary buttons). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
+Shown on first visit as a compact bar (one row on desktop; text and one row of buttons on phones). "Accept all" is the primary button and "Reject all" a secondary button (Raam, 26 Oct 2026). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
 
 - **Heading (bold, start of the text):** Cookies on FLIK.
 - **Text:** We use essential cookies to run this site. With your OK, we'd also use analytics and marketing cookies.
@@ -162,4 +162,3 @@ Shown on first visit as a compact bar (one row on desktop; text and one row of b
 ## Accessibility controls (every page)
 
 - **Skip link:** Skip to main content
-- **Motion button:** Pause animations / Play animations (only on pages with animation)

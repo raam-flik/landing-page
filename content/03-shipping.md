@@ -34,7 +34,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **List item:** COD fee 3% (excl. PPN)
 - **List item:** 99% of shipments created successfully
 - **Text:** All major couriers, one dashboard — and more
-- **Button (below logo strip):** Pause animations
 
 ## 2. Stats
 <!-- html: Stats: ruled grid to the guide lines -->

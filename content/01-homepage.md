@@ -26,7 +26,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Get started
 - **Button:** Contact sales
 - **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.
-- **Button (below logo strip):** Pause animations
 
 ## 2. Solutions bento
 <!-- html: Solutions bento #solutions -->

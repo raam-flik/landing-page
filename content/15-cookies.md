@@ -72,7 +72,6 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** Rows marked “not active yet” are planned. We'll update this table before any of them is switched on.
 - **Table columns:** Name — Provider — Purpose — Category — Duration
 - **Table row:** `flik_consent` (browser storage, not a cookie) — FLIK — Stores your choice: Analytics and Marketing on or off, and when you chose — Strictly necessary — Until you change your choice or clear your browser data
-- **Table row:** `flik_motion_paused` (browser storage, not a cookie) — FLIK — Remembers that you paused page animations — Strictly necessary — Until you turn animations back on or clear your browser data
 - **Table row:** `three.min.js` request (not a cookie) — Cloudflare (cdnjs) — Loads the 3D graphics library for the device model on the In-Store Payment page. Cloudflare receives your IP address and browser details — Strictly necessary — One request each time that page loads. Nothing is stored
 - **Table row:** `_ga` (not active yet) — Google (GA4) — Tells visitors apart for website statistics — Analytics — [[W-22: duration set in GA4]]
 - **Table row:** `_ga_`[[W-22: GA4 measurement ID]] (not active yet) — Google (GA4) — Keeps track of a visit for website statistics — Analytics — [[W-22: duration set in GA4]]

@@ -39,7 +39,6 @@ Fraud Detection is new (Linear FLI-47). What FLIK offers depends on the **FDS** 
 - **Intro text:** We're building a risk check for FLIK payments, so genuine orders go through and suspicious ones don't. The capabilities on this page are planned and may change.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
-- **Button (below logo strip):** Pause animations
 - **List item:** Planned: a check before approval
 - **List item:** Planned: your own rules on top
 - **List item:** Planned: a review queue for unusual orders

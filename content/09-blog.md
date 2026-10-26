@@ -54,4 +54,3 @@ The article bodies are the English texts from the FLIK CMS. Edit them in the CMS
 - **Text:** A 30-second checkout, all major couriers and funding for your stock, from one dashboard.
 - **Button:** Talk to the FLIK team
 - **Button:** Explore Checkout
-- **Button (below the buttons):** Pause animations

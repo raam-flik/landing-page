@@ -44,7 +44,6 @@ Since 24 Oct 2026 (AG) the page makes no timing, fee or eligibility promise: spe
 - **Intro text:** Turning paid orders into cash you can use sooner. You keep selling, FLIK speeds up the payout.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
-- **Button (below logo strip):** Pause animations
 - **List item:** Paid before your standard settlement date
 - **List item:** The fee is shown before you confirm
 - **List item:** Not a loan, nothing to repay

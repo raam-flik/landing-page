@@ -38,13 +38,12 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Intro text:** Turning every counter into a checkout. Customers scan or use their card, the receipt prints on the spot, and the sale sits next to your online orders. You serve the customer. Payments are processed by licensed partners.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
-- **Button (below logo strip):** Pause animations
 - **List item:** QRIS and debit or credit cards
 - **List item:** Built-in receipt printer
 - **List item:** One dashboard with your online sales
 - **Label:** Receipt printer built in
 - **Hint:** Example screen · Drag to turn
-- **Text alternative (screen readers):** A handheld FLIK EDC payment terminal with a touchscreen and a receipt printer. Its screen shows an example home screen: today's successful transactions and total sales split by QRIS and card, a button to print the settlement receipt, and the latest transactions. The device turns slowly and can be dragged to turn. Use Pause animations to stop the motion.
+- **Text alternative (screen readers):** A handheld FLIK EDC payment terminal with a touchscreen and a receipt printer. Its screen shows an example home screen: today's successful transactions and total sales split by QRIS and card, a button to print the settlement receipt, and the latest transactions. The device turns slowly and can be dragged to turn.
 
 *Example text on the device screen (only change if needed):*
 
