@@ -32,7 +32,7 @@ svg{display:block;flex:none}
 .num{font-variant-numeric:tabular-nums}
 
 /* ===== Layout ===== */
-.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.app{display:grid;grid-template-columns:200px 1fr;min-height:100vh}
 .side{border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto;background:#fff;display:flex;flex-direction:column}
 .acct{display:flex;align-items:center;gap:10px;padding:18px 18px 16px;border-bottom:1px solid var(--line);width:100%;text-align:left}
 .acct .lg{width:28px;height:28px;border-radius:7px;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,.04)}
@@ -206,7 +206,7 @@ tbody tr.sel td{background:#F8F6FF}
 /* in tables the status is a soft pill: tint only, no border or icon, a little smaller, so it doesn't pull the eye from the row (CEO, 26 Oct) */
 td .st,td .st:is(.ok,.warn,.bad,.gr,.pu){border-color:transparent;height:20px;padding:0 6px;border-radius:4px;font-size:12px}
 td .st svg{display:none}
-.st{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 7px;border-radius:5px;font-size:12.5px;font-weight:500;border:1px solid}
+.st{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 7px;border-radius:5px;font-size:12.5px;font-weight:500;border:1px solid;white-space:nowrap}
 .st.ok{background:var(--ok-bg);color:var(--ok-tx);border-color:var(--ok-bd)}
 .st.gr{background:var(--gr-bg);color:var(--gr-tx);border-color:var(--gr-bd)}
 .st.warn{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
@@ -1227,7 +1227,8 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 .bl-tiles{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:12px;margin-top:20px}
 .bl-tile{cursor:pointer;text-align:left;width:100%;display:flex;flex-direction:column;gap:6px;padding:20px;margin:0;border-radius:8px;box-shadow:var(--sh);background:#fff}
 .bl-tile:hover{box-shadow:0 0 0 1px rgba(64,68,82,.16),0 2px 5px rgba(64,68,82,.1)}
-.bl-tile .kpi-l{display:flex;align-items:center;gap:8px}
+.bl-tile .kpi-l{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;min-height:22px;line-height:22px}
+.bl-tile .kpi-l .st{flex:none}
 .bl-tile .kpi-v b{font-size:22px}
 .bl-tile.main .kpi-v b{font-size:28px}
 .bl-tile .ex{color:var(--muted);font-size:13px;line-height:1.45}
@@ -1320,7 +1321,7 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 #view-mon .mon-kpis .dn-k{border-bottom:0}
 #view-mon .mon-kpis .dn-k:nth-child(2){border-right:1px solid var(--line)}
 #view-mon .mon-kpis .dn-k:last-child{border-right:0}
-#view-mon .mon-over{color:var(--bad-tx)}
+#view-mon .mon-over,#view-ana .mon-over{color:var(--bad-tx)}
 .modal .nd-seg{justify-self:start}
 #modal .nd-hint{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
 #modal #nd-wa{border-bottom:0;padding-bottom:0}
@@ -1354,6 +1355,89 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
 #view-cr h2.sec .src,#view-mon h2.sec .src{display:inline-flex;vertical-align:-2px;margin-left:4px;cursor:help}
 @media (max-width:900px){#view-mon .mon-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}#view-mon .mon-kpis .dn-k:nth-child(3){border-right:0}#view-mon .mon-kpis .dn-k:nth-child(-n+3){border-bottom:1px solid var(--line)}}
 @media (max-width:600px){#view-mon .mon-kpis{grid-template-columns:1fr 1fr}#view-mon .mon-kpis .dn-k{border-right:0;border-bottom:1px solid var(--line)}#view-mon .mon-kpis .dn-k:nth-child(odd){border-right:1px solid var(--line)}#view-mon .mon-kpis .dn-k:last-child{border-bottom:0;grid-column:1/-1;border-right:0}}
+/* Analytics, aligned with Monitoring (27 Oct): stat tiles, cards with h2.sec and help icons, full-width tables, no bars */
+#view-ana .mon-h{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;margin-bottom:12px}
+#view-ana .mon-h .fright{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+#view-ana h2.sec{margin-top:0}
+#view-ana h2.sec .src{display:inline-flex;vertical-align:-2px;margin-left:4px;cursor:help}
+#view-ana .mon-tiles{margin-top:16px}
+#view-ana .bl-tile{cursor:default}
+#view-ana .bl-tile:hover{box-shadow:var(--sh)}
+#view-ana .bl-tile .ex{min-height:20px}
+@media (max-width:1100px){#view-ana .mon-tiles{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){#view-ana .mon-tiles{grid-template-columns:1fr 1fr}}
+#view-ana .an-g{gap:16px;margin-top:24px}
+#view-ana .an-w{border-radius:8px;padding:20px 20px 8px}
+#view-ana .an-w.s3{grid-column:1/-1}
+#view-ana .an-w .mon-h{min-height:36px}
+#view-ana .an-w>.hbar:last-child,#view-ana .an-w>.ins-l:last-child,#view-ana .an-w>.sec-sub:last-child{margin-bottom:12px}
+#view-ana .an-w .tbl-wrap{margin:0 -20px}
+#view-ana .an-w table.mt th{font-size:13px;padding:10px 8px}
+#view-ana .an-w table.mt td{height:44px;padding:0 8px;font-size:13.5px}
+#view-ana .an-w table.mt th:first-child,#view-ana .an-w table.mt td:first-child{padding-left:20px}
+#view-ana .an-w table.mt th:last-child,#view-ana .an-w table.mt td:last-child{padding-right:20px}
+#view-ana .an-w table.mt tbody tr:last-child td{border-bottom:0}
+#view-ana .an-w table.mt .sx-cl .st{margin-left:2px}
+#view-ana .an-w table.mt .mny{padding-left:40px}
+#view-ana .ai-by{color:var(--muted);font-size:12.5px;margin:-6px 0 12px}
+/* Lists kit (27 Oct): Filter and Edit columns buttons, column headers you can drag, sort, pin and hide */
+.dt-btns{display:contents}
+.filters .dt-ic{width:32px;padding:0;justify-content:center}
+.filters .btn.on{background:var(--primary-soft);color:var(--primary);box-shadow:none}
+.filters .btn.on svg{color:var(--primary)}
+@media (max-width:600px){.filters.ms-lf .bl-search,.filters.dt-bar .bl-search{flex:1 1 100%;max-width:none}}
+th.dt-th{position:relative;padding-left:2px;padding-right:2px}
+th.dt-th .dt-g{position:absolute;left:-6px;top:50%;transform:translateY(-50%);opacity:0;cursor:grab;transition:opacity .12s}
+th.dt-th:hover .dt-g{opacity:1}
+.dt-g{display:inline-flex;color:var(--faint)}
+.dt-b{display:inline-flex;align-items:center;gap:4px;font:inherit;font-weight:600;color:var(--ink);padding:4px 6px;border-radius:6px;white-space:nowrap}
+.dt-b:hover{background:var(--hover)}
+.dt-b:focus-visible{box-shadow:0 0 0 2px rgba(106,75,255,.4);outline:none}
+.dt-b>svg{color:var(--muted)}
+.dt-pi{display:inline-flex;color:var(--primary)}
+th.dt-over{box-shadow:inset 2px 0 0 var(--primary)}
+th.dt-over.aft{box-shadow:inset -2px 0 0 var(--primary)}
+th.dt-drag{opacity:.4}
+.dt-st{position:sticky;z-index:1;background:#fff}
+th.dt-st,th.dt-th.dt-st{position:sticky;z-index:2}
+tbody tr:hover .dt-st,tbody tr.sel .dt-st,tbody tr.open .dt-st{background:var(--hover)}
+.dt-st.dt-edge{box-shadow:inset -1px 0 0 var(--line)}
+.dt-menu .opt.on{color:var(--primary);font-weight:600}
+.dt-menu .opt svg,.dt-cfg .opt svg{flex:none}
+.dt-cfg{min-width:240px}
+.dt-cfg .pop-f .btn,.pop .menu .pop-f [data-fclrall]{flex:1;justify-content:center}
+.dt-cfg .dt-r{cursor:grab;gap:8px}
+.dt-cfg .dt-n{flex:1}
+.dt-cfg .dt-pb{display:inline-flex;color:var(--faint);padding:4px;border-radius:4px}
+.dt-cfg .dt-pb:hover{color:var(--ink)}
+.dt-cfg .dt-pb.on{color:var(--primary)}
+.dt-cfg .cb[disabled]{opacity:.5;cursor:default}
+.dt-cfg .dt-r.dt-over{box-shadow:inset 0 2px 0 var(--primary)}
+.dt-cfg .dt-r.dt-over.aft{box-shadow:inset 0 -2px 0 var(--primary)}
+.dt-cfg .dt-r.dt-drag{opacity:.4}
+.filters.dt-bar .bl-search{flex:1 1 280px;max-width:360px}
+#view-mon .filters.ms-lf .bl-search{flex:1 1 320px;max-width:420px}
+#view-mon .ms-awbs{margin:12px 0 0;font-size:13.5px;color:var(--muted)}
+#view-mon .ms-awbs b{color:var(--ink)}
+.dr-f{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 10px 2px}
+.dr-f label{display:grid;gap:4px;font-size:12.5px;color:var(--muted)}
+.dr-f input{height:34px;border-radius:6px;border:0;box-shadow:var(--sh);padding:0 8px;font:inherit;font-size:13px;color:var(--ink);background:#fff;outline:none}
+.dr-f input:focus{box-shadow:0 0 0 2px rgba(106,75,255,.4)}
+/* Health, live today (27 Oct): a pulsing Live dot and stage tiles */
+#view-mon .tk-new{margin-left:8px;color:var(--primary);font-size:12.5px;font-weight:600}
+#view-mon .hl-live{display:flex;align-items:center;gap:8px;margin-top:20px;font-size:13.5px;color:var(--muted)}
+#view-mon .hl-live b{color:var(--ok-tx);font-weight:600}
+#view-mon .hl-live .btn{margin-left:auto}
+#view-mon .hl-dot{position:relative;width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+#view-mon .hl-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--ok);animation:hl-pulse 1.6s ease-out infinite}
+@keyframes hl-pulse{from{transform:scale(1);opacity:.6}to{transform:scale(3);opacity:0}}
+@media (prefers-reduced-motion:reduce){#view-mon .hl-dot::after{animation:none}}
+#view-mon .hl-live+.mon-card{margin-top:12px}
+#view-mon .hl-go{display:inline-flex;align-items:center;gap:8px;padding:2px 6px;margin:-2px -6px;border-radius:6px;font:inherit;color:inherit;cursor:pointer}
+#view-mon .hl-go:hover{background:var(--hover)}
+#view-mon h2.sec+.hl-tiles{margin-top:12px}
+#view-mon .hl-tiles{grid-auto-flow:row;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){#view-mon .hl-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* Monitoring, quieter (26 Oct): help icons instead of paragraphs, one-line cells, counts beside titles */
 #view-mon .sec-t,#view-cr .sec-t,#view-ana .sec-t{display:flex;align-items:center;gap:8px}
 .sec-help{display:inline-flex;color:var(--faint);cursor:help;outline:none;border-radius:4px}
@@ -1951,9 +2035,9 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
       <div class="bl-info" id="bl-info"></div>
       <h2 class="sec">Statement</h2>
       <div class="tabs" id="bl-tabs" role="tablist"></div>
-      <div class="filters">
+      <div class="filters dt-bar">
         <label class="search bl-search"><span data-ic="search"></span><input id="bl-q" placeholder="Order ID, AWB, withdrawal ID or amount" autocomplete="off" aria-label="Search the statement"></label>
-        <button class="chip" id="bl-range"></button>
+        <span class="dt-btns" id="bl-fb"></span>
         <div class="fright"><button class="btn btn-o" id="bl-export"><span data-ic="export"></span>Export</button></div>
       </div>
       <div class="tbl-wrap"><table class="bl-tbl"><thead id="bl-head"></thead><tbody id="bl-body"></tbody></table></div>
@@ -1963,11 +2047,9 @@ h2.sec{font-size:18px;font-weight:600;color:var(--ink);margin-top:28px;letter-sp
       <h1>Transactions</h1>
       <div class="tabs" id="tabs" role="tablist"></div>
 
-      <div class="filters" id="filters">
-        <button class="chip" data-f="date"><span data-ic="pluscirc"></span><span class="lbl">Date and time</span></button>
-        <button class="chip" data-f="status"><span data-ic="pluscirc"></span><span class="lbl">Status</span></button>
-        <button class="chip" data-f="method"><span data-ic="pluscirc"></span><span class="lbl">Payment method</span></button>
-        <button class="chip" data-f="source"><span data-ic="pluscirc"></span><span class="lbl">Source</span></button>
+      <div class="filters dt-bar" id="filters">
+        <label class="search bl-search"><span data-ic="search"></span><input id="tx-q" placeholder="Payment ID, order, customer or amount" autocomplete="off" aria-label="Search transactions"></label>
+        <span class="dt-btns" id="tx-fb"></span>
         <div class="fright">
           <button class="btn btn-o" id="export"><span data-ic="export"></span>Export</button>
         </div>
@@ -2078,8 +2160,8 @@ const NAV=[
   {i:'home',t:'Home',v:'home'},{i:'bal',t:'Balances',v:'bal'},{i:'tx',t:'Transactions',v:'tx'},{i:'user',t:'Customer',v:'cus'},{i:'box',t:'Product Catalog',v:'prd'},
   {h:'Products'},
   {i:'cart',t:'Payments',sub:[{t:'Invoice',v:'inv'},'Offline Shop','Payment Link','Checkout Personalization','Order Form']},
-  {i:'truck',t:'Shipping',sub:[{t:'Shipment',v:'shp',h:'shipments/create'},{t:'Monitoring',v:'mon'},{t:'Check rate',v:'cr'},{t:'Analytics',v:'ana'},{t:'Tracking',v:'trk'}]},
-  {i:'coins',t:'Merchant Cash Advance',v:'mca'},
+  {i:'truck',t:'Shipping',sub:[{t:'Shipment',v:'shp',h:'shipments/create'},{t:'Monitoring',v:'mon'},{t:'Check rate',v:'cr'},{t:'Analytics',v:'ana'}]},
+  {i:'coins',t:'Cash Advance',v:'mca'},
   {i:'tag',t:'Marketing',sub:['Chat Commerce','Leads Management','Voucher','Post Purchase Offer','Cashback']},
   {i:'chart',t:'Analytics',sub:['Checkout','Shipping']},
   {i:'more',t:'More',sub:['Developers','Settings']}
@@ -2186,7 +2268,80 @@ const pmBadge=k=>{const m=METHODS[k];return m.lg?`<img class="plg" src="${IMG}pa
 
 /* ===== State ===== */
 const TABS=[['payments','All'],['cod','COD payouts'],['refunds','Refunds'],['disputes','Disputes'],['settle','Auto settlements']];
-const S={tab:'payments',q:'',date:null,status:new Set(),method:new Set(),source:new Set(['FLIK Checkout']),sort:{k:'created',dir:-1},page:0,sel:new Set()};
+/* ===== Lists kit (27 Oct): the All shipments toolbar and column settings, shared by every list (Monitoring, Transactions, Balances).
+   Columns: drag a header to reorder; its menu sorts, pins or hides the column; Edit columns lists them all. Kept per list on this device.
+   Filters: one Filter button that reads "2 filters" when some are on; its menu lists each filter and ends with Clear all. ===== */
+Object.assign(P,{filter:'<path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/>',sliders:'<circle cx="8" cy="7" r="2.5"/><path d="M10.5 7H20M4 7h1.5"/><circle cx="16" cy="17" r="2.5"/><path d="M4 17h9.5M18.5 17H20"/>',
+  grip:'<circle cx="9" cy="6" r="1"/><circle cx="15" cy="6" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="15" cy="18" r="1"/>',
+  eyeoff:'<path d="M10.7 5.1A10 10 0 0 1 22 12a13 13 0 0 1-1.7 2.7"/><path d="M6.6 6.6A13 13 0 0 0 2 12s3.5 7 10 7a9.7 9.7 0 0 0 5.4-1.6"/><path d="m2 2 20 20"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>'});
+/* a list's columns: {key:[label, sort value (or null), cell, {fixed:1 can't be hidden, cls:th class}]}; on() renders the list again */
+const DTS={};
+function dtUse(k,cols,sort,on){const T=DTS[k];if(T){T.cols=cols;T.on=on;return T}const def={order:Object.keys(cols),hide:[],pin:[],sort:sort||null};let st=JSON.parse(JSON.stringify(def));
+  try{const v=JSON.parse(localStorage.getItem('flik-cols-'+k)||'null');if(v&&v.order)st={...st,...v}}catch(e){}return DTS[k]={cols,def,st,on}}
+const dtSave=k=>{try{localStorage.setItem('flik-cols-'+k,JSON.stringify(DTS[k].st))}catch(e){}};
+/* pinned columns come first and stay in view when the table scrolls sideways */
+const dtOrder=k=>{const T=DTS[k],c=T.st,K=Object.keys(T.cols),o=c.order.filter(x=>T.cols[x]).concat(K.filter(x=>!c.order.includes(x)));return[...o.filter(x=>c.pin.includes(x)),...o.filter(x=>!c.pin.includes(x))]};
+const dtVis=k=>dtOrder(k).filter(x=>!DTS[k].st.hide.includes(x));
+const dtN=k=>dtVis(k).length;
+const dtSort=(k,rows)=>{const T=DTS[k],s=T.st.sort,c=s&&T.cols[s.k];if(!c||!c[1])return rows;return rows.slice().sort((a,b)=>{const x=c[1](a),y=c[1](b);return(x<y?-1:x>y?1:0)*s.dir})};
+const dtHead=k=>{const T=DTS[k],c=T.st;return dtVis(k).map(x=>{const s=c.sort&&c.sort.k===x,p=c.pin.includes(x),C=T.cols[x],o=C[3]||{};return`<th class="dt-th${o.cls?' '+o.cls:''}" data-dt="${k}" data-col="${x}" draggable="true" aria-sort="${s?(c.sort.dir>0?'ascending':'descending'):'none'}"><span class="dt-g" aria-hidden="true">${ic('grip',14)}</span><button class="dt-b" data-colm="${x}" data-dt="${k}" aria-haspopup="menu">${C[0]}${s?ic(c.sort.dir>0?'up':'down',13,2):''}${p?`<span class="dt-pi" aria-label="Pinned">${ic('pushpin',12)}</span>`:''}</button></th>`}).join('')};
+const dtCells=(k,r)=>dtVis(k).map(x=>DTS[k].cols[x][2](r)).join('');
+const dtDo=k=>{dtSave(k);if(DTS[k].on)DTS[k].on()};
+const dtMove=(k,x,to,after)=>{const c=DTS[k].st,o=dtOrder(k).filter(y=>y!==x);o.splice(o.indexOf(to)+(after?1:0),0,x);c.order=o;const tp=c.pin.includes(to);if(tp!==c.pin.includes(x)){if(tp)c.pin.push(x);else c.pin.splice(c.pin.indexOf(x),1)}dtSave(k)};
+const dtAct=(k,x,a)=>{const c=DTS[k].st;if(a==='asc'||a==='desc')c.sort={k:x,dir:a==='asc'?1:-1};else if(a==='pin'){if(c.pin.includes(x))c.pin.splice(c.pin.indexOf(x),1);else c.pin.push(x)}
+  else if(a==='hide'&&!c.hide.includes(x)){c.hide.push(x);toast(`${DTS[k].cols[x][0]} column hidden. Show it again from Edit columns`)}dtDo(k)};
+/* pinned columns stick to the left, with the leading checkbox column; runs after any list renders */
+function dtStick(){document.querySelectorAll('table[data-dtt]').forEach(t=>{const T=DTS[t.dataset.dtt];if(!T||!t.tHead||!t.tHead.rows[0])return;
+  t.querySelectorAll('.dt-st').forEach(td=>{td.classList.remove('dt-st','dt-edge');td.style.left=''});
+  const ths=[...t.tHead.rows[0].cells];let n=ths.findIndex(th=>th.dataset.col);if(n<0)return;const lead=n;while(n<ths.length&&ths[n].dataset.col&&T.st.pin.includes(ths[n].dataset.col))n++;if(n===lead)return;
+  let x=0;const L=ths.slice(0,n).map(th=>{const l=x;x+=th.offsetWidth;return l});
+  [...t.rows].forEach(r=>{if(r.cells.length<n)return;[...r.cells].slice(0,n).forEach((td,i)=>{td.classList.add('dt-st');td.style.left=L[i]+'px';td.classList.toggle('dt-edge',i===n-1)})})})}
+{let tm=0;new MutationObserver(()=>{clearTimeout(tm);tm=setTimeout(dtStick,30)}).observe(document.body,{childList:true,subtree:true})}
+function dtCfg(b,k){popFor=b;let dr=null;const draw=()=>{const T=DTS[k],c=T.st;
+  pop.innerHTML=`<div class="menu dt-cfg"><h6>Edit columns</h6>${dtOrder(k).map(x=>{const on=!c.hide.includes(x),p=c.pin.includes(x),C=T.cols[x],l=C[0],fx=(C[3]||{}).fixed;return`<div class="opt dt-r" draggable="true" data-cc="${x}"><span class="dt-g" aria-hidden="true">${ic('grip',14)}</span><button class="cb${on?' on':''}" data-cv="${x}" aria-pressed="${on}" aria-label="${on?'Hide':'Show'} ${l}"${fx?` disabled title="${l} is always shown"`:''}>${on?ic('check',12,3):''}</button><span class="dt-n">${l}</span><button class="dt-pb${p?' on':''}" data-cp="${x}" aria-pressed="${p}" aria-label="${p?'Unpin':'Pin'} ${l}" title="${p?'Unpin':'Pin to the left'}">${ic('pushpin',14)}</button></div>`}).join('')}<div class="pop-f"><button class="btn btn-o" data-creset>Reset</button></div></div>`;
+  pop.querySelectorAll('[data-cv]').forEach(y=>y.onclick=e=>{e.stopPropagation();const x=y.dataset.cv,h=DTS[k].st.hide;if(h.includes(x))h.splice(h.indexOf(x),1);else h.push(x);dtDo(k);draw()});
+  pop.querySelectorAll('[data-cp]').forEach(y=>y.onclick=e=>{e.stopPropagation();const x=y.dataset.cp,p=DTS[k].st.pin;if(p.includes(x))p.splice(p.indexOf(x),1);else p.push(x);dtDo(k);draw()});
+  pop.querySelector('[data-creset]').onclick=e=>{e.stopPropagation();DTS[k].st=JSON.parse(JSON.stringify(DTS[k].def));dtDo(k);draw()};
+  pop.querySelectorAll('[data-cc]').forEach(r=>{r.ondragstart=e=>{dr=r.dataset.cc;e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain',dr)}catch(x){}r.classList.add('dt-drag')};
+    r.ondragover=e=>{if(!dr||r.dataset.cc===dr)return;e.preventDefault();pop.querySelectorAll('.dt-over').forEach(y=>y.classList.remove('dt-over','aft'));const q=r.getBoundingClientRect();r.classList.add('dt-over');r.classList.toggle('aft',e.clientY>q.top+q.height/2)};
+    r.ondrop=e=>{e.preventDefault();e.stopPropagation();if(dr&&r.dataset.cc!==dr){const q=r.getBoundingClientRect();dtMove(k,dr,r.dataset.cc,e.clientY>q.top+q.height/2);if(DTS[k].on)DTS[k].on()}dr=null;draw()};
+    r.ondragend=()=>{if(dr){dr=null;draw()}}})};
+  draw();placePop(b,true)}
+/* filters: [{k, l label, type:'date' or 'many', opts:[[value,label]], get(), set(v)}]; a date value is {days, from, to} */
+const FBS={},FB_D=[['today','Today'],['week','This week'],['month','This month'],['year','This year'],['custom','Custom']];
+const fbUse=(k,filters,on)=>{FBS[k]={filters,on}};
+const fbStart=v=>{const d=new Date(NOW);d.setHours(0,0,0,0);if(v==='week')d.setDate(d.getDate()-(d.getDay()+6)%7);if(v==='month')d.setDate(1);if(v==='year')d.setMonth(0,1);return d};
+const fbIn=(o,d)=>!o||!o.days||(o.days==='custom'?d>=o.from&&d<new Date(o.to.getTime()+864e5):d>=fbStart(o.days));
+const fbVal=f=>{const v=f.get();if(f.type==='date')return!v||!v.days?'':v.days==='custom'?`${fday(v.from)} – ${fday(v.to)}`:FB_D.find(o=>o[0]===v.days)[1];return v.length?v.map(x=>(f.opts.find(o=>o[0]===x)||[x,x])[1]).join(', '):''};
+const fbBtns=(k,ck)=>{const F=FBS[k]?FBS[k].filters:[],n=F.filter(fbVal).length;return`${F.length?`<button class="btn btn-o${n?' on':''}" data-fbf="${k}" aria-haspopup="menu">${ic('filter',15)}${n?(n===1?'1 filter':n+' filters'):'Filter'}</button>`:''}${ck?`<button class="btn btn-o dt-ic" data-colcfg="${ck}" aria-label="Edit columns" data-tip="Edit columns">${ic('sliders',16)}</button>`:''}`};
+function fbPop(b,k,f){popFor=b;const done=()=>{closePop();FBS[k].on()};
+  if(f.type==='date'){const o=f.get()||{};let cur=o.days||0;const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    const draw=()=>{pop.innerHTML=`<h6>Filter by ${f.l.toLowerCase()}</h6>${FB_D.map(x=>`<button class="opt" data-o="${x[0]}"><span class="rdo${cur===x[0]?' on':''}"></span>${x[1]}</button>`).join('')}${cur==='custom'?`<div class="dr-f"><label>From<input type="date" id="dr-a" value="${iso(o.from||fbStart('month'))}" max="${iso(NOW)}"></label><label>To<input type="date" id="dr-b" value="${iso(o.to||fbStart())}" max="${iso(NOW)}"></label></div>`:''}<div class="pop-f"><button class="btn btn-o" data-clear>Clear</button>${cur==='custom'?'<button class="btn btn-p" data-apply>Apply</button>':''}</div>`;
+      pop.querySelectorAll('[data-o]').forEach(x=>x.onclick=e=>{e.stopPropagation();const v=x.dataset.o;if(v==='custom'){cur=v;draw();return}f.set({days:v});done()});
+      pop.querySelector('[data-clear]').onclick=()=>{f.set({days:0});done()};
+      const ap=pop.querySelector('[data-apply]');if(ap)ap.onclick=()=>{const a=document.getElementById('dr-a').value,z=document.getElementById('dr-b').value;if(!a||!z)return;let x=new Date(a+'T00:00:00'),y=new Date(z+'T00:00:00');if(x>y)[x,y]=[y,x];f.set({days:'custom',from:x,to:y});done()}};
+    draw();placePop(b,false);return}
+  const temp=new Set(f.get());const draw=()=>{pop.innerHTML=`<h6>Filter by ${f.l.toLowerCase()}</h6>${f.opts.map(o=>`<button class="opt" data-v="${o[0]}"><span class="cb${temp.has(o[0])?' on':''}">${temp.has(o[0])?ic('check',12,3):''}</span>${o[1]}</button>`).join('')}<div class="pop-f"><button class="btn btn-o" data-clear>Clear</button><button class="btn btn-p" data-apply>Apply</button></div>`;
+    pop.querySelectorAll('[data-v]').forEach(x=>x.onclick=e=>{e.stopPropagation();if(temp.has(x.dataset.v))temp.delete(x.dataset.v);else temp.add(x.dataset.v);draw()});
+    pop.querySelector('[data-apply]').onclick=()=>{f.set([...temp]);done()};pop.querySelector('[data-clear]').onclick=()=>{f.set([]);done()}};
+  draw();placePop(b,false)}
+/* one capture listener: column menus, Edit columns, and the Filter button of the kit's lists */
+document.addEventListener('click',e=>{
+  const m=e.target.closest('[data-colm][data-dt]');if(m){e.stopPropagation();if(popFor===m){closePop();return}popFor=m;const k=m.dataset.dt,x=m.dataset.colm,T=DTS[k],c=T.st,p=c.pin.includes(x),s=c.sort&&c.sort.k===x?c.sort.dir:0,C=T.cols[x],fx=(C[3]||{}).fixed;
+    pop.innerHTML=`<div class="menu dt-menu"><h6>${C[0]}</h6>${C[1]?`<button class="opt${s>0?' on':''}" data-cm="asc">${ic('up',15)}Sort ascending</button><button class="opt${s<0?' on':''}" data-cm="desc">${ic('down',15)}Sort descending</button><hr>`:''}<button class="opt" data-cm="pin">${ic('pushpin',15)}${p?'Unpin column':'Pin column'}</button>${fx?'':`<button class="opt" data-cm="hide">${ic('eyeoff',15)}Hide column</button>`}</div>`;
+    pop.querySelectorAll('[data-cm]').forEach(o=>o.onclick=()=>{closePop();dtAct(k,x,o.dataset.cm)});placePop(m,false);return}
+  const g=e.target.closest('[data-colcfg]');if(g&&g.dataset.colcfg&&DTS[g.dataset.colcfg]){e.stopPropagation();if(popFor===g){closePop();return}dtCfg(g,g.dataset.colcfg);return}
+  const fb=e.target.closest('[data-fbf]');if(fb){e.stopPropagation();if(popFor===fb){closePop();return}popFor=fb;const k=fb.dataset.fbf,F=FBS[k].filters,any=F.some(fbVal);
+    pop.innerHTML=`<div class="menu"><h6>Filter by</h6>${F.map((f,i)=>`<button class="opt" data-fi="${i}">${f.l}${fbVal(f)?` <span class="src">· ${fbVal(f)}</span>`:''}</button>`).join('')}${any?'<div class="pop-f"><button class="btn btn-o" data-fclrall>Clear all</button></div>':''}</div>`;
+    pop.querySelectorAll('[data-fi]').forEach(o=>o.onclick=x=>{x.stopPropagation();closePop();fbPop(fb,k,F[+o.dataset.fi])});
+    const ca=pop.querySelector('[data-fclrall]');if(ca)ca.onclick=()=>{closePop();F.forEach(f=>f.set(f.type==='date'?{days:0}:[]));FBS[k].on()};placePop(fb,false)}},true);
+{let dc=null,dk=null;const over=()=>document.querySelectorAll('th.dt-over').forEach(x=>x.classList.remove('dt-over','aft'));
+  document.addEventListener('dragstart',e=>{const th=e.target.closest&&e.target.closest('th[data-dt]');if(!th)return;dc=th.dataset.col;dk=th.dataset.dt;e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain',dc)}catch(x){}th.classList.add('dt-drag')});
+  document.addEventListener('dragover',e=>{if(!dc)return;const th=e.target.closest('th[data-dt]');over();if(!th||th.dataset.dt!==dk||th.dataset.col===dc)return;e.preventDefault();const r=th.getBoundingClientRect();th.classList.add('dt-over');th.classList.toggle('aft',e.clientX>r.left+r.width/2)});
+  document.addEventListener('drop',e=>{if(!dc)return;const th=e.target.closest('th[data-dt]');if(th&&th.dataset.dt===dk&&th.dataset.col!==dc){e.preventDefault();const r=th.getBoundingClientRect();dtMove(dk,dc,th.dataset.col,e.clientX>r.left+r.width/2)}const k=dk;dc=dk=null;over();if(DTS[k].on)DTS[k].on()});
+  document.addEventListener('dragend',()=>{if(dc){const k=dk;dc=dk=null;over();if(DTS[k].on)DTS[k].on()}})}
+
+const S={tab:'payments',q:'',days:0,from:null,to:null,status:new Set(),method:new Set(),source:new Set(),rst:[],dst:[],sort:{k:'created',dir:-1},page:0,sel:new Set()};
 const PER=15;
 
 function rows(){
@@ -2198,7 +2353,7 @@ function rows(){
     if(S.status.size)r=r.filter(p=>S.status.has(p.status));
     if(S.method.size)r=r.filter(p=>S.method.has(METHODS[p.mk].cat));
   }
-  if(S.date){const days={today:1,'7d':7,'30d':30,'90d':90}[S.date];const from=new Date(NOW);from.setHours(0,0,0,0);from.setDate(from.getDate()-(days-1));r=r.filter(p=>p.created>=from)}
+  r=r.filter(p=>fbIn(S,p.created));
   if(S.q){const q=S.q.toLowerCase().replace(/[.\s]/g,'');r=r.filter(p=>[p.id,p.order,p.customer,p.method,String(p.amount),p.awb,p.ref].filter(Boolean).join(' ').toLowerCase().replace(/<[^>]+>|[.\s•]/g,'').includes(q))}
   const k=S.sort.k,d=S.sort.dir;
   r.sort((a,b)=>{const va=a[k]??(d>0?Infinity:-Infinity),vb=b[k]??(d>0?Infinity:-Infinity);return (va>vb?1:va<vb?-1:0)*d});
@@ -2207,32 +2362,30 @@ function rows(){
 
 
 /* Refunds and Disputes tabs: own columns, open items first */
-function renderRD(){const isR=S.tab==='refunds',f=document.getElementById('filters');
-  f.querySelectorAll('.chip').forEach(c=>c.style.display='none');
-  const segs=isR?[['all','All'],['open','Open'],['paid','Paid'],['cancelled','Cancelled']]:[['all','All'],['need','Needs response'],['progress','In progress'],['closed','Closed']];
-  if(!segs.some(x=>x[0]===S.rd))S.rd='all';
-  let sg=document.getElementById('rd-seg');if(!sg){sg=document.createElement('div');sg.id='rd-seg';sg.className='seg';sg.setAttribute('role','tablist');f.prepend(sg)}
-  sg.innerHTML=segs.map(x=>`<button class="${S.rd===x[0]?'on':''}" data-rd="${x[0]}" role="tab" aria-selected="${S.rd===x[0]}">${x[1]}</button>`).join('');
-  sg.querySelectorAll('[data-rd]').forEach(b=>b.onclick=()=>{S.rd=b.dataset.rd;S.page=0;render()});
+function renderRD(){const isR=S.tab==='refunds',K='tx-'+S.tab;
   document.getElementById('bulk').classList.remove('show');
   const q=S.q.toLowerCase(),payOf=id=>PAY.find(p=>p.id===id)||{};
+  const amt=['Amount',x=>x.amount,x=>`<td class="amt num">${rp(x.amount)}</td>`,{fixed:1}],payC=['Payment',x=>(payOf(x.pay).customer||'').toLowerCase(),x=>{const p=payOf(x.pay);return`<td><div class="pm">${p.mk?pmBadge(p.mk):''}<span class="pmd"><b style="font-weight:500">${p.customer||''}</b> · ${x.pay}</span></div></td>`}];
+  dtUse(K,isR?{amount:amt,status:['Status',x=>RF_OPEN.includes(x.st)?0:1,x=>`<td class="c-st"><span class="st ${RF_ST[x.st][1]}">${RF_ST[x.st][0]}</span></td>`],pay:payC,
+      funded:['Funded',x=>x.funded/x.amount,x=>x.st==='funding'?`<td><div class="rf-fund"><span class="rf-bar"><i style="width:${Math.round(x.funded/x.amount*100)}%"></i></span><span class="src">${rp(x.amount-x.funded)} left</span></div></td>`:`<td class="src">${x.st==='cancelled'?'—':x.st==='flik'?`${rp(x.amount-x.funded)} owed`:'Funded'}</td>`],
+      src:['Source',x=>RF_SRC[x.src],x=>`<td class="src">${RF_SRC[x.src]}</td>`],created:['Requested',x=>+x.created,x=>`<td class="date">${fdate(x.created)}</td>`]}
+    :{amount:amt,status:['Status',x=>DP_OPEN.includes(x.st)?0:1,x=>`<td class="c-st"><span class="st ${DP_ST[x.st][1]}">${DP_ST[x.st][0]}</span></td>`],pay:payC,
+      reason:['Reason',x=>DP_REASON[x.reason][0],x=>`<td>${DP_REASON[x.reason][0]}</td>`],
+      due:['Evidence due',x=>+x.due,x=>{const open=x.st==='evidence'||x.st==='reopened',left=wdLeft(x.due);return`<td class="date">${open?`${fday2(x.due)} <span class="st ${left<=3?'bad':'gr'}">${left} ${left===1?'day':'days'} left</span>`:'<span class="src">—</span>'}</td>`}],
+      opened:['Opened',x=>+x.opened,x=>`<td class="date">${fdate(x.opened)}</td>`]},null,render);
   let L;
-  if(isR){L=REFUNDS.filter(r=>S.rd==='all'||(S.rd==='open'?RF_OPEN.includes(r.st):S.rd==='paid'?(r.st==='paid'||r.st==='flik'):r.st==='cancelled'));
+  if(isR){const m={open:r=>RF_OPEN.includes(r.st),paid:r=>r.st==='paid'||r.st==='flik',cancelled:r=>r.st==='cancelled'};L=REFUNDS.filter(r=>fbIn(S,r.created)&&(!S.rst.length||S.rst.some(k=>m[k](r))));
     L.sort((a,b)=>(RF_OPEN.includes(b.st)-RF_OPEN.includes(a.st))||(b.created-a.created))}
-  else{L=DISPUTES.filter(d=>S.rd==='all'||(S.rd==='need'?(d.st==='evidence'||d.st==='reopened'):S.rd==='progress'?(d.st==='review'||d.st==='submitted'):!DP_OPEN.includes(d.st)));
+  else{const m={need:d=>d.st==='evidence'||d.st==='reopened',progress:d=>d.st==='review'||d.st==='submitted',closed:d=>!DP_OPEN.includes(d.st)};L=DISPUTES.filter(d=>fbIn(S,d.opened)&&(!S.dst.length||S.dst.some(k=>m[k](d))));
     const rk=d=>d.st==='evidence'||d.st==='reopened'?0:DP_OPEN.includes(d.st)?1:2;L.sort((a,b)=>(rk(a)-rk(b))||(rk(a)<2?a.due-b.due:b.opened-a.opened))}
   if(q)L=L.filter(x=>[x.id,x.pay,payOf(x.pay).customer,String(x.amount)].join(' ').toLowerCase().includes(q));
+  L=dtSort(K,L);const any=q||S.days||(isR?S.rst:S.dst).length;
   const pages=Math.max(1,Math.ceil(L.length/PER));S.page=Math.min(S.page,pages-1);const view=L.slice(S.page*PER,S.page*PER+PER);
-  document.getElementById('thead').innerHTML=isR?'<tr><th>Amount</th><th></th><th>Payment</th><th>Funded</th><th>Source</th><th>Requested</th></tr>':'<tr><th>Amount</th><th></th><th>Payment</th><th>Reason</th><th>Evidence due</th><th>Opened</th></tr>';
+  const th=document.getElementById('thead');th.closest('table').dataset.dtt=K;th.innerHTML=`<tr>${dtHead(K)}</tr>`;
   const tb=document.getElementById('tbody');
   const empty=isR?['No refunds yet','Refund a shopper from the payment: open it and choose Refund.']:['No disputes','A dispute is when a shopper asks their bank or card issuer to reverse a payment. If one opens, it shows here with what to send and by when.'];
-  tb.innerHTML=view.length?view.map(x=>{const p=payOf(x.pay);
-    const pay=`<td><div class="pm">${p.mk?pmBadge(p.mk):''}<span class="pmd"><b style="font-weight:500">${p.customer||''}</b> · ${x.pay}</span></div></td>`;
-    if(isR){const fund=x.st==='funding'?`<td><div class="rf-fund"><span class="rf-bar"><i style="width:${Math.round(x.funded/x.amount*100)}%"></i></span><span class="src">${rp(x.amount-x.funded)} left</span></div></td>`:`<td class="src">${x.st==='cancelled'?'—':x.st==='flik'?`${rp(x.amount-x.funded)} owed`:'Funded'}</td>`;
-      return`<tr data-rf="${x.id}"><td class="amt num">${rp(x.amount)}</td><td class="c-st"><span class="st ${RF_ST[x.st][1]}">${RF_ST[x.st][0]}</span></td>${pay}${fund}<td class="src">${RF_SRC[x.src]}</td><td class="date">${fdate(x.created)}</td></tr>`}
-    const open=x.st==='evidence'||x.st==='reopened',left=wdLeft(x.due);
-    return`<tr data-dp="${x.id}"><td class="amt num">${rp(x.amount)}</td><td class="c-st"><span class="st ${DP_ST[x.st][1]}">${DP_ST[x.st][0]}</span></td>${pay}<td>${DP_REASON[x.reason][0]}</td><td class="date">${open?`${fday2(x.due)} <span class="st ${left<=3?'bad':'gr'}">${left} ${left===1?'day':'days'} left</span>`:'<span class="src">—</span>'}</td><td class="date">${fdate(x.opened)}</td></tr>`}).join('')
-    :`<tr><td colspan="6" style="height:auto;border:0;cursor:default"><div class="empty"><b>${q||S.rd!=='all'?'No matches':empty[0]}</b>${q||S.rd!=='all'?'Try another filter or search.':empty[1]}</div></td></tr>`;
+  tb.innerHTML=view.length?view.map(x=>`<tr ${isR?`data-rf="${x.id}"`:`data-dp="${x.id}"`}>${dtCells(K,x)}</tr>`).join('')
+    :`<tr><td colspan="${dtN(K)}" style="height:auto;border:0;cursor:default"><div class="empty"><b>${any?'No matches':empty[0]}</b>${any?'Try another filter or search.':empty[1]}</div></td></tr>`;
   document.getElementById('count').innerHTML=L.length?`Viewing <b>${S.page*PER+1}–${Math.min(L.length,S.page*PER+PER)}</b> of <b>${L.length}</b> results`:'Viewing <b>0</b> results';
   const pv=document.getElementById('prev'),nx=document.getElementById('next');pv.disabled=S.page===0;nx.disabled=S.page>=pages-1;pv.style.opacity=S.page===0?.5:1;nx.style.opacity=S.page>=pages-1?.5:1;
   tb.querySelectorAll('tr[data-rf]').forEach(tr=>tr.onclick=()=>refundDetail(tr.dataset.rf));
@@ -2250,24 +2403,32 @@ function cols(){
   if(S.tab==='cod')return[['amount','Amount',1],['status','',0],['fee','COD fee (3%)',0],['net','Added to balance',0],['created','Delivered',1]];
   return[['amount','Amount',1],['status','',0],['method','Payment method',0],['created','Date',1],['refunded','Refunded date',1]];
 }
+/* the kit's columns and filters for the Payments, COD and Auto settlement tabs */
+function txCols(){const T={amount:['Amount',r=>r.amount,r=>`<td class="amt num">${rp(r.amount)}</td>`,{fixed:1}],status:['Status',r=>r.status,r=>`<td class="c-st">${stPill(r.status)}</td>`]},D=l=>[l,r=>+r.created,r=>`<td class="date">${fdate(r.created)}</td>`];
+  if(S.tab==='settle')return{...T,ref:['Cash advance',r=>r.ref,r=>`<td><span class="pmd">${r.ref}</span> <span class="src">· Auto settlement</span></td>`],created:D('Date')};
+  if(S.tab==='cod')return{...T,fee:['COD fee (3%)',r=>r.amount,r=>`<td class="num">−${rp(Math.round(r.amount*.03))}</td>`],net:['Added to balance',r=>r.amount,r=>`<td class="num" style="font-weight:500">${rp(r.amount-Math.round(r.amount*.03))}</td>`],created:D('Delivered')};
+  return{...T,method:['Payment method',r=>r.method,r=>`<td><div class="pm">${pmBadge(r.mk)}<span class="pmd">${r.method}</span></div></td>`],created:D('Date'),refunded:['Refunded date',r=>r.refunded?+r.refunded:0,r=>`<td class="rdate${r.refunded?'':' none'}">${r.refunded?fdate(r.refunded):'—'}</td>`]}}
+function txFilters(){const D={k:'date',l:'Date',type:'date',get:()=>S,set:o=>{S.days=o.days||0;S.from=o.from;S.to=o.to;S.page=0}};
+  const many=(k,l,opts,set)=>({k,l,type:'many',opts,get:()=>[...set],set:v=>{set.clear();v.forEach(x=>set.add(x));S.page=0}});
+  if(S.tab==='settle')return[D];
+  if(S.tab==='refunds')return[D,{k:'rst',l:'Status',type:'many',opts:[['open','Open'],['paid','Paid'],['cancelled','Cancelled']],get:()=>S.rst,set:v=>{S.rst=v;S.page=0}}];
+  if(S.tab==='disputes')return[D,{k:'dst',l:'Status',type:'many',opts:[['need','Needs response'],['progress','In progress'],['closed','Closed']],get:()=>S.dst,set:v=>{S.dst=v;S.page=0}}];
+  return[D,many('status','Status',STATUS_OPTS.map(s=>[s,ST[s][0]]),S.status),many('method','Payment method',METHOD_OPTS.map(m=>[m,m]),S.method),many('source','Source',SOURCE_OPTS.map(m=>[m,m]),S.source)]}
 function render(){
   renderTabs();
+  fbUse('tx',txFilters(),render);document.getElementById('tx-fb').innerHTML=fbBtns('tx','tx-'+S.tab);
   if(S.tab==='refunds'||S.tab==='disputes'){renderRD();return}
-  document.getElementById('rd-seg')?.remove();
-  const all=rows(),pages=Math.max(1,Math.ceil(all.length/PER));S.page=Math.min(S.page,pages-1);
+  const K='tx-'+S.tab;dtUse(K,txCols(),{k:'created',dir:-1},render);
+  const all=dtSort(K,rows()),pages=Math.max(1,Math.ceil(all.length/PER));S.page=Math.min(S.page,pages-1);
   const view=all.slice(S.page*PER,S.page*PER+PER);
-  const C=cols();
   const allSel=view.length&&view.every(r=>S.sel.has(r.id)),someSel=view.some(r=>S.sel.has(r.id));
   document.getElementById('thead').innerHTML=`<tr><th class="c-chk"><button class="cb ${allSel?'on':someSel?'mixed':''}" id="selall" aria-label="Select all">${allSel?ic('check',12,3):''}</button></th>`+
-    C.map(c=>{if(c[0]==='status')return'<th></th>';const sorted=S.sort.k===c[0];return`<th class="${c[2]?'sort':''}${sorted?' sorted':''}" ${c[2]?`data-s="${c[0]}"`:''} >${c[1]}${c[2]?`<span class="si">${ic(sorted?(S.sort.dir>0?'up':'down'):'sort',13,2)}</span>`:''}</th>`}).join('')+'<th style="width:40px"></th></tr>';
+    dtHead(K)+'<th style="width:40px"></th></tr>';document.getElementById('thead').closest('table').dataset.dtt=K;
   const tb=document.getElementById('tbody');
-  if(!view.length){tb.innerHTML=`<tr><td colspan="9" style="height:auto;border:0;cursor:default"><div class="empty"><b>No results</b>Try changing the filters or search.</div></td></tr>`}
+  if(!view.length){tb.innerHTML=`<tr><td colspan="${dtN(K)+2}" style="height:auto;border:0;cursor:default"><div class="empty"><b>No results</b>Try changing the filters or search.</div></td></tr>`}
   else tb.innerHTML=view.map(r=>{
     const on=S.sel.has(r.id);
-    let cells=`<td class="amt num">${rp(r.amount)}</td><td class="c-st">${stPill(r.status)}</td>`;
-    if(S.tab==='settle')cells+=`<td><span class="pmd">${r.ref}</span> <span class="src">· Auto settlement</span></td><td class="date">${fdate(r.created)}</td>`;
-    else if(S.tab==='cod'){const fee=Math.round(r.amount*.03);cells+=`<td class="num">−${rp(fee)}</td><td class="num" style="font-weight:500">${rp(r.amount-fee)}</td><td class="date">${fdate(r.created)}</td>`}
-    else cells+=`<td><div class="pm">${pmBadge(r.mk)}<span class="pmd">${r.method}</span></div></td><td class="date">${fdate(r.created)}</td><td class="rdate${r.refunded?'':' none'}">${r.refunded?fdate(r.refunded):'—'}</td>`;
+    const cells=dtCells(K,r);
     return`<tr data-id="${r.id}" class="${on?'sel':''}"><td class="c-chk"><button class="cb ${on?'on':''}" data-chk="${r.id}" aria-label="Select row">${on?ic('check',12,3):''}</button></td>${cells}<td><button class="dots-b" data-menu="${r.id}" aria-label="More">${ic('dots',16)}</button></td></tr>`;
   }).join('');
   document.getElementById('count').innerHTML=all.length?`Viewing <b>${S.page*PER+1}–${Math.min(all.length,S.page*PER+PER)}</b> of <b>${all.length}</b> results`:'Viewing <b>0</b> results';
@@ -2275,10 +2436,8 @@ function render(){
   document.getElementById('prev').style.opacity=S.page===0?.5:1;document.getElementById('next').style.opacity=S.page>=pages-1?.5:1;
   const bulk=document.getElementById('bulk');bulk.classList.toggle('show',S.sel.size>0);document.getElementById('bulk-n').textContent=`${S.sel.size} selected`;
   document.getElementById('bulk-refund').style.display=S.tab==='payments'?'':'none';
-  renderChips();
   // wire
   document.getElementById('selall').onclick=e=>{e.stopPropagation();if(allSel)view.forEach(r=>S.sel.delete(r.id));else view.forEach(r=>S.sel.add(r.id));render()};
-  document.querySelectorAll('th[data-s]').forEach(th=>th.onclick=()=>{const k=th.dataset.s;S.sort=S.sort.k===k?{k,dir:-S.sort.dir}:{k,dir:k==='amount'?-1:-1};render()});
   tb.querySelectorAll('[data-chk]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=b.dataset.chk;S.sel.has(id)?S.sel.delete(id):S.sel.add(id);render()});
   tb.querySelectorAll('[data-menu]').forEach(b=>b.onclick=e=>{e.stopPropagation();rowMenu(b,b.dataset.menu)});
   tb.querySelectorAll('tr[data-id]').forEach(tr=>tr.onclick=()=>openDetail(tr.dataset.id));
@@ -2288,56 +2447,19 @@ document.getElementById('next').onclick=()=>{S.page++;render()};
 document.getElementById('bulk-clear').onclick=()=>{S.sel.clear();render()};
 
 /* ===== Filters ===== */
-const DATE_OPTS=[['today','Today'],['7d','Last 7 days'],['30d','Last 30 days'],['90d','Last 90 days']];
 const STATUS_OPTS=['succeeded','pending','refunded','canceled','failed'];
 const METHOD_OPTS=['QRIS','E-wallet','Virtual account','Card','COD'];
 const SOURCE_OPTS=['FLIK Checkout','Payment link','Invoice'];
-function renderChips(){
-  document.querySelectorAll('#filters .chip').forEach(ch=>{
-    const f=ch.dataset.f,base={date:'Date and time',status:'Status',method:'Payment method',source:'Source'}[f];
-    let val='';
-    if(f==='date'&&S.date)val=DATE_OPTS.find(o=>o[0]===S.date)[1];
-    if(f==='status'&&S.status.size)val=[...S.status].map(s=>ST[s][0]).join(', ');
-    if(f==='method'&&S.method.size)val=[...S.method].join(', ');
-    if(f==='source'&&S.source.size)val=[...S.source].join(', ');
-    const disabled=S.tab==='settle'&&f!=='date';
-    ch.style.display=disabled?'none':'';
-    ch.classList.toggle('set',!!val);
-    ch.innerHTML=val?`<span class="clr" data-clr="${f}">${ic('x',14,2)}</span>${base} <span class="val">${val.length>28?val.slice(0,26)+'…':val}</span>`:`${ic('pluscirc',15)}${base}`;
-  });
-}
 const pop=document.getElementById('pop');let popFor=null;
 function closePop(){pop.classList.remove('open','in-d');popFor=null}
 function placePop(anchor,alignRight){const r=anchor.getBoundingClientRect();pop.style.top=(r.bottom+6+scrollY)+'px';pop.classList.add('open');const w=pop.offsetWidth;let left=alignRight?r.right-w:r.left;left=Math.max(8,Math.min(left,innerWidth-w-8));pop.style.left=left+'px'}
-function openFilter(ch){
-  const f=ch.dataset.f;if(popFor===ch){closePop();return}
-  popFor=ch;
-  if(f==='date'){
-    pop.innerHTML=`<h6>Filter by date</h6>${DATE_OPTS.map(o=>`<button class="opt" data-v="${o[0]}"><span class="rdo${S.date===o[0]?' on':''}"></span>${o[1]}</button>`).join('')}<div class="pop-f"><button class="btn btn-o" data-clear>Clear</button></div>`;
-    pop.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{S.date=b.dataset.v;S.page=0;closePop();render()});
-  }else{
-    const opts={status:STATUS_OPTS,method:METHOD_OPTS,source:SOURCE_OPTS}[f],set={status:S.status,method:S.method,source:S.source}[f],temp=new Set(set);
-    const lab=v=>f==='status'?ST[v][0]:v;
-    const draw=()=>{pop.innerHTML=`<h6>Filter by ${{status:'status',method:'payment method',source:'source'}[f]}</h6>${opts.map(o=>`<button class="opt" data-v="${o}"><span class="cb${temp.has(o)?' on':''}">${temp.has(o)?ic('check',12,3):''}</span>${lab(o)}</button>`).join('')}<div class="pop-f"><button class="btn btn-o" data-clear>Clear</button><button class="btn btn-p" data-apply>Apply</button></div>`;
-      pop.querySelectorAll('[data-v]').forEach(b=>b.onclick=e=>{e.stopPropagation();temp.has(b.dataset.v)?temp.delete(b.dataset.v):temp.add(b.dataset.v);draw()});
-      pop.querySelector('[data-apply]').onclick=()=>{set.clear();temp.forEach(v=>set.add(v));S.page=0;closePop();render()};
-      pop.querySelector('[data-clear]').onclick=()=>{set.clear();S.page=0;closePop();render()};
-    };draw();
-  }
-  const clr=pop.querySelector('[data-clear]');if(f==='date')clr.onclick=()=>{S.date=null;closePop();render()};
-  placePop(ch);
-}
-document.getElementById('filters').addEventListener('click',e=>{
-  const c=e.target.closest('[data-clr]');
-  if(c){e.stopPropagation();const f=c.dataset.clr;if(f==='date')S.date=null;else({status:S.status,method:S.method,source:S.source}[f]).clear();S.page=0;closePop();render();return}
-  const ch=e.target.closest('.chip');if(ch){e.stopPropagation();openFilter(ch)}
-});
 document.addEventListener('click',e=>{if(!e.target.closest('#pop'))closePop()});
 addEventListener('resize',closePop);
 
 /* Search */
 const qEl=document.getElementById('q');
 qEl.oninput=()=>{S.q=qEl.value.trim();S.page=0;render()};
+document.getElementById('tx-q').oninput=e=>{S.q=e.target.value.trim();S.page=0;render()};
 addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==qEl&&!document.querySelector('.mscrim.open')){e.preventDefault();qEl.focus()}if(e.key==='Escape'){closePop();closeDetail();closeModal();setSide(false)}});
 
 /* ===== Row menu ===== */
@@ -3977,7 +4099,7 @@ OWED_LINES.forEach((l,i)=>{l.i=1000+i;l.id='LE-2610-'+String(5100+i)});
 const VIP_LIMIT=2000000;
 const OWE_LIMIT=500000; /* dummy: how far a VIP merchant may owe before new shipments pause */
 const BSTATES=[['normal','Normal'],['early','Early settlement'],['frozen','Account frozen'],['new','New merchant, no sales'],['noreserve','Reserve not required'],['near','Shortfall near the VIP limit'],['paused','VIP bookings paused'],['owed','Fees not covered'],['invoice','Invoice client']];
-let BS='normal',btab='active',bq='',brange='month',bopen=null;
+let BS='normal',btab='active',bq='',bfd={days:0},bdir=[],bopen=null;
 const UPD='Updated 14 Oct 2026, 16:20 WIB';
 
 /* state: what the page shows for the chosen preview state */
@@ -4016,33 +4138,37 @@ function renderBal(){const v=bv();
   /* statement: one tab per wallet, each with its own running balance; incoming and charges due are lists */
   const tabs=[['active','Active balance'],...(v.policy?[['reserve','Reserve']]:[]),['pending','Pending'],['charges','Charges due']];
   if(!tabs.some(x=>x[0]===btab))btab='active';
-  const RANGES={month:['This month','1–14 Oct 2026',LD(1,0,0)],week:['Last 7 days','8–14 Oct 2026',LD(8,0,0)],today:['Today','14 Oct 2026',LD(14,0,0)]};
-  const r=RANGES[brange],rb=document.getElementById('bl-range');rb.className='chip set';rb.innerHTML=`${ic('sel',14)}Date <span class="val">${r[0]}</span>`;rb.hidden=btab==='pending';
+  fbUse('bal',btab==='pending'?[]:[{k:'date',l:'Date',type:'date',get:()=>bfd,set:o=>{bfd={days:o.days||0,from:o.from,to:o.to}}},...(btab==='charges'?[]:[{k:'dir',l:'Direction',type:'many',opts:[['in','Money in'],['out','Money out']],get:()=>bdir,set:v=>{bdir=v}}])],renderBal);
+  document.getElementById('bl-fb').innerHTML=fbBtns('bal','bal-'+btab);
   const q=bq.toLowerCase().replace(/[.\s]/g,''),hit=a=>!q||a.join(' ').toLowerCase().replace(/[.\s]/g,'').includes(q);
   const pend=(v.pending?[...PENDING.orders.map(o=>[o[3],'Order '+o[0],o[1],o[2]]),...PENDING.pay.map(o=>[o[3],o[0],o[1],o[2]])]:[]).filter(x=>hit([x[1],x[2],String(x[3])]));
-  const st=stmt(v),inRange=st.all.filter(l=>l.t>=r[2]&&hit([l.ref[1],l.d,String(Math.abs(l.a)),l.id]));
+  const st=stmt(v),inRange=st.all.filter(l=>fbIn(bfd,l.t)&&(!bdir.length||bdir.includes(l.a<0?'out':'in'))&&hit([l.ref[1],l.d,String(Math.abs(l.a)),l.id]));
   /* a search finds its lines in every balance: each tab shows how many it holds */
   const cnt=k=>q?(k==='pending'?pend.length:inRange.filter(l=>l.b===k).length):(k==='charges'?v.chargesN:0);
   document.getElementById('bl-tabs').innerHTML=tabs.map(x=>`<button class="tab${btab===x[0]?' on':''}" data-bt="${x[0]}">${x[1]}${cnt(x[0])?`<span class="ct">${cnt(x[0])}</span>`:''}</button>`).join('');
   const head=document.getElementById('bl-head'),body=document.getElementById('bl-body'),tbl=body.closest('table');
   tbl.classList.toggle('owed',btab==='charges');
   if(btab==='pending'){
-    head.innerHTML='<tr><th>Expected</th><th>Description</th><th>Status</th><th>Amount</th></tr>';
-    const items=pend;
-    body.innerHTML=items.length?items.map(x=>`<tr class="bl-in"><td class="date">${x[0]}</td><td class="bl-desc"><b>${x[1]}</b></td><td>${x[2]}</td><td class="num">${rp2(x[3])}</td></tr>`).join('')
-      :`<tr><td colspan="4" style="height:auto;border:0;cursor:default"><div class="empty"><b>${v.pending?'No matching items':'Nothing pending'}</b>${v.pending?'Try another order ID or amount.':'Orders you haven\'t completed and payments FLIK hasn\'t received yet show up here.'}</div></td></tr>`;
+    const K='bal-pending';dtUse(K,{exp:['Expected',x=>x[0],x=>`<td class="date">${x[0]}</td>`],desc:['Description',x=>x[1],x=>`<td class="bl-desc"><b>${x[1]}</b></td>`,{fixed:1}],st:['Status',x=>x[2],x=>`<td>${x[2]}</td>`],amt:['Amount',x=>x[3],x=>`<td class="num">${rp2(x[3])}</td>`]},null,renderBal);
+    tbl.dataset.dtt=K;head.innerHTML=`<tr>${dtHead(K)}</tr>`;
+    const items=dtSort(K,pend);
+    body.innerHTML=items.length?items.map(x=>`<tr class="bl-in">${dtCells(K,x)}</tr>`).join('')
+      :`<tr><td colspan="${dtN(K)}" style="height:auto;border:0;cursor:default"><div class="empty"><b>${v.pending?'No matching items':'Nothing pending'}</b>${v.pending?'Try another order ID or amount.':'Orders you haven\'t completed and payments FLIK hasn\'t received yet show up here.'}</div></td></tr>`;
     return}
-  head.innerHTML=btab==='charges'?'<tr><th>Date (WIB)</th><th>Description</th><th>Paid</th><th>Not covered</th><th>Owed</th></tr>':'<tr><th>Date (WIB)</th><th>Description</th><th>Debit</th><th>Credit</th><th>Balance</th></tr>';
-  const rows=inRange.filter(l=>l.b===btab).reverse();
+  const K='bal-'+btab,chg=btab==='charges';
   const pill=l=>[l.st?`<span class="st ${l.st[1]}">${l.st[0]}</span>`:'',v.early&&l.early?'<span class="st pu">Early settlement</span>':'',l.rev?'<span class="st gr">Correction</span>':''].filter(Boolean).join('');
+  dtUse(K,{date:['Date (WIB)',l=>+l.t,l=>`<td class="date">${fdate(l.t)}</td>`],desc:['Description',l=>l.d.toLowerCase(),l=>`<td class="bl-desc"><b>${l.d}</b>${(p=>p?`<span class="src">${p}</span>`:'')(pill(l))}</td>`,{fixed:1}],
+    dr:[chg?'Paid':'Debit',l=>l.a<0?-l.a:0,l=>`<td class="num dr">${l.a<0?rp2(-l.a):''}</td>`],cr:[chg?'Not covered':'Credit',l=>l.a>=0?l.a:0,l=>`<td class="num cr">${l.a>=0?rp2(l.a):''}</td>`],bal:[chg?'Owed':'Balance',l=>l.after,l=>`<td class="num">${rp2(l.after)}</td>`]},null,renderBal);
+  tbl.dataset.dtt=K;head.innerHTML=`<tr>${dtHead(K)}</tr>`;
+  const rows=dtSort(K,inRange.filter(l=>l.b===btab).reverse());
   const none=btab==='charges'?['No charges due','FLIK fees are paid from your active balance as they happen. A fee it can\'t cover shows up here until your reserve or the next money coming in pays it.']:v.lines.length?['No matching lines','Try another reference, amount or date range.']:['No movements yet','Your first sale or top-up shows up here.'];
   body.innerHTML=rows.length?rows.map(l=>{const open=bopen===l.i;
     let x='';if(open){
-      x=`<tr class="bl-x"><td colspan="5"><dl class="kv"><dt>Reference</dt><dd>${l.ref[0]} ${l.ref[1]}</dd><dt>Entry ID</dt><dd class="num">${l.id}</dd><dt>Business date</dt><dd>${fday(l.t)}</dd><dt>Balance</dt><dd>${BNAME[l.b]}</dd>${l.note?`<dt>Status</dt><dd>${l.note}</dd>`:''}${l.corr?`<dt>Reason</dt><dd>${l.corr}</dd>`:''}${v.early&&l.early?`<dt>Early settlement</dt><dd>Credited before FLIK received the settlement. <a href="#" data-toast="Opens the early settlement terms">See the terms</a></dd>`:''}</dl>
+      x=`<tr class="bl-x"><td colspan="${dtN(K)}"><dl class="kv"><dt>Reference</dt><dd>${l.ref[0]} ${l.ref[1]}</dd><dt>Entry ID</dt><dd class="num">${l.id}</dd><dt>Business date</dt><dd>${fday(l.t)}</dd><dt>Balance</dt><dd>${BNAME[l.b]}</dd>${l.note?`<dt>Status</dt><dd>${l.note}</dd>`:''}${l.corr?`<dt>Reason</dt><dd>${l.corr}</dd>`:''}${v.early&&l.early?`<dt>Early settlement</dt><dd>Credited before FLIK received the settlement. <a href="#" data-toast="Opens the early settlement terms">See the terms</a></dd>`:''}</dl>
       ${l.wf?`<div class="kpi-l" style="margin-top:14px">Where this money went</div><dl class="bl-wf">${l.wf.map(w=>`<dt>${v.invoice&&w[2]==='cd'?'Charges due · on your monthly invoice':w[0]}${w[2]?`<button class="lnk" data-toast="${{pg:'Opens the payment processing rate',flik:'Opens your FLIK agreement',fin:'Opens '+MCA_ID+' in Merchant Cash Advance',cd:'Opens the charge and its parcel',rsv:'Opens the reserve item and its release date'}[w[2]]}">Details</button>`:''}</dt><dd>${rp2(w[1])}</dd>`).join('')}<dt class="t">Added to active balance</dt><dd class="t">${rp2(l.a)}</dd></dl>`:''}
       <div class="bl-acts"><button class="btn btn-o" ${/^(Refund|Dispute) ID$/.test(l.ref[0])?`data-goto="#transactions/${l.ref[1]}"`:`data-toast="Opens ${l.ref[0].toLowerCase()} ${l.ref[1]}"`}>${ic('ext',15)}Open ${l.ref[0].replace(' ID','').toLowerCase()} ${l.ref[1]}</button>${l.fix==='bank'?'<button class="btn btn-o" data-toast="Opens bank account settings">Update bank details</button>':''}</div></td></tr>`}
-    return`<tr data-bl="${l.i}" class="${open?'open':''}"><td class="date">${fdate(l.t)}</td><td class="bl-desc"><b>${l.d}</b>${(p=>p?`<span class="src">${p}</span>`:'')(pill(l))}</td><td class="num dr">${l.a<0?rp2(-l.a):''}</td><td class="num cr">${l.a>=0?rp2(l.a):''}</td><td class="num">${rp2(l.after)}</td></tr>${x}`}).join('')
-    :`<tr><td colspan="5" style="height:auto;border:0;cursor:default"><div class="empty"><b>${none[0]}</b>${none[1]}</div></td></tr>`;
+    return`<tr data-bl="${l.i}" class="${open?'open':''}">${dtCells(K,l)}</tr>${x}`}).join('')
+    :`<tr><td colspan="${dtN(K)}" style="height:auto;border:0;cursor:default"><div class="empty"><b>${none[0]}</b>${none[1]}</div></td></tr>`;
 }
 /* detail panels (one per tile) */
 function balPanel(k){const v=bv();let h='';
@@ -4107,9 +4233,6 @@ document.getElementById('bl-info').addEventListener('click',e=>{const p=e.target
 document.getElementById('bl-tabs').addEventListener('click',e=>{const b=e.target.closest('[data-bt]');if(b){btab=b.dataset.bt;bopen=null;renderBal()}});
 document.getElementById('bl-body').addEventListener('click',e=>{if(e.target.closest('.bl-x'))return;const tr=e.target.closest('tr[data-bl]');if(tr){const i=+tr.dataset.bl;bopen=bopen===i?null:i;renderBal()}});
 document.getElementById('bl-q').oninput=e=>{bq=e.target.value.trim();renderBal()};
-document.getElementById('bl-range').onclick=e=>{e.stopPropagation();const b=e.currentTarget;if(popFor===b){closePop();return}popFor=b;
-  pop.innerHTML=`<h6>Date range</h6>${[['month','This month'],['week','Last 7 days'],['today','Today']].map(o=>`<button class="opt" data-v="${o[0]}"><span class="rdo${brange===o[0]?' on':''}"></span>${o[1]}</button>`).join('')}`;
-  pop.querySelectorAll('[data-v]').forEach(o=>o.onclick=()=>{brange=o.dataset.v;closePop();renderBal()});placePop(b)};
 document.getElementById('bl-state').onclick=e=>{e.stopPropagation();const b=e.currentTarget;if(popFor===b){closePop();return}popFor=b;
   pop.innerHTML=`<h6>Preview a state (prototype only)</h6>${BSTATES.map(o=>`<button class="opt" data-v="${o[0]}"><span class="rdo${BS===o[0]?' on':''}"></span>${o[1]}</button>`).join('')}`;
   pop.querySelectorAll('[data-v]').forEach(o=>o.onclick=()=>{BS=o.dataset.v;bopen=null;closePop();renderBal()});placePop(b,true)};
