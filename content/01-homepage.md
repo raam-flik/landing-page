@@ -26,7 +26,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.
 - **Button:** Get started
 - **Link:** Contact sales
-- **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.
+
+- [ ] **Terms note removed from the hero (Raam, 12 Nov 2026).** "By continuing you agree to the Terms and Privacy Policy" was added in the compliance pass. Get started opens merchant.flik.co.id/register, so the consent text must be on that sign-up form instead.
 
 *Mini film card (bottom right, desktop only; like sequencehq.com):*
 
@@ -38,7 +39,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 *Event chips in the particle field (one at a time, examples only):*
 
-- Payment received · QRIS / Order shipped · JNE / COD credited after delivery / Payout settled to balance / Payment received · GoPay / Label created · SPX Express / Payment received · BCA VA / Shopper checked out in 30s
+- Payments only (Raam, 12 Nov 2026): Rp289.000 received · QRIS / Payment received · GoPay / Card payment approved · Visa / Rp1.250.000 received · BCA VA / Payment received · ShopeePay / Checked out in 30 seconds / Payment received · DANA / Rp475.000 received · Mandiri VA
 
 ## 2. Solutions bento
 <!-- html: Solutions bento #solutions -->

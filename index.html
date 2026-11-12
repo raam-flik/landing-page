@@ -1014,7 +1014,6 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
       <a href="#" class="link hx-link" data-act="sales">Contact sales <span class="chev">›</span></a>
     </div>
-    <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
   </div>
   <!-- Mini film card (like sequencehq.com). The video files live in assets/video/ and are not in git; the card hides itself when they're missing. -->
   <aside class="hx-film" id="hx-film" aria-label="Introducing FLIK" hidden>
@@ -1856,7 +1855,7 @@ document.addEventListener('click',e=>{
       const far=Math.random()<.3;                       // a thin scatter across the whole hero
       const r=far?(.15+Math.random()*.95)*W*.62:Math.pow(Math.random(),1.6)*W*.5+4;
       const k=Math.random();const col=k<COLS[0][1]?COLS[0][0]:k<COLS[0][1]+COLS[1][1]?COLS[1][0]:COLS[2][0];
-      P.push({r,a:Math.random()*Math.PI*2,w:(far?.02:.09)*(60/(r+60))+.004,j:Math.random()*Math.PI*2,
+      P.push({r,a:Math.random()*Math.PI*2,w:(far?.045:.2)*(60/(r+60))+.01,j:Math.random()*Math.PI*2,
         s:Math.random()<.22?2:1.4,o:far?.25+Math.random()*.3:.45+Math.random()*.55,col});
     }
   }
@@ -1871,7 +1870,7 @@ document.addEventListener('click',e=>{
     seed();
   }
   function pos(p,t){
-    const a=p.a+p.w*t,wob=Math.sin(t*.6+p.j)*6;
+    const a=p.a+p.w*t,wob=Math.sin(t*1.1+p.j)*7;
     return [cx+Math.cos(a)*(p.r+wob),cy+Math.sin(a)*(p.r+wob)*.5];
   }
   function draw(t){
@@ -1883,7 +1882,7 @@ document.addEventListener('click',e=>{
     ctx.globalAlpha=1;
   }
   /* event chip: one at a time, placed on a dense part of the field */
-  const EV=['Payment received · QRIS','Order shipped · JNE','COD credited after delivery','Payout settled to balance','Payment received · GoPay','Label created · SPX Express','Payment received · BCA VA','Shopper checked out in 30s'];
+  const EV=['Rp289.000 received · QRIS','Payment received · GoPay','Card payment approved · Visa','Rp1.250.000 received · BCA VA','Payment received · ShopeePay','Checked out in 30 seconds','Payment received · DANA','Rp475.000 received · Mandiri VA'];  // payments only (Raam, 12 Nov 2026)
   let ei=0,evTimer=null;
   function nextEv(){
     if(!ev)return;ev.classList.remove('on');
@@ -1899,7 +1898,7 @@ document.addEventListener('click',e=>{
   }
   size();
   if(reduce){draw(0);if(ev){evT.textContent=EV[0];nextEv()}}
-  else{requestAnimationFrame(loop);nextEv();evTimer=setInterval(()=>{if(vis)nextEv()},3200)}
+  else{requestAnimationFrame(loop);nextEv();evTimer=setInterval(()=>{if(vis)nextEv()},2600)}
   let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();if(reduce)draw(0)},150)});
   new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(field);
 })();
