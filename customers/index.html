@@ -1225,6 +1225,59 @@ html{scroll-padding-top:88px}
 .cu-item .pills{display:flex;flex-wrap:wrap;gap:6px}
 .cu-item .link{font-size:14px}
 .cu-all{grid-template-columns:repeat(4,1fr);margin-top:32px}
+
+/* ===== Customers page v2 (closer to stripe.com/customers) ===== */
+.cx-hero{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;padding-top:40px;padding-bottom:104px}
+.cx-hero h1{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px}
+.cx-hero .lead{margin-top:20px;max-width:480px}
+.cx-hero .hero-cta{justify-content:flex-start;margin-top:28px;align-items:center;gap:20px}
+.cx-col3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.cx-col3>div{display:grid;gap:14px}.cx-col3>div:nth-child(2){margin-top:56px}.cx-col3>div:nth-child(3){margin-top:24px}
+/* story card: art, logo chip top left, headline bottom */
+.sc{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-radius:12px;padding:18px;min-height:210px;color:#fff;overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;isolation:isolate}
+.sc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.sc.sc-tall{min-height:290px}
+.sc .chip{align-self:flex-start;display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
+.sc .chip.dark{background:var(--ink)}
+.sc .chip .cu-logo{max-height:22px;max-width:96px}
+.sc .chip .cu-word{font-size:13px}
+.sc .chip.dark .cu-word{color:#fff}
+.sc h3{font-size:16px;font-weight:500;line-height:1.35;color:#fff;letter-spacing:-.1px;text-wrap:balance}
+.sc .rs{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,.9);margin-top:8px}
+.sc.sc-big{min-height:380px;padding:28px}.sc.sc-big h3{font-size:26px;font-weight:500;letter-spacing:-.4px;max-width:520px}
+.sc.sc-big .chip{height:40px;padding:0 12px}.sc.sc-big .chip .cu-logo{max-height:26px;max-width:120px}
+/* by product: eyebrow, tabs, featured */
+.cx-eye{font-size:14px;font-weight:500;color:var(--primary);margin-bottom:12px}
+.cx-tabsrow{display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap;margin-top:24px}
+.cx-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.cx-tabs button{height:30px;padding:0 12px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--ink)}
+.cx-tabs button:hover{background:var(--surface-alt,#F8FAFD)}
+.cx-tabs button[aria-selected="true"]{background:var(--primary);color:#fff}
+.cx-feat{display:grid;grid-template-columns:200px 1fr;gap:48px;margin-top:40px;align-items:start}
+.cx-meta{display:grid;gap:22px}
+.cx-meta>div{border-left:1px solid var(--primary);padding-left:12px}
+.cx-meta b{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.cx-meta ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13.5px;color:var(--body)}
+.cx-meta p{font-size:13.5px;color:var(--body)}
+.cx-logos{display:grid;grid-template-columns:repeat(5,1fr);margin-top:32px;margin-left:248px;border-top:1px solid var(--line)}
+.cx-logos button{position:relative;display:flex;align-items:center;justify-content:center;height:84px;padding:12px;opacity:.55;transition:opacity .15s}
+.cx-logos button:hover,.cx-logos button[aria-selected="true"]{opacity:1}
+.cx-logos button[aria-selected="true"]::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--primary)}
+.cx-logos .cu-logo{max-height:30px;max-width:110px}
+.cx-logos .cu-word{font-size:14px;white-space:normal;text-align:center}
+.cx-logos .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
+/* all stories: masonry */
+.cx-grid{columns:3;column-gap:16px;margin-top:40px}
+.cx-grid .sc{break-inside:avoid;margin-bottom:16px}
+@media (max-width:1080px){.cx-hero{grid-template-columns:1fr}.cx-feat{grid-template-columns:1fr}.cx-logos{margin-left:0}.cx-grid{columns:2}}
+@media (max-width:760px){
+  .cx-hero{padding-top:24px;padding-bottom:56px}.cx-hero h1{font-size:36px;letter-spacing:-1px}
+  .cx-hero .hero-cta{flex-direction:column;align-items:stretch}.cx-hero .hero-cta .btn{height:46px}
+  .cx-col3{grid-template-columns:1fr 1fr}.cx-col3 .sc{padding:14px}.cx-col3 .sc h3{font-size:13.5px}.cx-col3 .sc .chip{height:30px}.cx-col3>div:nth-child(3){display:none}.cx-col3>div:nth-child(2){margin-top:32px}
+  .sc{min-height:180px}.sc.sc-tall{min-height:230px}.sc.sc-big{min-height:300px;padding:20px}.sc.sc-big h3{font-size:20px}
+  .cx-logos{grid-template-columns:repeat(3,1fr)}.cx-logos button{height:72px}
+  .cx-grid{columns:1}
+}
 /* story page */
 .cs-top{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start;padding:40px 0 64px}
 .cs-top h1{font-size:46px;line-height:1.12;font-weight:400;letter-spacing:-1.3px}
@@ -1380,47 +1433,43 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <main id="top" tabindex="-1">
 
 <!-- ===== Sub-navigation ===== -->
-<div class="wrap cu-sub"><a href="#" data-page="/customers">Customers</a><nav aria-label="Customers"><a href="#top" aria-current="page">Overview</a><a href="#all">All customers</a></nav></div>
+<div class="wrap cu-sub"><a href="#" data-page="/customers">Customers</a><nav aria-label="Customers"><a href="#top" aria-current="page">Overview</a><a href="#all">All customer stories</a></nav></div>
 
-<!-- ===== Hero: text left, a collage of customer cards right ===== -->
+<!-- ===== Hero: text left, a collage of story cards right ===== -->
 <section class="guides">
-  <div class="wrap cu-hero">
+  <div class="wrap cx-hero">
     <div>
       <h1>The commerce platform behind Indonesia's growing brands.</h1>
       <p class="lead">From fashion labels to coffee shops, brands use FLIK to sell on their own website, take QRIS at the counter, ship with every major courier and fund their next step.</p>
-      <div class="hero-cta"><a href="#all" class="btn btn-primary">See all customers <span class="chev">›</span></a><button class="btn btn-secondary" data-act="sales">Contact sales <span class="chev">›</span></button></div>
+      <div class="hero-cta"><a href="#all" class="btn btn-primary">See all stories <span class="chev">›</span></a><a href="#" class="link" data-act="sales">Contact sales <span class="chev">›</span></a></div>
     </div>
-    <div class="cu-collage" id="cu-collage" aria-label="Featured customers"></div>
+    <div class="cx-col3" id="cx-collage" aria-label="Featured stories"></div>
   </div>
 </section>
 
-<!-- ===== Logo wall ===== -->
-<section class="pad alt guides" style="padding-top:72px;padding-bottom:72px">
+<!-- ===== Customers by product: tabs, featured story, logo row ===== -->
+<section class="pad alt guides" id="by-product">
   <div class="wrap">
-    <h2 class="sec-h" style="margin-bottom:32px">Brands that grow with FLIK.</h2>
-    <div class="cu-wall" id="cu-wall"></div>
+    <p class="cx-eye">Customers by product</p>
+    <h2 class="sec-h">Brands of every kind run on FLIK.</h2>
+    <div class="cx-tabsrow"><div class="cx-tabs" id="cx-ptabs" role="tablist" aria-label="Products"></div><a href="#all" class="link" style="font-size:14px">All customer stories <span class="chev">›</span></a></div>
+    <div class="cx-feat"><div class="cx-meta" id="cx-meta"></div><div id="cx-big"></div></div>
+    <div class="cx-logos" id="cx-logos" role="tablist" aria-label="Customers"></div>
   </div>
 </section>
 
-<!-- ===== Customers by product (tabs) ===== -->
-<section class="pad guides" id="by-product">
+<!-- ===== All customer stories (masonry) ===== -->
+<section class="pad guides" id="all">
   <div class="wrap">
-    <h2 class="sec-h">One platform, every way they sell. <span class="soft">See which brands use each FLIK product.</span></h2>
-    <div class="dsh-tabs cu-tabs" id="cu-tabs" role="tablist" aria-label="Products"></div>
-    <div class="cu-prod" role="tabpanel" id="cu-panel"><div class="cu-side" id="cu-side"></div><div class="cu-grid" id="cu-pgrid"></div></div>
-  </div>
-</section>
-
-<!-- ===== All customers ===== -->
-<section class="pad alt guides" id="all">
-  <div class="wrap">
-    <h2 class="sec-h">All customers.</h2>
-    <div class="cu-grid cu-all" id="cu-all"></div>
+    <p class="cx-eye">All customer stories</p>
+    <h2 class="sec-h">Sell, ship and grow with FLIK.</h2>
+    <div class="cx-tabsrow"><div class="cx-tabs" id="cx-ftabs" role="tablist" aria-label="Filter stories"></div></div>
+    <div class="cx-grid" id="cx-grid"></div>
   </div>
 </section>
 
 <!-- ===== Final CTA (centered) ===== -->
-<section class="pad guides">
+<section class="pad alt guides">
   <div class="wrap" style="text-align:center">
     <h2 class="sec-h" style="margin:0 auto">Grow with FLIK.</h2>
     <p class="lead" style="margin:16px auto 0;max-width:560px">Join the brands that sell, ship and grow with FLIK. Talk to the team about your business.</p>
@@ -1690,27 +1739,41 @@ const tile=(c,cls='')=>`<span class="cu-tile${c.dark?' dark':''} ${cls}">${mark(
 const storyUrl=c=>ROOT+'customers/story/?c='+c.slug;
 const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
 
-/* ===== Customers page: collage, logo wall, tabs by product, all customers ===== */
+/* ===== Customers page: story cards everywhere (logo chip, headline, Read story) ===== */
 (function(){
-  const byS=Object.fromEntries(CUSTOMERS.map(c=>[c.slug,c]));
-  const card=(c,i,tall)=>`<a class="cu-card ${ARTS[i%4]}${tall?' tall':''}" href="${storyUrl(c)}">${tile(c)}<span><small>${prodList(c)}</small><b>Read story <span class="chev">›</span></b></span></a>`;
-  const F=[['kopi-kalian','artch'],['emados','gerai-hawa'],['erigo','osim']];
-  let k=0;document.getElementById('cu-collage').innerHTML=F.map(col=>'<div>'+col.map((s,j)=>card(byS[s],k++,j===0)).join('')+'</div>').join('');
-  document.getElementById('cu-wall').innerHTML=CUSTOMERS.map(c=>`<a href="${storyUrl(c)}" class="${c.dark?'dark':''}" aria-label="${c.name}">${mark(c)}</a>`).join('');
-  const item=c=>`<a class="cu-item" href="${storyUrl(c)}">${tile(c)}<h3>${c.name}</h3>${c.cat?`<span class="meta">${c.cat}</span>`:''}<span class="pills">${c.prods.map(p=>`<span class="pill pu">${PRODUCTS[p].name}</span>`).join('')}</span><span class="link">Read story <span class="chev">›</span></span></a>`;
-  document.getElementById('cu-all').innerHTML=CUSTOMERS.map(item).join('');
-  const tabs=document.getElementById('cu-tabs'),keys=Object.keys(PRODUCTS);
-  tabs.innerHTML=keys.map((p,i)=>`<button type="button" role="tab" id="cu-t-${p}" aria-controls="cu-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-p="${p}">${PRODUCTS[p].name}</button>`).join('');
-  function show(p,focus){
-    tabs.querySelectorAll('button').forEach(b=>{const on=b.dataset.p===p;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;b.classList.toggle('on',on);if(on&&focus)b.focus()});
-    const P=PRODUCTS[p],list=CUSTOMERS.filter(c=>c.prods.includes(p));
-    document.getElementById('cu-panel').setAttribute('aria-labelledby','cu-t-'+p);
-    document.getElementById('cu-side').innerHTML=`<h3><span class="ic">${ic(P.ic,18)}</span>${P.long}</h3><p>${P.blurb}</p><p class="txt" style="color:var(--muted)">${list.length} brands in this list</p><a href="#" class="link" data-page="${P.url}">Explore ${P.long} <span class="chev">›</span></a>`;
-    document.getElementById('cu-pgrid').innerHTML=list.map(item).join('');
+  const byS=Object.fromEntries(CUSTOMERS.map(c=>[c.slug,c])),idx=Object.fromEntries(CUSTOMERS.map((c,i)=>[c.slug,i]));
+  const chip=c=>`<span class="chip${c.dark?' dark':''}">${mark(c)}</span>`;
+  const sc=(c,cls='')=>`<a class="sc ${ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}">${chip(c)}<span><h3>${storyHead(c)}</h3><span class="rs">Read story <span class="chev">›</span></span></span></a>`;
+  // hero collage: three staggered columns
+  const COL=[['kopi-kalian','artch'],['emados','gerai-hawa'],['erigo','osim']];
+  document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],(ci+j)%2?'':'sc-tall')).join('')+'</div>').join('');
+  // by product: tabs → featured story + logo row
+  const keys=Object.keys(PRODUCTS),pt=document.getElementById('cx-ptabs'),logos=document.getElementById('cx-logos');
+  pt.innerHTML=keys.map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-p="${p}">${PRODUCTS[p].name}</button>`).join('');
+  function feature(c,p){
+    document.getElementById('cx-big').innerHTML=sc(c,'sc-big');
+    const meta=[`<div><b>Products used</b><ul>${c.prods.map(x=>`<li>${PRODUCTS[x].long}</li>`).join('')}</ul></div>`];
+    if(c.cat)meta.push(`<div><b>Category</b><p>${c.cat}</p></div>`);
+    meta.push(`<div><b>${PRODUCTS[p].long}</b><p>${PRODUCTS[p].blurb}</p></div>`);
+    document.getElementById('cx-meta').innerHTML=meta.join('');
+    logos.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.s===c.slug)));
   }
-  tabs.addEventListener('click',e=>{const b=e.target.closest('button[data-p]');if(b)show(b.dataset.p)});
-  tabs.addEventListener('keydown',e=>{const d={ArrowRight:1,ArrowLeft:-1}[e.key];if(!d)return;e.preventDefault();const cur=keys.indexOf(tabs.querySelector('[aria-selected="true"]').dataset.p);show(keys[(cur+d+keys.length)%keys.length],true)});
-  show('checkout');
+  function product(p){
+    pt.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.p===p)));
+    const list=CUSTOMERS.filter(c=>c.prods.includes(p));
+    logos.innerHTML=list.map(c=>`<button type="button" role="tab" data-s="${c.slug}" aria-label="${c.name}">${c.dark?`<span class="darkchip">${mark(c)}</span>`:mark(c)}</button>`).join('');
+    logos.dataset.p=p;feature(list[0],p);
+  }
+  pt.addEventListener('click',e=>{const b=e.target.closest('button[data-p]');if(b)product(b.dataset.p)});
+  logos.addEventListener('click',e=>{const b=e.target.closest('button[data-s]');if(b)feature(byS[b.dataset.s],logos.dataset.p)});
+  product('checkout');
+  // all stories: filter tabs + masonry
+  const ft=document.getElementById('cx-ftabs'),grid=document.getElementById('cx-grid');
+  ft.innerHTML=['all',...keys].map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-f="${p}">${p==='all'?'All':PRODUCTS[p].name}</button>`).join('');
+  function filter(f){ft.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.f===f)));
+    grid.innerHTML=CUSTOMERS.filter(c=>f==='all'||c.prods.includes(f)).map((c,i)=>sc(c,i%3===0?'sc-tall':'')).join('')}
+  ft.addEventListener('click',e=>{const b=e.target.closest('button[data-f]');if(b)filter(b.dataset.f)});
+  filter('all');
 })();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
