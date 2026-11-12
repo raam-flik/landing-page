@@ -1281,16 +1281,16 @@ html{scroll-padding-top:88px}
 .cx-logos .cu-word{font-size:14px;white-space:normal;text-align:center}
 .cx-logos .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
 /* all stories: masonry */
-.cx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}  /* portrait 3:4 cards, like stripe.com/customers */
-.cx-grid .sc{aspect-ratio:3/4;min-height:0;height:auto}
-@media (max-width:1080px){.cx-hero{grid-template-columns:1fr}.cx-feat{grid-template-columns:1fr}.cx-logos{margin-left:0}.cx-grid{grid-template-columns:repeat(2,1fr)}}
+.cx-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:280px;gap:16px;margin-top:40px}  /* like stripe.com/customers: two columns, one tall card beside two short ones, sides alternating */
+.cx-grid .sc{min-height:0;height:auto;padding:28px}.cx-grid .sc h3{font-size:22px;font-weight:500;letter-spacing:-.3px;line-height:1.3;max-width:440px}.cx-grid .sc .chip{height:38px}
+@media (max-width:1080px){.cx-hero{grid-template-columns:1fr}.cx-feat{grid-template-columns:1fr}.cx-logos{margin-left:0}.cx-grid{grid-auto-rows:240px}.cx-grid .sc h3{font-size:18px}}
 @media (max-width:760px){
   .cx-hero{padding-top:24px;padding-bottom:56px}.cx-hero h1{font-size:36px;letter-spacing:-1px}
   .cx-hero .hero-cta{flex-direction:column;align-items:stretch}.cx-hero .hero-cta .btn{height:46px}
   .cx-col3{grid-template-columns:1fr 1fr;justify-self:stretch}.cx-col3 .sc{padding:14px}.cx-col3>div:nth-child(2){margin-top:32px}.sc.sc-hero{height:210px}
   .sc{min-height:180px}.sc.sc-tall{min-height:230px}.sc.sc-big{min-height:300px;padding:20px}.sc.sc-big h3{font-size:20px}
   .cx-logos{grid-template-columns:repeat(3,1fr)}.cx-logos button{height:72px}
-  .cx-grid{grid-template-columns:1fr}
+  .cx-grid{grid-template-columns:1fr;grid-auto-rows:auto}.cx-grid .sc{grid-column:auto!important;grid-row:auto!important;min-height:240px;padding:20px}.cx-grid .sc h3{font-size:18px}
 }
 
 /* ===== Customers v3: results, logo wall, building together, by solution, get started ===== */
@@ -1933,7 +1933,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
 (function(){
   const byS=Object.fromEntries(CUSTOMERS.map(c=>[c.slug,c])),idx=Object.fromEntries(CUSTOMERS.map((c,i)=>[c.slug,i]));
   const chip=c=>`<span class="chip${c.dark?' dark':''}">${mark(c)}</span>`;
-  const sc=(c,cls='')=>`<a class="sc ${c.photos?'sc-ph t-'+(c.tint||'violet'):ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}"${c.photos?` style="background-image:url('${ROOT}assets/customers/${c.photos[0]}')"`:''}>${chip(c)}<span>${cls.includes('sc-nohead')?'':`<h3>${storyHead(c)}</h3>`}<span class="rs">Read story <span class="chev">›</span></span></span></a>`;
+  const sc=(c,cls='',st='')=>`<a class="sc ${c.photos?'sc-ph t-'+(c.tint||'violet'):ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}" style="${st}${c.photos?`background-image:url('${ROOT}assets/customers/${c.photos[0]}')`:''}">${chip(c)}<span>${cls.includes('sc-nohead')?'':`<h3>${storyHead(c)}</h3>`}<span class="rs">Read story <span class="chev">›</span></span></span></a>`;
   // hero collage: three staggered columns
   const COL=[['sigit-store','artch'],['wakaigo','paper']];  // photo cards only, all the same size (like stripe.com/customers)
   document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],'sc-hero sc-nohead')).join('')+'</div>').join('');
@@ -1961,7 +1961,11 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   const ft=document.getElementById('cx-ftabs'),grid=document.getElementById('cx-grid');
   ft.innerHTML=['all',...keys].map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?'on':''}" data-f="${p}">${p==='all'?'All':PRODUCTS[p].name}</button>`).join('');
   function filter(f){ft.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.f===f));b.classList.toggle('on',b.dataset.f===f)});
-    grid.innerHTML=CUSTOMERS.filter(c=>f==='all'||c.prods.includes(f)).map(c=>sc(c)).join('')}
+    const list=CUSTOMERS.filter(c=>f==='all'||c.prods.includes(f)),full=Math.floor(list.length/3)*3,left=list.length-full;
+    grid.innerHTML=list.map((c,i)=>{const g=Math.floor(i/3),k=i%3,r=g*2+1,tall=g%2?2:1,side=tall===1?2:1;
+      // last group: one card runs full width, two cards sit side by side
+      const pos=i>=full?(left===1?`grid-column:1 / span 2;grid-row:${r}`:`grid-column:${k+1};grid-row:${r}`):k===0?`grid-column:${tall};grid-row:${r} / span 2`:`grid-column:${side};grid-row:${r+k-1}`;
+      return sc(c,'',pos+';')}).join('')}
   ft.addEventListener('click',e=>{const b=e.target.closest('button[data-f]');if(b)filter(b.dataset.f)});
   filter('all');
   // logo wall
