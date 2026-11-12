@@ -879,6 +879,28 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 .cta-note a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px}
 /* ===== /kit: a11y ===== */
 
+/* ===== Hero (like sequencehq.com): centred, particle field behind, event chip ===== */
+.hx{text-align:center}
+.hx .hx-in{display:flex;flex-direction:column;align-items:center}
+.hx-eyebrow{font-size:12.5px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.hx h1{max-width:860px;margin:0 auto;font-size:64px;font-weight:400;letter-spacing:-1.8px;line-height:1.08}
+.hx .lead{max-width:560px;margin:22px auto 0}
+.hx .hero-cta{justify-content:center;align-items:center;gap:24px}
+.hx-link{height:40px}
+.hx .cta-note{text-align:center}
+.hx-field{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;z-index:0}
+.hx-field canvas{position:absolute;inset:0;width:100%;height:100%}
+.hx-ev{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 0 8px;border-radius:999px;background:var(--surface,#fff);box-shadow:0 0 0 1px var(--line),0 4px 12px -4px rgba(0,45,93,.18);font-size:11.5px;font-weight:500;color:var(--ink);white-space:nowrap;opacity:0;transform:translate(-50%,-50%) scale(.96);transition:opacity .45s,transform .45s}
+.hx-ev i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.hx-ev.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.hx .logos-band{margin-top:220px}
+@media (max-width:760px){
+  .hx h1{font-size:40px;letter-spacing:-1px}
+  .hx .hero-cta{flex-direction:column;align-items:stretch;gap:8px;width:100%}
+  .hx .hx-link{justify-content:center;height:46px}
+  .hx .logos-band{margin-top:210px}
+}
+
 /* ===== kit: footer-legal ===== */
 .flegal{margin-top:20px;display:grid;gap:6px;font-size:13px;line-height:1.6;color:var(--muted)}
 .flegal b{font-weight:500;color:var(--ink)}
@@ -955,32 +977,25 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 <main id="top" tabindex="-1">
 
-<!-- ===== Hero (Stripe homepage style: left-aligned, ribbon top right) ===== -->
-<section class="s-hero guides">
-  <svg class="ribbon" id="ribbon" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/>
-      </linearGradient>
-      <filter id="rblur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter>
-    </defs>
-    <path id="rfill" fill="url(#rg)" opacity=".7" filter="url(#rblur)"/>
-    <g id="rlines" fill="none" stroke="url(#rg)" stroke-width="3"></g>
-  </svg>
-  <div class="wrap hero-in">
+<!-- ===== Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) ===== -->
+<section class="s-hero hx">
+  <div class="hx-field" aria-hidden="true">
+    <canvas id="hx-canvas"></canvas>
+    <span class="hx-ev" id="hx-ev"><i></i><span id="hx-ev-t">Payment received · QRIS</span></span>
+  </div>
+  <div class="wrap hero-in hx-in">
+    <p class="hx-eyebrow">Checkout, shipping and funding for growing brands</p>
     <h1>Merchant Growth Platform <br>for Growing Brands</h1>
     <p class="lead">Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.</p>
     <div class="hero-cta">
       <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
-      <button class="btn btn-secondary" data-act="sales">Contact sales <span class="chev">›</span></button>
+      <a href="#" class="link hx-link" data-act="sales">Contact sales <span class="chev">›</span></a>
     </div>
     <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
   </div>
   <div class="logos-band">
     <div class="logos-clip"><div class="logos-track" id="logos"></div></div>
   </div>
-  <!-- ===== kit: a11y (motion toggle: one per page, pauses marquee, auto-play demos and decorative motion) ===== -->
-  <!-- ===== /kit: a11y ===== -->
 </section>
 
 <!-- ===== Solutions bento ===== -->
@@ -1789,131 +1804,68 @@ document.addEventListener('click',e=>{
   else if(a.dataset.toast){e.preventDefault();toast(a.dataset.toast)}
   else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.classList.toggle('on',b===a))));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}
 });
-/* ===== Ribbon (thin gradient lines forming a twisting sheet, top right) ===== */
+/* ===== Hero particle field (like sequencehq.com): dots orbit a point below the text; FLIK events surface among them ===== */
 (function(){
-  const g=document.getElementById('rlines'),fill=document.getElementById('rfill');
-  const N=64,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
-  const pt=(s,t)=>{const w1=70*Math.sin(t*.45+s*2.2),w2=60*Math.cos(t*.37+s*1.7),w3=40*Math.sin(t*.29+s*3);
-    return [[360+s*600,-40],[400+(1-s)*440+w1,250+s*90],[1000-s*400+w2,420+(1-s)*140],[CX-s*70,CY]]};
-  // End point: bottom-right corner of the visible logo strip (where it meets the right guide line)
-  const svgEl=document.getElementById('ribbon'),clipEl=document.querySelector('.logos-clip');let CX=1080,CY=780;
-  function setCorner(){const r=clipEl.getBoundingClientRect(),m=svgEl.getScreenCTM();if(!m)return;const q=svgEl.createSVGPoint();q.x=r.right;q.y=r.bottom;const v=q.matrixTransform(m.inverse());CX=v.x;CY=v.y}
-  setCorner();addEventListener('resize',setCorner);document.fonts&&document.fonts.ready.then(setCorner);
-  const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
-  let vis=true;
-  function draw(t){
-    if(vis&&!motionPaused()){t/=1000;
-      paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
-      const a=pt(0,t),b=pt(1,t);
-      fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`);
+  const cv=document.getElementById('hx-canvas');if(!cv)return;
+  const ctx=cv.getContext('2d'),field=cv.parentElement,ev=document.getElementById('hx-ev'),evT=document.getElementById('hx-ev-t');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const COLS=[[css('--primary')||'#6A4BFF',.86],['#00E5FF',.07],['#FF2DB8',.07]]; // violet, with a little of the brand ribbon
+  let W=0,H=0,dpr=1,P=[],cx=0,cy=0,vis=true,t0=performance.now(),TX={l:0,r:0,t:0,b:0};
+  function seed(){
+    const n=Math.round(Math.min(5200,Math.max(1400,W*H/240)));
+    P=[];for(let i=0;i<n;i++){
+      const far=Math.random()<.3;                       // a thin scatter across the whole hero
+      const r=far?(.15+Math.random()*.95)*W*.62:Math.pow(Math.random(),1.6)*W*.5+4;
+      const k=Math.random();const col=k<COLS[0][1]?COLS[0][0]:k<COLS[0][1]+COLS[1][1]?COLS[1][0]:COLS[2][0];
+      P.push({r,a:Math.random()*Math.PI*2,w:(far?.02:.09)*(60/(r+60))+.004,j:Math.random()*Math.PI*2,
+        s:Math.random()<.22?2:1.4,o:far?.25+Math.random()*.3:.45+Math.random()*.55,col});
     }
-    if(!reduce)requestAnimationFrame(draw);
   }
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(document.getElementById('ribbon'));
-  draw(0);if(!reduce)requestAnimationFrame(draw);
+  function size(){
+    const b=field.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);
+    W=b.width;H=b.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    const band=document.querySelector('.hx .logos-band'),top=field.getBoundingClientRect().top;
+    const tb=document.querySelector('.hx-in').getBoundingClientRect(),fl=field.getBoundingClientRect().left;
+    const kids=[...document.querySelectorAll('.hx-in>*')].map(e=>e.getBoundingClientRect());
+    TX={l:Math.min(...kids.map(r=>r.left))-fl-40,r:Math.max(...kids.map(r=>r.right))-fl+40,t:tb.top-top-30,b:tb.bottom-top+36};
+    cx=W/2;cy=(band?band.getBoundingClientRect().top-top:H)*.8;  // just above the logo strip
+    seed();
+  }
+  function pos(p,t){
+    const a=p.a+p.w*t,wob=Math.sin(t*.6+p.j)*6;
+    return [cx+Math.cos(a)*(p.r+wob),cy+Math.sin(a)*(p.r+wob)*.5];
+  }
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    for(const p of P){const [x,y]=pos(p,t);if(x<-4||x>W+4||y<-4||y>H+4)continue;
+      let fade=Math.min(1,Math.max(.12,(y-H*.12)/(H*.4)));
+      const dx=Math.max(TX.l-x,0,x-TX.r),dy=Math.max(TX.t-y,0,y-TX.b);fade*=Math.min(1,.06+Math.hypot(dx,dy)/90);  // soft quiet zone behind the text            // keep the top (behind the headline) light
+      ctx.globalAlpha=p.o*fade;ctx.fillStyle=p.col;ctx.fillRect(x,y,p.s,p.s)}
+    ctx.globalAlpha=1;
+  }
+  /* event chip: one at a time, placed on a dense part of the field */
+  const EV=['Payment received · QRIS','Order shipped · JNE','COD credited after delivery','Payout settled to balance','Payment received · GoPay','Label created · SPX Express','Payment received · BCA VA','Shopper checked out in 30s'];
+  let ei=0,evTimer=null;
+  function nextEv(){
+    if(!ev)return;ev.classList.remove('on');
+    setTimeout(()=>{
+      const t=(performance.now()-t0)/1000,near=P.filter(p=>p.r>40&&p.r<Math.max(W*.22,120)),p=near[Math.floor(Math.random()*near.length)];
+      if(p){const [x,y]=pos(p,t);ev.style.left=Math.max(90,Math.min(W-90,x))+'px';ev.style.top=Math.max(TX.b+24,Math.min(H-40,y))+'px'}
+      evT.textContent=EV[ei++%EV.length];ev.classList.add('on');
+    },500);
+  }
+  function loop(now){
+    if(vis&&!(typeof motionPaused==='function'&&motionPaused()))draw((now-t0)/1000);
+    requestAnimationFrame(loop);
+  }
+  size();
+  if(reduce){draw(0);if(ev){evT.textContent=EV[0];nextEv()}}
+  else{requestAnimationFrame(loop);nextEv();evTimer=setInterval(()=>{if(vis)nextEv()},3200)}
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();if(reduce)draw(0)},150)});
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(field);
 })();
 
-/* Payment method toggles */
-(function(){
-  const L=[['qris','QRIS',['qris']],['phone','E-wallets',['gopay','ovo','dana','shopeepay']],['card','Credit and debit cards',[]],['bank','Bank virtual accounts',['bca','mandiri','bni','bri']],['cash','Cash on delivery',[]]];
-  const PMNAME={qris:'QRIS',gopay:'GoPay',ovo:'OVO',dana:'DANA',shopeepay:'ShopeePay',bca:'BCA',mandiri:'Mandiri',bni:'BNI',bri:'BRI'};
-  const el=document.getElementById('pmlist');
-  el.innerHTML=`<div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Payment methods</b><span class="pill pu">15 methods</span></div>`+L.map(m=>`<div class="pmi"><span class="pmic">${ic(m[0],15)}</span><span class="grow">${m[1]}${m[2].length?`<span class="pml">${m[2].map(k=>`<img src="assets/logos/payment/${k}.png" alt="${PMNAME[k]||''}">`).join('')}</span>`:''}</span><button type="button" class="tg on" aria-pressed="true" aria-label="${m[1]}"></button></div>`).join('');
-  el.querySelectorAll('.tg').forEach(t=>t.onclick=()=>t.setAttribute('aria-pressed',String(t.classList.toggle('on'))));
-})();
-
-/* Product detail modals (the + buttons) */
-const PROD={
-  checkout:['FLIK Checkout','A checkout that takes 30 seconds, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
-  payments:['Payment Methods','Accept 15 payment methods in one checkout.',['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],'/checkout/payment-methods'],
-  shipping:['FLIK Shipping','Compare all major couriers and ship for up to 40% less.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
-  bulk:['Bulk Shipping','Send from one warehouse or many, to one destination or thousands.',['Single and bulk shipments','Manage pickup warehouses','Every status in one table'],'/shipping/bulk'],
-  track:['Shipment Tracking','Let your customers follow every package.',['Tracking number ready the moment a shipment is created','Status from pickup to delivery','Works across all major couriers'],'/shipping/track'],
-  cod:['COD Shipping','Offer cash on delivery with a 3% fee (excl. PPN).',['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited to your balance after delivery'],'/shipping/cod'],
-  funding:['Merchant Cash Advance','Upfront funding for inventory, for selected brands.',['Consultation with the FLIK team','Easy integration with your store','Funding for stock in advance','Settled automatically as you sell'],'/funding/merchant-cash-advance'],
-  settle:['Auto Settlement','Settled from your sales, automatically.',['Deducted as products sell','Track outstanding and payments in the dashboard','Clear margins, no hidden fees'],'/funding/auto-settlement']
-};
-/* Product dialog: opened from a bento card or its "+" button */
-const BD={
-  checkout:{t:'Accept payments in a 30-second checkout',d:'FLIK Checkout replaces the checkout on your Shopify or WooCommerce store. Shoppers pay in 30 seconds, with every payment method and all major couriers built in.',cta:['Explore Checkout','/checkout'],
-    list:['A checkout that is 3× faster','Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords to forget','Rewards applied automatically at checkout'],
-    stat:['30 sec','to check out with a saved FLIK account'],stat2:['3×','faster than a standard checkout form'],
-    det:[['bolt','Shoppers enter their name, WhatsApp number, email and address once. Courier and payment method are selected automatically.'],['card','15 payment methods in one checkout, from QRIS and e-wallets to virtual accounts, cards and COD.'],['truck','Orders ship through FLIK Shipping from your own warehouse, and payments land in your balance after delivery.']],
-    more:['payments','shipping','funding'],q:null},
-  payments:{t:'Offer 15 payment methods',d:'Let shoppers pay the way they prefer, from QRIS and e-wallets to bank virtual accounts, cards and cash on delivery, all in one checkout.',cta:['Explore payment methods','/checkout/payment-methods'],
-    list:['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],
-    stat:['15','payment methods in one checkout'],stat2:['30 sec','from cart to paid'],
-    det:[['qris','QRIS works with any banking or e-wallet app your shoppers already use.'],['chart','Choose which methods to show in Checkout Personalization.'],['wallet','Every payment lands in your FLIK balance once the order is delivered.']],
-    more:['checkout','cod','funding'],q:null},
-  shipping:{t:'Ship with all major couriers for up to 40% less',d:'FLIK Shipping is a courier aggregator. Enter addresses one by one or in bulk, compare every rate, and manage every shipment from one dashboard.',cta:['Explore Shipping','/shipping'],
-    list:['Regular, same day, next day, instant and cargo','Single and bulk shipments','Free to register, no registration fee','Courier performance by region'],
-    stat:['40%','lower shipping costs, up to'],stat2:['99%','shipment creation success rate'],
-    det:[['truck','Compare every available rate, then choose the service and a pickup schedule.'],['pin','Pickup starts after the AWB is ready: 3–5 hours for regular, 1–4 hours for same day.'],['globe','Coverage across Indonesia, for both COD and non-COD shipments.']],
-    more:['track','cod','checkout'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
-  track:{t:'Track any package in real time',d:'Tracking numbers are ready the moment a shipment is created, so you and your customers can follow every package from pickup to delivery.',cta:['Explore tracking','/shipping/track'],
-    list:['Status from pickup to delivery','Works across all major couriers','An email to the shopper at every status change','Order tracking in the FLIK Shopper App'],
-    stat:['99%','shipment creation success rate'],stat2:['Instant','tracking number when a shipment is created'],
-    det:[['bolt','Tracking numbers are available immediately, so customers stay in the loop.'],['mail','Shoppers get an email every time the status changes.'],['phone','The Shopper App shows delivery details and order history anytime.']],
-    more:['shipping','cod','checkout'],q:['ZMNow.id','ZMNow.id handles payments, shipping and rewards without juggling systems.','ZMNow.id · Products used: Checkout, Shipping',1]},
-  cod:{t:'Sell with COD for only a 3% fee (excl. PPN)',d:'Offer cash on delivery across Indonesia. The COD fee is 3% (excl. PPN), paid by the merchant and deducted when the COD amount is credited after delivery.',cta:['Explore COD shipping','/shipping/cod'],
-    list:['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited automatically once the order is completed','Credited to your balance after delivery'],
-    stat:['3%','COD fee (excl. PPN), paid by the merchant'],stat2:['2×','delivery attempts before a return'],
-    det:[['cash','The 3% COD fee (excl. PPN) is deducted when the COD amount is credited after a successful delivery.'],['wallet','The COD amount is credited to your balance after delivery.'],['chart','Track courier performance by region and choose the best one.']],
-    more:['shipping','track','funding'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
-  funding:{t:'Fund your inventory, settled automatically as you sell',d:'FLIK Merchant Cash Advance gives selected brands upfront funding for inventory. Settlement is deducted automatically as your products sell.',cta:['Explore Merchant Cash Advance','/funding/merchant-cash-advance'],
-    list:['Consultation with the FLIK team','Easy integration with your store','Upfront funding to stock inventory','Sell as usual, settled automatically'],
-    stat:['10+','growing businesses trust Merchant Cash Advance'],stat2:['0','hidden fees'],
-    det:[['coins','Dedicated cash flow for inventory and marketing, so sales keep moving.'],['check','Clear margins with no hidden fees.'],['chart','Track the outstanding amount and the latest payments in your dashboard.']],
-    more:['checkout','shipping','cod'],q:null}
-};
-const BDNAME={checkout:['Checkout','cart','30-second checkout'],payments:['Payment Methods','card','15 methods in one checkout'],shipping:['Shipping','truck','All major couriers, one dashboard'],track:['Shipment Tracking','pin','Track any package'],cod:['COD Shipping','cash','Cash on delivery, 3% fee (excl. PPN)'],funding:['Merchant Cash Advance','coins','Inventory funding']};
-const bdScrim=document.getElementById('bd-scrim'),bd=document.getElementById('bd');let bdFrom=null;
-function bdOpen(key,from){
-  const p=BD[key];if(!p)return;if(from)bdFrom=from;
-  const card=document.querySelector(`#solutions .exp[data-prod="${key}"]`)?.closest('.bc');
-  const btn1=p.cta[2]?`<button class="btn btn-primary" data-act="${p.cta[2]}" data-interest="Funding">${p.cta[0]} <span class="chev">›</span></button>`:`<a href="#" class="btn btn-primary" data-page="${p.cta[1]}">${p.cta[0]} <span class="chev">›</span></a>`;
-  bd.innerHTML=`<button class="bd-x" data-bd-close aria-label="Close">${ic('x',18)}</button><div class="bd-in">
-    <div class="bd-head"><div><h2 id="bd-title">${p.t}</h2><p>${p.d}</p><div class="bd-btns">${btn1}<a href="#" class="btn btn-secondary" data-page="/pricing">See pricing</a></div></div>
-      <ul class="bd-list">${p.list.map(x=>`<li><span class="ck">${ic('check',11,3)}</span>${x}</li>`).join('')}</ul></div>
-    <div class="bd-gfx"><div class="bd-art" aria-hidden="true"></div><div class="bd-side"><div class="bd-stat"><b class="num">${p.stat[0]}</b><span>${p.stat[1]}</span></div><div class="bd-stat dark"><b class="num">${p.stat2[0]}</b><span>${p.stat2[1]}</span></div></div></div>
-    <div class="bd-details">${p.det.map(d=>`<div><span class="ic">${ic(d[0],18)}</span><p>${d[1]}</p></div>`).join('')}</div>
-    <div class="bd-more"><h3>More to discover</h3><div class="bd-cards">${p.more.map(k=>`<button class="bd-card" data-bd="${k}"><span class="ic">${ic(BDNAME[k][1],16)}</span><b>${BDNAME[k][0]}</b><span>${BD[k].d.split('. ')[0]}.</span><em>Learn more <span class="chev">›</span></em></button>`).join('')}</div></div>
-    ${p.q?`<div class="bd-quote"><span class="brand">${p.q[0]}</span>${p.q[3]?`<p style="font-size:22px;line-height:1.45;font-weight:300;color:var(--ink)">${p.q[1]}</p>`:`<q>${p.q[1]}</q>`}<small>${p.q[2]}</small></div>`:''}
-    <div class="bd-foot"><h3>Get started with ${BDNAME[key][0]}</h3><div class="bd-btns">${btn1}<button class="btn btn-secondary" data-act="sales">Contact sales</button></div></div>
-  </div>`;
-  // live copy of the card's mockup
-  const art=bd.querySelector('.bd-art');
-  if(card)card.querySelectorAll('.vis>*').forEach(n=>{const c=n.cloneNode(true);c.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id'));c.removeAttribute('id');c.inert=true;art.appendChild(c)});
-  bd.querySelectorAll('.chev:not(.ha)').forEach(c=>{if(c.textContent.trim()==='›'){c.classList.add('ha');c.innerHTML='<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path class="ha-l" d="M0 5h7"/><path class="ha-t" d="M1 1l4 4-4 4"/></svg>'}});
-  if(!bdScrim.classList.contains('open')){bdScrim.classList.add('open');bdScrim.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';void bdScrim.offsetWidth;bdScrim.classList.add('show')}
-  bdScrim.scrollTop=0;bd.focus({preventScroll:true});
-}
-function bdClose(){if(!bdScrim.classList.contains('open'))return;bdScrim.classList.remove('show');bdScrim.setAttribute('aria-hidden','true');setTimeout(()=>{bdScrim.classList.remove('open');if(!scrim.classList.contains('open'))document.body.style.overflow=''},250);bdFrom?.focus?.({preventScroll:true});bdFrom=null}
-bdScrim.addEventListener('click',e=>{
-  if(e.target===bdScrim||e.target.closest('[data-bd-close]'))return bdClose();
-  const k=e.target.closest('[data-bd]');if(k)return bdOpen(k.dataset.bd);
-  if(e.target.closest('[data-act],[data-page]'))bdClose();
-});
-// open from the "+" button, or from a click anywhere on the card that isn't a control in the mockup
-document.querySelectorAll('#solutions .bc').forEach(card=>card.addEventListener('click',e=>{
-  const exp=card.querySelector('.exp');if(!exp)return;
-  if(!e.target.closest('.exp')&&e.target.closest('button,a,input,label,form,.rate,.pmi,.tl-i,.tg'))return;
-  bdOpen(exp.dataset.prod,exp);
-}));
-
-/* Carousels */
-document.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
-
-/* What's happening (placeholder posts) */
-const NEWS=[
-  ['Promo','Ship for less this month','Get extra cashback on shipments created from the FLIK dashboard.','linear-gradient(135deg,#FF7A2E,#FF2DB8)','/promo'],
-  ['Product','15 payment methods in one checkout','QRIS, e-wallets, cards, virtual accounts and COD, all in FLIK Checkout.','linear-gradient(135deg,#6A4BFF,#FF2DB8)','/checkout/payment-methods'],
-  ['Guide','How to sell with COD and get paid faster','What to know about COD fees, failed deliveries and payouts.','linear-gradient(135deg,#002D5D,#6A4BFF)','/blog'],
-  ['Product','Bulk shipping from many warehouses','Send to many destinations at once from one dashboard.','linear-gradient(135deg,#00E5FF,#8B73FF)','/shipping/bulk'],
-  ['Guide','Funding inventory without hidden fees','How Merchant Cash Advance works, step by step.','linear-gradient(135deg,#FF7A2E,#00E5FF)','/funding/merchant-cash-advance']
-];
-document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard" data-page="${n[4]}"><div class="nart" style="background:${n[3]}"></div><div class="nb"><span class="nt">${n[0]}</span><h4>${n[1]}</h4><p>${n[2]}</p><span class="link">Read more <span class="chev">›</span></span></div></a>`).join('');
 /* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
 (function(){
   const SVG='<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path class="ha-l" d="M0 5h7"/><path class="ha-t" d="M1 1l4 4-4 4"/></svg>';

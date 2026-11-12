@@ -19,13 +19,18 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Description:** FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 40% less, and inventory funding, all from one dashboard.
 
 ## 1. Hero
-<!-- html: Hero (Stripe homepage style: left-aligned, ribbon top right) -->
+<!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
 
+- **Small text above headline:** Checkout, shipping and funding for growing brands
 - **Headline (H1):** Merchant Growth Platform<br>for Growing Brands
 - **Intro text:** Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.
 - **Button:** Get started
-- **Button:** Contact sales
+- **Link:** Contact sales
 - **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.
+
+*Event chips in the particle field (one at a time, examples only):*
+
+- Payment received · QRIS / Order shipped · JNE / COD credited after delivery / Payout settled to balance / Payment received · GoPay / Label created · SPX Express / Payment received · BCA VA / Shopper checked out in 30s
 
 ## 2. Solutions bento
 <!-- html: Solutions bento #solutions -->
