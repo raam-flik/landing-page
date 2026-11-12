@@ -31,8 +31,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 *Mini film card (bottom right, desktop only; like sequencehq.com):*
 
 - **Title:** Introducing FLIK
-- **Behaviour:** visitors can drag the card anywhere in the hero; a click plays the film in the card with sound (click again to pause), and it goes back to the muted preview when the film ends.
-- **Link:** Watch the film / Pause (the time left shows next to it)
+- **Behaviour:** visitors can drag the card anywhere in the hero; a click opens the full film with sound in a big pop-up player.
+- **Link:** Watch the film (the length shows next to it)
 - **Video files:** `assets/video/hero-film.mp4`, `hero-film-preview.mp4` (muted loop) and `hero-film-poster.jpg`. They are kept out of git (`.gitignore`), and the card hides itself when they are missing.
 - [ ] **Replace the placeholder video before going live.** The current file is Apple's Christmas ad, used only to try the layout locally. It can't be published on FLIK's site. Add FLIK's own film with the same three file names.
 
