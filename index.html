@@ -1531,17 +1531,14 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const col=t=>{t=Math.max(0,Math.min(.999,t))*(C.length-1);const i=Math.floor(t),f=t-i,a=C[i],b=C[i+1];return a.map((v,k)=>Math.round(v+(b[k]-v)*f))};
   const D=Math.PI/180;
   const v3=(lat,lon)=>[Math.cos(lat*D)*Math.sin(lon*D),Math.sin(lat*D),Math.cos(lat*D)*Math.cos(lon*D)];
-  // Cities (lat, lon). Aruna Studio (a sample store) ships from its Jakarta warehouse.
-  const CITY={Jakarta:v3(-6.2,106.8),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4),Jayapura:v3(-2.55,140.7)};
-  // One order per scenario: pay → ship → delivered → balance
-  const SC=[
-    {city:'Medan',pay:'QRIS',icon:'qris',amt:3499000,awb:'FLK2610140012',svc:'Regular · 2–3 days'},
-    {city:'Makassar',pay:'E-wallet',icon:'phone',amt:1899000,awb:'FLK2610140018',svc:'Next day'},
-    {city:'Jayapura',pay:'COD',icon:'cash',amt:2499000,awb:'FLK2610140023',svc:'Regular · 4–6 days'},
-  ];
-  const rp=n=>'Rp '+n.toLocaleString('id-ID');
+  // Cities (lat, lon). Aruna Studio (a sample store) sells abroad from its Jakarta warehouse.
+  const CITY={Jakarta:v3(-6.2,106.8),Tokyo:v3(35.68,139.69),Singapore:v3(1.35,103.82),'Kuala Lumpur':v3(3.14,101.69)};
+  // Where the camera looks for each city's order (lon, lat of the view centre)
+  const FOCUS={Tokyo:[124,18],Singapore:[110,2],'Kuala Lumpur':[110,2]};  // [view longitude, lift north in degrees]
+  // Example orders (international): a checkout paid from Japan, then shipments to Singapore and Malaysia
+  const rp=n=>'Rp'+n.toLocaleString('id-ID');
   // view rotation: Indonesia faces the viewer, with a slow sway
-  let lon0=120,lat0=-14,baseLat=-14,dLon=0,dLat=0,vLon=0,vLat=0,drag=null,lastTouch=-1e9;
+  let lon0=120,lat0=-14,baseLat=-14,dLon=0,dLat=0,vLon=0,vLat=0,drag=null,lastTouch=-1e9,fLon=0,fLat=0;
   function view(p){
     const cl=Math.cos(-lon0*D),sl=Math.sin(-lon0*D);
     let x=p[0]*cl+p[2]*sl,z=-p[0]*sl+p[2]*cl,y=p[1];
@@ -1552,17 +1549,18 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const proj=(p,h=1)=>{const v=view(p);return [cx+v[0]*R*h,cy-v[1]*R*h,v[2]]};
   function size(){dpr=Math.min(2,devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);R=W*1.05;cx=W/2;cy=R+18;baseLat=lat0=-6-Math.asin(Math.max(-.9,Math.min(.9,(cy-H*.5)/R)))/D}
   function slerp(a,b,t){const d=Math.acos(Math.min(1,a[0]*b[0]+a[1]*b[1]+a[2]*b[2]));if(d<1e-6)return a;const s=Math.sin(d),k1=Math.sin((1-t)*d)/s,k2=Math.sin(t*d)/s;return [a[0]*k1+b[0]*k2,a[1]*k1+b[1]*k2,a[2]*k1+b[2]*k2]}
-  function arcPts(a,b){const out=[];for(let i=0;i<=48;i++){const t=i/48;out.push(proj(slerp(a,b,t),1+.05*Math.sin(Math.PI*t)))}return out}
+  function arcPts(a,b){const d=Math.acos(Math.min(1,a[0]*b[0]+a[1]*b[1]+a[2]*b[2])),lift=.03+.12*Math.min(1,d/.9);const out=[];for(let i=0;i<=48;i++){const t=i/48;out.push(proj(slerp(a,b,t),1+lift*Math.sin(Math.PI*t)))}return out}
 
-  // Steps of the story (duration in ms)
-  const STEPS=[];
-  SC.forEach(o=>{
-    STEPS.push({k:'pay',from:o.city,to:'Jakarta',dur:2600,color:PRI,icon:o.icon,b:o.pay==='COD'?'COD order':rp(o.amt),s:o.pay==='COD'?'Aruna Studio · Pay on delivery':'Paid to Aruna Studio · '+o.pay});
-    STEPS.push({k:'ship',from:'Jakarta',to:o.city,dur:2600,color:'#FF7A2E',icon:'truck',b:'Shipped to '+o.city,s:o.svc+' · '+o.awb});
-    STEPS.push({k:'done',at:o.city,dur:1700,icon:'check',b:'Delivered',s:o.city+' · Order complete'});
-    const net=o.pay==='COD'?Math.round(o.amt*.97):o.amt;
-    STEPS.push({k:'bal',at:'Jakarta',dur:2100,icon:'wallet',b:'+'+rp(net),s:o.pay==='COD'?'COD credited · 3% fee (excl. PPN) deducted':'Added to Aruna Studio balance'});
-  });
+  // Steps of the story (duration in ms); every amount and number is example data
+  const SHIP='#FF7A2E';
+  const STEPS=[
+    {k:'pay',city:'Tokyo',from:'Tokyo',to:'Jakarta',dur:3000,color:PRI,icon:'card',b:rp(4250000),s:'Paid from Tokyo, Japan · Card'},
+    {k:'bal',city:'Tokyo',at:'Jakarta',dur:2200,icon:'wallet',b:'+'+rp(4250000),s:'Added to Aruna Studio balance'},
+    {k:'ship',city:'Singapore',from:'Jakarta',to:'Singapore',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Singapore',s:'International · 2–4 days · FLK2610140031'},
+    {k:'done',city:'Singapore',at:'Singapore',dur:1800,icon:'check',b:'Delivered',s:'Singapore · Order complete'},
+    {k:'ship',city:'Kuala Lumpur',from:'Jakarta',to:'Kuala Lumpur',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Malaysia',s:'International · 2–4 days · FLK2610140036'},
+    {k:'done',city:'Kuala Lumpur',at:'Kuala Lumpur',dur:1800,icon:'check',b:'Delivered',s:'Kuala Lumpur, Malaysia · Order complete'},
+  ];
   const TOTAL=STEPS.reduce((a,s)=>a+s.dur,0);
 
   // Pills (HTML, positioned over the canvas)
@@ -1599,12 +1597,13 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
       // drift back to Indonesia a few seconds after the last drag
       if(now-lastTouch>2500){dLon*=.97;dLat*=.97}}
     dLon=Math.max(-35,Math.min(35,dLon));dLat=Math.max(-20,Math.min(20,dLat));
-    lon0=120+(reduce?0:4*Math.sin((now-t0)/9000))+dLon;lat0=baseLat+dLat;
-    ctx.clearRect(0,0,W,H);drawDots();
     let acc=0,i=0;while(i<STEPS.length-1&&acc+STEPS[i].dur<=el){acc+=STEPS[i].dur;i++}
-    const st=STEPS[i],p=(el-acc)/st.dur;
-    const sc=SC[Math.floor(i/4)];
-    cityDot('Jakarta',true);cityDot(sc.city,true);
+    const st=STEPS[i],p=(el-acc)/st.dur,fo=FOCUS[st.city];
+    // the camera eases toward the current order (Japan sits further north)
+    if(!fLon){fLon=fo[0];fLat=fo[1]}const k=reduce?1:.035;fLon+=(fo[0]-fLon)*k;fLat+=(fo[1]-fLat)*k;
+    lon0=fLon+(reduce?0:3*Math.sin((now-t0)/9000))+dLon;lat0=baseLat+fLat+dLat;
+    ctx.clearRect(0,0,W,H);drawDots();
+    cityDot('Jakarta',true);cityDot(st.city,true);
     let px,py;
     if(st.from){
       const ap=arcPts(CITY[st.from],CITY[st.to]);

@@ -84,6 +84,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Stat:** 99% — shipment creation success rate
 - **Stat:** 3% — COD fee (excl. PPN), paid by the merchant
 
+*Globe story (example data; the sample store Aruna Studio ships from Jakarta). Dots are land, the sea is empty (Natural Earth map):*
+
+- Rp4.250.000 — Paid from Tokyo, Japan · Card → +Rp4.250.000 — Added to Aruna Studio balance
+- Shipped to Singapore — International · 2–4 days · FLK2610140031 → Delivered — Singapore · Order complete
+- Shipped to Malaysia — International · 2–4 days · FLK2610140036 → Delivered — Kuala Lumpur, Malaysia · Order complete
+- [ ] **International (Raam, 12 Nov 2026):** the globe now shows a card payment from Japan and shipments to Singapore and Malaysia. AG removed Malaysia and Singapore from the Shipping page on 24 Oct ("coverage is across Indonesia"). Confirm international shipping and foreign card payments before this goes live, or change the cities back.
+
 ## 4. Feature banner
 <!-- html: Feature banner -->
 
