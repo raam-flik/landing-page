@@ -1227,6 +1227,10 @@ html{scroll-padding-top:88px}
 .cod-pts{list-style:none;display:grid;gap:10px;margin:32px 0 24px}
 .cod-pts li{display:flex;gap:10px;color:var(--on-dark-muted);font-size:15px}
 .cod-pts li span{color:var(--on-dark-accent);display:flex;margin-top:3px}
+#dash .cod-pts{margin:24px 0 12px}
+#dash .cod-pts li{color:var(--body)}
+#dash .cod-pts li span{color:var(--primary)}
+#dash .sec-h .pill{margin-left:8px;vertical-align:middle}
 .link.lt{color:var(--on-dark-accent)}
 @media (max-width:1080px){.flow5{grid-template-columns:1fr 1fr}.flow5 .stat:nth-child(odd){padding-left:var(--bleed)}.flow5 .stat:nth-child(even){border-right:0}.flow5 .stat:last-child{grid-column:1/-1}}
 @media (max-width:760px){
@@ -1467,10 +1471,15 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   </div>
 </section>
 
-<!-- ===== Your shoppers aren't affected: short text section ===== -->
+<!-- ===== Risky shoppers: delivery risk level per order (coming soon) ===== -->
 <section class="pad-s alt guides" id="dash">
   <div class="wrap">
-    <h2 class="sec-h">Your shoppers pay as usual. <span class="soft">We never block a payment coming in. Card payments are screened by FLIK's licensed payment partners.</span></h2>
+    <h2 class="sec-h">Spot risky orders before you ship. <span class="pill pu">Coming soon</span> <span class="soft">Each order gets a delivery risk level, Low, Medium or High, with the reason: for example, past failed deliveries to the wrong address. FLIK never blocks an order for you.</span></h2>
+    <ul class="cod-pts">
+      <li><span data-ic="check-s"></span>Switch to a courier that delivers better to that area.</li>
+      <li><span data-ic="check-s"></span>Confirm the address with the shopper before you ship.</li>
+      <li><span data-ic="check-s"></span>Ask for prepayment instead of cash on delivery.</li>
+    </ul>
   </div>
 </section>
 
@@ -1822,7 +1831,7 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
   const G=[
     ['shield','Always on',['No setup, no code','Every withdrawal and payout-account change checked','The same check on dashboard, API and AI agents']],
     ['lock','Your account, protected',['24-hour wait on new payout accounts','An email alert with one-click cancel','Reviewed by FLIK\'s risk team']],
-    ['user','No friction for shoppers',['Payments in are never blocked','No extra step at checkout']]
+    ['user','Shoppers',['Payments in are never blocked','No extra step at checkout','Delivery risk level per order (coming soon)']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
 })();
@@ -1830,6 +1839,7 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
 /* ===== FAQ ===== */
 const FAQ=[
   ['What does Fraud Detection do?','It checks every withdrawal and every change to your payout account or registered contacts before anything happens. It protects your balance if someone else gets into your account.'],
+  ['Can FLIK help me spot risky shoppers?','Soon. Each order will get a delivery risk level, Low, Medium or High, with the reason, such as past failed deliveries to the wrong address. You decide what to do: switch courier, confirm the address, or ask for prepayment. FLIK never blocks an order for you.'],
   ['Does it block my customers\' payments?','No. Money coming in is never refused. FLIK watches incoming payments for unusual patterns, and card payments are also screened by our licensed payment partners.'],
   ['What happens when a withdrawal is held?','It shows as "Being verified" in your dashboard, with an expected time. FLIK\'s risk team reviews it, and it\'s sent as soon as it\'s cleared. Nothing leaves your balance in the meantime.'],
   ['Why won\'t you tell me why it was held?','Sharing how the checks work would help fraudsters get around them. If we need anything from you, we\'ll contact you on your registered contacts.'],

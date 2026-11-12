@@ -12,6 +12,7 @@ Rewritten on 12 Nov 2026 (AG) to describe the fraud system FLIK actually runs. I
 - [ ] **Launch date:** the FDS goes live on 7 Dec 2026. The page says "From December 2026". Confirm, or change it if the date moves.
 - [x] **Pricing:** included at no extra cost (AG, 12 Nov 2026).
 - [ ] **No tipping off:** the page names what is checked, never the rules, thresholds or signals. Compliance to confirm the wording is safe.
+- [ ] **Delivery risk level (AG, 12 Nov 2026):** shown as "Coming soon". Before it goes live, the shopper privacy notice (W-25) must be published, and the merchant sees only the level and the reason.
 - [ ] **2FA:** the spec says withdrawals and account changes need 2FA, but the Developers guide says 2FA isn't built. The page only mentions the OTP (WhatsApp) check on account changes. Confirm with Engineering.
 - [ ] Example data in the mockups (withdrawal IDs, amounts, banks) is example data, not FLIK figures.
 
@@ -113,11 +114,15 @@ Rewritten on 12 Nov 2026 (AG) to describe the fraud system FLIK actually runs. I
 - **List item:** You see "Being verified" and an expected time in your dashboard.
 - **Link:** Contact support
 
-## 6. Your shoppers aren't affected
-<!-- html: replaces "Your rules, your review queue" -->
+## 6. Spot risky orders
+<!-- html: Risky shoppers: delivery risk level per order, coming soon (replaces "Your shoppers aren't affected") #dash -->
 
-- **Section heading:** Your shoppers pay as usual.
-  - **Grey part:** We never block a payment coming in. Card payments are screened by FLIK's licensed payment partners.
+- **Section heading:** Spot risky orders before you ship.
+  - **Pill:** Coming soon
+  - **Grey part:** Each order gets a delivery risk level, Low, Medium or High, with the reason: for example, past failed deliveries to the wrong address. FLIK never blocks an order for you.
+- **List item:** Switch to a courier that delivers better to that area.
+- **List item:** Confirm the address with the shopper before you ship.
+- **List item:** Ask for prepayment instead of cash on delivery.
 
 ## 7. Works however you withdraw
 <!-- html: Works where you sell: three product cards #where -->
@@ -147,9 +152,10 @@ Rewritten on 12 Nov 2026 (AG) to describe the fraud system FLIK actually runs. I
 - **List item:** 24-hour wait on new payout accounts
 - **List item:** An email alert with one-click cancel
 - **List item:** Reviewed by FLIK's risk team
-- **Heading:** No friction for shoppers
+- **Heading:** Shoppers
 - **List item:** Payments in are never blocked
 - **List item:** No extra step at checkout
+- **List item:** Delivery risk level per order (coming soon)
 
 ## 9. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
@@ -157,6 +163,8 @@ Rewritten on 12 Nov 2026 (AG) to describe the fraud system FLIK actually runs. I
 - **Section heading:** Questions, answered.
 - **Question:** What does Fraud Detection do?
   - **Answer:** It checks every withdrawal and every change to your payout account or registered contacts before anything happens. It protects your balance if someone else gets into your account.
+- **Question:** Can FLIK help me spot risky shoppers?
+  - **Answer:** Soon. Each order will get a delivery risk level, Low, Medium or High, with the reason, such as past failed deliveries to the wrong address. You decide what to do: switch courier, confirm the address, or ask for prepayment. FLIK never blocks an order for you.
 - **Question:** Does it block my customers' payments?
   - **Answer:** No. Money coming in is never refused. FLIK watches incoming payments for unusual patterns, and card payments are also screened by our licensed payment partners.
 - **Question:** What happens when a withdrawal is held?
