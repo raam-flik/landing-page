@@ -28,6 +28,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Link:** Contact sales
 - **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.
 
+*Mini film card (bottom right, desktop only; like sequencehq.com):*
+
+- **Title:** Introducing FLIK
+- **Link:** Watch the film (opens the full video in a pop-up; the length shows next to it)
+- **Video files:** `assets/video/hero-film.mp4`, `hero-film-preview.mp4` (muted loop) and `hero-film-poster.jpg`. They are kept out of git (`.gitignore`), and the card hides itself when they are missing.
+- [ ] **Replace the placeholder video before going live.** The current file is Apple's Christmas ad, used only to try the layout locally. It can't be published on FLIK's site. Add FLIK's own film with the same three file names.
+
 *Event chips in the particle field (one at a time, examples only):*
 
 - Payment received · QRIS / Order shipped · JNE / COD credited after delivery / Payout settled to balance / Payment received · GoPay / Label created · SPX Express / Payment received · BCA VA / Shopper checked out in 30s
