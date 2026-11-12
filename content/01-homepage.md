@@ -21,7 +21,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 1. Hero
 <!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
 
-- **Small text above headline:** Checkout, shipping and funding for growing brands
+- **Small text above headline:** From cart to cash, in one platform
 - **Headline (H1):** Merchant Growth Platform<br>for Growing Brands
 - **Intro text:** Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.
 - **Button:** Get started
