@@ -1724,7 +1724,7 @@ const PRODUCTS={
   mca:{name:'Merchant Cash Advance',long:'Merchant Cash Advance',url:'/funding/merchant-cash-advance',ic:'coins',blurb:'Upfront funding for stock or a new outlet, settled automatically from sales.'}
 };
 const CUSTOMERS=[
-  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',prods:['checkout']},
+  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',cat:'Music and merchandise',prods:['checkout']},
   {slug:'artch',name:'Artch',logo:'artch.png',prods:['checkout']},
   {slug:'paper',name:'Paper',logo:'paper.png',prods:['checkout']},
   {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',prods:['checkout']},
@@ -1760,7 +1760,94 @@ const STORY={
     s:n=>`With a Merchant Cash Advance from FLIK, ${n} gets funding upfront for one fixed margin, agreed before it signs, and settles it automatically from its sales.`,
     r:n=>`${n} can invest in growth now and pay it back as it sells, with no compounding interest.`},
 };
-const storyHead=c=>c.prods.length>1&&c.prods.includes('instore')&&c.prods.includes('mca')?`${c.name} takes payments at the counter and funds its growth with FLIK.`:STORY[c.prods[0]].h(c.name);
+/* Per-merchant example stories (Raam, 12 Nov 2026): written for each brand, still examples — no quotes, names or numbers until each brand approves its own */
+const STORIES={
+  'sigit-store':{h:'The SIGIT sells its merch straight to fans with FLIK Checkout.',
+    i:'Sigit Store is the official store of The SIGIT, the rock band from Bandung. Fans buy shirts, records and tour merchandise on the band\'s own website.',
+    c:['When new merch or a record drops, fans arrive all at once, mostly on their phones. A slow checkout or a long form at that moment means carts left behind just as stock runs out.'],
+    s:{checkout:'Sigit Store moved its checkout to FLIK. Fans log in with a WhatsApp code, their address fills in from their FLIK account, and they pay with QRIS, an e-wallet, a virtual account, a card or COD, all on one page.'},
+    r:'Drops sell through a checkout built for phones, and fans who bought once check out again in a few taps.'},
+  'artch':{h:'Artch gives its shoppers a checkout that keeps up with them.',
+    i:'Artch sells on its own website and wanted the last step of every order to feel as considered as the products.',
+    c:['Shoppers who reach checkout have already made up their mind. Long forms, a redirect to another site or a missing payment method can still lose them at the final step.'],
+    s:{checkout:'With FLIK Checkout, Artch shoppers pay on one page. Returning shoppers are recognised from their FLIK account, so their details are already there, and they choose from QRIS, e-wallets, virtual accounts, cards and COD.'},
+    r:'The path from cart to paid is shorter, and Artch keeps the whole experience on its own website.'},
+  'paper':{h:'Paper keeps its checkout as clean as its brand.',
+    i:'Paper is a brand that lives on simple, bold design, and it wanted its website checkout to match.',
+    c:['A cluttered checkout with too many fields works against a brand built on simplicity, and every extra screen gives shoppers a reason to stop.'],
+    s:{checkout:'Paper uses FLIK Checkout: one page, a WhatsApp code instead of a password, saved details for returning shoppers, and every popular payment method from QRIS to cards.'},
+    r:'Checkout feels as simple as the brand, and shoppers pay the way they prefer.'},
+  'wakaigo':{h:'WakaiGo turns more visits into orders with FLIK Checkout.',
+    i:'WakaiGo sells to a young, mobile-first audience on its own website.',
+    c:['Its shoppers browse on their phones and expect to pay with the apps they already use. Typing an address and card number on a small screen is where many of them give up.'],
+    s:{checkout:'With FLIK Checkout, WakaiGo shoppers log in with a WhatsApp code, their details fill in, and they pay with QRIS or their e-wallet in a few taps. Cards, virtual accounts and COD are there too.'},
+    r:'Paying on a phone takes a few taps, and shoppers can use the payment app they already have.'},
+  'osim':{h:'OSIM makes buying wellness online feel effortless with FLIK Checkout.',
+    i:'OSIM brings wellness products, from massage chairs to personal care, to shoppers who buy online.',
+    c:['A wellness product is a considered purchase. Shoppers want to pay with the method they trust, from a card to a bank virtual account, and expect the last step to feel as premium as the product.'],
+    s:{checkout:'OSIM uses FLIK Checkout for a one-page checkout with cards, virtual accounts, QRIS, e-wallets and COD. Returning shoppers are recognised, so their details are already filled in.'},
+    r:'Shoppers pay with the method they trust on a checkout that matches the brand, and returning customers buy again faster.'},
+  'zaafer':{h:'Zaafer ships every order from one dashboard with FLIK Shipping.',
+    i:'Zaafer sells online and ships its orders to customers across Indonesia.',
+    c:['Each courier is stronger on different routes, and switching between courier portals to compare rates and book pickups takes hours every week.'],
+    s:{shipping:'With FLIK Shipping, Zaafer compares rates from all major couriers in one dashboard, picks the best one for each order, books the pickup and sends every customer a tracking link.'},
+    r:'Shipping runs from one place, and customers follow their package without asking the team.'},
+  'gerai-hawa':{h:'Gerai Hawa ships modest fashion across Indonesia with FLIK Shipping.',
+    i:'Gerai Hawa is a modest fashion brand with customers all over Indonesia, from big cities to smaller towns.',
+    c:['Orders travel to every corner of the archipelago, and no single courier is the best choice everywhere. Customers also want to know exactly where their order is.'],
+    s:{shipping:'Gerai Hawa uses FLIK Shipping to compare all major couriers per order, create shipments in bulk and send each customer a tracking link, all from one dashboard.'},
+    r:'Every order goes out with the right courier for its route, and customers track it themselves.'},
+  'manta-liberta':{h:'Manta Liberta spends less time on shipping and more on its brand.',
+    i:'Manta Liberta sells online and ships orders to customers across Indonesia.',
+    c:['Booking pickups with different couriers, copying addresses between systems and answering "where is my order?" took time away from the brand.'],
+    s:{shipping:'With FLIK Shipping, Manta Liberta creates shipments from one dashboard, compares courier rates for every order and gives each customer a tracking link.'},
+    r:'Shipping is a few clicks per order, and tracking questions mostly answer themselves.'},
+  'teenage-death-star':{h:'Teenage Death Star gets merch to fans across Indonesia with FLIK Shipping.',
+    i:'Teenage Death Star is a rock band from Bandung that sells its merchandise online to fans across the country.',
+    c:['Merch orders come in waves after shows and releases, and fans are everywhere. Booking every shipment by hand with different couriers does not scale.'],
+    s:{shipping:'Teenage Death Star ships with FLIK Shipping: rates from all major couriers in one dashboard, bulk shipments after a busy drop, and a tracking link for every fan.'},
+    r:'Big merch drops ship without the manual work, and fans can follow every package.'},
+  'kopikalyan':{h:'Kopikalyan serves the morning rush faster and funds its growth with FLIK.',
+    i:'Kopikalyan is a coffee brand that serves customers at the counter every day.',
+    c:['At peak hours the queue moves only as fast as payment. Customers want to pay with whichever app is on their phone.','Growing a coffee business means paying for beans, equipment and fit-outs before the extra sales arrive.'],
+    s:{instore:'With FLIK In-Store Payment, Kopikalyan customers pay by QRIS or card at the counter in seconds, and every sale lands in the FLIK dashboard.',
+       mca:'A FLIK Merchant Cash Advance gives Kopikalyan funding upfront for one fixed margin, settled automatically from its daily sales.'},
+    r:'The queue moves faster at the counter, and growth is funded from the sales it creates.'},
+  'aneka-family':{h:'Aneka Family takes QRIS and cards at the counter with FLIK.',
+    i:'Aneka Family serves customers in store every day.',
+    c:['Customers want to pay their way, and cash alone slows the counter down and makes closing the day harder.'],
+    s:{instore:'With FLIK In-Store Payment, Aneka Family takes QRIS and cards at the counter, and every payment is recorded in the FLIK dashboard automatically.'},
+    r:'Customers pay the way they like, and the end of the day takes less counting.'},
+  'emados':{h:'Emados keeps the shawarma queue moving and funds its growth with FLIK.',
+    i:'Emados serves shawarma to busy customers who want their food, and their payment, to be quick.',
+    c:['At lunch and dinner the queue builds fast, and every payment that takes too long holds up the next order.','Growing a food business means stocking up and equipping kitchens before the new sales come in.'],
+    s:{instore:'With FLIK In-Store Payment, Emados customers pay by QRIS or card at the counter, and every sale lands in one dashboard.',
+       mca:'A FLIK Merchant Cash Advance gives Emados funding upfront for one fixed margin, settled automatically from its sales.'},
+    r:'Payments keep pace with the kitchen, and Emados can invest in growth and pay it back as it sells.'},
+  'haus':{h:'Haus! serves long queues faster and funds new stock with FLIK.',
+    i:'Haus! serves drinks to a young crowd that pays almost entirely with phones.',
+    c:['When the queue is long, every second at the counter counts, and customers expect to pay with QRIS or their e-wallet.','Busy seasons need more stock and supplies paid for upfront.'],
+    s:{instore:'With FLIK In-Store Payment, Haus! customers pay by QRIS or card in seconds, and every outlet\'s sales appear in the FLIK dashboard.',
+       mca:'A FLIK Merchant Cash Advance gives Haus! funding upfront for one fixed margin, settled automatically from daily sales.'},
+    r:'Queues move faster, and stock for busy seasons is funded from the sales it brings in.'},
+  'donat-bahagia':{h:'Donat Bahagia makes paying as easy as picking a donut.',
+    i:'Donat Bahagia, known as dobah, sells donuts to customers at the counter every day.',
+    c:['Customers often buy on impulse, so paying has to be quick and work with whatever app they have.'],
+    s:{instore:'With FLIK In-Store Payment, dobah customers pay by QRIS or card at the counter, and every sale is recorded in the FLIK dashboard.'},
+    r:'Payment takes seconds, so the counter keeps moving and impulse buys don\'t slip away.'},
+  'heylocal':{h:'Heylocal funds its next step with a FLIK Merchant Cash Advance.',
+    i:'Heylocal is a growing local brand that needed funding that follows its sales.',
+    c:['Stock and growth have to be paid for before the sales arrive, and a bank loan with fixed monthly instalments does not follow how a growing brand sells.'],
+    s:{mca:'A FLIK Merchant Cash Advance gives Heylocal funding upfront for one fixed margin, agreed before it signs, and settles automatically from its sales.'},
+    r:'Heylocal can invest when the opportunity is there, and settle as it sells.'},
+  'erigo':{h:'Erigo funds new collections with a FLIK Merchant Cash Advance.',
+    i:'Erigo is an Indonesian fashion brand that launches new collections throughout the year.',
+    c:['Each collection needs fabric and production paid for long before it sells, and bank loans take time and don\'t follow how a launch sells.'],
+    s:{mca:'A FLIK Merchant Cash Advance gives Erigo funding upfront for one fixed margin, agreed before it signs, and settles automatically from the sales of the collection.'},
+    r:'New collections are funded on time, and the advance is paid back from the sales they make.'},
+};
+const sv=(c,k,p)=>{const x=STORIES[c.slug];if(k==='c')return x?x.c:c.prods.map(q=>STORY[q].c(c.name));if(k==='s')return (x&&x.s[p])||STORY[p].s(c.name);if(k==='r')return x?x.r:c.prods.map(q=>STORY[q].r(c.name)).join(' ');if(k==='i')return x&&x.i};
+const storyHead=c=>STORIES[c.slug]?STORIES[c.slug].h:(c.prods.length>1&&c.prods.includes('instore')&&c.prods.includes('mca')?`${c.name} takes payments at the counter and funds its growth with FLIK.`:STORY[c.prods[0]].h(c.name));
 const ARTS=['cu-a1','cu-a2','cu-a3','cu-a4'];
 const mark=(c,cls='')=>c.logo?`<img class="cu-logo${c.sq?' sq':''} ${cls}" src="${ROOT}assets/logos/merchant/${c.logo}" alt="${c.name}">`:`<span class="cu-word ${cls}">${c.name}</span>`;
 const tile=(c,cls='')=>`<span class="cu-tile${c.dark?' dark':''} ${cls}">${mark(c)}</span>`;
@@ -1779,7 +1866,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
     box.innerHTML=`
       <div class="cs-top">
         <div><span class="pill gr cs-ex">Example story</span><h1>${storyHead(c)}</h1>
-          <p class="lead">${c.cat?`${c.name} is a ${c.cat.toLowerCase()} brand. `:''}It uses ${list}.</p></div>
+          <p class="lead">${sv(c,'i')||((c.cat?`${c.name} is a ${c.cat.toLowerCase()} brand. `:'')+`It uses ${list}.`)}</p></div>
         <aside class="cs-card" aria-label="About ${c.name}">
           <div class="cs-logo${c.dark?' dark':''}">${mark(c)}</div>
           ${sec('Products used','<ul>'+c.prods.map(p=>`<li><a href="#" data-page="${PRODUCTS[p].url}">${PRODUCTS[p].long}</a></li>`).join('')+'</ul>')}
@@ -1790,9 +1877,9 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
       <div class="cs-body" style="padding-bottom:96px">
         <aside class="cs-aside"><b>Ready to grow?</b><button class="btn btn-primary" data-act="sales" style="justify-self:start">Contact sales <span class="chev">›</span></button></aside>
         <div class="cs-main">
-          <div><h2>The challenge</h2>${c.prods.map(p=>`<p>${STORY[p].c(c.name)}</p>`).join('')}</div>
-          <div><h2>How FLIK helps</h2>${c.prods.map(p=>{const P=PRODUCTS[p];return `<h3><span class="ic">${ic(P.ic,18)}</span>${P.long}</h3><p>${STORY[p].s(c.name)}</p><a href="#" class="link" data-page="${P.url}" style="margin-top:10px">Explore ${P.long} <span class="chev">›</span></a>`}).join('')}</div>
-          <div><h2>The result</h2><p>${c.prods.map(p=>STORY[p].r(c.name)).join(' ')}</p></div>
+          <div><h2>The challenge</h2>${sv(c,'c').map(t=>`<p>${t}</p>`).join('')}</div>
+          <div><h2>How FLIK helps</h2>${c.prods.map(p=>{const P=PRODUCTS[p];return `<h3><span class="ic">${ic(P.ic,18)}</span>${P.long}</h3><p>${sv(c,'s',p)}</p><a href="#" class="link" data-page="${P.url}" style="margin-top:10px">Explore ${P.long} <span class="chev">›</span></a>`}).join('')}</div>
+          <div><h2>The result</h2><p>${sv(c,'r')}</p></div>
           <div class="cs-soon"><b>This is an example story.</b><p>The final story, with ${c.name}'s own words and results, will be written with the ${c.name} team.</p></div>
         </div>
       </div>`;
