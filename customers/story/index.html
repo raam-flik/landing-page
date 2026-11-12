@@ -1290,7 +1290,9 @@ html{scroll-padding-top:88px}
 .cx-wall{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:56px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cx-wall a{display:flex;align-items:center;justify-content:center;height:56px;padding:6px;border-radius:8px;transition:background .15s}
 .cx-wall a:hover{background:var(--surface-alt,#F8FAFD)}
-.cx-wall .cu-logo{max-height:30px;max-width:100%}
+.cx-wall .cu-logo{max-height:30px;max-width:100%}.cx-wall .cu-logo.sq{max-height:46px}
+.sc .chip .cu-logo.sq{max-height:28px}.cx-logos .cu-logo.sq{max-height:44px}.cs-card .cs-logo .cu-logo.sq{max-height:64px}
+.sc .chip{min-height:34px;height:auto;padding-top:3px;padding-bottom:3px}
 .cx-wall .cu-word{font-size:14px;color:var(--muted);white-space:normal;text-align:center;font-weight:600}
 .cx-wall .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
 .cx-bt{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px}
@@ -1722,22 +1724,22 @@ const PRODUCTS={
   mca:{name:'Merchant Cash Advance',long:'Merchant Cash Advance',url:'/funding/merchant-cash-advance',ic:'coins',blurb:'Upfront funding for stock or a new outlet, settled automatically from sales.'}
 };
 const CUSTOMERS=[
-  {slug:'sigit-store',name:'Sigit Store',prods:['checkout']},
+  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',prods:['checkout']},
   {slug:'artch',name:'Artch',logo:'artch.png',prods:['checkout']},
-  {slug:'paper',name:'Paper',prods:['checkout']},
-  {slug:'wakaigo',name:'Wakaigo',prods:['checkout']},
-  {slug:'osim',name:'OSIM',cat:'Wellness',prods:['checkout']},
+  {slug:'paper',name:'Paper',logo:'paper.png',prods:['checkout']},
+  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',prods:['checkout']},
+  {slug:'osim',name:'OSIM',logo:'osim.png',cat:'Wellness',prods:['checkout']},
   {slug:'zaafer',name:'Zaafer',logo:'zaafer.png',prods:['shipping']},
   {slug:'gerai-hawa',name:'Gerai Hawa',logo:'geraihawa.png',cat:'Modest fashion',prods:['shipping']},
-  {slug:'manta-liberta',name:'Manta Liberta',prods:['shipping']},
-  {slug:'teenage-death-star',name:'Teenage Death Star',cat:'Music and merchandise',site:'https://teenagedeathstar.com',prods:['shipping']},
-  {slug:'kopi-kalian',name:'Kopi Kalian',cat:'Coffee',prods:['instore','mca']},
-  {slug:'aneka-family',name:'Aneka Family',logo:'aneka.png',prods:['instore']},
+  {slug:'manta-liberta',name:'Manta Liberta',logo:'manta-liberta.png',prods:['shipping']},
+  {slug:'teenage-death-star',name:'Teenage Death Star',logo:'teenage-death-star.png',sq:true,cat:'Music and merchandise',site:'https://teenagedeathstar.com',prods:['shipping']},
+  {slug:'kopikalyan',name:'Kopikalyan',logo:'kopikalyan.png',sq:true,cat:'Coffee',prods:['instore','mca']},
+  {slug:'aneka-family',name:'Aneka Family',logo:'aneka.png',sq:true,prods:['instore']},
   {slug:'emados',name:'Emados',logo:'emandos.png',dark:true,cat:'Food and beverage',prods:['instore','mca']},
-  {slug:'haus',name:'Haus!',cat:'Food and beverage',prods:['instore','mca']},
-  {slug:'donat-bahagia',name:'Donat Bahagia',cat:'Food and beverage',prods:['instore']},
-  {slug:'heylocal',name:'Heylocal',prods:['mca']},
-  {slug:'erigo',name:'Erigo',cat:'Fashion',prods:['mca']},
+  {slug:'haus',name:'Haus!',logo:'haus.png',cat:'Food and beverage',prods:['instore','mca']},
+  {slug:'donat-bahagia',name:'Donat Bahagia',logo:'donat-bahagia.png',sq:true,cat:'Food and beverage',prods:['instore']},
+  {slug:'heylocal',name:'Heylocal',logo:'heylocal.png',prods:['mca']},
+  {slug:'erigo',name:'Erigo',logo:'erigo.png',dark:true,cat:'Fashion',prods:['mca']},
 ];
 /* Example stories (Raam, 12 Nov 2026): general text per product, no quotes or numbers, shown as "Example story" until each brand approves its own */
 const STORY={
@@ -1760,7 +1762,7 @@ const STORY={
 };
 const storyHead=c=>c.prods.length>1&&c.prods.includes('instore')&&c.prods.includes('mca')?`${c.name} takes payments at the counter and funds its growth with FLIK.`:STORY[c.prods[0]].h(c.name);
 const ARTS=['cu-a1','cu-a2','cu-a3','cu-a4'];
-const mark=(c,cls='')=>c.logo?`<img class="cu-logo ${cls}" src="${ROOT}assets/logos/merchant/${c.logo}" alt="${c.name}">`:`<span class="cu-word ${cls}">${c.name}</span>`;
+const mark=(c,cls='')=>c.logo?`<img class="cu-logo${c.sq?' sq':''} ${cls}" src="${ROOT}assets/logos/merchant/${c.logo}" alt="${c.name}">`:`<span class="cu-word ${cls}">${c.name}</span>`;
 const tile=(c,cls='')=>`<span class="cu-tile${c.dark?' dark':''} ${cls}">${mark(c)}</span>`;
 const storyUrl=c=>ROOT+'customers/story/?c='+c.slug;
 const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');

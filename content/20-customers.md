@@ -11,9 +11,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Things to confirm on this page
 
 - [ ] **Permission:** every brand below is shown by name, and with its logo where we have one. Confirm each brand has agreed to be listed as a FLIK customer.
-- [ ] **Logos missing** (shown as the brand name in text until a real logo file is added to `design-system/assets/Logos/merchant/`): Sigit Store, Paper, Wakaigo, OSIM, Manta Liberta, Teenage Death Star, Kopi Kalian, Haus!, Donat Bahagia, Heylocal, Erigo.
+- [x] **Logos:** all 16 customers now use their real logo (11 added from Raam, 12 Nov 2026; originals in `design-system/assets/Logos/merchant/original/`). Heylocal and Kopikalyan came in small, so send larger files if you have them. Erigo's logo is white, so it sits on a navy tile.
+- [ ] **Names:** Sigit Store's logo reads "THE SIGIT" and Wakaigo is written "WakaiGo"; the page uses Sigit Store and WakaiGo. Kopi Kalian is now Kopikalyan (Raam, 12 Nov 2026). Donat Bahagia's logo reads "dobah".
 - [ ] **Logo matches to check:** Aneka Family uses `aneka.png` (the "aneka" badge); Emados uses `emandos.png` (reads "EMADO'S", white artwork, so it sits on a navy tile).
-- [ ] **Categories** are shown only where the brand is well known: OSIM (Wellness), Gerai Hawa (Modest fashion), Teenage Death Star (Music and merchandise), Kopi Kalian (Coffee), Emados, Haus! and Donat Bahagia (Food and beverage), Erigo (Fashion). Confirm, and add categories for the others.
+- [ ] **Categories** are shown only where the brand is well known: OSIM (Wellness), Gerai Hawa (Modest fashion), Teenage Death Star (Music and merchandise), Kopikalyan (Coffee), Emados, Haus! and Donat Bahagia (Food and beverage), Erigo (Fashion). Confirm, and add categories for the others.
 - [ ] **Erigo:** the list says Merchant Cash Advance only, but the homepage story card says "Erigo runs delivery, payment and returns from one place with FLIK". Which products does Erigo use?
 - [ ] **Example stories (Raam, 12 Nov 2026):** every story page now has a general example story (challenge, how FLIK helps, result) built from the products the brand uses, labelled "Example story". The text describes what each FLIK product does; it is not the brand's own account. Replace each with the approved real story before relying on it publicly.
 - [ ] **Full stories:**  Stripe-style stories need the brand's own words: a short story, a quote with name and role, two to four results with real numbers, and a photo. None are invented here.
@@ -30,8 +31,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Checkout:** Sigit Store, Artch, Paper, Wakaigo, OSIM
 - **Shipping:** Zaafer, Gerai Hawa, Manta Liberta, Teenage Death Star
-- **In-Store Payment (QRIS):** Kopi Kalian, Aneka Family, Emados, Haus!, Donat Bahagia
-- **Merchant Cash Advance:** Heylocal, Emados, Erigo, Haus!, Kopi Kalian
+- **In-Store Payment (QRIS):** Kopikalyan, Aneka Family, Emados, Haus!, Donat Bahagia
+- **Merchant Cash Advance:** Heylocal, Emados, Erigo, Haus!, Kopikalyan
 
 ## 1. Customers page
 <!-- html: Hero: text left, a collage of customer cards right -->
@@ -41,7 +42,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** From fashion labels to coffee shops, brands use FLIK to sell on their own website, take QRIS at the counter, ship with every major courier and fund their next step.
 - **Button:** See all customers
 - **Button:** Contact sales
-- **Hero cards:** Kopi Kalian, Artch, Emados, Gerai Hawa, Erigo, OSIM — each with its products and "Read story"
+- **Hero cards:** Kopikalyan, Artch, Emados, Gerai Hawa, Erigo, OSIM — each with its products and "Read story"
 - **Section heading:** What brands get with FLIK.
 - **Results:** 30 sec — to check out with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
 - **Logo wall:** every customer (real logo where we have it, name otherwise)
@@ -56,7 +57,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Building together (eyebrow):** Building together
 - **Section heading:** We work with brands to grow every channel.
   - **Grey part:** From the website to the counter, FLIK fits the way each brand sells.
-- **Examples:** Kopi Kalian, Gerai Hawa, OSIM — How <Brand> works with FLIK — Challenge / Solution / Products (the example story text) — Read the example story; beside it an example FLIK screen for the brand's product
+- **Examples:** Kopikalyan, Gerai Hawa, OSIM — How <Brand> works with FLIK — Challenge / Solution / Products (the example story text) — Read the example story; beside it an example FLIK screen for the brand's product
 - **All stories (eyebrow):** All customer stories
 - **Section heading:** Sell, ship and grow with FLIK.
 - **Filters:** All / Checkout / Shipping / In-Store Payment / Merchant Cash Advance
