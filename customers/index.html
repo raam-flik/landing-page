@@ -1359,6 +1359,7 @@ html{scroll-padding-top:88px}
 .cs-body{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start}
 .cs-aside{position:sticky;top:96px;display:grid;gap:14px}
 .cs-aside b{display:block;font-size:15px;font-weight:500;color:var(--ink)}
+.cs-stat{border-left:1px solid var(--primary);padding-left:16px;margin-bottom:12px}.cs-stat b{font-size:32px;font-weight:300;letter-spacing:-.8px;line-height:1.1}.cs-stat span{display:block;font-size:14px;color:var(--muted);margin-top:6px}  /* same as the stats on the customers page */
 .cs-main{display:grid;gap:32px;max-width:680px}
 .cs-main h2{font-size:24px;font-weight:500;letter-spacing:-.3px;display:flex;align-items:center;gap:10px}
 .cs-main h2 .ic{color:var(--primary)}
@@ -1806,11 +1807,11 @@ const CUSTOMERS=[
   {slug:'teenage-death-star',name:'Teenage Death Star',logo:'teenage-death-star.png',sq:true,cat:'Music and merchandise',site:'https://teenagedeathstar.com',prods:['shipping']},
   {slug:'kopikalyan',name:'Kopikalyan',logo:'kopikalyan.png',sq:true,cat:'Coffee',prods:['instore','mca']},
   {slug:'aneka-family',name:'Aneka Family',logo:'aneka.png',sq:true,prods:['instore']},
-  {slug:'emados',name:'Emados',logo:'emandos.png',dark:true,cat:'Food and beverage',prods:['instore','mca']},
+  {slug:'emados',name:'EMADO\'S',logo:'emandos.png',dark:true,photos:['emados-1.jpg'],tint:'orange',site:'https://linktr.ee/emados',cat:'Food and beverage',prods:['instore','mca']},
   {slug:'haus',name:'Haus!',logo:'haus.png',cat:'Food and beverage',prods:['instore','mca']},
   {slug:'donat-bahagia',name:'Donat Bahagia',logo:'donat-bahagia.png',sq:true,cat:'Food and beverage',prods:['instore']},
-  {slug:'heylocal',name:'Heylocal',logo:'heylocal.png',prods:['mca']},
-  {slug:'erigo',name:'Erigo',logo:'erigo.png',dark:true,cat:'Fashion',prods:['mca']},
+  {slug:'heylocal',name:'HEYLOCAL',logo:'heylocal.png',photos:['heylocal-1.jpg'],tint:'magenta',prods:['mca']},
+  {slug:'erigo',name:'ERIGO',logo:'erigo.png',dark:true,photos:['erigo-1.jpg'],tint:'navy',site:'https://erigo.co.id',cat:'Fashion',prods:['mca']},
 ];
 /* Example stories (Raam, 12 Nov 2026): general text per product, no quotes or numbers, shown as "Example story" until each brand approves its own */
 const STORY={
@@ -1889,12 +1890,6 @@ const STORIES={
     c:['Customers want to pay their way, and cash alone slows the counter down and makes closing the day harder.'],
     s:{instore:'With FLIK In-Store Payment, Aneka Family takes QRIS and cards at the counter, and every payment is recorded in the FLIK dashboard automatically.'},
     r:'Customers pay the way they like, and the end of the day takes less counting.'},
-  'emados':{h:'Emados keeps the shawarma queue moving and funds its growth with FLIK.',
-    i:'Emados serves shawarma to busy customers who want their food, and their payment, to be quick.',
-    c:['At lunch and dinner the queue builds fast, and every payment that takes too long holds up the next order.','Growing a food business means stocking up and equipping kitchens before the new sales come in.'],
-    s:{instore:'With FLIK In-Store Payment, Emados customers pay by QRIS or card at the counter, and every sale lands in one dashboard.',
-       mca:'A FLIK Merchant Cash Advance gives Emados funding upfront for one fixed margin, settled automatically from its sales.'},
-    r:'Payments keep pace with the kitchen, and Emados can invest in growth and pay it back as it sells.'},
   'haus':{h:'Haus! serves long queues faster and funds new stock with FLIK.',
     i:'Haus! serves drinks to a young crowd that pays almost entirely with phones.',
     c:['When the queue is long, every second at the counter counts, and customers expect to pay with QRIS or their e-wallet.','Busy seasons need more stock and supplies paid for upfront.'],
@@ -1906,16 +1901,25 @@ const STORIES={
     c:['Customers often buy on impulse, so paying has to be quick and work with whatever app they have.'],
     s:{instore:'With FLIK In-Store Payment, dobah customers pay by QRIS or card at the counter, and every sale is recorded in the FLIK dashboard.'},
     r:'Payment takes seconds, so the counter keeps moving and impulse buys don\'t slip away.'},
-  'heylocal':{h:'Heylocal funds its next step with a FLIK Merchant Cash Advance.',
-    i:'Heylocal is a growing local brand that needed funding that follows its sales.',
-    c:['Stock and growth have to be paid for before the sales arrive, and a bank loan with fixed monthly instalments does not follow how a growing brand sells.'],
-    s:{mca:'A FLIK Merchant Cash Advance gives Heylocal funding upfront for one fixed margin, agreed before it signs, and settles automatically from its sales.'},
-    r:'Heylocal can invest when the opportunity is there, and settle as it sells.'},
-  'erigo':{h:'Erigo funds new collections with a FLIK Merchant Cash Advance.',
-    i:'Erigo is an Indonesian fashion brand that launches new collections throughout the year.',
-    c:['Each collection needs fabric and production paid for long before it sells, and bank loans take time and don\'t follow how a launch sells.'],
-    s:{mca:'A FLIK Merchant Cash Advance gives Erigo funding upfront for one fixed margin, agreed before it signs, and settles automatically from the sales of the collection.'},
-    r:'New collections are funded on time, and the advance is paid back from the sales they make.'},
+  'emados':{real:true,h:'EMADO\'S opened 30+ branches across Indonesia, with operations kept under control.',
+    i:'EMADO\'S Shawarma serves shawarma from branches across Indonesia, and is growing fast.',
+    stats:[['30+','branches opened across Indonesia']],
+    c:['Opening more than 30 branches across Indonesia is a growth phase that asks for readiness on many fronts at once. Every new location has its own needs: quality ingredients, a ready kitchen, a trained team, and the same quality standard as every other branch.','The real challenge is not only opening new branches, but keeping every operation running neatly and under control. As the number of branches grows, so does the complexity, and EMADO\'S has to balance fast expansion with stable operations.'],
+    s:{mca:'A FLIK Merchant Cash Advance funds EMADO\'S expansion upfront, for one fixed margin, and is settled automatically from its sales. It gives EMADO\'S a structured, flexible way to meet the needs of each new branch.',
+       instore:'With FLIK In-Store Payment, EMADO\'S customers pay by QRIS or card at the counter, and every branch\'s sales appear in one dashboard.'},
+    r:'EMADO\'S keeps expanding to more strategic locations across Indonesia while keeping tight control of operations at every stage, so each branch runs well and gives customers the best experience.'},
+  'heylocal':{real:true,h:'HEYLOCAL stocked up for 500,000+ transactions in peak season.',
+    i:'HEYLOCAL is a local brand whose busiest time of the year is the run-up to Hari Raya.',
+    stats:[['500,000+','transactions in peak season']],
+    c:['Ahead of Hari Raya, demand from customers rises sharply, and they expect products to be available on time. A small mistake in stock planning can have a big effect on customer satisfaction and the brand\'s reputation.','A peak moment does not come twice: decisions have to be made quickly, but still carefully. For HEYLOCAL, the challenge was not only having enough stock, but keeping operations steady through the busiest weeks.'],
+    s:{mca:'FLIK supported HEYLOCAL in preparing its stock in a more focused, strategic way, with a Merchant Cash Advance that funds the stock upfront and settles automatically from sales. It helped HEYLOCAL see its stock needs as a whole, plan each step with confidence and avoid rushed decisions.'},
+    r:'With calmer, more structured preparation, HEYLOCAL could focus on serving customers through Hari Raya. The peak season became part of its growth, strengthening its position in the market.'},
+  'erigo':{real:true,h:'Keeping ERIGO in stock helped drive sales up to 200%, online and in stores.',
+    i:'ERIGO is an Indonesian apparel brand that sells online and in its own stores.',
+    stats:[['Up to 200%','sales growth in online and offline stores']],
+    c:['Consistent stock is one of the most important drivers of ERIGO\'s sales growth, online and offline. Demand can rise sharply in a short time, and an empty shelf means a lost sale.','With high volumes across many channels, ERIGO has to keep stock ready for a sales rhythm that keeps changing. Stock is not just logistics; it is part of the growth strategy.'],
+    s:{mca:'A FLIK Merchant Cash Advance funds ERIGO\'s stock upfront, for one fixed margin, and is settled automatically from its sales, so products stay available at every point of sale.'},
+    r:'With a more structured approach to stock, ERIGO keeps products available across its channels and makes the most of every sales moment. In some cases, sales grew up to 200% in online and offline stores, without disrupting stable operations.'},
 };
 const sv=(c,k,p)=>{const x=STORIES[c.slug];if(k==='c')return x?x.c:c.prods.map(q=>STORY[q].c(c.name));if(k==='s')return (x&&x.s[p])||STORY[p].s(c.name);if(k==='r')return x?x.r:c.prods.map(q=>STORY[q].r(c.name)).join(' ');if(k==='i')return x&&x.i};
 const storyHead=c=>STORIES[c.slug]?STORIES[c.slug].h:(c.prods.length>1&&c.prods.includes('instore')&&c.prods.includes('mca')?`${c.name} takes payments at the counter and funds its growth with FLIK.`:STORY[c.prods[0]].h(c.name));

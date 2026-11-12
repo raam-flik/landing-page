@@ -72,6 +72,17 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Start your integration** — Connect with a Shopify or WooCommerce plugin, or build on the FLIK API. — Developer docs
 - **Card link:** Read story
 
+## Real stories (Merchant Cash Advance)
+
+From FLIK's own success-story pages (Bahasa Indonesia PDFs from Raam, 12 Nov 2026), translated into English. These pages show the result beside the story and have no "Example story" label. Photos are taken from the PDFs (`assets/customers/`).
+
+- **ERIGO** — Keeping ERIGO in stock helped drive sales up to 200%, online and in stores. Result: Up to 200% — sales growth in online and offline stores. Website: erigo.co.id.
+- **EMADO'S** — EMADO'S opened 30+ branches across Indonesia, with operations kept under control. Result: 30+ — branches opened across Indonesia. Link: linktr.ee/emados.
+- **HEYLOCAL** — HEYLOCAL stocked up for 500,000+ transactions in peak season. Result: 500,000+ — transactions in peak season.
+- [ ] **HEYLOCAL's link:** the PDF links to linktr.ee/emados (EMADO'S link, probably a copy mistake), so no website is shown for HEYLOCAL. Send the right link.
+- [ ] **Translation:** check the English wording with each brand. The original says what FLIK supported; the "How FLIK helps" text adds how a Merchant Cash Advance works (funding upfront for one fixed margin, settled from sales).
+- [ ] **EMADO'S In-Store Payment** part of its page is still general text; the real story covers Merchant Cash Advance only.
+
 ## Example stories (one per merchant, Raam, 12 Nov 2026)
 
 Each brand has its own example story, written for its type of business. They are still examples: no quotes, names or numbers, and every page is labelled "Example story" until the brand approves its own. The text is in `STORIES` in both customers page scripts.
