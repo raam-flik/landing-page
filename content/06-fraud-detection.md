@@ -109,14 +109,12 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 ## 5. COD and shipping fraud
 <!-- html: COD and shipping fraud: delivery risk level, COD confirmation and address check, coming soon #dash -->
 
-- **Section heading:** Stop fake COD orders before they ship.
+- **Section heading:** Stop fake COD orders.
   - **Pill:** Coming soon
-  - **Grey part:** FLIK flags risky orders before pickup. You decide what to do.
-- **List item:** Risk level. Low, Medium or High, with the reason.
-- **List item:** COD confirmation. The shopper confirms on WhatsApp before pickup.
-- **List item:** Address check. Bad addresses flagged before you ship.
-- **List item:** Prepaid instead. Send a payment link instead of COD.
-- **List item:** Right courier. Use the one that delivers best there.
+  - **Grey part:** Risky orders flagged before pickup.
+- **List item:** Risk level on every order
+- **List item:** WhatsApp confirmation before pickup
+- **List item:** Address check before you ship
 
 ## 6. Reviewed by people
 <!-- html: Reviewed by people: dark band with a short list #cod-risk -->
