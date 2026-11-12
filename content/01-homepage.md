@@ -16,7 +16,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Search results (SEO)
 
 - **Page title:** FLIK | Merchant Growth Platform for Growing Brands
-- **Description:** FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 40% less, and inventory funding, all from one dashboard.
+- **Description:** FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.
 
 ## 1. Hero
 <!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
@@ -47,7 +47,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Grow your brand with checkout, shipping and funding tools that work on their own or together.
 - **Heading:** Accept payments in a 30-second checkout
 - **Heading:** Offer 15 payment methods
-- **Heading:** Ship with all major couriers for up to 40% less
+- **Heading:** Ship with all major couriers for up to 50% less
 - **Heading:** Track any package in real time
 - **Heading:** Sell with COD for only a 3% fee (excl. PPN)
 - **Heading:** Fund your inventory, settled automatically as you sell
@@ -116,7 +116,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Link:** Read ZMNow.id's story
 - **Text:** COD with a 3% fee (excl. PPN), credited to your balance after delivery.
 - **Link:** Explore COD shipping
-- **Text:** Save up to 40% on shipping with all major couriers in one dashboard.
+- **Text:** Save up to 50% off published courier rates, with all major couriers in one dashboard.
 - **Link:** Explore Shipping
 - **Small heading:** Free to register.
 - **Text:** There's no registration fee to use FLIK Shipping.
@@ -150,7 +150,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** WooCommerce
 - **Button:** API
 - **Small heading:** Shopify
-- **Text:** Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.
+- **Text:** We connect your Shopify store to FLIK Checkout and Shipping for you.
 - **Link:** View integration
 - **Small heading:** WooCommerce
 - **Text:** Connect your WordPress store in a few steps and switch to FLIK Checkout.

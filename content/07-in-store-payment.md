@@ -9,19 +9,19 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 In-Store Payment is in the menu but its scope was never written down (see the sitemap's open points). The device and the home screen come from the real FLIK EDC (Smart POS T10), but these points need product confirmation:
 
-- [ ] **Cards:** "debit or credit cards" and "card reader". Chip, swipe, tap (NFC)? Which card networks?
-- [ ] **Hardware:** Android touchscreen, built-in thermal receipt printer, scanner on the back for barcodes and QR codes, rechargeable battery with USB-C charging.
-- [ ] **One balance:** in-store sales land in the same FLIK balance as Checkout and Payment Link.
-- [ ] **Reports:** "sales by channel, outlet and payment method" in the dashboard.
-- [ ] **Multiple outlets:** one device per counter, sales by outlet.
-- [ ] **Device screen language:** the real app is in Bahasa Indonesia (Beranda, Buat Transaksi, Cetak Struk Settlement). The 3D screen shows it in English for the English page.
-- [ ] **Pricing:** device and transaction pricing. The FAQ says the FLIK team shares it.
+- [x] **Cards (AG, 12 Nov 2026):** credit cards, GPN debit cards and QRIS (Cashlez EDC); no entry modes or networks on the page. Was: "debit or credit cards" and "card reader". Chip, swipe, tap (NFC)? Which card networks?
+- [x] **Hardware (AG, 12 Nov 2026):** only the Android touchscreen and the receipt printer stay; scanner, battery and USB-C removed. Was: Android touchscreen, built-in thermal receipt printer, scanner on the back for barcodes and QR codes, rechargeable battery with USB-C charging.
+- [x] **One balance:** in-store sales land in the same FLIK balance as Checkout and Payment Link.
+- [x] **Reports (AG, 12 Nov 2026):** sales by channel and payment method; outlet reports are specced, not built, so they are "coming soon". Was: "sales by channel, outlet and payment method" in the dashboard.
+- [x] **Multiple outlets:** each outlet gets its own device; sales by outlet are coming soon (AG, 12 Nov 2026).
+- [x] **Device screen language (AG, 12 Nov 2026):** English on the English page; Bahasa on /id/. the real app is in Bahasa Indonesia (Beranda, Buat Transaksi, Cetak Struk Settlement). The 3D screen shows it in English for the English page.
+- [x] **Pricing (AG, 12 Nov 2026):** transactions at the Pricing rate card; the EDC can be free with a minimum monthly transaction volume (terms apply, minimum set by sales).
 - [ ] All amounts, names and counts in the mockups are example data. They are now labelled "Example" (receipt, settlement card, device screen hint).
 - [x] No claim that FLIK is a licensed acquirer: "FLIK handles the payment" became "Payments are processed by licensed partners" (AG, 24 Oct 2026). `product-facts.md` has no In-Store facts yet, so the details below carry visible placeholders on the page.
-- [ ] `[[confirm: card types]]`: "Every way they pay" card tile, At a glance, FAQ.
-- [ ] `[[confirm: hardware]]`: scanner, Android touchscreen, battery and USB-C (At a glance).
-- [ ] `[[confirm: in-store sales land in the same FLIK balance]]`: One balance section and FAQ.
-- [ ] `[[confirm: sales by outlet]]`: FAQ "more than one outlet".
+- [x] `[[confirm: card types]]`: "Every way they pay" card tile, At a glance, FAQ.
+- [x] `[[confirm: hardware]]`: scanner, Android touchscreen, battery and USB-C (At a glance).
+- [x] `[[confirm: in-store sales land in the same FLIK balance]]`: One balance section and FAQ.
+- [x] `[[confirm: sales by outlet]]`: FAQ "more than one outlet".
 - [x] Resources: the Fraud Detection card says it is planned (FLI-47) and the Early Settlement card no longer promises same-day payouts (FLI-46).
 
 ## Search results (SEO)
@@ -87,18 +87,18 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Section heading:** Every way they pay.
   - **Grey part:** QRIS and debit or credit cards on one device, with a receipt for every sale.
 - **Tile:** QRIS — Any QRIS app can pay
-- **Tile:** Debit and credit cards — Read by the card reader on the device [[confirm: card types]]
+- **Tile:** Debit and credit cards — Credit cards and GPN debit cards, on the device
 - **Tile:** Receipt — Printed every time
 
 ## 4. One balance
 <!-- html: One balance: online and in-store payments merge into one FLIK balance #one -->
 
 - **Section heading:** Online and in store, one balance.
-  - **Grey part:** Counter sales and online orders land in the same FLIK balance, so you see the whole business in one place. [[confirm: in-store sales land in the same FLIK balance]]
+  - **Grey part:** Counter sales and online orders land in the same FLIK balance, so you see the whole business in one place.
 - **Step:** Online — Checkout and Payment Link — Orders from your store, chat and social media
 - **Step:** In store — FLIK EDC — QRIS and card payments at every counter
 - **Step:** FLIK — One balance — Every sale, whichever way it was paid
-- **Step:** Dashboard — One report — Sales by channel, outlet and payment method
+- **Step:** Dashboard — One report — Sales by channel and payment method
 
 ## 5. Close the day
 <!-- html: Close the day: dark band with a settlement card (example data) #settle -->
@@ -123,15 +123,13 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Section heading:** Built for the counter.
 - **Heading:** Take payments
 - **List item:** QRIS shown on the screen
-- **List item:** Card reader for debit and credit cards [[confirm: card types]]
-- **List item:** Scanner on the back for barcodes and QR codes [[confirm: hardware]]
+- **List item:** Credit cards and GPN debit cards
 - **Heading:** Print
 - **List item:** Built-in thermal receipt printer
 - **List item:** Settlement receipt at the end of the day
 - **List item:** Reprint any receipt from the transaction list
 - **Heading:** Handheld
-- **List item:** Android touchscreen [[confirm: hardware]]
-- **List item:** Rechargeable battery, USB-C charging [[confirm: hardware]]
+- **List item:** Android touchscreen
 - **List item:** Grip made to hold at the counter or the table
 
 ## 7. FAQ
@@ -141,17 +139,17 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Question:** What is In-Store Payment?
   - **Answer:** A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.
 - **Question:** Which payments can I accept?
-  - **Answer:** QRIS from any bank or e-wallet app, and debit or credit cards. [[confirm: card types]]
+  - **Answer:** QRIS from any bank or e-wallet app, credit cards, and GPN debit cards.
 - **Question:** Does it print receipts?
   - **Answer:** Yes. The device has a built-in receipt printer for every sale and for the settlement receipt at the end of the day.
 - **Question:** Where does the money go?
-  - **Answer:** Into your FLIK balance, together with your online sales from Checkout and Payment Link. [[confirm: in-store sales land in the same FLIK balance]]
+  - **Answer:** Into your FLIK balance, together with your online sales from Checkout and Payment Link.
 - **Question:** Can I use it in more than one outlet?
-  - **Answer:** Yes. Each counter gets its own device, and your dashboard shows sales by outlet. [[confirm: sales by outlet]]
+  - **Answer:** Yes. Each outlet gets its own device. Sales by outlet in your dashboard are coming soon.
 - **Question:** How do I get a device?
   - **Answer:** Talk to the FLIK team. We set up the device and connect it to your account.
 - **Question:** What does it cost?
-  - **Answer:** The FLIK team will share device and transaction pricing for your business.
+  - **Answer:** Payments are charged at the rates on the Pricing page. The EDC device can be free with a minimum monthly transaction volume*. *Terms apply. Ask the FLIK team.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
 ## 8. Resources
@@ -159,7 +157,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 
 - **Small heading:** More from FLIK
 - **Card:** Product — Sell online with FLIK Checkout — A 30-second checkout for your store, in the same balance. — Explore Checkout
-- **Card:** Product — Fraud checks, planned — Fraud Detection is in development, with checks at the counter planned too. — Explore Fraud Detection
+- **Card:** Product — Your balance, protected — Every withdrawal is checked before it leaves FLIK. — Explore Fraud Detection
 - **Card:** Product — Paid sooner — Early Settlement pays out sales before the standard settlement date. — Explore Early Settlement
 
 ## 9. Final call to action

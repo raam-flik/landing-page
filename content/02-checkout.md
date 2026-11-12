@@ -7,7 +7,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] Pricing: the Checkout success fee is not set yet, so the page says "See pricing" instead of a rate (AG, 24 Oct 2026). [[confirm: Checkout success fee rate for the pricing page]]
+- [x] Pricing: the page shows a success fee of 0–2% (excl. PPN) again, positioned as the fee for the whole checkout (trust, conversion, shipping, promotions, loyalty), not just payment acceptance. Promotions are co-funded on request (AG, 12 Nov 2026). The fee is still earned on success and isn't refunded.
 - [x] Pricing: the "0–2%" rate and the "no fee if not delivered" promise were removed. The page now says the Checkout fee is earned when the payment succeeds and isn't refunded (AG, 24 Oct 2026).
 - [ ] Claims: "30 seconds" and "3× faster" come from the current flik.co.id.
 - [x] Stat: now "15 payment methods", the approved claim used across the site (AG, 24 Oct 2026).
@@ -113,12 +113,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Pick your path.
   - **Grey part:** Connect the store you already have. Your products, prices and orders stay where they are.
 - **Label:** Shopify
-- **Heading:** Install the FLIK app.
+- **Heading:** We connect your store.
 - **Text:** FLIK replaces the Shopify checkout. Shoppers are redirected to FLIK when they tap Checkout.
 - **Link:** Shopify integration
 - **Label:** WooCommerce
-- **Heading:** Add the FLIK plugin.
-- **Text:** Activate the plugin, sign in to FLIK, and your WooCommerce orders go through FLIK Checkout.
+- **Heading:** We set it up for you.
+- **Text:** The FLIK team connects your store, and your WooCommerce orders go through FLIK Checkout.
 - **Link:** WooCommerce integration
 - **Label:** API
 - **Heading:** Build it your way.
@@ -159,14 +159,17 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Label:** Pricing
 - **Section heading:** Know what you'll pay.
-  - **Grey part:** You pay a success fee when a payment succeeds.
+  - **Grey part:** One fee for the whole checkout, not just the payment: shopper trust, a checkout built to convert, and shipping, promotions and loyalty in one place.
 - **Heading:** Success fee
 - **Link:** Pricing details
-- **Text:** A fee on each successful payment. See pricing for the current Checkout fee.
-- **Price:** See pricing — for the current Checkout success fee
+- **Text:** 0–2% (excl. PPN) on each successful payment. The rate depends on your payment methods and volume.
+- **Price:** 0–2% — excl. PPN, on each successful payment
 - **Heading:** When the fee applies
 - **Text:** The Checkout fee is earned when the payment succeeds. It isn't refunded.
 - **Price:** On success — earned when the payment succeeds, not refunded
+- **Heading:** Promotions, co-funded
+- **Text:** We co-fund promotion programs for merchants on FLIK Checkout. Ask us for the details.
+- **Price:** Co-funded — ask the FLIK team for details
 
 ## 11. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
@@ -175,7 +178,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** What is FLIK Checkout?
 - **Answer:** A checkout page that replaces the one on your online store. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay with the method they prefer.
 - **Button:** Does it work with my store?
-- **Answer:** Yes, if you sell on Shopify or WooCommerce. Install the FLIK app or plugin and shoppers are redirected to FLIK when they tap Checkout. Custom stores can use the API.
+- **Answer:** Yes, if you sell on Shopify or WooCommerce. The FLIK team connects your store, and shoppers are redirected to FLIK when they tap Checkout. Custom stores can use the API.
 - **Button:** Do shoppers need a FLIK account?
 - **Answer:** No. They can check out as a guest. With a FLIK account, their details are saved, so next time they check out faster on any store that uses FLIK.
 - **Button:** How do shoppers log in?
@@ -187,7 +190,9 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** When do I receive the money?
 - **Answer:** Once the shopper has paid and the package has arrived, the money lands in your FLIK balance. COD payments too.
 - **Button:** How much does it cost?
-- **Answer:** A success fee on each successful payment. The fee is earned when the payment succeeds and isn't refunded. See pricing for the current rate.
+- **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, depending on your payment methods and volume. It pays for the whole checkout, not just accepting the payment: WhatsApp login, saved details, shipping, promotions and loyalty in one place. The fee is earned when the payment succeeds and isn't refunded.
+- **Button:** Can FLIK help fund my promotions?
+- **Answer:** Yes. We co-fund promotion programs for merchants on FLIK Checkout. Ask us for the details.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
 ## 12. Resources
@@ -206,5 +211,5 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Create an account
 - **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Label:** Pricing
-- **Text:** A success fee on each successful payment, earned when the payment succeeds.
+- **Text:** 0–2% (excl. PPN) on each successful payment, for the whole checkout.
 - **Link:** See pricing

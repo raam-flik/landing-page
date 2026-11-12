@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"FLIK Early Settlement","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"Payouts of a merchant's sales before the standard settlement date, for a fee per payout."}
+{"@context":"https://schema.org","@type":"Service","name":"FLIK Early Settlement","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"Payouts of a merchant's sales before the standard settlement date, for a fee per payment settled early."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1423,7 +1423,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 </section>
 
 <!-- ===== Same payment, two timelines: one payment forks into the early and the standard lane (inspired by xendit.co early settlement; example schedule) ===== -->
-<!-- PLACEHOLDER schedule (FLI-46): early and standard timings show [[confirm: …]] until the real settlement schedule is confirmed -->
+<!-- Schedule (FLI-46): no settlement timings in public copy (AG, 5 Nov 2026) -->
 <section class="pad guides" id="gap">
   <div class="wrap">
     <h2 class="sec-h">Same payment, two timelines. <span class="soft">With Early Settlement, a shopper's payment is yours to use before the standard settlement date.</span></h2>
@@ -1435,7 +1435,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <div class="lane-h"><span class="label"><i></i>With Early Settlement</span><span class="pill gr" id="day-a">Waiting</span></div>
           <div class="lane-r">
             <span class="fl-c"><i></i></span>
-            <span class="chip" data-s="0">Early settlement · [[timing]]</span>
+            <span class="chip" data-s="0">Early settlement · Sooner</span>
             <span class="fl-c"><i></i></span>
             <div class="dest"><svg viewBox="0 0 30 30" width="26" height="26" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><span><b>FLIK balance</b><small>Waiting</small></span></div>
           </div>
@@ -1444,9 +1444,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <div class="lane-h"><span class="label"><i></i>Standard schedule</span><span class="pill gr" id="day-b">Waiting</span></div>
           <div class="lane-r">
             <span class="fl-c"><i></i></span>
-            <span class="chip" data-s="1">QRIS and e-wallets · [[T+?]]</span>
-            <span class="chip" data-s="2">Virtual accounts · [[T+?]]</span>
-            <span class="chip" data-s="3">Cards · [[T+?]]</span>
+            <span class="chip" data-s="1">QRIS and e-wallets · On schedule</span>
+            <span class="chip" data-s="2">Virtual accounts · On schedule</span>
+            <span class="chip" data-s="3">Cards · On schedule</span>
             <span class="fl-c"><i></i></span>
             <div class="dest"><svg viewBox="0 0 30 30" width="26" height="26" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><span><b>FLIK balance</b><small>Waiting</small></span></div>
           </div>
@@ -1456,11 +1456,11 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="cmp2">
       <div class="gl"><h3><span data-ic="bolt"></span>With Early Settlement</h3><ul>
         <li><span data-ic="check-s"></span>Use the money before the standard settlement date.</li>
-        <li><span data-ic="check-s"></span>Pay out to your FLIK balance or bank account.</li>
+        <li><span data-ic="check-s"></span>Paid into your FLIK balance, ready to use or withdraw.</li>
         <li><span data-ic="check-s"></span>See the fee before every payout.</li>
       </ul></div>
       <div class="gl"><h3><span data-ic="clock"></span>On the standard schedule</h3><ul>
-        <li><span data-ic="check-s"></span>Money arrives on the standard schedule for each payment method. [[confirm: standard schedule]]</li>
+        <li><span data-ic="check-s"></span>Money arrives on the standard schedule for each payment method.</li>
         <li><span data-ic="check-s"></span>No early settlement fee on the standard schedule.</li>
         <li><span data-ic="check-s"></span>Settles automatically, with nothing to request.</li>
       </ul></div>
@@ -1475,9 +1475,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="fx">
       <ul class="fx-list" id="fx-list">
         <li data-f="amt"><span class="fx-ic" data-ic="coins"></span><div><b>Choose the amount</b><span>All your pending sales, or only what you need.</span></div></li>
-        <li data-f="dest"><span class="fx-ic" data-ic="bank"></span><div><b>Balance or bank account</b><span>Send it where you will spend it.</span></div></li>
+        <li data-f="dest"><span class="fx-ic" data-ic="bank"></span><div><b>Straight to your balance</b><span>Ready to spend, or withdraw to your bank.</span></div></li>
         <li data-f="fee"><span class="fx-ic" data-ic="check"></span><div><b>Fee before you confirm</b><span>See exactly what you will receive.</span></div></li>
-        <li data-f="auto"><span class="fx-ic" data-ic="bolt"></span><div><b>Automatic, if you want</b><span>Settle early without asking each time. [[confirm: automatic option]]</span></div></li>
+        <li data-f="auto"><span class="fx-ic" data-ic="bolt"></span><div><b>A fee by payment method</b><span>0.2% for QRIS, e-wallets and virtual accounts. 0.3% for cards.</span></div></li>
         <li data-f="hist"><span class="fx-ic" data-ic="chart"></span><div><b>Every payout on record</b><span>Each early payout is listed in your reports.</span></div></li>
       </ul>
       <div class="fx-g">
@@ -1486,18 +1486,17 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <div class="fx-body">
             <div class="fx-form">
               <div class="fx-el" data-f="amt"><label>Amount</label><div class="fx-in"><span class="num" id="fx-amt">Rp50.000.000</span><span class="pill pu">Max Rp86.500.000</span></div></div>
-              <div class="fx-el" data-f="dest"><label>Pay out to</label><div class="fx-dest">
+              <div class="fx-el" data-f="dest"><label>Pay out to</label><div class="fx-dest" style="grid-template-columns:1fr">
                 <div class="fx-in sel"><span class="pm-n"><span class="fl-plogo fl-plogo--icon" data-ic="wallet-s"></span>FLIK balance</span></div>
-                <div class="fx-in"><span class="pm-n"><img class="fl-plogo" src="../../assets/logos/payment/bca.png" alt="">BCA ··· 4021</span></div>
               </div></div>
-              <div class="fx-el fx-acc" data-f="auto"><span class="fx-av" data-ic="bolt-s"></span><span><b>Settle early automatically</b><small>[[confirm: automatic option]]</small></span><i class="tg" id="fx-tg"></i></div>
+              <div class="fx-el fx-acc" data-f="auto"><span class="fx-av" data-ic="bolt-s"></span><span><b>Fee by method</b><small>0.2% non-card · 0.3% card, + PPN</small></span><i class="tg" id="fx-tg" hidden></i></div>
             </div>
             <div class="fx-sum">
               <small class="mh-cap">Payout summary · Example</small>
               <div class="co-row"><span class="m">Pending settlement</span><span class="num">Rp86.500.000</span></div>
               <div class="co-row"><span class="m">Amount</span><span class="num">Rp50.000.000</span></div>
-              <div class="fx-el" data-f="fee"><div class="co-row"><span class="m">Early settlement fee</span><span class="num">[[confirm: fee]]</span></div>
-              <div class="co-total"><span>You receive</span><span class="num">Rp50.000.000 minus the fee</span></div></div>
+              <div class="fx-el" data-f="fee"><div class="co-row"><span class="m">Early settlement fee</span><span class="num">Rp111.000</span></div>
+              <div class="co-total"><span>You receive</span><span class="num">Rp49.889.000</span></div></div>
               <div class="fx-el fx-hist" data-f="hist">
                 <small class="mh-cap">Recent early payouts</small>
                 <div class="co-row"><span class="m">17 Oct 2026</span><span class="num">Rp24.750.000</span><span class="pill ok">Paid</span></div>
@@ -1516,7 +1515,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="pad guides" id="settle-methods">
   <div class="wrap cod">
     <div class="cod-t">
-      <h2 class="sec-h">Early, from every way Indonesia pays. <span class="soft">QRIS, e-wallets, virtual accounts and cards can settle early [[confirm: eligible payment methods]]. Cash on delivery settles once the package is delivered.</span></h2>
+      <h2 class="sec-h">Early, from every way Indonesia pays. <span class="soft">QRIS, e-wallets, virtual accounts and cards can settle early. Cash on delivery settles once the package is delivered.</span></h2>
       <div class="cod-fee"><b>Sooner</b><span>than the standard settlement date</span></div>
       <ul class="cod-pts">
         <li><span data-ic="check-s"></span>Pending sales from every payment method, in one balance.</li>
@@ -1552,8 +1551,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <div class="prg-r">
         <div class="prg-h"><h3>Early settlement</h3><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
         <div class="prg-b">
-          <p class="txt">A fee on each early payout, shown on screen before you confirm.</p>
-          <div class="prg-p"><b>[[confirm: fee]]</b><span>per early payout</span></div>
+          <p class="txt">A percentage of each payment you settle early: 0.2% for QRIS, e-wallets and virtual accounts, 0.3% for cards, plus PPN. Shown on screen before you confirm.</p>
+          <div class="prg-p"><b>0.2% / 0.3%</b><span>non-card / card, + PPN, per transaction settled early</span></div>
         </div>
       </div>
       <div class="prg-r">
@@ -1598,7 +1597,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <button class="btn btn-secondary" data-act="start">Create an account</button>
     </div>
     <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
-    <div class="fin-price"><b>Pricing</b><span>A fee per early payout, shown before you confirm. No extra fee on the standard schedule.</span><a href="#pricing" class="link">See pricing <span class="chev">›</span></a></div>
+    <div class="fin-price"><b>Pricing</b><span>0.2% non-card, 0.3% card, + PPN, shown before you confirm. No extra fee on the standard schedule.</span><a href="#pricing" class="link">See pricing <span class="chev">›</span></a></div>
   </div>
 </section>
 
@@ -1826,7 +1825,7 @@ const rpx=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
   function set(m){
     mode=m;seg.forEach((b,i)=>{b.classList.toggle('on',i===m);b.setAttribute('aria-pressed',i===m)});
     pills.forEach((p,i)=>{p.textContent=R[i][3+m];p.className='pill '+(i===0?'ok':m?'pu':'gr')});
-    note.textContent=m?'Before the early settlement fee [[confirm: fee]]':'Sales from 18 Oct, settled on schedule';
+    note.textContent=m?'After the early settlement fee (0.2% + PPN, example)':'Sales from 18 Oct, settled on schedule';
     chip.classList.toggle('off',!m);
     cancelAnimationFrame(raf);const from=parseInt(amt.textContent.replace(/\D/g,''))||0,to=T[m],t0=performance.now();
     if(REDUCE){amt.textContent=rpx(to);return}
@@ -1895,9 +1894,9 @@ const rpx=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
 /* ===== Early Settlement at a glance (PLACEHOLDER facts, see content/05-early-settlement.md) ===== */
 (function(){
   const G=[
-    ['wallet','Your cash flow',['Paid before your standard settlement date','Settle all pending sales or part of them','Pay out to your FLIK balance or bank account','Settle once, or automatically [[confirm: automatic option]]','No early settlement fee on the standard schedule']],
+    ['wallet','Your cash flow',['Paid before your standard settlement date','Settle all pending sales or part of them','Paid into your FLIK balance','Settle only when you need it','No early settlement fee on the standard schedule']],
     ['card','Payment methods',['QRIS','E-wallets','Bank virtual accounts','Credit and debit cards','Cash on delivery settles after delivery']],
-    ['chart','Clear terms',['A fee per early payout [[confirm: fee]]','The fee shows before you confirm','Not a loan: nothing to repay','No collateral or loan paperwork','Every payout listed in your reports']]
+    ['chart','Clear terms',['0.2% non-card, 0.3% card, + PPN','The fee shows before you confirm','Not a loan: nothing to repay','Every payout listed in your reports']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
 })();
@@ -1905,11 +1904,11 @@ const rpx=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
 /* ===== FAQ ===== */
 const FAQ=[
   ['What is Early Settlement?','It pays out your sales before the standard settlement date, so money from paid orders is ready sooner.'],
-  ['Who is it for?','Merchants who accept payments with FLIK can ask the FLIK team, which confirms eligibility for each account. [[confirm: eligibility criteria]]'],
-  ['How fast do I get paid?','Before your standard settlement date. The exact timing is confirmed when Early Settlement is turned on for your account. [[confirm: timing]]'],
-  ['What does it cost?','A fee per early payout, shown before you confirm. [[confirm: fee structure and rate]] There is no early settlement fee on the standard schedule.'],
+  ['Who is it for?','Every merchant who accepts payments with FLIK can switch it on. FLIK may set a limit for each account.'],
+  ['How fast do I get paid?','As soon as the payment is made. For Checkout orders, once the order is completed.'],
+  ['What does it cost?','0.2% of each QRIS, e-wallet or virtual account payment you settle early, and 0.3% of each card payment, plus PPN. The fee shows before you confirm. There is no fee on the standard schedule.'],
   ['Is it a loan?','No. Early Settlement pays out money from sales you already made, so there is nothing to repay.'],
-  ['Which transactions can I settle early?','Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards [[confirm: eligible payment methods]]. Cash on delivery orders settle after the package is delivered.'],
+  ['Which transactions can I settle early?','Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards. Cash on delivery orders settle after the package is delivered.'],
   ['Can I keep the standard schedule?','Yes. Early Settlement is optional. Use it on the days you need it and keep the standard schedule the rest of the time.'],
   ['How is it different from Merchant Cash Advance?','Early Settlement pays out money you already earned. Merchant Cash Advance funds your growth upfront and is settled from future sales.']
 ];
@@ -1920,7 +1919,7 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

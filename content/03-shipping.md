@@ -8,7 +8,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Things to confirm on this page
 
 - [x] Coverage: Malaysia and Singapore removed everywhere, including the search data (`areaServed` is now Indonesia only). Coverage is "across Indonesia" (AG, 24 Oct 2026).
-- [x] Claims: "up to 40% less", "COD fee 3% (excl. PPN)" and "99% of shipments created successfully" are allowed (AG, 24 Oct 2026). The "3 countries" stat is replaced with "15 payment methods".
+- [x] Shipping discount is "up to 50% off published rates" (AG, 12 Nov 2026; was "up to 40% less", AG 24 Oct). Claims: "up to 40% less", "COD fee 3% (excl. PPN)" and "99% of shipments created successfully" are allowed (AG, 24 Oct 2026). The "3 countries" stat is replaced with "15 payment methods".
 - [x] Struck-through "was" prices and invented discounts removed from the rate checker and the globe. Prices are labelled "Example" (AG, 24 Oct 2026).
 - [x] "Lower RTO", "Fewer coming back", the −38% badge and the returns chart removed. The page now uses neutral copy about tracking every parcel and handling returns (AG, 24 Oct 2026).
 - [x] COD: "paid upfront" and "No other withdrawal costs" removed. The COD ledger mockup now shows a "PPN on fee (example, 11%)" row so the balance adds up (AG, 24 Oct 2026).
@@ -18,14 +18,14 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Search results (SEO)
 
 - **Page title:** The Shipping Engine for Growing Brands | FLIK Shipping
-- **Description:** FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 40% less, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.
+- **Description:** FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 50% off published rates, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.
 
 ## 1. Hero
 <!-- html: Hero: text left, a working rate checker on the right -->
 
 - **Small text above headline:** FLIK Shipping
 - **Headline (H1):** The shipping engine for growing brands.
-  - **Grey part:** All major couriers, up to 40% less.
+  - **Grey part:** All major couriers, up to 50% less.
 - **Intro text:** Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
 - **Button:** Start shipping free
 - **Button:** Contact sales
@@ -40,7 +40,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** One dashboard for every shipment.
   - **Grey part:** From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.
-- **Stat:** 40% — off shipping, at most
+- **Stat:** 50% — off published rates, at most
 - **Stat:** 3% — COD fee (excl. PPN), paid by the merchant
 - **Stat:** 99% — of shipments created successfully
 - **Stat:** 15 — payment methods in one checkout
@@ -51,7 +51,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Compare all major couriers in seconds.
   - **Grey part:** Pick a route and a weight, then sort by the cheapest or the fastest.
 - **List item:** Regular, next day, same day, instant and cargo
-- **List item:** Up to 40% off shipping rates
+- **List item:** Up to 50% off published shipping rates
 - **List item:** Live rates in your dashboard
 - **Label (top of rate checker):** Example
 - **Form label:** From
@@ -168,8 +168,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** New orders appear in your FLIK Shipping dashboard, ready to ship.
 - **Link:** Shopify integration
 - **Label:** WooCommerce
-- **Heading:** Add the FLIK plugin.
-- **Text:** Your WooCommerce store connects straight to the FLIK Shipping dashboard.
+- **Heading:** We set it up for you.
+- **Text:** The FLIK team connects your WooCommerce store to the FLIK Shipping dashboard.
 - **Link:** WooCommerce integration
 - **Label:** FLIK Checkout
 - **Heading:** Sold with FLIK, shipped with FLIK.
@@ -204,7 +204,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** How long does pickup take?
 - **Answer:** Pickup starts once the AWB is ready: 3–5 hours for regular, 1–4 hours for same day, and right away for instant.
 - **Button:** How do I contact FLIK support?
-- **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.
+- **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
 ## 12. Resources

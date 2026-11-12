@@ -211,7 +211,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **List item:** Privacy questions and personal data requests: privacy@flik.co.id
 - **List item:** General support: support@flik.co.id
-- **List item:** WhatsApp: +62 812-9201-2668
+- **List item:** WhatsApp: +62 813-3532-8100
 - **List item:** Support hours: Monday–Friday, 09:00–18:00 WIB
 - **List item:** Personal Data Protection Officer: [[W-5: name or function]]
 - **Text:** If you're not satisfied with our answer, you can complain to the personal data protection authority under UU PDP†.

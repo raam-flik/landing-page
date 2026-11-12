@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fraud Detection for Every Payment | FLIK</title>
-<meta name="description" content="FLIK Fraud Detection is in development: a planned risk check on payments, so genuine orders go through and suspicious ones are held or stopped, with your own rules and a review queue in your dashboard.">
+<title>Fraud Detection: Protection for Your Balance and Payouts | FLIK</title>
+<meta name="description" content="FLIK checks every withdrawal and every change to your payout account before money moves. Your shoppers' payments are never blocked, and FLIK's risk team reviews anything unusual.">
 <link rel="canonical" href="https://flik.co.id/payment/fraud-detection">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/payment/fraud-detection">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/payment/fraud-detection">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"FLIK Fraud Detection","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"Planned fraud and risk screening for payments made through FLIK (in development)."}
+{"@context":"https://schema.org","@type":"Service","name":"FLIK Fraud Detection","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"FLIK checks every withdrawal and every change to your payout account before money moves. Your shoppers' payments are never blocked, and FLIK's risk team reviews anything unusual."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1176,7 +1176,7 @@ html{scroll-padding-top:88px}
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
-/* ===== Fraud Detection page: the Checkout hero, flow band, ruled grid, dashboard and cards, plus a dark ledger (the Shipping COD pattern) ===== */
+/* ===== Fraud Detection page: the Checkout hero, flow band, ruled grid, account-change card and cards, plus a dark text band ===== */
 :root{--surface:#FFFFFF;--on-dark-muted:#AAB4CC;--on-dark-accent:#7FF3FF;--ok-text:#0E6E48;--warn-text:#8A5A12;--bad-text:#A3112E;--ribbon-2:#FF2DB8;--ribbon-3:#6A4BFF;--radius-control:6px}
 .fl-plogo{width:24px;height:24px;border-radius:var(--radius-control);object-fit:contain;flex:none;display:inline-block;vertical-align:middle}
 .fl-plogo--icon{display:inline-flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--primary)}
@@ -1207,7 +1207,7 @@ html{scroll-padding-top:88px}
 .st-card .fl-ic{margin:0;flex:none}
 .st-card small{display:block;color:var(--muted);font-size:12px}
 .st-card b{display:block;font-weight:500;font-size:14px}
-/* Know why: risk score and ranked reasons */
+/* Payout account change card: countdown and what happens now */
 .rs-body{padding:22px;display:grid;gap:14px}
 .rs-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .rs-top small{display:block;font-size:12px}
@@ -1216,53 +1216,18 @@ html{scroll-padding-top:88px}
 .rs-n b{display:block;font-size:36px;font-weight:300;line-height:1;color:var(--ink)}
 .rs-n small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 .rs-score small.m{display:block;font-size:12px;margin-top:6px}
-.rs-scale,.rs-bar{display:block;height:8px;border-radius:999px;background:var(--line-soft);overflow:hidden}
-.rs-scale i,.rs-bar i{display:block;height:100%;width:0;border-radius:inherit;transition:width 1s cubic-bezier(.2,.8,.2,1)}
-.rs-scale i{background:var(--warn)}
-.rs-bar{height:6px}
-.rs-bar i{background:var(--primary)}
-.fx-win.go .rs-bar i{width:var(--w)}
 .rs-list{display:grid;gap:6px}
 .rs-r{display:grid;grid-template-columns:1fr 120px;gap:12px;align-items:center;padding:8px 10px}
 .rs-r b{display:block;font-weight:500;font-size:13px}
 .rs-r small{color:var(--muted);font-size:12px}
 .rs-body .ph-btn{height:38px}
-/* Strictness: SegmentedControl (design-system component) */
-.fl-seg{display:inline-flex;background:var(--bg-alt);border:1px solid var(--line-soft);border-radius:var(--r-card);padding:2px}
-.fl-seg button{height:28px;padding:0 12px;border-radius:var(--radius-control);font-weight:500;color:var(--muted);font-size:13.5px;transition:background .2s,color .2s,box-shadow .2s}
-.fl-seg button:hover{color:var(--ink)}
-.fl-seg button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-.fl-seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--sh)}
-.rs-note{font-size:12.5px;color:var(--muted);margin:8px 0 18px;min-height:18px}
-/* Review queue rows */
-.rq{display:grid}
-.rq-r{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:12px 4px;border-top:1px solid var(--line-soft);cursor:pointer;border-radius:6px;transition:background .2s}
-.rq-r:hover{background:var(--bg-alt)}
-.rq-r b{display:block;font-weight:500}
-.rq-r small{color:var(--muted);font-size:12px}
-.rq-r .pill{min-width:96px;justify-content:center}
-.fd-kpi{display:grid;gap:8px;align-self:start}
-/* Fake COD orders: dark band with a ledger */
+/* Reviewed by people: dark text band */
 #cod-risk{overflow:hidden}
 #cod-risk .sec-h .soft{color:var(--on-dark-muted)}
-.cod{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
 .cod-pts{list-style:none;display:grid;gap:10px;margin:32px 0 24px}
 .cod-pts li{display:flex;gap:10px;color:var(--on-dark-muted);font-size:15px}
 .cod-pts li span{color:var(--on-dark-accent);display:flex;margin-top:3px}
 .link.lt{color:var(--on-dark-accent)}
-.cod-g{position:relative}
-.cod-g::before{content:"";position:absolute;inset:-10% -10%;background:radial-gradient(40% 45% at 35% 60%,var(--ribbon-2),transparent 70%),radial-gradient(40% 45% at 70% 35%,var(--ribbon-3),transparent 70%);filter:blur(50px);opacity:.45}
-.cod-card{position:relative;background:var(--dark-2);border:1px solid var(--dark-line);border-radius:var(--r-lg);padding:26px;color:#fff;box-shadow:var(--sh-lg)}
-.cod-card>small{color:var(--on-dark-muted);font-size:12.5px}
-.cod-bal{display:block;font-size:36px;font-weight:300;letter-spacing:-.8px;margin:4px 0 18px}
-.cod-list{display:grid;min-height:300px;align-content:start}
-.cod-it{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--dark-line);animation:fd-in .5s cubic-bezier(.2,.8,.2,1)}
-.cod-it i{width:32px;height:32px;border-radius:50%;background:var(--dark-line);color:var(--on-dark-accent);display:flex;align-items:center;justify-content:center}
-.cod-it b{display:block;font-weight:500;font-size:13.5px}
-.cod-it small{color:var(--on-dark-muted);font-size:12px}
-.cod-it .num{font-size:13.5px;text-align:right}
-.cod-it .num .pill{margin-top:4px}
-@media (max-width:1080px){.cod{grid-template-columns:1fr;gap:40px}}
 @media (max-width:1080px){.flow5{grid-template-columns:1fr 1fr}.flow5 .stat:nth-child(odd){padding-left:var(--bleed)}.flow5 .stat:nth-child(even){border-right:0}.flow5 .stat:last-child{grid-column:1/-1}}
 @media (max-width:760px){
   .rs-r{grid-template-columns:1fr 80px}
@@ -1270,9 +1235,6 @@ html{scroll-padding-top:88px}
   .fd-stage .ch-timer{bottom:28px}
   .fd-it{grid-template-columns:24px 1fr auto}
   .fd-it .pill{grid-column:2/-1;justify-self:start;min-width:0}
-  .rq-r{grid-template-columns:1fr auto}
-  .rq-r .pill{grid-column:1/-1;justify-self:start;min-width:0}
-  .cod-card{padding:20px}
 }
 
 /* ===== kit: contrast ===== */
@@ -1386,35 +1348,34 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 <main id="top" tabindex="-1">
 
-<!-- ===== Hero: text left, a live screening feed on the right (example data) ===== -->
-<!-- PLACEHOLDER scope (FLI-47): Fraud Detection is tied to the FDS and Transaction Monitoring System projects (Backlog). Every feature on this page needs product confirmation; see content/06-fraud-detection.md -->
+<!-- ===== Hero: text left, a live feed of withdrawals and account changes on the right (example data) ===== -->
 <section class="ch guides">
   <div class="wrap ch-in">
     <div class="ch-t">
-      <p class="eyebrow">FLIK Fraud Detection · Planned</p>
-      <h1 class="ch-h">Fraud checks for every payment. <span class="soft">Planned, and in development now.</span></h1>
-      <p class="lead">We're building a risk check for FLIK payments, so genuine orders go through and suspicious ones don't. The capabilities on this page are planned and may change.</p>
+      <p class="eyebrow">FLIK Fraud Detection · From December 2026</p>
+      <h1 class="ch-h">Your money stays yours. <span class="soft">Every withdrawal is checked before it leaves FLIK.</span></h1>
+      <p class="lead">If someone gets into your account, the first thing they go for is your balance. FLIK checks every withdrawal and every change to your payout account before money moves. Your shoppers' payments are never blocked.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="sales">Talk to the FLIK team <span class="chev">›</span></button>
         <a href="#decide" class="btn btn-secondary">See how it works <span class="chev">›</span></a>
       </div>
       <ul class="ch-facts">
-        <li><span data-ic="check-s"></span>Planned: a check before approval</li>
-        <li><span data-ic="check-s"></span>Planned: your own rules on top</li>
-        <li><span data-ic="check-s"></span>Planned: a review queue for unusual orders</li>
+        <li><span data-ic="check-s"></span>Every withdrawal checked before it's sent</li>
+        <li><span data-ic="check-s"></span>New payout accounts wait 24 hours, with an email to you</li>
+        <li><span data-ic="check-s"></span>Reviewed by FLIK's risk team, not a black box</li>
       </ul>
     </div>
     <div class="ch-stage fd-stage">
       <div class="ch-glow" aria-hidden="true"></div>
-      <div class="fx-win fd-win" role="img" aria-label="Example of a planned feature: payments arriving in the FLIK dashboard, each marked approved, held for review or blocked">
-        <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/payments</span></div>
+      <div class="fx-win fd-win" role="img" aria-label="Example: withdrawals and payout-account changes in the FLIK dashboard, each marked sent, being verified, waiting 24 hours, checked or stopped">
+        <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/withdrawals</span></div>
         <div class="fd-body">
-          <div class="fd-head"><b>Payments</b><span class="pill pu">Example · planned</span></div>
-          <div class="fd-sum"><span><b class="num" id="fd-n-ok">0</b> approved</span><span><b class="num" id="fd-n-rv">0</b> held for review</span><span><b class="num" id="fd-n-bl">0</b> blocked</span></div>
+          <div class="fd-head"><b>Money out</b><span class="pill pu">Example</span></div>
+          <div class="fd-sum"><span><b class="num" id="fd-n-ok">0</b> sent</span><span><b class="num" id="fd-n-rv">0</b> being verified</span><span><b class="num" id="fd-n-bl">0</b> stopped</span></div>
           <div class="fd-list" id="fd-list"></div>
         </div>
       </div>
-      <div class="ch-timer" aria-hidden="true"><span data-ic="shield-s"></span><span>Planned feature</span></div>
+      <div class="ch-timer" aria-hidden="true"><span data-ic="shield-s"></span><span>Example</span></div>
     </div>
   </div>
   <div class="logos-band">
@@ -1427,64 +1388,64 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== How it decides: full-width band with a flow diagram that splits into three outcomes ===== -->
 <section class="band guides" id="decide">
   <div class="wrap">
-    <span class="label"><i></i>Planned capabilities</span>
-    <h2 class="sec-h" style="margin-top:14px">One check, three outcomes. <span class="soft">The plan: each payment is scored before it is approved. Most go straight through; the unusual ones wait for a closer look. [[confirm with product]]</span></h2>
+    <span class="label"><i></i>How it works</span>
+    <h2 class="sec-h" style="margin-top:14px">One check before money moves. <span class="soft">Each withdrawal and each payout-account change gets the same check, whether it comes from your dashboard, the API or an AI agent.</span></h2>
     <div class="flow fd-flow">
-      <div class="fl-n"><span class="fl-ic" data-ic="cart"></span><small>Wherever you sell</small><b>Shopper pays</b><span>Checkout, Payment Link or at your counter</span></div>
+      <div class="fl-n"><span class="fl-ic" data-ic="wallet"></span><small>You or your system</small><b>Request</b><span>A withdrawal, or a new payout account</span></div>
       <div class="fl-c"><i></i></div>
-      <div class="fl-n fl-mid"><span class="fl-ic" data-ic="shield"></span><small>FLIK Fraud Detection</small><b>Risk check</b><span>The payment's signals and your rules, scored together</span></div>
+      <div class="fl-n fl-mid"><span class="fl-ic" data-ic="shield"></span><small>FLIK Fraud Detection</small><b>Risk check</b><span>Compared with how your business usually moves money</span></div>
       <div class="fl-split">
         <svg viewBox="0 0 80 300" preserveAspectRatio="none"><path d="M0 150 C40 150 40 50 80 50"/><path d="M0 150 L80 150"/><path d="M0 150 C40 150 40 250 80 250"/></svg>
       </div>
       <div class="fl-col">
-        <div class="fl-n"><span class="pill ok">Low risk</span><b>Approved</b><span>The payment goes through as usual.</span></div>
-        <div class="fl-n"><span class="pill warn">Unusual</span><b>Held for review</b><span>It waits in your review queue until you decide.</span></div>
-        <div class="fl-n"><span class="pill bad">High risk</span><b>Blocked</b><span>The payment is stopped before the order ships.</span></div>
+        <div class="fl-n"><span class="pill ok">Usual</span><b>Sent</b><span>The money goes out as usual.</span></div>
+        <div class="fl-n"><span class="pill warn">Unusual</span><b>Being verified</b><span>It waits while FLIK's risk team takes a look. You see the expected time.</span></div>
+        <div class="fl-n"><span class="pill bad">Clearly wrong</span><b>Stopped</b><span>Nothing leaves your balance.</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Every step of the order: ruled five-step flow, the progress line walks and an example check follows (structure from seon.io "protect every step"; example data) ===== -->
+<!-- ===== Every step of the order: ruled five-step flow, the progress line walks and an example check follows (example data) ===== -->
 <section class="pad-t guides stats-sec" id="steps">
   <div class="wrap">
-    <h2 class="sec-h stats-h">Planned: checks at every step of the order. <span class="soft">Fraud doesn't only happen at payment. The plan is to look for risk from the first sign-up to after the package arrives. [[confirm with product]]</span></h2>
+    <h2 class="sec-h stats-h">Watching every way money leaves. <span class="soft">Withdrawals and payout details are checked before anything happens. Money coming in is watched, never refused.</span></h2>
     <div class="stats4 flow4 flow5" id="flow5">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="user"></span><b>Sign-up</b><span>New FLIK accounts that share a phone number or device with others.</span></div>
-      <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="cart"></span><b>Checkout</b><span>Delivery addresses and contact details that don't add up.</span></div>
-      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="card"></span><b>Payment</b><span>Many failed tries, unusual amounts or a burst of payments.</span></div>
-      <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="truck"></span><b>Shipping</b><span>Risky COD orders held before you pay to ship them.</span></div>
-      <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="wallet"></span><b>After delivery</b><span>Addresses that keep refusing packages, and repeated refunds.</span></div>
+      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="wallet"></span><b>Withdrawals</b><span>Checked before anything is sent to the bank.</span></div>
+      <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="bank"></span><b>New payout account</b><span>A 24-hour wait, with an email to every registered contact.</span></div>
+      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="user"></span><b>Contact changes</b><span>New phone numbers and emails get the same check.</span></div>
+      <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="qris"></span><b>Payments in</b><span>Never blocked. Unusual patterns go to FLIK's risk team.</span></div>
+      <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="coins"></span><b>Refunds</b><span>Watched for patterns that don't fit your business.</span></div>
     </div>
     <div class="st-ex" id="st-ex" aria-live="polite"></div>
   </div>
 </section>
 
-<!-- ===== Know why: the list highlights the reasons behind one held order (structure from seon.io score explainability; example data) ===== -->
+<!-- ===== Know why: the list highlights one account change (example data) ===== -->
 <section class="pad guides" id="signals">
   <div class="wrap">
-    <h2 class="sec-h">Planned: know why, every time. <span class="soft">The plan is for every decision to come with its reasons, ranked by how much they counted. [[confirm with product]]</span></h2>
+    <h2 class="sec-h">A new payout account waits 24 hours. <span class="soft">That's the window a fraudster needs and doesn't get. You hear about it straight away, and you can stop it.</span></h2>
     <div class="fx">
       <ul class="fx-list" id="fx-list">
-        <li data-f="beh"><span class="fx-ic" data-ic="bolt"></span><div><b>Behaviour</b><span>Several orders in a few minutes.</span></div></li>
-        <li data-f="loc"><span class="fx-ic" data-ic="pin"></span><div><b>Location</b><span>Paid far from the delivery address.</span></div></li>
-        <li data-f="his"><span class="fx-ic" data-ic="user"></span><div><b>History</b><span>A new account with no delivered orders.</span></div></li>
-        <li data-f="dev"><span class="fx-ic" data-ic="phone"></span><div><b>Device</b><span>A phone already used on other accounts.</span></div></li>
+        <li data-f="mail"><span class="fx-ic" data-ic="mail"></span><div><b>Email alert</b><span>Every registered contact gets an email as soon as the change is made.</span></div></li>
+        <li data-f="cancel"><span class="fx-ic" data-ic="x"></span><div><b>One click to cancel</b><span>Didn't make the change? Cancel it from the email.</span></div></li>
+        <li data-f="old"><span class="fx-ic" data-ic="bank"></span><div><b>Your choice meanwhile</b><span>Keep withdrawing to your old account, or wait for the new one.</span></div></li>
+        <li data-f="otp"><span class="fx-ic" data-ic="phone"></span><div><b>OTP check</b><span>The change needs the one-time code sent to your WhatsApp.</span></div></li>
       </ul>
       <div class="fx-g">
         <div class="fx-win" id="fx-win">
-          <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/fraud</span></div>
+          <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/payout-accounts</span></div>
           <div class="rs-body">
-            <div class="rs-top"><span><small class="m">Example · Order ARN-1054 · Cash on delivery</small><b class="num">Rp2.150.000</b></span><span class="pill warn">Held for review</span></div>
-            <div class="rs-score"><div class="rs-n"><b class="num" id="rs-n">0</b><small>risk score</small></div><div><div class="rs-scale"><i id="rs-fill"></i></div><small class="m">0 low · 100 high (example)</small></div></div>
-            <small class="mh-cap">Why it was held</small>
+            <div class="rs-top"><span><small class="m">Example · Payout account change</small><b>New BRI account ···· 4821</b></span><span class="pill warn">Waiting 24 h</span></div>
+            <div class="rs-score"><div class="rs-n"><b class="num">23:41</b><small>hours left</small></div><div><small class="m">Active on 13 Dec, 10:12 WIB (example)</small></div></div>
+            <small class="mh-cap">What happens now</small>
             <div class="rs-list">
-              <div class="fx-el rs-r" data-f="beh"><span><b>4 orders in 12 minutes</b><small>Behaviour</small></span><span class="rs-bar"><i style="--w:90%"></i></span></div>
-              <div class="fx-el rs-r" data-f="loc"><span><b>Paid 800 km from the delivery address</b><small>Location</small></span><span class="rs-bar"><i style="--w:68%"></i></span></div>
-              <div class="fx-el rs-r" data-f="his"><span><b>Account created today</b><small>History</small></span><span class="rs-bar"><i style="--w:52%"></i></span></div>
-              <div class="fx-el rs-r" data-f="dev"><span><b>Phone used by 2 other accounts</b><small>Device</small></span><span class="rs-bar"><i style="--w:38%"></i></span></div>
+              <div class="fx-el rs-r" data-f="mail"><span><b>Email sent to 2 registered contacts</b></span><small>Alert</small></div>
+              <div class="fx-el rs-r" data-f="old"><span><b>Withdrawals go to your BCA account until then</b></span><small>Your choice</small></div>
+              <div class="fx-el rs-r" data-f="otp"><span><b>Change made with a WhatsApp OTP</b></span><small>Check</small></div>
+              <div class="fx-el rs-r" data-f="cancel"><span><b>Not you? Cancel this change</b></span><small>Cancel</small></div>
             </div>
-            <span class="ph-btn">Review order</span>
+            <span class="ph-btn">Cancel change</span>
           </div>
         </div>
       </div>
@@ -1492,93 +1453,70 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   </div>
 </section>
 
-<!-- ===== Fake COD orders: dark band with a ledger of held orders (example data) ===== -->
+<!-- ===== Reviewed by people: dark band with a short list ===== -->
 <section class="pad dark guides" id="cod-risk">
-  <div class="wrap cod">
-    <div class="cod-t">
-      <h2 class="sec-h">Planned: holds on suspicious COD orders. <span class="soft">Cash on delivery is easy to abuse. The plan is to let you hold suspicious COD orders before you pay to ship them. [[confirm with product]]</span></h2>
-      <ul class="cod-pts">
-        <li><span data-ic="check-s"></span>Spot repeated orders to different addresses.</li>
-        <li><span data-ic="check-s"></span>Hold large first orders from new accounts.</li>
-      </ul>
-      <a href="#" class="link lt" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a>
-    </div>
-    <div class="cod-g">
-      <div class="cod-card">
-        <small>COD orders held · Example</small>
-        <b class="cod-bal num" id="cod-bal">Rp0</b>
-        <div class="cod-list" id="cod-list"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Your rules, your review queue: tabs drive one dashboard window (example data) ===== -->
-<section class="pad guides" id="dash">
   <div class="wrap">
-    <h2 class="sec-h">Your rules, your call. <span class="soft">Planned: add rules for how your business sells, and decide on held orders from one queue. [[confirm with product]]</span></h2>
-    <div class="dsh-tabs" id="dsh-tabs" role="group" aria-label="Fraud Detection settings">
-      <button type="button" class="on" data-t="0" aria-pressed="true"><span data-ic="sliders-s"></span>Rules</button>
-      <button type="button" data-t="1" aria-pressed="false"><span data-ic="bell-s"></span>Review queue</button>
-    </div>
-    <div class="dsh-win">
-      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/fraud</span></div>
-      <div class="dsh-body">
-        <aside class="dsh-side" id="dsh-side">
-          <span class="dsh-f"><svg viewBox="0 0 30 30" width="22" height="22" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg></span>
-          <small>Fraud Detection</small>
-          <span data-t="0">Rules</span>
-          <span data-t="1">Review queue</span>
-        </aside>
-        <div class="dsh-panel" id="dsh-panel"></div>
-      </div>
+    <div class="cod-t">
+      <h2 class="sec-h">People decide, not just rules. <span class="soft">When a withdrawal looks unusual, FLIK's risk team reviews it. Nothing is rejected by a machine alone.</span></h2>
+      <ul class="cod-pts">
+        <li><span data-ic="check-s"></span>A person on FLIK's risk team reviews every held withdrawal.</li>
+        <li><span data-ic="check-s"></span>You see "Being verified" and an expected time in your dashboard.</li>
+      </ul>
+      <a href="#" class="link lt" data-page="/help">Contact support <span class="chev">›</span></a>
     </div>
   </div>
 </section>
 
-<!-- ===== Works where you sell: three product cards ===== -->
+<!-- ===== Your shoppers aren't affected: short text section ===== -->
+<section class="pad-s alt guides" id="dash">
+  <div class="wrap">
+    <h2 class="sec-h">Your shoppers pay as usual. <span class="soft">We never block a payment coming in. Card payments are screened by FLIK's licensed payment partners.</span></h2>
+  </div>
+</section>
+
+<!-- ===== Works however you withdraw: three product cards ===== -->
 <section class="pad guides" id="where">
   <div class="wrap">
-    <h2 class="sec-h">Works where you sell. <span class="soft">Planned for payments across FLIK, online and at your counter. [[confirm with product]]</span></h2>
+    <h2 class="sec-h">The same check, however you withdraw. <span class="soft">No setup and nothing to switch on.</span></h2>
     <div class="pk3">
-      <a href="#" class="pk" data-page="/payment/checkout">
+      <a href="https://merchant.flik.co.id/" class="pk" target="_blank" rel="noopener">
         <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Order ARN-1052</b><span class="pill ok">Approved</span></div>
-          <div class="pk-pl"><img class="fl-plogo" src="../../assets/logos/payment/qris.png" alt=""><span class="grow"><b>QRIS · Rp349.000</b><small>Risk check passed</small></span></div>
+          <div class="co-row"><b style="font-weight:500">Withdrawal WD-3102</b><span class="pill ok">Sent</span></div>
+          <div class="pk-pl"><img class="fl-plogo" src="../../assets/logos/payment/bca.png" alt=""><span class="grow"><b>Dashboard · Rp12.500.000</b><small>Risk check passed</small></span></div>
         </div></div>
-        <span class="label"><i></i>Checkout</span>
-        <h3>Online orders.</h3>
-        <p class="txt">Planned: payments in FLIK Checkout checked before the order is confirmed.</p>
-        <em class="link">Explore Checkout <span class="chev">›</span></em>
+        <span class="label"><i></i>Dashboard</span>
+        <h3>Withdraw by hand.</h3>
+        <p class="txt">Every withdrawal you make in the dashboard is checked first.</p>
+        <em class="link">Open the dashboard <span class="chev">›</span></em>
       </a>
-      <a href="#" class="pk" data-page="/payment/payment-link">
+      <a href="#" class="pk" data-page="/developers">
         <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Payment link</b><span class="pill warn">Review</span></div>
-          <div class="pk-pl"><img class="fl-plogo" src="../../assets/logos/payment/gopay.png" alt=""><span class="grow"><b>GoPay · Rp4.500.000</b><small>Much larger than usual</small></span></div>
+          <div class="co-row"><b style="font-weight:500">Withdrawal WD-3104</b><span class="pill warn">Being verified</span></div>
+          <div class="pk-pl"><span class="fl-plogo fl-plogo--icon" data-ic="code-s"></span><span class="grow"><b>API · Rp86.000.000</b><small>Under review</small></span></div>
         </div></div>
-        <span class="label"><i></i>Payment Link</span>
-        <h3>Sales in chat.</h3>
-        <p class="txt">Planned: the same check for links you share on WhatsApp or social media.</p>
-        <em class="link">Explore Payment Link <span class="chev">›</span></em>
+        <span class="label"><i></i>API</span>
+        <h3>Withdraw from your system.</h3>
+        <p class="txt">Withdrawals by API pass the same check, and you get a webhook when one is under review.</p>
+        <em class="link">Explore Developers <span class="chev">›</span></em>
       </a>
-      <a href="#" class="pk" data-page="/payment/in-store">
+      <a href="#" class="pk" data-page="/developers">
         <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Counter 1 · Bandung</b><span class="pill ok">Approved</span></div>
-          <div class="pk-pl"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span><span class="grow"><b>Card · Rp1.250.000</b><small>Risk check passed</small></span></div>
+          <div class="co-row"><b style="font-weight:500">Withdrawal WD-3109</b><span class="pill ok">Sent</span></div>
+          <div class="pk-pl"><span class="fl-plogo fl-plogo--icon" data-ic="bolt-s"></span><span class="grow"><b>Agent · Rp3.000.000</b><small>Within the agent's limit</small></span></div>
         </div></div>
-        <span class="label"><i></i>In-Store Payment</span>
-        <h3>At your counter.</h3>
-        <p class="txt">Planned: QRIS and card payments in your outlets screened too.</p>
-        <em class="link">Explore In-Store Payment <span class="chev">›</span></em>
+        <span class="label"><i></i>AI agents</span>
+        <h3>Withdraw through an agent.</h3>
+        <p class="txt">Agent withdrawals carry the agent's identity and its limit, and pass the same check.</p>
+        <em class="link">Explore Developers <span class="chev">›</span></em>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ===== Fraud Detection at a glance (structure from cybersource.com Fraud Management Essentials features; PLACEHOLDER scope) ===== -->
+<!-- ===== Fraud Detection at a glance ===== -->
 <section class="pad alt guides" id="glance">
   <div class="wrap">
-    <h2 class="sec-h">Planned capabilities at a glance. <span class="soft">In development, so details may change. [[confirm with product]]</span></h2>
+    <h2 class="sec-h">Fraud Detection at a glance. <span class="soft">On for every FLIK merchant from December 2026.</span></h2>
     <div class="gl3" id="gl3"></div>
   </div>
 </section>
@@ -1597,9 +1535,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap">
     <h3 class="res-h">More from FLIK</h3>
     <div class="res3">
-      <a href="#" class="res" data-page="/checkout"><span class="rtag"><span data-ic="cart"></span>Product</span><b>Sell with FLIK Checkout</b><span>A 30-second checkout with every way Indonesia pays.</span><em>Explore Checkout <span class="chev">›</span></em></a>
-      <a href="#" class="res" data-page="/shipping/cod"><span class="rtag"><span data-ic="truck"></span>Product</span><b>COD across Indonesia</b><span>COD fee 3% (excl. PPN), paid by the merchant.</span><em>Explore COD Shipping <span class="chev">›</span></em></a>
-      <a href="#" class="res" data-page="/blog"><span class="rtag"><span data-ic="mail"></span>Guide</span><b>Spotting fake orders</b><span>The patterns behind most payment fraud, and what to do about them.</span><em>Read more <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="wallet"></span>Product</span><b>Early Settlement</b><span>Get paid sooner, straight into your FLIK balance.</span><em>Explore Early Settlement <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/developers"><span class="rtag"><span data-ic="code"></span>Product</span><b>Developers</b><span>API keys, webhooks and how to connect.</span><em>Explore Developers <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/blog"><span class="rtag"><span data-ic="mail"></span>Guide</span><b>Keeping your account safe</b><span>Simple habits that keep your FLIK account in your hands.</span><em>Read more <span class="chev">›</span></em></a>
     </div>
   </div>
 </section>
@@ -1608,7 +1546,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="pad alt guides">
   <div class="wrap fin">
     <h2>Sell with confidence.</h2>
-    <p class="txt">Talk to the FLIK team about the planned Fraud Detection and how it could fit the way you sell.</p>
+    <p class="txt">Talk to the FLIK team about how Fraud Detection protects your balance.</p>
     <div class="hero-cta" style="justify-content:center">
       <button class="btn btn-primary live" data-act="sales">Talk to the FLIK team <span class="chev">›</span></button>
       <button class="btn btn-secondary" data-act="start">Create an account</button>
@@ -1830,37 +1768,38 @@ const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait=ms=>new Promise(r=>{const go=()=>motionPaused()?setTimeout(go,300):r();setTimeout(go,REDUCE?0:ms)});
 const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersecting}).observe(el);return()=>v&&!document.hidden&&!motionPaused()};
 
-/* ===== Hero: payments arrive and each gets a decision (example data) ===== */
+/* ===== Hero: withdrawals and account changes arrive and each gets a decision (example data) ===== */
 const rpx=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
 const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.slice(3),14)}</span>`:`<img class="fl-plogo" src="../../assets/logos/payment/${n}.png" alt="">`;
 (function(){
   const list=document.getElementById('fd-list'),N={ok:document.getElementById('fd-n-ok'),warn:document.getElementById('fd-n-rv'),bad:document.getElementById('fd-n-bl')};
-  const L={ok:'Approved',warn:'Review',bad:'Blocked'},cnt={ok:118,warn:3,bad:1};
+  const cnt={ok:41,warn:1,bad:0};
+  // [logo, title, detail, amount (0 = none), style, status, counts as a withdrawal]
   const F=[
-    ['qris','QRIS','ARN-1052 · Jakarta',349000,'ok'],
-    ['gopay','GoPay','ARN-1053 · Bandung',128000,'ok'],
-    ['ic:cash','Cash on delivery','ARN-1054 · 4th address today',2150000,'warn'],
-    ['bca','BCA virtual account','ARN-1055 · Surabaya',890000,'ok'],
-    ['ic:card','Card','ARN-1056 · 6 failed tries',4750000,'bad'],
-    ['ovo','OVO','ARN-1057 · Medan',215000,'ok'],
-    ['dana','DANA','ARN-1058 · Yogyakarta',472000,'ok'],
-    ['mandiri','Mandiri virtual account','ARN-1059 · Makassar',1320000,'ok']
+    ['bca','Withdrawal','WD-3102 · BCA',12500000,'ok','Sent',1],
+    ['mandiri','Withdrawal','WD-3103 · Mandiri',4200000,'ok','Sent',1],
+    ['bri','Payout account change','New BRI account',0,'warn','Waiting 24 h',0],
+    ['bca','Withdrawal','WD-3104 · BCA',86000000,'warn','Being verified',1],
+    ['bni','Withdrawal','WD-3105 · BNI',2750000,'ok','Sent',1],
+    ['ic:mail','Registered contact change','New email',0,'ok','Checked',0],
+    ['bca','Withdrawal','WD-3106 · BCA',9900000,'ok','Sent',1],
+    ['mandiri','Withdrawal','WD-3107 · Mandiri',15300000,'ok','Sent',1]
   ];
   const paint=()=>Object.keys(N).forEach(k=>N[k].textContent=cnt[k]);
-  const row=(f,done)=>`<div class="fd-it">${plg(f[0])}<span><b>${f[1]}</b><small>${f[2]}</small></span><span class="num">${rpx(f[3])}</span><span class="pill ${done?f[4]:'gr'}">${done?L[f[4]]:'Checking'}</span></div>`;
+  const row=(f,done)=>`<div class="fd-it">${plg(f[0])}<span><b>${f[1]}</b><small>${f[2]}</small></span><span class="num">${f[3]?rpx(f[3]):''}</span><span class="pill ${done?f[4]:'gr'}">${done?f[5]:'Checking'}</span></div>`;
   F.slice(0,5).reverse().forEach(f=>list.insertAdjacentHTML('afterbegin',row(f,true)));
   paint();let k=5;const visible=onScreen(list);
   if(!REDUCE)setInterval(()=>{
     if(!visible())return;const f=F[k++%F.length];
     list.insertAdjacentHTML('afterbegin',row(f,false));while(list.children.length>5)list.lastElementChild.remove();
-    setTimeout(()=>{const p=list.firstElementChild.querySelector('.pill');p.className='pill '+f[4];p.textContent=L[f[4]];cnt[f[4]]++;paint()},700);
+    setTimeout(()=>{const p=list.firstElementChild.querySelector('.pill');p.className='pill '+f[4];p.textContent=f[5];if(f[6]){cnt[f[4]]++;paint()}},700);
   },2200);
 })();
 
-/* ===== Every step of the order: the progress line walks, an example check follows (example data) ===== */
+/* ===== What it covers: the progress line walks, an example check follows (example data) ===== */
 (function(){
   const box=document.getElementById('flow5'),s=[...box.children],ex=document.getElementById('st-ex');
-  const E=[['user','Sign-up','Phone number already on 3 FLIK accounts','warn','Review'],['cart','Checkout','Delivery address in Medan, phone area code in Jayapura','warn','Review'],['card','Payment','6 failed card tries in 4 minutes','bad','Blocked'],['truck','Shipping','COD order of Rp2.150.000 from a new account','warn','Held'],['wallet','After delivery','3 refused COD packages at this address','bad','Blocked']];
+  const E=[['wallet','Withdrawal','Rp12.500.000 to your usual BCA account','ok','Sent'],['bank','Payout account','New account added from a new login','warn','Waiting 24 h'],['user','Contact change','Registered email changed','ok','Checked'],['qris','Payments in','214 QRIS payments today','ok','Received'],['coins','Refunds','3 refunds today','ok','Normal']];
   let k=0;
   const paint=()=>{s.forEach((x,i)=>{x.classList.toggle('on',i===k);x.classList.toggle('done',i<k)});box.style.setProperty('--p',((k+1)/s.length*100)+'%');
     const e=E[k];ex.innerHTML=`<div class="st-card"><span class="fl-ic">${ic(e[0],18)}</span><span><small>Example · ${e[1]}</small><b>${e[2]}</b></span><span class="pill ${e[3]}">${e[4]}</span></div>`};
@@ -1868,88 +1807,35 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
   if(!REDUCE)setInterval(()=>{if(visible()){k=(k+1)%s.length;paint()}},2400);
 })();
 
-/* ===== Know why: score counts up, reasons fill in, the list highlights each reason (example data) ===== */
+/* ===== Payout account changes: the list highlights each part of the account-change card (example data) ===== */
 (function(){
-  const li=[...document.querySelectorAll('#fx-list li')],win=document.getElementById('fx-win'),els=[...win.querySelectorAll('.fx-el')],n=document.getElementById('rs-n'),fill=document.getElementById('rs-fill');
-  const visible=onScreen(win);let cur=0,hold=0,shown=false;const T=72;
+  const li=[...document.querySelectorAll('#fx-list li')],win=document.getElementById('fx-win'),els=[...win.querySelectorAll('.fx-el')];
+  const visible=onScreen(win);let cur=0,hold=0;
   const set=k=>{cur=k;const f=li[k].dataset.f;li.forEach((x,i)=>x.classList.toggle('on',i===k));win.classList.add('hl');els.forEach(e=>e.classList.toggle('on',e.dataset.f===f))};
   li.forEach((x,i)=>{x.addEventListener('mouseenter',()=>{hold=Infinity;set(i)});x.addEventListener('mouseleave',()=>{hold=Date.now()+2000});x.addEventListener('click',()=>{hold=Date.now()+6000;set(i)})});
-  const show=()=>{shown=true;win.classList.add('go');fill.style.width=T+'%';if(REDUCE){n.textContent=T;return}const t0=performance.now(),tick=now=>{const q=Math.min(1,(now-t0)/1000);n.textContent=Math.round(T*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)};
-  set(0);if(REDUCE)show();
-  setInterval(()=>{if(!visible())return;if(!shown)show();if(!REDUCE&&hold<Date.now())set((cur+1)%li.length)},2400);
-  new IntersectionObserver(es=>{if(es[0].isIntersecting&&!shown)setTimeout(show,300)}).observe(win);
-})();
-
-/* ===== Fake COD orders: held orders arrive in the ledger (example data) ===== */
-(function(){
-  const list=document.getElementById('cod-list'),bal=document.getElementById('cod-bal');
-  const EV=[
-    ['ARN-2041 · Rp1.850.000','4 orders to different addresses today',1850000],
-    ['ARN-2047 · Rp3.200.000','First order from a new account',3200000],
-    ['ARN-2052 · Rp960.000','Phone number used by 3 accounts',960000],
-    ['ARN-2058 · Rp2.400.000','Address with earlier refused deliveries',2400000],
-    ['ARN-2063 · Rp1.150.000','6 orders in 10 minutes',1150000]
-  ];
-  let total=0,k=0;
-  const row=e=>`<div class="cod-it"><i>${ic('cash',16)}</i><span><b>${e[0]}</b><small>${e[1]}</small></span><span class="num"><span class="pill warn">Held</span></span></div>`;
-  const add=e=>{list.insertAdjacentHTML('afterbegin',row(e));while(list.children.length>4)list.lastElementChild.remove();total+=e[2];bal.textContent=rpx(total)};
-  for(;k<4;k++)add(EV[k]);
-  const visible=onScreen(list);
-  if(!REDUCE)setInterval(()=>{if(!visible())return;if(k%EV.length===0)total=0;add(EV[k++%EV.length])},2800);
-})();
-
-/* ===== Your rules, your review queue: tabs drive the dashboard window (example data) ===== */
-(function(){
-  const panel=document.getElementById('dsh-panel'),tabs=[...document.querySelectorAll('#dsh-tabs button')],side=[...document.querySelectorAll('#dsh-side [data-t]')];
-  const rules={'Review COD orders over Rp5.000.000':1,'Block 5 failed payments within 10 minutes':1,'Review first orders to a new address':0,'Review orders over 3× your average':1};
-  const Q=[['ARN-1054 · Rp2.150.000','Cash on delivery · 4th address today',0],['ARN-1061 · Rp6.400.000','Cash on delivery · over Rp5.000.000',0],['ARN-1066 · Rp3.900.000','GoPay · 3× your average order',0]];
-  const QS=[['warn','Needs review'],['ok','Approved'],['bad','Declined']];
-  const ST=[['Relaxed',9,4,'Fewer orders held. Only clear risks are stopped.'],['Balanced',23,6,'The default: unusual orders go to your review queue.'],['Strict',41,9,'More orders wait for review before they ship.']];let sk=1;
-  const T=[
-    ()=>`<div class="dsh-h"><b>Rules</b><span class="pill pu">Example rules</span></div>
-      <div class="dsh-cz"><div><h6>How strict</h6><div class="fl-seg" role="group" aria-label="How strict">${ST.map((x,i)=>`<button type="button" data-k="${i}" class="${i===sk?'on':''}" aria-pressed="${i===sk}">${x[0]}</button>`).join('')}</div><p class="rs-note">${ST[sk][3]}</p><h6>Your rules, on top of FLIK's checks</h6><div class="tgl">${Object.keys(rules).map(k=>`<button data-r="${k}"><span>${k}</span><i class="tg${rules[k]?' on':''}"></i></button>`).join('')}</div></div>
-      <div class="minip fd-kpi"><small class="m">Last 7 days (example)</small><div class="co-row"><span class="m">Payments checked</span><span class="num">1.284</span></div><div class="co-row"><span class="m">Held for review</span><span class="num">${ST[sk][1]}</span></div><div class="co-row"><span class="m">Blocked</span><span class="num">${ST[sk][2]}</span></div></div></div>`,
-    ()=>`<div class="dsh-h"><b>Review queue</b><span class="pill warn">${Q.filter(q=>!q[2]).length} waiting</span></div>
-      <div class="rq">${Q.map((q,i)=>`<div class="rq-r" data-q="${i}"><span><b>${q[0]}</b><small>${q[1]}</small></span><small>Tap to decide</small><span class="pill ${QS[q[2]][0]}">${QS[q[2]][1]}</span></div>`).join('')}</div>`
-  ];
-  let cur=0,hold=0;
-  function set(k){
-    cur=k;tabs.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-pressed',i===k)});side.forEach(x=>x.classList.toggle('on',+x.dataset.t===k));
-    panel.innerHTML=T[k]();panel.style.animation='none';void panel.offsetWidth;panel.style.animation='';
-  }
-  panel.addEventListener('click',e=>{
-    const b=e.target.closest('[data-r],[data-q],[data-k]');if(!b)return;hold=Date.now()+10000;
-    if(b.dataset.k)sk=+b.dataset.k;else if(b.dataset.r)rules[b.dataset.r]^=1;else{const q=Q[+b.dataset.q];q[2]=(q[2]+1)%3}
-    set(cur);
-  });
-  [...tabs,...side].forEach(b=>b.addEventListener('click',()=>{hold=Date.now()+10000;set(+b.dataset.t)}));
   set(0);
-  const visible=onScreen(panel);
-  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%2)},5000);
+  setInterval(()=>{if(!visible())return;if(!REDUCE&&hold<Date.now())set((cur+1)%li.length)},2400);
 })();
 
-/* ===== Fraud Detection at a glance (PLACEHOLDER scope) ===== */
+/* ===== Fraud Detection at a glance ===== */
 (function(){
   const G=[
-    ['shield','Ready from day one',['FLIK\'s checks switched on by default','No setup or code to start','Covers Checkout, Payment Link and In-Store Payment']],
-    ['sliders','Your strategy',['Choose how strict the checks are','Add your own rules on top','Approve or decline held orders in one queue']],
-    ['user','No friction for genuine shoppers',['No extra step at checkout','WhatsApp OTP login works as before']]
+    ['shield','Always on',['No setup, no code','Every withdrawal and payout-account change checked','The same check on dashboard, API and AI agents']],
+    ['lock','Your account, protected',['24-hour wait on new payout accounts','An email alert with one-click cancel','Reviewed by FLIK\'s risk team']],
+    ['user','No friction for shoppers',['Payments in are never blocked','No extra step at checkout']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
 })();
 
-/* ===== FAQ (PLACEHOLDER answers until the FDS scope is confirmed) ===== */
+/* ===== FAQ ===== */
 const FAQ=[
-  ['What is Fraud Detection?','A planned risk check on payments made through FLIK. It is in development, so the answers below describe the plan and may change. Genuine payments would go through, unusual ones would be held for review, and high-risk ones stopped.'],
-  ['Which payments will be checked?','The plan covers payments through FLIK Checkout, Payment Link and In-Store Payment, including QRIS, e-wallets, virtual accounts, cards and cash on delivery. [[confirm with product]]'],
-  ['Will it slow down checkout?','It is designed to add no extra step for shoppers, with the check running while the payment is processed. [[confirm with product]]'],
-  ['What happens to a held payment?','In the planned design, it waits in your review queue. You approve or decline it, and the order only ships once it is approved.'],
-  ['What happens to a blocked payment?','In the planned design, the payment is stopped and the order is not created, so you don\'t ship goods that won\'t be paid for.'],
-  ['Will I see why an order was held?','That is the plan: each held order would show its reasons, ranked by how much they counted, such as several orders in a few minutes or a new account. [[confirm with product]]'],
-  ['Can I make it more or less strict?','Planned: choose Relaxed, Balanced or Strict. Stricter settings send more orders to your review queue. [[confirm with product]]'],
-  ['Can I add my own rules?','Planned: add rules for how your business sells, such as reviewing COD orders above an amount, on top of FLIK\'s own checks. [[confirm with product]]'],
-  ['Will it cover COD?','Planned: suspicious COD orders can be held before you pay to ship them. [[confirm with product]]'],
-  ['What does it cost?','Pricing isn\'t set yet. The FLIK team will share it before Fraud Detection launches.']
+  ['What does Fraud Detection do?','It checks every withdrawal and every change to your payout account or registered contacts before anything happens. It protects your balance if someone else gets into your account.'],
+  ['Does it block my customers\' payments?','No. Money coming in is never refused. FLIK watches incoming payments for unusual patterns, and card payments are also screened by our licensed payment partners.'],
+  ['What happens when a withdrawal is held?','It shows as "Being verified" in your dashboard, with an expected time. FLIK\'s risk team reviews it, and it\'s sent as soon as it\'s cleared. Nothing leaves your balance in the meantime.'],
+  ['Why won\'t you tell me why it was held?','Sharing how the checks work would help fraudsters get around them. If we need anything from you, we\'ll contact you on your registered contacts.'],
+  ['Why does a new payout account take 24 hours?','It gives you time to spot a change you didn\'t make. Every registered contact gets an email, and you can cancel from it. Until then, you can keep withdrawing to your old account.'],
+  ['Do I need to set anything up?','No. It\'s on for every FLIK merchant, on the dashboard, the API and AI agents.'],
+  ['What does it cost?','Nothing extra. It\'s included for every FLIK merchant.']
 ];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
@@ -1958,7 +1844,7 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

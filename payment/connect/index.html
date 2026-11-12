@@ -1399,7 +1399,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <div class="fx-win al-win" id="al-win" role="img" aria-label="Example: one payment split by a Split Rule into a supplier's, an outlet partner's and an affiliate's share, with the remainder for the main merchant">
         <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/connect</span></div>
         <div class="al-body">
-          <div class="al-pay"><span><small id="al-ref">Allocation · ARN-2041 · QRIS</small><b class="num" id="al-amt">Rp0</b></span><span class="pill ok">Payment completed</span></div>
+          <div class="al-pay"><span><small id="al-ref">Allocation · ARN-2041 · QRIS</small><b class="num" id="al-amt">Rp0</b></span><span class="pill ok">Order completed</span></div>
           <div class="al-net"><span>Split on the net amount</span><span class="num" id="al-net">Rp0</span></div>
           <div class="al-bar" id="al-bar"></div>
           <div class="al-rows" id="al-rows"></div>
@@ -1416,7 +1416,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Who it's for: four example businesses with an example Split Rule each ===== -->
 <section class="pad guides" id="who">
   <div class="wrap">
-    <h2 class="sec-h">Built for brands that sell together. <span class="soft">When a sale belongs to more than one business, everyone gets their share as it happens.</span></h2>
+    <h2 class="sec-h">Built for brands that sell together. <span class="soft">When a sale belongs to more than one business, everyone gets their share when the order completes.</span></h2>
     <div class="pk4" id="pk4"></div>
   </div>
 </section>
@@ -1424,11 +1424,11 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== How it works: ruled four-step flow to the guide lines ===== -->
 <section class="pad-t guides stats-sec" id="how">
   <div class="wrap">
-    <h2 class="sec-h stats-h">Set it once, split every payment. <span class="soft">A Split Rule decides who gets what. FLIK applies it to every completed payment.</span></h2>
+    <h2 class="sec-h stats-h">Set it once, split every payment. <span class="soft">A Split Rule decides who gets what. FLIK applies it to every completed order.</span></h2>
     <div class="stats4 flow4" id="flow4">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="link"></span><b>Link wallets</b><span>Link the wallets of your partners. Each is a verified FLIK merchant, and FLIK approves every link.</span></div>
+      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="link"></span><b>Link wallets</b><span>Your partners' wallets are linked to your account. Each is a verified FLIK merchant, and FLIK approves every link.</span></div>
       <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="sliders"></span><b>Create a Split Rule</b><span>Give each recipient a fixed amount in Rp or a percentage.</span></div>
-      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>FLIK splits it</b><span>When a payment completes, the net amount is split. Your partners are paid first; the rest stays with you.</span></div>
+      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>FLIK splits it</b><span>When an order completes, the net amount is split. Your partners' shares come first; the rest stays with you.</span></div>
       <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="bank"></span><b>Everyone withdraws</b><span>Each wallet has its own balance and statement, and withdraws to its own bank account.</span></div>
     </div>
   </div>
@@ -1444,14 +1444,14 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
         <div class="rb-pay"><label for="rb-p">Payment amount</label><input id="rb-p" class="num" inputmode="numeric" value="1.000.000" aria-label="Payment amount in Rupiah"></div>
         <div class="rb-rows" id="rb-rows"></div>
         <button type="button" class="btn btn-secondary rb-add" id="rb-add"><span data-ic="plus-s"></span>Add recipient</button>
-        <p class="rb-ex">Up to four recipients in this example. The remainder always stays with you.</p>
+        <p class="rb-ex">Add several partners in this example. The remainder always stays with you.</p>
       </div>
       <div class="rb-card rb-out" aria-live="polite">
         <h3>Allocation</h3>
         <div class="al-bar" id="rb-bar"></div>
         <div id="rb-out"></div>
         <p class="rb-msg" id="rb-msg"></p>
-        <p class="rb-ex">Example payment fee: QRIS 0.7% + VAT. VAT shown at 11%. Your real rates are on the pricing page.</p>
+        <p class="rb-ex">Example payment fee: QRIS 0.7%, PPN included. Your real rates are on the pricing page.</p>
       </div>
     </div>
   </div>
@@ -1489,8 +1489,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <div class="prg-r">
         <div class="prg-h"><h3>FLIK Connect</h3><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
         <div class="prg-b">
-          <p class="txt">Charged on the whole transaction amount and paid by the main merchant. Payment method fees still apply.</p>
-          <div class="prg-p"><b class="num">3% + VAT</b><span>of the whole transaction amount</span></div>
+          <p class="txt">Charged on the amount split to partners and paid by the main merchant. Payment method fees still apply.</p>
+          <div class="prg-p"><b class="num">0.5% + PPN</b><span>of the amount split, max Rp10.000 per transaction</span></div>
         </div>
       </div>
       <div class="prg-r">
@@ -1530,7 +1530,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <button class="btn btn-primary live" data-act="sales">Join the waitlist <span class="chev">›</span></button>
       <a href="#" class="btn btn-secondary" data-page="/checkout">Explore Checkout <span class="chev">›</span></a>
     </div>
-    <div class="fin-price"><b>Pricing</b><span>3% + VAT of the whole transaction, paid by the main merchant.</span><a href="#pricing" class="link">See pricing <span class="chev">›</span></a></div>
+    <div class="fin-price"><b>Pricing</b><span>0.5% of the amount split, max Rp10.000, + PPN. Paid by the main merchant.</span><a href="#pricing" class="link">See pricing <span class="chev">›</span></a></div>
   </div>
 </section>
 
@@ -1750,12 +1750,12 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 /* ===== FLIK Connect: shared split calculation (example fees) ===== */
 const rpx=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
-const VAT=.11,PAYFEE=.007,CONNECT=.03,CLS=['c0','c1','c2','c3'];
-// net = payment − payment fee − VAT on that fee; recipients first; the remainder stays with the main merchant, who pays 3% + VAT of the whole payment
+const VAT=.11,PAYFEE=.007,CONNECT=.005,CAP=10000,CLS=['c0','c1','c2','c3'];
+// net = payment − payment fee − PPN on that fee; recipients first; the remainder stays with the main merchant, who pays 0.5% of the split amount (max Rp10.000) + PPN
 function split(P,R){
-  const fee=P*PAYFEE*(1+VAT),net=P-fee;
+  const fee=P*PAYFEE,net=P-fee;
   const alloc=R.map(r=>r.t==='pct'?net*(+r.v||0)/100:(+r.v||0));
-  const used=alloc.reduce((a,b)=>a+b,0),rem=net-used,cfee=P*CONNECT*(1+VAT);
+  const used=alloc.reduce((a,b)=>a+b,0),rem=net-used,cfee=Math.min(Math.max(used,0)*CONNECT,CAP)*(1+VAT);
   return {fee,net,alloc,used,rem,cfee,you:rem-cfee};
 }
 const bar=(el,net,alloc,rem)=>{el.innerHTML=alloc.map((a,i)=>`<i class="${CLS[i]}" style="width:${Math.max(0,a/net*100)}%"></i>`).join('')+`<i class="cr" style="width:${Math.max(0,rem/net*100)}%"></i>`};
@@ -1812,11 +1812,11 @@ const bar=(el,net,alloc,rem)=>{el.innerHTML=alloc.map((a,i)=>`<i class="${CLS[i]
     const RR=R.map(r=>({t:r.t,v:r.t==='pct'?Math.min(100,parseFloat(String(r.v).replace(',','.'))||0):num(r.v)}));
     const x=split(P,RR);
     out.innerHTML=`<div class="co-row"><span>Payment</span><span class="num">${rpx(P)}</span></div>
-      <div class="co-row"><span class="m">Payment fee + VAT (example)</span><span class="num">−${rpx(x.fee)}</span></div>
+      <div class="co-row"><span class="m">Payment fee incl. PPN (example)</span><span class="num">−${rpx(x.fee)}</span></div>
       <div class="co-row" style="font-weight:500"><span>Net amount</span><span class="num">${rpx(x.net)}</span></div>
       ${R.map((r,i)=>`<div class="co-row"><span><i class="${CLS[i]}"></i>${(r.n||'Recipient '+(i+1)).replace(/[<>&]/g,'')}</span><span class="num">${rpx(x.alloc[i])}</span></div>`).join('')}
       <div class="co-row"><span><i class="cr"></i>Remainder</span><span class="num">${rpx(x.rem)}</span></div>
-      <div class="co-row"><span class="m">FLIK Connect 3% + VAT</span><span class="num">−${rpx(x.cfee)}</span></div>
+      <div class="co-row"><span class="m">FLIK Connect 0.5% + PPN</span><span class="num">−${rpx(x.cfee)}</span></div>
       <div class="co-total"><span>You receive</span><span class="num">${rpx(Math.max(0,x.you))}</span></div>`;
     bar(barEl,x.net||1,x.alloc,x.rem);
     msg.className='rb-msg';msg.textContent='';
@@ -1855,7 +1855,7 @@ const bar=(el,net,alloc,rem)=>{el.innerHTML=alloc.map((a,i)=>`<i class="${CLS[i]
 (function(){
   const G=[
     ['wallet','Wallets',['Linked beneficiary wallets, each a verified FLIK merchant','A balance and statement for every wallet','Each wallet withdraws to its own bank account']],
-    ['sliders','Split Rules',['Fixed amounts in Rp or percentages','Calculated on the net amount','The remainder stays with the main merchant','Split automatically on every completed payment','IDR only']],
+    ['sliders','Split Rules',['Fixed amounts in Rp or percentages','Calculated on the net amount','The remainder stays with the main merchant','Split automatically on every completed order','IDR only']],
     ['shield','Controls',['FLIK approves rules and linked wallets','One active rule per merchant','Every change versioned and audited','Past payments keep their rule']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
@@ -1866,9 +1866,9 @@ const FAQ=[
   ['What is FLIK Connect?','FLIK Connect splits each payment you receive across several FLIK wallets, so every party gets its share without manual transfers. The feature is called Split Payments, and your setup is a Split Rule.'],
   ['Who can receive a split?','Verified FLIK merchants with their own wallet, linked to your account. FLIK checks and approves every link.'],
   ['Can I split by amount or percentage?','Both. Each recipient in a Split Rule gets a fixed amount in Rp or a percentage.'],
-  ['What is the net amount?','The payment minus the payment fee and its VAT. Splits are calculated on this amount.'],
+  ['What is the net amount?','The payment minus the payment fee (PPN included). Splits are calculated on this amount.'],
   ['What happens to the rest?','Recipients are paid first. Whatever is left, the remainder, stays in your wallet.'],
-  ['Who pays the fees?','The main merchant pays FLIK Connect: 3% of the whole transaction plus VAT. Recipients pay nothing to receive a split; each wallet’s own fees come from its own share.'],
+  ['Who pays the fees?','The main merchant pays FLIK Connect: 0.5% of the amount split to recipients, capped at Rp10.000 per transaction, plus PPN. Recipients pay nothing to receive a split; each wallet’s own fees come from its own share.'],
   ['Can I change a Split Rule?','Yes. A new version goes to FLIK for approval and then replaces the active rule. Past payments keep the rule that applied when they happened.'],
   ['When can I use it?','FLIK Connect is coming soon. Join the waitlist and the FLIK team will contact you when it launches.']
 ];
@@ -1879,7 +1879,7 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

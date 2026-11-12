@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FLIK | Merchant Growth Platform for Growing Brands</title>
-<meta name="description" content="FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 40% less, and inventory funding, all from one dashboard.">
+<meta name="description" content="FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.">
 <link rel="canonical" href="https://flik.co.id/">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/">
@@ -1092,7 +1092,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- Rates -->
       <article class="bc s2" id="shipping">
-        <h3>Ship with all major couriers for up to 40% less</h3>
+        <h3>Ship with all major couriers for up to 50% less</h3>
         <button class="exp" data-prod="shipping" aria-label="More about Shipping">+</button>
         <div class="vis g3"><div class="minip" id="rates" style="width:100%;max-width:300px"></div></div>
       </article>
@@ -1204,7 +1204,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <article class="story s1"><div class="story-art"><span>ERIGO</span></div><p>Erigo runs delivery, payment and returns from one place with FLIK.</p><a href="#" class="link" data-page="Erigo case study">Read Erigo's story <span class="chev">›</span></a></article>
           <article class="story s2"><div class="story-art"><span>ZMNow.id</span></div><p>ZMNow.id handles payments, shipping and rewards without juggling systems.</p><a href="#" class="link" data-page="ZMNow.id case study">Read ZMNow.id's story <span class="chev">›</span></a></article>
           <article class="story s3"><div class="story-art"><span>3%</span></div><p>COD with a 3% fee (excl. PPN), credited to your balance after delivery.</p><a href="#" class="link" data-page="/shipping/cod">Explore COD shipping <span class="chev">›</span></a></article>
-          <article class="story s4"><div class="story-art"><span>40%</span></div><p>Save up to 40% on shipping with all major couriers in one dashboard.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
+          <article class="story s4"><div class="story-art"><span>50%</span></div><p>Save up to 50% off published courier rates, with all major couriers in one dashboard.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
         </div>
         <div class="car-nav"><button class="cbtn" data-car="stories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="stories" data-dir="1" aria-label="Next stories">›</button></div>
       </div>
@@ -1282,7 +1282,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     </div>
 
     <div class="paths">
-      <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
+      <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>We connect your Shopify store to FLIK Checkout and Shipping for you.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
       <div><span class="icd icd-lg"><img src="assets/logos/platform/woocommerce.png" alt=""></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
       <div><span class="icd" data-ic="code"></span><h4>FLIK API</h4><p>Build your own checkout and shipping flows from your own systems.</p><a href="#" class="link-l" data-page="API reference">Read the docs <span class="chev">›</span></a></div>
     </div>
@@ -1710,8 +1710,8 @@ renderFund();
 /* ===== Integration tabs ===== */
 const ITABS={
   'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'Shopify':`<div class="isteps">${[['Install the FLIK plugin','Connect your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'WooCommerce':`<div class="isteps">${[['Install the FLIK plugin','Add FLIK to your WordPress site.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
   'API':`<div class="code"><span class="c">// Create a shipment (illustrative example)</span>
 <span class="k">const</span> shipment = <span class="k">await</span> flik.shipments.<span class="p">create</span>({
   warehouse_id: <span class="s">'wh_jakarta_01'</span>,
@@ -1736,7 +1736,7 @@ renderI();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

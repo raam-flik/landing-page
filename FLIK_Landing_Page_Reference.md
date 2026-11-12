@@ -112,7 +112,7 @@ Ship for less up to 40% off! All couriers, real-time tracking, near-zero returns
 - **How do I contact FLIK customer service?**
   Monday to Friday, 09:00–18:00 WIB:
   - Email: support@flik.co.id
-  - WhatsApp: +62 812-9201-2668
+  - WhatsApp: +62 813-3532-8100
 
 ---
 
@@ -176,7 +176,7 @@ Modelled on stripe.com: a short top menu, a Products menu split into product col
 - **Solutions** means by use case and by industry. Integrations belong under Developers.
 - **Not in the sitemap:** a customers / case studies page, a shopper page, Smart QRIS, Order Form.
 - **Developers** (`/developers`, 12 Nov 2026): one page for the whole Developers menu (Documentation, API reference `#api`, Developer resources `#resources`, Shopify `#shopify`, WooCommerce `#woocommerce`). Concepts only, from engineering's Settings › Developers guide; no endpoints until there is a public API reference. See `content/19-developers.md`.
-- **Pricing** (`/pricing`, FLI-50, 2026-10-22): tabs for Payments (rate table with fee, VAT, total and settlement per method; Checkout, COD and FLIK Connect fees; VAT note), Shipping and Funding. Rates are placeholders until AG / finance supply the rate card; see `content/18-pricing.md`.
+- **Pricing** (`/pricing`, FLI-50, 2026-10-22): tabs for Payments (rate table with fee, PPN, total and settlement per method; Checkout, COD and FLIK Connect fees; PPN note), Shipping and Funding. Rates are placeholders until AG / finance supply the rate card; see `content/18-pricing.md`.
 
 ### Top bar
 Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pricing · *(right side)* Sign in · Book a Demo · **Register Free**
@@ -267,7 +267,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 ```
 
 ### Footer
-Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (including Company) | Support (Mon–Fri 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 812-9201-2668)
+Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (including Company) | Support (Mon–Fri 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 813-3532-8100)
 
 ### SEO
 **Page titles and keywords (EN first, ID second)**
@@ -318,7 +318,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the placeholders on `/pricing` (rate card from AG / finance, FLI-50).
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
-- Payment: FLIK Connect (Split Payments) got a prototype page at `/payment/connect` (2026-10-22, Linear FLI-51). Not live: "Coming soon" with a waitlist CTA until launch (wallet service and PJP licensing). Pricing 3% + VAT of the whole transaction, paid by the main merchant. See `content/17-flik-connect.md`.
+- Payment: FLIK Connect (Split Payments) got a prototype page at `/payment/connect` (2026-10-22, Linear FLI-51). Not live: "Coming soon" with a waitlist CTA until launch (wallet service and PJP licensing). Pricing 0.5% of the amount split, max Rp10.000 per transaction, + PPN, paid by the main merchant (AG, 12 Nov 2026; was 3% of the whole transaction). See `content/17-flik-connect.md`.
 - Shipping: Shipment Tracking got its public cek resi page at `/shipping/track` (2026-10-21, Linear FLI-49) with example data. Live status needs a public tracking API; privacy, noindex and rate-limit rules are in `content/11-shipment-tracking.md`. The current cekresi.flik.co.id shows shoppers' names, phone numbers and addresses publicly and should be fixed or retired.
 - Resources: Help center (`/help`) got a prototype page (2026-10-21): search, contact cards, questions by topic (from the Checkout, Shipping and Merchant Cash Advance FAQs) and the consumer protection contacts from flik.co.id/en/help. See `content/10-help.md`.
 - Resources: Promo (`/promo`) and Blog (`/blog`) got prototype pages (2026-10-21) with the current content of flik.co.id/en/promo and flik.co.id/en/blog. Promo terms open in a modal; blog articles open at `/blog/?post=<slug>`. Covers are FLIK tiles, not the stock photos from the CMS. See `content/08-promo.md` and `content/09-blog.md`.

@@ -16,12 +16,12 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - [ ] **W-2**: NIB of PT Flik Teknologi Indonesia.
 - [ ] **W-7**: Governing law and dispute resolution clause wording (court or arbitration, venue).
 - [ ] **W-16**: Title, version and link of the full Merchant Agreement. It isn't in the repo.
-- [ ] **W-17**: Pricing page or fee schedule to link, including the Checkout success fee rate (the site says 0–2%, not confirmed).
+- [x] **W-17** (AG, 12 Nov 2026: link the Pricing page; Checkout fee 0–2% + PPN): Pricing page or fee schedule to link, including the Checkout success fee rate (the site says 0–2%, not confirmed).
 - [ ] **W-18**: Minimum age, and who may open a merchant account (individuals, entity types).
 - [x] **W-23**: Closed (AG, 24 Oct 2026): COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
 - [ ] **W-24**: Link to courier terms and the prohibited items list for merchants.
-- [ ] **W-26**: Balance withdrawals: timing, minimum amount and any fee.
-- [ ] **W-29**: Which features need identity and business verification first.
+- [x] **W-26** (AG, 12 Nov 2026: Rp100.000 minimum, Rp4.000 + PPN fee, returned if the payout fails): Balance withdrawals: timing, minimum amount and any fee.
+- [x] **W-29** (AG, 12 Nov 2026: invoices, shipments, top-ups, withdrawals, live API keys): Which features need identity and business verification first.
 - [ ] **P** (AG): Name the licensed payment partners and their licences (instruction: never state or imply that FLIK itself holds a payment licence).
 
 ## Search results (SEO)
@@ -106,13 +106,13 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Heading:** Your account
 - **List item:** Registration is free.
 - **List item:** You must be able to enter a contract and run a business in Indonesia. [[W-18: minimum age and eligible entity types]]
-- **List item:** Give accurate details and keep them up to date. We may ask you to verify your identity and business before you use some features. [[W-29: which features need verification]]
+- **List item:** Give accurate details and keep them up to date. We may ask you to verify your identity and business before you use some features. These include sending invoices, booking shipments, topping up, withdrawing and getting live API keys.
 - **List item:** Keep your login and OTP codes safe. You're responsible for what happens in your account, including what your staff do.
 - **Heading:** Fees and your FLIK balance
-- **List item:** Fees for each product are shown in [[W-17: pricing page or fee schedule]] and in the dashboard before you confirm.
+- **List item:** Fees for each product are shown on the Pricing page (link: /pricing) and in the dashboard before you confirm.
 - **List item:** For shipping, you pay from your FLIK balance before a shipment is created.
 - **List item:** COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
-- **List item:** Checkout payments and COD funds reach your FLIK balance after delivery. [[W-26: withdrawal timing, minimum and fee]]
+- **List item:** Checkout payments and COD funds reach your FLIK balance after delivery. You can withdraw your balance on request, at least Rp100.000 at a time. Each withdrawal costs Rp4.000 + PPN, and the fee is returned if the payout fails.
 - **List item:** Payments are processed by licensed payment partners. FLIK is not a bank. Partners: [[P: name the licensed payment partners and their licences]]
 - **List item:** Refunds and fee corrections follow our [Refund Policy](./refund/).
 - **Heading:** Shipping
@@ -141,6 +141,6 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **List item:** Email: support@flik.co.id
 - **List item:** Privacy questions and personal data requests: privacy@flik.co.id
-- **List item:** WhatsApp: +62 812-9201-2668
+- **List item:** WhatsApp: +62 813-3532-8100
 - **List item:** Support hours: Monday–Friday, 09:00–18:00 WIB
 

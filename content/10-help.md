@@ -8,10 +8,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] **Support contacts:** email support@flik.co.id, WhatsApp +62 812-9201-2668, Monday to Friday 09:00–18:00 WIB (the same as the footer). The cards link to email and to WhatsApp (wa.me).
+- [ ] **Support contacts:** email support@flik.co.id, WhatsApp +62 813-3532-8100, Monday to Friday 09:00–18:00 WIB (the same as the footer). The cards link to email and to WhatsApp (wa.me).
 - [ ] **Consumer protection block** is copied word for word from flik.co.id/en/help. The Ditjen PKTN number links to WhatsApp (wa.me/6285311111010).
 - [ ] **Topics for shoppers:** there are no shopper questions yet (FLIK app, FLIK Points, refunds). Add them when the content exists.
-- [ ] Early Settlement, Fraud Detection and In-Store Payment questions are not included while their answers are placeholders.
+- [x] Early Settlement, Fraud Detection and In-Store Payment questions are not included while their answers are placeholders. Done (12 Nov 2026): six questions each, copied from the FAQs on those pages, each topic linking to its product page.
 - [ ] **Answers changed for the AG rules (24 Oct 2026):** COD fee wording, "all major couriers", "credited to your balance after delivery", and Malaysia/Singapore removed from "What is FLIK Shipping?". The COD question now reads "Do I pay the COD fee upfront?" (answer: no, it's deducted after delivery). The Checkout and Shipping page FAQs still need the same change.
 - [ ] **Privacy and your data:** new entry under General. It links to /legal/privacy and /legal/data-request, which must exist before launch.
 
@@ -32,18 +32,18 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Contact cards #contact -->
 
 - **Card:** Email — support@flik.co.id — Send an email
-- **Card:** WhatsApp — +62 812-9201-2668 — Chat with support
+- **Card:** WhatsApp — +62 813-3532-8100 — Chat with support
 - **Card:** Support hours — Monday to Friday, 09:00–18:00 WIB
 
 ## 3. Questions by topic
-<!-- html: Questions by topic (from the Checkout, Shipping and Merchant Cash Advance pages) #faq-sec -->
+<!-- html: Questions by topic (from the Checkout, Early Settlement, Fraud Detection, In-Store Payment, Shipping and Merchant Cash Advance pages) #faq-sec -->
 
 - **Section heading:** Questions, answered.
 - **Topic:** All topics
 - **Topic:** General
   - **Question:** How do I contact FLIK support?
-    - **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.
-    - **Links:** Email support (mailto:support@flik.co.id) · Chat on WhatsApp (https://wa.me/6281292012668)
+    - **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.
+    - **Links:** Email support (mailto:support@flik.co.id) · Chat on WhatsApp (https://wa.me/6281335328100)
   - **Question:** Privacy and your data
     - **Answer:** Our Privacy Policy explains what personal data FLIK collects and how we use it. To ask for a copy of your data, or to correct or delete it, send a data request or email privacy@flik.co.id.
     - **Links:** Privacy Policy (/legal/privacy) · Data request (/legal/data-request) · privacy@flik.co.id
@@ -52,6 +52,49 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Topic:** Checkout and payments (the 8 questions from `content/02-checkout.md`), with this change:
   - **Question:** When do I receive the money?
     - **Answer:** Once the shopper has paid and the package has arrived, the money is credited to your balance after delivery. COD payments too, with the 3% COD fee (excl. PPN) deducted.
+- **Topic:** Early Settlement (6 of the questions from `content/05-early-settlement.md`)
+  - **Question:** What is Early Settlement?
+    - **Answer:** It pays out your sales before the standard settlement date, so money from paid orders is ready sooner.
+    - **Links:** About Early Settlement (/payment/early-settlement)
+  - **Question:** How fast do I get paid?
+    - **Answer:** As soon as the payment is made, into your FLIK balance. For Checkout orders, once the order is completed.
+  - **Question:** What does it cost?
+    - **Answer:** 0.2% of each QRIS, e-wallet or virtual account payment you settle early, and 0.3% of each card payment, plus PPN. The fee shows before you confirm. There is no fee on the standard schedule.
+  - **Question:** Is it a loan?
+    - **Answer:** No. Early Settlement pays out money from sales you already made, so there is nothing to repay.
+  - **Question:** Which transactions can I settle early?
+    - **Answer:** Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards. Cash on delivery orders settle after the package is delivered.
+  - **Question:** How is it different from Merchant Cash Advance?
+    - **Answer:** Early Settlement pays out money you already earned. Merchant Cash Advance funds your growth upfront and is settled from future sales.
+- **Topic:** Fraud Detection (6 of the questions from `content/06-fraud-detection.md`)
+  - **Question:** What does Fraud Detection do?
+    - **Answer:** It checks every withdrawal and every change to your payout account or registered contacts before anything happens. It protects your balance if someone else gets into your account.
+    - **Links:** About Fraud Detection (/payment/fraud-detection)
+  - **Question:** Does it block my customers' payments?
+    - **Answer:** No. Money coming in is never refused. FLIK watches incoming payments for unusual patterns, and card payments are also screened by our licensed payment partners.
+  - **Question:** What happens when a withdrawal is held?
+    - **Answer:** It shows as "Being verified" in your dashboard, with an expected time. FLIK's risk team reviews it, and it's sent as soon as it's cleared. Nothing leaves your balance in the meantime.
+  - **Question:** Why does a new payout account take 24 hours?
+    - **Answer:** It gives you time to spot a change you didn't make. Every registered contact gets an email, and you can cancel from it. Until then, you can keep withdrawing to your old account.
+  - **Question:** Do I need to set anything up?
+    - **Answer:** No. It's on for every FLIK merchant, on the dashboard, the API and AI agents.
+  - **Question:** What does it cost?
+    - **Answer:** Nothing extra. It's included for every FLIK merchant.
+- **Topic:** In-Store Payment (6 of the questions from `content/07-in-store-payment.md`)
+  - **Question:** What is In-Store Payment?
+    - **Answer:** A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.
+    - **Links:** About In-Store Payment (/payment/in-store)
+  - **Question:** Which payments can I accept?
+    - **Answer:** QRIS from any bank or e-wallet app, credit cards, and GPN debit cards.
+  - **Question:** Does it print receipts?
+    - **Answer:** Yes. The device has a built-in receipt printer for every sale and for the settlement receipt at the end of the day.
+  - **Question:** Where does the money go?
+    - **Answer:** Into your FLIK balance, together with your online sales from Checkout and Payment Link.
+  - **Question:** How do I get a device?
+    - **Answer:** Talk to the FLIK team. We set up the device and connect it to your account.
+  - **Question:** What does it cost?
+    - **Answer:** Transactions are priced at the rates on our Pricing page. The EDC device can be free with a minimum monthly transaction volume. Terms apply: ask the FLIK team.
+    - **Links:** See pricing (/pricing)
 - **Topic:** Shipping (the questions from `content/03-shipping.md`, without the support-contact question, which is under General), with these changes:
   - **Question:** What is FLIK Shipping?
     - **Answer:** A shipping service that helps businesses ship for less through one dashboard, with all major couriers across Indonesia.
