@@ -1234,7 +1234,7 @@ html{scroll-padding-top:88px}
 .cx-col3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
 .cx-col3>div{display:grid;gap:14px}.cx-col3>div:nth-child(2){margin-top:56px}.cx-col3>div:nth-child(3){margin-top:24px}
 /* story card: art, logo chip top left, headline bottom */
-.sc{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-radius:12px;padding:18px;min-height:210px;color:#fff;overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;isolation:isolate}
+.sc{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-radius:var(--r-lg);padding:18px;min-height:210px;color:#fff;overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;isolation:isolate}
 .sc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
 .sc.sc-tall{min-height:290px}
 .sc .chip{align-self:flex-start;display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
@@ -1248,7 +1248,10 @@ html{scroll-padding-top:88px}
 .sc.sc-big .chip{height:40px;padding:0 12px}.sc.sc-big .chip .cu-logo{max-height:26px;max-width:120px}
 /* by product: eyebrow, tabs, featured */
 .cx-eye{font-size:14px;font-weight:500;color:var(--primary);margin-bottom:12px}
-.cx-tabsrow{display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap;margin-top:24px}
+.cx-tabsrow{display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;margin-top:32px}
+.cx-tabsrow .dsh-tabs{margin-top:0}
+#cx-dots{margin-top:32px}
+.dsh-tabs{max-width:100%;overflow-x:auto;scrollbar-width:none}.dsh-tabs button{white-space:nowrap;flex:none}  /* the row scrolls sideways on phones (DS Tabs) */
 .cx-tabs{display:flex;gap:6px;flex-wrap:wrap}
 .cx-tabs button{height:30px;padding:0 12px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--ink)}
 .cx-tabs button:hover{background:var(--surface-alt,#F8FAFD)}
@@ -1282,8 +1285,8 @@ html{scroll-padding-top:88px}
 /* ===== Customers v3: results, logo wall, building together, by solution, get started ===== */
 .cx-res{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
 .cx-res>div{border-left:1px solid var(--primary);padding-left:16px}
-.cx-res b{display:block;font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-.4px}
-.cx-res span{display:block;font-size:14px;color:var(--body);margin-top:6px;line-height:1.45}
+.cx-res b{display:block;font-size:44px;line-height:1.1;font-weight:300;color:var(--ink);letter-spacing:-1px}  /* same as the homepage stats */
+.cx-res span{display:block;font-size:15px;color:var(--muted);margin-top:8px;line-height:1.45}
 .cx-wall{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:56px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cx-wall a{display:flex;align-items:center;justify-content:center;height:56px;padding:6px;border-radius:8px;transition:background .15s}
 .cx-wall a:hover{background:var(--surface-alt,#F8FAFD)}
@@ -1291,19 +1294,19 @@ html{scroll-padding-top:88px}
 .cx-wall .cu-word{font-size:14px;color:var(--muted);white-space:normal;text-align:center;font-weight:600}
 .cx-wall .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
 .cx-bt{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px}
-.cx-bt h3{font-size:24px;font-weight:500;letter-spacing:-.3px;color:var(--ink)}
+.cx-bt h3{font-size:24px;font-weight:500;  /* same as story-page section headings */ letter-spacing:-.3px;color:var(--ink)}
 .cx-bt .blk{border-left:1px solid var(--primary);padding-left:16px;margin-top:22px}
 .cx-bt .blk b{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
 .cx-bt .blk p{font-size:15px;line-height:1.6;color:var(--body)}
 .cx-bt .blk p+p{margin-top:8px}
 .cx-bt .blk ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .cx-bt .blk li a{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-size:14.5px}
-.ck{width:18px;height:18px;border-radius:50%;background:var(--primary-soft);color:var(--primary);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ck{width:18px;height:18px;border-radius:50%;background:var(--primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;flex:none}
 .cx-dots{display:flex;gap:8px;margin-top:28px;flex-wrap:wrap}
 .cx-dots button{height:30px;padding:0 12px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
 .cx-dots button[aria-selected="true"]{background:var(--ink);color:#fff;box-shadow:none}
-.cx-vis{position:relative;border-radius:16px;min-height:380px;display:flex;align-items:center;justify-content:center;padding:40px}
-.mk{width:100%;max-width:320px;background:var(--surface,#fff);border-radius:12px;box-shadow:var(--sh-lg);padding:18px;display:grid;gap:12px;color:var(--ink)}
+.cx-vis{position:relative;border-radius:var(--r-lg);min-height:380px;display:flex;align-items:center;justify-content:center;padding:40px}
+.mk{width:100%;max-width:320px;background:var(--surface,#fff);border-radius:var(--r-lg);box-shadow:var(--sh-lg);padding:18px;display:grid;gap:12px;color:var(--ink)}
 .mk-h{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
 .mk-h b{color:var(--ink);font-size:14px;font-weight:500}
 .mk-amt{font-size:30px;font-weight:400;letter-spacing:-.6px}
@@ -1318,13 +1321,13 @@ html{scroll-padding-top:88px}
 .cx-chk{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 32px;margin-top:28px;max-width:640px}
 .cx-chk a{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-size:14.5px;font-weight:500}
 .cx-start{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
-.cx-start h2{font-size:28px;font-weight:500;letter-spacing:-.4px}
+.cx-start h2{font-size:36px}
 .cx-start .lead{margin-top:12px}
 .cx-start>div>b{display:block;font-size:15px;font-weight:500;color:var(--ink);border-left:1px solid var(--primary);padding-left:12px}
 .cx-start>div>p{font-size:14.5px;color:var(--body);margin:8px 0 12px;padding-left:13px;line-height:1.55}
 .cx-start>div>.link{margin-left:13px;font-size:14px}
 @media (max-width:1080px){.cx-res{grid-template-columns:1fr 1fr}.cx-wall{grid-template-columns:repeat(4,1fr)}.cx-bt,.cx-sol{grid-template-columns:1fr}.cx-start{grid-template-columns:1fr}}
-@media (max-width:760px){.cx-wall{grid-template-columns:repeat(2,1fr)}.cx-chk{grid-template-columns:1fr}.cx-vis{padding:24px;min-height:300px}.cx-res b{font-size:20px}.cx-bt{gap:32px}}
+@media (max-width:760px){.cx-wall{grid-template-columns:repeat(2,1fr)}.cx-chk{grid-template-columns:1fr}.cx-vis{padding:24px;min-height:300px}.cx-res b{font-size:34px}.cx-bt{gap:32px}}
 /* story page */
 .cs-top{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start;padding:40px 0 64px}
 .cs-top h1{font-size:46px;line-height:1.12;font-weight:400;letter-spacing:-1.3px}
@@ -1510,9 +1513,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Customers by product: tabs, featured story, logo row ===== -->
 <section class="pad alt guides" id="by-product">
   <div class="wrap">
-    <p class="cx-eye">Customers by product</p>
+    <p class="eyebrow">Customers by product</p>
     <h2 class="sec-h">Brands of every kind run on FLIK.</h2>
-    <div class="cx-tabsrow"><div class="cx-tabs" id="cx-ptabs" role="tablist" aria-label="Products"></div><a href="#all" class="link" style="font-size:14px">All customer stories <span class="chev">›</span></a></div>
+    <div class="cx-tabsrow"><div class="dsh-tabs" id="cx-ptabs" role="tablist" aria-label="Products"></div><a href="#all" class="link" style="font-size:14px">All customer stories <span class="chev">›</span></a></div>
     <div class="cx-feat"><div class="cx-meta" id="cx-meta"></div><div id="cx-big"></div></div>
     <div class="cx-logos" id="cx-logos" role="tablist" aria-label="Customers"></div>
   </div>
@@ -1521,18 +1524,18 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Building together: challenge / solution / products beside a FLIK screen (example) ===== -->
 <section class="pad guides" id="together">
   <div class="wrap">
-    <p class="cx-eye">Building together</p>
+    <p class="eyebrow">Building together</p>
     <h2 class="sec-h">We work with brands to grow every channel. <span class="soft">From the website to the counter, FLIK fits the way each brand sells.</span></h2>
-    <div class="cx-dots" id="cx-dots" role="tablist" aria-label="Examples"></div>
+    <div class="dsh-tabs" id="cx-dots" role="tablist" aria-label="Examples"></div>
     <div class="cx-bt" id="cx-bt"></div>
   </div>
 </section>
 <!-- ===== All customer stories (masonry) ===== -->
 <section class="pad guides" id="all">
   <div class="wrap">
-    <p class="cx-eye">All customer stories</p>
+    <p class="eyebrow">All customer stories</p>
     <h2 class="sec-h">Sell, ship and grow with FLIK.</h2>
-    <div class="cx-tabsrow"><div class="cx-tabs" id="cx-ftabs" role="tablist" aria-label="Filter stories"></div></div>
+    <div class="cx-tabsrow"><div class="dsh-tabs" id="cx-ftabs" role="tablist" aria-label="Filter stories"></div></div>
     <div class="cx-grid" id="cx-grid"></div>
   </div>
 </section>
@@ -1540,7 +1543,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Customers by solution: every step of the sale ===== -->
 <section class="pad alt guides" id="solutions-list">
   <div class="wrap">
-    <p class="cx-eye">Customers by solution</p>
+    <p class="eyebrow">Customers by solution</p>
     <h2 class="sec-h">We obsess over every step of the sale, so brands don't have to.</h2>
     <div class="cx-sol">
       <p>Checkout, payments, shipping and funding are built to work together in one dashboard, without months of integration work.</p>
@@ -1832,7 +1835,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],(ci+j)%2?'':'sc-tall')).join('')+'</div>').join('');
   // by product: tabs → featured story + logo row
   const keys=Object.keys(PRODUCTS),pt=document.getElementById('cx-ptabs'),logos=document.getElementById('cx-logos');
-  pt.innerHTML=keys.map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-p="${p}">${PRODUCTS[p].name}</button>`).join('');
+  pt.innerHTML=keys.map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?'on':''}" data-p="${p}">${PRODUCTS[p].name}</button>`).join('');
   function feature(c,p){
     document.getElementById('cx-big').innerHTML=sc(c,'sc-big');
     const meta=[`<div><b>Products used</b><ul>${c.prods.map(x=>`<li>${PRODUCTS[x].long}</li>`).join('')}</ul></div>`];
@@ -1842,7 +1845,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
     logos.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.s===c.slug)));
   }
   function product(p){
-    pt.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.p===p)));
+    pt.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.p===p));b.classList.toggle('on',b.dataset.p===p)});
     const list=CUSTOMERS.filter(c=>c.prods.includes(p));
     logos.innerHTML=list.map(c=>`<button type="button" role="tab" data-s="${c.slug}" aria-label="${c.name}">${c.dark?`<span class="darkchip">${mark(c)}</span>`:mark(c)}</button>`).join('');
     logos.dataset.p=p;feature(list[0],p);
@@ -1852,8 +1855,8 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   product('checkout');
   // all stories: filter tabs + masonry
   const ft=document.getElementById('cx-ftabs'),grid=document.getElementById('cx-grid');
-  ft.innerHTML=['all',...keys].map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-f="${p}">${p==='all'?'All':PRODUCTS[p].name}</button>`).join('');
-  function filter(f){ft.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.f===f)));
+  ft.innerHTML=['all',...keys].map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?'on':''}" data-f="${p}">${p==='all'?'All':PRODUCTS[p].name}</button>`).join('');
+  function filter(f){ft.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.f===f));b.classList.toggle('on',b.dataset.f===f)});
     grid.innerHTML=CUSTOMERS.filter(c=>f==='all'||c.prods.includes(f)).map((c,i)=>sc(c,i%3===0?'sc-tall':'')).join('')}
   ft.addEventListener('click',e=>{const b=e.target.closest('button[data-f]');if(b)filter(b.dataset.f)});
   filter('all');
@@ -1867,8 +1870,8 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
     instore:`<div class="mk"><div class="mk-h"><b>Counter 1 · QRIS</b><span class="pill ok">Paid</span></div><div class="mk-amt">Rp45.000</div><div class="mk-row"><span>Today, in store</span>Rp2.340.000</div><div class="mk-row"><span>Same dashboard as</span>Online sales</div><span class="mk-ex">Example</span></div>`,
     mca:`<div class="mk"><div class="mk-h"><b>Cash Advance</b><span class="pill pu">Settling</span></div><div class="mk-amt">Rp50.000.000</div><div class="mk-bar"><i style="width:32%"></i></div><div class="mk-row"><span>Settled from sales</span>32%</div><span class="mk-ex">Example</span></div>`};
   const BT=['kopi-kalian','gerai-hawa','osim'].map(x=>byS[x]),dots=document.getElementById('cx-dots'),bt=document.getElementById('cx-bt');
-  dots.innerHTML=BT.map((c,i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-i="${i}">${c.name}</button>`).join('');
-  function together(i){const c=BT[i];dots.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(+b.dataset.i===i)));
+  dots.innerHTML=BT.map((c,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?'on':''}" data-i="${i}">${c.name}</button>`).join('');
+  function together(i){const c=BT[i];dots.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-selected',String(+b.dataset.i===i));b.classList.toggle('on',+b.dataset.i===i)});
     bt.innerHTML=`<div><h3>How ${c.name} works with FLIK</h3>
       <div class="blk"><b>Challenge</b>${c.prods.map(p=>`<p>${STORY[p].c(c.name)}</p>`).join('')}</div>
       <div class="blk"><b>Solution</b>${c.prods.map(p=>`<p>${STORY[p].s(c.name)}</p>`).join('')}</div>

@@ -1181,7 +1181,7 @@ html{scroll-padding-top:88px}
 .dv-hero{padding:150px 0 72px;margin-top:-69px;position:relative}
 .dv-hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
 .dv-eye{font-size:13px;font-weight:500;color:var(--primary)}
-.dv-hero h1{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px;margin-top:14px;max-width:620px}
+.dv-hero h1{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px;max-width:620px}
 .dv-hero h1 .soft{color:var(--muted)}
 .dv-hero .lead{max-width:560px;margin-top:20px}
 .dv-hero .hero-cta{justify-content:flex-start;margin-top:28px}
@@ -1228,9 +1228,9 @@ html{scroll-padding-top:88px}
 .dv-ess h3 .ic{color:var(--primary)}
 .dv-ess p{font-size:14.5px;line-height:1.55}
 .dv-tblwrap{margin-top:24px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface,#fff);overflow-x:auto}
-.dv-tbl{width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px}
-.dv-tbl th{text-align:left;font-size:13px;font-weight:500;color:var(--muted);padding:12px 18px;border-bottom:1px solid var(--line);white-space:nowrap}
-.dv-tbl td{padding:16px 18px;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--body)}
+.dv-tbl{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}  /* same as the Pricing rate table */
+.dv-tbl th{text-align:left;font-size:13px;font-weight:500;color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+.dv-tbl td{padding:18px 16px;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--body)}
 .dv-tbl tr:last-child td{border-bottom:0}
 .dv-tbl td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
 /* integrations, resources, go live */
@@ -1383,7 +1383,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="dv-hero guides">
   <div class="wrap dv-hero-in">
     <div>
-      <div class="dv-eye">Developers</div>
+      <p class="eyebrow" style="margin-bottom:14px">Developers</p>
       <h1>Build with FLIK. <span class="soft">Payments and shipping, from your own systems.</span></h1>
       <p class="lead">Connect your store with a plugin, or build on the FLIK API with OAuth credentials. Build and test in Sandbox, then go live once FLIK has verified your business.</p>
       <div class="hero-cta">
