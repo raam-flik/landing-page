@@ -12,7 +12,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - [ ] **Permission:** every brand below is shown by name, and with its logo where we have one. Confirm each brand has agreed to be listed as a FLIK customer.
 - [x] **Logos:** all 16 customers now use their real logo (11 added from Raam, 12 Nov 2026; originals in `design-system/assets/Logos/merchant/original/`). Heylocal and Kopikalyan came in small, so send larger files if you have them. Erigo's logo is white, so it sits on a navy tile.
-- [ ] **Photos (Raam, 12 Nov 2026):** The SIGIT, Paper and WakaiGo have brand photos on their story cards and story pages (`assets/customers/`). WakaiGo's second photo (outdoor, backpack) has no visible brand; confirm it's WakaiGo. WakaiGo's first photo had an AI image mark in the corner, which was cropped out; confirm the brand is happy to publish it. Send photos for the other brands to replace their colour cards.
+- [ ] **Photos (Raam, 12 Nov 2026):** The SIGIT, Paper, WakaiGo and Artch have brand photos on their story cards and story pages (`assets/customers/`). The outdoor backpack photo is Artch's (Raam, 12 Nov 2026). WakaiGo's first photo had an AI image mark in the corner, which was cropped out; confirm the brand is happy to publish it. Send photos for the other brands to replace their colour cards.
 - [ ] **Names:** Sigit Store's logo reads "THE SIGIT" and Wakaigo is written "WakaiGo"; the page uses Sigit Store and WakaiGo. Kopi Kalian is now Kopikalyan (Raam, 12 Nov 2026). Donat Bahagia's logo reads "dobah".
 - [ ] **Logo matches to check:** Aneka Family uses `aneka.png` (the "aneka" badge); Emados uses `emandos.png` (reads "EMADO'S", white artwork, so it sits on a navy tile).
 - [ ] **Categories** are shown only where the brand is well known: OSIM (Wellness), Gerai Hawa (Modest fashion), Teenage Death Star (Music and merchandise), Kopikalyan (Coffee), Emados, Haus! and Donat Bahagia (Food and beverage), Erigo (Fashion). Confirm, and add categories for the others.
@@ -43,7 +43,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** From fashion labels to coffee shops, brands use FLIK to sell on their own website, take QRIS at the counter, ship with every major courier and fund their next step.
 - **Button:** See all customers
 - **Button:** Contact sales
-- **Hero cards:** Kopikalyan, Artch, Emados, Gerai Hawa, Erigo, OSIM — each with its products and "Read story"
+- **Hero cards:** The SIGIT, Kopikalyan, WakaiGo, Artch, Paper, Erigo — each with its products and "Read story"
 - **Section heading:** What brands get with FLIK.
 - **Results:** 30 sec — to check out with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
 - **Logo wall:** every customer (real logo where we have it, name otherwise)

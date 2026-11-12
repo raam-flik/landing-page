@@ -1795,9 +1795,9 @@ const PRODUCTS={
 };
 const CUSTOMERS=[
   {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',photos:['sigit-store-1.jpg'],tint:'violet',cat:'Music and merchandise',prods:['checkout']},
-  {slug:'artch',name:'Artch',logo:'artch.png',prods:['checkout']},
+  {slug:'artch',name:'Artch',logo:'artch.png',photos:['artch-1.jpg'],tint:'violet',prods:['checkout']},
   {slug:'paper',name:'Paper',logo:'paper.png',photos:['paper-1.jpg'],tint:'magenta',prods:['checkout']},
-  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg','wakaigo-2.jpg'],tint:'orange',prods:['checkout']},
+  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg'],tint:'orange',prods:['checkout']},
   {slug:'osim',name:'OSIM',logo:'osim.png',cat:'Wellness',prods:['checkout']},
   {slug:'zaafer',name:'Zaafer',logo:'zaafer.png',prods:['shipping']},
   {slug:'gerai-hawa',name:'Gerai Hawa',logo:'geraihawa.png',cat:'Modest fashion',prods:['shipping']},
@@ -1919,7 +1919,7 @@ const STORIES={
 const sv=(c,k,p)=>{const x=STORIES[c.slug];if(k==='c')return x?x.c:c.prods.map(q=>STORY[q].c(c.name));if(k==='s')return (x&&x.s[p])||STORY[p].s(c.name);if(k==='r')return x?x.r:c.prods.map(q=>STORY[q].r(c.name)).join(' ');if(k==='i')return x&&x.i};
 const storyHead=c=>STORIES[c.slug]?STORIES[c.slug].h:(c.prods.length>1&&c.prods.includes('instore')&&c.prods.includes('mca')?`${c.name} takes payments at the counter and funds its growth with FLIK.`:STORY[c.prods[0]].h(c.name));
 const ARTS=['cu-a1','cu-a2','cu-a3','cu-a4'];
-const mark=(c,cls='')=>c.logo?`<img class="cu-logo${c.sq?' sq':''} ${cls}" src="${ROOT}assets/logos/merchant/${c.logo}" alt="${c.name}">`:`<span class="cu-word ${cls}">${c.name}</span>`;
+const mark=(c,cls='')=>c.logo?`<img class="cu-logo${c.sq?' sq':''} ${cls}" src="${ROOT}assets/logos/merchant/${c.logo}?v=2" alt="${c.name}">`:`<span class="cu-word ${cls}">${c.name}</span>`;
 const tile=(c,cls='')=>`<span class="cu-tile${c.dark?' dark':''} ${cls}">${mark(c)}</span>`;
 const storyUrl=c=>ROOT+'customers/story/?c='+c.slug;
 const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
@@ -1930,7 +1930,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   const chip=c=>`<span class="chip${c.dark?' dark':''}">${mark(c)}</span>`;
   const sc=(c,cls='')=>`<a class="sc ${c.photos?'sc-ph t-'+(c.tint||'violet'):ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}"${c.photos?` style="background-image:url('${ROOT}assets/customers/${c.photos[0]}')"`:''}>${chip(c)}<span>${cls.includes('sc-nohead')?'':`<h3>${storyHead(c)}</h3>`}<span class="rs">Read story <span class="chev">›</span></span></span></a>`;
   // hero collage: three staggered columns
-  const COL=[['sigit-store','kopikalyan'],['wakaigo','emados'],['paper','erigo']];  // photo cards first, like Stripe
+  const COL=[['sigit-store','kopikalyan'],['wakaigo','artch'],['paper','erigo']];  // photo cards first, like Stripe
   document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],(j===0?'sc-tall ':'')+'sc-nohead')).join('')+'</div>').join('');
   // by product: tabs → featured story + logo row
   const keys=Object.keys(PRODUCTS),pt=document.getElementById('cx-ptabs'),logos=document.getElementById('cx-logos');
