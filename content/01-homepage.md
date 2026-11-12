@@ -33,8 +33,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Title:** Introducing FLIK
 - **Behaviour:** visitors can drag the card anywhere in the hero; a click opens the full film with sound in a big pop-up player.
 - **Link:** Watch the film (the length shows next to it)
-- **Video files:** `assets/video/hero-film.mp4`, `hero-film-preview.mp4` (muted loop) and `hero-film-poster.jpg`. They are kept out of git (`.gitignore`), and the card hides itself when they are missing.
-- [ ] **Replace the placeholder video before going live.** The current file is Apple's Christmas ad, used only to try the layout locally. It can't be published on FLIK's site. Add FLIK's own film with the same three file names.
+- **Video files:** `assets/video/hero-film.mp4` (FLIK brand film v3, 1:03, compressed for the web), `hero-film-preview.mp4` (muted loop of the first 16 seconds) and `hero-film-poster.jpg`. The card hides itself if they are missing. To change the film, replace these three files with the same names.
+- [x] FLIK brand film v3 added (Raam, 12 Nov 2026).
 
 *Event chips in the particle field (one at a time, examples only):*
 

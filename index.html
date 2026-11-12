@@ -1020,7 +1020,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <aside class="hx-film" id="hx-film" aria-label="Introducing FLIK" hidden>
     <div class="hx-film-h"><span>Introducing FLIK</span><button type="button" class="hx-film-x" id="hx-film-x" aria-label="Close the film preview">×</button></div>
     <button type="button" class="hx-film-v" id="hx-film-open" aria-label="Watch the film">
-      <video id="hx-film-prev" src="assets/video/hero-film-preview.mp4" poster="assets/video/hero-film-poster.jpg" muted loop playsinline preload="metadata"></video>
+      <video id="hx-film-prev" src="assets/video/hero-film-preview.mp4?v=3" poster="assets/video/hero-film-poster.jpg?v=3" muted loop playsinline preload="metadata"></video>
     </button>
     <div class="hx-film-f"><button type="button" class="hx-film-w" id="hx-film-watch"><span class="hx-play" aria-hidden="true"></span>Watch the film</button><span class="hx-film-d" id="hx-film-d"></span></div>
   </aside>
@@ -1908,7 +1908,7 @@ document.addEventListener('click',e=>{
 (function(){
   const card=document.getElementById('hx-film');if(!card)return;
   const v=document.getElementById('hx-film-prev'),dur=document.getElementById('hx-film-d'),hero=card.closest('.hx');
-  const FULL='assets/video/hero-film.mp4';
+  const FULL='assets/video/hero-film.mp4?v=3';  // bump ?v= when the film changes
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let closed=false;try{closed=sessionStorage.getItem('flik_film_closed')==='1'}catch(_){}
   if(closed)return;
