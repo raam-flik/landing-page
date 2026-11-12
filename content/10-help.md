@@ -68,16 +68,16 @@ Edit the text after each label. Keep the labels and headings as they are, so the
     - **Answer:** Early Settlement pays out money you already earned. Merchant Cash Advance funds your growth upfront and is settled from future sales.
 - **Topic:** Fraud Detection (5 of the questions from `content/06-fraud-detection.md`)
   - **Question:** What does Fraud Detection do?
-    - **Answer:** It watches payments, refunds and withdrawals for fraud, and helps you respond when a shopper disputes a card payment. It also protects your balance if someone else gets into your account.
+    - **Answer:** It checks payments, refunds and withdrawals for fraud, and helps you fight chargebacks.
     - **Links:** About Fraud Detection (/payment/fraud-detection)
   - **Question:** How does FLIK help with chargebacks?
-    - **Answer:** When a shopper disputes a card payment, you're told straight away, with the reason and the deadline. Upload your evidence in the dashboard, and FLIK sends it to the payment partner. The outcome shows on your statement.
+    - **Answer:** You're told straight away, with the reason and deadline. Upload evidence in the dashboard, and FLIK sends it to the payment partner.
   - **Question:** What happens when a withdrawal is held?
-    - **Answer:** It shows as "Under review" in your dashboard, with an expected time. FLIK's risk team reviews it, and it's sent as soon as it's cleared. Nothing leaves your balance in the meantime.
+    - **Answer:** It shows as "Under review", with an expected time. It's sent once FLIK's risk team clears it.
   - **Question:** Do I need to set anything up?
-    - **Answer:** No. It's on for every FLIK merchant, on the dashboard and the API.
+    - **Answer:** No. It's on for every FLIK merchant.
   - **Question:** What does it cost?
-    - **Answer:** Nothing extra. It's included for every FLIK merchant.
+    - **Answer:** Nothing. It's included.
 - **Topic:** In-Store Payment (6 of the questions from `content/07-in-store-payment.md`)
   - **Question:** What is In-Store Payment?
     - **Answer:** A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.
