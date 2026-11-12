@@ -1247,6 +1247,9 @@ html{scroll-padding-top:88px}
 .cs-main h2{font-size:24px;font-weight:500;letter-spacing:-.3px;display:flex;align-items:center;gap:10px}
 .cs-main h2 .ic{color:var(--primary)}
 .cs-main p{font-size:17px;line-height:1.65;color:var(--body);margin-top:10px}
+.cs-ex{margin-bottom:16px}
+.cs-main h3{font-size:18px;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:8px;margin-top:20px}
+.cs-main h3 .ic{color:var(--primary)}
 .cs-soon{border-radius:var(--r-lg);background:var(--primary-soft);padding:24px;display:grid;gap:8px}
 .cs-soon b{font-size:16px;font-weight:500;color:var(--ink)}
 .cs-soon p{font-size:15px;margin:0}
@@ -1661,6 +1664,26 @@ const CUSTOMERS=[
   {slug:'heylocal',name:'Heylocal',prods:['mca']},
   {slug:'erigo',name:'Erigo',cat:'Fashion',prods:['mca']},
 ];
+/* Example stories (Raam, 12 Nov 2026): general text per product, no quotes or numbers, shown as "Example story" until each brand approves its own */
+const STORY={
+  checkout:{h:n=>`${n} gives shoppers a faster way to pay with FLIK Checkout.`,
+    c:n=>`Selling on its own website means ${n} needs a checkout shoppers trust, with the payment methods Indonesians use every day. Every extra step between the cart and the payment is a chance to lose the sale.`,
+    s:n=>`${n} replaced its checkout with FLIK Checkout. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay by QRIS, e-wallet, virtual account, card or COD on one page.`,
+    r:n=>`Shoppers get from cart to paid in a few taps, and returning shoppers don't type their details again.`},
+  shipping:{h:n=>`${n} ships every order from one dashboard with FLIK Shipping.`,
+    c:n=>`Every order has to reach the shopper on time. Comparing courier rates, booking pickups and answering "where is my package?" takes time the ${n} team would rather spend on the brand.`,
+    s:n=>`With FLIK Shipping, ${n} compares rates from all major couriers in one dashboard, books pickups in a few clicks and sends every shopper a tracking link.`,
+    r:n=>`Shipping runs from one place, and shoppers can follow every package without messaging the team.`},
+  instore:{h:n=>`${n} takes QRIS and cards at the counter with FLIK.`,
+    c:n=>`At the counter, ${n}'s customers want to pay the way they like, and fast. Keeping in-store sales apart from the rest of the business makes the numbers harder to read.`,
+    s:n=>`With FLIK In-Store Payment, customers pay ${n} by QRIS or card at the counter, and every sale lands in the same FLIK dashboard as its other channels.`,
+    r:n=>`Payments at the counter are quick, and the team sees in-store sales next to everything else.`},
+  mca:{h:n=>`${n} funds its next step with a FLIK Merchant Cash Advance.`,
+    c:n=>`Growing means buying stock or opening a new outlet before the sales come in. Bank loans take time, and fixed instalments don't follow how sales actually move.`,
+    s:n=>`With a Merchant Cash Advance from FLIK, ${n} gets funding upfront for one fixed margin, agreed before it signs, and settles it automatically from its sales.`,
+    r:n=>`${n} can invest in growth now and pay it back as it sells, with no compounding interest.`},
+};
+const storyHead=c=>c.prods.length>1&&c.prods.includes('instore')&&c.prods.includes('mca')?`${c.name} takes payments at the counter and funds its growth with FLIK.`:STORY[c.prods[0]].h(c.name);
 const ARTS=['cu-a1','cu-a2','cu-a3','cu-a4'];
 const mark=(c,cls='')=>c.logo?`<img class="cu-logo ${cls}" src="${ROOT}assets/logos/merchant/${c.logo}" alt="${c.name}">`:`<span class="cu-word ${cls}">${c.name}</span>`;
 const tile=(c,cls='')=>`<span class="cu-tile${c.dark?' dark':''} ${cls}">${mark(c)}</span>`;

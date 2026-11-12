@@ -15,7 +15,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Logo matches to check:** Aneka Family uses `aneka.png` (the "aneka" badge); Emados uses `emandos.png` (reads "EMADO'S", white artwork, so it sits on a navy tile).
 - [ ] **Categories** are shown only where the brand is well known: OSIM (Wellness), Gerai Hawa (Modest fashion), Teenage Death Star (Music and merchandise), Kopi Kalian (Coffee), Emados, Haus! and Donat Bahagia (Food and beverage), Erigo (Fashion). Confirm, and add categories for the others.
 - [ ] **Erigo:** the list says Merchant Cash Advance only, but the homepage story card says "Erigo runs delivery, payment and returns from one place with FLIK". Which products does Erigo use?
-- [ ] **Full stories:** every story page shows the products the brand uses and a "full story is coming soon" note. Stripe-style stories need the brand's own words: a short story, a quote with name and role, two to four results with real numbers, and a photo. None are invented here.
+- [ ] **Example stories (Raam, 12 Nov 2026):** every story page now has a general example story (challenge, how FLIK helps, result) built from the products the brand uses, labelled "Example story". The text describes what each FLIK product does; it is not the brand's own account. Replace each with the approved real story before relying on it publicly.
+- [ ] **Full stories:**  Stripe-style stories need the brand's own words: a short story, a quote with name and role, two to four results with real numbers, and a photo. None are invented here.
 - [ ] **No results section:** Stripe's customers page has "measurable results". It is left out until there are real, approved numbers.
 - [ ] **Websites:** only Teenage Death Star has a website link (teenagedeathstar.com). Send the others' sites to add them.
 
@@ -53,16 +54,37 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** All customers.
 - **Card link:** Read story
 
+## Example story text (per product, <Brand> is filled in)
+
+- **Checkout headline:** <Brand> gives shoppers a faster way to pay with FLIK Checkout.
+  - **Challenge:** Selling on its own website means <Brand> needs a checkout shoppers trust, with the payment methods Indonesians use every day. Every extra step between the cart and the payment is a chance to lose the sale.
+  - **How FLIK helps:** <Brand> replaced its checkout with FLIK Checkout. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay by QRIS, e-wallet, virtual account, card or COD on one page.
+  - **Result:** Shoppers get from cart to paid in a few taps, and returning shoppers don't type their details again.
+- **Shipping headline:** <Brand> ships every order from one dashboard with FLIK Shipping.
+  - **Challenge:** Every order has to reach the shopper on time. Comparing courier rates, booking pickups and answering "where is my package?" takes time the <Brand> team would rather spend on the brand.
+  - **How FLIK helps:** With FLIK Shipping, <Brand> compares rates from all major couriers in one dashboard, books pickups in a few clicks and sends every shopper a tracking link.
+  - **Result:** Shipping runs from one place, and shoppers can follow every package without messaging the team.
+- **In-Store Payment headline:** <Brand> takes QRIS and cards at the counter with FLIK.
+  - **Challenge:** At the counter, <Brand>'s customers want to pay the way they like, and fast. Keeping in-store sales apart from the rest of the business makes the numbers harder to read.
+  - **How FLIK helps:** With FLIK In-Store Payment, customers pay <Brand> by QRIS or card at the counter, and every sale lands in the same FLIK dashboard as its other channels.
+  - **Result:** Payments at the counter are quick, and the team sees in-store sales next to everything else.
+- **Merchant Cash Advance headline:** <Brand> funds its next step with a FLIK Merchant Cash Advance.
+  - **Challenge:** Growing means buying stock or opening a new outlet before the sales come in. Bank loans take time, and fixed instalments don't follow how sales actually move.
+  - **How FLIK helps:** With a Merchant Cash Advance from FLIK, <Brand> gets funding upfront for one fixed margin, agreed before it signs, and settles it automatically from its sales.
+  - **Result:** <Brand> can invest in growth now and pay it back as it sells, with no compounding interest.
+- **In-Store Payment + Merchant Cash Advance headline:** <Brand> takes payments at the counter and funds its growth with FLIK.
+
 ## 2. Story page
 <!-- html: Story (?c=slug): breadcrumb, headline + side card, products used in detail -->
 
 - **Breadcrumb:** Customers / <Brand>
-- **Headline (H1):** How <Brand> uses <products>.
-- **Intro text (when the category is known):** <Brand> is a <category> brand on FLIK.
+- **Label:** Example story
+- **Headline (H1):** the example headline for the brand's products (above)
+- **Intro text:** <Brand> is a <category> brand. It uses <products>.
 - **Side card:** logo — Products used — Category — Website
 - **Side button:** Ready to grow? — Contact sales
-- **For each product:** the product text above — Explore <product>
-- **Note:** <Brand>'s full story is coming soon. — We're writing it with the <Brand> team. In the meantime, talk to us about what FLIK can do for your brand.
+- **Sections:** The challenge — How FLIK helps (one part per product, with Explore <product>) — The result
+- **Note:** This is an example story. — The final story, with <Brand>'s own words and results, will be written with the <Brand> team.
 - **Section heading:** More customers.
 - **Not found:** We couldn't find that story. — It may have moved. See every brand on the customers page. — All customers
 
