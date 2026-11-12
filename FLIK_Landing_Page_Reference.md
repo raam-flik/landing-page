@@ -175,6 +175,7 @@ Modelled on stripe.com: a short top menu, a Products menu split into product col
 - **Product groups** use the product names: **Payment**, **Shipping**, **Funding**. Never job verbs such as Sell, Ship or Fund. (v7: the Checkout group became Payment; Checkout is now one product inside it.)
 - **Solutions** means by use case and by industry. Integrations belong under Developers.
 - **Not in the sitemap:** a customers / case studies page, a shopper page, Smart QRIS, Order Form.
+- **Customers** (`/customers`, 12 Nov 2026): under Resources › Learn. Customers page (hero collage, logo wall, tabs by product, all customers) and one story template at `/customers/story/?c=<slug>`. 16 brands from Raam's list per product; no quotes or numbers until brands supply them. See `content/20-customers.md`.
 - **Developers** (`/developers`, 12 Nov 2026): one page for the whole Developers menu (Documentation, API reference `#api`, Developer resources `#resources`, Shopify `#shopify`, WooCommerce `#woocommerce`). Concepts only, from engineering's Settings › Developers guide; no endpoints until there is a public API reference. See `content/19-developers.md`.
 - **Pricing** (`/pricing`, FLI-50, 2026-10-22): tabs for Payments (rate table with fee, VAT, total and settlement per method; Checkout, COD and FLIK Connect fees; VAT note), Shipping and Funding. Rates are placeholders until AG / finance supply the rate card; see `content/18-pricing.md`.
 

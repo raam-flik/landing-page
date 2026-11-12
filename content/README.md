@@ -12,6 +12,7 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [05-early-settlement.md](05-early-settlement.md) | Early Settlement | [/payment/early-settlement/](https://landing-page-raams-projects-2709477f.vercel.app/payment/early-settlement/) |
 | [06-fraud-detection.md](06-fraud-detection.md) | Fraud Detection | [/payment/fraud-detection/](https://landing-page-raams-projects-2709477f.vercel.app/payment/fraud-detection/) |
 | [08-promo.md](08-promo.md) | Promo | [/promo/](https://landing-page-raams-projects-2709477f.vercel.app/promo/) |
+| [20-customers.md](20-customers.md) | Customers and customer stories | [/customers/](https://landing-page-raams-projects-2709477f.vercel.app/customers/) |
 | [19-developers.md](19-developers.md) | Developers | [/developers/](https://landing-page-raams-projects-2709477f.vercel.app/developers/) |
 | [18-pricing.md](18-pricing.md) | Pricing | [/pricing/](https://landing-page-raams-projects-2709477f.vercel.app/pricing/) |
 | [17-flik-connect.md](17-flik-connect.md) | FLIK Connect | [/payment/connect/](https://landing-page-raams-projects-2709477f.vercel.app/payment/connect/) |

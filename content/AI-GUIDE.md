@@ -14,6 +14,7 @@ You are updating the FLIK landing page with text edits made in the Markdown file
 | `content/05-early-settlement.md` | `payment/early-settlement/index.html` |
 | `content/06-fraud-detection.md` | `payment/fraud-detection/index.html` |
 | `content/08-promo.md` | `promo/index.html` (promos are in the `PROMOS` list in the page script) |
+| `content/20-customers.md` | `customers/index.html` and `customers/story/index.html` (the `CUSTOMERS` list is in both scripts) |
 | `content/19-developers.md` | `developers/index.html` (integration steps and FAQ are lists in the page script) |
 | `content/18-pricing.md` | `pricing/index.html` |
 | `content/17-flik-connect.md` | `payment/connect/index.html` (use cases, example rules, FAQ and glance lists are in the page script) |
