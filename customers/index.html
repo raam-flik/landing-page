@@ -1238,7 +1238,9 @@ html{scroll-padding-top:88px}
 .sc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
 /* brand photo cards: photo + a navy scrim at the bottom so the headline stays readable */
 .sc.sc-ph{background-color:var(--ink);background-size:cover;background-position:center}
-.sc.sc-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,45,93,0) 35%,rgba(0,45,93,.82) 100%)}
+/* like stripe.com/customers: a brand-colour wash over the photo, solid at the bottom (FLIK ribbon colours) */
+.sc.sc-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.38) 0%,rgba(var(--tint),.5) 55%,rgba(var(--tint),.92) 100%)}
+.sc.t-violet{--tint:106,75,255}.sc.t-magenta{--tint:255,45,184}.sc.t-orange{--tint:255,122,46}.sc.t-navy{--tint:0,45,93}
 .cs-photos{display:grid;gap:16px;margin:-24px 0 56px}
 .cs-photos.n1{grid-template-columns:1fr}.cs-photos.n2{grid-template-columns:1.4fr 1fr}
 .cs-photos img{width:100%;height:440px;object-fit:cover;border-radius:var(--r-lg);display:block}
@@ -1792,10 +1794,10 @@ const PRODUCTS={
   mca:{name:'Merchant Cash Advance',long:'Merchant Cash Advance',url:'/funding/merchant-cash-advance',ic:'coins',blurb:'Upfront funding for stock or a new outlet, settled automatically from sales.'}
 };
 const CUSTOMERS=[
-  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',photos:['sigit-store-1.jpg'],cat:'Music and merchandise',prods:['checkout']},
+  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',photos:['sigit-store-1.jpg'],tint:'violet',cat:'Music and merchandise',prods:['checkout']},
   {slug:'artch',name:'Artch',logo:'artch.png',prods:['checkout']},
-  {slug:'paper',name:'Paper',logo:'paper.png',photos:['paper-1.jpg'],prods:['checkout']},
-  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg','wakaigo-2.jpg'],prods:['checkout']},
+  {slug:'paper',name:'Paper',logo:'paper.png',photos:['paper-1.jpg'],tint:'magenta',prods:['checkout']},
+  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg','wakaigo-2.jpg'],tint:'orange',prods:['checkout']},
   {slug:'osim',name:'OSIM',logo:'osim.png',cat:'Wellness',prods:['checkout']},
   {slug:'zaafer',name:'Zaafer',logo:'zaafer.png',prods:['shipping']},
   {slug:'gerai-hawa',name:'Gerai Hawa',logo:'geraihawa.png',cat:'Modest fashion',prods:['shipping']},
@@ -1926,7 +1928,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
 (function(){
   const byS=Object.fromEntries(CUSTOMERS.map(c=>[c.slug,c])),idx=Object.fromEntries(CUSTOMERS.map((c,i)=>[c.slug,i]));
   const chip=c=>`<span class="chip${c.dark?' dark':''}">${mark(c)}</span>`;
-  const sc=(c,cls='')=>`<a class="sc ${c.photos?'sc-ph':ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}"${c.photos?` style="background-image:url('${ROOT}assets/customers/${c.photos[0]}')"`:''}>${chip(c)}<span>${cls.includes('sc-nohead')?'':`<h3>${storyHead(c)}</h3>`}<span class="rs">Read story <span class="chev">›</span></span></span></a>`;
+  const sc=(c,cls='')=>`<a class="sc ${c.photos?'sc-ph t-'+(c.tint||'violet'):ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}"${c.photos?` style="background-image:url('${ROOT}assets/customers/${c.photos[0]}')"`:''}>${chip(c)}<span>${cls.includes('sc-nohead')?'':`<h3>${storyHead(c)}</h3>`}<span class="rs">Read story <span class="chev">›</span></span></span></a>`;
   // hero collage: three staggered columns
   const COL=[['sigit-store','kopikalyan'],['wakaigo','emados'],['paper','erigo']];  // photo cards first, like Stripe
   document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],(j===0?'sc-tall ':'')+'sc-nohead')).join('')+'</div>').join('');
