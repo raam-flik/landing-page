@@ -1281,16 +1281,16 @@ html{scroll-padding-top:88px}
 .cx-logos .cu-word{font-size:14px;white-space:normal;text-align:center}
 .cx-logos .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
 /* all stories: masonry */
-.cx-grid{columns:3;column-gap:16px;margin-top:40px}
-.cx-grid .sc{break-inside:avoid;margin-bottom:16px}
-@media (max-width:1080px){.cx-hero{grid-template-columns:1fr}.cx-feat{grid-template-columns:1fr}.cx-logos{margin-left:0}.cx-grid{columns:2}}
+.cx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}  /* portrait 3:4 cards, like stripe.com/customers */
+.cx-grid .sc{aspect-ratio:3/4;min-height:0;height:auto}
+@media (max-width:1080px){.cx-hero{grid-template-columns:1fr}.cx-feat{grid-template-columns:1fr}.cx-logos{margin-left:0}.cx-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){
   .cx-hero{padding-top:24px;padding-bottom:56px}.cx-hero h1{font-size:36px;letter-spacing:-1px}
   .cx-hero .hero-cta{flex-direction:column;align-items:stretch}.cx-hero .hero-cta .btn{height:46px}
   .cx-col3{grid-template-columns:1fr 1fr;justify-self:stretch}.cx-col3 .sc{padding:14px}.cx-col3>div:nth-child(2){margin-top:32px}.sc.sc-hero{height:210px}
   .sc{min-height:180px}.sc.sc-tall{min-height:230px}.sc.sc-big{min-height:300px;padding:20px}.sc.sc-big h3{font-size:20px}
   .cx-logos{grid-template-columns:repeat(3,1fr)}.cx-logos button{height:72px}
-  .cx-grid{columns:1}
+  .cx-grid{grid-template-columns:1fr}
 }
 
 /* ===== Customers v3: results, logo wall, building together, by solution, get started ===== */
@@ -1961,7 +1961,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   const ft=document.getElementById('cx-ftabs'),grid=document.getElementById('cx-grid');
   ft.innerHTML=['all',...keys].map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?'on':''}" data-f="${p}">${p==='all'?'All':PRODUCTS[p].name}</button>`).join('');
   function filter(f){ft.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.f===f));b.classList.toggle('on',b.dataset.f===f)});
-    grid.innerHTML=CUSTOMERS.filter(c=>f==='all'||c.prods.includes(f)).map((c,i)=>sc(c,i%3===0?'sc-tall':'')).join('')}
+    grid.innerHTML=CUSTOMERS.filter(c=>f==='all'||c.prods.includes(f)).map(c=>sc(c)).join('')}
   ft.addEventListener('click',e=>{const b=e.target.closest('button[data-f]');if(b)filter(b.dataset.f)});
   filter('all');
   // logo wall
