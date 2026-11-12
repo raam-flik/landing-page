@@ -75,7 +75,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Question:** What happens when a withdrawal is held?
     - **Answer:** It shows as "Under review" in your dashboard, with an expected time. FLIK's risk team reviews it, and it's sent as soon as it's cleared. Nothing leaves your balance in the meantime.
   - **Question:** Do I need to set anything up?
-    - **Answer:** No. It's on for every FLIK merchant, on the dashboard, the API and AI agents.
+    - **Answer:** No. It's on for every FLIK merchant, on the dashboard and the API.
   - **Question:** What does it cost?
     - **Answer:** Nothing extra. It's included for every FLIK merchant.
 - **Topic:** In-Store Payment (6 of the questions from `content/07-in-store-payment.md`)

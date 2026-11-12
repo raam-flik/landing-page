@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fraud Detection: Fight Fraud and Chargebacks | FLIK</title>
-<meta name="description" content="FLIK watches payments, refunds and withdrawals for fraud, and helps you respond when a shopper disputes a card payment. Included for every FLIK merchant.">
+<meta name="description" content="FLIK watches payments, refunds and withdrawals for fraud, helps you respond to chargebacks, and soon flags risky COD orders before you ship. Included for every FLIK merchant.">
 <link rel="canonical" href="https://flik.co.id/payment/fraud-detection">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/payment/fraud-detection">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/payment/fraud-detection">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"FLIK Fraud Detection","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"FLIK watches payments, refunds and withdrawals for fraud, and helps you respond when a shopper disputes a card payment. Included for every FLIK merchant."}
+{"@context":"https://schema.org","@type":"Service","name":"FLIK Fraud Detection","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"FLIK watches payments, refunds and withdrawals for fraud, helps you respond to chargebacks, and soon flags risky COD orders before you ship. Included for every FLIK merchant."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1230,6 +1230,9 @@ html{scroll-padding-top:88px}
 #dash .cod-pts{margin:24px 0 12px}
 #dash .cod-pts li{color:var(--body)}
 #dash .cod-pts li span{color:var(--primary)}
+#dash .cod-pts li b{color:var(--ink);font-weight:500}
+#where .pk3{grid-template-columns:1fr 1fr}
+@media (max-width:760px){#where .pk3{grid-template-columns:1fr}}
 #dash .sec-h .pill{margin-left:8px;vertical-align:middle}
 .link.lt{color:var(--on-dark-accent)}
 @media (max-width:1080px){.flow5{grid-template-columns:1fr 1fr}.flow5 .stat:nth-child(odd){padding-left:var(--bleed)}.flow5 .stat:nth-child(even){border-right:0}.flow5 .stat:last-child{grid-column:1/-1}}
@@ -1357,7 +1360,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap ch-in">
     <div class="ch-t">
       <p class="eyebrow">FLIK Fraud Detection · From December 2026</p>
-      <h1 class="ch-h">Stop fraud before it costs you. <span class="soft">Fewer chargebacks, and a balance only you can move.</span></h1>
+      <h1 class="ch-h">Stop fraud before it costs you. <span class="soft">Fewer chargebacks and fake COD orders, and a balance only you can move.</span></h1>
       <p class="lead">Fraud costs you twice: the goods are gone, then the payment is taken back. FLIK watches every payment, refund and withdrawal for fraud, and helps you fight back when a shopper disputes a card payment.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="sales">Talk to the FLIK team <span class="chev">›</span></button>
@@ -1366,7 +1369,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <ul class="ch-facts">
         <li><span data-ic="check-s"></span>Payments, refunds and withdrawals watched for fraud</li>
         <li><span data-ic="check-s"></span>Help with every chargeback, from notice to outcome</li>
-        <li><span data-ic="check-s"></span>Reviewed by FLIK's risk team, not a black box</li>
+        <li><span data-ic="check-s"></span>Coming soon: risky COD orders flagged before you ship</li>
       </ul>
     </div>
     <div class="ch-stage fd-stage">
@@ -1393,7 +1396,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="band guides" id="decide">
   <div class="wrap">
     <span class="label"><i></i>How it works</span>
-    <h2 class="sec-h" style="margin-top:14px">One check at every risky moment. <span class="soft">Payments, refunds, withdrawals and account changes get the same check, whether they come from your dashboard, the API or an AI agent.</span></h2>
+    <h2 class="sec-h" style="margin-top:14px">One check at every risky moment. <span class="soft">Payments, refunds, withdrawals and account changes get the same check, whether they come from your dashboard or the API.</span></h2>
     <div class="flow fd-flow">
       <div class="fl-n"><span class="fl-ic" data-ic="wallet"></span><small>You or your system</small><b>Request</b><span>A payment, refund, withdrawal or account change</span></div>
       <div class="fl-c"><i></i></div>
@@ -1415,11 +1418,11 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap">
     <h2 class="sec-h stats-h">Fraud and chargebacks, covered end to end. <span class="soft">From the first payment to the last withdrawal.</span></h2>
     <div class="stats4 flow4 flow5" id="flow5">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="qris"></span><b>Payments</b><span>Watched for signs of fraud. Card payments are also screened by our licensed payment partners.</span></div>
+      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="qris"></span><b>Payments</b><span>Watched for signs of fraud.</span></div>
       <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="coins"></span><b>Refunds</b><span>Watched for patterns that don't fit your business.</span></div>
       <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="card"></span><b>Chargebacks</b><span>You're told when a shopper disputes a card payment, and we help you respond.</span></div>
       <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="wallet"></span><b>Withdrawals</b><span>Checked before anything is sent to the bank.</span></div>
-      <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="user"></span><b>Account changes</b><span>New payout accounts and contacts are checked, and you're told straight away.</span></div>
+      <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="truck"></span><b>COD orders</b><span>Coming soon: risky orders flagged before they ship.</span></div>
     </div>
     <div class="st-ex" id="st-ex" aria-live="polite"></div>
   </div>
@@ -1457,6 +1460,20 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   </div>
 </section>
 
+<!-- ===== COD and shipping fraud: delivery risk level, COD confirmation and address check, coming soon ===== -->
+<section class="pad-s alt guides" id="dash">
+  <div class="wrap">
+    <h2 class="sec-h">Stop fake COD orders before they ship. <span class="pill pu">Coming soon</span> <span class="soft">A refused COD parcel costs you shipping both ways, and the stock sits in transit. FLIK flags risky orders before you hand them to the courier, using delivery outcomes across the FLIK network. You decide what to do.</span></h2>
+    <ul class="cod-pts">
+      <li><span data-ic="check-s"></span><div><b>Delivery risk level.</b> Every order gets Low, Medium or High, with the reason.</div></li>
+      <li><span data-ic="check-s"></span><div><b>COD confirmation.</b> The shopper confirms the order on WhatsApp before pickup. No reply, no shipment, no shipping fee.</div></li>
+      <li><span data-ic="check-s"></span><div><b>Address check.</b> Incomplete addresses and areas couriers don't reach are flagged before you ship.</div></li>
+      <li><span data-ic="check-s"></span><div><b>Prepaid instead.</b> Send a payment link to a risky shopper instead of offering cash on delivery.</div></li>
+      <li><span data-ic="check-s"></span><div><b>The right courier.</b> Ship with the courier that delivers best in that area.</div></li>
+    </ul>
+  </div>
+</section>
+
 <!-- ===== Reviewed by people: dark band with a short list ===== -->
 <section class="pad dark guides" id="cod-risk">
   <div class="wrap">
@@ -1468,18 +1485,6 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       </ul>
       <a href="#" class="link lt" data-page="/help">Contact support <span class="chev">›</span></a>
     </div>
-  </div>
-</section>
-
-<!-- ===== Risky shoppers: delivery risk level per order (coming soon) ===== -->
-<section class="pad-s alt guides" id="dash">
-  <div class="wrap">
-    <h2 class="sec-h">Spot risky orders before you ship. <span class="pill pu">Coming soon</span> <span class="soft">Each order gets a delivery risk level, Low, Medium or High, with the reason: for example, past failed deliveries to the wrong address. You decide what to do.</span></h2>
-    <ul class="cod-pts">
-      <li><span data-ic="check-s"></span>Switch to a courier that delivers better to that area.</li>
-      <li><span data-ic="check-s"></span>Confirm the address with the shopper before you ship.</li>
-      <li><span data-ic="check-s"></span>Ask for prepayment instead of cash on delivery.</li>
-    </ul>
   </div>
 </section>
 
@@ -1506,16 +1511,6 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
         <span class="label"><i></i>API</span>
         <h3>Withdraw from your system.</h3>
         <p class="txt">Withdrawals by API pass the same check, and you get a webhook when one is under review.</p>
-        <em class="link">Explore Developers <span class="chev">›</span></em>
-      </a>
-      <a href="#" class="pk" data-page="/developers">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Withdrawal WD-3109</b><span class="pill ok">Sent</span></div>
-          <div class="pk-pl"><span class="fl-plogo fl-plogo--icon" data-ic="bolt-s"></span><span class="grow"><b>Agent · Rp3.000.000</b><small>Within the agent's limit</small></span></div>
-        </div></div>
-        <span class="label"><i></i>AI agents</span>
-        <h3>Withdraw through an agent.</h3>
-        <p class="txt">Agent withdrawals carry the agent's identity and its limit, and pass the same check.</p>
         <em class="link">Explore Developers <span class="chev">›</span></em>
       </a>
     </div>
@@ -1808,7 +1803,7 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
 /* ===== What it covers: the progress line walks, an example check follows (example data) ===== */
 (function(){
   const box=document.getElementById('flow5'),s=[...box.children],ex=document.getElementById('st-ex');
-  const E=[['qris','Payments','214 payments today','ok','Cleared'],['coins','Refunds','3 refunds today','ok','Normal'],['card','Chargebacks','Card payment of Rp1.250.000 disputed','warn','Evidence sent'],['wallet','Withdrawal','Rp12.500.000 to your usual BCA account','ok','Cleared'],['user','Account change','New payout account added','ok','Checked']];
+  const E=[['qris','Payments','214 payments today','ok','Cleared'],['coins','Refunds','3 refunds today','ok','Normal'],['card','Chargebacks','Card payment of Rp1.250.000 disputed','warn','Evidence sent'],['wallet','Withdrawal','Rp12.500.000 to your usual BCA account','ok','Cleared'],['truck','COD order','Order #4830 to an address with past failed deliveries','warn','High risk']];
   let k=0;
   const paint=()=>{s.forEach((x,i)=>{x.classList.toggle('on',i===k);x.classList.toggle('done',i<k)});box.style.setProperty('--p',((k+1)/s.length*100)+'%');
     const e=E[k];ex.innerHTML=`<div class="st-card"><span class="fl-ic">${ic(e[0],18)}</span><span><small>Example · ${e[1]}</small><b>${e[2]}</b></span><span class="pill ${e[3]}">${e[4]}</span></div>`};
@@ -1829,9 +1824,9 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
 /* ===== Fraud Detection at a glance ===== */
 (function(){
   const G=[
-    ['shield','Always on',['No setup, no code','Payments, refunds and withdrawals checked','The same check on dashboard, API and AI agents']],
+    ['shield','Always on',['No setup, no code','Payments, refunds and withdrawals checked','Reviewed by FLIK\'s risk team']],
     ['card','Chargebacks',['Told as soon as a payment is disputed','Evidence uploaded in the dashboard','FLIK sends it to the payment partner']],
-    ['lock','Your balance, protected',['Every withdrawal checked before it\'s sent','Reviewed by FLIK\'s risk team','Delivery risk level per order (coming soon)']]
+    ['truck','COD and shipping (coming soon)',['Delivery risk level per order','COD confirmation on WhatsApp','Address check before pickup']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
 })();
@@ -1840,10 +1835,10 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
 const FAQ=[
   ['What does Fraud Detection do?','It watches payments, refunds and withdrawals for fraud, and helps you respond when a shopper disputes a card payment. It also protects your balance if someone else gets into your account.'],
   ['How does FLIK help with chargebacks?','When a shopper disputes a card payment, you\'re told straight away, with the reason and the deadline. Upload your evidence in the dashboard, and FLIK sends it to the payment partner. The outcome shows on your statement.'],
-  ['Can FLIK help me spot risky shoppers?','Soon. Each order will get a delivery risk level, Low, Medium or High, with the reason, such as past failed deliveries to the wrong address. You decide what to do: switch courier, confirm the address, or ask for prepayment.'],
+  ['How does FLIK help with fake COD orders?','Soon. Each order will get a delivery risk level, Low, Medium or High, with the reason, such as past failed deliveries. You can ask the shopper to confirm on WhatsApp before pickup, send a payment link instead of COD, or switch courier. You decide what to do.'],
   ['What happens when a withdrawal is held?','It shows as "Under review" in your dashboard, with an expected time. FLIK\'s risk team reviews it, and it\'s sent as soon as it\'s cleared. Nothing leaves your balance in the meantime.'],
   ['Why won\'t you tell me why it was held?','Sharing how the checks work would help fraudsters get around them. If we need anything from you, we\'ll contact you on your registered contacts.'],
-  ['Do I need to set anything up?','No. It\'s on for every FLIK merchant, on the dashboard, the API and AI agents.'],
+  ['Do I need to set anything up?','No. It\'s on for every FLIK merchant, on the dashboard and the API.'],
   ['What does it cost?','Nothing extra. It\'s included for every FLIK merchant.']
 ];
 const fq=document.getElementById('faq');
