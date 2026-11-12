@@ -148,7 +148,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 Shown on first visit as a compact bar (one row on desktop; text and one row of buttons on phones). "Accept all" is the primary button and "Reject all" a secondary button (Raam, 26 Oct 2026). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
 
 - **Heading (bold, start of the text):** Cookies on FLIK.
-- **Text:** We use essential cookies to run this site. / With your OK, also use analytics and marketing cookies. (two lines on desktop)
+- **Text:** Essential cookies run this site. / Analytics and marketing only with your OK. (two lines on desktop)
 - **Link:** Cookie Policy (/legal/cookies)
 - **Button:** Reject all
 - **Button:** Accept all
