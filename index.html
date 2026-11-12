@@ -913,12 +913,12 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 .hx-film-d{color:var(--muted);font-variant-numeric:tabular-nums}
 .modal.film{max-width:960px;background:var(--ink)}
 .film-v{display:block;width:100%;max-height:calc(100vh - 120px);background:var(--ink)}
-@media (max-width:1080px){.hx-film{display:none}}
+@media (max-width:760px){.hx-film{right:calc(50% - 108px);bottom:124px}}  /* phones: centred above the logo strip */
 @media (max-width:760px){
   .hx h1{font-size:40px;letter-spacing:-1px}
   .hx .hero-cta{flex-direction:column;align-items:stretch;gap:8px;width:100%}
   .hx .hx-link{justify-content:center;height:46px}
-  .hx .logos-band{margin-top:210px}
+  .hx .logos-band{margin-top:270px}
 }
 
 /* ===== kit: footer-legal ===== */
@@ -1766,7 +1766,7 @@ function closeModal(){
 }
 scrim.addEventListener('click',e=>{if(e.target===scrim||e.target.closest('[data-close]'))closeModal()});
 addEventListener('keydown',e=>{
-  const bdOpenNow=typeof bdScrim!=='undefined'&&bdScrim.classList.contains('open');  // bento dialog may not exist on this page
+  const bdOpenNow=bdScrim.classList.contains('open');
   if(e.key==='Escape'){
     if(scrim.classList.contains('open'))closeModal();
     else if(bdOpenNow)bdClose();
@@ -1946,6 +1946,107 @@ document.addEventListener('click',e=>{
   card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);
 })();
 
+/* ===== Homepage interactions (restored: payment toggles, product dialog, carousels, news) ===== */
+/* Payment method toggles */
+(function(){
+  const L=[['qris','QRIS',['qris']],['phone','E-wallets',['gopay','ovo','dana','shopeepay']],['card','Credit and debit cards',[]],['bank','Bank virtual accounts',['bca','mandiri','bni','bri']],['cash','Cash on delivery',[]]];
+  const PMNAME={qris:'QRIS',gopay:'GoPay',ovo:'OVO',dana:'DANA',shopeepay:'ShopeePay',bca:'BCA',mandiri:'Mandiri',bni:'BNI',bri:'BRI'};
+  const el=document.getElementById('pmlist');
+  el.innerHTML=`<div class="co-row" style="margin-bottom:4px"><b style="font-weight:500">Payment methods</b><span class="pill pu">15 methods</span></div>`+L.map(m=>`<div class="pmi"><span class="pmic">${ic(m[0],15)}</span><span class="grow">${m[1]}${m[2].length?`<span class="pml">${m[2].map(k=>`<img src="assets/logos/payment/${k}.png" alt="${PMNAME[k]||''}">`).join('')}</span>`:''}</span><button type="button" class="tg on" aria-pressed="true" aria-label="${m[1]}"></button></div>`).join('');
+  el.querySelectorAll('.tg').forEach(t=>t.onclick=()=>t.setAttribute('aria-pressed',String(t.classList.toggle('on'))));
+})();
+
+/* Product detail modals (the + buttons) */
+const PROD={
+  checkout:['FLIK Checkout','A checkout that takes 30 seconds, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
+  payments:['Payment Methods','Accept 15 payment methods in one checkout.',['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],'/checkout/payment-methods'],
+  shipping:['FLIK Shipping','Compare all major couriers and ship for up to 40% less.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
+  bulk:['Bulk Shipping','Send from one warehouse or many, to one destination or thousands.',['Single and bulk shipments','Manage pickup warehouses','Every status in one table'],'/shipping/bulk'],
+  track:['Shipment Tracking','Let your customers follow every package.',['Tracking number ready the moment a shipment is created','Status from pickup to delivery','Works across all major couriers'],'/shipping/track'],
+  cod:['COD Shipping','Offer cash on delivery with a 3% fee (excl. PPN).',['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited to your balance after delivery'],'/shipping/cod'],
+  funding:['Merchant Cash Advance','Upfront funding for inventory, for selected brands.',['Consultation with the FLIK team','Easy integration with your store','Funding for stock in advance','Settled automatically as you sell'],'/funding/merchant-cash-advance'],
+  settle:['Auto Settlement','Settled from your sales, automatically.',['Deducted as products sell','Track outstanding and payments in the dashboard','Clear margins, no hidden fees'],'/funding/auto-settlement']
+};
+/* Product dialog: opened from a bento card or its "+" button */
+const BD={
+  checkout:{t:'Accept payments in a 30-second checkout',d:'FLIK Checkout replaces the checkout on your Shopify or WooCommerce store. Shoppers pay in 30 seconds, with every payment method and all major couriers built in.',cta:['Explore Checkout','/checkout'],
+    list:['A checkout that is 3× faster','Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords to forget','Rewards applied automatically at checkout'],
+    stat:['30 sec','to check out with a saved FLIK account'],stat2:['3×','faster than a standard checkout form'],
+    det:[['bolt','Shoppers enter their name, WhatsApp number, email and address once. Courier and payment method are selected automatically.'],['card','15 payment methods in one checkout, from QRIS and e-wallets to virtual accounts, cards and COD.'],['truck','Orders ship through FLIK Shipping from your own warehouse, and payments land in your balance after delivery.']],
+    more:['payments','shipping','funding'],q:null},
+  payments:{t:'Offer 15 payment methods',d:'Let shoppers pay the way they prefer, from QRIS and e-wallets to bank virtual accounts, cards and cash on delivery, all in one checkout.',cta:['Explore payment methods','/checkout/payment-methods'],
+    list:['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],
+    stat:['15','payment methods in one checkout'],stat2:['30 sec','from cart to paid'],
+    det:[['qris','QRIS works with any banking or e-wallet app your shoppers already use.'],['chart','Choose which methods to show in Checkout Personalization.'],['wallet','Every payment lands in your FLIK balance once the order is delivered.']],
+    more:['checkout','cod','funding'],q:null},
+  shipping:{t:'Ship with all major couriers for up to 40% less',d:'FLIK Shipping is a courier aggregator. Enter addresses one by one or in bulk, compare every rate, and manage every shipment from one dashboard.',cta:['Explore Shipping','/shipping'],
+    list:['Regular, same day, next day, instant and cargo','Single and bulk shipments','Free to register, no registration fee','Courier performance by region'],
+    stat:['40%','lower shipping costs, up to'],stat2:['99%','shipment creation success rate'],
+    det:[['truck','Compare every available rate, then choose the service and a pickup schedule.'],['pin','Pickup starts after the AWB is ready: 3–5 hours for regular, 1–4 hours for same day.'],['globe','Coverage across Indonesia, for both COD and non-COD shipments.']],
+    more:['track','cod','checkout'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
+  track:{t:'Track any package in real time',d:'Tracking numbers are ready the moment a shipment is created, so you and your customers can follow every package from pickup to delivery.',cta:['Explore tracking','/shipping/track'],
+    list:['Status from pickup to delivery','Works across all major couriers','An email to the shopper at every status change','Order tracking in the FLIK Shopper App'],
+    stat:['99%','shipment creation success rate'],stat2:['Instant','tracking number when a shipment is created'],
+    det:[['bolt','Tracking numbers are available immediately, so customers stay in the loop.'],['mail','Shoppers get an email every time the status changes.'],['phone','The Shopper App shows delivery details and order history anytime.']],
+    more:['shipping','cod','checkout'],q:['ZMNow.id','ZMNow.id handles payments, shipping and rewards without juggling systems.','ZMNow.id · Products used: Checkout, Shipping',1]},
+  cod:{t:'Sell with COD for only a 3% fee (excl. PPN)',d:'Offer cash on delivery across Indonesia. The COD fee is 3% (excl. PPN), paid by the merchant and deducted when the COD amount is credited after delivery.',cta:['Explore COD shipping','/shipping/cod'],
+    list:['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited automatically once the order is completed','Credited to your balance after delivery'],
+    stat:['3%','COD fee (excl. PPN), paid by the merchant'],stat2:['2×','delivery attempts before a return'],
+    det:[['cash','The 3% COD fee (excl. PPN) is deducted when the COD amount is credited after a successful delivery.'],['wallet','The COD amount is credited to your balance after delivery.'],['chart','Track courier performance by region and choose the best one.']],
+    more:['shipping','track','funding'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
+  funding:{t:'Fund your inventory, settled automatically as you sell',d:'FLIK Merchant Cash Advance gives selected brands upfront funding for inventory. Settlement is deducted automatically as your products sell.',cta:['Explore Merchant Cash Advance','/funding/merchant-cash-advance'],
+    list:['Consultation with the FLIK team','Easy integration with your store','Upfront funding to stock inventory','Sell as usual, settled automatically'],
+    stat:['10+','growing businesses trust Merchant Cash Advance'],stat2:['0','hidden fees'],
+    det:[['coins','Dedicated cash flow for inventory and marketing, so sales keep moving.'],['check','Clear margins with no hidden fees.'],['chart','Track the outstanding amount and the latest payments in your dashboard.']],
+    more:['checkout','shipping','cod'],q:null}
+};
+const BDNAME={checkout:['Checkout','cart','30-second checkout'],payments:['Payment Methods','card','15 methods in one checkout'],shipping:['Shipping','truck','All major couriers, one dashboard'],track:['Shipment Tracking','pin','Track any package'],cod:['COD Shipping','cash','Cash on delivery, 3% fee (excl. PPN)'],funding:['Merchant Cash Advance','coins','Inventory funding']};
+const bdScrim=document.getElementById('bd-scrim'),bd=document.getElementById('bd');let bdFrom=null;
+function bdOpen(key,from){
+  const p=BD[key];if(!p)return;if(from)bdFrom=from;
+  const card=document.querySelector(`#solutions .exp[data-prod="${key}"]`)?.closest('.bc');
+  const btn1=p.cta[2]?`<button class="btn btn-primary" data-act="${p.cta[2]}" data-interest="Funding">${p.cta[0]} <span class="chev">›</span></button>`:`<a href="#" class="btn btn-primary" data-page="${p.cta[1]}">${p.cta[0]} <span class="chev">›</span></a>`;
+  bd.innerHTML=`<button class="bd-x" data-bd-close aria-label="Close">${ic('x',18)}</button><div class="bd-in">
+    <div class="bd-head"><div><h2 id="bd-title">${p.t}</h2><p>${p.d}</p><div class="bd-btns">${btn1}<a href="#" class="btn btn-secondary" data-page="/pricing">See pricing</a></div></div>
+      <ul class="bd-list">${p.list.map(x=>`<li><span class="ck">${ic('check',11,3)}</span>${x}</li>`).join('')}</ul></div>
+    <div class="bd-gfx"><div class="bd-art" aria-hidden="true"></div><div class="bd-side"><div class="bd-stat"><b class="num">${p.stat[0]}</b><span>${p.stat[1]}</span></div><div class="bd-stat dark"><b class="num">${p.stat2[0]}</b><span>${p.stat2[1]}</span></div></div></div>
+    <div class="bd-details">${p.det.map(d=>`<div><span class="ic">${ic(d[0],18)}</span><p>${d[1]}</p></div>`).join('')}</div>
+    <div class="bd-more"><h3>More to discover</h3><div class="bd-cards">${p.more.map(k=>`<button class="bd-card" data-bd="${k}"><span class="ic">${ic(BDNAME[k][1],16)}</span><b>${BDNAME[k][0]}</b><span>${BD[k].d.split('. ')[0]}.</span><em>Learn more <span class="chev">›</span></em></button>`).join('')}</div></div>
+    ${p.q?`<div class="bd-quote"><span class="brand">${p.q[0]}</span>${p.q[3]?`<p style="font-size:22px;line-height:1.45;font-weight:300;color:var(--ink)">${p.q[1]}</p>`:`<q>${p.q[1]}</q>`}<small>${p.q[2]}</small></div>`:''}
+    <div class="bd-foot"><h3>Get started with ${BDNAME[key][0]}</h3><div class="bd-btns">${btn1}<button class="btn btn-secondary" data-act="sales">Contact sales</button></div></div>
+  </div>`;
+  // live copy of the card's mockup
+  const art=bd.querySelector('.bd-art');
+  if(card)card.querySelectorAll('.vis>*').forEach(n=>{const c=n.cloneNode(true);c.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id'));c.removeAttribute('id');c.inert=true;art.appendChild(c)});
+  bd.querySelectorAll('.chev:not(.ha)').forEach(c=>{if(c.textContent.trim()==='›'){c.classList.add('ha');c.innerHTML='<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path class="ha-l" d="M0 5h7"/><path class="ha-t" d="M1 1l4 4-4 4"/></svg>'}});
+  if(!bdScrim.classList.contains('open')){bdScrim.classList.add('open');bdScrim.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';void bdScrim.offsetWidth;bdScrim.classList.add('show')}
+  bdScrim.scrollTop=0;bd.focus({preventScroll:true});
+}
+function bdClose(){if(!bdScrim.classList.contains('open'))return;bdScrim.classList.remove('show');bdScrim.setAttribute('aria-hidden','true');setTimeout(()=>{bdScrim.classList.remove('open');if(!scrim.classList.contains('open'))document.body.style.overflow=''},250);bdFrom?.focus?.({preventScroll:true});bdFrom=null}
+bdScrim.addEventListener('click',e=>{
+  if(e.target===bdScrim||e.target.closest('[data-bd-close]'))return bdClose();
+  const k=e.target.closest('[data-bd]');if(k)return bdOpen(k.dataset.bd);
+  if(e.target.closest('[data-act],[data-page]'))bdClose();
+});
+// open from the "+" button, or from a click anywhere on the card that isn't a control in the mockup
+document.querySelectorAll('#solutions .bc').forEach(card=>card.addEventListener('click',e=>{
+  const exp=card.querySelector('.exp');if(!exp)return;
+  if(!e.target.closest('.exp')&&e.target.closest('button,a,input,label,form,.rate,.pmi,.tl-i,.tg'))return;
+  bdOpen(exp.dataset.prod,exp);
+}));
+
+/* Carousels */
+document.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
+
+/* What's happening (placeholder posts) */
+const NEWS=[
+  ['Promo','Ship for less this month','Get extra cashback on shipments created from the FLIK dashboard.','linear-gradient(135deg,#FF7A2E,#FF2DB8)','/promo'],
+  ['Product','15 payment methods in one checkout','QRIS, e-wallets, cards, virtual accounts and COD, all in FLIK Checkout.','linear-gradient(135deg,#6A4BFF,#FF2DB8)','/checkout/payment-methods'],
+  ['Guide','How to sell with COD and get paid faster','What to know about COD fees, failed deliveries and payouts.','linear-gradient(135deg,#002D5D,#6A4BFF)','/blog'],
+  ['Product','Bulk shipping from many warehouses','Send to many destinations at once from one dashboard.','linear-gradient(135deg,#00E5FF,#8B73FF)','/shipping/bulk'],
+  ['Guide','Funding inventory without hidden fees','How Merchant Cash Advance works, step by step.','linear-gradient(135deg,#FF7A2E,#00E5FF)','/funding/merchant-cash-advance']
+];
+document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard" data-page="${n[4]}"><div class="nart" style="background:${n[3]}"></div><div class="nb"><span class="nt">${n[0]}</span><h4>${n[1]}</h4><p>${n[2]}</p><span class="link">Read more <span class="chev">›</span></span></div></a>`).join('');
 /* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
 (function(){
   const SVG='<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path class="ha-l" d="M0 5h7"/><path class="ha-t" d="M1 1l4 4-4 4"/></svg>';
