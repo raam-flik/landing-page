@@ -72,6 +72,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 **Learn**
 
+- **Customers:** Brands that grow with FLIK
 - **Blog:** News and guides
 - **Promo:** Current offers
 - **Help center:** FAQ and support
@@ -121,6 +122,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 **Resources**
 
+- Customers
 - Blog
 - Promo
 - Help center
