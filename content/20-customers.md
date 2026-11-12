@@ -43,7 +43,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** From fashion labels to coffee shops, brands use FLIK to sell on their own website, take QRIS at the counter, ship with every major courier and fund their next step.
 - **Button:** See all customers
 - **Button:** Contact sales
-- **Hero cards:** The SIGIT, Kopikalyan, WakaiGo, Artch, Paper, Erigo — each with its products and "Read story"
+- **Hero cards:** The SIGIT, Artch, WakaiGo, Paper — photo cards only, all the same size, logo and "Read story"
 - **Section heading:** What brands get with FLIK.
 - **Results:** 30 sec — to check out with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
 - **Logo wall:** every customer (real logo where we have it, name otherwise)

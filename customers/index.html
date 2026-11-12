@@ -1231,8 +1231,9 @@ html{scroll-padding-top:88px}
 .cx-hero h1{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px}
 .cx-hero .lead{margin-top:20px;max-width:480px}
 .cx-hero .hero-cta{justify-content:flex-start;margin-top:28px;align-items:center;gap:20px}
-.cx-col3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
-.cx-col3>div{display:grid;gap:14px}.cx-col3>div:nth-child(2){margin-top:56px}.cx-col3>div:nth-child(3){margin-top:24px}
+.cx-col3{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start;max-width:560px;justify-self:end;width:100%}
+.cx-col3>div{display:grid;gap:16px}.cx-col3>div:nth-child(2){margin-top:64px}
+.sc.sc-hero{min-height:0;height:280px}
 /* story card: art, logo chip top left, headline bottom */
 .sc{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-radius:var(--r-lg);padding:18px;min-height:210px;color:#fff;overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;isolation:isolate}
 .sc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
@@ -1276,7 +1277,7 @@ html{scroll-padding-top:88px}
 .cx-logos button{position:relative;display:flex;align-items:center;justify-content:center;height:84px;padding:12px;opacity:.55;transition:opacity .15s}
 .cx-logos button:hover,.cx-logos button[aria-selected="true"]{opacity:1}
 .cx-logos button[aria-selected="true"]::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--primary)}
-.cx-logos .cu-logo{max-height:30px;max-width:110px}
+.cx-logos button{min-width:0}.cx-logos .cu-logo{max-height:30px;max-width:min(110px,100%)}
 .cx-logos .cu-word{font-size:14px;white-space:normal;text-align:center}
 .cx-logos .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
 /* all stories: masonry */
@@ -1286,7 +1287,7 @@ html{scroll-padding-top:88px}
 @media (max-width:760px){
   .cx-hero{padding-top:24px;padding-bottom:56px}.cx-hero h1{font-size:36px;letter-spacing:-1px}
   .cx-hero .hero-cta{flex-direction:column;align-items:stretch}.cx-hero .hero-cta .btn{height:46px}
-  .cx-col3{grid-template-columns:1fr 1fr}.cx-col3 .sc{padding:14px}.cx-col3 .sc h3{font-size:13.5px}.cx-col3 .sc .chip{height:30px}.cx-col3>div:nth-child(3){display:none}.cx-col3>div:nth-child(2){margin-top:32px}
+  .cx-col3{grid-template-columns:1fr 1fr;justify-self:stretch}.cx-col3 .sc{padding:14px}.cx-col3>div:nth-child(2){margin-top:32px}.sc.sc-hero{height:210px}
   .sc{min-height:180px}.sc.sc-tall{min-height:230px}.sc.sc-big{min-height:300px;padding:20px}.sc.sc-big h3{font-size:20px}
   .cx-logos{grid-template-columns:repeat(3,1fr)}.cx-logos button{height:72px}
   .cx-grid{columns:1}
@@ -1298,7 +1299,7 @@ html{scroll-padding-top:88px}
 .cx-res b{display:block;font-size:44px;line-height:1.1;font-weight:300;color:var(--ink);letter-spacing:-1px}  /* same as the homepage stats */
 .cx-res span{display:block;font-size:15px;color:var(--muted);margin-top:8px;line-height:1.45}
 .cx-wall{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:56px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.cx-wall a{display:flex;align-items:center;justify-content:center;height:56px;padding:6px;border-radius:8px;transition:background .15s}
+.cx-wall a{min-width:0;display:flex;align-items:center;justify-content:center;height:56px;padding:6px;border-radius:8px;transition:background .15s}
 .cx-wall a:hover{background:var(--surface-alt,#F8FAFD)}
 .cx-wall .cu-logo{max-height:30px;max-width:100%}.cx-wall .cu-logo.sq{max-height:46px}
 .sc .chip .cu-logo.sq{max-height:28px}.cx-logos .cu-logo.sq{max-height:44px}.cs-card .cs-logo .cu-logo.sq{max-height:64px}
@@ -1930,8 +1931,8 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   const chip=c=>`<span class="chip${c.dark?' dark':''}">${mark(c)}</span>`;
   const sc=(c,cls='')=>`<a class="sc ${c.photos?'sc-ph t-'+(c.tint||'violet'):ARTS[idx[c.slug]%4]} ${cls}" href="${storyUrl(c)}"${c.photos?` style="background-image:url('${ROOT}assets/customers/${c.photos[0]}')"`:''}>${chip(c)}<span>${cls.includes('sc-nohead')?'':`<h3>${storyHead(c)}</h3>`}<span class="rs">Read story <span class="chev">›</span></span></span></a>`;
   // hero collage: three staggered columns
-  const COL=[['sigit-store','kopikalyan'],['wakaigo','artch'],['paper','erigo']];  // photo cards first, like Stripe
-  document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],(j===0?'sc-tall ':'')+'sc-nohead')).join('')+'</div>').join('');
+  const COL=[['sigit-store','artch'],['wakaigo','paper']];  // photo cards only, all the same size (like stripe.com/customers)
+  document.getElementById('cx-collage').innerHTML=COL.map((col,ci)=>'<div>'+col.map((s,j)=>sc(byS[s],'sc-hero sc-nohead')).join('')+'</div>').join('');
   // by product: tabs → featured story + logo row
   const keys=Object.keys(PRODUCTS),pt=document.getElementById('cx-ptabs'),logos=document.getElementById('cx-logos');
   pt.innerHTML=keys.map((p,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?'on':''}" data-p="${p}">${PRODUCTS[p].name}</button>`).join('');
