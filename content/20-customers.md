@@ -42,7 +42,9 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** See all customers
 - **Button:** Contact sales
 - **Hero cards:** Kopi Kalian, Artch, Emados, Gerai Hawa, Erigo, OSIM — each with its products and "Read story"
-- **Section heading (logo wall):** Brands that grow with FLIK.
+- **Section heading:** What brands get with FLIK.
+- **Results:** 30 sec — to check out with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
+- **Logo wall:** every customer (real logo where we have it, name otherwise)
 - **Section heading (tabs):** One platform, every way they sell.
   - **Grey part:** See which brands use each FLIK product.
 - **Tabs:** Checkout / Shipping / In-Store Payment / Merchant Cash Advance
@@ -51,7 +53,21 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Product text (In-Store Payment):** QRIS and cards at the counter, with in-store sales in the same dashboard as online.
 - **Product text (Merchant Cash Advance):** Upfront funding for stock or a new outlet, settled automatically from sales.
 - **Link:** Explore <product>
-- **Section heading:** All customers.
+- **Building together (eyebrow):** Building together
+- **Section heading:** We work with brands to grow every channel.
+  - **Grey part:** From the website to the counter, FLIK fits the way each brand sells.
+- **Examples:** Kopi Kalian, Gerai Hawa, OSIM — How <Brand> works with FLIK — Challenge / Solution / Products (the example story text) — Read the example story; beside it an example FLIK screen for the brand's product
+- **All stories (eyebrow):** All customer stories
+- **Section heading:** Sell, ship and grow with FLIK.
+- **Filters:** All / Checkout / Shipping / In-Store Payment / Merchant Cash Advance
+- **By solution (eyebrow):** Customers by solution
+- **Section heading:** We obsess over every step of the sale, so brands don't have to.
+- **Text:** Checkout, payments, shipping and funding are built to work together in one dashboard, without months of integration work.
+- **Text:** That means more time for the product and the customers, and less time stitching systems together or chasing payments and packages.
+- **Checklist:** Accept payments online / Take QRIS and cards in store / Ship with every major courier / Offer cash on delivery / Track every package / Settle early / Fund your next step / Stop fraud before it costs you
+- **Final section:** Ready to get started? — Create an account and start selling, or talk to the FLIK team about a setup for your business. — Get started / Contact sales
+  - **Always know what you'll pay** — Fees per transaction, with VAT shown on every fee. No hidden costs. — Pricing details
+  - **Start your integration** — Connect with a Shopify or WooCommerce plugin, or build on the FLIK API. — Developer docs
 - **Card link:** Read story
 
 ## Example story text (per product, <Brand> is filled in)
