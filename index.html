@@ -894,8 +894,13 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 .hx-ev i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
 .hx-ev.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .hx .logos-band{margin-top:220px;background:var(--surface,#fff);z-index:2}
-.hx-film{position:absolute;right:max(32px,calc(50% - 600px));bottom:118px;z-index:4;width:216px;background:var(--surface,#fff);border-radius:10px;box-shadow:0 0 0 1px var(--line),0 12px 28px -12px rgba(0,45,93,.28);padding:8px;text-align:left}
+.hx-film{position:absolute;right:max(32px,calc(50% - 600px));bottom:118px;z-index:4;width:216px;cursor:grab;touch-action:none;user-select:none;transition:width .3s ease,box-shadow .3s;background:var(--surface,#fff);border-radius:10px;box-shadow:0 0 0 1px var(--line),0 12px 28px -12px rgba(0,45,93,.28);padding:8px;text-align:left}
 .hx-film[hidden]{display:none}
+.hx-film:hover,.hx-film.playing{width:360px;box-shadow:0 0 0 1px var(--line),0 20px 40px -16px rgba(0,45,93,.35)}
+.hx-film.dragging{cursor:grabbing;transition:box-shadow .3s}
+.hx-film-v{cursor:pointer}
+.hx-film.dragging .hx-film-v{cursor:grabbing}
+.hx-film-v video{pointer-events:none}
 .hx-film-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 2px 6px;font-size:12px;font-weight:500;color:var(--body)}
 .hx-film-x{width:20px;height:20px;border-radius:4px;color:var(--muted);font-size:16px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
 .hx-film-x:hover{background:var(--surface-alt,#F8FAFD);color:var(--ink)}
@@ -1890,29 +1895,51 @@ document.addEventListener('click',e=>{
   new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(field);
 })();
 
-/* ===== Hero mini film card: muted preview loops; click opens the full film in the modal ===== */
+/* ===== Hero mini film card: drag it anywhere in the hero; it grows on hover; a click plays the film in the card with sound ===== */
 (function(){
   const card=document.getElementById('hx-film');if(!card)return;
-  const prev=document.getElementById('hx-film-prev'),dur=document.getElementById('hx-film-d');
-  const FULL='assets/video/hero-film.mp4';
+  const v=document.getElementById('hx-film-prev'),dur=document.getElementById('hx-film-d'),hero=card.closest('.hx');
+  const watch=document.getElementById('hx-film-watch'),PREV=v.getAttribute('src'),FULL='assets/video/hero-film.mp4';
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let closed=false;try{closed=sessionStorage.getItem('flik_film_closed')==='1'}catch(_){}
   if(closed)return;
-  prev.addEventListener('error',()=>{card.hidden=true});            // files not present (they're kept out of git)
-  prev.addEventListener('loadedmetadata',()=>{
-    card.hidden=false;const d=Math.round(prev.duration||0);dur.textContent=Math.floor(d/60)+':'+String(d%60).padStart(2,'0');
-    if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!(typeof motionPaused==='function'&&motionPaused()))prev.play().catch(()=>{});
+  let full=false;   // false: muted preview loop; true: the film with sound
+  const fmt=d=>{d=Math.round(d||0);return Math.floor(d/60)+':'+String(d%60).padStart(2,'0')};
+  v.addEventListener('error',()=>{if(!full)card.hidden=true});            // files missing (kept out of git)
+  v.addEventListener('loadedmetadata',()=>{card.hidden=false;if(full)return;
+    const probe=document.createElement('video');probe.preload='metadata';probe.src=FULL;probe.onloadedmetadata=()=>{dur.textContent=fmt(probe.duration)};
+    if(!reduce&&!(typeof motionPaused==='function'&&motionPaused()))v.play().catch(()=>{})});
+  v.load();
+  function setLabel(){watch.lastChild.textContent=full&&!v.paused?'Pause':'Watch the film';watch.setAttribute('aria-pressed',String(full&&!v.paused))}
+  function toPreview(){full=false;card.classList.remove('playing');v.muted=true;v.loop=true;v.src=PREV;v.load();setLabel()}
+  function toggle(){
+    if(!full){full=true;card.classList.add('playing');v.src=FULL;v.muted=false;v.loop=false;v.currentTime=0;
+      v.play().catch(()=>{v.muted=true;v.play().catch(()=>{})});setLabel();return}
+    if(v.paused)v.play().catch(()=>{});else v.pause();setLabel();
+  }
+  v.addEventListener('play',setLabel);v.addEventListener('pause',setLabel);
+  v.addEventListener('timeupdate',()=>{if(full)dur.textContent=fmt(v.duration-v.currentTime)});
+  v.addEventListener('ended',toPreview);
+  watch.addEventListener('click',e=>{e.stopPropagation();toggle()});
+  card.addEventListener('click',e=>{if(card.dataset.moved==='1'||e.target.closest('.hx-film-x,.hx-film-w'))return;toggle()});  // pointer capture sends the click to the card
+  document.getElementById('hx-film-x').addEventListener('click',e=>{e.stopPropagation();v.pause();card.hidden=true;try{sessionStorage.setItem('flik_film_closed','1')}catch(_){}});
+  /* drag: move with the pointer inside the hero; a press that moves under 4px stays a click */
+  let sx=0,sy=0,r0=0,b0=0,down=false;
+  card.addEventListener('pointerdown',e=>{
+    if(e.button!==0||e.target.closest('.hx-film-x,.hx-film-w'))return;
+    const cs=getComputedStyle(card);down=true;sx=e.clientX;sy=e.clientY;r0=parseFloat(cs.right);b0=parseFloat(cs.bottom);card.dataset.moved='0';
+    card.setPointerCapture(e.pointerId);
   });
-  prev.load();
-  document.getElementById('hx-film-x').addEventListener('click',()=>{card.hidden=true;prev.pause();try{sessionStorage.setItem('flik_film_closed','1')}catch(_){}});
-  const open=()=>{
-    openModal(`<div class="modal-h"><h3 id="modal-title" style="color:#fff">Introducing FLIK</h3><button type="button" class="x" data-close aria-label="Close" style="color:#fff">${ic('x',18)}</button></div><video class="film-v" src="${FULL}" controls autoplay playsinline></video>`);
-    modal.classList.add('film');prev.pause();
-    const v=modal.querySelector('.film-v');
-    const mo=new MutationObserver(()=>{if(!scrim.classList.contains('open')){v.pause();modal.classList.remove('film');mo.disconnect();if(!card.hidden)prev.play().catch(()=>{})}});
-    mo.observe(scrim,{attributes:true,attributeFilter:['class']});
-  };
-  document.getElementById('hx-film-open').addEventListener('click',open);
-  document.getElementById('hx-film-watch').addEventListener('click',open);
+  card.addEventListener('pointermove',e=>{
+    if(!down)return;const dx=e.clientX-sx,dy=e.clientY-sy;
+    if(card.dataset.moved!=='1'&&Math.hypot(dx,dy)<4)return;
+    card.dataset.moved='1';card.classList.add('dragging');
+    const hb=hero.getBoundingClientRect(),w=card.offsetWidth,h=card.offsetHeight;
+    card.style.right=Math.max(8,Math.min(hb.width-w-8,r0-dx))+'px';
+    card.style.bottom=Math.max(8,Math.min(hb.height-h-8,b0-dy))+'px';
+  });
+  const end=()=>{if(!down)return;down=false;card.classList.remove('dragging');setTimeout(()=>{card.dataset.moved='0'},0)};
+  card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);
 })();
 
 /* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
