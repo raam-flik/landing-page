@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pricing: Payment Fees, VAT and Settlement | FLIK</title>
-<meta name="description" content="FLIK pricing: the fee for every payment method, VAT on each fee, standard settlement periods, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.">
+<title>Pricing: Payment Fees, PPN and Settlement | FLIK</title>
+<meta name="description" content="FLIK pricing: the fee for every payment method, PPN on each fee, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.">
 <link rel="canonical" href="https://flik.co.id/pricing">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/pricing">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/pricing">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"FLIK Pricing","url":"https://flik.co.id/pricing","description":"Payment fees per method with VAT, settlement periods, and Checkout, COD and FLIK Connect fees."}
+{"@context":"https://schema.org","@type":"WebPage","name":"FLIK Pricing","url":"https://flik.co.id/pricing","description":"Payment fees per method with PPN, settlement periods, and Checkout, COD and FLIK Connect fees."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1176,7 +1176,7 @@ html{scroll-padding-top:88px}
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
-/* ===== Pricing page: product tabs, rate table (cards on phones), other fees, VAT note ===== */
+/* ===== Pricing page: product tabs, rate table (cards on phones), other fees, PPN note ===== */
 :root{--surface:#FFFFFF;--radius-control:6px}
 .fl-plogo{width:24px;height:24px;border-radius:var(--radius-control);object-fit:contain;flex:none;display:inline-block;vertical-align:middle}
 .fl-plogo--icon{display:inline-flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--primary)}
@@ -1353,8 +1353,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="lh guides">
   <div class="wrap">
     <p class="eyebrow">Pricing</p>
-    <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction, and see the VAT on every fee.</span></h1>
-    <p class="lead">Fees exclude VAT. VAT (PPN) is added on each fee at the prevailing rate, so the fee, the VAT and the total are always shown side by side.</p>
+    <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction, and see the PPN on every fee.</span></h1>
+    <p class="lead">Fees exclude PPN. PPN is added on each fee at the prevailing rate, so the fee, the PPN and the total are always shown side by side.</p>
     <div class="dsh-tabs pt-tabs" id="pt-tabs" role="tablist" aria-label="Pricing by product">
       <button class="on" data-t="payments" role="tab" aria-selected="true"><span data-ic="card-s"></span>Payments</button>
       <button data-t="shipping" role="tab" aria-selected="false"><span data-ic="truck-s"></span>Shipping</button>
@@ -1366,27 +1366,27 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Payments tab ===== -->
 <section class="pad-s guides pp" id="payments" data-p="payments">
   <div class="wrap">
-    <div class="prh"><div><h2>Payment methods</h2><p>The fee for each method, the VAT on that fee, and when the money is settled.</p></div><span class="prh-note"><span class="rate-ph">[x.x]</span> Rate card coming soon</span></div>
-    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>VAT on fee</th><th>Total</th><th>Standard settlement</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee"><span class="rate-ph">[x.x]%</span></td><td data-l="VAT on fee"><span class="rate-ph">[x.xx]%</span></td><td data-l="Total" class="tot"><span class="rate-ph">[x.xx]%</span></td><td data-l="Standard settlement"><span class="rate-ph">T+[x]</span></td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee"><span class="rate-ph">[x.x]%</span></td><td data-l="VAT on fee"><span class="rate-ph">[x.xx]%</span></td><td data-l="Total" class="tot"><span class="rate-ph">[x.xx]%</span></td><td data-l="Standard settlement"><span class="rate-ph">T+[x]</span></td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee"><span class="rate-ph">Rp[x.xxx]</span></td><td data-l="VAT on fee"><span class="rate-ph">Rp[xxx]</span></td><td data-l="Total" class="tot"><span class="rate-ph">Rp[x.xxx]</span></td><td data-l="Standard settlement"><span class="rate-ph">T+[x]</span></td></tr><tr><td class="m"><b>Credit and debit cards</b><small>Visa, Mastercard and local debit cards</small><span class="fl-plogos"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span></span></td><td data-l="Fee"><span class="rate-ph">[x.x]% + Rp[x.xxx]</span></td><td data-l="VAT on fee"><span class="rate-ph">[x.xx]% + Rp[xxx]</span></td><td data-l="Total" class="tot"><span class="rate-ph">[x.xx]% + Rp[x.xxx]</span></td><td data-l="Standard settlement"><span class="rate-ph">T+[x]</span></td></tr></tbody></table></div>
+    <div class="prh"><div><h2>Payment methods</h2><p>The fee for each method, the PPN on that fee, and the total.</p></div><span class="prh-note">QRIS: 0% up to Rp100.000; 0.7% above, PPN included. Volume pricing on request.</span></div>
+    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN on fee</th><th>Total</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0.63%</td><td data-l="PPN on fee">0.07%</td><td data-l="Total" class="tot">0.7%</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN on fee">From 0.165%</td><td data-l="Total" class="tot">From 1.665%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN on fee">Rp440</td><td data-l="Total" class="tot">Rp4.440</td></tr><tr><td class="m"><b>Credit and debit cards</b><small>Visa, Mastercard and local debit cards</small><span class="fl-plogos"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN on fee">0.308% + Rp220</td><td data-l="Total" class="tot">3.108% + Rp2.220</td></tr></tbody></table></div>
 
-    <div class="prh"><div><h2>Other fees</h2><p>Each fee is charged with VAT on top.</p></div></div>
+    <div class="prh"><div><h2>Other fees</h2><p>Each fee is charged with PPN on top.</p></div></div>
     <div class="of">
-      <div><h3><span class="fx-ic" data-ic="cart"></span>FLIK Checkout</h3><span class="big num">0–2% <small>+ VAT</small></span><p>A success fee on each order that is paid and delivered. The rate depends on your payment methods and volume. No fee if the package isn't delivered.</p><a href="#" class="link" data-page="/checkout">Explore Checkout <span class="chev">›</span></a></div>
-      <div><h3><span class="fx-ic" data-ic="truck"></span>Cash on delivery</h3><span class="big num">3% <small>+ VAT</small></span><p>Of the COD amount, paid upfront from your balance with the shipping fee. The COD amount reaches your balance after delivery.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
-      <div><h3><span class="fx-ic" data-ic="link"></span>FLIK Connect <span class="pill pu">Coming soon</span></h3><span class="big num">3% <small>+ VAT</small></span><p>Of the whole transaction amount, paid by the main merchant. Partners pay nothing to receive their split.</p><a href="#" class="link" data-page="/payment/connect">Explore FLIK Connect <span class="chev">›</span></a></div>
+      <div><h3><span class="fx-ic" data-ic="cart"></span>FLIK Checkout</h3><span class="big num">0–2% <small>+ PPN</small></span><p>A success fee on each successful payment, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume.</p><a href="#" class="link" data-page="/checkout">Explore Checkout <span class="chev">›</span></a></div>
+      <div><h3><span class="fx-ic" data-ic="truck"></span>Cash on delivery</h3><span class="big num">3% <small>+ PPN</small></span><p>Of the COD amount. It's deducted when the COD amount reaches your balance after delivery, so you never pay it upfront.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
+      <div><h3><span class="fx-ic" data-ic="link"></span>FLIK Connect <span class="pill pu">Coming soon</span></h3><span class="big num">0.5% <small>+ PPN</small></span><p>Of the amount split to partners, max Rp10.000 per transaction, paid by the main merchant. Partners pay nothing to receive their split.</p><a href="#" class="link" data-page="/payment/connect">Explore FLIK Connect <span class="chev">›</span></a></div>
     </div>
 
-    <div class="prh"><div><h2>How VAT works</h2><p>VAT (PPN) applies to FLIK's fees, not to your sales.</p></div></div>
+    <div class="prh"><div><h2>How PPN works</h2><p>PPN applies to FLIK's fees, not to your sales.</p></div></div>
     <div class="vat">
-      <div><p class="txt">Every fee on this page excludes VAT. VAT is added at the prevailing rate and shown as its own line, on your invoice and in your dashboard. For example, at 11%:</p></div>
-      <div class="vat-eq" aria-label="Example: a Rp500 fee plus Rp55 VAT is Rp555 in total">
-        <span><small>Fee</small><b class="num">Rp500</b></span><i>+</i><span><small>VAT 11%</small><b class="num">Rp55</b></span><i>=</i><span class="t"><small>Total</small><b class="num">Rp555</b></span>
+      <div><p class="txt">Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line, on your invoice and in your dashboard. For example, at 11%:</p></div>
+      <div class="vat-eq" aria-label="Example: a Rp500 fee plus Rp55 PPN is Rp555 in total">
+        <span><small>Fee</small><b class="num">Rp500</b></span><i>+</i><span><small>PPN 11%</small><b class="num">Rp55</b></span><i>=</i><span class="t"><small>Total</small><b class="num">Rp555</b></span>
       </div>
     </div>
 
-    <div class="prh"><div><h2>Need your money sooner?</h2><p>Settlement follows the standard period above. You can also settle early.</p></div></div>
+    <div class="prh"><div><h2>Need your money sooner?</h2><p>Money reaches your FLIK balance once the order is completed. Need it sooner? Settle early.</p></div></div>
     <div class="cards2">
-      <a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="bolt"></span>Early Settlement</span><b>Get paid before your settlement date</b><span>Turn today's sales into cash today, for one flat fee per payout.</span><em>Explore Early Settlement <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="bolt"></span>Early Settlement</span><b>Get paid before your settlement date</b><span>Turn pending sales into cash sooner, for 0.2% (non-card) or 0.3% (card) + PPN.</span><em>Explore Early Settlement <span class="chev">›</span></em></a>
       <a href="#" class="res" data-act="sales"><span class="rtag"><span data-ic="chart"></span>Volume pricing</span><b>Selling at volume?</b><span>Talk to the FLIK team about rates for your business.</span><em>Contact sales <span class="chev">›</span></em></a>
     </div>
   </div>
@@ -1398,8 +1398,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="prh"><div><h2>Shipping</h2><p>No registration fee. You pay per shipment from your FLIK balance.</p></div></div>
     <div class="of">
       <div><h3><span class="fx-ic" data-ic="user"></span>Joining</h3><span class="big num">Free</span><p>No registration fee and no monthly fee.</p></div>
-      <div><h3><span class="fx-ic" data-ic="truck"></span>Shipments</h3><span class="big num">Up to 40% <small>less</small></span><p>Courier rates compared in one place, paid per shipment from your balance before it is created.</p><a href="#" class="link" data-page="/shipping">Check rates <span class="chev">›</span></a></div>
-      <div><h3><span class="fx-ic" data-ic="cash"></span>Cash on delivery</h3><span class="big num">3% <small>+ VAT</small></span><p>Of the COD amount, paid upfront with the shipping fee.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
+      <div><h3><span class="fx-ic" data-ic="truck"></span>Shipments</h3><span class="big num">Up to 50% <small>off</small></span><p>Off published courier rates. Rates compared in one place, paid per shipment from your balance before it is created.</p><a href="#" class="link" data-page="/shipping">Check rates <span class="chev">›</span></a></div>
+      <div><h3><span class="fx-ic" data-ic="cash"></span>Cash on delivery</h3><span class="big num">3% <small>+ PPN</small></span><p>Of the COD amount, deducted after delivery. Nothing upfront.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
     </div>
   </div>
 </section>
@@ -1410,7 +1410,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="prh"><div><h2>Funding</h2><p>Clear terms, agreed before you sign.</p></div></div>
     <div class="cards2">
       <div class="of" style="grid-template-columns:1fr;margin:0"><div><h3><span class="fx-ic" data-ic="coins"></span>Merchant Cash Advance</h3><span class="big">One fixed margin</span><p>Agreed upfront and never changes. No compounding interest and no hidden fees. Settled automatically from your sales.</p><a href="#" class="link" data-page="/funding/merchant-cash-advance">Explore Merchant Cash Advance <span class="chev">›</span></a></div></div>
-      <div class="of" style="grid-template-columns:1fr;margin:0"><div><h3><span class="fx-ic" data-ic="bolt"></span>Early Settlement</h3><span class="big">One flat fee</span><p>Per early payout, shown before you confirm. The standard settlement schedule stays free.</p><a href="#" class="link" data-page="/payment/early-settlement">Explore Early Settlement <span class="chev">›</span></a></div></div>
+      <div class="of" style="grid-template-columns:1fr;margin:0"><div><h3><span class="fx-ic" data-ic="bolt"></span>Early Settlement</h3><span class="big">0.2% / 0.3% <small>+ PPN</small></span><p>Per payment settled early: 0.2% non-card, 0.3% card. Shown before you confirm. The standard settlement schedule stays free.</p><a href="#" class="link" data-page="/payment/early-settlement">Explore Early Settlement <span class="chev">›</span></a></div></div>
     </div>
   </div>
 </section>
@@ -1659,11 +1659,12 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 /* ===== FAQ ===== */
 const FAQ=[
-  ['Do the fees include VAT?','No. Every fee on this page excludes VAT. VAT (PPN) is added to each fee at the prevailing rate and shown as its own line.'],
-  ['When are fees charged?','Payment fees are taken from each payment before it is settled to your balance. Shipping and COD fees are paid from your balance when you create the shipment.'],
-  ['What is the standard settlement period?','The time from a completed payment to the money in your FLIK balance. It depends on the payment method and is shown for each method above.'],
-  ['Can I get paid faster?','Yes. Early Settlement pays out your sales before the standard settlement date, for one flat fee per payout.'],
-  ['Who pays the FLIK Connect fee?','The main merchant: 3% of the whole transaction plus VAT. Partners pay nothing to receive their split.'],
+  ['Do the fees include PPN?','No. Every fee on this page excludes PPN. PPN is added to each fee at the prevailing rate and shown as its own line.'],
+  ['When are fees charged?','Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery.'],
+  ['When does the money reach my balance?','Once the order is completed and FLIK has received the funds. Need it sooner? Use Early Settlement.'],
+  ['How much does a withdrawal cost?','Rp4.000 + PPN per withdrawal, and at least Rp100.000 each time. If a payout fails, the fee comes back.'],
+  ['Can I get paid faster?','Yes. Early Settlement pays out your sales before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN.'],
+  ['Who pays the FLIK Connect fee?','The main merchant: 0.5% of the amount split to partners, max Rp10.000 per transaction, plus PPN. Partners pay nothing to receive their split.'],
   ['Do you offer volume pricing?','Yes. Talk to the FLIK team about rates for your business.']
 ];
 const fq=document.getElementById('faq');
@@ -1673,7 +1674,7 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

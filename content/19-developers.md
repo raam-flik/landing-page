@@ -48,7 +48,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Guides: three columns of links -->
 
 - **Column:** Get started — Set up your Sandbox (Separate credentials for testing) / Create API credentials (Client ID and secret) / Go live (Verify your business, then switch)
-- **Column:** Accept payments — FLIK Checkout on Shopify (Install the plugin) / FLIK Checkout on WooCommerce (Connect your WordPress store) / Build your own checkout (Server credentials and a publishable key)
+- **Column:** Accept payments — FLIK Checkout on Shopify (FLIK sets it up for you) / FLIK Checkout on WooCommerce (Connect your WordPress store) / Build your own checkout (Server credentials and a publishable key)
 - **Column:** API essentials — Authentication (OAuth client credentials) / Keys and scopes (Which key goes where) / SNAP for banks and QRIS (For SNAP-enabled merchants)
 
 ## 3. How it works
@@ -80,9 +80,9 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Integrations: Shopify, WooCommerce, no code #integrations -->
 
 - **Section heading:** Or skip the code.
-  - **Grey part:** Plugins for the platforms you already sell on.
-- **Card:** Shopify — Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store. — 1. Create your FLIK account 2. Install the FLIK plugin 3. Switch on FLIK Checkout — Get started
-- **Card:** WooCommerce — Connect your WordPress store in a few steps and switch to FLIK Checkout. — 1. Create your FLIK account 2. Add the FLIK plugin to WordPress 3. Connect it with your FLIK keys — Get started
+  - **Grey part:** We connect the platforms you already sell on.
+- **Card:** Shopify — We connect your Shopify store to FLIK Checkout and Shipping for you. — 1. Create your FLIK account 2. Tell us your store 3. We set it up and switch on FLIK Checkout — Get started
+- **Card:** WooCommerce — We connect your WordPress store and switch it to FLIK Checkout. — 1. Create your FLIK account 2. Tell us your store 3. We set it up and switch on FLIK Checkout — Get started
 - **Card:** No code — Send payment links and invoices, and create shipments from the FLIK dashboard. Nothing to install. — 1. Create your FLIK account 2. Verify your business 3. Start from the dashboard — Get started
 
 ## 6. Developer resources

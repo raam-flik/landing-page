@@ -13,10 +13,10 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 ## Things to confirm on this page
 
 - [ ] **Status:** not live. The page says "Coming soon" and every CTA is "Join the waitlist" or "Talk to the FLIK team" (both open the Calendly intro link), never "Get started". Change this only when product confirms launch (wallet service and PJP licensing).
-- [ ] **Source docs** listed in FLI-51 (`product/payments/...`) are not in this repo; the page follows the brief in the issue. Check it against the configuration catalogue and the allocation ledger interface.
-- [ ] **Example fees in the rule builder:** payment fee QRIS 0.7% and VAT 11% are examples. Replace them with the real MDR and VAT from the pricing page (FLI-50).
-- [ ] **Order of deductions:** the builder takes the FLIK Connect fee (3% + VAT of the whole payment) from the main merchant's remainder. Confirm that is how it will be charged.
-- [ ] **Limits:** the builder allows up to four recipients for the demo. Confirm the real maximum.
+- [x] **Source docs** listed in FLI-51 (`product/payments/...`) are not in this repo. Checked against the configuration catalogue and the allocation ledger interface (12 Nov 2026): removed the recipient limit, fixed the pricing basis to the amount split, said shares split when the order completes (not the payment), and said FLIK links partner wallets.
+- [x] **Example fees in the rule builder:** QRIS 0.7%, PPN included, matching the Pricing rate card (AG, 12 Nov 2026). The FLIK Connect fee is 0.5% of the amount split, max Rp10.000 per transaction, + PPN at 11% (AG, 12 Nov 2026; was 3% of the whole transaction).
+- [x] **Order of deductions:** the builder takes the FLIK Connect fee (0.5% of the split amount, max Rp10.000, + PPN) from the main merchant's remainder. Confirm that is how it will be charged.
+- [ ] **Limits:** the specs set no maximum yet (set after performance testing). The page says "several partners"; the demo still adds up to four rows. Confirm the real maximum before stating one.
 - [ ] **Not in the MVP and not shown:** per-transaction custom splits via API, tiers, caps and minimums, scheduled rules, bulk invites, splits on the gross amount, free transfers between any merchants.
 - [ ] No volume or customer claims; all names and amounts in the mockups are examples.
 
@@ -41,7 +41,7 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 
 *Example text inside the product mockup (only change if needed):*
 
-- Allocation · ARN-2041 · QRIS — Rp1.000.000 — Payment completed
+- Allocation · ARN-2041 · QRIS — Rp1.000.000 — Order completed
 - Split on the net amount
 - Supplier — 40%
 - Outlet partner — Rp150.000 fixed
@@ -52,7 +52,7 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 <!-- html: Who it's for: four example businesses with an example Split Rule each #who -->
 
 - **Section heading:** Built for brands that sell together.
-  - **Grey part:** When a sale belongs to more than one business, everyone gets their share as it happens.
+  - **Grey part:** When a sale belongs to more than one business, everyone gets their share when the order completes.
 - **Card:** Brands and suppliers — Pay suppliers or consignment partners their share of every sale. — Consignment partner 60%, You remainder
 - **Card:** Outlets and franchises — Send each outlet or franchisee its share, and keep the brand's part. — Franchisee, Bandung 90%, You remainder
 - **Card:** Resellers and affiliates — Pay commission the moment a sale completes. — Affiliate 5%, Reseller Rp25.000 fixed, You remainder
@@ -62,10 +62,10 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 <!-- html: How it works: ruled four-step flow to the guide lines #how -->
 
 - **Section heading:** Set it once, split every payment.
-  - **Grey part:** A Split Rule decides who gets what. FLIK applies it to every completed payment.
-- **Step:** 01 — Link wallets — Link the wallets of your partners. Each is a verified FLIK merchant, and FLIK approves every link.
+  - **Grey part:** A Split Rule decides who gets what. FLIK applies it to every completed order.
+- **Step:** 01 — Link wallets — Your partners' wallets are linked to your account. Each is a verified FLIK merchant, and FLIK approves every link.
 - **Step:** 02 — Create a Split Rule — Give each recipient a fixed amount in Rp or a percentage.
-- **Step:** 03 — FLIK splits it — When a payment completes, the net amount is split. Your partners are paid first; the rest stays with you.
+- **Step:** 03 — FLIK splits it — When an order completes, the net amount is split. Your partners' shares come first; the rest stays with you.
 - **Step:** 04 — Everyone withdraws — Each wallet has its own balance and statement, and withdraws to its own bank account.
 
 ## 4. Try a Split Rule
@@ -76,13 +76,13 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 - **Small heading:** Split Rule — Example
 - **Form label:** Payment amount
 - **Button:** Add recipient
-- **Text:** Up to four recipients in this example. The remainder always stays with you.
+- **Text:** Add several partners in this example. The remainder always stays with you.
 - **Small heading:** Allocation
-- **Rows:** Payment / Payment fee + VAT (example) / Net amount / each recipient / Remainder / FLIK Connect 3% + VAT / You receive
+- **Rows:** Payment / Payment fee incl. PPN (example) / Net amount / each recipient / Remainder / FLIK Connect 0.5% + PPN / You receive
 - **Error:** The recipients add up to more than the net amount. Lower a share.
 - **Warning:** Your remainder doesn't cover the FLIK Connect fee. Leave a bigger remainder.
 - **Warning:** Enter a payment amount.
-- **Text:** Example payment fee: QRIS 0.7% + VAT. VAT shown at 11%. Your real rates are on the pricing page.
+- **Text:** Example payment fee: QRIS 0.7%, PPN included. Your real rates are on the pricing page.
 
 ## 5. Controls
 <!-- html: Controls: dark band with a Split Rule history (example data) #controls -->
@@ -111,8 +111,8 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
   - **Grey part:** One fee for the main merchant. Receiving a share is free.
 - **Heading:** FLIK Connect
 - **Link:** Pricing details
-- **Text:** Charged on the whole transaction amount and paid by the main merchant. Payment method fees still apply.
-- **Price:** 3% + VAT — of the whole transaction amount
+- **Text:** Charged on the amount split to partners and paid by the main merchant. Payment method fees still apply.
+- **Price:** 0.5% + PPN — of the amount split, max Rp10.000 per transaction
 - **Heading:** Receiving a split
 - **Text:** Partners pay nothing to receive their share. Each wallet's own fees, such as withdrawals, come from its own balance.
 - **Price:** Free — for beneficiary wallets
@@ -122,7 +122,7 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 
 - **Section heading:** FLIK Connect at a glance.
 - **Heading:** Wallets — Linked beneficiary wallets, each a verified FLIK merchant / A balance and statement for every wallet / Each wallet withdraws to its own bank account
-- **Heading:** Split Rules — Fixed amounts in Rp or percentages / Calculated on the net amount / The remainder stays with the main merchant / Split automatically on every completed payment / IDR only
+- **Heading:** Split Rules — Fixed amounts in Rp or percentages / Calculated on the net amount / The remainder stays with the main merchant / Split automatically on every completed order / IDR only
 - **Heading:** Controls — FLIK approves rules and linked wallets / One active rule per merchant / Every change versioned and audited / Past payments keep their rule
 
 ## 8. FAQ
@@ -136,11 +136,11 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 - **Question:** Can I split by amount or percentage?
   - **Answer:** Both. Each recipient in a Split Rule gets a fixed amount in Rp or a percentage.
 - **Question:** What is the net amount?
-  - **Answer:** The payment minus the payment fee and its VAT. Splits are calculated on this amount.
+  - **Answer:** The payment minus the payment fee (PPN included). Splits are calculated on this amount.
 - **Question:** What happens to the rest?
   - **Answer:** Recipients are paid first. Whatever is left, the remainder, stays in your wallet.
 - **Question:** Who pays the fees?
-  - **Answer:** The main merchant pays FLIK Connect: 3% of the whole transaction plus VAT. Recipients pay nothing to receive a split; each wallet's own fees come from its own share.
+  - **Answer:** The main merchant pays FLIK Connect: 0.5% of the amount split to recipients, capped at Rp10.000 per transaction, plus PPN. Recipients pay nothing to receive a split; each wallet's own fees come from its own share.
 - **Question:** Can I change a Split Rule?
   - **Answer:** Yes. A new version goes to FLIK for approval and then replaces the active rule. Past payments keep the rule that applied when they happened.
 - **Question:** When can I use it?
@@ -155,5 +155,5 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 - **Button:** Join the waitlist
 - **Button:** Explore Checkout
 - **Label:** Pricing
-- **Text:** 3% + VAT of the whole transaction, paid by the main merchant.
+- **Text:** 0.5% of the amount split, max Rp10.000, + PPN. Paid by the main merchant.
 - **Link:** See pricing

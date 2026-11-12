@@ -134,7 +134,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 - Mon–Fri, 09:00–18:00 WIB
 - support@flik.co.id (link: mailto:support@flik.co.id)
-- +62 812-9201-2668 (link: https://wa.me/6281292012668, opens WhatsApp)
+- +62 813-3532-8100 (link: https://wa.me/6281335328100, opens WhatsApp)
 - Sitemap
 
 - **Copyright line:** © 2026 FLIK. All rights reserved.

@@ -23,7 +23,7 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - **Free to register.** Shopify and WooCommerce stores connect directly.
 - **Failed delivery:** the courier tries again the next day, up to two attempts. Courier-direct services return the package straight away.
 - **Pickup** after the AWB is created: regular 3–5 hours, same day 1–4 hours, instant straight away.
-- Support: Monday to Friday, 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 812-9201-2668.
+- Support: Monday to Friday, 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 813-3532-8100.
 
 ## Merchant Cash Advance (Funding)
 
@@ -49,7 +49,7 @@ These come from the current flik.co.id. Confirm before using any new number.
 |---|---|
 | Checkout in 30 seconds, 3× faster | Checkout |
 | 15 payment methods | Checkout |
-| Shipping up to 40% less | Shipping |
+| Shipping up to 50% off published rates (AG, 12 Nov 2026) | Shipping |
 | COD fee only 3% | Shipping |
 | 99% shipment creation success rate | Shipping |
 | Trusted by 10+ growing businesses | Merchant Cash Advance |

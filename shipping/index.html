@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Shipping Engine for Growing Brands | FLIK Shipping</title>
-<meta name="description" content="FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 40% less, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.">
+<meta name="description" content="FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 50% off published rates, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.">
 <link rel="canonical" href="https://flik.co.id/shipping">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/shipping">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/shipping">
@@ -1239,7 +1239,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap sh-in sh-c">
     <div class="sh-t">
       <p class="eyebrow">FLIK Shipping</p>
-      <h1 class="sh-h">The shipping engine for growing brands. <span class="soft">All major couriers, up to 40% less.</span></h1>
+      <h1 class="sh-h">The shipping engine for growing brands. <span class="soft">All major couriers, up to 50% less.</span></h1>
       <p class="lead">Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="start">Start shipping free <span class="chev">›</span></button>
@@ -1269,7 +1269,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap">
     <h2 class="sec-h stats-h">One dashboard for every shipment. <span class="soft">From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.</span></h2>
     <div class="stats4">
-      <div class="stat"><b class="num">40%</b><span>off shipping, at most</span></div>
+      <div class="stat"><b class="num">50%</b><span>off published rates, at most</span></div>
       <div class="stat"><b class="num">3%</b><span>COD fee (excl. PPN), paid by the merchant</span></div>
       <div class="stat"><b class="num">99%</b><span>of shipments created successfully</span></div>
       <div class="stat"><b class="num">15</b><span>payment methods in one checkout</span></div>
@@ -1284,7 +1284,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <h2 class="sec-h">Compare all major couriers in seconds. <span class="soft">Pick a route and a weight, then sort by the cheapest or the fastest.</span></h2>
       <ul class="bk-pts">
         <li><span data-ic="check-s"></span>Regular, next day, same day, instant and cargo</li>
-        <li><span data-ic="check-s"></span>Up to 40% off shipping rates</li>
+        <li><span data-ic="check-s"></span>Up to 50% off published shipping rates</li>
         <li><span data-ic="check-s"></span>Live rates in your dashboard</li>
       </ul>
     </div>
@@ -1419,8 +1419,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <div class="pk-pl"><span class="pk-ic" data-ic="truck-s"></span><span class="grow"><b>FLIK Shipping for WooCommerce</b><small>Rates shown at checkout</small></span><span class="pill pu">Active</span></div>
         </div></div>
         <span class="label"><img class="label-lg" src="../assets/logos/platform/woocommerce.png" alt="">WooCommerce</span>
-        <h3>Add the FLIK plugin.</h3>
-        <p class="txt">Your WooCommerce store connects straight to the FLIK Shipping dashboard.</p>
+        <h3>We set it up for you.</h3>
+        <p class="txt">The FLIK team connects your WooCommerce store to the FLIK Shipping dashboard.</p>
         <em class="link">WooCommerce integration <span class="chev">›</span></em>
       </a>
       <a href="#" class="pk" data-page="/checkout">
@@ -1954,7 +1954,7 @@ const FAQ=[
   ['Can I cancel a shipment?','Yes, until the courier picks up the package.'],
   ['What happens if a delivery fails?','The courier tries again the next day, up to two attempts. If it still fails, the package is returned to you. Courier-direct services don\'t retry: undelivered packages are returned right away.'],
   ['How long does pickup take?','Pickup starts once the AWB is ready: 3–5 hours for regular, 1–4 hours for same day, and right away for instant.'],
-  ['How do I contact FLIK support?','Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.']
+  ['How do I contact FLIK support?','Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.']
 ];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
@@ -1963,7 +1963,7 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

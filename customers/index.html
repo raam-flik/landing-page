@@ -1518,7 +1518,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="cx-res">
       <div><b>30 sec</b><span>to check out with FLIK Checkout</span></div>
       <div><b>15</b><span>payment methods in one checkout</span></div>
-      <div><b>Up to 40%</b><span>less on shipping, with all major couriers</span></div>
+      <div><b>Up to 50%</b><span>off published courier rates, with all major couriers</span></div>
       <div><b>99%</b><span>of shipments created successfully</span></div>
     </div>
     <div class="cx-wall" id="cx-wall" aria-label="FLIK customers"></div>
@@ -1572,7 +1572,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap cx-start">
     <div><h2>Ready to get started?</h2><p class="lead">Create an account and start selling, or talk to the FLIK team about a setup for your business.</p>
       <div class="hero-cta" style="justify-content:flex-start;margin-top:24px;gap:20px;align-items:center"><button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button><a href="#" class="link" data-act="sales">Contact sales <span class="chev">›</span></a></div></div>
-    <div><b>Always know what you'll pay</b><p>Fees per transaction, with VAT shown on every fee. No hidden costs.</p><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
+    <div><b>Always know what you'll pay</b><p>Fees per transaction, with PPN shown on every fee. No hidden costs.</p><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
     <div><b>Start your integration</b><p>Connect with a Shopify or WooCommerce plugin, or build on the FLIK API.</p><a href="#" class="link" data-page="Developer docs">Developer docs <span class="chev">›</span></a></div>
   </div>
 </section>
@@ -1989,14 +1989,14 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   dots.addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(b)together(+b.dataset.i)});
   together(0);
   // by solution: what FLIK covers
-  const SOL=[['Accept payments online','/payment/checkout'],['Take QRIS and cards in store','/payment/in-store'],['Ship with every major courier','/shipping'],['Offer cash on delivery','/shipping/cod'],['Track every package','/shipping/track'],['Settle early','/payment/early-settlement'],['Fund your next step','/funding/merchant-cash-advance'],['Stop fraud before it costs you','/payment/fraud-detection']];
+  const SOL=[['Accept payments online','/payment/checkout'],['Take QRIS and cards in store','/payment/in-store'],['Ship with every major courier','/shipping'],['Offer cash on delivery','/shipping/cod'],['Track every package','/shipping/track'],['Settle early','/payment/early-settlement'],['Fund your next step','/funding/merchant-cash-advance'],['Protect every withdrawal','/payment/fraud-detection']];
   document.getElementById('cx-chk').innerHTML=SOL.map(x=>`<a href="#" data-page="${x[1]}"><span class="ck">${OK}</span>${x[0]}</a>`).join('');
 
 })();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

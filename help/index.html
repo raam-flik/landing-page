@@ -1345,13 +1345,13 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="wrap">
     <div class="hc3">
       <a class="hc" href="mailto:support@flik.co.id"><span class="fx-ic" data-ic="mail"></span><b>Email</b><span>support@flik.co.id</span><em>Send an email <span class="chev">›</span></em></a>
-      <a class="hc" href="https://wa.me/6281292012668" target="_blank" rel="noopener"><span class="fx-ic" data-ic="whatsapp"></span><b>WhatsApp</b><span>+62 812-9201-2668</span><em>Chat with support <span class="chev">›</span></em></a>
+      <a class="hc" href="https://wa.me/6281335328100" target="_blank" rel="noopener"><span class="fx-ic" data-ic="whatsapp"></span><b>WhatsApp</b><span>+62 813-3532-8100</span><em>Chat with support <span class="chev">›</span></em></a>
       <div class="hc"><span class="fx-ic" data-ic="clock"></span><b>Support hours</b><span>Monday to Friday, 09:00–18:00 WIB</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===== Questions by topic (from the Checkout, Shipping and Merchant Cash Advance pages) ===== -->
+<!-- ===== Questions by topic (from the Checkout, Early Settlement, Fraud Detection, In-Store Payment, Shipping and Merchant Cash Advance pages) ===== -->
 <section class="pad-t guides" id="faq-sec">
   <div class="wrap">
     <h2 class="sec-h">Questions, answered.</h2>
@@ -1593,21 +1593,45 @@ const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait=ms=>new Promise(r=>setTimeout(r,REDUCE?0:ms));
 const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersecting}).observe(el);return()=>v&&!document.hidden};
 
-/* ===== Help center: topics, search and FAQ (answers from the Checkout, Shipping and Merchant Cash Advance pages) ===== */
+/* ===== Help center: topics, search and FAQ (answers from the Checkout, Early Settlement, Fraud Detection, In-Store Payment, Shipping and Merchant Cash Advance pages) ===== */
 const TOPICS=[
   ['general','General','home',[
-    ['How do I contact FLIK support?','Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.','<p class="ans-l"><a href="mailto:support@flik.co.id">Email support</a><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)">Chat on WhatsApp</a></p>'],
+    ['How do I contact FLIK support?','Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.','<p class="ans-l"><a href="mailto:support@flik.co.id">Email support</a><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)">Chat on WhatsApp</a></p>'],
     ['Privacy and your data','Our Privacy Policy explains what personal data FLIK collects and how we use it. To ask for a copy of your data, or to correct or delete it, send a data request or email privacy@flik.co.id.','<p class="ans-l"><a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a><a href="/legal/data-request" data-page="/legal/data-request">Data request</a><a href="mailto:privacy@flik.co.id">privacy@flik.co.id</a></p>'],
     ['Where can I file a consumer complaint?','Contact FLIK first at support@flik.co.id. You can also reach the Directorate General of Consumer Protection and Trade Order (Ditjen PKTN) of the Ministry of Trade on WhatsApp at 0853 1111 1010.']]],
   ['checkout','Checkout and payments','cart',[
   ['What is FLIK Checkout?','A checkout page that replaces the one on your online store. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay with the method they prefer.'],
-  ['Does it work with my store?','Yes, if you sell on Shopify or WooCommerce. Install the FLIK app or plugin and shoppers are redirected to FLIK when they tap Checkout. Custom stores can use the API.'],
+  ['Does it work with my store?','Yes, if you sell on Shopify or WooCommerce. The FLIK team connects your store, and shoppers are redirected to FLIK when they tap Checkout. Custom stores can use the API.'],
   ['Do shoppers need a FLIK account?','No. They can check out as a guest. With a FLIK account, their details are saved, so next time they check out faster on any store that uses FLIK.'],
   ['How do shoppers log in?','With a one-time code sent to their WhatsApp number. There is no password to create or forget.'],
   ['Which payment methods can I offer?','QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery. You choose which ones to show in Personalisasi Checkout.'],
   ['How are orders shipped?','Orders ship through FLIK Shipping from your warehouse. You pick the couriers in Pengaturan Pengiriman, and FLIK selects one for each shopper.'],
   ['When do I receive the money?','Once the shopper has paid and the package has arrived, the money is credited to your balance after delivery. COD payments too, with the 3% COD fee (excl. PPN) deducted.'],
   ['How much does it cost?','A success fee from 0–2% on each order that is paid and delivered. The exact rate depends on your payment methods and volume. If a package is not delivered, there is no fee on that order.']
+]],
+  ['early-settlement','Early Settlement','bolt',[
+  ['What is Early Settlement?','It pays out your sales before the standard settlement date, so money from paid orders is ready sooner.','<p class="ans-l"><a href="/payment/early-settlement" data-page="/payment/early-settlement">About Early Settlement</a></p>'],
+  ['How fast do I get paid?','As soon as the payment is made, into your FLIK balance. For Checkout orders, once the order is completed.'],
+  ['What does it cost?','0.2% of each QRIS, e-wallet or virtual account payment you settle early, and 0.3% of each card payment, plus PPN. The fee shows before you confirm. There is no fee on the standard schedule.'],
+  ['Is it a loan?','No. Early Settlement pays out money from sales you already made, so there is nothing to repay.'],
+  ['Which transactions can I settle early?','Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards. Cash on delivery orders settle after the package is delivered.'],
+  ['How is it different from Merchant Cash Advance?','Early Settlement pays out money you already earned. Merchant Cash Advance funds your growth upfront and is settled from future sales.']
+]],
+  ['fraud-detection','Fraud Detection','shield',[
+  ['What does Fraud Detection do?','It checks every withdrawal and every change to your payout account or registered contacts before anything happens. It protects your balance if someone else gets into your account.','<p class="ans-l"><a href="/payment/fraud-detection" data-page="/payment/fraud-detection">About Fraud Detection</a></p>'],
+  ['Does it block my customers\' payments?','No. Money coming in is never refused. FLIK watches incoming payments for unusual patterns, and card payments are also screened by our licensed payment partners.'],
+  ['What happens when a withdrawal is held?','It shows as "Being verified" in your dashboard, with an expected time. FLIK\'s risk team reviews it, and it\'s sent as soon as it\'s cleared. Nothing leaves your balance in the meantime.'],
+  ['Why does a new payout account take 24 hours?','It gives you time to spot a change you didn\'t make. Every registered contact gets an email, and you can cancel from it. Until then, you can keep withdrawing to your old account.'],
+  ['Do I need to set anything up?','No. It\'s on for every FLIK merchant, on the dashboard, the API and AI agents.'],
+  ['What does it cost?','Nothing extra. It\'s included for every FLIK merchant.']
+]],
+  ['in-store','In-Store Payment','qris',[
+  ['What is In-Store Payment?','A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.','<p class="ans-l"><a href="/payment/in-store" data-page="/payment/in-store">About In-Store Payment</a></p>'],
+  ['Which payments can I accept?','QRIS from any bank or e-wallet app, credit cards, and GPN debit cards.'],
+  ['Does it print receipts?','Yes. The device has a built-in receipt printer for every sale and for the settlement receipt at the end of the day.'],
+  ['Where does the money go?','Into your FLIK balance, together with your online sales from Checkout and Payment Link.'],
+  ['How do I get a device?','Talk to the FLIK team. We set up the device and connect it to your account.'],
+  ['What does it cost?','Transactions are priced at the rates on our Pricing page. The EDC device can be free with a minimum monthly transaction volume. Terms apply: ask the FLIK team.','<p class="ans-l"><a href="/pricing" data-page="/pricing">See pricing</a></p>']
 ]],
   ['shipping','Shipping','truck',[
   ['What is FLIK Shipping?','A shipping service that helps businesses ship for less through one dashboard, with all major couriers across Indonesia.'],
@@ -1660,7 +1684,7 @@ const TOPICS=[
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;

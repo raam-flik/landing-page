@@ -16,12 +16,12 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - [ ] **W-2**: NIB of PT Flik Teknologi Indonesia.
 - [ ] **W-7**: Governing law and dispute resolution clause wording (court or arbitration, venue).
 - [ ] **W-16**: Title, version and link of the full Merchant Agreement. It isn't in the repo.
-- [ ] **W-17**: Pricing page or fee schedule to link, including the Checkout success fee rate (the site says 0–2%, not confirmed).
+- [x] **W-17** (AG, 12 Nov 2026: link the Pricing page; Checkout fee 0–2% + PPN): Pricing page or fee schedule to link, including the Checkout success fee rate (the site says 0–2%, not confirmed).
 - [ ] **W-18**: Minimum age, and who may open a merchant account (individuals, entity types).
 - [x] **W-23**: Closed (AG, 24 Oct 2026): COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
 - [ ] **W-24**: Link to courier terms and the prohibited items list for merchants.
-- [ ] **W-26**: Balance withdrawals: timing, minimum amount and any fee.
-- [ ] **W-29**: Which features need identity and business verification first.
+- [x] **W-26** (AG, 12 Nov 2026: Rp100.000 minimum, Rp4.000 + PPN fee, returned if the payout fails): Balance withdrawals: timing, minimum amount and any fee.
+- [x] **W-29** (AG, 12 Nov 2026: invoices, shipments, top-ups, withdrawals, live API keys): Which features need identity and business verification first.
 - [ ] **P** (AG): Name the licensed payment partners and their licences (instruction: never state or imply that FLIK itself holds a payment licence).
 
 ## Search results (SEO)
@@ -43,7 +43,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 ## 1. About these terms
 <!-- html: 1. About these terms -->
 
-- **Text:** These terms apply when you use flik.co.id (the “**website**”). The website is run by **PT Flik Teknologi Indonesia** (“**FLIK**”, “**we**”), Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560. NIB: [[W-2: NIB]].
+- **Text:** These terms apply when you use flik.co.id (the “**website**”). The website is run by **PT Flik Teknologi Indonesia** (“**FLIK**”, “**we**”), Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **Text:** By using the website, you agree to these terms. If you don't agree, please don't use it.
 - **Text:** If you use FLIK as a merchant, the Merchant Agreement applies to that use. Section 9 summarises it.
 - **Text:** How we handle personal data is in our [Privacy Policy](./privacy/) and [Cookie Policy](./cookies/).
@@ -67,7 +67,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** The website gives general information about FLIK's products. It isn't an offer or advice. Features, prices and examples may change.
 - **List item:** The **rate checker** on the Shipping page shows rates for comparison. The price that applies is the one confirmed when you book a shipment in the merchant dashboard.
 - **List item:** **Funding** information isn't an offer of financing. Merchant Cash Advance is for selected merchants and depends on an assessment.
-- **List item:** **Payments** are processed by licensed payment partners. FLIK is not a bank. Partners: [[P: name the licensed payment partners and their licences]]
+- **List item:** **Payments** are processed by licensed payment partners. FLIK is not a bank. Partners: CashuUp, Nicepay and Xendit
 - **List item:** **Numbers and claims**, such as rates or results, describe the time they were published.
 
 ## 4. Intellectual property
@@ -90,7 +90,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 <!-- html: 7. Our responsibility -->
 
 - **Text:** We work to keep the website accurate and available, but we can't promise it will always be error-free or online.
-- **Text:** As far as Indonesian law allows, FLIK isn't liable for indirect loss from using the website, such as lost profit or lost data. [[W-7: any cap on liability, if counsel keeps one]]
+- **Text:** As far as Indonesian law allows, FLIK isn't liable for indirect loss from using the website, such as lost profit or lost data.
 - **Text:** Nothing in these terms limits a liability or right that Indonesian law doesn't allow to be limited, including your rights as a consumer under Law No. 8 of 1999 on Consumer Protection†.
 
 ## 8. Changes to these terms
@@ -105,15 +105,15 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Note for counsel:** This summary was written without the full Merchant Agreement, which isn't in the repo. Check each point against it.
 - **Heading:** Your account
 - **List item:** Registration is free.
-- **List item:** You must be able to enter a contract and run a business in Indonesia. [[W-18: minimum age and eligible entity types]]
-- **List item:** Give accurate details and keep them up to date. We may ask you to verify your identity and business before you use some features. [[W-29: which features need verification]]
+- **List item:** You must be able to enter a contract and run a business in Indonesia. You must be at least 21. A merchant can be an individual, a business entity (badan usaha) or a legal entity (badan hukum). If the person in charge isn't a director, they need a power of attorney.
+- **List item:** Give accurate details and keep them up to date. We may ask you to verify your identity and business before you use some features. These include sending invoices, booking shipments, topping up, withdrawing and getting live API keys.
 - **List item:** Keep your login and OTP codes safe. You're responsible for what happens in your account, including what your staff do.
 - **Heading:** Fees and your FLIK balance
-- **List item:** Fees for each product are shown in [[W-17: pricing page or fee schedule]] and in the dashboard before you confirm.
+- **List item:** Fees for each product are shown on the Pricing page (link: /pricing) and in the dashboard before you confirm.
 - **List item:** For shipping, you pay from your FLIK balance before a shipment is created.
 - **List item:** COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
-- **List item:** Checkout payments and COD funds reach your FLIK balance after delivery. [[W-26: withdrawal timing, minimum and fee]]
-- **List item:** Payments are processed by licensed payment partners. FLIK is not a bank. Partners: [[P: name the licensed payment partners and their licences]]
+- **List item:** Checkout payments and COD funds reach your FLIK balance after delivery. You can withdraw your balance on request, at least Rp100.000 at a time. Each withdrawal costs Rp4.000 + PPN, and the fee is returned if the payout fails.
+- **List item:** Payments are processed by licensed payment partners. FLIK is not a bank. Partners: CashuUp, Nicepay and Xendit
 - **List item:** Refunds and fee corrections follow our [Refund Policy](./refund/).
 - **Heading:** Shipping
 - **List item:** Couriers carry your parcels. Their terms, weight rules and claim rules also apply. [[W-24: courier terms and prohibited items list]]
@@ -133,7 +133,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 ## 10. Governing law and disputes
 <!-- html: 10. Governing law and disputes -->
 
-- **Text:** [[W-7: governing law and dispute resolution wording]]
+- **Text:** These terms are governed by the laws of the Republic of Indonesia. If there's a dispute, first send us a complaint; we'll try to settle it together within 30 calendar days. If that doesn't work, the merchant may choose the South Jakarta District Court (Pengadilan Negeri Jakarta Selatan) or the Financial Services Sector Alternative Dispute Resolution Institution (LAPS Sektor Jasa Keuangan). Consumers can also contact Bank Indonesia's BI Bicara on 131.
 
 ## 11. Contact us
 <!-- html: 11. Contact us -->
@@ -141,6 +141,6 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **List item:** Email: support@flik.co.id
 - **List item:** Privacy questions and personal data requests: privacy@flik.co.id
-- **List item:** WhatsApp: +62 812-9201-2668
+- **List item:** WhatsApp: +62 813-3532-8100
 - **List item:** Support hours: Monday–Friday, 09:00–18:00 WIB
 

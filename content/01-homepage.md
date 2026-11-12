@@ -9,14 +9,14 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - [x] Stats: "10M+ shoppers" and "200+ brands" removed (AG, 24 Oct 2026). The stats now use 30-second checkout, 15 payment methods, 99% shipment creation and the 3% COD fee.
 - [x] Kuvings and Jamise quotes, cards and logos removed (AG, 24 Oct 2026). The customer quote cards are hidden until there are approved quotes.
-- [ ] The Erigo and ZMNow.id story cards link to story pages that do not exist yet.
+- [x] Story cards (12 Nov): ERIGO and EMADO'S, from their real success stories, linking to their story pages. ZMNow.id is removed (no source).
 - [x] The globe animation now shows the sample store "Aruna Studio", labelled as an example (AG, 24 Oct 2026).
 - [ ] The "What's happening" posts are placeholders.
 
 ## Search results (SEO)
 
 - **Page title:** FLIK | Merchant Growth Platform for Growing Brands
-- **Description:** FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 40% less, and inventory funding, all from one dashboard.
+- **Description:** FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.
 
 ## 1. Hero
 <!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
@@ -49,7 +49,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Grow your brand with checkout, shipping and funding tools that work on their own or together.
 - **Heading:** Accept payments in a 30-second checkout
 - **Heading:** Offer 15 payment methods
-- **Heading:** Ship with all major couriers for up to 40% less
+- **Heading:** Ship with all major couriers for up to 50% less
 - **Heading:** Track any package in real time
 - **Heading:** Sell with COD for only a 3% fee (excl. PPN)
 - **Heading:** Fund your inventory, settled automatically as you sell
@@ -112,13 +112,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Label:** FLIK for sellers shipping at volume
 - **Heading:** Ship more, and spend less on every package.
 - **Text:** From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.
-- **Text:** Erigo runs delivery, payment and returns from one place with FLIK.
-- **Link:** Read Erigo's story
-- **Text:** ZMNow.id handles payments, shipping and rewards without juggling systems.
-- **Link:** Read ZMNow.id's story
+- **Text:** Keeping ERIGO in stock with a Merchant Cash Advance helped drive sales up to 200%, online and in stores.
+- **Link:** Read ERIGO's story (opens /customers/story/?c=erigo)
+- **Text:** EMADO'S opened 30+ branches across Indonesia, with operations kept under control.
+- **Link:** Read EMADO'S story (opens /customers/story/?c=emados)
 - **Text:** COD with a 3% fee (excl. PPN), credited to your balance after delivery.
 - **Link:** Explore COD shipping
-- **Text:** Save up to 40% on shipping with all major couriers in one dashboard.
+- **Text:** Save up to 50% off published courier rates, with all major couriers in one dashboard.
 - **Link:** Explore Shipping
 - **Small heading:** Free to register.
 - **Text:** There's no registration fee to use FLIK Shipping.
@@ -152,7 +152,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** WooCommerce
 - **Button:** API
 - **Small heading:** Shopify
-- **Text:** Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.
+- **Text:** We connect your Shopify store to FLIK Checkout and Shipping for you.
 - **Link:** View integration
 - **Small heading:** WooCommerce
 - **Text:** Connect your WordPress store in a few steps and switch to FLIK Checkout.

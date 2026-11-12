@@ -94,5 +94,5 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 <!-- html: 7. Changes and contact -->
 
 - **Text:** We'll update this policy when we add or remove a cookie, tag or provider, and change the “Last updated” date.
-- **Text:** Privacy questions: email privacy@flik.co.id. General support: support@flik.co.id or WhatsApp +62 812-9201-2668, Monday–Friday, 09:00–18:00 WIB. PT Flik Teknologi Indonesia, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
+- **Text:** Privacy questions: email privacy@flik.co.id. General support: support@flik.co.id or WhatsApp +62 813-3532-8100, Monday–Friday, 09:00–18:00 WIB. PT Flik Teknologi Indonesia, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 

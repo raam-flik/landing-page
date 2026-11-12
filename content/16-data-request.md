@@ -83,29 +83,29 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Error:** Choose what you'd like us to do.
 - **Error:** Tick the box to confirm.
 - **Heading:** Request received
-- **Text:** Before we act on your request, FLIK will verify your identity. We'll respond within [[timeline, per UU PDP†]].
+- **Text:** Before we act on your request, FLIK will verify your identity. We'll respond within 3 × 24 hours for requests to access or correct your data, withdraw consent or restrict processing, and otherwise within the time UU PDP allows.
 - **Text:** Prototype: nothing was sent or stored. On the live site, this form sends your request to FLIK.
 - **Button:** Send another request
 
 ## 4. What happens next
 <!-- html: 4. What happens next -->
 
-- **List item:** **We verify your identity first,** using the email address or WhatsApp number you give us. [[W-48: verification method]]
-- **List item:** **We act on your request and reply** within [[timeline, per UU PDP†]].
+- **List item:** **We verify your identity first,** using the email address or WhatsApp number you give us. We verify you through your Registered Contact on file.
+- **List item:** **We act on your request and reply** within 3 × 24 hours for requests to access or correct your data, withdraw consent or restrict processing, and otherwise within the time UU PDP allows.
 - **List item:** **If we can't do all of it,** for example because the law requires us to keep transaction records (Art. 15†), we'll tell you why.
-- **Text:** Making a request is free. [[W-49: confirm no fee]]
+- **Text:** Making a request is free. 
 
 ## 5. Other ways to reach us
 <!-- html: 5. Other ways to reach us -->
 
 - **List item:** Email: privacy@flik.co.id
 - **List item:** General support: support@flik.co.id
-- **List item:** WhatsApp: +62 812-9201-2668, Monday–Friday, 09:00–18:00 WIB
+- **List item:** WhatsApp: +62 813-3532-8100, Monday–Friday, 09:00–18:00 WIB
 - **List item:** Post: PT Flik Teknologi Indonesia, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560
 - **Note for counsel:** privacy@flik.co.id is FLIK's privacy and data-request mailbox (AG, 24 Oct 2026). support@flik.co.id stays for general support. Who acts as Personal Data Protection Officer is still open (W-5).
 
 ## 6. How we use what you send
 <!-- html: 6. How we use what you send -->
 
-- **Text:** We use the details in this form only to verify you and handle your request. We keep a record of the request and our reply for [[W-6g: period]].
+- **Text:** We use the details in this form only to verify you and handle your request. We keep a record of the request and our reply for 5 years.
 

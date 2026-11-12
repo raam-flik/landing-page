@@ -71,7 +71,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 ## 2. Who we are
 <!-- html: 2. Who we are -->
 
-- **Text:** The controller of your personal data is **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560. NIB: [[W-2: NIB]]. NPWP: [[W-3: NPWP]].
+- **Text:** The controller of your personal data is **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **Text:** FLIK is the controller for the merchant data it decides how to use. When FLIK processes shopper data on a merchant's behalf, the Merchant Agreement sets each party's role.
 
 ## 3. Personal data we collect
@@ -87,7 +87,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Heading:** From merchants
 - **Table columns:** Type of data — Examples — Source
 - **Table row:** Account — Name, email, WhatsApp number, login details, user role — You
-- **Table row:** Business and verification — Business name and type, address, details of the person in charge, NPWP, bank account for payouts, identity documents. [[W-15: current onboarding fields]] — You
+- **Table row:** Business and verification — Business name and type, address, details of the person in charge, NPWP, bank account for payouts, identity documents. Verification also covers the ID number (NIK) of the people involved, NIB and deed of establishment for companies, a payout bank account checked by name, and the Registered Contacts who sign the agreement. — You
 - **Table row:** Store and transactions — Store connections (Shopify, WooCommerce), orders, payments, shipments, balance, top-ups and withdrawals — You, your store platform, payment partners and couriers
 - **Table row:** Funding application — Funding request, KTP and NPWP of directors and owners, company documents (NIB, *akta pendirian*, SK Kemenkumham), bank statements, financial statements, other debts — You, when you apply. [[W-12: credit bureaus and funding partners]]
 - **Table row:** Support and messages — Emails, WhatsApp messages, call notes, support tickets — You and our team
@@ -123,7 +123,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 <!-- html: 6. Who we share it with -->
 
 - **Table columns:** Recipient — Data — Why
-- **Table row:** Payment partners: [[P: name the licensed payment partners and their licences]] — Transactions, payout bank account — Process payments, refunds and payouts
+- **Table row:** Payment partners: CashuUp, Nicepay and Xendit — Transactions, payout bank account — Process payments, refunds and payouts
 - **Table row:** Couriers on FLIK Shipping (listed on the Shipping page) — Sender and recipient name, phone, address, COD amount — Pick up and deliver parcels, collect COD
 - **Table row:** Store platforms you connect, such as Shopify or WooCommerce — Store and order data — Run the integration you set up
 - **Table row:** Credit bureaus and funding partners: [[W-12: names]] — Funding application and repayment data — Assess and provide funding
@@ -149,12 +149,12 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 
 - **Table columns:** Data — How long
 - **Table row:** Sales and demo enquiries that don't lead to an account — [[W-6a: period]]
-- **Table row:** Merchant account and business data — While the account is open, then [[W-6b: period]] after it closes
-- **Table row:** Verification documents — [[W-6c: period]]
+- **Table row:** Merchant account and business data — While the account is open, then 5 years after it closes
+- **Table row:** Verification documents — 5 years from receipt or from the end of the account, whichever is later
 - **Table row:** Funding applications, including declined ones — [[W-6d: period]]
-- **Table row:** Transaction records kept as bookkeeping evidence — As long as the law requires: [[W-6e: period]]
-- **Table row:** Technical logs — [[W-6f: period]]
-- **Table row:** Personal data requests and our replies — [[W-6g: period]]
+- **Table row:** Transaction records kept as bookkeeping evidence — As long as the law requires: 10 years from the transaction, and at least 10 years from the end of the financial year (Law 8/1997, Art. 11)
+- **Table row:** Technical logs — 12 months (audit trails at least 24 months)
+- **Table row:** Personal data requests and our replies — 5 years
 - **Text:** When the period ends, we delete or anonymise the data, unless a law requires us to keep it longer.
 
 ## 9. Your rights
@@ -170,7 +170,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **List item:** delay or restrict processing (Art. 11†);
 - **List item:** sue and receive compensation for a processing violation (Art. 12†);
 - **List item:** obtain and/or transfer your personal data to another controller (Art. 13†).
-- **Text:** **How to make a request.** Use the [personal data request form](./data-request/), or email privacy@flik.co.id. We verify your identity before we act. We respond within [[timeline, per UU PDP†]].
+- **Text:** **How to make a request.** Use the [personal data request form](./data-request/), or email privacy@flik.co.id. We verify your identity before we act. We respond within 3 × 24 hours for requests to access or correct your data, withdraw consent or restrict processing, and otherwise within the time UU PDP allows.
 - **Text:** **Limits.** The law may limit some rights (Art. 15 UU PDP†). For example, we must keep transaction records for bookkeeping. Closing your account doesn't end what you still owe, such as outstanding funding.
 
 ## 10. Marketing choices
@@ -198,12 +198,12 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 ## 14. Children
 <!-- html: 14. Children -->
 
-- **Text:** Our website and merchant services are for businesses and adults. They aren't directed at children under [[W-18: age threshold]]. If we learn we've collected a child's data without a parent's or guardian's consent (Art. 25 UU PDP†), we'll delete it unless the law requires us to keep it.
+- **Text:** Our website and merchant services are for businesses and adults. They aren't directed at children under 21. If we learn we've collected a child's data without a parent's or guardian's consent (Art. 25 UU PDP†), we'll delete it unless the law requires us to keep it.
 
 ## 15. Changes to this policy
 <!-- html: 15. Changes to this policy -->
 
-- **Text:** We may update this policy. The latest version is always on this page. For material changes, we'll tell merchants [[W-20: how and how far in advance]] before they take effect.
+- **Text:** We may update this policy. The latest version is always on this page. For material changes, we'll tell merchants at least 30 working days before they take effect, in the dashboard and by email to their Registered Contacts. Changes required by regulation or an authority are announced as soon as possible. Merchants who don't agree may stop using FLIK without penalty.
 
 ## 16. Contact us
 <!-- html: 16. Contact us -->
@@ -211,8 +211,8 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **List item:** Privacy questions and personal data requests: privacy@flik.co.id
 - **List item:** General support: support@flik.co.id
-- **List item:** WhatsApp: +62 812-9201-2668
+- **List item:** WhatsApp: +62 813-3532-8100
 - **List item:** Support hours: Monday–Friday, 09:00–18:00 WIB
-- **List item:** Personal Data Protection Officer: [[W-5: name or function]]
+- **List item:** Personal Data Protection Officer: Legal & Compliance Support (until a Personal Data Protection Officer is appointed)
 - **Text:** If you're not satisfied with our answer, you can complain to the personal data protection authority under UU PDP†.
 

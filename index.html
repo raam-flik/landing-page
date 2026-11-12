@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FLIK | Merchant Growth Platform for Growing Brands</title>
-<meta name="description" content="FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 40% less, and inventory funding, all from one dashboard.">
+<meta name="description" content="FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.">
 <link rel="canonical" href="https://flik.co.id/">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/">
@@ -1091,7 +1091,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- Rates -->
       <article class="bc s2" id="shipping">
-        <h3>Ship with all major couriers for up to 40% less</h3>
+        <h3>Ship with all major couriers for up to 50% less</h3>
         <button class="exp" data-prod="shipping" aria-label="More about Shipping">+</button>
         <div class="vis g3"><div class="minip" id="rates" style="width:100%;max-width:300px"></div></div>
       </article>
@@ -1200,10 +1200,10 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <p class="txt seg-p">From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.</p>
       <div class="stories-wrap">
         <div class="stories" id="stories">
-          <article class="story s1"><div class="story-art"><span>ERIGO</span></div><p>Erigo runs delivery, payment and returns from one place with FLIK.</p><a href="#" class="link" data-page="Erigo case study">Read Erigo's story <span class="chev">›</span></a></article>
-          <article class="story s2"><div class="story-art"><span>ZMNow.id</span></div><p>ZMNow.id handles payments, shipping and rewards without juggling systems.</p><a href="#" class="link" data-page="ZMNow.id case study">Read ZMNow.id's story <span class="chev">›</span></a></article>
+          <article class="story s1"><div class="story-art"><span>ERIGO</span></div><p>Keeping ERIGO in stock with a Merchant Cash Advance helped drive sales up to 200%, online and in stores.</p><a href="#" class="link" data-page="Erigo case study">Read ERIGO's story <span class="chev">›</span></a></article>
+          <article class="story s2"><div class="story-art"><span>EMADO'S</span></div><p>EMADO'S opened 30+ branches across Indonesia, with operations kept under control.</p><a href="#" class="link" data-page="Emados case study">Read EMADO'S story <span class="chev">›</span></a></article>
           <article class="story s3"><div class="story-art"><span>3%</span></div><p>COD with a 3% fee (excl. PPN), credited to your balance after delivery.</p><a href="#" class="link" data-page="/shipping/cod">Explore COD shipping <span class="chev">›</span></a></article>
-          <article class="story s4"><div class="story-art"><span>40%</span></div><p>Save up to 40% on shipping with all major couriers in one dashboard.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
+          <article class="story s4"><div class="story-art"><span>50%</span></div><p>Save up to 50% off published courier rates, with all major couriers in one dashboard.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
         </div>
         <div class="car-nav"><button class="cbtn" data-car="stories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="stories" data-dir="1" aria-label="Next stories">›</button></div>
       </div>
@@ -1281,7 +1281,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     </div>
 
     <div class="paths">
-      <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>Install the FLIK plugin to add FLIK Checkout and Shipping to your Shopify store.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
+      <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>We connect your Shopify store to FLIK Checkout and Shipping for you.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
       <div><span class="icd icd-lg"><img src="assets/logos/platform/woocommerce.png" alt=""></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
       <div><span class="icd" data-ic="code"></span><h4>FLIK API</h4><p>Build your own checkout and shipping flows from your own systems.</p><a href="#" class="link-l" data-page="API reference">Read the docs <span class="chev">›</span></a></div>
     </div>
@@ -1709,8 +1709,8 @@ renderFund();
 /* ===== Integration tabs ===== */
 const ITABS={
   'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'Shopify':`<div class="isteps">${[['Install the FLIK plugin','Connect your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'WooCommerce':`<div class="isteps">${[['Install the FLIK plugin','Add FLIK to your WordPress site.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
   'API':`<div class="code"><span class="c">// Create a shipment (illustrative example)</span>
 <span class="k">const</span> shipment = <span class="k">await</span> flik.shipments.<span class="p">create</span>({
   warehouse_id: <span class="s">'wh_jakarta_01'</span>,
@@ -1735,7 +1735,7 @@ renderI();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;
@@ -1820,7 +1820,7 @@ function salesModal(pre){
 // Get started opens merchant registration, Contact sales opens the intro call booking, both in a new tab
 const REGISTER_URL='https://merchant.flik.co.id/register/',SALES_URL='https://calendly.com/desmount-i7g/flikintro';
 /* Local routes (pages that exist in this prototype) */
-const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
+const ROUTES={'/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Emados case study':'customers/story/?c=emados','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'developers/#shopify','/integrations/woocommerce':'developers/#woocommerce',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
@@ -1960,7 +1960,7 @@ document.addEventListener('click',e=>{
 const PROD={
   checkout:['FLIK Checkout','A checkout that takes 30 seconds, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
   payments:['Payment Methods','Accept 15 payment methods in one checkout.',['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],'/checkout/payment-methods'],
-  shipping:['FLIK Shipping','Compare all major couriers and ship for up to 40% less.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
+  shipping:['FLIK Shipping','Compare all major couriers and ship for up to 50% off published rates.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
   bulk:['Bulk Shipping','Send from one warehouse or many, to one destination or thousands.',['Single and bulk shipments','Manage pickup warehouses','Every status in one table'],'/shipping/bulk'],
   track:['Shipment Tracking','Let your customers follow every package.',['Tracking number ready the moment a shipment is created','Status from pickup to delivery','Works across all major couriers'],'/shipping/track'],
   cod:['COD Shipping','Offer cash on delivery with a 3% fee (excl. PPN).',['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited to your balance after delivery'],'/shipping/cod'],
@@ -1979,9 +1979,9 @@ const BD={
     stat:['15','payment methods in one checkout'],stat2:['30 sec','from cart to paid'],
     det:[['qris','QRIS works with any banking or e-wallet app your shoppers already use.'],['chart','Choose which methods to show in Checkout Personalization.'],['wallet','Every payment lands in your FLIK balance once the order is delivered.']],
     more:['checkout','cod','funding'],q:null},
-  shipping:{t:'Ship with all major couriers for up to 40% less',d:'FLIK Shipping is a courier aggregator. Enter addresses one by one or in bulk, compare every rate, and manage every shipment from one dashboard.',cta:['Explore Shipping','/shipping'],
+  shipping:{t:'Ship with all major couriers for up to 50% off published rates',d:'FLIK Shipping is a courier aggregator. Enter addresses one by one or in bulk, compare every rate, and manage every shipment from one dashboard.',cta:['Explore Shipping','/shipping'],
     list:['Regular, same day, next day, instant and cargo','Single and bulk shipments','Free to register, no registration fee','Courier performance by region'],
-    stat:['40%','lower shipping costs, up to'],stat2:['99%','shipment creation success rate'],
+    stat:['50%','off published courier rates, up to'],stat2:['99%','shipment creation success rate'],
     det:[['truck','Compare every available rate, then choose the service and a pickup schedule.'],['pin','Pickup starts after the AWB is ready: 3–5 hours for regular, 1–4 hours for same day.'],['globe','Coverage across Indonesia, for both COD and non-COD shipments.']],
     more:['track','cod','checkout'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
   track:{t:'Track any package in real time',d:'Tracking numbers are ready the moment a shipment is created, so you and your customers can follow every package from pickup to delivery.',cta:['Explore tracking','/shipping/track'],

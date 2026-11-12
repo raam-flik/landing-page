@@ -97,7 +97,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Merchant sign-up prompt (centered) -->
 
 - **Heading:** Ship it with FLIK.
-- **Text:** All major couriers in one dashboard for up to 40% less, with a tracking link for every shopper.
+- **Text:** All major couriers in one dashboard for up to 50% off published rates, with a tracking link for every shopper.
 - **Button:** Get started
 - **Button:** Explore Shipping
 - **Small text:** By continuing you agree to the Terms and Privacy Policy.

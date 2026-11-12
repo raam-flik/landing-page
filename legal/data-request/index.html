@@ -1524,7 +1524,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <div class="dr-done" id="dr-done" hidden>
     <div class="okc"><span data-ic="check-l"></span></div>
     <h3 tabindex="-1">Request received</h3>
-    <p class="txt">Before we act on your request, FLIK will verify your identity. We'll respond within <span class="ph">[[timeline, per UU PDP†]]</span>.</p>
+    <p class="txt">Before we act on your request, FLIK will verify your identity. We'll respond within 3 × 24 hours for requests to access or correct your data, withdraw consent or restrict processing, and otherwise within the time UU PDP allows.</p>
     <p class="txt dr-proto">Prototype: nothing was sent or stored. On the live site, this form sends your request to FLIK.</p>
     <button class="btn btn-secondary" type="button" id="dr-again">Send another request</button>
   </div>
@@ -1534,21 +1534,21 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   <!-- ===== 4. What happens next ===== -->
   <section class="ls" id="s-4" aria-labelledby="h-4">
     <h2 id="h-4"><span class="sn">4.</span>What happens next</h2>
-    <ol><li><b>We verify your identity first,</b> using the email address or WhatsApp number you give us. <span class="ph">[[W-48: verification method]]</span></li><li><b>We act on your request and reply</b> within <span class="ph">[[timeline, per UU PDP†]]</span>.</li><li><b>If we can't do all of it,</b> for example because the law requires us to keep transaction records (Art. 15†), we'll tell you why.</li></ol>
-    <p>Making a request is free. <span class="ph">[[W-49: confirm no fee]]</span></p>
+    <ol><li><b>We verify your identity first,</b> using the email address or WhatsApp number you give us. We verify you through your Registered Contact on file.</li><li><b>We act on your request and reply</b> within 3 × 24 hours for requests to access or correct your data, withdraw consent or restrict processing, and otherwise within the time UU PDP allows.</li><li><b>If we can't do all of it,</b> for example because the law requires us to keep transaction records (Art. 15†), we'll tell you why.</li></ol>
+    <p>Making a request is free.</p>
   </section>
 
   <!-- ===== 5. Other ways to reach us ===== -->
   <section class="ls" id="s-5" aria-labelledby="h-5">
     <h2 id="h-5"><span class="sn">5.</span>Other ways to reach us</h2>
-    <ul><li>Email: privacy@flik.co.id</li><li>General support: support@flik.co.id</li><li>WhatsApp: +62 812-9201-2668, Monday–Friday, 09:00–18:00 WIB</li><li>Post: PT Flik Teknologi Indonesia, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560</li></ul>
+    <ul><li>Email: privacy@flik.co.id</li><li>General support: support@flik.co.id</li><li>WhatsApp: +62 813-3532-8100, Monday–Friday, 09:00–18:00 WIB</li><li>Post: PT Flik Teknologi Indonesia, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560</li></ul>
     <div class="cn" role="note"><p><span class="cn-t">Note for counsel</span>privacy@flik.co.id is FLIK's privacy and data-request mailbox (AG, 24 Oct 2026). support@flik.co.id stays for general support. Who acts as Personal Data Protection Officer is still open (W-5).</p></div>
   </section>
 
   <!-- ===== 6. How we use what you send ===== -->
   <section class="ls" id="s-6" aria-labelledby="h-6">
     <h2 id="h-6"><span class="sn">6.</span>How we use what you send</h2>
-    <p>We use the details in this form only to verify you and handle your request. We keep a record of the request and our reply for <span class="ph">[[W-6g: period]]</span>.</p>
+    <p>We use the details in this form only to verify you and handle your request. We keep a record of the request and our reply for 5 years.</p>
   </section>
 </article>
 </div>
@@ -1741,7 +1741,7 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281292012668" target="_blank" rel="noopener" aria-label="WhatsApp +62 812-9201-2668 (opens in a new tab)" style="padding:0;display:inline">+62 812-9201-2668</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;
