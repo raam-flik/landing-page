@@ -1384,8 +1384,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 /* Compact bar (Raam, 26 Oct 2026): one row on desktop, text + one button row on phones. Preferences is an icon button; opening it expands the card. */
 .cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:95;display:flex;justify-content:center;pointer-events:none}
 .cc[hidden]{display:none}
-.cc-card{pointer-events:auto;width:100%;max-width:960px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);padding:12px 12px 12px 20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 20px}
-.cc-card.cc-open{grid-template-columns:1fr;padding:20px 22px}
+.cc-card{pointer-events:auto;width:auto;max-width:100%;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);padding:12px 12px 12px 20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 20px}
+.cc-card.cc-open{grid-template-columns:1fr;padding:20px 22px;width:640px}
+.cc-p .cc-br{display:inline}  /* two lines on desktop (Raam, 12 Nov 2026) */
 .cc-p{font-size:14px;line-height:1.5;color:var(--body)}
 .cc-p b{font-weight:500;color:var(--ink)}
 .cc-card a{color:var(--primary-hover);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
@@ -1410,6 +1411,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   .cc{left:8px;right:8px;bottom:8px}
   .cc-card,.cc-card.cc-open{grid-template-columns:1fr;padding:14px 14px 12px;gap:10px}
   .cc-p{font-size:13.5px}
+  .cc-p .cc-br{display:none}
+  .cc-card.cc-open{width:auto}
   .cc-btns .cc-main{flex:1 1 0;min-width:0;padding:0 12px}
   .cc-open .cc-save{margin-left:0;flex:1 1 100%}
 }
@@ -1537,7 +1540,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== kit: cookie-consent ===== -->
 <div class="cc" id="cc" hidden>
   <div class="cc-card" id="cc-card" role="dialog" aria-modal="false" aria-labelledby="cc-title" aria-describedby="cc-desc" tabindex="-1">
-    <p class="cc-p" id="cc-desc"><b id="cc-title">Cookies on FLIK.</b> We use essential cookies to run this site. With your OK, we'd also use analytics and marketing cookies. <a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></p>
+    <p class="cc-p" id="cc-desc"><b id="cc-title">Cookies on FLIK.</b> We use essential cookies to run this site.<br class="cc-br"> With your OK, also use analytics and marketing cookies. <a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></p>
     <div class="cc-prefs" id="cc-prefs" hidden>
       <fieldset>
         <legend class="sr-only">Cookie preferences</legend>

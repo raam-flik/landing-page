@@ -203,7 +203,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** PT Flik Teknologi Indonesia · Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560
 - **Text:** Payments are processed by licensed payment partners. FLIK is not a bank.
 - **Links:** Terms of Service · Privacy Policy · Refund Policy · Cookie Policy · Cookie settings · Data request · privacy@flik.co.id
-- **Cookie banner:** same as every page, see `00-menu-and-footer.md` (compact bar: Cookies on FLIK. We use essential cookies to run this site. With your OK, we'd also use analytics and marketing cookies.)
+- **Cookie banner:** same as every page, see `00-menu-and-footer.md` (compact bar: Cookies on FLIK. We use essential cookies to run this site. / With your OK, also use analytics and marketing cookies. (two lines on desktop))
 - **Buttons:** Cookie preferences (icon) · Reject all · Accept all · Save my choices
 - **Preferences:** Strictly necessary (always on) · Analytics (off) · Marketing (off)
 
