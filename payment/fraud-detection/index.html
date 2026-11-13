@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fraud Detection: Fight Fraud and Chargebacks | FLIK</title>
-<meta name="description" content="FLIK checks payments, refunds and withdrawals for fraud, helps you fight chargebacks, and soon flags risky COD orders. Included for every FLIK merchant.">
+<meta name="description" content="FLIK checks payments, refunds and withdrawals for fraud, helps you fight chargebacks, and flags risky COD orders. Included for every FLIK merchant.">
 <link rel="canonical" href="https://flik.co.id/payment/fraud-detection">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/payment/fraud-detection">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/payment/fraud-detection">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"FLIK Fraud Detection","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"FLIK checks payments, refunds and withdrawals for fraud, helps you fight chargebacks, and soon flags risky COD orders. Included for every FLIK merchant."}
+{"@context":"https://schema.org","@type":"Service","name":"FLIK Fraud Detection","provider":{"@type":"Organization","name":"FLIK","url":"https://flik.co.id/"},"areaServed":"ID","description":"FLIK checks payments, refunds and withdrawals for fraud, helps you fight chargebacks, and flags risky COD orders. Included for every FLIK merchant."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1223,6 +1223,44 @@ html{scroll-padding-top:88px}
 .rs-r b{display:block;font-weight:500;font-size:13px}
 .rs-r small{color:var(--muted);font-size:12px}
 .rs-body .ph-btn{height:38px}
+/* Read field by field: a document on the left, the signal each field becomes on the right (example data) */
+.rd{display:grid;grid-template-columns:1fr 1.1fr;max-width:860px;margin:56px auto 0;background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--sh-lg);overflow:hidden;font-size:13px;text-align:left}
+.rd-doc{padding:22px;border-right:1px dashed #C9D2DE;font-family:var(--mono);display:grid;gap:4px;align-content:start}
+.rd-dh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 10px 14px;margin-bottom:6px;border-bottom:1px solid var(--line-soft)}
+.rd-dh small{display:block;font-family:var(--font);font-size:12px;color:var(--muted)}
+.rd-dh b{display:block;font-weight:400;font-size:15px}
+.rd-bc{display:block;width:74px;height:30px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px)}
+.rd-f,.rd-s{border-radius:8px;transition:opacity .3s,box-shadow .3s,background .3s}
+.rd-f{padding:9px 10px}
+.rd-f small{display:block;font-family:var(--font);font-size:11.5px;color:var(--muted)}
+.rd-f b{display:block;font-weight:400;font-size:13px;margin-top:2px}
+.rd-sig{padding:22px;background:var(--bg-alt);display:grid;gap:4px;align-content:start}
+.rd-sig>.mh-cap{padding:0 10px 14px;margin-bottom:6px;border-bottom:1px solid var(--line-soft);line-height:30px}
+.rd-s{display:flex;align-items:center;gap:12px;padding:8px 10px}
+.rd-s small{display:block;font-size:11.5px;color:var(--muted)}
+.rd-s b{display:block;font-weight:500;font-size:13px;margin-top:1px}
+.rd-ic{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.rd-ic.warn{background:var(--warn-soft);color:var(--warn-text)}
+.rd-ic.ok{background:var(--ok-soft);color:var(--ok-text)}
+.rd.hl .rd-f,.rd.hl .rd-s{opacity:.5}
+.rd.hl .rd-f.on,.rd.hl .rd-s.on{opacity:1;background:var(--surface);box-shadow:0 0 0 2px var(--primary),0 0 0 7px rgba(106,75,255,.14)}
+.rd-v{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--line-soft);border-radius:8px;box-shadow:var(--sh)}
+.rd-v small{display:block;font-size:11.5px;color:var(--muted)}
+.rd-v b{display:block;font-weight:500;font-size:13px}
+.rd-out{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:860px;margin:24px auto 0}
+.rd-out>div{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.rd-out b{font-weight:500;font-size:15px}
+.rd-out>div>span:last-child{font-size:13.5px;color:var(--muted)}
+.fx.rd-fx{grid-template-columns:300px 1fr}
+.rd-fx .rd{margin:0;max-width:none;width:100%}
+#dash .rd-fx .cod-pts{margin:0}
+@media (max-width:1080px){.fx.rd-fx{grid-template-columns:1fr}}
+@media (max-width:760px){
+  .rd{grid-template-columns:1fr;margin-top:40px}
+  .rd-doc{border-right:0;border-bottom:1px dashed #C9D2DE;padding:18px 12px}
+  .rd-sig{padding:18px 12px}
+  .rd-out{grid-template-columns:1fr;gap:14px}
+}
 /* Reviewed by people: dark text band */
 #cod-risk{overflow:hidden}
 #cod-risk .sec-h .soft{color:var(--on-dark-muted)}
@@ -1233,9 +1271,6 @@ html{scroll-padding-top:88px}
 #dash .cod-pts li{color:var(--body)}
 #dash .cod-pts li span{color:var(--primary)}
 #dash .cod-pts li b{color:var(--ink);font-weight:500}
-#where .pk3{grid-template-columns:1fr 1fr}
-@media (max-width:760px){#where .pk3{grid-template-columns:1fr}}
-#dash .sec-h .pill{margin-left:8px;vertical-align:middle}
 .link.lt{color:var(--on-dark-accent)}
 @media (max-width:1080px){.flow5{grid-template-columns:1fr 1fr}.flow5 .stat:nth-child(odd){padding-left:var(--bleed)}.flow5 .stat:nth-child(even){border-right:0}.flow5 .stat:last-child{grid-column:1/-1}}
 @media (max-width:760px){
@@ -1414,9 +1449,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="ch guides">
   <div class="wrap ch-in">
     <div class="ch-t">
-      <p class="eyebrow">FLIK Fraud Detection · From December 2026</p>
-      <h1 class="ch-h">Stop fraud before it costs you. <span class="soft">Fewer chargebacks, fewer fake COD orders.</span></h1>
-      <p class="lead">Fraud costs you twice: the goods, then the payment. FLIK checks every payment, refund and withdrawal, and helps you fight chargebacks.</p>
+      <p class="eyebrow">FLIK Fraud Detection</p>
+      <h1 class="ch-h">Keep what you've earned. <span class="soft">Every withdrawal checked, every chargeback answered.</span></h1>
+      <p class="lead">Fraud costs you twice: the goods, then the payment. We watch for both, and help you fight chargebacks.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="sales">Talk to the FLIK team <span class="chev">›</span></button>
         <a href="#decide" class="btn btn-secondary">See how it works <span class="chev">›</span></a>
@@ -1424,7 +1459,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <ul class="ch-facts">
         <li><span data-ic="check-s"></span>Every payment, refund and withdrawal checked</li>
         <li><span data-ic="check-s"></span>Help with every chargeback</li>
-        <li><span data-ic="check-s"></span>Risky COD orders flagged (coming soon)</li>
+        <li><span data-ic="check-s"></span>Risky COD orders flagged</li>
       </ul>
     </div>
     <div class="ch-stage fd-stage">
@@ -1449,23 +1484,34 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <!-- ===== /kit: a11y ===== -->
 </section>
 
-<!-- ===== How it decides: full-width band with a flow diagram that splits into three outcomes ===== -->
+<!-- ===== How it decides: a withdrawal slip read field by field, each field becomes a signal, then three outcomes (example data) ===== -->
 <section class="band guides" id="decide">
   <div class="wrap">
     <span class="label"><i></i>How it works</span>
-    <h2 class="sec-h" style="margin-top:14px">One check at every risky moment. <span class="soft">Dashboard or API, the same check applies.</span></h2>
-    <div class="flow fd-flow">
-      <div class="fl-n"><span class="fl-ic" data-ic="wallet"></span><small>You or your system</small><b>Request</b><span>A payment, refund or withdrawal</span></div>
-      <div class="fl-c"><i></i></div>
-      <div class="fl-n fl-mid"><span class="fl-ic" data-ic="shield"></span><small>FLIK Fraud Detection</small><b>Risk check</b><span>Looks for signs of fraud</span></div>
-      <div class="fl-split">
-        <svg viewBox="0 0 80 300" preserveAspectRatio="none"><path d="M0 150 C40 150 40 50 80 50"/><path d="M0 150 L80 150"/><path d="M0 150 C40 150 40 250 80 250"/></svg>
+    <h2 class="sec-h" style="margin-top:14px">Nothing leaves without a second look. <span class="soft">Here's what we look at.</span></h2>
+    <div class="rd" id="rd-wd" role="img" aria-label="Example: a withdrawal of Rp86.000.000 read field by field. Amount, payout account, timing, money in and refunds each become a signal, and the withdrawal goes under review.">
+      <div class="rd-doc">
+        <div class="rd-dh"><span><small>Example · Withdrawal</small><b>WD-3104</b></span><i class="rd-bc"></i></div>
+        <div class="rd-f"><small>Amount</small><b class="num">Rp86.000.000</b></div>
+        <div class="rd-f"><small>To account</small><b>BCA ···· 2291</b></div>
+        <div class="rd-f"><small>Requested</small><b>Sat 23:40 · payday week</b></div>
+        <div class="rd-f"><small>Money in today</small><b class="num">Rp91.000.000</b></div>
+        <div class="rd-f"><small>Refunds this week</small><b>Low</b></div>
       </div>
-      <div class="fl-col">
-        <div class="fl-n"><span class="pill ok">Usual</span><b>Cleared</b><span>Goes through as usual.</span></div>
-        <div class="fl-n"><span class="pill warn">Unusual</span><b>Under review</b><span>FLIK's risk team takes a look.</span></div>
-        <div class="fl-n"><span class="pill bad">Fraud</span><b>Stopped</b><span>The money stays in your balance.</span></div>
+      <div class="rd-sig">
+        <small class="mh-cap">What FLIK looks at</small>
+        <div class="rd-s"><span class="rd-ic warn" data-ic="wallet-s"></span><span><small>Size against your usual</small><b>Well above your usual</b></span></div>
+        <div class="rd-s"><span class="rd-ic warn" data-ic="bank-s"></span><span><small>Payout account</small><b>Recently changed</b></span></div>
+        <div class="rd-s"><span class="rd-ic ok" data-ic="cal-s"></span><span><small>Calendar</small><b>Busy week, expected</b></span></div>
+        <div class="rd-s"><span class="rd-ic warn" data-ic="cash-s"></span><span><small>Money in, money out</small><b>Most of it leaving the same day</b></span></div>
+        <div class="rd-s"><span class="rd-ic ok" data-ic="coins-s"></span><span><small>Refund pattern</small><b>Normal for you</b></span></div>
+        <div class="rd-v"><span><small>Result</small><b>FLIK's risk team takes a look</b></span><span class="pill warn">Under review</span></div>
       </div>
+    </div>
+    <div class="rd-out">
+      <div><span class="pill ok">Usual</span><b>Cleared</b><span>Goes through as usual.</span></div>
+      <div><span class="pill warn">Unusual</span><b>Under review</b><span>FLIK's risk team takes a look.</span></div>
+      <div><span class="pill bad">Fraud</span><b>Stopped</b><span>The money stays in your balance.</span></div>
     </div>
   </div>
 </section>
@@ -1473,13 +1519,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Every step of the order: ruled five-step flow, the progress line walks and an example check follows (example data) ===== -->
 <section class="pad-t guides stats-sec" id="steps">
   <div class="wrap">
-    <h2 class="sec-h stats-h">Covered end to end. <span class="soft">From first payment to last withdrawal.</span></h2>
+    <h2 class="sec-h stats-h">Watched at every step. <span class="soft">From first payment to last withdrawal.</span></h2>
     <div class="stats4 flow4 flow5" id="flow5">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="qris"></span><b>Payments</b><span>Checked for fraud.</span></div>
+      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="qris"></span><b>Payments</b><span>Watched as they come in.</span></div>
       <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="coins"></span><b>Refunds</b><span>Unusual patterns flagged.</span></div>
       <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="card"></span><b>Chargebacks</b><span>We help you respond to disputes.</span></div>
       <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="wallet"></span><b>Withdrawals</b><span>Checked before money leaves.</span></div>
-      <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="truck"></span><b>COD orders</b><span>Risky orders flagged. Coming soon.</span></div>
+      <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="truck"></span><b>COD orders</b><span>Risky orders flagged.</span></div>
     </div>
     <div class="st-ex" id="st-ex" aria-live="polite"></div>
   </div>
@@ -1517,15 +1563,36 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== COD and shipping fraud: delivery risk level, COD confirmation and address check, coming soon ===== -->
-<section class="pad-s alt guides" id="dash">
+<!-- ===== COD and shipping fraud: a COD waybill read field by field, each field becomes a signal, then a delivery risk level (example data) ===== -->
+<section class="pad alt guides" id="dash">
   <div class="wrap">
-    <h2 class="sec-h">Stop fake COD orders. <span class="pill pu">Coming soon</span> <span class="soft">Risky orders flagged before pickup.</span></h2>
-    <ul class="cod-pts">
-      <li><span data-ic="check-s"></span>Risk level on every order</li>
-      <li><span data-ic="check-s"></span>WhatsApp confirmation before pickup</li>
-      <li><span data-ic="check-s"></span>Address check before you ship</li>
-    </ul>
+    <h2 class="sec-h">Know before you ship. <span class="soft">Risky orders flagged before pickup.</span></h2>
+    <div class="fx rd-fx">
+      <ul class="cod-pts">
+        <li><span data-ic="check-s"></span>Risk level on every order</li>
+        <li><span data-ic="check-s"></span>WhatsApp confirmation before pickup</li>
+        <li><span data-ic="check-s"></span>Address check before you ship</li>
+      </ul>
+      <div class="rd" id="rd-cod" role="img" aria-label="Example: a cash on delivery waybill read field by field. Phone, address, amount, order time and courier each become a signal, and the order is marked high risk.">
+        <div class="rd-doc">
+          <div class="rd-dh"><span><small>Example · COD waybill</small><b>Order #4830</b></span><i class="rd-bc"></i></div>
+          <div class="rd-f"><small>Recipient phone</small><b>0812 ···· 7731</b></div>
+          <div class="rd-f"><small>Ship to</small><b>Jl. Melati, Bekasi</b></div>
+          <div class="rd-f"><small>COD amount</small><b class="num">Rp2.400.000</b></div>
+          <div class="rd-f"><small>Ordered</small><b>02:14 · third order tonight</b></div>
+          <div class="rd-f"><small>Courier</small><b>Regular · Bekasi</b></div>
+        </div>
+        <div class="rd-sig">
+          <small class="mh-cap">What FLIK looks at</small>
+          <div class="rd-s"><span class="rd-ic warn" data-ic="phone-s"></span><span><small>Delivery history</small><b>Past failed deliveries</b></span></div>
+          <div class="rd-s"><span class="rd-ic warn" data-ic="pin-s"></span><span><small>Address</small><b>No house number</b></span></div>
+          <div class="rd-s"><span class="rd-ic warn" data-ic="cash-s"></span><span><small>Order size</small><b>Well above your usual</b></span></div>
+          <div class="rd-s"><span class="rd-ic warn" data-ic="clock-s"></span><span><small>Order pattern</small><b>Repeat orders, minutes apart</b></span></div>
+          <div class="rd-s"><span class="rd-ic ok" data-ic="truck-s"></span><span><small>Route</small><b>Courier delivers well here</b></span></div>
+          <div class="rd-v"><span><small>Delivery risk</small><b>Confirm on WhatsApp first</b></span><span class="pill warn">High risk</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1543,39 +1610,10 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== Works however you withdraw: three product cards ===== -->
-<section class="pad guides" id="where">
-  <div class="wrap">
-    <h2 class="sec-h">The same check, however you withdraw. <span class="soft">No setup and nothing to switch on.</span></h2>
-    <div class="pk3">
-      <a href="https://merchant.flik.co.id/" class="pk" target="_blank" rel="noopener">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Withdrawal WD-3102</b><span class="pill ok">Sent</span></div>
-          <div class="pk-pl"><img class="fl-plogo" src="../../assets/logos/payment/bca.png" alt=""><span class="grow"><b>Dashboard · Rp12.500.000</b><small>Risk check passed</small></span></div>
-        </div></div>
-        <span class="label"><i></i>Dashboard</span>
-        <h3>Withdraw by hand.</h3>
-        <p class="txt">Every withdrawal is checked first.</p>
-        <em class="link">Open the dashboard <span class="chev">›</span></em>
-      </a>
-      <a href="#" class="pk" data-page="/developers">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Withdrawal WD-3104</b><span class="pill warn">Under review</span></div>
-          <div class="pk-pl"><span class="fl-plogo fl-plogo--icon" data-ic="code-s"></span><span class="grow"><b>API · Rp86.000.000</b><small>Under review</small></span></div>
-        </div></div>
-        <span class="label"><i></i>API</span>
-        <h3>Withdraw from your system.</h3>
-        <p class="txt">Same check, plus a webhook when one is under review.</p>
-        <em class="link">Explore Developers <span class="chev">›</span></em>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ===== Fraud Detection at a glance ===== -->
 <section class="pad alt guides" id="glance">
   <div class="wrap">
-    <h2 class="sec-h">Fraud Detection at a glance. <span class="soft">On for every FLIK merchant from December 2026.</span></h2>
+    <h2 class="sec-h">Fraud Detection at a glance. <span class="soft">On for every FLIK merchant.</span></h2>
     <div class="gl3" id="gl3"></div>
   </div>
 </section>
@@ -1754,6 +1792,8 @@ const P={
   chat:'<path d="M4 19.5 5.3 15A8 8 0 1 1 9 18.7z"/><path d="M9 10.5c.5 1.6 1.9 3 3.5 3.5l1.2-1.1 2 .9"/>',
   sliders:'<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
   bell:'<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'
 };
 const ic=(n,s=18,w=1.7)=>`<svg aria-hidden="true" focusable="false" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
@@ -1893,6 +1933,14 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
   },2200);
 })();
 
+/* ===== Read field by field: the highlight walks down the document and its matching signal (example data) ===== */
+document.querySelectorAll('.rd').forEach(rd=>{
+  const f=[...rd.querySelectorAll('.rd-f')],g=[...rd.querySelectorAll('.rd-s')],visible=onScreen(rd);let k=-1;
+  if(REDUCE)return;
+  setInterval(()=>{if(!visible())return;k=(k+1)%(f.length+2);const on=k<f.length;rd.classList.toggle('hl',on);
+    f.forEach((x,i)=>x.classList.toggle('on',on&&i===k));g.forEach((x,i)=>x.classList.toggle('on',on&&i===k))},1500);
+});
+
 /* ===== What it covers: the progress line walks, an example check follows (example data) ===== */
 (function(){
   const box=document.getElementById('flow5'),s=[...box.children],ex=document.getElementById('st-ex');
@@ -1919,7 +1967,7 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
   const G=[
     ['shield','Always on',['No setup, no code','Payments, refunds and withdrawals checked','Reviewed by FLIK\'s risk team']],
     ['card','Chargebacks',['Told as soon as a payment is disputed','Evidence uploaded in the dashboard','FLIK sends it to the payment partner']],
-    ['truck','COD and shipping (coming soon)',['Delivery risk level per order','COD confirmation on WhatsApp','Address check before pickup']]
+    ['truck','COD and shipping',['Delivery risk level per order','COD confirmation on WhatsApp','Address check before pickup']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
 })();
@@ -1928,9 +1976,9 @@ const plg=n=>n.startsWith('ic:')?`<span class="fl-plogo fl-plogo--icon">${ic(n.s
 const FAQ=[
   ['What does Fraud Detection do?','It checks payments, refunds and withdrawals for fraud, and helps you fight chargebacks.'],
   ['How does FLIK help with chargebacks?','You\'re told straight away, with the reason and deadline. Upload evidence in the dashboard, and FLIK sends it to the payment partner.'],
-  ['How does FLIK help with fake COD orders?','Soon, each order gets a risk level with the reason. Ask the shopper to confirm on WhatsApp, send a payment link instead, or switch courier.'],
+  ['How does FLIK help with fake COD orders?','Each order gets a risk level with the reason. Ask the shopper to confirm on WhatsApp, send a payment link instead, or switch courier.'],
   ['What happens when a withdrawal is held?','It shows as "Under review", with an expected time. It\'s sent once FLIK\'s risk team clears it.'],
-  ['Why won\'t you tell me why it was held?','Explaining the checks would help fraudsters get around them. We\'ll contact you if we need anything.'],
+  ['Why won\'t you tell me why it was held?','We show what we look at, not the exact rules. Sharing those would help fraudsters get around them. We\'ll contact you if we need anything.'],
   ['Do I need to set anything up?','No. It\'s on for every FLIK merchant.'],
   ['What does it cost?','Nothing. It\'s included.']
 ];
