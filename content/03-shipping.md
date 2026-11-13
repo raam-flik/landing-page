@@ -183,6 +183,17 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text (COD sellers card):** 3% — COD fee (excl. PPN)
 - **Link:** Learn more
 
+
+## Customer stories (13 Nov 2026)
+<!-- html: kit customer-stories, the same block on Checkout, Shipping, Merchant Cash Advance and In-Store Payment, before the FAQ #customers -->
+
+- **Section heading:** Brands that grow with FLIK Shipping.
+  - **Grey part:** How Indonesian brands use it, in their own stories.
+- **Cards (3, linking to each story page):** Gerai Hawa, Teenage Death Star, Zaafer
+- **Logo row:** Zaafer, Gerai Hawa, Manta Liberta, Teenage Death Star
+- **Link:** See all customer stories
+- Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
+
 ## 11. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
 

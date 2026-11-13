@@ -171,6 +171,17 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** We co-fund promotion programs for merchants on FLIK Checkout. Ask us for the details.
 - **Price:** Co-funded — ask the FLIK team for details
 
+
+## Customer stories (13 Nov 2026)
+<!-- html: kit customer-stories, the same block on Checkout, Shipping, Merchant Cash Advance and In-Store Payment, before the FAQ #customers -->
+
+- **Section heading:** Brands that grow with FLIK Checkout.
+  - **Grey part:** How Indonesian brands use it, in their own stories.
+- **Cards (3, linking to each story page):** The SIGIT, Artch, WakaiGo
+- **Logo row:** Sigit Store, Artch, Paper, WakaiGo, OSIM
+- **Link:** See all customer stories
+- Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
+
 ## 11. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
 

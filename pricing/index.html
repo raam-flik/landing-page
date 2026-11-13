@@ -1325,6 +1325,17 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   .cc-open .cc-save{margin-left:0;flex:1 1 100%}
 }
 /* ===== /kit: cookie-consent ===== */
+
+
+
+
+/* ===== kit: hero-ribbon (the brand ribbon from the earlier homepage hero: orange → magenta → violet → cyan) ===== */
+.rbn-host{position:relative;overflow:hidden}
+.rbn-host>.wrap{position:relative;z-index:2}
+.rbn{position:absolute;top:0;right:0;width:min(1100px,92%);height:100%;pointer-events:none;z-index:0;overflow:visible}
+.rbn-host.lh h1{max-width:720px}.rbn-host.lh .lead{max-width:560px}
+@media (max-width:760px){.rbn{width:100%;height:min(60%,440px);opacity:.45}}
+/* ===== /kit: hero-ribbon ===== */
 </style>
 </head>
 <body>
@@ -1351,8 +1362,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 <!-- ===== Page header with product tabs ===== -->
 <!-- PLACEHOLDER rates (FLI-50): the rate card (MDR per method, settlement periods, Checkout fee) comes from AG / finance. Values in [brackets] are placeholders; don't copy competitor rates. -->
-<section class="lh guides">
-  <div class="wrap">
+<section class="lh guides rbn-host">
+  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".6" filter="url(#rbn-b)"/><g class="rbn-lines" fill="none" stroke="url(#rbn-g)" stroke-width="3"></g></svg>
+        <div class="wrap">
     <p class="eyebrow">Pricing</p>
     <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction, and see the PPN on every fee.</span></h1>
     <p class="lead">Fees exclude PPN. PPN is added on each fee at the prevailing rate, so the fee, the PPN and the total are always shown side by side.</p>
@@ -1682,6 +1694,30 @@ const FAQ=[
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
+
+
+
+
+/* ===== kit: hero-ribbon (thin gradient lines forming a twisting sheet that ends in the hero's bottom-right corner) ===== */
+document.querySelectorAll('svg.rbn').forEach(svg=>{
+  const g=svg.querySelector('.rbn-lines'),fill=svg.querySelector('.rbn-fill');
+  const N=56,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
+  let CX=980,CY=880;
+  function setCorner(){const r=svg.getBoundingClientRect(),m=svg.getScreenCTM();if(!m||!r.width)return;const q=svg.createSVGPoint();q.x=r.right-24;q.y=r.bottom-8;const v=q.matrixTransform(m.inverse());CX=v.x;CY=v.y}
+  setCorner();addEventListener('resize',setCorner);document.fonts&&document.fonts.ready.then(setCorner);
+  const pt=(s,t)=>{const w1=70*Math.sin(t*.45+s*2.2),w2=60*Math.cos(t*.37+s*1.7);return [[360+s*600,-40],[400+(1-s)*440+w1,250+s*90],[1000-s*400+w2,420+(1-s)*140],[CX-s*70,CY]]};
+  const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
+  let vis=true;const paused=()=>typeof motionPaused==='function'&&motionPaused();
+  function draw(t){
+    if(vis&&!paused()){t/=1000;paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
+      const a=pt(0,t),b=pt(1,t);fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`)}
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(svg);
+  vis=true;draw(0);vis=svg.getBoundingClientRect().top<innerHeight;if(!reduce)requestAnimationFrame(draw);
+});
+/* ===== /kit: hero-ribbon ===== */
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+

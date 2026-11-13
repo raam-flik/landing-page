@@ -24,6 +24,8 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - [x] `[[confirm: sales by outlet]]`: FAQ "more than one outlet".
 - [x] Resources: the Fraud Detection card says it is planned (FLI-47) and the Early Settlement card no longer promises same-day payouts (FLI-46).
 
+- [x] **Hero ribbon (AG, 13 Nov 2026):** the brand ribbon from the earlier homepage hero runs behind the device, the same as Pricing, Help and Fraud Detection.
+
 ## Search results (SEO)
 
 - **Page title:** Accept QRIS and Card Payments In Store | FLIK
@@ -131,6 +133,17 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Heading:** Handheld
 - **List item:** Android touchscreen
 - **List item:** Grip made to hold at the counter or the table
+
+
+## Customer stories (13 Nov 2026)
+<!-- html: kit customer-stories, the same block on Checkout, Shipping, Merchant Cash Advance and In-Store Payment, before the FAQ #customers -->
+
+- **Section heading:** Brands that grow with In-Store Payment.
+  - **Grey part:** How Indonesian brands use it, in their own stories.
+- **Cards (3, linking to each story page):** EMADO'S (30+ branches), Kopikalyan, Haus!
+- **Logo row:** EMADO'S, Kopikalyan, Haus!, Aneka Family, Donat Bahagia
+- **Link:** See all customer stories
+- Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
 
 ## 7. FAQ
 <!-- html: FAQ (single column) #faq-sec -->

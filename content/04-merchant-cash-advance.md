@@ -157,6 +157,17 @@ Hidden until there is a real, approved story.
 - Merchant Cash Advance is offered to selected merchants. Any offer follows a review by the FLIK team, and its terms are set out in the offer letter.
 - We can't offer funding just yet.
 
+
+## Customer stories (13 Nov 2026)
+<!-- html: kit customer-stories, the same block on Checkout, Shipping, Merchant Cash Advance and In-Store Payment, before the FAQ #customers -->
+
+- **Section heading:** Brands that grow with Merchant Cash Advance.
+  - **Grey part:** How Indonesian brands use it, in their own stories.
+- **Cards (3, linking to each story page):** ERIGO (Up to 200%), EMADO'S (30+ branches), HEYLOCAL (500,000+ transactions)
+- **Logo row:** ERIGO, EMADO'S, HEYLOCAL, Kopikalyan, Haus!
+- **Link:** See all customer stories
+- Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
+
 ## 8. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
 

@@ -15,6 +15,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Answers changed for the AG rules (24 Oct 2026):** COD fee wording, "all major couriers", "credited to your balance after delivery", and Malaysia/Singapore removed from "What is FLIK Shipping?". The COD question now reads "Do I pay the COD fee upfront?" (answer: no, it's deducted after delivery). The Checkout and Shipping page FAQs still need the same change.
 - [ ] **Privacy and your data:** new entry under General. It links to /legal/privacy and /legal/data-request, which must exist before launch.
 
+- [x] **Hero ribbon (AG, 13 Nov 2026):** the brand ribbon from the earlier homepage hero sits top right in the hero, the same as Pricing, Fraud Detection and In-Store Payment.
+
 ## Search results (SEO)
 
 - **Page title:** Help Center: Contact FLIK Support | FLIK

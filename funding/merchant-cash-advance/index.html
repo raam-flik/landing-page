@@ -1319,6 +1319,38 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   .cc-open .cc-save{margin-left:0;flex:1 1 100%}
 }
 /* ===== /kit: cookie-consent ===== */
+
+
+
+
+/* ===== kit: customer-stories (same block on Checkout, Shipping, Merchant Cash Advance and In-Store Payment; cards as on /customers) ===== */
+.csk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.csk-c{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:320px;padding:20px;border-radius:var(--r-lg);color:#fff;overflow:hidden;isolation:isolate;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;text-decoration:none}
+.csk-c:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.csk-c.csk-ph{background-color:var(--ink);background-size:cover;background-position:center}
+.csk-c.csk-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.38) 0%,rgba(var(--tint),.5) 55%,rgba(var(--tint),.92) 100%)}
+.csk-c.t-violet{--tint:106,75,255}.csk-c.t-magenta{--tint:255,45,184}.csk-c.t-orange{--tint:255,122,46}.csk-c.t-navy{--tint:0,45,93}
+.csk-c.a1{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
+.csk-c.a2{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
+.csk-c.a3{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
+.csk-chip{align-self:flex-start;display:inline-flex;align-items:center;height:36px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
+.csk-chip.dark{background:var(--ink)}
+.csk-chip img{display:block;max-height:22px;max-width:104px;width:auto;object-fit:contain}
+.csk-chip img.sq{max-height:26px}
+.csk-stat{display:block;font-size:30px;font-weight:300;letter-spacing:-.6px;line-height:1.1;margin-bottom:6px}
+.csk-stat small{display:block;font-size:13px;font-weight:400;letter-spacing:0;opacity:.9;margin-top:2px}
+.csk-c h3{font-size:17px;font-weight:500;line-height:1.35;color:#fff;letter-spacing:-.1px;text-wrap:balance}
+.csk-c .rs{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,.92);margin-top:10px}
+.csk-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.csk-logos{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.csk-logos a{display:inline-flex;align-items:center;justify-content:center;height:52px;min-width:52px;padding:8px 14px;border-radius:8px;background:var(--surface,#fff);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .2s}
+.csk-logos a:hover{box-shadow:inset 0 0 0 1px var(--primary)}
+.csk-logos a.dark{background:var(--ink);box-shadow:none}
+.csk-logos img{display:block;max-height:28px;max-width:110px;width:auto;object-fit:contain}
+.csk-logos img.sq{max-height:34px}
+@media (max-width:1080px){.csk-grid{grid-template-columns:1fr 1fr}.csk-grid>:nth-child(3){display:none}}
+@media (max-width:760px){.csk-grid{grid-template-columns:1fr}.csk-grid>:nth-child(3){display:flex}.csk-c{min-height:260px}}
+/* ===== /kit: customer-stories ===== */
 </style>
 </head>
 <body>
@@ -1583,6 +1615,16 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     </div>
   </div>
 </section>
+
+<!-- ===== kit: customer-stories (Merchant Cash Advance) ===== -->
+<section class="pad alt guides" id="customers">
+  <div class="wrap">
+    <h2 class="sec-h">Brands that grow with Merchant Cash Advance. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
+    <div class="csk-grid"><a class="csk-c csk-ph t-navy" href="../../customers/story/?c=erigo" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="csk-chip dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span><span class="csk-stat">Up to 200%<small>sales growth, online and in stores</small></span><h3>Keeping ERIGO in stock helped drive sales up to 200%, online and in stores.</h3><span class="rs">Read story <span class="chev">›</span></span></span></a><a class="csk-c csk-ph t-orange" href="../../customers/story/?c=emados" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="csk-chip dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span><span class="csk-stat">30+<small>branches opened across Indonesia</small></span><h3>EMADO'S opened 30+ branches across Indonesia, with operations kept under control.</h3><span class="rs">Read story <span class="chev">›</span></span></span></a><a class="csk-c csk-ph t-magenta" href="../../customers/story/?c=heylocal" style="background-image:url('../../assets/customers/heylocal-1.jpg')"><span class="csk-chip"><img src="../../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span><span class="csk-stat">500,000+<small>transactions in peak season</small></span><h3>HEYLOCAL stocked up for 500,000+ transactions in peak season.</h3><span class="rs">Read story <span class="chev">›</span></span></span></a></div>
+    <div class="csk-row"><div class="csk-logos" aria-label="Brands on Merchant Cash Advance"><a href="../../customers/story/?c=erigo" class="dark" aria-label="ERIGO story"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></a><a href="../../customers/story/?c=emados" class="dark" aria-label="EMADO'S story"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></a><a href="../../customers/story/?c=heylocal" class="" aria-label="HEYLOCAL story"><img src="../../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></a><a href="../../customers/story/?c=kopikalyan" class="" aria-label="Kopikalyan story"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></a><a href="../../customers/story/?c=haus" class="" aria-label="Haus! story"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></a></div><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a></div>
+  </div>
+</section>
+<!-- ===== /kit: customer-stories ===== -->
 
 <!-- ===== FAQ (single column) ===== -->
 <section class="pad guides" id="faq-sec">

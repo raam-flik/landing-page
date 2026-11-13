@@ -17,6 +17,8 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - [x] AI-agent withdrawals and the payment-partner screening line removed (AG, 12 Nov 2026).
 - [ ] Example data in the mockups (orders, amounts, banks, card digits) is example data, not FLIK figures.
 
+- [x] **Hero ribbon (AG, 13 Nov 2026):** the brand ribbon from the earlier homepage hero runs behind the risk-activity mockup, the same as Pricing, Help and In-Store Payment.
+
 ## Search results (SEO)
 
 - **Page title:** Fraud Detection: Fight Fraud and Chargebacks | FLIK
