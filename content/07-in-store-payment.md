@@ -9,7 +9,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 In-Store Payment is in the menu but its scope was never written down (see the sitemap's open points). The device and the home screen come from the real FLIK EDC (Smart POS T10), but these points need product confirmation:
 
-- [x] **Cards (AG, 12 Nov 2026):** credit cards, GPN debit cards and QRIS (Cashlez EDC); no entry modes or networks on the page. Was: "debit or credit cards" and "card reader". Chip, swipe, tap (NFC)? Which card networks?
+- [x] **Live (AG, 13 Nov 2026):** In-Store Payment is live.
+- [x] **Cards (AG, 13 Nov 2026):** credit and debit cards and QRIS (Cashlez EDC); the word "GPN" is dropped from the page. No entry modes on the page. Before (12 Nov): "credit cards and GPN debit cards". Was: "debit or credit cards" and "card reader". Chip, swipe, tap (NFC)? Which card networks?
 - [x] **Hardware (AG, 12 Nov 2026):** only the Android touchscreen and the receipt printer stay; scanner, battery and USB-C removed. Was: Android touchscreen, built-in thermal receipt printer, scanner on the back for barcodes and QR codes, rechargeable battery with USB-C charging.
 - [x] **One balance:** in-store sales land in the same FLIK balance as Checkout and Payment Link.
 - [x] **Reports (AG, 12 Nov 2026):** sales by channel and payment method; outlet reports are specced, not built, so they are "coming soon". Was: "sales by channel, outlet and payment method" in the dashboard.
@@ -24,7 +25,9 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - [x] `[[confirm: sales by outlet]]`: FAQ "more than one outlet".
 - [x] Resources: the Fraud Detection card says it is planned (FLI-47) and the Early Settlement card no longer promises same-day payouts (FLI-46).
 
-- [x] **Hero tiles (Raam, 13 Nov 2026):** no ribbon and no dots. The ways customers pay (QRIS, GoPay, Visa, Mastercard, OVO, DANA, ShopeePay) float round the EDC as logo tiles, and one at a time shows a paid badge, for example "Rp45.000 paid · QRIS". Amounts are examples.
+- [x] **Card logos (AG, 13 Nov 2026):** the Visa and Mastercard hero tiles stay. This replaces "no networks on the page" (12 Nov).
+- [x] **GPN hero tile (AG, 13 Nov 2026):** added below Visa, with the badge "Rp95.000 paid · GPN". Logo: `assets/logos/payment/gpn.png`, from Wikimedia Commons ("Gerbang Pembayaran Nasional logo.svg", public domain, trademarked).
+- [x] **Hero tiles (Raam, 13 Nov 2026):** no ribbon and no dots. The ways customers pay (QRIS, GoPay, Visa, Mastercard, GPN, OVO, DANA, ShopeePay) float round the EDC as logo tiles, and one at a time shows a paid badge, for example "Rp45.000 paid · QRIS". Amounts are examples.
 
 ## Search results (SEO)
 
@@ -37,7 +40,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Small text above headline:** FLIK In-Store Payment
 - **Headline (H1):** Get paid at the counter.
   - **Grey part:** QRIS and cards, one device.
-- **Intro text:** Turning every counter into a checkout. Customers scan or use their card, the receipt prints on the spot, and the sale sits next to your online orders. You serve the customer. Payments are processed by licensed partners.
+- **Intro text:** The receipt prints on the spot, and every sale sits next to your online orders.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
 - **List item:** QRIS and debit or credit cards
@@ -51,7 +54,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 
 - Welcome, Reza (admin)
 - Today's transactions — Successful 90 — Total sales Rp12.000.000
-- QRIS : 2 — Card : 88 — QRIS : 10.000.000 — Card : 2.000.000
+- QRIS : 64 — Card : 26 — QRIS : 8.420.000 — Card : 3.580.000
 - Print settlement receipt
 - Latest transactions — Rp90.000 — 2 min ago · Card — 01092026-QFCAZZ-1
 - Just now · QRIS
@@ -59,7 +62,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - Home — New transaction — Transactions
 
 ## 2. A sale in four steps
-<!-- html: A sale at the counter: the step list drives a receipt that prints (example data) #counter -->
+<!-- html: A sale at the counter: the step list drives a device screen (steps 1 and 2), then a receipt that prints and the balance badge (example data) #counter -->
 
 - **Section heading:** A sale in four steps.
   - **Grey part:** From the amount to the receipt in the customer's hand, on one device.
@@ -72,6 +75,12 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Heading:** It lands in your balance
 - **Text:** Next to your online orders, in the same dashboard.
 
+*Example text on the device screen for steps 1 and 2 (AG, 13 Nov 2026; only change if needed):*
+
+- Step 1: New transaction — Example — Amount — Rp350.000 (typed digit by digit) — keypad — Continue
+- Step 2, QRIS: Scan to pay — Example — QRIS logo and an example QR pattern (not a real code) — Rp350.000 — Waiting for payment
+- Step 2, card (every second loop): Pay by card — Example — card icon — Rp350.000 — Waiting for card
+
 *Example text on the receipt (only change if needed):*
 
 - Example receipt
@@ -83,14 +92,9 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - Thank you for shopping
 - +Rp350.000 — In your FLIK balance
 
-## 3. Every way they pay
-<!-- html: Every way they pay: three tiles light up in turn #ways -->
+## 3. Every way they pay (removed)
 
-- **Section heading:** Every way they pay.
-  - **Grey part:** QRIS and debit or credit cards on one device, with a receipt for every sale.
-- **Tile:** QRIS — Any QRIS app can pay
-- **Tile:** Debit and credit cards — Credit cards and GPN debit cards, on the device
-- **Tile:** Receipt — Printed every time
+- Dropped by AG, 13 Nov 2026: it repeated the hero, step 2 and the FAQ. Section numbers below are kept as they were.
 
 ## 4. One balance
 <!-- html: One balance: online and in-store payments merge into one FLIK balance #one -->
@@ -125,7 +129,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Section heading:** Built for the counter.
 - **Heading:** Take payments
 - **List item:** QRIS shown on the screen
-- **List item:** Credit cards and GPN debit cards
+- **List item:** Credit and debit cards
 - **Heading:** Print
 - **List item:** Built-in thermal receipt printer
 - **List item:** Settlement receipt at the end of the day
@@ -140,7 +144,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 
 - **Section heading:** Brands that grow with In-Store Payment.
   - **Grey part:** How Indonesian brands use it, in their own stories.
-- **Story cards (carousel, every brand on this product, in this order):** EMADO'S, Kopikalyan, Haus!, Aneka Family, Donat Bahagia. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". Real stories go first: EMADO'S (30+ branches), Kopikalyan, Haus!.
+- **Story cards (carousel, every brand on this product, in this order):** EMADO'S, Kopikalyan, Haus!, Aneka Family, Donat Bahagia. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". The real story goes first: EMADO'S (30+ branches). Kopikalyan, Haus!, Aneka Family and Donat Bahagia are example stories.
 - **Link:** See all customer stories
 - Captions are two lines at most, shortened from each story's headline (the story page keeps the full headline).
 - Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
@@ -152,7 +156,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Question:** What is In-Store Payment?
   - **Answer:** A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.
 - **Question:** Which payments can I accept?
-  - **Answer:** QRIS from any bank or e-wallet app, credit cards, and GPN debit cards.
+  - **Answer:** QRIS from any bank or e-wallet app, and credit and debit cards.
 - **Question:** Does it print receipts?
   - **Answer:** Yes. The device has a built-in receipt printer for every sale and for the settlement receipt at the end of the day.
 - **Question:** Where does the money go?
