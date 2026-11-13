@@ -1,75 +1,135 @@
 # Payment Link
 
 - **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/payment/payment-link/
-- **Page file:** `payment/payment-link/index.html`, built from the shared page kit (13 Nov 2026).
+- **Page file:** `payment/payment-link/index.html`. Rebuilt 13 Nov 2026 in the structure of stripe.com/payments/payment-links, with mockups of the real dashboard editor, link list, payment page and confirmation page.
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 
 ## Things to confirm on this page
 
-- [ ] Facts come from the dashboard prototype (Payment links): products or customer chooses (with a minimum), payment limit, custom button text, after-payment page or redirect, receipt, deactivate. Confirm they are live.
-- [ ] Link address (the prototype uses pay.flik.id/l/…). Not shown on the page until confirmed.
-- [ ] Link expiry and reminders are not built (brief in product/Dashboard/Payment Link). Not claimed.
-- [ ] COD is not offered on payment links. Confirm.
+- [ ] Structure follows stripe.com/payments/payment-links (13 Nov 2026), with FLIK facts only. Left out on purpose because FLIK Payment Link does not offer them: subscriptions, pay-what-you-want amounts, QR codes and buy buttons, a payment links API, custom domains, post-payment invoices, other currencies, and customer quotes (none approved).
+- [ ] Every feature on the page comes from the dashboard prototype (Payment links, 13 Nov 2026): products from the catalog; shoppers can change the quantity; payment methods per link; custom pay button text; one custom field; email always asked for the receipt; after payment a confirmation page with a message and receipt, or a redirect to your website; Active and Inactive links; payments and total collected per link; payments in Transactions and shoppers saved in Customers; live preview on desktop and phone; Pay with FLIK. Confirm each one is live.
+- [ ] Payment methods: QRIS, e-wallets, bank virtual accounts and cards. No COD on links. Right?
+- [ ] "Customer chooses the amount" was removed from the editor on 12 Nov, so the page doesn't claim it. Link expiry and reminders are not built (see link-expiry-and-reminders-brief.md), so they are not claimed either.
+- [ ] The link address (pay.flik.id/l/…) is not shown anywhere until the domain is confirmed.
+- [ ] Mockups are example data (Aruna Studio is a sample store). Story cards are example stories except EMADO'S.
 
 ## Search results (SEO)
 
-- **Page title:** Payment Link: Get Paid from WhatsApp and Social Media | FLIK
-- **Description:** Create a payment link in the FLIK dashboard and share it in chat. Customers pay by QRIS, e-wallet, virtual account or card, and the money lands in your FLIK balance.
+- **Page title:** Payment Link: Sell Anywhere With a Link | FLIK
+- **Description:** Create a payment link in the FLIK dashboard and share it in a chat, your bio or an email. Customers pay by QRIS, e-wallet, virtual account or card on a FLIK payment page. No website or code needed.
 
-## 1. Get paid from a chat.
+## 1. Create a link. Sell anywhere.
 
-- **Heading:** Get paid from a chat.
-  - **Grey part:** One link, no website needed.
-- **Text:** Create a payment link in the FLIK dashboard and share it on WhatsApp, Instagram or anywhere you talk to customers. They pay on a FLIK page with QRIS, an e-wallet, a virtual account or a card.
-- **List item:** Products or an amount the customer chooses
-- **List item:** Your own button text
-- **List item:** Turn it off any time
+- **Small text above heading:** FLIK Payment Link
+- **Heading:** Create a link. Sell anywhere.
+  - **Grey part:** No website needed.
+- **Text:** Turn your products into a FLIK payment page in a few clicks, with no code. Share the link in a chat, your bio or an email, and customers pay by QRIS, e-wallet, virtual account or card.
 
-## 2. Create, share, get paid.
+## 2. Take payments in minutes, without a line of code.
 
-- **Heading:** Create, share, get paid.
-  - **Grey part:** A link is ready in a minute.
-- **Step:** Choose what it sells — Products from your catalogue, or an amount the customer chooses.
-- **Step:** Choose how they pay — The payment methods you accept, and what to ask for.
-- **Step:** Share the link — In chat, in your bio, or anywhere online.
-- **Step:** Get paid — Each payment lands in your FLIK balance.
+- **Small text above heading:** How it works
+- **Heading:** Take payments in minutes, without a line of code.
+  - **Grey part:** Everything happens in the FLIK dashboard.
+- **Step:** 01 — Pick your products — From your product catalog, or create a new one. Prices fill in.
+- **Step:** 02 — Set up the page — Choose the payment methods, the button text and what shoppers see after paying.
+- **Step:** 03 — Share the link — Paste it anywhere. One link takes many payments.
+- **Step:** 04 — Get paid — Each payment shows in the dashboard and lands in your FLIK balance.
+- **Feature:** Sell from your catalog — Add the products you've already saved. Shoppers can change the quantity.
+- **Feature:** Pick the payment methods — QRIS, e-wallets, bank virtual accounts and cards, chosen per link.
+- **Feature:** Ask for what you need — Shoppers always give an email for the receipt. Add a custom field for more, such as a size.
+- **Feature:** Your words on the button — Pre-order now, Book my spot or Donate: whatever fits what you sell.
+- **Feature:** Choose the ending — A confirmation page with your message and a receipt, or your own website.
 
-## 3. Payment Link at a glance.
+## 3. One link, many payments.
 
-- **Heading:** Payment Link at a glance.
+- **Small text above heading:** Share anywhere
+- **Heading:** One link, many payments.
+  - **Grey part:** Use the same link in every chat, post and email, and keep track of what it collects.
+- **Feature:** Paste it where your customers are — WhatsApp, Instagram and TikTok bios, emails or messages. No account needed to pay.
+- **Feature:** Use it again and again — One link takes many payments. Turn it off when you stop selling.
+- **Feature:** See what each link collects — Payments and the total per link. Every payment also shows in Transactions, and the shopper is saved in Customers.
 
-- **Card:** Invoice — Send a formal invoice with a due date.
-- **Card:** Checkout — A full checkout for your online store.
-- **Card:** Payment fees — Rates per method, with PPN shown on every fee.
+## 4. A payment page they already know.
 
-## 5. Questions, answered.
+- **Small text above heading:** Your customer's side
+- **Heading:** A payment page they already know.
+  - **Grey part:** The FLIK checkout, opened from your link.
+- **Feature:** The methods Indonesia uses — QRIS, e-wallets, bank virtual accounts and cards.
+- **Feature:** Pay with FLIK in a few taps — FLIK shoppers sign in with a code and pay with their last method.
+- **Feature:** An email for the receipt — New shoppers can save their details for next time.
+- **Feature:** The quantity is theirs — When you allow it, shoppers change the quantity on the page.
+- **Feature:** Your button, your words — The button says what you sell, like Pre-order now.
+
+## 5. From link to bank account.
+
+- **Small text above heading:** Your money
+- **Heading:** From link to bank account.
+  - **Grey part:** The same FLIK balance as every other sale.
+- **Step:** 01 — The customer pays — By QRIS, e-wallet, virtual account or card.
+- **Step:** 02 — In your balance — Once FLIK has received the funds.
+- **Step:** 03 — Need it sooner? — Settle early for 0.2% (non-card) or 0.3% (card) + PPN.
+- **Step:** 04 — Withdraw — To your bank from Rp100.000, for Rp4.000 + PPN.
+
+## 6. What's included.
+
+- **Heading:** What's included.
+  - **Grey part:** Built into every FLIK account.
+
+## 7. Pay only when you're paid.
+
+- **Small text above heading:** Pricing
+- **Heading:** Pay only when you're paid.
+  - **Grey part:** No setup fee. Each payment costs the rate of the method your customer used, with PPN shown on every fee.
+- **Item:** Standard pricing — The rate of each payment method, with the PPN shown as its own line. Debit cards and Early Settlement are on the Pricing page.
+- **Item:** Selling at volume? — Talk to the FLIK team about rates for your business.
+- **Rate:** QRIS — 0.7% — PPN included. 0% up to Rp100.000.
+- **Rate:** E-wallets — From 1.5% — + PPN
+- **Rate:** Bank virtual accounts — Rp4.000 — + PPN
+- **Rate:** Credit cards — 2.8% + Rp2.000 — + PPN
+
+## 8. Brands selling with FLIK links.
+
+- **Heading:** Brands selling with FLIK links.
+  - **Grey part:** How Indonesian brands use FLIK, in their own stories.
+
+## 9. (no heading)
+
+- **Card:** Checkout — A full checkout for your Shopify or WooCommerce store.
+- **Card:** Invoice — Send an invoice with a due date and a PDF.
+- **Card:** Merchant API — Build your own checkout on the FLIK API.
+
+## 10. Questions, answered.
 
 - **Heading:** Questions, answered.
+- **Text:** Can't find what you need? Talk to the FLIK team ›
 
-## 6. Share your first payment link.
+## 11. Create your first payment link today.
 
-- **Heading:** Share your first payment link.
-- **Text:** Create your account, verify your business, and start selling from your chats.
+- **Heading:** Create your first payment link today.
+- **Text:** Create your account, verify your business, and share a link from the FLIK dashboard.
 
+## What's included (columns)
 
-## At a glance
-
-- **Column:** Make it yours — Products, or an amount the customer chooses / A minimum amount when the customer chooses / Your button text, like Pre-order now or Book my spot / Limit how many payments it takes
-- **Column:** Ask for what you need — Name, phone number and shipping address / One question of your own / A receipt emailed to the shopper / A confirmation page, or your website after payment
-- **Column:** Get paid — QRIS, e-wallets, virtual accounts and cards / Every payment in the dashboard / Paid into your FLIK balance / Deactivate the link any time
+- **Column:** Create and share — Links from the FLIK dashboard / Products from your catalog / Shoppers can change the quantity / Your own pay button text / A live preview on desktop and phone / One link for many payments
+- **Column:** Get paid — The FLIK checkout on any phone / QRIS, e-wallets, virtual accounts and cards / Pay with FLIK for returning customers / A receipt by email / Paid into your FLIK balance
+- **Column:** Keep track — Active and Inactive links / Payments and total collected per link / Every payment in Transactions / Shoppers saved in Customers / Early Settlement when you need cash
 
 ## FAQ
 
-- **Question:** What can I sell with a payment link?
-  - **Answer:** Products from your catalogue at a fixed price, or an amount the customer chooses, such as a donation or a deposit, with a minimum if you want one.
-- **Question:** Where can I share it?
-  - **Answer:** Anywhere: WhatsApp, Instagram, your bio, email or a QR code you print.
-- **Question:** Which payment methods can customers use?
-  - **Answer:** QRIS, e-wallets, bank virtual accounts and cards. You choose which ones the link accepts.
-- **Question:** Can a link take more than one payment?
-  - **Answer:** Yes. A link can take many payments, or you can limit how many it takes.
-- **Question:** What do customers see after paying?
-  - **Answer:** A confirmation page with your message, or your own website. They also get a receipt by email.
-- **Question:** Can I stop a link?
-  - **Answer:** Yes. Deactivate it in the dashboard. Shoppers who open it see that it no longer takes payments.
+- **Question:** Do I need a website?
+  - **Answer:** No. Create the link in the FLIK dashboard and share it in a chat, your bio or an email. It opens a FLIK payment page.
+- **Question:** How do customers pay?
+  - **Answer:** On a FLIK payment page, by QRIS, an e-wallet, a bank virtual account or a card. Customers with a FLIK account can pay with FLIK in a few taps.
+- **Question:** Can one link be paid more than once?
+  - **Answer:** Yes. One link takes many payments, so you can share it with every customer. Turn it off when you stop selling.
+- **Question:** What do customers fill in?
+  - **Answer:** Their email, for the receipt. You can add a custom field when you need more, such as a size or a note.
+- **Question:** What happens after they pay?
+  - **Answer:** You choose: a confirmation page with your message and a receipt, or a page on your own website.
+- **Question:** Payment link or invoice?
+  - **Answer:** Use a payment link to sell the same products to many customers. Use an invoice to bill one customer, with a due date and a PDF.
+- **Question:** Where does the money go?
+  - **Answer:** Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner.
+- **Question:** What does it cost?
+  - **Answer:** There is no setup fee. Each payment costs the rate of the payment method your customer used, shown on the Pricing page with PPN on every fee.

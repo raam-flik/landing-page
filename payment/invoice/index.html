@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Invoice: Send Invoices and Get Paid Online | FLIK</title>
-<meta name="description" content="Create an invoice in the FLIK dashboard and send it by email. Customers pay online by QRIS, e-wallet, virtual account or card, and the money lands in your FLIK balance.">
+<title>Invoice: Send Invoices and Get Paid Faster | FLIK</title>
+<meta name="description" content="Create invoices in the FLIK dashboard and send them by email with a link to pay. Customers pay by QRIS, e-wallet, virtual account or card, invoices mark themselves paid, and WhatsApp reminders are one tap away.">
 <link rel="canonical" href="https://flik.co.id/payment/invoice">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/payment/invoice">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/payment/invoice">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Invoice: Send Invoices and Get Paid Online | FLIK", "description": "Create an invoice in the FLIK dashboard and send it by email. Customers pay online by QRIS, e-wallet, virtual account or card, and the money lands in your FLIK balance.", "url": "https://flik.co.id/payment/invoice"}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Invoice: Send Invoices and Get Paid Faster | FLIK", "description": "Create invoices in the FLIK dashboard and send them by email with a link to pay. Customers pay by QRIS, e-wallet, virtual account or card, invoices mark themselves paid, and WhatsApp reminders are one tap away.", "url": "https://flik.co.id/payment/invoice"}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -807,6 +807,8 @@ html{scroll-padding-top:88px}
 
 /* Hero: text left, phone right, soft mesh behind the phone (clipped at the guide lines) */
 .ch{position:relative;overflow:hidden;margin-top:-69px;padding-top:150px}
+/* hero: same visible space above the text (below the menu) as below it (above the logos) */
+@media (min-width:1081px){.ch{padding-top:122px}section.ch .logos-band{margin-top:52px}}
 .ch::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(106,75,255,.13) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);clip-path:inset(0 max(16px,calc(50% - 633px)))}
 .ch.guides::before,.ch.guides::after{z-index:3}
 .ch-in{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
@@ -1328,6 +1330,170 @@ main section#customers{padding:112px 0}
 @media (max-width:1080px){.pg-cards{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.pg-cards{grid-template-columns:1fr}}
 /* ===== /kit: page ===== */
+
+/* ===== Payment page (Stripe-style overview, FLIK tokens) ===== */
+.py-hero .ch-stage{height:640px}
+.py-stack{position:relative;z-index:1;width:min(540px,100%);height:620px}
+.py-card{position:absolute;background:var(--surface,#fff);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
+.py-card .co-bar{position:relative}.py-card .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.py-c1{left:0;top:70px;width:330px;z-index:2}
+.py-c2{right:0;top:0;width:220px;z-index:3}
+.py-c3{right:30px;bottom:0;width:260px;z-index:4}
+.py-b{padding:16px;display:grid;gap:9px}
+.py-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px}
+.py-row.on{box-shadow:0 0 0 2px var(--primary);border-color:transparent}
+.py-row img{height:26px;width:auto}
+.py-btn{height:38px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500}
+.py-qrw{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--line-soft);border-radius:10px}
+.py-qrw img{height:24px;width:auto}.py-qrs{width:118px;height:118px;display:block}
+.py-qrw span{font-size:11px;color:var(--muted);text-align:center}
+.py-amt{font-size:22px;font-weight:300;letter-spacing:-.4px;color:var(--ink)}
+.py-ex{font-size:11px;color:var(--muted);text-align:right}
+.py-ben{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:8px}
+.py-ben h3{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500;margin-bottom:8px}
+.py-ben p{font-size:14.5px;color:var(--body);line-height:1.55}
+.py-sub{position:sticky;top:68px;z-index:20;background:var(--surface,#fff);border-bottom:1px solid var(--line)}
+.py-sub .wrap{display:flex;gap:4px 20px;align-items:center;overflow-x:auto;scrollbar-width:none;height:52px}
+.py-sub a{white-space:nowrap;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:15px 0;border-bottom:2px solid transparent}
+.py-sub a:hover,.py-sub a.on{color:var(--primary);border-bottom-color:var(--primary)}
+.py-sub .btn{margin-left:auto;height:34px}
+.py-eye{font-size:14px;font-weight:500;color:var(--primary);margin-bottom:12px}
+.py-stat{display:flex;gap:16px;align-items:baseline;margin-top:32px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.py-stat b{font-size:48px;font-weight:300;letter-spacing:-1px;color:var(--ink);line-height:1}
+.py-stat span{color:var(--body);max-width:320px}
+.py-ways{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3.2);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:40px;padding:4px}
+.py-ways::-webkit-scrollbar{display:none}
+.py-way{scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-way-v{height:300px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px}
+.py-way-v .py-card{position:relative;width:100%;max-width:280px}
+.py-way-t{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.py-way-t h3{font-size:18px;font-weight:500}
+.py-way-t p{font-size:14.5px;color:var(--body);line-height:1.5}
+.py-way-t ul{list-style:none;display:grid;gap:6px;margin:4px 0 8px}
+.py-way-t li{display:flex;gap:8px;font-size:14px;color:var(--body)}
+.py-way-t li svg{color:var(--primary);flex:none;margin-top:3px}
+.py-way-t .link{margin-top:auto}
+.py-nav{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.py-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.py-split h3{font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px}
+.py-split p{color:var(--body);line-height:1.6}
+.py-pm{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.py-pm>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;height:96px;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface,#fff);font-size:12.5px;color:var(--muted);text-align:center;padding:8px}
+.py-pm img{height:34px;width:auto}
+.py-pm .ic{color:var(--primary)}
+.py-loc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.py-loc>div{border-radius:12px;padding:24px;background:var(--surface,#fff);border:1px solid var(--line-soft)}
+.py-loc b{display:block;font-size:30px;font-weight:300;letter-spacing:-.6px;color:var(--ink);margin-bottom:6px}
+.py-loc span{color:var(--body);font-size:14.5px;line-height:1.5}
+.py-prot{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.py-rate{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border:1px solid var(--line);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-rate>div{padding:24px;border-right:1px solid var(--line-soft)}.py-rate>div:last-child{border-right:0}
+.py-rate small{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.py-rate b{display:block;font-size:26px;font-weight:300;letter-spacing:-.5px;color:var(--ink)}
+.py-rate span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:40px}
+.py-price>div{border-radius:12px;padding:28px;border:1px solid var(--line-soft);background:var(--surface,#fff)}
+.py-price h3{font-size:20px;font-weight:500;margin-bottom:8px}
+.py-price p{color:var(--body);font-size:14.5px;line-height:1.55;margin-bottom:16px}
+.py-dev{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.py-dev .ipanel{background:var(--dark-2,#0B3A6E);border-radius:12px;padding:22px;min-width:0}
+.py-dev ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin:20px 0 24px}
+.py-dev li{display:flex;gap:8px;font-size:14.5px;color:var(--body)}.py-dev li svg{color:var(--primary);flex:none;margin-top:3px}
+@media (max-width:1080px){.py-ben{grid-template-columns:1fr 1fr}.py-ways{grid-auto-columns:calc((100% - 16px)/1.6)}.py-split,.py-dev{grid-template-columns:1fr}.py-rate{grid-template-columns:1fr 1fr}.py-rate>div:nth-child(2){border-right:0}.py-rate>div:nth-child(n+3){border-top:1px solid var(--line-soft)}}
+@media (max-width:760px){.py-hero .ch-stage{height:560px}.py-stack{height:540px}.py-c1{width:260px;top:30px}.py-c2{width:180px}.py-c3{width:220px;right:0}.py-ben,.py-loc,.py-prot,.py-price{grid-template-columns:1fr}.py-ways{grid-auto-columns:85%}.py-pm{grid-template-columns:repeat(3,1fr)}.py-sub{top:60px}.py-sub .btn{display:none}.py-dev ul{grid-template-columns:1fr}}
+#instore .py-card{color:var(--body)}#instore .py-card b,#instore .py-row>span:first-child{color:var(--ink)}
+#instore .txt{color:var(--on-dark-muted,#AAB4CC)}
+#instore .hero-cta{justify-content:flex-start;align-items:flex-start}#instore .hero-cta .btn{margin-left:0;margin-right:auto}#instore .hero-cta{margin-left:0;margin-right:0;max-width:none;width:auto}
+@media (max-width:1080px){#instore .py-card{margin-left:0!important}}
+/* ===== /Payment page ===== */
+
+/* ===== Invoice page (stripe.com/invoicing structure, FLIK invoice from the dashboard) ===== */
+.iv-hero .ch-stage{height:640px}
+.iv-stack{position:relative;z-index:1;width:min(540px,100%);height:620px}
+.iv-c1{left:0;top:40px;width:270px;z-index:2}
+.iv-c2{right:0;top:0;width:330px;z-index:3}
+.iv-c3{left:20px;bottom:30px;width:250px;z-index:4}
+.iv-kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:12.5px}
+.iv-kv dt{color:var(--muted)}.iv-kv dd{text-align:right;color:var(--ink)}
+.iv-amt{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.iv-amt b{display:block;font-size:24px;font-weight:600;letter-spacing:-.4px;color:var(--ink);line-height:1.1}
+.iv-amt small{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.iv-chip{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 9px;border:1px solid var(--line);border-radius:6px;font-size:11.5px;color:var(--ink);white-space:nowrap}
+.iv-chip svg{width:13px;height:13px;color:var(--muted)}
+.iv-dtl{text-align:center;font-size:12px;color:var(--ink);padding-top:9px;border-top:1px solid var(--line-soft)}
+.iv-flik{height:38px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:500}
+.iv-flik svg{flex:none}
+.iv-or{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--faint)}.iv-or:before,.iv-or:after{content:"";flex:1;height:1px;background:var(--line-soft)}
+.iv-in{height:34px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;padding:0 10px;font-size:12px;color:var(--faint)}
+.iv-lab{font-size:11.5px;font-weight:500;color:var(--ink);margin-bottom:-4px}
+.iv-btn-o{height:34px;border-radius:8px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:500;color:var(--ink)}
+.iv-mail h4{font-size:13px;font-weight:500;color:var(--ink)}
+.iv-mail p{font-size:12px;color:var(--muted);line-height:1.45}
+.iv-att{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line-soft);border-radius:8px;font-size:12px;color:var(--ink)}
+.iv-att span{margin-left:auto;color:var(--faint);font-size:11px}
+.iv-ev{display:grid;gap:0;font-size:12px}
+.iv-ev>div{display:flex;gap:10px;align-items:flex-start;padding:5px 0;color:var(--body)}
+.iv-ev i{width:8px;height:8px;border-radius:50%;background:var(--line);margin-top:4px;flex:none}
+.iv-ev i.ok{background:var(--ok)}
+.iv-ev small{margin-left:auto;color:var(--faint);white-space:nowrap}
+/* review dialog (dashboard: Send this invoice) */
+.iv-vis .py-card.iv-rev{width:100%;max-width:360px}
+.iv-chk{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink)}
+.iv-chk i{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--field-line);display:flex;align-items:center;justify-content:center;flex:none}
+.iv-chk.on i{background:var(--primary);border-color:var(--primary);color:#fff}
+.iv-acts{display:flex;gap:8px;justify-content:flex-end;margin-top:4px}.iv-acts>span{padding:0 14px;height:34px;font-size:12.5px}
+/* invoice list (dashboard) */
+.iv-tw{overflow-x:auto}
+.py-card .co-bar span{white-space:nowrap}
+.iv-list{position:relative;width:100%;max-width:none;font-size:13px}
+.iv-tabs{display:flex;gap:16px;padding:0 16px;border-bottom:1px solid var(--line-soft);font-size:12.5px;color:var(--muted);overflow:hidden}
+.iv-tabs span{padding:10px 0;white-space:nowrap}.iv-tabs span.on{color:var(--primary);box-shadow:inset 0 -2px 0 var(--primary)}
+.iv-tbl{width:100%;border-collapse:collapse}
+.iv-tbl th{font-size:11.5px;font-weight:500;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-soft)}
+.iv-tbl td{padding:11px 10px;border-bottom:1px solid var(--line-soft);color:var(--body);white-space:nowrap}
+.iv-tbl tr:last-child td{border-bottom:0}
+.iv-tbl :is(th,td):first-child{padding-left:16px}.iv-tbl :is(th,td):last-child{padding-right:16px;text-align:right}
+.iv-tbl td b{font-weight:500;color:var(--ink)}
+.iv-tbl .pill{margin-left:0}
+.iv-rem{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:6px;background:var(--primary);color:#fff;font-size:11.5px;font-weight:500}
+.iv-feat{display:grid;gap:28px}
+.iv-feat h3{font-size:18px;font-weight:500;margin-bottom:6px;letter-spacing:-.2px}
+.iv-feat p{color:var(--body);line-height:1.55;font-size:15px}
+.iv-split{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.iv-split.rev{grid-template-columns:1fr 1.15fr}
+.iv-vis{background:var(--bg-alt);border-radius:16px;padding:32px;display:flex;justify-content:center;align-items:center;min-width:0;overflow:hidden}
+.alt .iv-vis{background:var(--surface,#fff);border:1px solid var(--line-soft)}
+.iv-vis .py-card{position:relative}
+/* invoice PDF */
+.iv-pdf{width:100%;max-width:400px;background:#fff;border-radius:10px;box-shadow:var(--sh-lg);padding:26px;font-size:12px;color:var(--body)}
+.iv-pdf-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.iv-pdf-h b{font-size:20px;font-weight:600;color:var(--ink)}
+.iv-pdf-h span{font-weight:600;color:var(--ink);font-size:13px}
+.iv-pdf .iv-kv{grid-template-columns:auto 1fr;margin-bottom:16px}.iv-pdf .iv-kv dd{text-align:left}
+.iv-pdf-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;line-height:1.5}
+.iv-pdf-2 b{color:var(--ink);font-weight:500}
+.iv-pdf table{width:100%;border-collapse:collapse;margin:6px 0 10px}
+.iv-pdf th{font-weight:500;color:var(--muted);text-align:left;padding:6px 0;border-bottom:1px solid var(--line)}
+.iv-pdf td{padding:7px 0;border-bottom:1px solid var(--line-soft);color:var(--ink)}
+.iv-pdf th:last-child,.iv-pdf td:last-child{text-align:right}
+.iv-pdf-t{display:flex;justify-content:space-between;font-weight:600;color:var(--ink);font-size:13px;padding-top:4px}
+.iv-pdf-m{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);color:var(--muted);line-height:1.5}
+.iv-pdf-pay{display:inline-flex;margin-top:12px;height:30px;align-items:center;padding:0 12px;border-radius:6px;background:var(--ink);color:#fff;font-weight:500}
+@media (max-width:1080px){.iv-split,.iv-split.rev{grid-template-columns:1fr}.iv-split.rev .iv-vis{order:2}}
+@media (max-width:760px){.iv-hero .ch-stage{height:700px}.iv-stack{height:680px}.iv-c1{width:220px;top:20px}.iv-c2{width:270px}.iv-c3{width:220px;left:0;bottom:0}
+ .iv-vis{padding:16px}.iv-tbl .hide-s{display:none}.iv-pdf{padding:18px}.iv-pdf-2{grid-template-columns:1fr}}
+/* ===== /Invoice page ===== */
+
+/* fx kit on product pages: product windows sit in the glow panel; table cells and rows can be highlighted */
+.fx-g .py-card{position:relative;margin:0 auto;width:100%;max-width:420px;z-index:1}
+.fx-g .py-card.iv-list{max-width:none}
+.fx-g .iv-pdf{position:relative;margin:0 auto;z-index:1}
+.fx-g .py-card.fx-win{overflow:hidden}
+.fx-win.hl td.fx-el.on{box-shadow:none;border-radius:0}
+.fx-win.hl td.fx-el.on{background:var(--primary-soft)}
+.fx-list li div span{line-height:1.45}
+.pl-thumb svg{width:100%;height:100%;display:block}
+.iv-grp{display:grid;gap:9px}.fx-el.iv-grp{padding:4px;margin:-4px}.fx-g .iv-pdf{display:grid;gap:12px}.iv-pdf th:last-child,.iv-pdf td:last-child{text-align:left}.fx-el .iv-pdf-pay{justify-self:start}
 </style>
 </head>
 <body>
@@ -1351,40 +1517,109 @@ main section#customers{padding:112px 0}
 
 
 <main id="top" tabindex="-1">
-<section class="ch guides">
+<!-- ===== Hero (stripe.com/invoicing: text left, the invoice your customer gets right) ===== -->
+<section class="ch guides iv-hero">
   <div class="wrap ch-in">
     <div class="ch-t">
       <p class="eyebrow">FLIK Invoice</p>
-      <h1 class="ch-h">Send an invoice, get paid online. <span class="soft">No bank transfer screenshots.</span></h1>
-      <p class="lead">Create an invoice in the FLIK dashboard and send it by email. Your customer pays on a FLIK payment page with QRIS, an e-wallet, a virtual account or a card, and you see it paid straight away.</p>
-      <div class="hero-cta"><button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button><a href="#how" class="btn btn-secondary">See how it works <span class="chev">›</span></a></div>
-      <ul class="ch-facts"><li><span data-ic="check-s"></span>Customers and items saved for next time</li><li><span data-ic="check-s"></span>Due date and reminders</li><li><span data-ic="check-s"></span>Paid into your FLIK balance</li></ul>
+      <h1 class="ch-h">Get paid faster with invoices. <span class="soft">No transfer proof to check.</span></h1>
+      <p class="lead">Create an invoice in the FLIK dashboard in minutes, with no code. Your customer pays online by QRIS, e-wallet, virtual account or card, the invoice marks itself paid, and the money lands in your FLIK balance.</p>
+      <div class="hero-cta"><button class="btn btn-primary live" data-act="start">Start sending invoices <span class="chev">›</span></button><button class="btn btn-secondary" data-act="sales" data-interest="Invoice">Contact sales <span class="chev">›</span></button></div>
+      <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
     </div>
-    <div class="ch-stage">
-      <div class="ch-glow" aria-hidden="true"></div>
-      <div class="fx-win pgw" role="img" aria-label="Example: an invoice in the FLIK dashboard, sent by email and waiting for payment"><div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/invoices</span></div><div class="pgw-b"><div class="pgw-h">INV-0192<span class="pill pu">Sent</span></div><span class="pgw-sub">To Rina Putri · due in 14 days</span><div class="pgw-r"><span><b>Linen shirt, Sand</b><small>3 × Rp349.000</small></span><span class="num">Rp1.047.000</span></div><div class="pgw-r"><span><b>Canvas tote bag</b><small>2 × Rp189.000</small></span><span class="num">Rp378.000</span></div><div class="pgw-r"><span><b>Total</b><small>QRIS, e-wallet, VA or card</small></span><b class="num">Rp1.425.000</b></div><div class="pgw-logos"><img src="../../assets/logos/payment/qris.png" alt=""><img src="../../assets/logos/payment/gopay.png" alt=""><img src="../../assets/logos/payment/bca.png" alt=""><img src="../../assets/logos/payment/visa.png" alt=""></div><div class="pgw-btn">Send reminder</div><span class="pgw-ex">Example</span></div></div>
-    </div>
+    <div class="ch-stage"><div class="ch-glow" aria-hidden="true"></div><div class="iv-stack" role="img" aria-label="Example: an invoice email, the FLIK invoice payment page, and the invoice marked paid"><div class="py-card iv-c1"><div class="co-bar"><i></i><i></i><i></i><span>Email</span></div><div class="py-b"><div class="iv-mail"><p>From: Aruna Studio</p><h4>Invoice from Aruna Studio</h4></div><div class="iv-amt"><div><b class="num" style="font-size:20px">Rp587.000</b><small>Due 27 Nov 2026</small></div></div><div class="py-btn">Pay this invoice</div><div class="iv-att"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>INV-2026-0049.pdf<span>PDF</span></div></div></div><div class="py-card iv-c2"><div class="co-bar"><i></i><i></i><i></i><span>Invoice INV-2026-0049</span></div><div class="py-b"><div class="iv-amt"><div><b class="num">Rp587.000</b><small>Due 27 Nov 2026</small></div><span class="iv-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>Invoice PDF</span></div><dl class="iv-kv"><dt>To</dt><dd>Rina Putri</dd><dt>From</dt><dd>Aruna Studio</dd><dt>Invoice</dt><dd>INV-2026-0049</dd></dl><div class="iv-dtl">View invoice details</div><div class="iv-flik"><svg width="15" height="15" aria-hidden="true" focusable="false" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg>Pay with FLIK</div><div class="iv-or">Or</div><div class="iv-lab">Email</div><div class="iv-in">rina@example.com</div><div class="py-row on"><span>QRIS</span><img class="" src="../../assets/logos/payment/qris.png" alt="QRIS"></div><div class="py-btn">Pay now</div></div></div><div class="py-card iv-c3"><div class="co-bar"><i></i><i></i><i></i><span>Activity</span></div><div class="py-b"><div class="iv-ev"><div><i></i>Sent to Rina by email<small>09:12</small></div><div><i></i>Viewed by the customer<small>09:40</small></div><div><i class="ok"></i><b style="font-weight:500;color:var(--ink)">Paid with QRIS</b><small>09:42</small></div></div><div class="py-row"><span>Rp587.000</span><span class="pill ok">Paid</span></div></div></div></div></div>
+  </div>
+  <div class="logos-band"><div class="logos-clip"><div class="logos-track" id="logos"></div></div></div>
+</section>
+
+<!-- ===== Four reasons ===== -->
+<section class="pad-s guides">
+  <div class="wrap py-ben">
+    <div><h3><span class="fx-ic" data-ic="bolt"></span>Get paid sooner</h3><p>Every invoice has a payment link and a due date, and a reminder is one tap away.</p></div>
+    <div><h3><span class="fx-ic" data-ic="qris"></span>Easy to pay</h3><p>A phone-friendly FLIK payment page with QRIS, e-wallets, virtual accounts and cards.</p></div>
+    <div><h3><span class="fx-ic" data-ic="sliders"></span>Less admin</h3><p>Saved customers and products fill in, and paid invoices mark themselves paid.</p></div>
+    <div><h3><span class="fx-ic" data-ic="wallet"></span>Paid into one balance</h3><p>Invoice payments land in the same FLIK balance as the rest of your sales.</p></div>
   </div>
 </section>
 
-<section class="pad guides" id="how">
+<!-- ===== Speed up cash flow ===== -->
+<section class="pad guides" id="collect">
   <div class="wrap">
-    <h2 class="sec-h stats-h">From draft to paid in four steps. <span class="soft">Everything happens in the FLIK dashboard.</span></h2>
-    <div class="stats4 flow4 pg-steps"><div class="stat done"><span class="f4-n">01</span><span class="f4-ic" data-ic="card"></span><b>Add the customer</b><span>Pick a saved customer or add a new one.</span></div><div class="stat done"><span class="f4-n">02</span><span class="f4-ic" data-ic="wallet"></span><b>Add the items</b><span>From your product catalogue, with any extra charges.</span></div><div class="stat done"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>Choose terms and methods</b><span>Due in 7, 14, 30 or 60 days, and the payment methods you accept.</span></div><div class="stat done"><span class="f4-n">04</span><span class="f4-ic" data-ic="bank"></span><b>Send it</b><span>Your customer gets it by email and pays online.</span></div></div>
+    <p class="py-eye">Get paid sooner</p>
+    <h2 class="sec-h">Know who has paid, and who hasn't. <span class="soft">Every invoice in one list, with its status and a reminder ready to send.</span></h2>
+    <div class="fx" data-fx><ul class="fx-list"><li data-f="pay"><span class="fx-ic" data-ic="card"></span><div><b>Make invoices easy to pay</b><span>Each invoice links to a FLIK payment page that works on any phone. No transfer proof to check.</span></div></li><li data-f="st"><span class="fx-ic" data-ic="check"></span><div><b>See every step</b><span>Draft, Open, Past due, Paid or Void, and when your customer viewed it.</span></div></li><li data-f="rem"><span class="fx-ic" data-ic="chat"></span><div><b>Remind in one tap</b><span>Send a reminder for an open or past due invoice, with the same payment link.</span></div></li><li data-f="tabs"><span class="fx-ic" data-ic="sliders"></span><div><b>Every invoice in one list</b><span>Filter by status to see who to follow up first.</span></div></li></ul><div class="fx-g"><div class="py-card iv-list fx-win"><div class="co-bar"><i></i><i></i><i></i><span>FLIK dashboard · Invoices</span></div><div class="fx-el iv-tabs" data-f="tabs"><span class="on">All invoices</span><span>Draft</span><span>Open</span><span>Past due</span><span>Paid</span><span>Void</span></div><div class="iv-tw"><table class="iv-tbl"><thead><tr><th>Total</th><th>Status</th><th>Customer</th><th class="hide-s">Due</th><th></th></tr></thead><tbody><tr><td class="fx-el " data-f="pay"><b class="num">Rp587.000</b></td><td class="fx-el " data-f="st"><span class="pill pu">Open</span></td><td>Rina Putri</td><td class="hide-s">27 Nov</td><td></td></tr><tr><td class="fx-el " data-f="pay"><b class="num">Rp1.240.000</b></td><td class="fx-el " data-f="st"><span class="pill bad">Past due</span></td><td>Agus Setiawan</td><td class="hide-s">10 Nov</td><td class="fx-el " data-f="rem"><span class="iv-rem">Send reminder</span></td></tr><tr><td class="fx-el " data-f="pay"><b class="num">Rp320.000</b></td><td class="fx-el " data-f="st"><span class="pill ok">Paid</span></td><td>Dewi Lestari</td><td class="hide-s">20 Nov</td><td></td></tr><tr><td class="fx-el " data-f="pay"><b class="num">Rp2.150.000</b></td><td class="fx-el " data-f="st"><span class="pill ok">Paid</span></td><td>Bima Saputra</td><td class="hide-s">18 Nov</td><td></td></tr><tr><td class="fx-el " data-f="pay"><b class="num">Rp890.000</b></td><td class="fx-el " data-f="st"><span class="pill gr">Draft</span></td><td>Maya Sari</td><td class="hide-s">—</td><td></td></tr></tbody></table></div></div></div></div>
   </div>
 </section>
 
-<section class="pad alt guides" id="glance">
+<!-- ===== Customer experience ===== -->
+<section class="pad alt guides" id="experience">
   <div class="wrap">
-    <h2 class="sec-h">Invoice at a glance.</h2>
+    <p class="py-eye">Your customer's side</p>
+    <h2 class="sec-h">Invoices your customers like to pay. <span class="soft">Your details on every invoice, and a checkout they already know.</span></h2>
+    <div class="fx" data-fx><ul class="fx-list"><li data-f="items"><span class="fx-ic" data-ic="boxes"></span><div><b>Products from your catalog</b><span>Saved products and prices fill in, with the amount due.</span></div></li><li data-f="po"><span class="fx-ic" data-ic="sliders"></span><div><b>Custom fields</b><span>Up to four, such as a PO number, so it matches their records.</span></div></li><li data-f="npwp"><span class="fx-ic" data-ic="bank"></span><div><b>Your NPWP when they need it</b><span>Show your tax ID on the invoice for business customers.</span></div></li><li data-f="memo"><span class="fx-ic" data-ic="mail"></span><div><b>A memo and a footer</b><span>A note to your customer, on the PDF and the payment page.</span></div></li><li data-f="pay"><span class="fx-ic" data-ic="qris"></span><div><b>A link to pay</b><span>The email and the PDF lead to the FLIK payment page. FLIK shoppers can pay with FLIK in a few taps.</span></div></li></ul><div class="fx-g"><div class="iv-pdf fx-win"><div class="iv-pdf-h"><b>Invoice</b><span>Aruna Studio</span></div><dl class="iv-kv" style="margin-bottom:6px"><dt>Invoice number</dt><dd>INV-2026-0049</dd><dt>Date of issue</dt><dd>13 Nov 2026</dd><dt>Date due</dt><dd>27 Nov 2026</dd></dl><div class="fx-el iv-grp" data-f="po"><dl class="iv-kv" style="margin:0"><dt>PO number</dt><dd>PO-7781</dd></dl></div><div class="fx-el iv-grp" data-f="npwp"><div class="iv-pdf-2" style="margin:0"><div><b>Aruna Studio</b><br>Jl. Kemang Raya No. 12<br>Jakarta Selatan 12730<br>NPWP 01.234.567.8-901.000</div><div><b>Bill to</b><br>Rina Putri<br>rina@example.com</div></div></div><div class="fx-el iv-grp" data-f="items"><table><thead><tr><th>Description</th><th>Qty</th><th>Amount</th></tr></thead><tbody><tr><td>Linen shirt, sand</td><td>2</td><td class="num">Rp398.000</td></tr><tr><td>Canvas tote</td><td>1</td><td class="num">Rp189.000</td></tr></tbody></table><div class="iv-pdf-t"><span>Amount due</span><span class="num">Rp587.000</span></div></div><div class="fx-el iv-grp" data-f="memo"><p class="iv-pdf-m" style="margin:0;border:0;padding:0">Memo: Thank you for your order. Payment is due in 14 days.</p></div><div class="fx-el iv-grp" data-f="pay"><span class="iv-pdf-pay" style="margin:0">Pay online</span></div></div></div></div>
+  </div>
+</section>
+
+<!-- ===== Reduce manual work ===== -->
+<section class="pad guides" id="create">
+  <div class="wrap">
+    <p class="py-eye">Create and send</p>
+    <h2 class="sec-h">From draft to sent in four steps. <span class="soft">Everything happens in the FLIK dashboard. No code needed.</span></h2>
+    <div class="stats4 flow4 pg-steps"><div class="stat done"><span class="f4-n">01</span><span class="f4-ic" data-ic="user"></span><b>Pick a customer</b><span>Choose a saved customer, or add a name, WhatsApp number and email.</span></div><div class="stat done"><span class="f4-n">02</span><span class="f4-ic" data-ic="boxes"></span><b>Add products</b><span>From your product catalog. Prices fill in.</span></div><div class="stat done"><span class="f4-n">03</span><span class="f4-ic" data-ic="card"></span><b>Set the terms</b><span>Due in 7, 14, 30 or 60 days, and the payment methods you accept.</span></div><div class="stat done"><span class="f4-n">04</span><span class="f4-ic" data-ic="mail"></span><b>Review and send</b><span>Send it now, or schedule a send date.</span></div></div>
+    <div style="margin-top:16px"><div class="fx" data-fx><ul class="fx-list"><li data-f="chk"><span class="fx-ic" data-ic="check"></span><div><b>Check before you send</b><span>The amount, due date and email, all on one screen.</span></div></li><li data-f="meth"><span class="fx-ic" data-ic="card"></span><div><b>The methods you choose</b><span>QRIS, e-wallets, bank virtual accounts and cards, per invoice.</span></div></li><li data-f="cc"><span class="fx-ic" data-ic="mail"></span><div><b>Copy their finance team</b><span>Add CC recipients to the invoice email.</span></div></li><li data-f="sched"><span class="fx-ic" data-ic="bell"></span><div><b>Send it now, or later</b><span>Schedule a send date, or keep it as a draft until you're ready.</span></div></li><li data-f="send"><span class="fx-ic" data-ic="bolt"></span><div><b>No matching by hand</b><span>Each invoice is paid on its own page, so FLIK marks it Paid for you.</span></div></li></ul><div class="fx-g"><div class="py-card iv-rev fx-win"><div class="co-bar"><i></i><i></i><i></i><span>Send this invoice</span></div><div class="py-b"><div class="fx-el iv-grp" data-f="chk"><dl class="iv-kv"><dt>Amount</dt><dd class="num">Rp587.000</dd><dt>Due</dt><dd>27 Nov 2026</dd><dt>Send to</dt><dd>rina@example.com</dd></dl></div><div class="fx-el iv-grp" data-f="meth"><dl class="iv-kv"><dt>Payment methods</dt><dd>QRIS, e-wallets, VA, cards</dd></dl></div><div class="fx-el iv-grp" data-f="cc"><div class="iv-chk on"><i><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></i>Add CC recipients</div><div class="iv-in" style="color:var(--ink)">finance@rinaputri.co.id</div></div><div class="fx-el iv-grp" data-f="sched"><div class="iv-chk"><i></i>Schedule send date</div></div><div class="fx-el iv-grp" data-f="send"><div class="iv-acts" style="margin:0"><span class="iv-btn-o">Save draft</span><span class="py-btn">Finalize and send</span></div></div></div></div></div></div></div>
+  </div>
+</section>
+
+<!-- ===== Your money ===== -->
+<section class="pad alt guides" id="money">
+  <div class="wrap">
+    <p class="py-eye">Your money</p>
+    <h2 class="sec-h">From paid invoice to bank account. <span class="soft">The same FLIK balance as every other sale.</span></h2>
+    <div class="stats4 flow4 pg-steps"><div class="stat done"><span class="f4-n">01</span><span class="f4-ic" data-ic="card"></span><b>The customer pays</b><span>By QRIS, e-wallet, virtual account or card.</span></div><div class="stat done"><span class="f4-n">02</span><span class="f4-ic" data-ic="wallet"></span><b>In your balance</b><span>Once FLIK has received the funds.</span></div><div class="stat done"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>Need it sooner?</b><span>Settle early for 0.2% (non-card) or 0.3% (card) + PPN.</span></div><div class="stat done"><span class="f4-n">04</span><span class="f4-ic" data-ic="bank"></span><b>Withdraw</b><span>To your bank from Rp100.000, for Rp4.000 + PPN.</span></div></div>
+  </div>
+</section>
+
+<section class="pad guides" id="glance">
+  <div class="wrap">
+    <h2 class="sec-h">What's included. <span class="soft">Built into every FLIK account.</span></h2>
     <div class="gl3" id="gl3"></div>
   </div>
 </section>
 
+<!-- ===== Pricing ===== -->
+<section class="pad alt guides" id="rates">
+  <div class="wrap">
+    <p class="py-eye">Pricing</p>
+    <h2 class="sec-h">Pay only when you're paid. <span class="soft">No setup fee. Each paid invoice costs the rate of the method your customer used, with PPN shown on every fee.</span></h2>
+    <div class="py-rate">
+      <div><small>QRIS</small><b>0.7%</b><span>PPN included. 0% up to Rp100.000.</span></div>
+      <div><small>E-wallets</small><b>From 1.5%</b><span>+ PPN</span></div>
+      <div><small>Bank virtual accounts</small><b>Rp4.000</b><span>+ PPN</span></div>
+      <div><small>Credit cards</small><b>2.8% + Rp2.000</b><span>+ PPN</span></div>
+    </div>
+    <div class="py-price">
+      <div><h3>Standard pricing</h3><p>The rate of each payment method, with the PPN shown as its own line. Debit cards and Early Settlement are on the Pricing page.</p><a href="#" class="link" data-page="/pricing">See all pricing <span class="chev">›</span></a></div>
+      <div><h3>Sending many invoices?</h3><p>Talk to the FLIK team about rates for your business.</p><button class="btn btn-secondary" data-act="sales" data-interest="Invoice">Contact sales <span class="chev">›</span></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== kit: customer-stories (Brands getting paid with FLIK.) ===== -->
+<section class="pad guides" id="customers">
+  <div class="wrap">
+    <h2 class="sec-h">Brands getting paid with FLIK. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2>
+    <div class="stories-wrap">
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span><span class="st-big">Sigit Store</span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/artch.png?v=2" alt="Artch"></span><span class="st-big">Artch</span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/wakaigo-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span><span class="st-big">WakaiGo</span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article></div>
+      <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+    </div>
+  </div>
+</section>
+<!-- ===== /kit: customer-stories ===== -->
+
 <section class="pad-s guides">
   <div class="wrap">
     <h3 class="res-h">More from FLIK</h3>
-    <div class="res3"><a href="#" class="res" data-page="/payment/payment-link"><span class="rtag"><span data-ic="chat"></span>Product</span><b>Payment Link</b><span>Share a link in chat when you don't need an invoice.</span><em>Explore Payment Link <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="bolt"></span>Product</span><b>Early Settlement</b><span>Get paid before your settlement date.</span><em>Explore Early Settlement <span class="chev">›</span></em></a><a href="#" class="res" data-page="/pricing"><span class="rtag"><span data-ic="chart"></span>Pricing</span><b>Payment fees</b><span>Rates per method, with PPN shown on every fee.</span><em>See pricing <span class="chev">›</span></em></a></div>
+    <div class="res3"><a href="#" class="res" data-page="/payment/payment-link"><span class="rtag"><span data-ic="chat"></span>Product</span><b>Payment Link</b><span>Share a link in chat when you don't need an invoice.</span><em>Explore Payment Link <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="bolt"></span>Product</span><b>Early Settlement</b><span>Get paid before your settlement date.</span><em>Explore Early Settlement <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment"><span class="rtag"><span data-ic="card"></span>Product</span><b>Payment</b><span>Every way to get paid with FLIK.</span><em>Explore Payment <span class="chev">›</span></em></a></div>
   </div>
 </section>
 
@@ -1399,13 +1634,13 @@ main section#customers{padding:112px 0}
 <section class="pad alt guides">
   <div class="wrap fin">
     <h2>Send your first invoice today.</h2>
-    <p class="txt">Create your account, verify your business, and send invoices from the dashboard.</p>
+    <p class="txt">Create your account, verify your business, and send invoices from the FLIK dashboard.</p>
     <div class="hero-cta" style="justify-content:center">
-      <button class="btn btn-primary live" data-act="start" data-interest="Invoice">Get started <span class="chev">›</span></button>
+      <button class="btn btn-primary live" data-act="start" data-interest="Invoice">Start sending invoices <span class="chev">›</span></button>
       <button class="btn btn-secondary" data-act="sales">Contact sales</button>
     </div>
     <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
-    <div class="fin-price"><b>Pricing</b><span>The payment method rates on the Pricing page, with PPN on every fee.</span><a href="#" class="link" data-page="/pricing">See pricing <span class="chev">›</span></a></div>
+    
   </div>
 </section>
 </main>
@@ -1622,16 +1857,29 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 
 /* ===== Page: at a glance ===== */
-(function(){const G=[["mail", "Send", ["Sent by email with a link to pay", "Customers and items saved for next time", "Extra charges on the invoice", "Drafts saved until you send them"]], ["card", "Get paid", ["A FLIK payment page in the checkout style", "QRIS, e-wallets, virtual accounts and cards", "A receipt emailed after payment", "Paid into your FLIK balance"]], ["bell", "Follow up", ["See which invoices are sent and paid", "Send a reminder from the invoice", "Every invoice in one list, with filters", "Verify your business before you send"]]];const el=document.getElementById('gl3');if(el)el.innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');})();
+(function(){const G=[["mail", "Create and send", ["Invoices from the FLIK dashboard", "Saved customers and products", "Due in 7, 14, 30 or 60 days", "Memo, footer and custom fields", "Send now, or schedule a date", "CC recipients and the PDF attached"]], ["card", "Get paid", ["A FLIK payment page on any phone", "QRIS, e-wallets, virtual accounts and cards", "Pay with FLIK for returning customers", "Invoice and receipt to download", "Paid into your FLIK balance"]], ["bell", "Follow up", ["Draft, Open, Past due, Paid and Void", "See when your customer viewed it", "WhatsApp reminders in one tap", "Every invoice in one list, with filters", "Early Settlement when you need cash"]]];const el=document.getElementById('gl3');if(el)el.innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');})();
 
 /* ===== FAQ ===== */
-const FAQ=[["How does my customer pay an invoice?", "They open the link in the email and pay on a FLIK payment page with QRIS, an e-wallet, a bank virtual account or a card."], ["When is the invoice due?", "You choose: 7, 14, 30 or 60 days after you send it."], ["Can I remind a customer?", "Yes. Send a reminder from the invoice in the dashboard."], ["Where does the money go?", "Into your FLIK balance, the same balance as your other FLIK payments."], ["What does it cost?", "The rate of the payment method your customer uses, as shown on the Pricing page, plus PPN."], ["Do I need to verify my business?", "Yes. Verify your identity and business before you send invoices."]];
+const FAQ=[["How does my customer pay an invoice?", "They open the link in the invoice email and pay on a FLIK payment page with QRIS, an e-wallet, a bank virtual account or a card. Customers with a FLIK account can pay with FLIK in a few taps."], ["When is the invoice due?", "You choose: 7, 14, 30 or 60 days after you send it. After the due date the invoice shows as Past due."], ["Can I remind a customer?", "Yes. Send a WhatsApp reminder from an open or past due invoice, with the same payment link."], ["Does my customer get a PDF?", "Yes. The invoice email has the PDF attached, and your customer can download the invoice and the receipt after paying."], ["Do I have to match payments to invoices?", "No. Each invoice is paid on its own payment page, so FLIK marks the right invoice Paid."], ["Where does the money go?", "Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner."], ["What does it cost?", "There is no setup fee. Each paid invoice costs the rate of the payment method your customer used, shown on the Pricing page with PPN on every fee."], ["Do I need to verify my business?", "Yes. Verify your identity and business before you send invoices."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
 
+/* ===== kit: customer-stories carousel ===== */
+document.querySelectorAll('#customers .cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
+
 /* ===== icons in tags ===== */
 document.querySelectorAll('main [data-ic]').forEach(e=>{if(!e.innerHTML.trim())e.innerHTML=ic(e.dataset.ic,e.closest('.rtag')?15:18)});
+
+/* ===== fx kit: each list highlights one part of its product window ===== */
+document.querySelectorAll('.fx[data-fx]').forEach(box=>{
+  const li=[...box.querySelectorAll('.fx-list li')],win=box.querySelector('.fx-win'),els=[...win.querySelectorAll('.fx-el')];
+  const visible=onScreen(win);let cur=0,hold=0;
+  const set=k=>{cur=k;const f=li[k].dataset.f;li.forEach((x,i)=>x.classList.toggle('on',i===k));win.classList.add('hl');els.forEach(e=>e.classList.toggle('on',e.dataset.f===f))};
+  li.forEach((x,i)=>{x.addEventListener('mouseenter',()=>{hold=Infinity;set(i)});x.addEventListener('mouseleave',()=>{hold=Date.now()+2000});x.addEventListener('click',()=>{hold=Date.now()+6000;set(i)})});
+  set(0);
+  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%li.length)},2400);
+});
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+

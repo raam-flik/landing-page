@@ -45,7 +45,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **List item:** FLIK sets it up for you
 - **List item:** WhatsApp login, saved details
 - **List item:** Rewards applied automatically
-- **List item:** Products, or an amount the customer chooses
+- **List item:** Products from your catalog
 - **List item:** Your own button text
 - **List item:** Share it anywhere
 - **List item:** Due in 7, 14, 30 or 60 days

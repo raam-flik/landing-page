@@ -1288,7 +1288,7 @@ html{scroll-padding-top:88px}
 @media (max-width:1080px){.cx-hero{grid-template-columns:1fr}.cx-feat{grid-template-columns:1fr}.cx-logos{margin-left:0}.cx-grid{grid-auto-rows:240px}.cx-grid .sc h3{font-size:18px}}
 @media (max-width:760px){
   .cx-hero{padding-top:24px;padding-bottom:56px}.cx-hero h1{font-size:36px;letter-spacing:-1px}
-  .cx-hero .hero-cta{flex-direction:column;align-items:stretch}.cx-hero .hero-cta .btn{height:46px}
+  .cx-hero .hero-cta{flex-direction:column;align-items:stretch;max-width:none;margin-left:0;margin-right:0}.cx-hero .hero-cta .link{justify-content:center;text-align:center}.cx-hero .hero-cta .btn{height:46px}
   .cx-col3{grid-template-columns:1fr 1fr;justify-self:stretch}.cx-col3 .sc{padding:14px}.cx-col3>div:nth-child(2){margin-top:32px}.sc.sc-hero{height:210px}
   .sc{min-height:180px}.sc.sc-tall{min-height:230px}.sc.sc-big{min-height:300px;padding:20px}.sc.sc-big h3{font-size:20px}
   .cx-logos{grid-template-columns:repeat(3,1fr)}.cx-logos button{height:72px}
@@ -1377,7 +1377,7 @@ html{scroll-padding-top:88px}
 @media (max-width:760px){
   .cu-sub{padding-top:84px}.cu-sub nav{display:none}
   .cu-hero{padding-top:24px;padding-bottom:56px}.cu-hero h1,.cs-top h1{font-size:36px;letter-spacing:-1px}
-  .cu-hero .hero-cta{flex-direction:column;align-items:stretch}.cu-hero .hero-cta .btn{height:46px}
+  .cu-hero .hero-cta{flex-direction:column;align-items:stretch;max-width:none;margin-left:0;margin-right:0}.cu-hero .hero-cta .link{justify-content:center;text-align:center}.cu-hero .hero-cta .btn{height:46px}
   .cu-collage{grid-template-columns:1fr 1fr}.cu-collage>div:nth-child(3){display:none}.cu-collage>div:nth-child(2){margin-top:32px}
   .cu-card{min-height:180px}.cu-card.tall{min-height:220px}
   .cu-wall{grid-template-columns:repeat(2,1fr)}
@@ -1795,10 +1795,10 @@ const PRODUCTS={
   mca:{name:'Merchant Cash Advance',long:'Merchant Cash Advance',url:'/funding/merchant-cash-advance',ic:'coins',blurb:'Upfront funding for stock or a new outlet, settled automatically from sales.'}
 };
 const CUSTOMERS=[
-  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',photos:['sigit-store-1.jpg'],tint:'violet',cat:'Music and merchandise',prods:['checkout']},
+  {slug:'sigit-store',name:'Sigit Store',logo:'sigit-store.png',photos:['sigit-store-1.jpg?v=2'],tint:'violet',cat:'Music and merchandise',prods:['checkout']},
   {slug:'artch',name:'Artch',logo:'artch.png',photos:['artch-1.jpg'],tint:'violet',prods:['checkout']},
-  {slug:'paper',name:'Paper',logo:'paper.png',photos:['paper-1.jpg'],tint:'magenta',prods:['checkout']},
-  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg'],tint:'orange',prods:['checkout']},
+  {slug:'paper',name:'Paper',logo:'paper.png',photos:['paper-1.jpg?v=2'],tint:'magenta',prods:['checkout']},
+  {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg?v=2'],tint:'orange',prods:['checkout']},
   {slug:'osim',name:'OSIM',logo:'osim.png',cat:'Wellness',prods:['checkout']},
   {slug:'zaafer',name:'Zaafer',logo:'zaafer.png',prods:['shipping']},
   {slug:'gerai-hawa',name:'Gerai Hawa',logo:'geraihawa.png',cat:'Modest fashion',prods:['shipping']},
