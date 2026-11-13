@@ -11,11 +11,11 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] Hero: "Funding from Rp 100 million to Rp 5 billion" and "Apply in under 10 minutes" removed as unsourced. The eligibility check no longer shows an amount range (AG, 24 Oct 2026).
 - [x] Stat: "10+ growing businesses trust Merchant Cash Advance" is supported and kept (AG, 24 Oct 2026). "1 fixed margin" and "0 hidden fees" replaced with "15 payment methods" and "30 sec checkout".
 - [x] Lending words removed (loan, interest, borrow, lender, credit). "Repay" is now "settled", "Approved" is now "Offer" / "Receive your offer", "financing" is now "funding". "One fixed margin" and "no hidden fees" removed. The "Ethical pricing" badge removed (AG, 24 Oct 2026).
-- [ ] `[[set per offer]]`: the monthly platform fee (*Biaya Platform*) rate shown in "What it costs" and in the hero preview. Each offer sets it. Confirm whether to show a rate or range publicly.
+- [x] **Platform fee (AG, 12 Nov 2026):** no public rate. The page says "one fixed margin, set in each offer", matching the Pricing page.
 - [x] **GC OK (Legal, 12 Nov 2026):** "Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter." (We grow when you grow block).
 - [x] **GC OK (Legal, 12 Nov 2026, as marketing wording, provided the offer letter explains what happens when the daily settlement target isn't met):** "A share of each sale goes toward settlement, so slower sales mean smaller settlements." The offer letter sets a daily maximum and fixed tranche schedule, so GC should confirm this is accurate. It replaces "Slow weeks never squeeze you".
 - [ ] "Businesses usually need at least 6 months of sales" (eligibility check, not eligible state) is kept as Raam wrote it. Confirm it matches credit policy.
-- [ ] Fees: 1% administration fee per placement and "All fees exclude PPN" come from the offer letter terms. Confirm they can be shown publicly.
+- [x] **Fees (AG, 12 Nov 2026):** don't mention the administration fee or any funding fee publicly. Removed from the page, its preview and the FAQ (13 Nov).
 
 ## Search results (SEO)
 
@@ -43,8 +43,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Form label:** Where you sell
 - **Small heading:** Application — Step 1 of 3
 - **Small heading (step 3):** Your funding offer
-- **Row:** Platform fee — [[set per offer]] / month
-- **Row:** Administration fee — 1% per placement
+- **Row:** Margin — Fixed, set in your offer
 - **Row:** Settlement — A share of each sale
 - **Label:** Application — Offer ready
 
@@ -78,10 +77,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Know exactly what you will pay before you sign.
 - **Label:** Pricing
 - **Heading:** What it costs.
-- **Text:** A monthly platform fee (*Biaya Platform*) as a % of the funded amount, for the funding period, plus a one-time 1% administration fee per placement. All fees exclude PPN.
-- **Row:** Platform fee (*Biaya Platform*) — [[set per offer]] / month
-- **Row:** Administration fee — 1% per placement
-- **Row:** PPN — Not included
+- **Text:** One fixed margin, set in your offer and agreed before you sign. It never changes, and there's no compounding interest.
+- **Row:** Margin — Set in your offer
+- **Row:** Agreed — Before you sign
+- **Row:** Changes later — Never
 - **Label:** Settlement
 - **Heading:** Settled as you sell.
 - **Text:** A share of each sale, online or in store, goes toward settlement automatically.
@@ -173,7 +172,7 @@ Hidden until there is a real, approved story.
 - **Button:** How is it settled?
 - **Answer:** You sell as usual. A share of each sale goes toward settlement automatically, and you can track the outstanding amount and the latest payments in your dashboard.
 - **Button:** What does it cost?
-- **Answer:** A monthly platform fee (Biaya Platform) as a % of the funded amount for the funding period, set in each offer, plus a one-time 1% administration fee per placement. All fees exclude PPN. Terms are set out in each offer letter.
+- **Answer:** One fixed margin, set in your offer and agreed before you sign. It never changes, and there's no compounding interest. Terms are set out in each offer letter.
 - **Button:** Do I give up ownership of my business?
 - **Answer:** No. FLIK funds your stock, not your shares, so you keep full ownership of your brand.
 - **Button:** How long does it take?
@@ -196,5 +195,5 @@ Hidden until there is a real, approved story.
 - **Text:** Start with a conversation. We will learn about your business and walk you through the options.
 - **Button:** Talk to the FLIK team
 - **Button:** Check your eligibility
-- **Text:** Pricing — A monthly platform fee plus a one-time 1% administration fee per placement, excl. PPN. Offered to selected merchants; terms are set out in each offer letter.
+- **Text:** Pricing — One fixed margin, set in each offer. Offered to selected merchants; terms are set out in each offer letter. — See how pricing works
 - **Link:** See how pricing works
