@@ -11,7 +11,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Support contacts:** email support@flik.co.id, WhatsApp +62 813-3532-8100, Monday to Friday 09:00–18:00 WIB (the same as the footer). The cards link to email and to WhatsApp (wa.me).
 - [ ] **Consumer protection block** is copied word for word from flik.co.id/en/help. The Ditjen PKTN number links to WhatsApp (wa.me/6285311111010).
 - [ ] **Topics for shoppers:** there are no shopper questions yet (FLIK app, FLIK Points, refunds). Add them when the content exists.
-- [x] Early Settlement, Fraud Detection and In-Store Payment questions are not included while their answers are placeholders. Done (12 Nov 2026): six questions each, copied from the FAQs on those pages, each topic linking to its product page.
+- [x] Early Settlement, Fraud Detection and In-Store Payment questions are not included while their answers are placeholders. Done (12 Nov 2026): six questions each (five for Fraud Detection), copied from the FAQs on those pages, each topic linking to its product page.
 - [ ] **Answers changed for the AG rules (24 Oct 2026):** COD fee wording, "all major couriers", "credited to your balance after delivery", and Malaysia/Singapore removed from "What is FLIK Shipping?". The COD question now reads "Do I pay the COD fee upfront?" (answer: no, it's deducted after delivery). The Checkout and Shipping page FAQs still need the same change.
 - [ ] **Privacy and your data:** new entry under General. It links to /legal/privacy and /legal/data-request, which must exist before launch.
 
@@ -66,20 +66,18 @@ Edit the text after each label. Keep the labels and headings as they are, so the
     - **Answer:** Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards. Cash on delivery orders settle after the package is delivered.
   - **Question:** How is it different from Merchant Cash Advance?
     - **Answer:** Early Settlement pays out money you already earned. Merchant Cash Advance funds your growth upfront and is settled from future sales.
-- **Topic:** Fraud Detection (6 of the questions from `content/06-fraud-detection.md`)
+- **Topic:** Fraud Detection (5 of the questions from `content/06-fraud-detection.md`)
   - **Question:** What does Fraud Detection do?
-    - **Answer:** It checks every withdrawal and every change to your payout account or registered contacts before anything happens. It protects your balance if someone else gets into your account.
+    - **Answer:** It checks payments, refunds and withdrawals for fraud, and helps you fight chargebacks.
     - **Links:** About Fraud Detection (/payment/fraud-detection)
-  - **Question:** Does it block my customers' payments?
-    - **Answer:** No. Money coming in is never refused. FLIK watches incoming payments for unusual patterns, and card payments are also screened by our licensed payment partners.
+  - **Question:** How does FLIK help with chargebacks?
+    - **Answer:** You're told straight away, with the reason and deadline. Upload evidence in the dashboard, and FLIK sends it to the payment partner.
   - **Question:** What happens when a withdrawal is held?
-    - **Answer:** It shows as "Being verified" in your dashboard, with an expected time. FLIK's risk team reviews it, and it's sent as soon as it's cleared. Nothing leaves your balance in the meantime.
-  - **Question:** Why does a new payout account take 24 hours?
-    - **Answer:** It gives you time to spot a change you didn't make. Every registered contact gets an email, and you can cancel from it. Until then, you can keep withdrawing to your old account.
+    - **Answer:** It shows as "Under review", with an expected time. It's sent once FLIK's risk team clears it.
   - **Question:** Do I need to set anything up?
-    - **Answer:** No. It's on for every FLIK merchant, on the dashboard, the API and AI agents.
+    - **Answer:** No. It's on for every FLIK merchant.
   - **Question:** What does it cost?
-    - **Answer:** Nothing extra. It's included for every FLIK merchant.
+    - **Answer:** Nothing. It's included.
 - **Topic:** In-Store Payment (6 of the questions from `content/07-in-store-payment.md`)
   - **Question:** What is In-Store Payment?
     - **Answer:** A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.
