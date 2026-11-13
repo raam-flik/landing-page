@@ -85,7 +85,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
     - **Answer:** A FLIK EDC device for your counter. Customers pay by QRIS or card, the receipt prints on the device, and the sale appears in your FLIK dashboard. Payments are processed by licensed partners.
     - **Links:** About In-Store Payment (/payment/in-store)
   - **Question:** Which payments can I accept?
-    - **Answer:** QRIS from any bank or e-wallet app, credit cards, and GPN debit cards.
+    - **Answer:** QRIS from any bank or e-wallet app, and credit and debit cards.
   - **Question:** Does it print receipts?
     - **Answer:** Yes. The device has a built-in receipt printer for every sale and for the settlement receipt at the end of the day.
   - **Question:** Where does the money go?

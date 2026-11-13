@@ -9,7 +9,7 @@
   function createScreen(opts){
     const W=900,H=1900,NAV=140,cv=document.createElement('canvas');cv.width=W;cv.height=H;
     const g=cv.getContext('2d'),F='Inter, system-ui, sans-serif';
-    const st={ok:90,qris:2,card:88,total:12000000,tq:10000000,tc:2000000,rows:[[90000,'Card','01092026-QFCAZZ-1',2],[90000,'QRIS','01092026-QFCAZZ-1',3]],flash:0};
+    const st={ok:90,qris:64,card:26,total:12000000,tq:8420000,tc:3580000,rows:[[90000,'Card','01092026-QFCAZZ-1',2],[90000,'QRIS','01092026-QFCAZZ-1',3]],flash:0};
     const logo=new Image(),qris=new Image();let ready=0;
     logo.onload=qris.onload=()=>{ready++;draw()};
     logo.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(opts.logoSvg);
