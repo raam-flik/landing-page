@@ -989,6 +989,27 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 #stories .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
 #stories .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
 /* ===== /Homepage stories ===== */
+/* ===== Touch targets and scroll reveal (AG, 13 Nov 2026) ===== */
+/* Phones and tablets: every tap target at least 44 px. Small controls keep their look and get an invisible larger hit area */
+@media (pointer:coarse){
+  .btn{min-height:44px}
+  .burger{width:44px;height:44px}
+  .fcols a{padding:12px 0}
+  .lang button{height:44px}
+  .flegal-links{gap:0 18px}
+  .flegal-links a,.flegal-links button{display:inline-flex;align-items:center;min-height:44px}
+  .cbtn,.tg,.link,.link-l,.cta-note a,.hdr .logo,.fcols .sup a{position:relative}
+  .exp::before,.cbtn::before,.tg::before,.link::before,.link-l::before,.cta-note a::before,.hdr .logo::before,.fcols .sup a::before{content:'';position:absolute;inset:-6px}
+  .hdr .logo::before{inset:-7px 0}
+  .fcols .sup a::before{inset:-10px 0}
+  .tg::before{inset:-13px -4px}
+  .link::before,.link-l::before{inset:-11px -4px}
+  .cta-note a::before{inset:-14px -2px}
+}
+/* Sections below the hero rise in once as they scroll into view. Added by JS only, so nothing hides if JS fails */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rv-d,0s)}
+.rv.in{opacity:1;transform:none}
+html.anim-paused .rv{opacity:1;transform:none;transition:none}
 </style>
 </head>
 <body>
@@ -1404,6 +1425,18 @@ const motionPaused=()=>document.documentElement.classList.contains('anim-paused'
   if(btn)btn.addEventListener('click',()=>set(!motionPaused(),true));
 })();
 /* ===== /kit: a11y-motion ===== */
+
+/* ===== Scroll reveal: each block below the hero rises in once (off for reduced motion and paused animations) ===== */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)||motionPaused())return;
+  const els=[];
+  document.querySelectorAll('main > section:not(.s-hero) > .wrap').forEach(w=>[...w.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--rv-d',Math.min(i,3)*.08+'s');els.push(c)}));
+  const done=t=>{t.classList.remove('rv','in');t.style.removeProperty('--rv-d')};
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;io.unobserve(t);t.classList.add('in');
+    t.addEventListener('transitionend',function f(ev){if(ev.target!==t||ev.propertyName!=='transform')return;t.removeEventListener('transitionend',f);done(t)})}),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(el=>io.observe(el));
+  addEventListener('flik:motion',e=>{if(e.detail.paused){io.disconnect();els.forEach(done)}});
+})();
 
 /* ===== Icons ===== */
 const P={
