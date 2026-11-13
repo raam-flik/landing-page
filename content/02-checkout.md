@@ -7,8 +7,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [x] Pricing: the page shows a success fee of 0–2% (excl. PPN) again, positioned as the fee for the whole checkout (trust, conversion, shipping, promotions, loyalty), not just payment acceptance. Promotions are co-funded on request (AG, 12 Nov 2026). The fee is still earned on success and isn't refunded.
+- [x] Pricing: the page shows a success fee of 0–2% (excl. PPN) again, positioned as the fee for the whole checkout (trust, conversion, shipping, promotions, loyalty), not just payment acceptance. Promotions are co-funded on request (AG, 12 Nov 2026).
 - [x] Pricing: the "0–2%" rate and the "no fee if not delivered" promise were removed. The page now says the Checkout fee is earned when the payment succeeds and isn't refunded (AG, 24 Oct 2026).
+- [x] Refund wording removed from the pricing card and the FAQ: too much detail for this page (AG, 13 Nov 2026). This replaces the 24 Oct wording above.
+- [x] Claim limit (AG, 13 Nov 2026): "30 seconds" and "3× faster" appear twice at most across the whole site. On this page they stay only in the stats row. The hero, "at a glance" and the final CTA no longer use them.
 - [ ] Claims: "30 seconds" and "3× faster" come from the current flik.co.id.
 - [x] Stat: now "15 payment methods", the approved claim used across the site (AG, 24 Oct 2026).
 - [x] The lock + FLIK badge in the phone mockups now says "Payments processed by licensed partners", and mockup amounts are labelled "Example" (AG, 24 Oct 2026).
@@ -24,12 +26,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above headline:** FLIK Checkout
 - **Headline (H1):** The checkout engine for growing brands.
-  - **Grey part:** Paid in 30 seconds.
-- **Intro text:** Turning every cart on your Shopify or WooCommerce store into a completed order. Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they already do. You build the store, we close the sale.
+  - **Grey part:** Paid in one tap.
+- **Intro text:** Wherever your cart lives, we turn it into a paid order. You build the store, we close the sale.
 - **Button:** Contact sales
 - **Button:** See how it works
-- **List item:** 3× faster than a standard checkout
-- **List item:** Multiple payment methods
+- **List item:** Faster than a standard checkout
+- **List item:** Integrated shipping, promotions, and other superpowers
 - **List item:** No passwords to remember
 
 *Example text inside the product mockup (only change if needed):*
@@ -73,7 +75,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 5. Payment methods
 <!-- html: Payment methods: dark section, tabs drive a phone #methods -->
 
-- **Section heading:** Every way Indonesia pays.
+- **Section heading:** Every way your shoppers pay.
   - **Grey part:** QRIS, e-wallets, virtual accounts, cards and cash on delivery, in one checkout.
 - **Small heading:** Total · Example
 - **Text:** Scan with any bank or e-wallet app — Expires in 14:59
@@ -130,7 +132,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** Checkout at a glance.
 - **Heading:** For shoppers
-- **List item:** Checkout in about 30 seconds
+- **List item:** Pay in one tap
 - **List item:** WhatsApp OTP login, no passwords
 - **List item:** Guest checkout or a FLIK account
 - **List item:** Details saved across every FLIK store
@@ -165,8 +167,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** 0–2% (excl. PPN) on each successful payment. The rate depends on your payment methods and volume.
 - **Price:** 0–2% — excl. PPN, on each successful payment
 - **Heading:** When the fee applies
-- **Text:** The Checkout fee is earned when the payment succeeds. It isn't refunded.
-- **Price:** On success — earned when the payment succeeds, not refunded
+- **Text:** The Checkout fee is earned when the payment succeeds.
+- **Price:** On success — earned when the payment succeeds
 - **Heading:** Promotions, co-funded
 - **Text:** We co-fund promotion programs for merchants on FLIK Checkout. Ask us for the details.
 - **Price:** Co-funded — ask the FLIK team for details
@@ -201,7 +203,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** When do I receive the money?
 - **Answer:** Once the shopper has paid and the package has arrived, the money lands in your FLIK balance. COD payments too.
 - **Button:** How much does it cost?
-- **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, depending on your payment methods and volume. It pays for the whole checkout, not just accepting the payment: WhatsApp login, saved details, shipping, promotions and loyalty in one place. The fee is earned when the payment succeeds and isn't refunded.
+- **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, depending on your payment methods and volume. It pays for the whole checkout, not just accepting the payment: WhatsApp login, saved details, shipping, promotions and loyalty in one place.
 - **Button:** Can FLIK help fund my promotions?
 - **Answer:** Yes. We co-fund promotion programs for merchants on FLIK Checkout. Ask us for the details.
 - **Text:** Can't find what you need? Talk to the FLIK team
@@ -216,7 +218,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 13. Final CTA
 <!-- html: Final CTA (centered) -->
 
-- **Section heading:** Give your shoppers a 30-second checkout.
+- **Section heading:** Give your shoppers a faster checkout.
 - **Text:** Tell us about your store. We will help you switch over without changing how you sell.
 - **Button:** Contact sales
 - **Button:** Create an account

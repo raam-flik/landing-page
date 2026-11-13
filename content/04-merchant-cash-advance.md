@@ -9,7 +9,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - [x] Success story removed: "Rumah Kue Maya" and "Maya Sari" were made up, and the photo was a hotlinked Unsplash stock photo. The section is hidden until a real merchant agrees to their name, photo and quote (AG, 24 Oct 2026).
 - [x] Hero: "Funding from Rp 100 million to Rp 5 billion" and "Apply in under 10 minutes" removed as unsourced. The eligibility check no longer shows an amount range (AG, 24 Oct 2026).
-- [x] Stat: "10+ growing businesses trust Merchant Cash Advance" is supported and kept (AG, 24 Oct 2026). "1 fixed margin" and "0 hidden fees" replaced with "15 payment methods" and "30 sec checkout".
+- [x] Stat: "10+ growing businesses trust Merchant Cash Advance" is supported and kept (AG, 24 Oct 2026). "1 fixed margin" and "0 hidden fees" replaced with "15 payment methods" and "30 sec checkout". "30 sec" is now "1 tap to pay" under the site-wide claim limit (AG, 13 Nov 2026).
 - [x] Lending words removed (loan, interest, borrow, lender, credit). "Repay" is now "settled", "Approved" is now "Offer" / "Receive your offer", "financing" is now "funding". "One fixed margin" and "no hidden fees" removed. The "Ethical pricing" badge removed (AG, 24 Oct 2026).
 - [x] **Platform fee (AG, 12 Nov 2026):** no public rate. The page says "one fixed margin, set in each offer", matching the Pricing page.
 - [x] **GC OK (Legal, 12 Nov 2026):** "Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter." (We grow when you grow block).
@@ -54,7 +54,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Fund the next stage of your brand on a platform built for selling.
 - **Stat:** 10+ — growing businesses trust Merchant Cash Advance
 - **Stat:** 15 — payment methods in one checkout, all feeding settlement
-- **Stat:** 30 sec — to check out with FLIK Checkout
+- **Stat:** 1 tap — to pay with FLIK Checkout
 - **Stat:** 100% — ownership stays with you
 
 ## 3. Product cards

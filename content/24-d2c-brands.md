@@ -8,7 +8,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Things to confirm on this page
 
 - [ ] Structure follows stripe.com/use-cases/ecommerce (13 Nov 2026), with FLIK facts only. Stripe's parts mapped to FLIK: checkout → FLIK Checkout, Radar → Fraud Detection, acceptance optimisation → Shipping, unified experiences → Payment Link, In-Store, Cash Advance and Early Settlement, integrations and professional services → "FLIK sets it up for you". Left out: agentic commerce, subscriptions, global payments and acceptance-rate figures (not FLIK products or no confirmed numbers).
-- [ ] Stats (30s, 3×, 15 methods, 1 account) are the same as the Checkout and Payment pages.
+- [ ] Stats (1 tap, 0 passwords, 15 methods, 1 account; "30s" and "3×" removed under the site-wide claim limit, AG, 13 Nov 2026) are the same as the Payment page.
 - [ ] Fraud Detection launches in December 2026 (tracker: fd-launch); risky COD orders are marked "coming soon".
 - [ ] Pricing summary: Checkout success fee 0–2% excl. PPN, shipping up to 50% off published rates, COD 3% excl. PPN. Merchant Cash Advance is for selected brands.
 - [ ] Hero: D2C's own animated demo (built on the Checkout page's phone): the shopper picks a size on the brand's product page, pays in the FLIK checkout with saved details, a voucher and QRIS, then the brand's dashboard card goes from 41 to 42 orders and the balance rises, and a "Pickup today · JNE" chip appears. Mockups are example data (Aruna Studio, order #AR-1042, voucher NEWARUNA, courier prices). Story cards are example stories except EMADO'S and ERIGO.
@@ -35,8 +35,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Feature:** 15 ways to pay — QRIS, e-wallets, bank virtual accounts, cards and cash on delivery on one page.
 - **Feature:** Shipping in the checkout — Shoppers see the courier and the price before they pay.
 - **Feature:** Vouchers and rewards — Promo codes and FLIK rewards are applied in the checkout.
-- **Stat:** 30s — to check out with a FLIK account
-- **Stat:** 3× — faster than a standard checkout
+- **Stat:** 1 tap — to pay with a FLIK account
+- **Stat:** 0 — passwords to remember
 - **Stat:** 15 — payment methods in one checkout, from QRIS to COD
 - **Stat:** 1 — account for every store that uses FLIK
 

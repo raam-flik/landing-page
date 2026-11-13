@@ -1702,7 +1702,7 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 /* ===== Sitemap data (v5) ===== */
 const MENU=[
   {k:'Products',w:860,cols:[
-    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
+    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','A faster checkout for your store','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
     {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns']]},
     {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Settled as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Funding','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
@@ -1799,7 +1799,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 /* ===== Customers (from Raam, 12 Nov 2026): who uses which FLIK product. Logos only where design-system/assets/Logos/merchant has the real file. ===== */
 const PRODUCTS={
-  checkout:{name:'Checkout',long:'FLIK Checkout',url:'/payment/checkout',ic:'cart',blurb:'A 30-second checkout on their own website, with QRIS, e-wallets, virtual accounts, cards and COD.'},
+  checkout:{name:'Checkout',long:'FLIK Checkout',url:'/payment/checkout',ic:'cart',blurb:'A faster checkout on their own website, with QRIS, e-wallets, virtual accounts, cards and COD.'},
   shipping:{name:'Shipping',long:'FLIK Shipping',url:'/shipping',ic:'truck',blurb:'Every major courier in one dashboard, with rates compared and a tracking link for every shopper.'},
   instore:{name:'In-Store Payment',long:'FLIK In-Store Payment',url:'/payment/in-store',ic:'qris',blurb:'QRIS and cards at the counter, with in-store sales in the same dashboard as online.'},
   mca:{name:'Merchant Cash Advance',long:'Merchant Cash Advance',url:'/funding/merchant-cash-advance',ic:'coins',blurb:'Upfront funding for stock or a new outlet, settled automatically from sales.'}
@@ -1825,7 +1825,7 @@ const CUSTOMERS=[
 /* Example stories (Raam, 12 Nov 2026): general text per product, no quotes or numbers, shown as "Example story" until each brand approves its own */
 const STORY={
   checkout:{h:n=>`${n} gives shoppers a faster way to pay with FLIK Checkout.`,
-    c:n=>`Selling on its own website means ${n} needs a checkout shoppers trust, with the payment methods Indonesians use every day. Every extra step between the cart and the payment is a chance to lose the sale.`,
+    c:n=>`Selling on its own website means ${n} needs a checkout shoppers trust, with the payment methods they use every day. Every extra step between the cart and the payment is a chance to lose the sale.`,
     s:n=>`${n} replaced its checkout with FLIK Checkout. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay by QRIS, e-wallet, virtual account, card or COD on one page.`,
     r:n=>`Shoppers get from cart to paid in a few taps, and returning shoppers don't type their details again.`},
   shipping:{h:n=>`${n} ships every order from one dashboard with FLIK Shipping.`,

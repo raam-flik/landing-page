@@ -5,6 +5,7 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 ## Checkout
 
 - Replaces the checkout of a brand's **Shopify or WooCommerce** store. Shoppers who click checkout go to the FLIK checkout page.
+- **Where the cart can live:** mainly a Shopify or WooCommerce store, a custom site, or embedded in a blog, among other storefronts and digital surfaces (AG, 13 Nov 2026).
 - **Returning shoppers** with a FLIK account go straight to checkout. **New shoppers** can check out as a guest, or create a FLIK account so their details are saved for every store that uses FLIK.
 - The shopper fills in name, WhatsApp number, email and delivery address. **The courier and payment method are selected automatically.**
 - **Login:** a one-time code (OTP) sent to WhatsApp. No password.
@@ -48,6 +49,8 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 ## Claims we use today
 
 These come from the current flik.co.id. Confirm before using any new number.
+
+**Limit (AG, 13 Nov 2026):** a headline claim appears twice at most across the whole site, menu included. "30 seconds" and "3× faster" each have two slots: the Checkout stats row and one homepage line. Everywhere else, write "a faster checkout" or "pay in one tap".
 
 | Claim | Product |
 |---|---|

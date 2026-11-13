@@ -12,7 +12,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 - **Payment:** Accept payments online and in store
 - **In-Store Payment:** QRIS and cards at your counter
-- **Checkout:** 30-second online checkout
+- **Checkout:** A faster checkout for your store
 - **Invoice:** Send invoices and get paid faster
 - **Payment Link:** Share a link in chat or social media
 - **Payment Methods:** QRIS, e-wallets, VA, cards and COD

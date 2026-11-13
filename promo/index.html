@@ -1034,7 +1034,7 @@ html{scroll-padding-top:88px}
 .flow4{position:relative}
 .flow4::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:var(--p,0%);background:var(--primary);transition:width .6s cubic-bezier(.2,.8,.2,1)}
 .flow4 .stat{gap:10px;transition:background .3s}
-.flow4 .stat b{font-size:28px;letter-spacing:-.5px}
+.stats4.flow4 .stat b{font-size:24px;letter-spacing:-.4px;line-height:1.2}
 .flow4 .stat span:not(.f4-n):not(.f4-ic){font-size:15px}
 .f4-n{font-family:var(--mono);font-size:12px!important;color:var(--faint)!important}
 .stats4 .stat .f4-ic{padding:0}
@@ -1559,7 +1559,7 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 /* ===== Sitemap data (v5) ===== */
 const MENU=[
   {k:'Products',w:860,cols:[
-    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
+    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','A faster checkout for your store','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
     {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns']]},
     {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Settled as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Funding','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
