@@ -220,7 +220,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Tell us about your store. We will help you switch over without changing how you sell.
 - **Button:** Contact sales
 - **Button:** Create an account
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Label:** Pricing
 - **Text:** 0–2% (excl. PPN) on each successful payment, for the whole checkout.
 - **Link:** See pricing

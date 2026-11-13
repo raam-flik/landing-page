@@ -30,7 +30,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Intro text:** Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
 - **Button:** Start shipping free
 - **Button:** Contact sales
-- **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.
 - **List item:** No registration fee
 - **List item:** COD fee 3% (excl. PPN)
 - **List item:** 99% of shipments created successfully
@@ -235,5 +234,4 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Create a free account, connect your store, and send your first shipment in minutes.
 - **Button:** Start shipping free
 - **Button:** Contact sales
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Link:** See pricing

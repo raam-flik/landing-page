@@ -117,4 +117,3 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** FLIK promos bring shoppers to your own website. Talk to the FLIK team about joining the next one.
 - **Button:** Talk to the FLIK team
 - **Button:** Create an account
-- **Small text under buttons:** By continuing you agree to the Terms and Privacy Policy.

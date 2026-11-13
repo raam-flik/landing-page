@@ -88,8 +88,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above heading:** Pricing
 - **Heading:** Pay only when you're paid.
-  - **Grey part:** No setup fee. Each paid invoice costs the rate of the method your customer used, with PPN shown on every fee.
-- **Item:** Standard pricing — The rate of each payment method, with the PPN shown as its own line. Debit cards and Early Settlement are on the Pricing page.
+  - **Grey part:** No setup fee. Each paid invoice costs the rate of the method your customer used.
+- **Item:** Standard pricing — The rate of each payment method. Debit cards and Early Settlement are on the Pricing page.
 - **Item:** Sending many invoices? — Talk to the FLIK team about rates for your business.
 - **Rate:** QRIS — 0.7% — PPN included. 0% up to Rp100.000.
 - **Rate:** E-wallets — From 1.5% — + PPN
@@ -138,6 +138,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Where does the money go?
   - **Answer:** Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner.
 - **Question:** What does it cost?
-  - **Answer:** There is no setup fee. Each paid invoice costs the rate of the payment method your customer used, shown on the Pricing page with PPN on every fee.
+  - **Answer:** There is no setup fee. Each paid invoice costs the rate of the payment method your customer used, shown on the Pricing page.
 - **Question:** Do I need to verify my business?
   - **Answer:** Yes. Verify your identity and business before you send invoices.

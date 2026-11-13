@@ -198,7 +198,6 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 - **Text:** Start with a conversation. The FLIK team will check your account and turn on early settlement in your dashboard.
 - **Button:** Talk to the FLIK team
 - **Button:** Create an account
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Label:** Pricing
 - **Text:** 0.2% non-card, 0.3% card, + PPN, shown before you confirm. No extra fee on the standard schedule.
 - **Link:** See pricing

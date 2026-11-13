@@ -167,7 +167,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small heading:** Free to register.
 - **Text:** There's no registration fee to use FLIK Shipping.
 - **Button:** Get started
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Small heading:** Bulk shipping.
 - **Text:** Send from many warehouses to many destinations at once.
 - **Button:** Learn more
@@ -242,7 +241,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Create an account in minutes, or talk to our team about the right setup for your brand.
 - **Button:** Get started
 - **Button:** Contact sales
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.
 - **Heading:** See what you'll pay
 - **Text:** Free to register, with transparent pricing and no hidden fees.
 - **Link:** Pricing details
