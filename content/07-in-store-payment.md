@@ -180,4 +180,3 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Text:** Tell us about your outlets. The FLIK team will set up your devices and connect them to your dashboard.
 - **Button:** Talk to the FLIK team
 - **Button:** Create an account
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.

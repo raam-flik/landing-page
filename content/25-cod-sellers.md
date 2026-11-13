@@ -71,7 +71,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above heading:** Pricing
 - **Heading:** Pay per shipment.
-  - **Grey part:** Free to register. PPN is shown on every fee.
+  - **Grey part:** Free to register.
 - **Item:** Standard pricing — Courier rates, COD and Early Settlement are all on the Pricing page.
 - **Item:** Shipping at volume? — Talk to the FLIK team about rates for your business.
 - **Rate:** COD fee — 3% — Of the COD amount, excl. PPN, after delivery

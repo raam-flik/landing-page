@@ -51,7 +51,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Card:** Fraud Detection — Every payment, refund and withdrawal checked. Risky COD orders flagged (coming soon).
 - **Card:** Early Settlement — Get paid before the settlement date, for 0.2% non-card or 0.3% card + PPN.
-- **Card:** Pricing — Payment, shipping and COD rates, with PPN shown on every fee.
+- **Card:** Pricing — Payment, shipping and COD rates.
 
 ## 5. (no heading)
 

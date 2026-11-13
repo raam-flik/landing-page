@@ -47,7 +47,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Included for every FLIK merchant.
 - **Card:** Every payment, refund and withdrawal checked — Unusual activity goes to FLIK's risk team. Risky COD orders flagged (coming soon).
 - **Card:** Help with every dispute — You're told the reason and deadline, upload evidence in the dashboard, and FLIK sends it to the payment partner.
-- **Card:** Processed by licensed partners — Payments run through CashuUp, Nicepay and Xendit. FLIK is not a bank, and every merchant is verified first.
+- **Card:** Processed by licensed partners — Payments run through licensed payment partners. FLIK is not a bank, and every merchant is verified first.
 
 ## 4. Ship every order from one dashboard.
 
@@ -101,7 +101,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above heading:** Pricing
 - **Heading:** Pay as you sell.
-  - **Grey part:** No setup fee. PPN is shown on every fee.
+  - **Grey part:** No setup fee.
 - **Item:** Standard pricing — Payment method rates, shipping and Early Settlement are all on the Pricing page.
 - **Item:** Selling at volume? — Talk to the FLIK team about rates for your brand.
 - **Rate:** FLIK Checkout — 0–2% — Success fee on each successful payment, excl. PPN

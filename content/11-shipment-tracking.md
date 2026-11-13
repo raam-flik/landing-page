@@ -100,4 +100,3 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** All major couriers in one dashboard for up to 50% off published rates, with a tracking link for every shopper.
 - **Button:** Get started
 - **Button:** Explore Shipping
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.

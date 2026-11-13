@@ -38,7 +38,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Heading:** Not ready for a call?
   - **Grey part:** Start on your own.
 - **Card:** Create an account — Free to register. Verify your business to go live.
-- **Card:** See pricing — Every fee, with the PPN shown on each.
+- **Card:** See pricing — Every fee, in one place.
 - **Card:** Customer stories — How Indonesian brands grow with FLIK.
 
 ## 4. Questions, answered.

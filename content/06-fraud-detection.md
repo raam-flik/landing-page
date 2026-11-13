@@ -193,4 +193,3 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **Text:** See how Fraud Detection protects your sales.
 - **Button:** Talk to the FLIK team
 - **Button:** Create an account
-- **Small text:** By continuing you agree to the Terms and Privacy Policy.
