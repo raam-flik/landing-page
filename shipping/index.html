@@ -1209,33 +1209,41 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 
 
-/* ===== kit: customer-stories (same block on Checkout, Shipping, Merchant Cash Advance and In-Store Payment; cards as on /customers) ===== */
-.csk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-.csk-c{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:320px;padding:20px;border-radius:var(--r-lg);color:#fff;overflow:hidden;isolation:isolate;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;text-decoration:none}
-.csk-c:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
-.csk-c.csk-ph{background-color:var(--ink);background-size:cover;background-position:center}
-.csk-c.csk-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.38) 0%,rgba(var(--tint),.5) 55%,rgba(var(--tint),.92) 100%)}
-.csk-c.t-violet{--tint:106,75,255}.csk-c.t-magenta{--tint:255,45,184}.csk-c.t-orange{--tint:255,122,46}.csk-c.t-navy{--tint:0,45,93}
-.csk-c.a1{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
-.csk-c.a2{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
-.csk-c.a3{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
-.csk-chip{align-self:flex-start;display:inline-flex;align-items:center;height:36px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
-.csk-chip.dark{background:var(--ink)}
-.csk-chip img{display:block;max-height:22px;max-width:104px;width:auto;object-fit:contain}
-.csk-chip img.sq{max-height:26px}
-.csk-stat{display:block;font-size:30px;font-weight:300;letter-spacing:-.6px;line-height:1.1;margin-bottom:6px}
-.csk-stat small{display:block;font-size:13px;font-weight:400;letter-spacing:0;opacity:.9;margin-top:2px}
-.csk-c h3{font-size:17px;font-weight:500;line-height:1.35;color:#fff;letter-spacing:-.1px;text-wrap:balance}
-.csk-c .rs{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,.92);margin-top:10px}
-.csk-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
-.csk-logos{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
-.csk-logos a{display:inline-flex;align-items:center;justify-content:center;height:52px;min-width:52px;padding:8px 14px;border-radius:8px;background:var(--surface,#fff);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .2s}
-.csk-logos a:hover{box-shadow:inset 0 0 0 1px var(--primary)}
-.csk-logos a.dark{background:var(--ink);box-shadow:none}
-.csk-logos img{display:block;max-height:28px;max-width:110px;width:auto;object-fit:contain}
-.csk-logos img.sq{max-height:34px}
-@media (max-width:1080px){.csk-grid{grid-template-columns:1fr 1fr}.csk-grid>:nth-child(3){display:none}}
-@media (max-width:760px){.csk-grid{grid-template-columns:1fr}.csk-grid>:nth-child(3){display:flex}.csk-c{min-height:260px}}
+
+
+
+
+
+
+/* ===== kit: customer-stories (the homepage "Powering brands" story cards and carousel, on Checkout, Shipping, Merchant Cash Advance and In-Store Payment) ===== */
+main section#customers{padding:112px 0}
+@media (max-width:760px){main section#customers{padding:72px 0}}
+#customers+section{padding-top:112px}
+@media (max-width:760px){#customers+section{padding-top:72px}}
+.stories-wrap{position:relative;margin-top:40px}
+.stories{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.stories::-webkit-scrollbar{display:none}
+.story{scroll-snap-align:start;display:flex;flex-direction:column;gap:14px}
+.story-art{position:relative;aspect-ratio:4/5;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:18px;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px;overflow:hidden;isolation:isolate}
+.story.s1 .story-art{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
+.story.s2 .story-art{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
+.story.s3 .story-art{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
+.story.s4 .story-art{background:linear-gradient(160deg,#002D5D,#3B24A8 50%,#FF7A2E)}
+.story .story-art.sph{background-size:cover;background-position:center}
+.story .story-art.sph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.15) 0%,rgba(var(--tint),.45) 55%,rgba(var(--tint),.9) 100%)}
+.story-art.t-violet{--tint:106,75,255}.story-art.t-magenta{--tint:255,45,184}.story-art.t-orange{--tint:255,122,46}.story-art.t-navy{--tint:0,45,93}
+.story-art .st-logo{display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
+.story-art .st-logo.dark{background:var(--ink)}
+.story-art .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
+.story-art .st-logo img.sq{max-height:26px}
+.story-art .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
+.story p{font-size:15px;line-height:1.5;color:var(--ink)}
+.st-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
+.car-nav{display:flex;gap:8px}
+.cbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--primary);display:flex;align-items:center;justify-content:center;background:#fff}
+.cbtn:hover{border-color:var(--primary)}
+@media (max-width:1080px){.stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){.stories{grid-auto-columns:78%}}
 /* ===== /kit: customer-stories ===== */
 </style>
 </head>
@@ -1486,8 +1494,10 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="pad guides" id="customers">
   <div class="wrap">
     <h2 class="sec-h">Brands that grow with FLIK Shipping. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
-    <div class="csk-grid"><a class="csk-c a1" href="../customers/story/?c=gerai-hawa"><span class="csk-chip"><img src="../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></span><span><h3>Gerai Hawa ships modest fashion across Indonesia with FLIK Shipping.</h3><span class="rs">Read story <span class="chev">›</span></span></span></a><a class="csk-c a2" href="../customers/story/?c=teenage-death-star"><span class="csk-chip"><img class="sq" src="../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></span><span><h3>Teenage Death Star gets merch to fans across Indonesia with FLIK Shipping.</h3><span class="rs">Read story <span class="chev">›</span></span></span></a><a class="csk-c a3" href="../customers/story/?c=zaafer"><span class="csk-chip"><img src="../assets/logos/merchant/zaafer.png?v=2" alt="Zaafer"></span><span><h3>Zaafer ships every order from one dashboard with FLIK Shipping.</h3><span class="rs">Read story <span class="chev">›</span></span></span></a></div>
-    <div class="csk-row"><div class="csk-logos" aria-label="Brands on FLIK Shipping"><a href="../customers/story/?c=zaafer" class="" aria-label="Zaafer story"><img src="../assets/logos/merchant/zaafer.png?v=2" alt="Zaafer"></a><a href="../customers/story/?c=gerai-hawa" class="" aria-label="Gerai Hawa story"><img src="../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></a><a href="../customers/story/?c=manta-liberta" class="" aria-label="Manta Liberta story"><img src="../assets/logos/merchant/manta-liberta.png?v=2" alt="Manta Liberta"></a><a href="../customers/story/?c=teenage-death-star" class="" aria-label="Teenage Death Star story"><img class="sq" src="../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></a></div><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a></div>
+    <div class="stories-wrap">
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></span><span class="st-big">Gerai Hawa</span></div><p>Gerai Hawa ships modest fashion across Indonesia with FLIK Shipping.</p><a href="../customers/story/?c=gerai-hawa" class="link">Read Gerai Hawa's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></span><span class="st-big">Teenage Death Star</span></div><p>Teenage Death Star gets merch to fans across Indonesia with FLIK Shipping.</p><a href="../customers/story/?c=teenage-death-star" class="link">Read Teenage Death Star's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/zaafer.png?v=2" alt="Zaafer"></span><span class="st-big">Zaafer</span></div><p>Zaafer ships every order from one dashboard with FLIK Shipping.</p><a href="../customers/story/?c=zaafer" class="link">Read Zaafer's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/manta-liberta.png?v=2" alt="Manta Liberta"></span><span class="st-big">Manta Liberta</span></div><p>Manta Liberta spends less time on shipping and more on its brand.</p><a href="../customers/story/?c=manta-liberta" class="link">Read Manta Liberta's story <span class="chev">›</span></a></article></div>
+      <div class="st-foot"><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+    </div>
   </div>
 </section>
 <!-- ===== /kit: customer-stories ===== -->
@@ -2001,6 +2011,15 @@ const FAQ=[
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
+
+
+
+
+
+
+/* ===== kit: customer-stories carousel (arrows scroll the story row, as on the homepage) ===== */
+document.querySelectorAll('#customers .cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
+/* ===== /kit: customer-stories ===== */
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+

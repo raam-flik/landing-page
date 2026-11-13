@@ -17,7 +17,7 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - [x] AI-agent withdrawals and the payment-partner screening line removed (AG, 12 Nov 2026).
 - [ ] Example data in the mockups (orders, amounts, banks, card digits) is example data, not FLIK figures.
 
-- [x] **Hero ribbon (AG, 13 Nov 2026):** the brand ribbon from the earlier homepage hero runs behind the risk-activity mockup, the same as Pricing, Help and In-Store Payment.
+- [x] **Hero field (Raam, 13 Nov 2026):** the ribbon didn't fit here. The homepage particle field is shaped as a shield: violet dots circle the risk-activity card, an orange "risky" dot now and then hits the ring and fades, and chips appear around the card (Withdrawal checked, Risky order flagged, Chargeback evidence sent, Payout account change checked, Unusual refund held for review, Payment cleared · QRIS).
 
 ## Search results (SEO)
 

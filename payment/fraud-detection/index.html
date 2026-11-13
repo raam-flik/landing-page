@@ -1335,13 +1335,24 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 
 
-/* ===== kit: hero-ribbon (the brand ribbon from the earlier homepage hero: orange → magenta → violet → cyan) ===== */
-.rbn-host{position:relative;overflow:hidden}
-.rbn-host>.wrap{position:relative;z-index:2}
-.rbn{position:absolute;top:0;right:0;width:min(1100px,92%);height:100%;pointer-events:none;z-index:0;overflow:visible}
-.rbn-host.lh h1{max-width:720px}.rbn-host.lh .lead{max-width:560px}
-@media (max-width:760px){.rbn{width:100%;height:min(60%,440px);opacity:.45}}
-/* ===== /kit: hero-ribbon ===== */
+
+
+
+
+
+
+/* ===== kit: hero-field (the homepage particle field, shaped per product: a shield ring on Fraud Detection, tap-to-pay pulses on In-Store Payment) ===== */
+.hf{position:absolute;inset:-12% -22% -8% -18%;pointer-events:none;z-index:0}
+.hf canvas{position:absolute;inset:0;width:100%;height:100%}
+.ch-stage>:not(.hf):not(.ch-glow){z-index:1}
+.fd-stage>.fd-win{position:relative}
+.ch-stage .ch-glow{opacity:.45}
+.hf-ev{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 0 8px;border-radius:999px;background:var(--surface,#fff);box-shadow:0 0 0 1px var(--line),0 4px 12px -4px rgba(0,45,93,.18);font-size:11.5px;font-weight:500;color:var(--ink);white-space:nowrap;opacity:0;transform:translate(-50%,-50%) scale(.92);transition:opacity .45s,transform .45s;z-index:3}
+.hf-ev i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.hf-ev.warn i{background:var(--warning,#FF7A2E)}
+.hf-ev.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media (max-width:760px){.hf{inset:-6% -8%}.hf-ev{display:none}}
+/* ===== /kit: hero-field ===== */
 </style>
 </head>
 <body>
@@ -1367,9 +1378,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <main id="top" tabindex="-1">
 
 <!-- ===== Hero: text left, a live feed of withdrawals and account changes on the right (example data) ===== -->
-<section class="ch guides rbn-host">
-  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".6" filter="url(#rbn-b)"/><g class="rbn-lines" fill="none" stroke="url(#rbn-g)" stroke-width="3"></g></svg>
-        <div class="wrap ch-in">
+<section class="ch guides">
+  <div class="wrap ch-in">
     <div class="ch-t">
       <p class="eyebrow">FLIK Fraud Detection · From December 2026</p>
       <h1 class="ch-h">Stop fraud before it costs you. <span class="soft">Fewer chargebacks, fewer fake COD orders.</span></h1>
@@ -1386,6 +1396,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     </div>
     <div class="ch-stage fd-stage">
       <div class="ch-glow" aria-hidden="true"></div>
+      <div class="hf" data-mode="shield" data-target=".fd-win" data-ev='[["Withdrawal checked", "ok"], ["Risky order flagged", "warn"], ["Chargeback evidence sent", "ok"], ["Payout account change checked", "ok"], ["Unusual refund held for review", "warn"], ["Payment cleared \u00b7 QRIS", "ok"]]' aria-hidden="true"><canvas></canvas><span class="hf-ev"><i></i><span></span></span></div>
+      
       <div class="fx-win fd-win" role="img" aria-label="Example: payments, refunds, a card dispute and withdrawals in the FLIK dashboard, each marked cleared or under review">
         <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/risk</span></div>
         <div class="fd-body">
@@ -1858,26 +1870,64 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 
 
 
-/* ===== kit: hero-ribbon (thin gradient lines forming a twisting sheet that ends in the hero's bottom-right corner) ===== */
-document.querySelectorAll('svg.rbn').forEach(svg=>{
-  const g=svg.querySelector('.rbn-lines'),fill=svg.querySelector('.rbn-fill');
-  const N=56,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
-  let CX=980,CY=880;
-  function setCorner(){const r=svg.getBoundingClientRect(),m=svg.getScreenCTM();if(!m||!r.width)return;const q=svg.createSVGPoint();q.x=r.right-24;q.y=r.bottom-8;const v=q.matrixTransform(m.inverse());CX=v.x;CY=v.y}
-  setCorner();addEventListener('resize',setCorner);document.fonts&&document.fonts.ready.then(setCorner);
-  const pt=(s,t)=>{const w1=70*Math.sin(t*.45+s*2.2),w2=60*Math.cos(t*.37+s*1.7);return [[360+s*600,-40],[400+(1-s)*440+w1,250+s*90],[1000-s*400+w2,420+(1-s)*140],[CX-s*70,CY]]};
-  const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
-  let vis=true;const paused=()=>typeof motionPaused==='function'&&motionPaused();
-  function draw(t){
-    if(vis&&!paused()){t/=1000;paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
-      const a=pt(0,t),b=pt(1,t);fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`)}
-    if(!reduce)requestAnimationFrame(draw);
+
+
+
+
+
+
+/* ===== kit: hero-field (dots in the homepage colours; mode "shield" orbits a ring round the mockup and turns risky dots away, mode "pulse" sends rings out from the device) ===== */
+document.querySelectorAll('.hf').forEach(field=>{
+  const cv=field.querySelector('canvas'),ctx=cv.getContext('2d'),ev=field.querySelector('.hf-ev'),evT=ev&&ev.querySelector('span');
+  const mode=field.dataset.mode,EV=JSON.parse(field.dataset.ev||'[]'),target=field.parentElement.querySelector(field.dataset.target);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const V=css('--primary')||'#6A4BFF',COLS=[[V,.86],['#00E5FF',.07],['#FF2DB8',.07]],RISK='#FF7A2E';
+  const pick=()=>{const k=Math.random();return k<COLS[0][1]?COLS[0][0]:k<COLS[0][1]+COLS[1][1]?COLS[1][0]:COLS[2][0]};
+  let W=0,H=0,cx=0,cy=0,R=0,P=[],K=[],vis=true;const t0=performance.now();
+  function size(){
+    const b=field.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1);W=b.width;H=b.height;
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    const m=(target||field).getBoundingClientRect();cx=m.left-b.left+m.width/2;cy=m.top-b.top+m.height/2;R=Math.max(m.width,m.height)*.62;
+    const n=Math.round(Math.min(2600,Math.max(900,W*H/260)));P=[];
+    for(let i=0;i<n;i++){
+      if(mode==='shield'){const far=Math.random()<.35;const r=far?R*(1.3+Math.random()*.9):R*(.92+Math.pow(Math.random(),2)*.3);
+        P.push({r,a:Math.random()*6.283,w:(far?.03:.11)*(R/(r+1)),j:Math.random()*6.283,s:Math.random()<.2?2:1.4,o:far?.2+Math.random()*.25:.45+Math.random()*.5,col:pick()})}
+      else{P.push({ph:Math.random()*.25,a:Math.random()*6.283,ring:Math.floor(Math.random()*4),s:Math.random()<.2?2:1.4,o:.4+Math.random()*.5,col:pick(),jit:(Math.random()-.5)*10})}
+    }
   }
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(svg);
-  vis=true;draw(0);vis=svg.getBoundingClientRect().top<innerHeight;if(!reduce)requestAnimationFrame(draw);
+  function spawnRisk(){const a=Math.random()*6.283;K.push({a,r:R*2.1,v:R*.006+.6,life:1})}
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    if(mode==='shield'){
+      for(const p of P){const a=p.a+p.w*t,wob=Math.sin(t*1.1+p.j)*5,x=cx+Math.cos(a)*(p.r+wob),y=cy+Math.sin(a)*(p.r+wob)*.82;
+        if(x<0||x>W||y<0||y>H)continue;ctx.globalAlpha=p.o;ctx.fillStyle=p.col;ctx.fillRect(x,y,p.s,p.s)}
+      for(const k of K){if(k.r>R*1.02)k.r-=k.v;else k.life-=.035;const x=cx+Math.cos(k.a)*k.r,y=cy+Math.sin(k.a)*k.r*.82;
+        ctx.globalAlpha=Math.max(0,k.life);ctx.fillStyle=RISK;ctx.beginPath();ctx.arc(x,y,k.r>R*1.02?2.6:2.6+(1-k.life)*9,0,6.283);
+        if(k.r>R*1.02)ctx.fill();else{ctx.strokeStyle=RISK;ctx.lineWidth=1.2;ctx.stroke()}}
+      K=K.filter(k=>k.life>0);
+    }else{
+      const span=R*1.7;
+      for(const p of P){const prog=((t*.09+p.ph+p.ring*.25)%1),r=R*.32+prog*span,x=cx+Math.cos(p.a)*(r+p.jit),y=cy+Math.sin(p.a)*(r+p.jit)*.9;
+        if(x<0||x>W||y<0||y>H)continue;ctx.globalAlpha=Math.min(1,p.o*1.35)*Math.pow(1-prog,.7)*(prog<.08?prog/.08:1);ctx.fillStyle=p.col;ctx.fillRect(x,y,p.s,p.s)}
+    }
+    ctx.globalAlpha=1;
+  }
+  let ei=0;
+  function nextEv(){if(!ev||!EV.length)return;ev.classList.remove('on');
+    setTimeout(()=>{const e=EV[ei%EV.length],b=field.getBoundingClientRect(),m=(target||field).getBoundingClientRect();
+      const L=m.left-b.left,T=m.top-b.top,Rr=m.right-b.left,Bb=m.bottom-b.top,vw=document.documentElement.clientWidth-b.left;
+      const S=[[Rr-70,T-20],[L+90,Bb+22],[Rr+96,T+(Bb-T)*.42],[L+110,T-20],[Rr-80,Bb+22]];  // around the mockup, never on it
+      const q=S[ei%S.length];ei++;
+      ev.style.left=Math.max(90,Math.min(Math.min(W,vw)-96,q[0]))+'px';ev.style.top=Math.max(16,Math.min(H-16,q[1]))+'px';
+      ev.classList.toggle('warn',e[1]==='warn');evT.textContent=e[0];ev.classList.add('on');if(mode==='shield'&&e[1]==='warn')spawnRisk()},450)}
+  function loop(now){if(vis&&!(typeof motionPaused==='function'&&motionPaused())){const t=(now-t0)/1000;if(mode==='shield'&&Math.random()<.008)spawnRisk();draw(t)}requestAnimationFrame(loop)}
+  size();
+  if(reduce){draw(0);if(ev){nextEv()}}else{requestAnimationFrame(loop);nextEv();setInterval(()=>{if(vis)nextEv()},2800)}
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();if(reduce)draw(0)},150)});
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(field);
 });
-/* ===== /kit: hero-ribbon ===== */
+/* ===== /kit: hero-field ===== */
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+

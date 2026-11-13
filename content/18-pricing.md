@@ -18,7 +18,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] **When fees are charged** (FAQ, fixed 12 Nov 2026: the COD fee comes off at delivery, not at booking): "Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery." Confirm.
 - [x] **Shipping and Funding tabs (AG, 12 Nov 2026):** Shipping shows "up to 50% off published courier rates", with no per-courier rate card. Funding shows no rates: the MCA fee is set per offer. Early Settlement is a Payments product, so it is only on the Payments tab.
 
-- [x] **Hero ribbon (AG, 13 Nov 2026):** the page looked quiet, so the brand ribbon from the earlier homepage hero (orange → magenta → violet → cyan, animated lines) now sits top right in the hero. Same kit on Help, Fraud Detection and In-Store Payment.
+- [x] **Hero ribbon (AG, 13 Nov 2026):** the page looked quiet, so the brand ribbon from the earlier homepage hero (orange → magenta → violet → cyan, animated lines) now sits top right in the hero. Same kit on Help. Fraud Detection and In-Store Payment use the particle field instead.
 
 ## Search results (SEO)
 
