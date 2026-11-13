@@ -1409,6 +1409,8 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+/* FLIK F mark on shopper pay and checkout buttons */
+.fk::before{content:"";display:inline-block;flex:none;width:1em;height:1em;margin-right:.5em;vertical-align:-.12em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat}
 </style>
 </head>
 <body>
@@ -1455,7 +1457,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <div class="ch-cart">
         <small class="m">arunastudio.co.id · Example</small>
         <div class="co-row"><span>Linen Shirt</span><span class="num">Rp 349.000</span></div>
-        <span class="ch-cart-btn" id="ph-cartbtn">Checkout</span>
+        <span class="ch-cart-btn fk" id="ph-cartbtn">Checkout</span>
       </div>
       <div class="ph" id="ph">
         <div class="ph-notch"></div>
@@ -1480,7 +1482,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
             <div class="ph-r"><small>Payment <em>Auto</em></small><b>QRIS</b></div>
             <div class="ph-r rw"><small>Reward applied</small><b>Member reward</b><span class="num">−Rp 20.000</span></div>
             <div class="ph-tot"><span>Total</span><b class="num">Rp 341.000</b></div>
-            <span class="ph-btn" id="ph-pay">Pay Rp 341.000</span>
+            <span class="ph-btn fk" id="ph-pay">Pay Rp 341.000</span>
           </div>
           <div class="ph-s" data-s="3">
             <div class="okc" data-ic="check-l"></div>
@@ -1552,7 +1554,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
               <div class="co-row"><span class="m">Shipping</span><span class="num">Rp 12.000</span></div>
               <div class="fx-el fx-rew" data-f="rew"><div class="co-row"><span><span data-ic="gift-s"></span>Member reward</span><span class="num">−Rp 20.000</span></div></div>
               <div class="co-total"><span>Total</span><span class="num" id="fx-tot">Rp 461.000</span></div>
-              <span class="ph-btn">Pay now</span>
+              <span class="ph-btn fk">Pay now</span>
             </div>
           </div>
         </div>
@@ -2095,9 +2097,9 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
     {k:'Virtual account',ic:'bank',d:'Transfer from any major bank',chips:['BCA','Mandiri','BNI','BRI','Permata'],
      h:()=>amt+`<div class="opts">${opt('BCA Virtual Account',1)}</div><div class="pmx-va"><small class="m">Virtual account number</small><b>8077 0812 3456 7890</b><span class="pmx-copy">Copy</span></div><p class="pmx-c">Pay before <b>17 Okt 2026, 23:59</b></p>`},
     {k:'Card',ic:'card',d:'Credit and debit cards',chips:['Visa','Mastercard','JCB'],
-     h:()=>amt+`<div class="fld"><label>Card number</label><div class="fx-in"><span class="num">4111 1111 1111 1111</span><span class="pill gr">VISA</span></div></div><div class="fx-two"><div class="fx-in">12 / 28</div><div class="fx-in">•••</div></div><span class="ph-btn">Pay Rp 341.000</span>`},
+     h:()=>amt+`<div class="fld"><label>Card number</label><div class="fx-in"><span class="num">4111 1111 1111 1111</span><span class="pill gr">VISA</span></div></div><div class="fx-two"><div class="fx-in">12 / 28</div><div class="fx-in">•••</div></div><span class="ph-btn fk">Pay Rp 341.000</span>`},
     {k:'Cash on delivery',ic:'cash',d:'Pay the courier when it arrives',chips:['COD'],
-     h:()=>`<h6>Pay when it arrives · Example</h6><div class="pmx-amt num">Rp 341.000</div><div class="co-row"><span class="m">Order</span><span class="num">Rp 341.000</span></div><p class="pmx-c" style="text-align:left">The courier collects the payment. COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.</p><span class="ph-btn">Confirm order</span>`}
+     h:()=>`<h6>Pay when it arrives · Example</h6><div class="pmx-amt num">Rp 341.000</div><div class="co-row"><span class="m">Order</span><span class="num">Rp 341.000</span></div><p class="pmx-c" style="text-align:left">The courier collects the payment. COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.</p><span class="ph-btn fk">Confirm order</span>`}
   ];
   const tabs=document.getElementById('pmx-tabs'),scr=document.getElementById('pmx-scr'),chips=document.getElementById('pmx-chips');
   tabs.innerHTML=M.map((m,i)=>`<button type="button" data-i="${i}"><span class="pi">${ic(m.ic,17)}</span><span><b>${m.k}</b><small>${m.d}</small></span></button>`).join('');

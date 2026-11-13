@@ -685,6 +685,66 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
   .banner h2{font-size:30px}
 }
 
+/* Banner flow: Checkout → Shipping → Funding as three real fragments joined by a line */
+.banner{align-items:center}
+.banner-in{flex:1 1 auto;min-width:0}
+.banner-flow{position:relative;flex:none;width:468px;height:236px;margin:28px 40px 28px 0}
+.bf{position:absolute;width:232px;background:#fff;border-radius:var(--r-card);box-shadow:0 14px 34px rgba(0,16,48,.38);padding:10px 12px 12px;font-size:12px;line-height:1.35;color:var(--ink)}
+.bf1{left:0;top:0}.bf2{left:118px;top:80px}.bf3{left:236px;top:160px}
+.bf+.bf::before{content:"";position:absolute;left:26px;top:-14px;height:14px;border-left:2px dashed rgba(255,255,255,.75)}
+.bf-k{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.bf-k em{font-style:normal;letter-spacing:0;text-transform:none;font-size:10px;color:var(--ok-text);background:var(--ok-soft);border-radius:999px;padding:1px 7px}
+.bf-pay{background:var(--primary);color:#fff;font-weight:600;text-align:center;border-radius:var(--r-btn);padding:7px}
+.bf-rate{display:flex;justify-content:space-between;gap:8px;background:var(--primary-soft);border-radius:var(--r-btn);padding:7px 8px;font-weight:600}
+.bf-amt{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;font-weight:500}
+.bf-amt small{font-size:11px;color:var(--muted);font-weight:400}
+.bf-bar{height:5px;border-radius:999px;background:var(--line);margin-top:7px;overflow:hidden}
+.bf-bar i{display:block;width:62%;height:100%;background:var(--primary)}
+@media (max-width:900px){
+  .banner{flex-direction:column;align-items:stretch}
+  .banner-flow{margin:0 40px 40px auto}
+}
+@media (max-width:600px){
+  .banner-flow{width:312px;margin:0 auto 28px}
+  .bf2{left:40px}.bf3{left:80px}
+}
+
+/* Banner background: thin diagonal flow lines, top left to bottom right, with a faint light travelling along each */
+.banner-glow{inset:0;animation:none;background:linear-gradient(100deg,#002D5D 30%,#16206E 72%,#2A1B7A)}
+.banner-glow svg{position:absolute;inset:0;width:100%;height:100%}
+.banner-glow path{fill:none;vector-effect:non-scaling-stroke;stroke:rgba(150,170,255,.13);stroke-width:1}
+.banner-glow path.run{stroke:rgba(127,233,255,.5);stroke-width:1.3;stroke-dasharray:40 1100;animation:bn-run 12s linear infinite}
+.banner-glow path.run:nth-of-type(even){stroke:rgba(196,184,255,.5);animation-duration:16s}
+/* Cards lift toward the pointer and press down on click */
+@media (hover:hover){
+  .bf{transition:transform .38s cubic-bezier(.2,1.5,.4,1),box-shadow .3s}
+  .bf:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 22px 44px rgba(0,16,48,.5);z-index:2}
+  .bf:active{transform:translateY(-1px) scale(.985);transition-duration:.08s}
+}
+@keyframes bn-run{from{stroke-dashoffset:1140}to{stroke-dashoffset:0}}
+
+/* Developers diagram: dot field runs the full section width, drifts slowly, and lights up in brief soft flashes */
+.dx-sec{overflow-x:clip}
+#dx-stage .dx-dots{inset:-40px -520px;background-image:radial-gradient(rgba(255,255,255,.2) 1px,transparent 1.2px);-webkit-mask-image:radial-gradient(ellipse 50% 62% at 50% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 50% 62% at 50% 50%,#000 30%,transparent 100%);animation:dx-drift 10s linear infinite}
+#dx-stage .dx-dots::before,#dx-stage .dx-dots::after{content:"";position:absolute;inset:0;opacity:0;background-image:radial-gradient(rgba(150,240,255,.95) 1px,transparent 1.3px),radial-gradient(closest-side,rgba(0,229,255,.2),transparent);background-size:16px 16px,100% 100%;-webkit-mask-image:radial-gradient(30% 55% at 30% 42%,#000,transparent 72%);mask-image:radial-gradient(30% 55% at 30% 42%,#000,transparent 72%);animation:dx-drift 10s linear infinite,dx-flash 9s linear infinite}
+#dx-stage .dx-dots::after{background-image:radial-gradient(rgba(196,184,255,.95) 1px,transparent 1.3px),radial-gradient(closest-side,rgba(106,75,255,.24),transparent);-webkit-mask-image:radial-gradient(30% 55% at 71% 58%,#000,transparent 72%);mask-image:radial-gradient(30% 55% at 71% 58%,#000,transparent 72%);animation-delay:0s,4.6s}
+@keyframes dx-drift{to{background-position:16px 16px,0 0}}
+@keyframes dx-flash{0%,10%,100%{opacity:0}1.5%{opacity:.9}3%{opacity:.25}4.5%{opacity:.7}}
+/* Setup tabs: each tab ends with its own link; the API tab adds a short code sample under its steps */
+.ipanel .link-l{margin-top:18px}
+.ipanel .icode{margin-top:18px;padding:14px 16px;border-radius:8px;background:rgba(0,0,0,.22);border:1px solid var(--dark-line);font-size:12px;line-height:1.65;scrollbar-width:thin;scrollbar-color:#2D5585 transparent}
+/* Developers diagram layout: systems on top, three ways to connect, orchestration to providers left and right, app marketplace below */
+#dx-stage .dx-sys{left:230px;top:14px;width:540px;height:96px}
+#dx-stage .dx-sys div{justify-content:flex-start}
+#dx-stage .dx-sys em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:#8FA3C8;width:86px;text-align:right;align-self:center;margin-right:4px}
+#dx-stage .dx-apps{left:220px;top:292px;width:560px;height:52px}
+#dx-stage .dx-apps em{width:auto;margin-right:8px;white-space:nowrap}
+#dx-stage .dx-apps div{justify-content:center}
+.dx-t{position:absolute;top:204px;transform:translateX(-50%);font-size:9px;font-weight:500;letter-spacing:.7px;text-transform:uppercase;color:#5E78A8;white-space:nowrap}
+.dx-ci{width:14px;height:14px;flex:none}
+#dx-stage .dx-side{background:#3B24A8;border-color:#5A45C9;color:#fff;font-weight:500}
+@media (min-width:761px){#dx-fit{overflow:visible}}
+
 /* Globe story: checkout → shipping over Indonesia */
 .globe-box .globe-stage{position:absolute;left:50%;top:0;transform:translateX(-50%);width:620px;height:500px}
 .globe-box .globe-stage #globe{position:absolute;left:0;top:0;transform:none;width:100%;height:100%;-webkit-mask-image:radial-gradient(ellipse 62% 85% at 50% 25%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 62% 85% at 50% 25%,#000 55%,transparent 100%)}
@@ -1038,6 +1098,8 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+/* FLIK F mark on shopper pay and checkout buttons */
+.fk::before{content:"";display:inline-block;flex:none;width:1em;height:1em;margin-right:.5em;vertical-align:-.12em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat}
 </style>
 </head>
 <body>
@@ -1127,7 +1189,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
                 <div class="co-row green"><span class="m">Reward applied</span><span class="num">−Rp 10.000</span></div>
                 <div class="co-total"><span>Total</span><span class="num" id="co-total">Rp 540.000</span></div>
               </div>
-              <button class="co-pay" id="co-pay">Pay Rp 540.000</button>
+              <button class="co-pay fk" id="co-pay">Pay Rp 540.000</button>
               <div class="co-foot">Payments processed by licensed partners</div>
               </div>
             </div>
@@ -1230,12 +1292,16 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad-s guides">
   <div class="wrap">
     <div class="banner">
-      <div class="banner-glow" aria-hidden="true"></div>
+      <div class="banner-glow" aria-hidden="true"><svg viewBox="0 0 1100 292" preserveAspectRatio="none"><path d="M-20 -10 C 300 40, 520 120, 1120 250"/><path d="M-20 45 C 280 110, 620 150, 1120 300"/><path d="M130 -10 C 430 60, 760 130, 1120 195"/><path d="M-20 115 C 240 170, 520 235, 900 302"/><path d="M370 -10 C 620 50, 900 90, 1120 135"/><path d="M-20 190 C 160 220, 330 262, 520 302"/><path class="run" d="M-20 -10 C 300 40, 520 120, 1120 250" style="animation-delay:0s"/><path class="run" d="M-20 45 C 280 110, 620 150, 1120 300" style="animation-delay:-5s"/><path class="run" d="M130 -10 C 430 60, 760 130, 1120 195" style="animation-delay:-9s"/><path class="run" d="M-20 115 C 240 170, 520 235, 900 302" style="animation-delay:-2s"/><path class="run" d="M370 -10 C 620 50, 900 90, 1120 135" style="animation-delay:-12s"/><path class="run" d="M-20 190 C 160 220, 330 262, 520 302" style="animation-delay:-7s"/></svg></div>
       <div class="banner-in">
-        <p class="banner-k"><span>Checkout</span><i></i><span>Shipping</span><i></i><span>Funding</span></p>
         <h2>A unified commerce infrastructure.</h2>
         <p class="banner-sub">Payments in, packages out, one balance behind it all.</p>
         <button class="btn btn-light" data-act="sales">Book a demo <span class="chev">›</span></button>
+      </div>
+      <div class="banner-flow" aria-hidden="true">
+        <div class="bf bf1"><div class="bf-k">Checkout</div><div class="bf-pay fk">Pay Rp 540.000</div></div>
+        <div class="bf bf2"><div class="bf-k">Shipping</div><div class="bf-rate"><span>Regular · 2–3 days</span><span>Rp 12.000</span></div></div>
+        <div class="bf bf3"><div class="bf-k">Funding <em>Example</em></div><div class="bf-amt"><span>Rp 250.000.000</span><small>62% repaid</small></div><div class="bf-bar"><i></i></div></div>
       </div>
     </div>
   </div>
@@ -1294,7 +1360,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </section>
 
 <!-- ===== Developers (dark) ===== -->
-<section class="pad dark guides">
+<section class="pad dark guides dx-sec">
   <div class="wrap">
     <div class="dv-intro">
         <h2 style="color:#fff">Go live without rebuilding your store.</h2>
@@ -1304,24 +1370,27 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 
     <!-- Connect to existing systems (like stripe.com) -->
     <div class="dx">
-      <h3 class="dx-h">Connect to the systems you already use. <span>Every order from your store flows through FLIK Checkout and Shipping, out to every payment method and all major couriers.</span></h3>
+      <h3 class="dx-h">Connect to the systems you already use. <span>One connection reaches your payment and courier partners, with apps to add as you grow.</span></h3>
       <div class="dx-fit" id="dx-fit">
-        <div class="dx-stage" id="dx-stage" role="img" aria-label="Your store and business systems connect to FLIK through plugins, the FLIK API or the dashboard. FLIK then handles checkout and shipping across QRIS, e-wallets, virtual accounts and couriers.">
+        <div class="dx-stage" id="dx-stage" role="img" aria-label="Your store and back-office systems connect to FLIK through the SDK, the FLIK API or the dashboard. FLIK orchestrates each order across payment providers (PSPs) and logistics providers (3PLs). An app marketplace adds FLIK Funding and accounting, CRM and storefront apps.">
           <div class="dx-dots" aria-hidden="true"></div>
-          <svg class="dx-lines" viewBox="0 0 1000 430" aria-hidden="true"><line x1="0" y1="222" x2="1000" y2="222" class="mid"/><g class="base"><path d="M400 104 V118 Q400 124 394 124 H336 Q330 124 330 130 V134"/><path d="M600 104 V118 Q600 124 606 124 H664 Q670 124 670 130 V134"/><path d="M330 166 V176 Q330 182 336 182 H486 Q492 182 492 188 V190"/><path d="M670 166 V176 Q670 182 664 182 H514 Q508 182 508 188 V190"/><path d="M500 254 V266"/><path d="M470 298 V312 Q470 318 464 318 H386 Q380 318 380 324 V342"/><path d="M490 298 V318 Q490 324 484 324 H466 Q460 324 460 330 V342"/><path d="M510 298 V318 Q510 324 516 324 H534 Q540 324 540 330 V342"/><path d="M530 298 V312 Q530 318 536 318 H614 Q620 318 620 324 V342"/></g><g class="live"><path d="M400 104 V118 Q400 124 394 124 H336 Q330 124 330 130 V134" style="animation-delay:0.00s"/><path d="M600 104 V118 Q600 124 606 124 H664 Q670 124 670 130 V134" style="animation-delay:0.45s"/><path d="M330 166 V176 Q330 182 336 182 H486 Q492 182 492 188 V190" style="animation-delay:0.90s"/><path d="M670 166 V176 Q670 182 664 182 H514 Q508 182 508 188 V190" style="animation-delay:1.35s"/><path d="M500 254 V266" style="animation-delay:1.80s"/><path d="M470 298 V312 Q470 318 464 318 H386 Q380 318 380 324 V342" style="animation-delay:2.25s"/><path d="M490 298 V318 Q490 324 484 324 H466 Q460 324 460 330 V342" style="animation-delay:2.70s"/><path d="M510 298 V318 Q510 324 516 324 H534 Q540 324 540 330 V342" style="animation-delay:3.15s"/><path d="M530 298 V312 Q530 318 536 318 H614 Q620 318 620 324 V342" style="animation-delay:3.60s"/></g></svg>
-          <div class="dx-col left" aria-hidden="true"><div class="dx-tile"><span class="f" style="--c:#6A4BFF" data-ic="qris"></span><span class="b dxl"><img src="assets/logos/payment/qris.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="card"></span><span class="b dxl"><img src="assets/logos/payment/bca.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="cash"></span><span class="b dxl"><img src="assets/logos/payment/gopay.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF2DB8" data-ic="phone"></span><span class="b dxl"><img src="assets/logos/payment/ovo.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="bank"></span><span class="b dxl"><img src="assets/logos/payment/mandiri.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="wallet"></span><span class="b dxl"><img src="assets/logos/payment/dana.png" alt=""></span></div></div>
-          <div class="dx-col right" aria-hidden="true"><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="truck"></span><span class="b dxl"><img src="assets/logos/courier/jne.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="boxes"></span><span class="b dxl"><img src="assets/logos/courier/sicepat.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="pin"></span><span class="b dxl"><img src="assets/logos/courier/jnt.png" alt=""></span></div></div>
+          <svg class="dx-lines" viewBox="0 0 1000 430" aria-hidden="true"><line x1="0" y1="222" x2="1000" y2="222" class="mid"/><g class="base"><path d="M500 110 V134"/><path d="M500 166 V190"/><path d="M400 150 H610"/><path d="M500 254 V292"/></g><g class="live"><path d="M500 110 V134" style="animation-duration:2.6s;animation-delay:0.0s"/><path d="M500 166 V190" style="animation-duration:2.6s;animation-delay:0.7s"/><path d="M400 150 H500" style="animation-duration:3.1s;animation-delay:1.9s"/><path d="M610 150 H500" style="animation-duration:2.9s;animation-delay:0.4s"/><path d="M468 222 H318" style="animation-duration:2.3s;animation-delay:0.2s"/><path d="M262 222 H206" style="animation-duration:3.4s;animation-delay:1.3s"/><path d="M532 222 H682" style="animation-duration:2.7s;animation-delay:1.0s"/><path d="M738 222 H794" style="animation-duration:3.7s;animation-delay:2.4s"/><path d="M500 254 V292" style="animation-duration:2.8s;animation-delay:1.6s"/><path d="M318 222 H468" style="animation-duration:3.3s;animation-delay:2.9s"/><path d="M682 222 H532" style="animation-duration:3.9s;animation-delay:3.5s"/><path d="M206 222 H150" style="animation-duration:2.5s;animation-delay:0.9s"/><path d="M794 222 H850" style="animation-duration:3.0s;animation-delay:0.1s"/></g></svg>
+          <div class="dx-col left" aria-hidden="true"><div class="dx-tile"><span class="f" style="--c:#6A4BFF" data-ic="qris"></span><span class="b dxl"><img src="assets/logos/payment/qris.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="card"></span><span class="b dxl"><img src="assets/logos/payment/visa.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="card"></span><span class="b dxl"><img src="assets/logos/payment/mastercard.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF2DB8" data-ic="phone"></span><span class="b dxl"><img src="assets/logos/payment/gopay.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="wallet"></span><span class="b dxl"><img src="assets/logos/payment/shopeepay.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="bank"></span><span class="b dxl"><img src="assets/logos/payment/bca.png" alt=""></span></div></div>
+          <div class="dx-col right" aria-hidden="true"><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="truck"></span><span class="b dxl"><img src="assets/logos/courier/jne.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="boxes"></span><span class="b dxl"><img src="assets/logos/courier/sicepat.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#00E5FF" data-ic="pin"></span><span class="b dxl"><img src="assets/logos/courier/jnt.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#6A4BFF" data-ic="bolt"></span><span class="b dxl"><img src="assets/logos/courier/spx.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF7A2E" data-ic="boxes"></span><span class="b dxl"><img src="assets/logos/courier/idexpress.png" alt=""></span></div><div class="dx-tile"><span class="f" style="--c:#FF2DB8" data-ic="truck"></span><span class="b dxl"><img src="assets/logos/courier/anteraja.png" alt=""></span></div></div>
           <div class="dx-sys" aria-hidden="true">
-            <div><span><img class="dx-lg" src="assets/logos/platform/shopify.png" alt="">Shopify</span><span class="hl"><img class="dx-lg" src="assets/logos/platform/woocommerce.png" alt="">WooCommerce</span><span>Your website</span></div>
-            <div><span class="hl">Order system</span><span>Warehouse</span></div>
+            <div><em>Store</em><span><img class="dx-lg" src="assets/logos/platform/shopify.png" alt="">Shopify</span><span class="hl"><img class="dx-lg" src="assets/logos/platform/woocommerce.png" alt="">WooCommerce</span><span>Your website</span></div>
+            <div><em>Back office</em><span class="hl">Order system</span><span>Warehouse</span><span>ERP</span></div>
           </div>
-          <span class="dx-b" style="left:330px;top:134px">Plugins</span>
-          <span class="dx-b" style="left:670px;top:134px">FLIK API</span>
-          <a href="#" class="dx-btn" style="left:330px;top:206px" data-page="Developer docs" tabindex="-1" aria-hidden="true">API docs <span data-ic="chev-r"></span></a>
-          <span class="dx-b" style="left:670px;top:206px">Dashboard</span>
+          <span class="dx-b" style="left:400px;top:134px">SDK</span>
+          <span class="dx-b" style="left:500px;top:134px">FLIK API</span>
+          <span class="dx-b" style="left:610px;top:134px">Dashboard</span>
+          <span class="dx-b dx-side" style="left:290px;top:206px">PSPs</span>
+          <span class="dx-b dx-side" style="left:710px;top:206px">3PLs</span>
           <div class="dx-flik" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg></div>
-          <span class="dx-b" style="left:500px;top:266px">Checkout &amp; Shipping</span>
-          <span class="dx-o" style="left:380px">QRIS</span><span class="dx-o" style="left:460px">E-wallet</span><span class="dx-o" style="left:540px">VA</span><span class="dx-o" style="left:620px">Couriers</span>
+          <span class="dx-t" style="left:393px">Orchestrate</span><span class="dx-t" style="left:607px">Orchestrate</span>
+          <div class="dx-sys dx-apps" aria-hidden="true">
+            <div><em>App marketplace</em><span class="hl"><svg class="dx-lg" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg>Funding</span><span><svg class="dx-ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></svg>Accounting</span><span><svg class="dx-ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5.2a3.2 3.2 0 0 1 0 5.6M18 14.4c1.8.9 3 2.8 3 5.6"/></svg>CRM</span><span><svg class="dx-ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9.5 20v-6h5v6"/></svg>Storefront</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1336,11 +1405,6 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       </div>
     </div>
 
-    <div class="paths">
-      <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>We connect your Shopify store to FLIK Checkout and Shipping for you.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
-      <div><span class="icd icd-lg"><img src="assets/logos/platform/woocommerce.png" alt=""></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
-      <div><span class="icd" data-ic="code"></span><h4>FLIK API</h4><p>Build your own checkout on the FLIK API, with virtual accounts and QRIS today.</p><a href="#" class="link-l" data-page="API reference">Read the docs <span class="chev">›</span></a></div>
-    </div>
   </div>
 </section>
 
@@ -1804,19 +1868,15 @@ renderFund();
 /* ===== Integration tabs ===== */
 const ITABS={
   'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers pay in one tap with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'API':`<div class="code"><span class="c">// Create a checkout session (from the FLIK developer docs)</span>
-<span class="k">const</span> res = <span class="k">await</span> <span class="p">fetch</span>(<span class="s">'https://api.flik.co.id/v1/checkout/sessions'</span>, {
+  'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><a href="#" class="link-l" data-page="/integrations/shopify">View Shopify integration <span class="chev">›</span></a>`,
+  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers pay in one tap with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><a href="#" class="link-l" data-page="/integrations/woocommerce">View WooCommerce integration <span class="chev">›</span></a>`,
+  'API':`<div class="isteps">${[['Get Sandbox credentials','Create API credentials in the dashboard. Sandbox never touches real money.'],['Create a checkout session','One call returns a payment page. Shoppers pay by virtual account or QRIS.'],['Go live','Add a webhook endpoint, verify your business, then switch to Live keys.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><div class="code icode"><span class="c">// Step 2, shortened from the Accept a payment guide</span>
+<span class="k">const</span> url = <span class="s">'https://api.flik.co.id/v1/checkout/sessions'</span>;
+<span class="k">const</span> res = <span class="k">await</span> <span class="p">fetch</span>(url, {
   method: <span class="s">'POST'</span>,
-  headers: { Authorization: <span class="s">\`Bearer \${token}\`</span>, <span class="s">'Idempotency-Key'</span>: <span class="s">'session-ORDER-0001'</span> },
-  body: JSON.<span class="p">stringify</span>({
-    line_items: [{ name: <span class="s">'Example product'</span>, quantity: <span class="p">2</span>,
-      unit_amount: { value: <span class="s">'75000.00'</span>, currency: <span class="s">'IDR'</span> } }],
-    success_url: <span class="s">'https://example.com/success'</span>,
-  }),
-});
-<span class="c">// Send the shopper to session.url. They pay by virtual account or QRIS.</span></div><p class="ex">Shortened. See the <a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/guides/merchant-api/accept-a-payment" target="_blank" rel="noopener">Accept a payment</a> guide.</p>`
+  headers: { Authorization: <span class="s">\`Bearer \${token}\`</span> },
+  body: JSON.<span class="p">stringify</span>({ line_items, success_url }),
+});</div><a href="#" class="link-l" data-page="API reference">Read the API reference <span class="chev">›</span></a>`
 };
 let itab='No code';
 function renderI(){
@@ -2228,6 +2288,44 @@ document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard"
     const b=document.querySelectorAll('#steps .step'),cur=[...b].findIndex(x=>x.classList.contains('on'));
     b[(cur+1)%b.length]?.click();
   },2400);
+})();
+
+/* ===== Banner touch: the flow lines bow away from the pointer like strings and spring back.
+   Off on touch screens, with reduced motion, and while animations are paused ===== */
+(function(){
+  const b=document.querySelector('.banner');if(!b||!b.querySelector('.banner-glow path'))return;
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const paths=[...b.querySelectorAll('.banner-glow path')],N=paths.length/2;   // base lines, then the travelling lights
+  const base=paths.slice(0,N).map(p=>p.getAttribute('d').match(/-?[\d.]+/g).map(Number));
+  const st=base.map(()=>({o1:0,o2:0,v1:0,v2:0}));
+  let mx=0,my=0,sx=0,sy=0,inside=false,raf=0;
+  function frame(){
+    raf=0;const r=b.getBoundingClientRect();
+    sx+=(mx-sx)*.18;sy+=(my-sy)*.18;
+    const px=sx/r.width*1100,py=sy/r.height*292;let moving=Math.abs(mx-sx)+Math.abs(my-sy)>.3;
+    base.forEach((q,i)=>{
+      const [x0,y0,x1,y1,x2,y2,x3,y3]=q;let t1=0,t2=0;
+      if(inside){
+        const t=Math.min(1,Math.max(0,(px-x0)/(x3-x0))),u=1-t,ly=u*u*u*y0+3*u*u*t*y1+3*u*t*t*y2+t*t*t*y3,dy=ly-py,a=Math.abs(dy);
+        if(a<70){const f=(dy<0?-1:1)*(70-a)*1.7;t1=f*u;t2=f*t}
+      }
+      const k=st[i];
+      k.v1=(k.v1+(t1-k.o1)*.14)*.78;k.o1+=k.v1;k.v2=(k.v2+(t2-k.o2)*.14)*.78;k.o2+=k.v2;
+      if(Math.abs(k.v1)+Math.abs(k.v2)>.02||Math.abs(t1-k.o1)+Math.abs(t2-k.o2)>.05)moving=true;
+      const d=`M${x0} ${y0} C ${x1} ${(y1+k.o1).toFixed(1)}, ${x2} ${(y2+k.o2).toFixed(1)}, ${x3} ${y3}`;
+      paths[i].setAttribute('d',d);paths[i+N].setAttribute('d',d);
+    });
+    if(moving)raf=requestAnimationFrame(frame);
+  }
+  const kick=()=>{if(!raf)raf=requestAnimationFrame(frame)};
+  const leave=()=>{inside=false;kick()};
+  b.addEventListener('pointermove',e=>{
+    if(motionPaused()){if(inside)leave();return}
+    const r=b.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
+    if(!inside){inside=true;sx=mx;sy=my}
+    kick();
+  });
+  b.addEventListener('pointerleave',leave);
 })();
 
 /* ===== Developers diagram: fit to width, flip tiles, highlight systems ===== */
