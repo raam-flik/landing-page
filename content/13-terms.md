@@ -20,6 +20,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - [ ] **W-18**: Minimum age, and who may open a merchant account (individuals, entity types).
 - [x] **W-23**: Closed (AG, 24 Oct 2026): COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
 - [ ] **W-24**: Link to courier terms and the prohibited items list for merchants.
+  - Bintang (13 Nov): return fees follow the general rule (shipping not refunded, a courier return fee may apply) and are not published per courier; merchants see their own return fee in the FLIK dashboard. VIP rates are not published. Still needed: courier terms links (or per-courier COD limits and claim rules) and the prohibited items list.
 - [x] **W-26** (AG, 12 Nov 2026: Rp100.000 minimum, Rp4.000 + PPN fee, returned if the payout fails): Balance withdrawals: timing, minimum amount and any fee.
 - [x] **W-29** (AG, 12 Nov 2026: invoices, shipments, top-ups, withdrawals, live API keys): Which features need identity and business verification first.
 - [ ] **P** (AG): Name the licensed payment partners and their licences (instruction: never state or imply that FLIK itself holds a payment licence).
@@ -117,7 +118,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **List item:** Refunds and fee corrections follow our [Refund Policy](./refund/).
 - **Heading:** Shipping
 - **List item:** Couriers carry your parcels. Their terms, weight rules and claim rules also apply. [[W-24: courier terms and prohibited items list]]
-- **List item:** If delivery fails, the courier tries again the next day, up to two attempts, then returns the parcel. Courier-direct services return it straight away.
+- **List item:** If delivery fails, the courier tries again the next day, up to two attempts, then returns the parcel. Courier-direct services return it straight away. On a returned parcel the shipping fee isn't refunded and a return fee set by the courier may apply; the return fee for your account is shown in your FLIK dashboard.
 - **List item:** Don't ship prohibited, illegal or dangerous goods.
 - **Heading:** Funding
 - **List item:** Merchant Cash Advance is offered to selected merchants after an assessment, under a separate funding agreement.

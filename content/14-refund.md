@@ -84,7 +84,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Table row:** Checkout platform (success) fee — Earned when the shopper's payment succeeds. It isn't refunded, including when the order is refunded or the parcel isn't delivered.
 - **Table row:** Payment partner refund fee — If a payment partner charges a fee to process a refund, or a bank transfer is needed, that cost is charged to you. This is the payment partner's refund fee, plus PPN.
 - **Table row:** Shipping fee, shipment cancelled before pickup — Refunded.
-- **Table row:** Shipping fee, parcel returned to you — Not refunded. A return fee set by each courier may also apply.
+- **Table row:** Shipping fee, parcel returned to you — Not refunded. A return fee set by each courier may also apply. The return fee for your account is shown in your FLIK dashboard.
 - **Table row:** COD fee (3%, excl. PPN) — Paid by the merchant: 3% (excl. PPN), deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel, so there's nothing to refund.
 - **Table row:** Shipping fee, lost or damaged parcel — Refunded only if the courier refunds it, once its payment reaches us. FLIK keeps its platform fee once the parcel has been picked up.
 - **Table row:** Merchant Cash Advance margin — No refund. Paying off early means paying the full principal and the full fixed margin, with no rebate.
