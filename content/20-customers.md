@@ -177,7 +177,7 @@ Each brand has its own example story, written for its type of business. They are
 ## Fallback story text (per product, used only if a brand has no story of its own)
 
 - **Checkout headline:** <Brand> gives shoppers a faster way to pay with FLIK Checkout.
-  - **Challenge:** Selling on its own website means <Brand> needs a checkout shoppers trust, with the payment methods Indonesians use every day. Every extra step between the cart and the payment is a chance to lose the sale.
+  - **Challenge:** Selling on its own website means <Brand> needs a checkout shoppers trust, with the payment methods they use every day. Every extra step between the cart and the payment is a chance to lose the sale.
   - **How FLIK helps:** <Brand> replaced its checkout with FLIK Checkout. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay by QRIS, e-wallet, virtual account, card or COD on one page.
   - **Result:** Shoppers get from cart to paid in a few taps, and returning shoppers don't type their details again.
 - **Shipping headline:** <Brand> ships every order from one dashboard with FLIK Shipping.
