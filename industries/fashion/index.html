@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fashion: Checkout, Shipping and Funding for Fashion Brands | FLIK</title>
-<meta name="description" content="For fashion brands: a fast checkout for drops, shipping across Indonesia with all major couriers, COD, and funding to keep stock ready for the busiest seasons.">
+<title>Fashion Brands: Sell Every Drop, Everywhere | FLIK</title>
+<meta name="description" content="For fashion brands: a fast checkout for drops, payment links for pre-orders, QRIS and cards in store, bulk shipping with COD, and Merchant Cash Advance funding for the season, in one FLIK balance.">
 <link rel="canonical" href="https://flik.co.id/industries/fashion">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/industries/fashion">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/industries/fashion">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Fashion: Checkout, Shipping and Funding for Fashion Brands | FLIK", "description": "For fashion brands: a fast checkout for drops, shipping across Indonesia with all major couriers, COD, and funding to keep stock ready for the busiest seasons.", "url": "https://flik.co.id/industries/fashion"}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Fashion Brands: Sell Every Drop, Everywhere | FLIK", "description": "For fashion brands: a fast checkout for drops, payment links for pre-orders, QRIS and cards in store, bulk shipping with COD, and Merchant Cash Advance funding for the season, in one FLIK balance.", "url": "https://flik.co.id/industries/fashion"}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -807,6 +807,8 @@ html{scroll-padding-top:88px}
 
 /* Hero: text left, phone right, soft mesh behind the phone (clipped at the guide lines) */
 .ch{position:relative;overflow:hidden;margin-top:-69px;padding-top:150px}
+/* hero: same visible space above the text (below the menu) as below it (above the logos) */
+@media (min-width:1081px){.ch{padding-top:122px}section.ch .logos-band{margin-top:52px}}
 .ch::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(106,75,255,.13) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);clip-path:inset(0 max(16px,calc(50% - 633px)))}
 .ch.guides::before,.ch.guides::after{z-index:3}
 .ch-in{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
@@ -1328,6 +1330,239 @@ main section#customers{padding:112px 0}
 @media (max-width:1080px){.pg-cards{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.pg-cards{grid-template-columns:1fr}}
 /* ===== /kit: page ===== */
+
+/* ===== Payment page (Stripe-style overview, FLIK tokens) ===== */
+.py-hero .ch-stage{height:640px}
+.py-stack{position:relative;z-index:1;width:min(540px,100%);height:620px}
+.py-card{position:absolute;background:var(--surface,#fff);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
+.py-card .co-bar{position:relative}.py-card .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.py-c1{left:0;top:70px;width:330px;z-index:2}
+.py-c2{right:0;top:0;width:220px;z-index:3}
+.py-c3{right:30px;bottom:0;width:260px;z-index:4}
+.py-b{padding:16px;display:grid;gap:9px}
+.py-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px}
+.py-row.on{box-shadow:0 0 0 2px var(--primary);border-color:transparent}
+.py-row img{height:26px;width:auto}
+.py-btn{height:38px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500}
+.py-qrw{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--line-soft);border-radius:10px}
+.py-qrw img{height:24px;width:auto}.py-qrs{width:118px;height:118px;display:block}
+.py-qrw span{font-size:11px;color:var(--muted);text-align:center}
+.py-amt{font-size:22px;font-weight:300;letter-spacing:-.4px;color:var(--ink)}
+.py-ex{font-size:11px;color:var(--muted);text-align:right}
+.py-ben{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:8px}
+.py-ben h3{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500;margin-bottom:8px}
+.py-ben p{font-size:14.5px;color:var(--body);line-height:1.55}
+.py-sub{position:sticky;top:68px;z-index:20;background:var(--surface,#fff);border-bottom:1px solid var(--line)}
+.py-sub .wrap{display:flex;gap:4px 20px;align-items:center;overflow-x:auto;scrollbar-width:none;height:52px}
+.py-sub a{white-space:nowrap;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:15px 0;border-bottom:2px solid transparent}
+.py-sub a:hover,.py-sub a.on{color:var(--primary);border-bottom-color:var(--primary)}
+.py-sub .btn{margin-left:auto;height:34px}
+.py-eye{font-size:14px;font-weight:500;color:var(--primary);margin-bottom:12px}
+.py-stat{display:flex;gap:16px;align-items:baseline;margin-top:32px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.py-stat b{font-size:48px;font-weight:300;letter-spacing:-1px;color:var(--ink);line-height:1}
+.py-stat span{color:var(--body);max-width:320px}
+.py-ways{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3.2);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:40px;padding:4px}
+.py-ways::-webkit-scrollbar{display:none}
+.py-way{scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-way-v{height:300px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px}
+.py-way-v .py-card{position:relative;width:100%;max-width:280px}
+.py-way-t{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.py-way-t h3{font-size:18px;font-weight:500}
+.py-way-t p{font-size:14.5px;color:var(--body);line-height:1.5}
+.py-way-t ul{list-style:none;display:grid;gap:6px;margin:4px 0 8px}
+.py-way-t li{display:flex;gap:8px;font-size:14px;color:var(--body)}
+.py-way-t li svg{color:var(--primary);flex:none;margin-top:3px}
+.py-way-t .link{margin-top:auto}
+.py-nav{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.py-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.py-split h3{font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px}
+.py-split p{color:var(--body);line-height:1.6}
+.py-pm{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.py-pm>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;height:96px;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface,#fff);font-size:12.5px;color:var(--muted);text-align:center;padding:8px}
+.py-pm img{height:34px;width:auto}
+.py-pm .ic{color:var(--primary)}
+.py-loc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.py-loc>div{border-radius:12px;padding:24px;background:var(--surface,#fff);border:1px solid var(--line-soft)}
+.py-loc b{display:block;font-size:30px;font-weight:300;letter-spacing:-.6px;color:var(--ink);margin-bottom:6px}
+.py-loc span{color:var(--body);font-size:14.5px;line-height:1.5}
+.py-prot{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.py-rate{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border:1px solid var(--line);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-rate>div{padding:24px;border-right:1px solid var(--line-soft)}.py-rate>div:last-child{border-right:0}
+.py-rate small{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.py-rate b{display:block;font-size:26px;font-weight:300;letter-spacing:-.5px;color:var(--ink)}
+.py-rate span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:40px}
+.py-price>div{border-radius:12px;padding:28px;border:1px solid var(--line-soft);background:var(--surface,#fff)}
+.py-price h3{font-size:20px;font-weight:500;margin-bottom:8px}
+.py-price p{color:var(--body);font-size:14.5px;line-height:1.55;margin-bottom:16px}
+.py-dev{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.py-dev .ipanel{background:var(--dark-2,#0B3A6E);border-radius:12px;padding:22px;min-width:0}
+.py-dev ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin:20px 0 24px}
+.py-dev li{display:flex;gap:8px;font-size:14.5px;color:var(--body)}.py-dev li svg{color:var(--primary);flex:none;margin-top:3px}
+@media (max-width:1080px){.py-ben{grid-template-columns:1fr 1fr}.py-ways{grid-auto-columns:calc((100% - 16px)/1.6)}.py-split,.py-dev{grid-template-columns:1fr}.py-rate{grid-template-columns:1fr 1fr}.py-rate>div:nth-child(2){border-right:0}.py-rate>div:nth-child(n+3){border-top:1px solid var(--line-soft)}}
+@media (max-width:760px){.py-hero .ch-stage{height:560px}.py-stack{height:540px}.py-c1{width:260px;top:30px}.py-c2{width:180px}.py-c3{width:220px;right:0}.py-ben,.py-loc,.py-prot,.py-price{grid-template-columns:1fr}.py-ways{grid-auto-columns:85%}.py-pm{grid-template-columns:repeat(3,1fr)}.py-sub{top:60px}.py-sub .btn{display:none}.py-dev ul{grid-template-columns:1fr}}
+#instore .py-card{color:var(--body)}#instore .py-card b,#instore .py-row>span:first-child{color:var(--ink)}
+#instore .txt{color:var(--on-dark-muted,#AAB4CC)}
+#instore .hero-cta{justify-content:flex-start;align-items:flex-start}#instore .hero-cta .btn{margin-left:0;margin-right:auto}#instore .hero-cta{margin-left:0;margin-right:0;max-width:none;width:auto}
+@media (max-width:1080px){#instore .py-card{margin-left:0!important}}
+/* ===== /Payment page ===== */
+
+/* ===== Invoice page (stripe.com/invoicing structure, FLIK invoice from the dashboard) ===== */
+.iv-hero .ch-stage{height:640px}
+.iv-stack{position:relative;z-index:1;width:min(540px,100%);height:620px}
+.iv-c1{left:0;top:40px;width:270px;z-index:2}
+.iv-c2{right:0;top:0;width:330px;z-index:3}
+.iv-c3{left:20px;bottom:30px;width:250px;z-index:4}
+.iv-kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:12.5px}
+.iv-kv dt{color:var(--muted)}.iv-kv dd{text-align:right;color:var(--ink)}
+.iv-amt{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.iv-amt b{display:block;font-size:24px;font-weight:600;letter-spacing:-.4px;color:var(--ink);line-height:1.1}
+.iv-amt small{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.iv-chip{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 9px;border:1px solid var(--line);border-radius:6px;font-size:11.5px;color:var(--ink);white-space:nowrap}
+.iv-chip svg{width:13px;height:13px;color:var(--muted)}
+.iv-dtl{text-align:center;font-size:12px;color:var(--ink);padding-top:9px;border-top:1px solid var(--line-soft)}
+.iv-flik{height:38px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:500}
+.iv-flik svg{flex:none}
+.iv-or{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--faint)}.iv-or:before,.iv-or:after{content:"";flex:1;height:1px;background:var(--line-soft)}
+.iv-in{height:34px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;padding:0 10px;font-size:12px;color:var(--faint)}
+.iv-lab{font-size:11.5px;font-weight:500;color:var(--ink);margin-bottom:-4px}
+.iv-btn-o{height:34px;border-radius:8px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:500;color:var(--ink)}
+.iv-mail h4{font-size:13px;font-weight:500;color:var(--ink)}
+.iv-mail p{font-size:12px;color:var(--muted);line-height:1.45}
+.iv-att{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line-soft);border-radius:8px;font-size:12px;color:var(--ink)}
+.iv-att span{margin-left:auto;color:var(--faint);font-size:11px}
+.iv-ev{display:grid;gap:0;font-size:12px}
+.iv-ev>div{display:flex;gap:10px;align-items:flex-start;padding:5px 0;color:var(--body)}
+.iv-ev i{width:8px;height:8px;border-radius:50%;background:var(--line);margin-top:4px;flex:none}
+.iv-ev i.ok{background:var(--ok)}
+.iv-ev small{margin-left:auto;color:var(--faint);white-space:nowrap}
+/* review dialog (dashboard: Send this invoice) */
+.iv-vis .py-card.iv-rev{width:100%;max-width:360px}
+.iv-chk{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink)}
+.iv-chk i{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--field-line);display:flex;align-items:center;justify-content:center;flex:none}
+.iv-chk.on i{background:var(--primary);border-color:var(--primary);color:#fff}
+.iv-acts{display:flex;gap:8px;justify-content:flex-end;margin-top:4px}.iv-acts>span{padding:0 14px;height:34px;font-size:12.5px}
+/* invoice list (dashboard) */
+.iv-tw{overflow-x:auto}
+.py-card .co-bar span{white-space:nowrap}
+.iv-list{position:relative;width:100%;max-width:none;font-size:13px}
+.iv-tabs{display:flex;gap:16px;padding:0 16px;border-bottom:1px solid var(--line-soft);font-size:12.5px;color:var(--muted);overflow:hidden}
+.iv-tabs span{padding:10px 0;white-space:nowrap}.iv-tabs span.on{color:var(--primary);box-shadow:inset 0 -2px 0 var(--primary)}
+.iv-tbl{width:100%;border-collapse:collapse}
+.iv-tbl th{font-size:11.5px;font-weight:500;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-soft)}
+.iv-tbl td{padding:11px 10px;border-bottom:1px solid var(--line-soft);color:var(--body);white-space:nowrap}
+.iv-tbl tr:last-child td{border-bottom:0}
+.iv-tbl :is(th,td):first-child{padding-left:16px}.iv-tbl :is(th,td):last-child{padding-right:16px;text-align:right}
+.iv-tbl td b{font-weight:500;color:var(--ink)}
+.iv-tbl .pill{margin-left:0}
+.iv-rem{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:6px;background:var(--primary);color:#fff;font-size:11.5px;font-weight:500}
+.iv-feat{display:grid;gap:28px}
+.iv-feat h3{font-size:18px;font-weight:500;margin-bottom:6px;letter-spacing:-.2px}
+.iv-feat p{color:var(--body);line-height:1.55;font-size:15px}
+.iv-split{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.iv-split.rev{grid-template-columns:1fr 1.15fr}
+.iv-vis{background:var(--bg-alt);border-radius:16px;padding:32px;display:flex;justify-content:center;align-items:center;min-width:0;overflow:hidden}
+.alt .iv-vis{background:var(--surface,#fff);border:1px solid var(--line-soft)}
+.iv-vis .py-card{position:relative}
+/* invoice PDF */
+.iv-pdf{width:100%;max-width:400px;background:#fff;border-radius:10px;box-shadow:var(--sh-lg);padding:26px;font-size:12px;color:var(--body)}
+.iv-pdf-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.iv-pdf-h b{font-size:20px;font-weight:600;color:var(--ink)}
+.iv-pdf-h span{font-weight:600;color:var(--ink);font-size:13px}
+.iv-pdf .iv-kv{grid-template-columns:auto 1fr;margin-bottom:16px}.iv-pdf .iv-kv dd{text-align:left}
+.iv-pdf-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;line-height:1.5}
+.iv-pdf-2 b{color:var(--ink);font-weight:500}
+.iv-pdf table{width:100%;border-collapse:collapse;margin:6px 0 10px}
+.iv-pdf th{font-weight:500;color:var(--muted);text-align:left;padding:6px 0;border-bottom:1px solid var(--line)}
+.iv-pdf td{padding:7px 0;border-bottom:1px solid var(--line-soft);color:var(--ink)}
+.iv-pdf th:last-child,.iv-pdf td:last-child{text-align:right}
+.iv-pdf-t{display:flex;justify-content:space-between;font-weight:600;color:var(--ink);font-size:13px;padding-top:4px}
+.iv-pdf-m{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);color:var(--muted);line-height:1.5}
+.iv-pdf-pay{display:inline-flex;margin-top:12px;height:30px;align-items:center;padding:0 12px;border-radius:6px;background:var(--ink);color:#fff;font-weight:500}
+@media (max-width:1080px){.iv-split,.iv-split.rev{grid-template-columns:1fr}.iv-split.rev .iv-vis{order:2}}
+@media (max-width:760px){.iv-hero .ch-stage{height:700px}.iv-stack{height:680px}.iv-c1{width:220px;top:20px}.iv-c2{width:270px}.iv-c3{width:220px;left:0;bottom:0}
+ .iv-vis{padding:16px}.iv-tbl .hide-s{display:none}.iv-pdf{padding:18px}.iv-pdf-2{grid-template-columns:1fr}}
+/* ===== /Invoice page ===== */
+
+/* ===== Payment Link page (stripe.com/payments/payment-links structure, FLIK payment link from the dashboard) ===== */
+.pl-c1{left:0;top:0;width:236px;z-index:2}
+.pl-c2{right:0;top:0;width:296px;z-index:3}
+.pl-c3{left:0;top:316px;width:236px;z-index:4}
+.pl-hero .ch-stage{height:600px}.pl-hero .iv-stack{height:580px}
+.pl-c2{top:40px;z-index:5}
+.pl-chat{display:grid;gap:8px;font-size:12.5px}
+.pl-bub{max-width:85%;padding:8px 11px;border-radius:12px;line-height:1.4;color:var(--ink);background:var(--bg-alt);border:1px solid var(--line-soft)}
+.pl-bub.me{justify-self:end;background:var(--primary-soft);border-color:transparent}
+.pl-lk{justify-self:end;width:85%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface,#fff)}
+.pl-lk>div{padding:9px 11px;display:grid;gap:3px}
+.pl-lk b{font-weight:500;color:var(--ink)}
+.pl-lk small{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:11px}
+.pl-lk em{font-style:normal;display:block;text-align:center;padding:7px;border-top:1px solid var(--line-soft);color:var(--primary);font-weight:500}
+.pl-prod{display:flex;gap:10px;align-items:center}
+.pl-thumb{width:40px;height:40px;border-radius:8px;background:var(--bg-alt) center/cover no-repeat;border:1px solid var(--line-soft);flex:none}
+.pl-prod b{display:block;font-weight:500;color:var(--ink)}.pl-prod small{color:var(--muted);font-size:11.5px}
+.pl-qty{margin-left:auto;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:12px;color:var(--ink)}
+.pl-qty span{color:var(--muted)}
+.pl-ok{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:4px 0}
+.pl-ok i{width:34px;height:34px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:flex;align-items:center;justify-content:center}
+.pl-ok b{font-weight:500;color:var(--ink)}.pl-ok p{font-size:12px;color:var(--muted);line-height:1.45}
+.pl-chips{display:flex;flex-wrap:wrap;gap:6px}
+.pl-chips span{display:inline-flex;align-items:center;height:26px;padding:0 9px;border:1px solid var(--line);border-radius:6px;font-size:11.5px;color:var(--ink)}
+.pl-h{font-size:12.5px;font-weight:600;color:var(--ink);margin-top:4px}
+.pl-rad{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink)}
+.pl-rad i{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--field-line);flex:none}
+.pl-rad.on i{border:5px solid var(--primary)}
+.pl-list .iv-tbl :is(th,td):last-child{text-align:left}
+.iv-vis .py-card.pl-ed{width:100%;max-width:380px}
+.iv-vis .py-card.pl-pg{width:100%;max-width:340px}
+@media (max-width:760px){.pl-hero .ch-stage{height:720px}.pl-hero .iv-stack{height:700px}.pl-c1{display:none}.pl-c2{width:280px;top:0}.pl-c3{width:230px;left:0;top:auto;bottom:0}}
+/* ===== /Payment Link page ===== */
+
+/* ===== Fashion page (stripe.com/industries/retail structure, FLIK for fashion brands) ===== */
+/* hero: a drop selling out across channels (example data) */
+.dp{position:relative;z-index:2;width:min(520px,100%);background:var(--surface,#fff);border-radius:14px;box-shadow:var(--sh-lg);overflow:hidden}
+.dp .co-bar{position:relative}.dp .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.dp-b{padding:18px;display:grid;gap:14px}
+.dp-top{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.dp-img{width:96px;height:96px;border-radius:12px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center}
+.dp-top small{display:block;font-size:11.5px;color:var(--primary);font-weight:500}
+.dp-top b{display:block;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-.2px}
+.dp-top span{font-size:12.5px;color:var(--muted)}
+.dp-prog{display:grid;gap:6px}
+.dp-prog>div:first-child{display:flex;justify-content:space-between;font-size:12px;color:var(--body)}.dp-prog b{font-weight:600;color:var(--ink)}
+.dp-bar{height:8px;border-radius:999px;background:var(--line-soft);overflow:hidden}.dp-bar i{display:block;height:100%;width:0;background:var(--primary);border-radius:999px;transition:width .5s cubic-bezier(.3,.7,.3,1)}
+.dp-sz{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.dp-sz>div{border:1px solid var(--line);border-radius:10px;padding:8px 6px;text-align:center;transition:border-color .25s,background .25s,transform .25s}
+.dp-sz b{display:block;font-size:14px;font-weight:600;color:var(--ink)}
+.dp-sz span{font-size:11px;color:var(--muted)}
+.dp-sz>div.hit{border-color:var(--primary);background:var(--primary-soft);transform:translateY(-2px)}
+.dp-sz>div.out{background:var(--bg-alt);border-style:dashed}.dp-sz>div.out b{color:var(--faint);text-decoration:line-through}
+.dp-feed{display:grid;gap:0;min-height:168px;align-content:start;border-top:1px solid var(--line-soft);padding-top:4px}
+.dp-feed>div{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:12.5px;animation:dp-in .4s ease}
+.dp-feed>div:last-child{border-bottom:0}
+.dp-feed i{width:28px;height:28px;border-radius:50%;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center}
+.dp-feed i svg{width:14px;height:14px}
+.dp-feed b{font-weight:500;color:var(--ink)}.dp-feed small{display:block;color:var(--muted);font-size:11.5px}
+.dp-feed .num{color:var(--ink);font-weight:500}
+@keyframes dp-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+/* opportunity + spotlight */
+.op2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.op2>div{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:var(--surface,#fff);padding:28px}
+.op2 h3{font-size:19px;font-weight:500;margin-bottom:8px;letter-spacing:-.2px}.op2 p{color:var(--body);line-height:1.6;font-size:15px}
+.uc{display:grid;gap:72px;margin-top:48px}
+.spot{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border-radius:var(--r-lg);overflow:hidden;background:var(--surface,#fff);border:1px solid var(--line-soft);margin-top:40px}
+.spot-ph{min-height:360px;background:center/cover no-repeat}
+.spot-t{padding:40px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.spot-lg{align-self:flex-start;background:var(--ink);border-radius:8px;padding:8px 12px;display:inline-flex}.spot-lg img{height:22px;width:auto;display:block}
+.spot-t h3{font-size:24px;font-weight:400;letter-spacing:-.4px;line-height:1.3}
+.spot-t p{color:var(--body);line-height:1.6}
+.spot-n{display:flex;gap:16px;align-items:baseline;padding-top:16px;border-top:1px solid var(--line-soft)}
+.spot-n b{font-size:40px;font-weight:300;letter-spacing:-1px;color:var(--ink)}.spot-n span{color:var(--body);font-size:14px}
+.d2-cou{height:20px;width:auto}
+@media (max-width:1080px){.spot{grid-template-columns:1fr}.spot-ph{min-height:260px}}
+@media (max-width:760px){.op2{grid-template-columns:1fr}.spot-t{padding:24px}.ch-stage:has(#dp){height:auto;padding:32px 16px}}
+/* ===== /Fashion page ===== */
+.sol4{grid-template-columns:repeat(4,1fr)}@media (max-width:1080px){.sol4{grid-template-columns:1fr 1fr}}@media (max-width:760px){.sol4{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1351,40 +1586,64 @@ main section#customers{padding:112px 0}
 
 
 <main id="top" tabindex="-1">
+<!-- ===== Hero (stripe.com/industries/retail; FLIK: a drop selling out across channels) ===== -->
 <section class="ch guides">
   <div class="wrap ch-in">
     <div class="ch-t">
-      <p class="eyebrow">FLIK for fashion</p>
-      <h1 class="ch-h">Keep every drop in stock and on its way. <span class="soft">From checkout to delivery.</span></h1>
-      <p class="lead">Fashion brands use FLIK to sell drops on their own website, ship to customers across Indonesia, and fund stock before the busiest seasons. Keeping ERIGO in stock helped drive sales up to 200%.</p>
-      <div class="hero-cta"><button class="btn btn-primary live" data-act="sales" data-interest="Fashion">Talk to the FLIK team <span class="chev">›</span></button><a href="#products" class="btn btn-secondary">See the products <span class="chev">›</span></a></div>
-      <ul class="ch-facts"><li><span data-ic="check-s"></span>A checkout built for phones</li><li><span data-ic="check-s"></span>All major couriers, COD included</li><li><span data-ic="check-s"></span>Stock funded, settled as you sell</li></ul>
+      <p class="eyebrow">For fashion brands</p>
+      <h1 class="ch-h">Sell every drop, everywhere. <span class="soft">Online, in chat and in store.</span></h1>
+      <p class="lead">Fashion brands use FLIK to sell drops on their website, in chat and at the counter, ship every order across Indonesia, and fund stock before the busiest seasons. All in one FLIK balance.</p>
+      <div class="hero-cta"><button class="btn btn-primary live" data-act="sales" data-interest="Fashion">Contact sales <span class="chev">›</span></button><button class="btn btn-secondary" data-act="start">Create an account <span class="chev">›</span></button></div>
+      <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
     </div>
-    <div class="ch-stage">
-      <div class="ch-glow" aria-hidden="true"></div>
-      <div class="fx-win pgw" role="img" aria-label="Example: a new drop selling on a brand website"><div class="co-bar"><i></i><i></i><i></i><span>checkout.flik.co.id</span></div><div class="pgw-b"><div class="pgw-h">New drop · Linen shirt<span class="pill ok">Selling</span></div><div class="pgw-amt num">214 orders</div><span class="pgw-sub">In the first hour</span><div class="pgw-r"><span><b>Paid</b><small>QRIS, e-wallets, cards and COD</small></span></div><div class="pgw-r"><span><b>Shipping</b><small>All major couriers · tracking links sent</small></span></div><span class="pgw-ex">Example</span></div></div>
+    <div class="ch-stage" aria-hidden="true"><div class="ch-glow"></div><div class="dp" id="dp"><div class="co-bar"><i></i><i></i><i></i><span>FLIK dashboard · Drop 07</span></div><div class="dp-b"><div class="dp-top"><div class="dp-img"><svg width="74" height="74" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M15 9l-7 4 3 6 3-1.5V31h12V17.5l3 1.5 3-6-7-4c-.6 2-2.6 3.2-5 3.2S15.6 11 15 9z" fill="var(--surface,#fff)" stroke="var(--primary)" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><small>Live now · Example</small><b>Linen shirt, sand</b><span>Rp349.000 · website, chat and store</span></div></div><div class="dp-prog"><div><span>Sold</span><span><b id="dp-sold">0</b> of 40</span></div><div class="dp-bar"><i id="dp-bar"></i></div></div><div class="dp-sz" id="dp-sz"><div data-s="S"><b>S</b><span data-n>8 left</span></div><div data-s="M"><b>M</b><span data-n>14 left</span></div><div data-s="L"><b>L</b><span data-n>12 left</span></div><div data-s="XL"><b>XL</b><span data-n>6 left</span></div></div><div class="dp-feed" id="dp-feed"></div></div></div></div>
+  </div>
+  <div class="logos-band"><div class="logos-clip"><div class="logos-track" id="logos"></div></div></div>
+</section>
+
+<!-- ===== The opportunity ===== -->
+<section class="pad guides" id="opportunity">
+  <div class="wrap">
+    <p class="py-eye">The opportunity</p>
+    <h2 class="sec-h">Your checkout is part of your brand. <span class="soft">Fashion shoppers find you on social, buy on their phones and visit your store. They expect it all to feel like one brand.</span></h2>
+    <div class="op2">
+      <div><h3>Shoppers buy where they scroll.</h3><p>A drop announced on Instagram or TikTok sells in minutes. Shoppers expect to pay in a few taps, with the method they already use, from QRIS to COD.</p></div>
+      <div><h3>Online and in store, one brand.</h3><p>Pop-ups, outlets and your website should share one view of your sales, and one balance for the money.</p></div>
+    </div>
+    <div class="stats4" style="margin-top:48px"><div class="stat"><b class="num">30s</b><span>to check out with a FLIK account</span></div><div class="stat"><b class="num">15</b><span>payment methods in one checkout, from QRIS to COD</span></div><div class="stat"><b class="num">7</b><span>major couriers in one dashboard</span></div><div class="stat"><b class="num">1</b><span>FLIK balance for online and in-store sales</span></div></div>
+  </div>
+</section>
+
+<!-- ===== Use cases (Stripe: Terminal, Payments, Billing...) ===== -->
+<section class="pad alt guides" id="uses">
+  <div class="wrap">
+    <p class="py-eye">Use cases</p>
+    <h2 class="sec-h">Everything a fashion brand sells with. <span class="soft">From the drop to the delivery, and the stock for the next one.</span></h2>
+    <div class="uc">
+      <div class="iv-split" style="margin-top:0"><div class="iv-vis"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>checkout.flik.co.id</span></div><div class="py-b"><div class="py-row"><span>Logged in with FLIK</span><span class="pill ok">WhatsApp code</span></div><div class="d2-addr" style="padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px;font-size:12px;line-height:1.45"><b style="display:block;font-weight:500;color:var(--ink)">Rina Putri</b>Jl. Kemang Raya No. 12, Jakarta Selatan</div><div class="py-row on"><span>QRIS</span><img class="" src="../../assets/logos/payment/qris.png" alt="QRIS"></div><div class="py-row"><span>Member reward</span><span class="num" style="color:var(--ok-text,#0E6E48)">−Rp20.000</span></div><div class="py-btn">Pay Rp341.000</div></div></div></div><div class="iv-feat"><div><p class="py-eye" style="margin-bottom:8px">Checkout</p><h3 style="font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px">A checkout as fast as your drop.</h3><p>Fans log in with a WhatsApp code, their details fill in, and they pay in a few taps when a drop goes live.</p></div><ul style="list-style:none;display:grid;gap:8px"><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>15 payment methods, COD included</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Rewards applied automatically</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Set up for you on Shopify or WooCommerce</li></ul><a href="#" class="link" data-page="/payment/checkout">Explore Checkout <span class="chev">›</span></a></div></div>
+      <div class="iv-split rev" style="margin-top:0"><div class="iv-feat"><div><p class="py-eye" style="margin-bottom:8px">In store</p><h3 style="font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px">Online and in store, one balance.</h3><p>Take QRIS and cards at your store or pop-up on the FLIK EDC. In-store sales sit next to your online orders.</p></div><ul style="list-style:none;display:grid;gap:8px"><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>One EDC per outlet</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Receipt printed on the spot</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Same balance as online</li></ul><a href="#" class="link" data-page="/payment/in-store">Explore In-Store Payment <span class="chev">›</span></a></div><div class="iv-vis"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>FLIK EDC · Store Kemang</span></div><div class="py-b"><div class="py-row"><span>QRIS · Rp349.000</span><span class="pill ok">Paid</span></div><div class="py-row"><span>Debit card · Rp698.000</span><span class="pill ok">Approved</span></div><div class="py-row"><span>Receipt</span><span>Printed</span></div><div class="py-row"><span>Same balance as online</span><span class="pill pu">1 balance</span></div></div></div></div></div>
+      <div class="iv-split" style="margin-top:0"><div class="iv-vis"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>Chat</span></div><div class="py-b"><div class="pl-chat"><div class="pl-bub">Is the linen shirt still in M?</div><div class="pl-bub me">Yes! Pre-order Drop 07 here:</div><div class="pl-lk"><div><b>Drop 07 pre-order</b><small>Payment link · Rp349.000</small></div><em>Pre-order now</em></div></div></div></div></div><div class="iv-feat"><div><p class="py-eye" style="margin-bottom:8px">Pre-orders</p><h3 style="font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px">Drops and pre-orders in chat.</h3><p>Share a payment link on WhatsApp or in your bio. One link takes every pre-order.</p></div><ul style="list-style:none;display:grid;gap:8px"><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Products from your catalog</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Your own button text, like Pre-order now</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>No website needed</li></ul><a href="#" class="link" data-page="/payment/payment-link">Explore Payment Link <span class="chev">›</span></a></div></div>
+      <div class="iv-split rev" style="margin-top:0"><div class="iv-feat"><div><p class="py-eye" style="margin-bottom:8px">Shipping</p><h3 style="font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px">Ship the whole drop at once.</h3><p>Ship every order from one dashboard, from all your warehouses, with the courier that fits each route.</p></div><ul style="list-style:none;display:grid;gap:8px"><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>All major couriers, up to 50% off published rates</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>COD for 3% (excl. PPN), credited on delivery</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>A tracking link for every shopper</li></ul><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></div><div class="iv-vis"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>FLIK dashboard · Shipments</span></div><div class="py-b"><div class="py-row on"><span><img class="d2-cou" src="../../assets/logos/courier/jnt.png" alt="J&amp;T"> 120 orders · bulk</span><span class="pill pu">Pickup today</span></div><div class="py-row"><span><img class="d2-cou" src="../../assets/logos/courier/jne.png" alt="JNE"> 48 orders · COD</span><span class="pill pu">COD</span></div><div class="py-row"><span>Tracking links sent</span><span class="pill gr">168</span></div></div></div></div></div>
+      <div class="iv-split" style="margin-top:0"><div class="iv-vis"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>Cash Advance</span></div><div class="py-b"><div class="py-row"><span>For the Lebaran collection</span><b class="num" style="font-weight:500;color:var(--ink)">Rp150.000.000</b></div><div class="py-row"><span>One fixed margin</span><span>Agreed upfront</span></div><div class="py-row"><span>Settled from</span><span>A share of each sale</span></div><div class="py-row"><span>Status</span><span class="pill ok">Active</span></div></div></div></div><div class="iv-feat"><div><p class="py-eye" style="margin-bottom:8px">Funding</p><h3 style="font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px">Stock up before the season.</h3><p>Selected brands use a Merchant Cash Advance to fund stock before Lebaran and other peaks, settled automatically from sales.</p></div><ul style="list-style:none;display:grid;gap:8px"><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>One fixed margin, agreed upfront</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>No compounding interest</li><li style="display:flex;gap:8px;color:var(--body)"><span data-ic="check-s" style="color:var(--primary);flex:none"></span>Settled from a share of each sale</li></ul><a href="#" class="link" data-page="/funding/merchant-cash-advance">Explore Cash Advance <span class="chev">›</span></a></div></div>
     </div>
   </div>
 </section>
 
-<section class="pad guides" id="products">
+<!-- ===== Customer spotlight (Stripe: URBN) ===== -->
+<section class="pad guides" id="spotlight">
   <div class="wrap">
-    <h2 class="sec-h">Built for how fashion sells. <span class="soft">Drops, seasons and returns.</span></h2>
-    <div class="pg-cards"><a href="#" class="res" data-page="/payment/checkout"><span class="rtag"><span data-ic="cart"></span>Product</span><b>Checkout</b><span>Fans pay in a few taps when a drop goes live.</span><em>Explore Checkout <span class="chev">›</span></em></a><a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Shipping and COD</b><span>Ship across Indonesia with every major courier.</span><em>Explore Shipping <span class="chev">›</span></em></a><a href="#" class="res" data-page="/funding/merchant-cash-advance"><span class="rtag"><span data-ic="coins"></span>Product</span><b>Merchant Cash Advance</b><span>Stock up before Hari Raya and other peaks.</span><em>Explore Funding <span class="chev">›</span></em></a></div>
-  </div>
-</section>
-
-<section class="pad guides">
-  <div class="wrap">
-    <h2 class="sec-h stats-h">From drop to delivery. <span class="soft">One platform for the whole order.</span></h2>
-    <div class="stats4 flow4 pg-steps"><div class="stat done"><span class="f4-n">01</span><span class="f4-ic" data-ic="card"></span><b>Launch the drop</b><span>On your own website, with FLIK Checkout.</span></div><div class="stat done"><span class="f4-n">02</span><span class="f4-ic" data-ic="wallet"></span><b>Shoppers pay fast</b><span>On their phones, the way they prefer.</span></div><div class="stat done"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>Orders ship</b><span>With the right courier for each route.</span></div><div class="stat done"><span class="f4-n">04</span><span class="f4-ic" data-ic="bank"></span><b>Stock stays ready</b><span>Funded upfront, settled from sales.</span></div></div>
-  </div>
-</section>
-
-<section class="pad alt guides" id="glance">
-  <div class="wrap">
-    <h2 class="sec-h">For fashion brands at a glance.</h2>
-    <div class="gl3" id="gl3"></div>
+    <p class="py-eye">Customer spotlight</p>
+    <h2 class="sec-h">ERIGO keeps every drop in stock. <span class="soft">With a FLIK Merchant Cash Advance.</span></h2>
+    <div class="spot">
+      <div class="spot-ph" style="background-image:url('../../assets/customers/erigo-1.jpg')"></div>
+      <div class="spot-t">
+        <span class="spot-lg"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span>
+        <h3>Keeping ERIGO in stock helped drive sales up to 200%, online and in stores.</h3>
+        <p>A FLIK Merchant Cash Advance funds ERIGO's stock upfront, for one fixed margin, and is settled automatically from its sales, so products stay available at every point of sale.</p>
+        <div class="spot-n"><b>Up to 200%</b><span>sales growth in online and offline stores</span></div>
+        <a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1393,12 +1652,21 @@ main section#customers{padding:112px 0}
   <div class="wrap">
     <h2 class="sec-h">Fashion brands on FLIK. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></span><span class="st-big">Gerai Hawa</span></div><p>Gerai Hawa ships modest fashion across Indonesia.</p><a href="../../customers/story/?c=gerai-hawa" class="link">Read Gerai Hawa's story <span class="chev">›</span></a></article></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></span><span class="st-big">Gerai Hawa</span></div><p>Gerai Hawa ships modest fashion across Indonesia.</p><a href="../../customers/story/?c=gerai-hawa" class="link">Read Gerai Hawa's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span><span class="st-big">Sigit Store</span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="background-image:url('../../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/paper.png?v=2" alt="Paper"></span><span class="st-big">Paper</span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/artch.png?v=2" alt="Artch"></span><span class="st-big">Artch</span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/wakaigo-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span><span class="st-big">WakaiGo</span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article></div>
       <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     </div>
   </div>
 </section>
 <!-- ===== /kit: customer-stories ===== -->
+
+<!-- ===== kit: solutions (links every use-case and industry page to the others) ===== -->
+<section class="pad-s guides" id="solutions">
+  <div class="wrap">
+    <h3 class="res-h">More solutions</h3>
+    <div class="res3 sol4"><a href="#" class="res" data-page="/use-cases/d2c-brands"><span class="rtag"><span data-ic="cart"></span>By use case</span><b>D2C brands</b><span>Sell more on your own website, with checkout, shipping and funding in one place.</span><em>Explore D2C brands <span class="chev">›</span></em></a><a href="#" class="res" data-page="/use-cases/cod-sellers"><span class="rtag"><span data-ic="cash"></span>By use case</span><b>COD sellers</b><span>Ship cash on delivery and get the money as soon as the parcel is delivered.</span><em>Explore COD sellers <span class="chev">›</span></em></a><a href="#" class="res" data-page="/use-cases/scaling-brands"><span class="rtag"><span data-ic="chart"></span>By use case</span><b>Scaling brands</b><span>Payments, shipping and funding that keep up as you grow.</span><em>Explore Scaling brands <span class="chev">›</span></em></a><a href="#" class="res" data-page="/industries/home-appliances"><span class="rtag"><span data-ic="home"></span>By industry</span><b>Home appliances</b><span>Big-ticket sales, from the showroom to the doorstep.</span><em>Explore Home appliances <span class="chev">›</span></em></a></div>
+  </div>
+</section>
+<!-- ===== /kit: solutions ===== -->
 
 <section class="pad guides" id="faq-sec">
   <div class="wrap faq1">
@@ -1605,7 +1873,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../../';
-const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
+const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'developers/#shopify','/integrations/woocommerce':'developers/#woocommerce',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
@@ -1634,10 +1902,9 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 
 /* ===== Page: at a glance ===== */
-(function(){const G=[["cart", "Selling", ["WhatsApp login, saved details", "QRIS, e-wallets, virtual accounts, cards and COD", "Rewards applied automatically"]], ["truck", "Shipping", ["All major couriers in one dashboard", "Bulk shipping after a busy drop", "A tracking link for every shopper"]], ["coins", "Stock", ["Merchant Cash Advance for selected brands", "One fixed margin, agreed upfront", "Settled automatically from sales"]]];const el=document.getElementById('gl3');if(el)el.innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');})();
 
 /* ===== FAQ ===== */
-const FAQ=[["Does FLIK work with my fashion store?", "Yes, if you sell on Shopify or WooCommerce. FLIK sets up FLIK Checkout for you."], ["Can shoppers pay by COD?", "Yes. COD is one of the payment methods, with a 3% fee (excl. PPN) deducted after delivery."], ["Can I fund stock for the season?", "Selected brands can get a Merchant Cash Advance, settled automatically as products sell."]];
+const FAQ=[["Does FLIK work with my fashion store?", "Yes, if you sell on Shopify or WooCommerce. FLIK sets up FLIK Checkout for you. You can also sell with payment links and in store, with no website."], ["Can shoppers pay by COD?", "Yes. COD is one of the payment methods, with a 3% fee (excl. PPN) deducted after delivery."], ["Can I sell a drop as a pre-order?", "Yes. Share a payment link in chat or in your bio, with your own button text, like Pre-order now."], ["Can I take payments at a pop-up or store?", "Yes. The FLIK EDC takes QRIS and cards, and in-store sales land in the same balance as online."], ["Can I ship a whole drop at once?", "Yes. Bulk shipping sends orders from all your warehouses to many destinations at once, with every major courier."], ["Can I fund stock for the season?", "Selected brands can get a Merchant Cash Advance for one fixed margin, settled automatically from sales."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
@@ -1647,6 +1914,36 @@ document.querySelectorAll('#customers .cbtn').forEach(b=>b.onclick=()=>{const c=
 
 /* ===== icons in tags ===== */
 document.querySelectorAll('main [data-ic]').forEach(e=>{if(!e.innerHTML.trim())e.innerHTML=ic(e.dataset.ic,e.closest('.rtag')?15:18)});
+
+/* ===== Hero: Drop 07 sells across the website, a payment link and the store; sizes count down (example data) ===== */
+(function(){
+  const box=document.getElementById('dp');if(!box)return;
+  const S={S:8,M:14,L:12,XL:6},TOTAL=40,sizes=[...box.querySelectorAll('#dp-sz>div')],feed=document.getElementById('dp-feed'),sold=document.getElementById('dp-sold'),bar=document.getElementById('dp-bar');
+  const CH={web:['cart','Website','FLIK Checkout'],link:['chat','Payment link','Shared in chat'],store:['qris','Store','FLIK EDC']};
+  const PAY=['QRIS','GoPay','BCA VA','COD','Visa','OVO','ShopeePay'];
+  const visible=onScreen(box),icon=k=>ic(k,14);
+  function seq(){const out=[],left={...S},ch=['web','web','link','store','web','link','web','store'];let i=0;
+    while(Object.values(left).some(v=>v>0)){const ks=Object.keys(left).filter(k=>left[k]>0);const k=ks[(i*7+3)%ks.length];const q=Math.min(left[k],1+((i*5)%3===0?1:0));left[k]-=q;out.push([ch[i%ch.length],k,q,PAY[i%PAY.length]]);i++}return out}
+  const EV=seq();
+  async function run(){
+    while(true){
+      if(!visible()){await wait(600);continue}
+      const left={...S};let n=0;feed.innerHTML='';sold.textContent='0';bar.style.width='0%';
+      sizes.forEach(z=>{z.classList.remove('out','hit');z.querySelector('[data-n]').textContent=S[z.dataset.s]+' left'});
+      await wait(700);
+      for(const [c,s,q,p] of EV){
+        left[s]-=q;n+=q;const z=sizes.find(x=>x.dataset.s===s);
+        z.classList.add('hit');z.querySelector('[data-n]').textContent=left[s]?left[s]+' left':'Sold out';if(!left[s])z.classList.add('out');
+        sold.textContent=n;bar.style.width=(n/TOTAL*100)+'%';
+        const row=document.createElement('div');row.innerHTML=`<i>${icon(CH[c][0])}</i><div><b>${CH[c][1]} · size ${s}${q>1?' × '+q:''}</b><small>${CH[c][2]} · ${p}</small></div><span class="num">Rp${(349000*q).toLocaleString('id-ID')}</span>`;
+        feed.prepend(row);while(feed.children.length>4)feed.lastChild.remove();
+        await wait(220);z.classList.remove('hit');await wait(420);
+      }
+      await wait(3600);
+    }
+  }
+  if(REDUCE){sizes.forEach(z=>{z.classList.add('out');z.querySelector('[data-n]').textContent='Sold out'});sold.textContent=TOTAL;bar.style.width='100%'}else run();
+})();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+

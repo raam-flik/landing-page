@@ -23,6 +23,7 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [27-fashion.md](27-fashion.md) | Solutions: Fashion | [/industries/fashion/](https://landing-page-raams-projects-2709477f.vercel.app/industries/fashion/) |
 | [28-contact.md](28-contact.md) | Contact | [/contact/](https://landing-page-raams-projects-2709477f.vercel.app/contact/) |
 | [29-book-a-demo.md](29-book-a-demo.md) | Book a demo | [/demo/](https://landing-page-raams-projects-2709477f.vercel.app/demo/) |
+| [30-home-appliances.md](30-home-appliances.md) | Home appliances | [/industries/home-appliances/](https://landing-page-raams-projects-2709477f.vercel.app/industries/home-appliances/) |
 | [18-pricing.md](18-pricing.md) | Pricing | [/pricing/](https://landing-page-raams-projects-2709477f.vercel.app/pricing/) |
 | [17-flik-connect.md](17-flik-connect.md) | FLIK Connect | [/payment/connect/](https://landing-page-raams-projects-2709477f.vercel.app/payment/connect/) |
 | [11-shipment-tracking.md](11-shipment-tracking.md) | Shipment tracking (cek resi) | [/shipping/track/](https://landing-page-raams-projects-2709477f.vercel.app/shipping/track/) |

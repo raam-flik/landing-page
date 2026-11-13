@@ -78,12 +78,19 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Rate:** Shipping — Up to 50% off — Published courier rates, paid per shipment
 - **Rate:** Returned parcel — No COD fee — The return fee for each courier is shown in your dashboard
 
-## 8. Questions, answered.
+## 8. (no heading)
+
+- **Card:** D2C brands — Sell more on your own website, with checkout, shipping and funding in one place.
+- **Card:** Scaling brands — Payments, shipping and funding that keep up as you grow.
+- **Card:** Fashion — Sell every drop online, in chat and in store.
+- **Card:** Home appliances — Big-ticket sales, from the showroom to the doorstep.
+
+## 9. Questions, answered.
 
 - **Heading:** Questions, answered.
 - **Text:** Can't find what you need? Talk to the FLIK team ›
 
-## 9. Ship COD with every major courier.
+## 10. Ship COD with every major courier.
 
 - **Heading:** Ship COD with every major courier.
 - **Text:** Free to register. Pay per shipment from your FLIK balance.

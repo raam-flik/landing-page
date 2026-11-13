@@ -1574,6 +1574,7 @@ main section#customers{padding:112px 0}
 .fx-list li div span{line-height:1.45}
 .pl-thumb svg{width:100%;height:100%;display:block}
 .pl-grp{display:grid;gap:9px}.fx-el.pl-grp{padding:4px;margin:-4px}
+.sol4{grid-template-columns:repeat(4,1fr)}@media (max-width:1080px){.sol4{grid-template-columns:1fr 1fr}}@media (max-width:760px){.sol4{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1734,6 +1735,15 @@ main section#customers{padding:112px 0}
     </div>
   </div>
 </section>
+
+<!-- ===== kit: solutions (links every use-case and industry page to the others) ===== -->
+<section class="pad-s guides" id="solutions">
+  <div class="wrap">
+    <h3 class="res-h">More solutions</h3>
+    <div class="res3 sol4"><a href="#" class="res" data-page="/use-cases/cod-sellers"><span class="rtag"><span data-ic="cash"></span>By use case</span><b>COD sellers</b><span>Ship cash on delivery and get the money as soon as the parcel is delivered.</span><em>Explore COD sellers <span class="chev">›</span></em></a><a href="#" class="res" data-page="/use-cases/scaling-brands"><span class="rtag"><span data-ic="chart"></span>By use case</span><b>Scaling brands</b><span>Payments, shipping and funding that keep up as you grow.</span><em>Explore Scaling brands <span class="chev">›</span></em></a><a href="#" class="res" data-page="/industries/fashion"><span class="rtag"><span data-ic="gift"></span>By industry</span><b>Fashion</b><span>Sell every drop online, in chat and in store.</span><em>Explore Fashion <span class="chev">›</span></em></a><a href="#" class="res" data-page="/industries/home-appliances"><span class="rtag"><span data-ic="home"></span>By industry</span><b>Home appliances</b><span>Big-ticket sales, from the showroom to the doorstep.</span><em>Explore Home appliances <span class="chev">›</span></em></a></div>
+  </div>
+</section>
+<!-- ===== /kit: solutions ===== -->
 
 <section class="pad guides" id="faq-sec">
   <div class="wrap faq1">
@@ -1940,7 +1950,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../../';
-const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
+const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'developers/#shopify','/integrations/woocommerce':'developers/#woocommerce',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',

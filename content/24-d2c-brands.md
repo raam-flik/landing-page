@@ -108,12 +108,19 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Rate:** Shipping — Up to 50% off — Published courier rates, paid per shipment
 - **Rate:** Cash on delivery — 3% — Of the order value, excl. PPN, after delivery
 
-## 9. Questions, answered.
+## 9. (no heading)
+
+- **Card:** COD sellers — Ship cash on delivery and get the money as soon as the parcel is delivered.
+- **Card:** Scaling brands — Payments, shipping and funding that keep up as you grow.
+- **Card:** Fashion — Sell every drop online, in chat and in store.
+- **Card:** Home appliances — Big-ticket sales, from the showroom to the doorstep.
+
+## 10. Questions, answered.
 
 - **Heading:** Questions, answered.
 - **Text:** Can't find what you need? Talk to the FLIK team ›
 
-## 10. Give your shoppers a faster way to pay.
+## 11. Give your shoppers a faster way to pay.
 
 - **Heading:** Give your shoppers a faster way to pay.
 - **Text:** Tell us about your store. We will help you switch over without changing how you sell.
