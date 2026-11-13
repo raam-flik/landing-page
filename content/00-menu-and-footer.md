@@ -146,17 +146,17 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 ## Cookie banner (every page)
 
-Shown on first visit as a compact bar (one row on desktop; text and one row of buttons on phones). "Accept all" is the primary button and "Reject all" a secondary button (Raam, 26 Oct 2026). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
+Shown on first visit as a compact bar (one row on desktop; one short line and one row of buttons on phones; made smaller, AG 13 Nov 2026). "Accept all" is the primary button and "Reject all" a secondary button (Raam, 26 Oct 2026). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
 
-- **Heading (bold, start of the text):** Cookies on FLIK.
-- **Text:** Essential cookies run this site. / Analytics and marketing only with your OK. (two lines on desktop)
+- **Heading (bold, start of the text):** We use cookies
+- **Text:** for analytics and marketing, with your OK. (On phones the middle part is hidden, so it reads "We use cookies, with your OK.")
 - **Link:** Cookie Policy (/legal/cookies)
 - **Button:** Reject all
 - **Button:** Accept all
 - **Icon button:** Cookie preferences
 - **Toggle:** Strictly necessary — Needed for the site to work, such as remembering this choice. Always on.
-- **Toggle:** Analytics — Help us understand which pages are used, so we can improve them. (Off until chosen.)
-- **Toggle:** Marketing — Measure our ads and show more relevant ones on other sites. (Off until chosen.)
+- **Toggle:** Analytics — Help us understand which pages are used, so we can improve them. (Switch starts on, AG 13 Nov 2026. Nothing loads until the visitor presses Accept all or Save my choices.)
+- **Toggle:** Marketing — Measure our ads and show more relevant ones on other sites. (Switch starts on, AG 13 Nov 2026. Nothing loads until the visitor presses Accept all or Save my choices.)
 - **Text (under the switches):** You can change your choice at any time under "Cookie settings" in the footer.
 - **Button:** Save my choices
 
