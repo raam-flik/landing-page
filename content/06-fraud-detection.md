@@ -9,11 +9,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The page says what FLIK watches (payments, refunds, chargebacks, withdrawals, account changes, COD orders) and how merchants are helped, but not how the checks work. It makes no claim either way about blocking payments. Mechanics such as waiting periods, OTP channels and alert routes are left out on purpose.
 
-- [ ] **Launch date:** the page says "From December 2026". Confirm, or change it if the date moves.
+- [x] **Launch date:** removed from the page (AG, 13 Nov 2026).
 - [x] **Pricing:** included at no extra cost (AG, 12 Nov 2026).
 - [ ] **Chargeback help:** the page says merchants are told of a dispute with the reason and deadline, upload evidence in the dashboard, and FLIK sends it to the payment partner. Confirm this is live by the launch date.
-- [ ] **No tipping off:** the page names what is checked, never the rules, thresholds or signals. Compliance to confirm the wording is safe.
-- [ ] **COD and shipping fraud (coming soon):** delivery risk level, COD confirmation on WhatsApp, address check and courier choice are planned, not built. Before the risk level goes live, the shopper privacy notice must be published, and the merchant sees only the level and the reason. Remove "Coming soon" only when each is live.
+- [ ] **No tipping off:** since 13 Nov 2026 (AG) sections 2 and 5 show the kinds of signal FLIK looks at (size against usual, payout account, calendar, money in and out, refunds; for COD: delivery history, address, order size, order pattern, route). The page still never gives rules, thresholds or multiples. Compliance to confirm this is safe before it goes live.
+- [ ] **COD signals are proposals:** the five COD signals in section 5 are not specified yet. Product to confirm each, or change the mockup.
+- [ ] **COD and shipping fraud:** "Coming soon" removed from the page (AG, 13 Nov 2026). Delivery risk level, COD confirmation on WhatsApp, address check and courier choice are planned, not built. Before the risk level goes live, the shopper privacy notice must be published, and the merchant sees only the level and the reason. The page now reads as if these are live, so check the launch plan before publishing.
 - [x] AI-agent withdrawals and the payment-partner screening line removed (AG, 12 Nov 2026).
 - [ ] Example data in the mockups (orders, amounts, banks, card digits) is example data, not FLIK figures.
 
@@ -22,20 +23,20 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 ## Search results (SEO)
 
 - **Page title:** Fraud Detection: Fight Fraud and Chargebacks | FLIK
-- **Description:** FLIK checks payments, refunds and withdrawals for fraud, helps you fight chargebacks, and soon flags risky COD orders. Included for every FLIK merchant.
+- **Description:** FLIK checks payments, refunds and withdrawals for fraud, helps you fight chargebacks, and flags risky COD orders. Included for every FLIK merchant.
 
 ## 1. Hero
 <!-- html: Hero: text left, a live feed of payments, refunds, disputes and withdrawals on the right (example data) -->
 
-- **Small text above headline:** FLIK Fraud Detection · From December 2026
-- **Headline (H1):** Stop fraud before it costs you.
-  - **Grey part:** Fewer chargebacks, fewer fake COD orders.
-- **Intro text:** Fraud costs you twice: the goods, then the payment. FLIK checks every payment, refund and withdrawal, and helps you fight chargebacks.
+- **Small text above headline:** FLIK Fraud Detection
+- **Headline (H1):** Keep what you've earned.
+  - **Grey part:** Every withdrawal checked, every chargeback answered.
+- **Intro text:** Fraud costs you twice: the goods, then the payment. We watch for both, and help you fight chargebacks.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
 - **List item:** Every payment, refund and withdrawal checked
 - **List item:** Help with every chargeback
-- **List item:** Risky COD orders flagged (coming soon)
+- **List item:** Risky COD orders flagged
 
 *Example text inside the product mockup (only change if needed):*
 
@@ -53,27 +54,41 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - Example
 
 ## 2. How it decides
-<!-- html: How it decides: full-width band with a flow diagram that splits into three outcomes #decide -->
+<!-- html: How it decides: a withdrawal slip read field by field, each field becomes a signal, then three outcomes (example data) #decide -->
 
 - **Label:** How it works
-- **Section heading:** One check at every risky moment.
-  - **Grey part:** Dashboard or API, the same check applies.
-- **Step:** You or your system — Request — A payment, refund or withdrawal
-- **Step:** FLIK Fraud Detection — Risk check — Looks for signs of fraud
+- **Section heading:** Nothing leaves without a second look.
+  - **Grey part:** Here's what we look at.
 - **Outcome:** Usual — Cleared — Goes through as usual.
 - **Outcome:** Unusual — Under review — FLIK's risk team takes a look.
 - **Outcome:** Fraud — Stopped — The money stays in your balance.
 
+*Example text inside the product mockup (only change if needed):*
+
+- Example · Withdrawal — WD-3104
+- Amount — Rp86.000.000
+- To account — BCA ···· 2291
+- Requested — Sat 23:40 · payday week
+- Money in today — Rp91.000.000
+- Refunds this week — Low
+- What FLIK looks at
+- Size against your usual — Well above your usual
+- Payout account — Recently changed
+- Calendar — Busy week, expected
+- Money in, money out — Most of it leaving the same day
+- Refund pattern — Normal for you
+- Result — FLIK's risk team takes a look — Under review
+
 ## 3. What it covers
 <!-- html: What it covers: ruled five-step flow, the progress line walks and an example check follows (example data) #steps -->
 
-- **Section heading:** Covered end to end.
+- **Section heading:** Watched at every step.
   - **Grey part:** From first payment to last withdrawal.
-- **Step:** 01 — Payments — Checked for fraud.
+- **Step:** 01 — Payments — Watched as they come in.
 - **Step:** 02 — Refunds — Unusual patterns flagged.
 - **Step:** 03 — Chargebacks — We help you respond to disputes.
 - **Step:** 04 — Withdrawals — Checked before money leaves.
-- **Step:** 05 — COD orders — Risky orders flagged. Coming soon.
+- **Step:** 05 — COD orders — Risky orders flagged.
 
 *Example text inside the example card (only change if needed):*
 
@@ -109,14 +124,29 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - Upload evidence
 
 ## 5. COD and shipping fraud
-<!-- html: COD and shipping fraud: delivery risk level, COD confirmation and address check, coming soon #dash -->
+<!-- html: COD and shipping fraud: a COD waybill read field by field, each field becomes a signal, then a delivery risk level (example data) #dash -->
 
-- **Section heading:** Stop fake COD orders.
-  - **Pill:** Coming soon
+- **Section heading:** Know before you ship.
   - **Grey part:** Risky orders flagged before pickup.
 - **List item:** Risk level on every order
 - **List item:** WhatsApp confirmation before pickup
 - **List item:** Address check before you ship
+
+*Example text inside the product mockup (only change if needed):*
+
+- Example · COD waybill — Order #4830
+- Recipient phone — 0812 ···· 7731
+- Ship to — Jl. Melati, Bekasi
+- COD amount — Rp2.400.000
+- Ordered — 02:14 · third order tonight
+- Courier — Regular · Bekasi
+- What FLIK looks at
+- Delivery history — Past failed deliveries
+- Address — No house number
+- Order size — Well above your usual
+- Order pattern — Repeat orders, minutes apart
+- Route — Courier delivers well here
+- Delivery risk — Confirm on WhatsApp first — High risk
 
 ## 6. Reviewed by people
 <!-- html: Reviewed by people: dark band with a short list #cod-risk -->
@@ -127,24 +157,11 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **List item:** Track the status in your dashboard.
 - **Link:** Contact support
 
-## 7. Works however you withdraw
-<!-- html: Works where you sell: three product cards #where -->
-
-- **Section heading:** The same check, however you withdraw.
-  - **Grey part:** No setup and nothing to switch on.
-- **Card:** Dashboard — Withdraw by hand. — Every withdrawal is checked first. — Open the dashboard
-- **Card:** API — Withdraw from your system. — Same check, plus a webhook when one is under review. — Explore Developers
-
-*Example text inside the product mockup (only change if needed):*
-
-- Withdrawal WD-3102 — Sent — Dashboard · Rp12.500.000 — Risk check passed
-- Withdrawal WD-3104 — Under review — API · Rp86.000.000 — Under review
-
-## 8. At a glance
+## 7. At a glance
 <!-- html: Fraud Detection at a glance #glance -->
 
 - **Section heading:** Fraud Detection at a glance.
-  - **Grey part:** On for every FLIK merchant from December 2026.
+  - **Grey part:** On for every FLIK merchant.
 - **Heading:** Always on
 - **List item:** No setup, no code
 - **List item:** Payments, refunds and withdrawals checked
@@ -153,12 +170,12 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **List item:** Told as soon as a payment is disputed
 - **List item:** Evidence uploaded in the dashboard
 - **List item:** FLIK sends it to the payment partner
-- **Heading:** COD and shipping (coming soon)
+- **Heading:** COD and shipping
 - **List item:** Delivery risk level per order
 - **List item:** COD confirmation on WhatsApp
 - **List item:** Address check before pickup
 
-## 9. FAQ
+## 8. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
 
 - **Section heading:** Questions, answered.
@@ -167,18 +184,18 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **Question:** How does FLIK help with chargebacks?
   - **Answer:** You're told straight away, with the reason and deadline. Upload evidence in the dashboard, and FLIK sends it to the payment partner.
 - **Question:** How does FLIK help with fake COD orders?
-  - **Answer:** Soon, each order gets a risk level with the reason. Ask the shopper to confirm on WhatsApp, send a payment link instead, or switch courier.
+  - **Answer:** Each order gets a risk level with the reason. Ask the shopper to confirm on WhatsApp, send a payment link instead, or switch courier.
 - **Question:** What happens when a withdrawal is held?
   - **Answer:** It shows as "Under review", with an expected time. It's sent once FLIK's risk team clears it.
 - **Question:** Why won't you tell me why it was held?
-  - **Answer:** Explaining the checks would help fraudsters get around them. We'll contact you if we need anything.
+  - **Answer:** We show what we look at, not the exact rules. Sharing those would help fraudsters get around them. We'll contact you if we need anything.
 - **Question:** Do I need to set anything up?
   - **Answer:** No. It's on for every FLIK merchant.
 - **Question:** What does it cost?
   - **Answer:** Nothing. It's included.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
-## 10. Resources
+## 9. Resources
 <!-- html: Resources: 3 cards -->
 
 - **Small heading:** More from FLIK
@@ -186,7 +203,7 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **Card:** Product — Developers — API keys, webhooks and how to connect. — Explore Developers
 - **Card:** Guide — Keeping your account safe — Simple habits that keep your FLIK account in your hands. — Read more
 
-## 11. Final call to action
+## 10. Final call to action
 <!-- html: Final CTA (centered) -->
 
 - **Heading:** Sell with confidence.
