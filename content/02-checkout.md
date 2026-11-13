@@ -71,7 +71,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** One account, wherever they shop.
   - **Grey part:** Stores, social media, blogs. Every shopper with a FLIK account is already one tap from yours.
-- **Tiles around the shopper:** Shopify (logo) · WooCommerce (logo) · Your website · Blog · Chat · TikTok (logo)
+- **Tiles around the shopper:** Shopify (logo) · WooCommerce (logo) · Your website · Blog · X (logo) · Instagram (logo) · WhatsApp (logo)
 - **Label:** One FLIK account
 - **Small heading:** FLIK shopper network
 - **Heading:** Shoppers from every FLIK brand
