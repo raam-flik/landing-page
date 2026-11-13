@@ -14,6 +14,15 @@ This folder holds **all the text** on the FLIK landing page, one file per page. 
 | [08-promo.md](08-promo.md) | Promo | [/promo/](https://landing-page-raams-projects-2709477f.vercel.app/promo/) |
 | [20-customers.md](20-customers.md) | Customers and customer stories | [/customers/](https://landing-page-raams-projects-2709477f.vercel.app/customers/) |
 | [19-developers.md](19-developers.md) | Developers | [/developers/](https://landing-page-raams-projects-2709477f.vercel.app/developers/) |
+| [21-payment.md](21-payment.md) | Payment (overview) | [/payment/](https://landing-page-raams-projects-2709477f.vercel.app/payment/) |
+| [22-invoice.md](22-invoice.md) | Invoice | [/payment/invoice/](https://landing-page-raams-projects-2709477f.vercel.app/payment/invoice/) |
+| [23-payment-link.md](23-payment-link.md) | Payment Link | [/payment/payment-link/](https://landing-page-raams-projects-2709477f.vercel.app/payment/payment-link/) |
+| [24-d2c-brands.md](24-d2c-brands.md) | Solutions: D2C brands | [/use-cases/d2c-brands/](https://landing-page-raams-projects-2709477f.vercel.app/use-cases/d2c-brands/) |
+| [25-cod-sellers.md](25-cod-sellers.md) | Solutions: COD sellers | [/use-cases/cod-sellers/](https://landing-page-raams-projects-2709477f.vercel.app/use-cases/cod-sellers/) |
+| [26-scaling-brands.md](26-scaling-brands.md) | Solutions: Scaling brands | [/use-cases/scaling-brands/](https://landing-page-raams-projects-2709477f.vercel.app/use-cases/scaling-brands/) |
+| [27-fashion.md](27-fashion.md) | Solutions: Fashion | [/industries/fashion/](https://landing-page-raams-projects-2709477f.vercel.app/industries/fashion/) |
+| [28-contact.md](28-contact.md) | Contact | [/contact/](https://landing-page-raams-projects-2709477f.vercel.app/contact/) |
+| [29-book-a-demo.md](29-book-a-demo.md) | Book a demo | [/demo/](https://landing-page-raams-projects-2709477f.vercel.app/demo/) |
 | [18-pricing.md](18-pricing.md) | Pricing | [/pricing/](https://landing-page-raams-projects-2709477f.vercel.app/pricing/) |
 | [17-flik-connect.md](17-flik-connect.md) | FLIK Connect | [/payment/connect/](https://landing-page-raams-projects-2709477f.vercel.app/payment/connect/) |
 | [11-shipment-tracking.md](11-shipment-tracking.md) | Shipment tracking (cek resi) | [/shipping/track/](https://landing-page-raams-projects-2709477f.vercel.app/shipping/track/) |
