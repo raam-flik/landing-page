@@ -1435,7 +1435,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <h2 class="sec-h">Same payment, two timelines. <span class="soft">With Early Settlement, a shopper's payment is yours to use before the standard settlement date.</span></h2>
     <div class="cmp" id="cmp" role="img" aria-label="Example: a Rp3.000.000 payment reaches the FLIK balance sooner with Early Settlement than on the standard schedule. The timings are still to be confirmed.">
       <div class="fl-n cmp-src" id="cmp-src"><span class="fl-ic" data-ic="user"></span><small>Shopper pays</small><b class="num">Rp3.000.000</b><span>QRIS, e-wallet, virtual account or card</span></div>
-      <div class="fl-split" aria-hidden="true"><svg viewBox="0 0 80 300" preserveAspectRatio="none"><path d="M0 150 C40 150 40 72 80 72"/><path d="M0 150 C40 150 40 228 80 228"/></svg></div>
+      <div class="fl-split" id="cmp-split" aria-hidden="true"><svg viewBox="0 0 80 300" preserveAspectRatio="none"><path d="M0 150 C40 150 40 72 80 72"/><path d="M0 150 C40 150 40 228 80 228"/></svg></div>
       <div class="cmp-lanes">
         <div class="lane early" id="lane-a">
           <div class="lane-h"><span class="label"><i></i>With Early Settlement</span><span class="pill gr" id="day-a">Waiting</span></div>
@@ -1921,6 +1921,21 @@ const FAQ=[
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
+
+/* ===== Early Settlement: split connector drawn from the card's edge to each lane's dotted row ===== */
+(function(){
+  const box=document.getElementById('cmp-split');if(!box)return;
+  const svg=box.querySelector('svg'),paths=svg.querySelectorAll('path'),src=document.getElementById('cmp-src'),rows=[...document.querySelectorAll('#cmp .lane-r')];
+  function draw(){
+    const b=box.getBoundingClientRect();if(!b.width||!b.height)return;
+    const s=src.getBoundingClientRect(),y0=s.top+s.height/2-b.top,x0=s.right-b.left,x1=b.width;
+    svg.setAttribute('viewBox',`0 0 ${b.width} ${b.height}`);svg.setAttribute('preserveAspectRatio','none');
+    rows.forEach((r,i)=>{if(!paths[i])return;const rr=r.getBoundingClientRect(),y1=rr.top+rr.height/2-b.top,mx=(x0+x1)/2;
+      paths[i].setAttribute('d',`M${x0.toFixed(1)} ${y0.toFixed(1)} C${mx.toFixed(1)} ${y0.toFixed(1)} ${mx.toFixed(1)} ${y1.toFixed(1)} ${(x1+1).toFixed(1)} ${y1.toFixed(1)}`)});
+  }
+  draw();addEventListener('resize',draw);document.fonts&&document.fonts.ready.then(draw);
+  if(window.ResizeObserver)new ResizeObserver(draw).observe(document.getElementById('cmp'));
+})();
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
