@@ -141,8 +141,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 4. Feature banner
 <!-- html: Feature banner -->
 
-- **Text:** Checkout — Shipping — Funding
 - **Section heading:** A unified commerce infrastructure.
+- **Diagram cards (example figures):** Checkout — Pay Rp 540.000 · Shipping — Regular · 2–3 days, Rp 12.000 · Funding — Rp 250.000.000, 62% repaid
 - **Text:** Payments in, packages out, one balance behind it all.
 - **Button:** Book a demo
 
@@ -189,21 +189,21 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Go live without rebuilding your store.
 - **Intro text:** Connect FLIK with a plugin, build with the API, or run everything from the dashboard with no code.
 - **Button:** View developer docs
-- **Heading:** Connect to the systems you already use. Every order from your store flows through FLIK Checkout and Shipping, out to every payment method and all major couriers.
+- **Heading:** Connect to the systems you already use. One connection reaches your payment and courier partners, with apps to add as you grow.
+- **Diagram labels:** Store (Shopify, WooCommerce, Your website) · Back office (Order system, Warehouse, ERP) · SDK · FLIK API · Dashboard · Orchestrate · PSPs · 3PLs · App marketplace (Funding, Accounting, CRM, Storefront)
 - **Heading:** Get set up your way. Choose no code, a plugin or the API, then follow three steps.
 - **Button:** No code
 - **Button:** Shopify
+- **Link (Shopify tab):** View Shopify integration
 - **Button:** WooCommerce
-- **Button:** API (code tab: a shortened "Create a checkout session" example from the Merchant API docs, Accept a payment guide. It used to show an invented "create a shipment" call; shipments are not in the API yet.)
-- **Small heading:** Shopify
-- **Text:** We connect your Shopify store to FLIK Checkout and Shipping for you.
-- **Link:** View integration
-- **Small heading:** WooCommerce
-- **Text:** Connect your WordPress store in a few steps and switch to FLIK Checkout.
-- **Link:** View integration
-- **Small heading:** FLIK API
-- **Text:** Build your own checkout on the FLIK API, with virtual accounts and QRIS today.
-- **Link:** Read the docs
+- **Link (WooCommerce tab):** View WooCommerce integration
+- **Button:** API
+- **API step 1:** Get Sandbox credentials — Create API credentials in the dashboard. Sandbox never touches real money.
+- **API step 2:** Create a checkout session — One call returns a payment page. Shoppers pay by virtual account or QRIS.
+- **API step 3:** Go live — Add a webhook endpoint, verify your business, then switch to Live keys.
+- **API code sample:** a shortened "Create a checkout session" call from the Merchant API docs, Accept a payment guide. Shipments are not in the API yet, so don't show one.
+- **Link (API tab):** Read the API reference
+- (The three cards that used to sit under the tabs, Shopify, WooCommerce and FLIK API, were removed on 13 Nov 2026 because they repeated the tabs.)
 
 *Example text inside the product mockup (only change if needed):*
 
