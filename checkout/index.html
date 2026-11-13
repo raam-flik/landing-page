@@ -999,26 +999,71 @@ html{scroll-padding-top:88px}
 .pmx-chips span.on{border-color:#00E5FF;background:rgba(0,229,255,.16);color:#fff}
 
 /* Dashboard */
-.dsh-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--line-soft);margin-top:40px}
-.dsh-tabs button{display:flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:7px;font-size:14.5px;font-weight:500;color:var(--muted);transition:background .2s,color .2s,box-shadow .2s}
-.dsh-tabs button.on{background:#fff;color:var(--ink);box-shadow:var(--sh)}
-.dsh-tabs button.on [data-ic]{color:var(--primary)}
-.dsh-tabs [data-ic]{display:flex}
 .dsh-win{margin-top:20px;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;background:#fff;font-size:13px}
 .dsh-win .co-bar{position:relative}
 .dsh-win .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
-.dsh-body{display:grid;grid-template-columns:220px 1fr;min-height:420px}
-.dsh-side{border-right:1px solid var(--line);background:var(--bg-alt);padding:18px 12px;display:flex;flex-direction:column;gap:2px}
-.dsh-f{margin:0 8px 14px}
-.dsh-side small{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;padding:12px 10px 6px}
-.dsh-side>span[data-t]{padding:8px 10px;border-radius:6px;color:var(--body);cursor:pointer;transition:background .2s,color .2s}
-.dsh-side>span[data-t].on{background:#fff;color:var(--primary);font-weight:500;box-shadow:var(--sh)}
-.dsh-panel{padding:26px;animation:pmx-in .35s ease}
-.dsh-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.dsh-h b{font-size:17px;font-weight:500}
-.dsh-cz{display:grid;grid-template-columns:1fr 280px;gap:28px}
-.dsh-cz h6{font-size:12px;font-weight:500;color:var(--muted);margin:0 0 8px}
-.dsh-cz h6+*{margin-bottom:18px}
+.dsh-win{margin-top:40px}
+.cpz-top{display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-bottom:1px solid var(--line)}
+.cpz-top b{font-weight:500;font-size:14px}
+.cpz-x{display:flex;color:var(--muted);padding-right:12px;border-right:1px solid var(--line)}
+.cpz-x svg{width:16px;height:16px}
+.cpz-acts{margin-left:auto;display:flex;gap:8px}
+.cpz-btn{display:inline-flex;align-items:center;height:30px;padding:0 12px;border:1px solid var(--line);border-radius:6px;font-size:12.5px;font-weight:500;color:var(--ink);background:#fff;white-space:nowrap}
+.cpz-btn.sm{height:26px;padding:0 10px;font-size:12px}
+.cpz-btn.p{border-color:transparent;background:#C9BFFF;color:#fff;transition:background .2s}
+.cpz-btn.p.on{background:var(--primary)}
+.cpz-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:470px}
+.cpz-set{padding:24px 28px;display:grid;gap:22px;align-content:start}
+.cpz-sec h5{font-size:15px;font-weight:500;color:var(--ink);margin:0 0 2px}
+.cpz-sec p{font-size:12.5px;color:var(--muted);margin:0 0 10px;line-height:1.45}
+.cpz-logo{display:flex;align-items:center;gap:12px}
+.cpz-logo .ph-logo{width:44px;height:44px;border-radius:10px;font-size:18px}
+.cpz-logo div{display:grid;gap:6px;justify-items:start}
+.cpz-logo b{font-weight:500;font-size:13px}
+.cpz-col{display:grid;gap:6px;max-width:340px}
+.cpz-col button{display:flex;align-items:center;gap:10px;height:36px;padding:0 12px;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--ink);text-align:left;transition:border-color .2s,box-shadow .2s}
+.cpz-col button.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.cpz-col i{width:14px;height:14px;border-radius:50%;flex:none}
+.cpz-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cpz-chips button,.cpz-more{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;color:var(--ink);background:#fff;transition:opacity .2s,border-color .2s}
+.cpz-chips button::after{content:"×";color:var(--muted);font-size:14px;line-height:1;margin-left:2px}
+.cpz-chips button.off{opacity:.45;border-style:dashed}
+.cpz-chips button.off::after{content:"+"}
+.cpz-chips img{height:14px;width:auto;max-width:34px;object-fit:contain}
+.cpz-chips [data-ic]{display:flex;color:var(--muted)}
+.cpz-chips [data-ic] svg{width:15px;height:15px}
+.cpz-chips em{display:none;font-style:normal;font-size:11px;font-weight:500;color:var(--primary);background:var(--primary-soft);border-radius:4px;padding:1px 5px}
+.cpz-chips button.def em{display:inline}
+.cpz-more{color:var(--muted)}
+.cpz-prev{background:var(--bg-alt);border-left:1px solid var(--line);padding:24px 28px;display:flex;flex-direction:column;gap:12px}
+.cpz-ph{display:flex;align-items:center;justify-content:space-between}
+.cpz-ph b{font-size:15px;font-weight:500}
+.cpz-seg{display:inline-flex;padding:2px;border-radius:7px;background:#fff;border:1px solid var(--line)}
+.cpz-seg button{height:26px;padding:0 10px;border-radius:5px;font-size:12px;color:var(--muted)}
+.cpz-seg button.on{background:var(--bg-alt);color:var(--ink);font-weight:500;box-shadow:var(--sh)}
+.cpz-tabs{display:flex;gap:18px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.cpz-tabs span{padding-bottom:8px}
+.cpz-tabs .on{color:var(--primary);font-weight:500;box-shadow:0 1px 0 var(--primary)}
+.cpz-page{--acc:#002D5D;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:11.5px;width:100%;margin:0 auto;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.cpz-page.cpz-phone{width:250px}
+.cpz-pg-h{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line-soft)}
+.cpz-pg-h .ph-logo{width:20px;height:20px;font-size:10px;border-radius:5px}
+.cpz-pg-h b{font-weight:500}
+.cpz-pg-h small{margin-left:auto;color:var(--muted);font-size:10.5px}
+.cpz-pg{display:grid;grid-template-columns:1.35fr 1fr;gap:10px;padding:12px;background:var(--bg-alt);align-items:start}
+.cpz-page.cpz-phone .cpz-pg{grid-template-columns:1fr}
+.cpz-card{background:#fff;border:1px solid var(--line-soft);border-radius:8px;padding:10px 12px;display:grid;gap:7px}
+.cpz-card>b{font-weight:500;font-size:12px}
+.cpz-row{display:flex;align-items:center;gap:8px;padding:6px 8px;border:1px solid var(--line-soft);border-radius:6px;min-width:0}
+.cpz-row>span:not([data-ic]){flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpz-row [data-ic]{display:flex;color:var(--muted);flex:none}
+.cpz-row [data-ic] svg{width:14px;height:14px}
+.cpz-row img{height:12px;width:auto;max-width:30px;object-fit:contain;flex:none}
+.cpz-row small{color:var(--muted);font-size:10.5px;flex:none}
+.cpz-sum div{display:flex;justify-content:space-between;color:var(--body)}
+.cpz-sum .t{color:var(--ink);font-weight:600;border-top:1px solid var(--line-soft);padding-top:7px}
+.cpz-pay{height:30px;border-radius:6px;background:var(--acc);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.cpz-pg-f{display:flex;align-items:center;gap:6px;padding:8px 14px;border-top:1px solid var(--line-soft);color:var(--muted);font-size:10.5px}
 .sw{display:flex;gap:8px}
 .sw button{width:30px;height:30px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 2px #fff;outline:1px solid var(--line);transition:outline-color .2s}
 .sw button.on{outline:2px solid var(--c)}
@@ -1153,8 +1198,8 @@ html{scroll-padding-top:88px}
   .stats4 .stat:nth-child(2){border-right:0}
   .stats4 .stat:nth-child(3){padding-left:var(--bleed)}
   .stats4 .stat:nth-child(n+3){border-top:1px solid var(--line-soft)}
-  .dsh-body{grid-template-columns:1fr}
-  .dsh-side{display:none}
+  .cpz-body{grid-template-columns:1fr}
+  .cpz-prev{border-left:0;border-top:1px solid var(--line)}
   .pk3,.gl3,.res3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
@@ -1175,10 +1220,10 @@ html{scroll-padding-top:88px}
   .pmx-tabs{grid-template-columns:1fr 1fr}
   .pmx-tabs small{display:none}
   .pmx-n{font-size:44px}
-  .dsh-tabs{display:flex;width:100%}
-  .dsh-tabs button{flex:1;justify-content:center;padding:0 8px}
-  .dsh-panel{padding:16px}
-  .dsh-cz,.shp{grid-template-columns:1fr}
+  .cpz-acts .cpz-btn:not(.p){display:none}
+  .cpz-set,.cpz-prev{padding:18px 16px}
+  .cpz-pg{grid-template-columns:1fr}
+  .shp{grid-template-columns:1fr}
   .kpi{grid-template-columns:1fr}
   .kpi div+div{border-left:0;border-top:1px solid var(--line)}
   .fun div{grid-template-columns:100px 1fr 40px}
@@ -1215,7 +1260,7 @@ html{scroll-padding-top:88px}
 .tg{background:var(--field-line)}                                         /* toggle off 4.75:1 (was #D7DDE6 1.4:1) */
 .opt .rd{border-color:var(--field-line)}                                  /* radio ring 4.75:1 (was #B7C0CD 1.8:1) */
 /* This page's own pairs */
-.dsh-side small,.f4-n{color:var(--muted)!important}                       /* #64748D on #F8FAFD 4.5:1, on #fff 4.75:1 (was #8898AA 2.8:1 / 2.95:1) */
+.f4-n{color:var(--muted)!important}                       /* #64748D on #F8FAFD 4.5:1, on #fff 4.75:1 (was #8898AA 2.8:1 / 2.95:1) */
 .fx-rew .co-row span:first-child,.fx-rew .num,.ph-r.rw .num{color:var(--ok-text)} /* #0E6E48 on #fff 6.3:1 (was #1EA672 3.1:1) */
 .pmx-tabs small{color:#AAB4CC}                                            /* on #002D5D 6.6:1, on #0B3A6E 5.5:1 (was #7F8BAE 4.05:1 / 3.4:1) */
 /* ===== /kit: contrast ===== */
@@ -1573,25 +1618,43 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== Personalization: payment methods and couriers ===== -->
+<!-- ===== Personalization: the dashboard's Personalise checkout editor with a live preview (example data) ===== -->
 <section class="pad guides" id="dash">
   <div class="wrap">
     <h2 class="sec-h">Your checkout, your choices. <span class="soft">Choose which payment methods and couriers your shoppers see, and change them anytime from your dashboard.</span></h2>
-    <div class="dsh-tabs" id="dsh-tabs" role="group" aria-label="Checkout settings">
-      <button class="on" data-t="0"><span data-ic="card-s"></span>Payment methods</button>
-      <button data-t="1"><span data-ic="truck-s"></span>Couriers</button>
-    </div>
-    <div class="dsh-win">
-      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/checkout</span></div>
-      <div class="dsh-body">
-        <aside class="dsh-side" id="dsh-side">
-          <span class="dsh-f"><svg viewBox="0 0 30 30" width="22" height="22" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg></span>
-          <small>FLIK Checkout</small>
-          <span data-t="0">Personalisasi Checkout</span>
-          <small>FLIK Shipping</small>
-          <span data-t="1">Pengaturan Pengiriman</span>
-        </aside>
-        <div class="dsh-panel" id="dsh-panel"></div>
+    <div class="dsh-win cpz" id="cpz">
+      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/checkout-personalization</span></div>
+      <div class="cpz-top"><span class="cpz-x" data-ic="x"></span><b>Personalise checkout</b><span class="cpz-acts"><span class="cpz-btn">View checkout page</span><span class="cpz-btn">Cancel</span><span class="cpz-btn p" id="cpz-save">Save changes</span></span></div>
+      <div class="cpz-body">
+        <div class="cpz-set">
+          <div class="cpz-sec"><h5>Logo</h5><p>Shown at the top of checkout.</p><div class="cpz-logo"><span class="ph-logo">A</span><div><b>Logo from Business profile</b><span class="cpz-btn sm">Upload</span></div></div></div>
+          <div class="cpz-sec"><h5>Button colour</h5><p>The Pay now button. Text on it stays white.</p><div class="cpz-col" id="cpz-col" role="group" aria-label="Button colour"><button class="on" data-c="#002D5D" aria-pressed="true"><i style="background:#002D5D"></i>Navy (default)</button><button data-c="#6A4BFF" aria-pressed="false"><i style="background:#6A4BFF"></i>Violet</button></div></div>
+          <div class="cpz-sec"><h5>Payment methods</h5><p>What shoppers can pay with. The one marked Default is selected first.</p><div class="cpz-chips" id="cpz-pm" role="group" aria-label="Payment methods"><button data-k="QRIS" data-img="../assets/logos/payment/qris.png" aria-pressed="true"><img src="../assets/logos/payment/qris.png" alt="">QRIS<em>Default</em></button><button data-k="Card" data-img="../assets/logos/payment/visa.png" aria-pressed="true"><img src="../assets/logos/payment/visa.png" alt=""><img src="../assets/logos/payment/mastercard.png" alt="">Card<em>Default</em></button><button data-k="COD" data-img="" aria-pressed="true"><span data-ic="cash"></span>COD<em>Default</em></button><button data-k="E-wallet" data-img="../assets/logos/payment/gopay.png" aria-pressed="true"><span data-ic="wallet"></span>All e-wallets<em>Default</em></button><button data-k="Virtual account" data-img="../assets/logos/payment/bca.png" aria-pressed="true"><span data-ic="bank"></span>All virtual accounts<em>Default</em></button></div></div>
+          <div class="cpz-sec"><h5>Couriers</h5><p>Couriers shoppers can pick at checkout, cheapest first.</p><div class="cpz-chips" id="cpz-cr" role="group" aria-label="Couriers"><button data-k="AnterAja · Regular" data-img="../assets/logos/courier/anteraja.png" aria-pressed="true"><img src="../assets/logos/courier/anteraja.png" alt="">AnterAja</button><button data-k="SPX · Standard" data-img="../assets/logos/courier/spx.png" aria-pressed="true"><img src="../assets/logos/courier/spx.png" alt="">SPX</button><button data-k="ID Express · Regular" data-img="../assets/logos/courier/idexpress.png" aria-pressed="true"><img src="../assets/logos/courier/idexpress.png" alt="">ID Express</button><span class="cpz-more">More couriers</span></div></div>
+        </div>
+        <div class="cpz-prev">
+          <div class="cpz-ph"><b>Preview</b><span class="cpz-seg" id="cpz-seg" role="group" aria-label="Preview size"><button class="on" data-v="d" aria-pressed="true">Desktop</button><button data-v="p" aria-pressed="false">Phone</button></span></div>
+          <div class="cpz-tabs"><span class="on">Checkout</span><span>Thank-you page</span></div>
+          <div class="cpz-page" id="cpz-page">
+            <div class="cpz-pg-h"><span class="ph-logo">A</span><b>Aruna Studio</b><small>Example</small></div>
+            <div class="cpz-pg">
+              <div class="cpz-card"><b>Shipping and payment</b>
+                <div class="cpz-row"><span data-ic="pin"></span><span>Rina · Jl. Kemang Raya 12, Jakarta Selatan</span></div>
+                <div class="cpz-row"><img id="cpz-pv-cri" src="../assets/logos/courier/anteraja.png" alt=""><span id="cpz-pv-cr">AnterAja · Regular</span><small>2–3 days</small></div>
+                <div class="cpz-row"><img id="cpz-pv-pmi" src="../assets/logos/payment/qris.png" alt=""><span id="cpz-pv-pm">QRIS</span></div>
+                <div class="cpz-row"><span data-ic="gift"></span><span>Member reward</span><small>−Rp 20.000</small></div>
+              </div>
+              <div class="cpz-card cpz-sum"><b>Order summary</b>
+                <div><span>Products</span><span>Rp 469.000</span></div>
+                <div><span>Shipping</span><span>Rp 12.000</span></div>
+                <div><span>Reward</span><span>−Rp 20.000</span></div>
+                <div class="t"><span>Total</span><span>Rp 461.000</span></div>
+                <span class="cpz-pay">Pay now</span>
+              </div>
+            </div>
+            <div class="cpz-pg-f"><svg viewBox="0 0 30 30" width="16" height="16" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><span>Checkout</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2055,36 +2118,30 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
   apply(motionPaused());addEventListener('flik:motion',e=>apply(e.detail.paused));
 })();
 
-/* ===== Personalization: switch payment methods and couriers on or off, with a live preview ===== */
+/* ===== Personalization: the Personalise checkout editor. Button colour, payment methods, couriers and preview size drive the preview ===== */
 (function(){
-  const panel=document.getElementById('dsh-panel'),tabs=[...document.querySelectorAll('#dsh-tabs button')],side=[...document.querySelectorAll('#dsh-side [data-t]')];
-  const st={pm:{QRIS:1,'E-wallet':1,'Virtual account':1,Card:0,COD:1},cr:{'JNE Reguler':1,'J&T Express':1,'SiCepat REG':0,'AnterAja':1,'GoSend Same Day':0}};
-  const CR={'JNE Reguler':['2–3 days','Rp 12.000'],'J&T Express':['2–3 days','Rp 11.000'],'SiCepat REG':['2–3 days','Rp 10.500'],'AnterAja':['2–4 days','Rp 10.000'],'GoSend Same Day':['Today','Rp 25.000']};
-  const tgl=(o,key)=>`<div class="tgl">${Object.keys(o).map(k=>`<button data-${key}="${k}"><span>${k}</span><i class="tg${o[k]?' on':''}"></i></button>`).join('')}</div>`;
-  const opts=(o,sub)=>{const on=Object.keys(o).filter(k=>o[k]);return on.length?on.map((k,i)=>`<div class="pv-o${i===0?' on':''}"><span class="rd"></span><span style="flex:1">${k}</span>${sub?`<small class="m">${sub(k)}</small>`:''}</div>`).join(''):'<p class="txt" style="font-size:12.5px">Switch on at least one.</p>'};
-  const T=[
-    ()=>`<div class="dsh-h"><b>Personalisasi Checkout</b><span class="pill ok">Live</span></div>
-      <div class="dsh-cz"><div><h6>Payment methods shown to shoppers</h6>${tgl(st.pm,'pm')}</div>
-      <div class="pv"><div class="pv-h"><i></i>Aruna Studio</div><small class="m">Example preview · Payment</small>${opts(st.pm)}<span class="pv-b">Pay Rp 341.000</span></div></div>`,
-    ()=>`<div class="dsh-h"><b>Pengaturan Pengiriman</b><span class="pill pu">FLIK Shipping</span></div>
-      <div class="dsh-cz"><div><h6>Couriers shown to shoppers</h6>${tgl(st.cr,'cr')}</div>
-      <div class="pv"><div class="pv-h"><i></i>Aruna Studio</div><small class="m">Example preview · Courier</small>${opts(st.cr,k=>CR[k][0]+' · '+CR[k][1])}<span class="pv-b">Continue to payment</span></div></div>`
-  ];
-  let cur=0,hold=0;
-  function set(k){
-    cur=k;tabs.forEach((b,i)=>{b.classList.toggle('on',i===k);b.setAttribute('aria-pressed',i===k)});side.forEach(x=>x.classList.toggle('on',+x.dataset.t===k));
-    panel.innerHTML=T[k]();panel.style.animation='none';void panel.offsetWidth;panel.style.animation='';
-  }
-  panel.addEventListener('click',e=>{
-    const b=e.target.closest('button');if(!b)return;hold=Date.now()+10000;
-    if(b.dataset.pm)st.pm[b.dataset.pm]^=1;else if(b.dataset.cr)st.cr[b.dataset.cr]^=1;
-    set(cur);
+  const root=document.getElementById('cpz'),page=document.getElementById('cpz-page'),save=document.getElementById('cpz-save');
+  const col=[...document.querySelectorAll('#cpz-col button')],seg=[...document.querySelectorAll('#cpz-seg button')];
+  const press=(list,b)=>list.forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+  const first=(id,txt,img)=>{
+    const on=[...document.querySelectorAll('#'+id+' button')].filter(b=>!b.classList.contains('off'));
+    document.querySelectorAll('#'+id+' button').forEach(b=>b.classList.toggle('def',b===on[0]));
+    const t=document.getElementById(txt),i=document.getElementById(img);
+    t.textContent=on[0]?on[0].dataset.k:'None switched on';i.hidden=!(on[0]&&on[0].dataset.img);if(!i.hidden)i.src=on[0].dataset.img;
+  };
+  const paint=()=>{first('cpz-pm','cpz-pv-pm','cpz-pv-pmi');first('cpz-cr','cpz-pv-cr','cpz-pv-cri')};
+  const colour=b=>{press(col,b);page.style.setProperty('--acc',b.dataset.c)};
+  let hold=0;
+  root.addEventListener('click',e=>{
+    const b=e.target.closest('button');if(!b)return;hold=Date.now()+10000;save.classList.add('on');
+    if(b.dataset.c)colour(b);
+    else if(b.dataset.v){press(seg,b);page.classList.toggle('cpz-phone',b.dataset.v==='p')}
+    else if(b.dataset.k){b.classList.toggle('off');b.setAttribute('aria-pressed',!b.classList.contains('off'));paint()}
   });
-  [...tabs,...side].forEach(b=>b.addEventListener('click',()=>{hold=Date.now()+10000;set(+b.dataset.t)}));
-  set(0);
-  const visible=onScreen(panel);
-  // while idle, switch between payment methods and couriers
-  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())set((cur+1)%2)},5000);
+  paint();
+  const visible=onScreen(root);
+  // while idle, switch the button colour so the preview shows it follows the setting
+  if(!REDUCE)setInterval(()=>{if(hold<Date.now()&&visible())colour(col[col[0].classList.contains('on')?1:0])},4000);
 })();
 
 /* ===== After the payment: the progress line walks through the four steps ===== */
