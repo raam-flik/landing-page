@@ -1228,6 +1228,8 @@ html{scroll-padding-top:88px}
 
 /* ===== Customers page v2 (closer to stripe.com/customers) ===== */
 .cx-hero{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;padding-top:40px;padding-bottom:104px}
+.cx-top{padding-top:110px;margin-top:-69px}
+@media (max-width:760px){.cx-top{padding-top:84px}}
 .cx-hero h1{font-size:52px;line-height:1.1;font-weight:400;letter-spacing:-1.5px}
 .cx-hero .lead{margin-top:20px;max-width:480px}
 .cx-hero .hero-cta{justify-content:flex-start;margin-top:28px;align-items:center;gap:20px}
@@ -1496,11 +1498,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 <main id="top" tabindex="-1">
 
-<!-- ===== Sub-navigation ===== -->
-<div class="wrap cu-sub"><a href="#" data-page="/customers">Customers</a><nav aria-label="Customers"><a href="#top" aria-current="page">Overview</a><a href="#all">All customer stories</a></nav></div>
-
 <!-- ===== Hero: text left, a collage of story cards right ===== -->
-<section class="guides">
+<section class="guides cx-top">
   <div class="wrap cx-hero">
     <div>
       <h1>The commerce platform behind Indonesia's growing brands.</h1>

@@ -22,6 +22,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **No results section:** Stripe's customers page has "measurable results". It is left out until there are real, approved numbers.
 - [ ] **Websites:** only Teenage Death Star has a website link (teenagedeathstar.com). Send the others' sites to add them.
 
+- [x] **Sub-menu removed (Raam, 13 Nov 2026):** the "Customers · Overview / All customer stories" row above the hero is gone.
 ## Search results (SEO)
 
 - **Page title:** Customers: Brands That Grow with FLIK | FLIK
@@ -38,7 +39,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 1. Customers page
 <!-- html: Hero: text left, a collage of customer cards right -->
 
-- **Sub-menu:** Customers — Overview / All customers
 - **Headline (H1):** The commerce platform behind Indonesia's growing brands.
 - **Intro text:** From fashion labels to coffee shops, brands use FLIK to sell on their own website, take QRIS at the counter, ship with every major courier and fund their next step.
 - **Button:** See all customers
