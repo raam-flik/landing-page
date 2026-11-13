@@ -106,20 +106,21 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Stat:** 04 — In your balance — Once the package arrives, the money lands in your FLIK balance. COD orders too.
 
 ## 7. Personalization
-<!-- html: Personalization: payment methods and couriers #dash -->
+<!-- html: Personalization: the dashboard's Personalise checkout editor with a live preview (example data) #dash -->
 
 - **Section heading:** Your checkout, your choices.
   - **Grey part:** Choose which payment methods and couriers your shoppers see, and change them anytime from your dashboard.
-- **Button:** Payment methods
-- **Button:** Couriers
-- **Small heading:** Payment methods shown to shoppers
-- **Small text:** Example preview · Payment
-- **Small text:** Example preview · Courier
-- **Button:** QRIS
-- **Button:** E-wallet
-- **Button:** Virtual account
-- **Button:** Card
-- **Button:** COD
+
+*Example text inside the product mockup, which follows the dashboard prototype's Personalise checkout screen (only change if needed):*
+
+- **Window title:** Personalise checkout
+- **Buttons:** View checkout page · Cancel · Save changes
+- **Heading:** Logo — Shown at the top of checkout. — Logo from Business profile — Upload
+- **Heading:** Button colour — The Pay now button. Text on it stays white. — Navy (default) · Violet
+- **Heading:** Payment methods — What shoppers can pay with. The one marked Default is selected first. — QRIS · Card · COD · All e-wallets · All virtual accounts
+- **Heading:** Couriers — Couriers shoppers can pick at checkout, cheapest first. — AnterAja · SPX · ID Express · More couriers
+- **Preview:** Preview — Desktop · Phone — Checkout · Thank-you page
+- **Preview page:** Aruna Studio · Example — Shipping and payment — Order summary — Pay now
 
 ## 8. Pick your path
 <!-- html: Pick your path: three integrations #integrate -->
