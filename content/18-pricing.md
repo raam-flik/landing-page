@@ -88,8 +88,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Answer:** Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery.
 - **Question:** When does the money reach my balance?
   - **Answer:** Once the order is completed and FLIK has received the funds. Need it sooner? Use Early Settlement.
-- **Question:** How much does a withdrawal cost?
-  - **Answer:** Rp4.000 + PPN per withdrawal, and at least Rp100.000 each time. If a payout fails, the fee comes back.
 - **Question:** Can I get paid faster?
   - **Answer:** Yes. Early Settlement pays out your sales before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN.
 - **Question:** Who pays the FLIK Connect fee?
