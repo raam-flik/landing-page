@@ -7,8 +7,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] Structure follows stripe.com/payments (13 Nov 2026), with FLIK facts only. Left out on purpose: uptime and certification claims (no confirmed figures), global payments (FLIK is Indonesia and rupiah only) and customer quotes (none approved).
-- [ ] Hero and section mockups are example data (Aruna Studio is a sample store).
+- [ ] Structure follows stripe.com/payments (13 Nov 2026), with FLIK facts only. Left out on purpose: uptime and certification claims (no confirmed figures), global payments (FLIK is Indonesia and rupiah only), customer quotes (none approved) and Stripe's sticky section tabs and ribbon (Raam, 13 Nov).
+- [ ] Hero and section mockups are example data (Aruna Studio is a sample store). The QR code in the hero is a drawing, not a working code.
 - [ ] The logo strip uses the site-wide merchant logos; the story cards are example stories except EMADO'S.
 - [ ] Debit cards and GPN rate is still [rate] on Pricing, so this page shows credit cards only.
 
@@ -54,7 +54,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **List item:** Virtual accounts and QRIS today
 - **List item:** Signed webhooks
 - **List item:** Test mode before you go live
-- **Stat:** 30s — to check out with a FLIK account, 3× faster than a standard checkout.
+- **Stat:** 30s — to check out with a FLIK account
+- **Stat:** 3× — faster than a standard checkout
+- **Stat:** 15 — payment methods in one checkout, from QRIS to COD
+- **Stat:** 1 — account for every store that uses FLIK
 
 ## 4. The methods your customers already use.
 
@@ -62,7 +65,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Heading:** The methods your customers already use.
   - **Grey part:** Switch them on from the dashboard, and FLIK picks the one each shopper used last.
 - **Item:** One FLIK account for every store. — Shoppers log in with a one-time code on WhatsApp. No password. Their name, address and last payment method fill in at every store that uses FLIK Checkout, so returning shoppers pay in a few taps.
-- **Stat:** 15 — payment methods in one checkout, from QRIS to COD.
 
 ## 5. Local payments, done properly.
 
@@ -91,10 +93,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small text above heading:** Your money
 - **Heading:** From payment to bank account.
   - **Grey part:** One balance for every channel, with money out when you need it.
-- **Step:** The customer pays — By QRIS, e-wallet, virtual account, card or COD.
-- **Step:** It lands in your balance — Once the order is completed and FLIK has the funds.
-- **Step:** Need it sooner? — Settle early for 0.2% (non-card) or 0.3% (card) + PPN.
-- **Step:** Withdraw — To your bank from Rp100.000, for Rp4.000 + PPN.
+- **Step:** 01 — The customer pays — By QRIS, e-wallet, virtual account, card or COD.
+- **Step:** 02 — In your balance — Once the order is completed and FLIK has the funds.
+- **Step:** 03 — Need it sooner? — Settle early for 0.2% (non-card) or 0.3% (card) + PPN.
+- **Step:** 04 — Withdraw — To your bank from Rp100.000, for Rp4.000 + PPN.
 
 ## 9. Build your own checkout.
 
