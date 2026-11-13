@@ -213,7 +213,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** What happens if a delivery fails?
 - **Answer:** The courier tries again the next day, up to two attempts. If it still fails, the package is returned to you. Courier-direct services don't retry: undelivered packages are returned right away.
 - **Button:** How long does pickup take?
-- **Answer:** Pickup starts once the AWB is ready: 3–5 hours for regular, 1–4 hours for same day, and right away for instant.
+- **Answer:** Regular: 3–5 hours after the AWB is ready. Same day: orders fulfilled before 14:00 WIB are picked up the same day, later ones the next day. Instant: a driver comes right away.
 - **Button:** How do I contact FLIK support?
 - **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.
 - **Text:** Can't find what you need? Talk to the FLIK team

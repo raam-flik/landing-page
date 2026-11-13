@@ -107,7 +107,7 @@ Ship for less up to 40% off! All couriers, real-time tracking, near-zero returns
 - **How long does pickup take?**
   Pickup happens after the AWB is generated:
   - regular: 3–5 hours
-  - same day: 1–4 hours
+  - same day: the same day if fulfilled before 14:00 WIB, otherwise the next day
   - instant: immediate pickup once the AWB is ready
 - **How do I contact FLIK customer service?**
   Monday to Friday, 09:00–18:00 WIB:

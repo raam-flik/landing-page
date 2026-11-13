@@ -20,7 +20,8 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - [ ] **W-18**: Minimum age, and who may open a merchant account (individuals, entity types).
 - [x] **W-23**: Closed (AG, 24 Oct 2026): COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
 - [ ] **W-24**: Link to courier terms and the prohibited items list for merchants.
-  - Bintang (13 Nov): return fees follow the general rule (shipping not refunded, a courier return fee may apply) and are not published per courier; merchants see their own return fee in the FLIK dashboard. VIP rates are not published. Still needed: courier terms links (or per-courier COD limits and claim rules) and the prohibited items list.
+  - Bintang (13 Nov): return fees follow the general rule (shipping not refunded, a courier return fee may apply) and are not published per courier; merchants see their own return fee in the FLIK dashboard. VIP rates are not published. Still needed: the prohibited items list.
+  - Courier terms doc ("Syarat dan Ketentuan Kurir - FLIK Checkout", 13 Nov): pickup, same-day cut-off, handover, complaint deadlines and weight differences are now in the Shipping section. Its "Barang Terlarang" sections are empty.
 - [x] **W-26** (AG, 12 Nov 2026: Rp100.000 minimum, Rp4.000 + PPN fee, returned if the payout fails): Balance withdrawals: timing, minimum amount and any fee.
 - [x] **W-29** (AG, 12 Nov 2026: invoices, shipments, top-ups, withdrawals, live API keys): Which features need identity and business verification first.
 - [ ] **P** (AG): Name the licensed payment partners and their licences (instruction: never state or imply that FLIK itself holds a payment licence).
@@ -117,9 +118,12 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **List item:** Payments are processed by licensed payment partners. FLIK is not a bank. Partners: CashuUp, Nicepay and Xendit
 - **List item:** Refunds and fee corrections follow our [Refund Policy](./refund/).
 - **Heading:** Shipping
-- **List item:** Couriers carry your parcels. Their terms, weight rules and claim rules also apply. [[W-24: courier terms and prohibited items list]]
+- **List item:** Couriers carry your parcels. Their terms, weight rules and claim rules also apply. If a parcel weighs more than booked, the difference in the shipping fee is charged to you.
+- **List item:** Pickup is from your registered warehouse address, usually 3–5 hours after the AWB is ready, by motorbike unless you ask FLIK for a car. Couriers try once a day; if they miss, they come the next day. Keep the phone number at the pickup address reachable, and keep proof of handover.
+- **List item:** Same day: orders fulfilled before 14:00 WIB are picked up the same day, later orders the next day. For instant and same-day services, hand the parcel only to the driver named on the AWB.
+- **List item:** Report a problem with a delivery within 2 calendar days (regular) or 24 hours (instant and same day) of delivery, or of the expected delivery date. FLIK resolves complaints within 7 calendar days.
 - **List item:** If delivery fails, the courier tries again the next day, up to two attempts, then returns the parcel. Courier-direct services return it straight away. On a returned parcel the shipping fee isn't refunded and a return fee set by the courier may apply; the return fee for your account is shown in your FLIK dashboard.
-- **List item:** Don't ship prohibited, illegal or dangerous goods.
+- **List item:** Don't ship prohibited, illegal or dangerous goods. [[W-24: prohibited items list]]
 - **Heading:** Funding
 - **List item:** Merchant Cash Advance is offered to selected merchants after an assessment, under a separate funding agreement.
 - **List item:** It has one fixed margin. Settlement is deducted automatically as your products sell.

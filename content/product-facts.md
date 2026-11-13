@@ -22,7 +22,7 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - The merchant pays from the FLIK balance before the shipment is created, and tops up first if the balance is too low.
 - **Free to register.** Shopify and WooCommerce stores connect directly.
 - **Failed delivery:** the courier tries again the next day, up to two attempts. Courier-direct services return the package straight away.
-- **Pickup** after the AWB is created: regular 3–5 hours, same day 1–4 hours, instant straight away.
+- **Pickup** after the AWB is created: regular 3–5 hours, same day the same day if fulfilled before 14:00 WIB (otherwise the next day), instant straight away (courier terms doc, 13 Nov 2026).
 - Support: Monday to Friday, 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 813-3532-8100.
 
 ## Merchant Cash Advance (Funding)

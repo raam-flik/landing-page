@@ -1898,7 +1898,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
 (function(){
   const S=[
     ['bolt','Instant','Within the city, delivered in hours by motorbike.','Pickup right after the AWB',100,92],
-    ['clock','Same day','Delivered the same day within the city.','Pickup in 1–4 hours',82,72],
+    ['clock','Same day','Delivered the same day within the city.','Pickup today if fulfilled by 14:00',82,72],
     ['calendar','Next day','Delivered the next day to nearby cities.','',62,52],
     ['truck','Regular','Everyday orders to anywhere in Indonesia.','Pickup in 3–5 hours',40,26],
     ['boxes','Cargo','Heavy and bulky items at a lower rate per kg.','',20,14]
@@ -2006,7 +2006,7 @@ const FAQ=[
   ['How do I receive COD funds?','They are credited to your FLIK balance automatically once the delivery is complete.'],
   ['Can I cancel a shipment?','Yes, until the courier picks up the package.'],
   ['What happens if a delivery fails?','The courier tries again the next day, up to two attempts. If it still fails, the package is returned to you. Courier-direct services don\'t retry: undelivered packages are returned right away.'],
-  ['How long does pickup take?','Pickup starts once the AWB is ready: 3–5 hours for regular, 1–4 hours for same day, and right away for instant.'],
+  ['How long does pickup take?','Regular: 3–5 hours after the AWB is ready. Same day: orders fulfilled before 14:00 WIB are picked up the same day, later ones the next day. Instant: a driver comes right away.'],
   ['How do I contact FLIK support?','Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.']
 ];
 const fq=document.getElementById('faq');
