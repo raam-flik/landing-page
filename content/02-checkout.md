@@ -27,7 +27,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small text above headline:** FLIK Checkout
 - **Headline (H1):** The checkout engine for growing brands.
   - **Grey part:** Paid in one tap.
-- **Intro text:** Turning every cart on your Shopify or WooCommerce store into a completed order. Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they already do. You build the store, we close the sale.
+- **Intro text:** Turning every cart on any storefront or digital surface into a completed order. Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they already do. You build the store, we close the sale.
 - **Button:** Contact sales
 - **Button:** See how it works
 - **List item:** Faster than a standard checkout
