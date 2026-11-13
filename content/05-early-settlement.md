@@ -105,7 +105,7 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 ## 4. Payment methods
 <!-- html: Payment methods: a settlement ledger (the Shipping COD pattern, on white so partner logos keep their colours; example data) #settle-methods -->
 
-- **Section heading:** Early, from every way Indonesia pays.
+- **Section heading:** Early, from every way your customers pay.
   - **Grey part:** QRIS, e-wallets, virtual accounts and cards can settle early. Cash on delivery settles once the package is delivered.
 - **Big number:** Sooner — than the standard settlement date
 - **List item:** Pending sales from every payment method, in one balance.

@@ -75,7 +75,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 5. Payment methods
 <!-- html: Payment methods: dark section, tabs drive a phone #methods -->
 
-- **Section heading:** Every way Indonesia pays.
+- **Section heading:** Every way your shoppers pay.
   - **Grey part:** QRIS, e-wallets, virtual accounts, cards and cash on delivery, in one checkout.
 - **Small heading:** Total · Example
 - **Text:** Scan with any bank or e-wallet app — Expires in 14:59
