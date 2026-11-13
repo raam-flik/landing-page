@@ -63,8 +63,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **List item:** Hosted checkout sessions
 - **List item:** Signed webhooks
 - **List item:** Test mode before you go live
-- **Stat:** 30s — to check out with a FLIK account
-- **Stat:** 3× — faster than a standard checkout
+- **Stat:** 1 tap — to pay with a FLIK account
+- **Stat:** 0 — passwords to remember
 - **Stat:** 15 — payment methods in one checkout, from QRIS to COD
 - **Stat:** 1 — account for every store that uses FLIK
 

@@ -169,7 +169,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 <!-- html: Resources: 3 cards -->
 
 - **Small heading:** More from FLIK
-- **Card:** Product — Sell online with FLIK Checkout — A 30-second checkout for your store, in the same balance. — Explore Checkout
+- **Card:** Product — Sell online with FLIK Checkout — A faster checkout for your store, in the same balance. — Explore Checkout
 - **Card:** Product — Fight fraud and chargebacks — Payments, refunds and withdrawals checked, with help on every chargeback. — Explore Fraud Detection
 - **Card:** Product — Paid sooner — Early Settlement pays out sales before the standard settlement date. — Explore Early Settlement
 

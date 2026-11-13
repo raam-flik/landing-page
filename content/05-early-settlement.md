@@ -187,7 +187,7 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 <!-- html: Resources: 3 cards -->
 
 - **Small heading:** More from FLIK
-- **Card:** Product — Sell with FLIK Checkout — A 30-second checkout. Every paid order flows into your balance. — Explore Checkout
+- **Card:** Product — Sell with FLIK Checkout — A faster checkout. Every paid order flows into your balance. — Explore Checkout
 - **Card:** Product — Fund your next stage — Need more than your pending sales? Merchant Cash Advance funds growth upfront. — Explore Funding
 - **Card:** Guide — Cash flow between settlements — When to settle early, and when the standard schedule is enough. — Read more
 

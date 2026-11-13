@@ -49,6 +49,8 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 
 These come from the current flik.co.id. Confirm before using any new number.
 
+**Limit (AG, 13 Nov 2026):** a headline claim appears twice at most across the whole site, menu included. "30 seconds" and "3× faster" each have two slots: the Checkout stats row and one homepage line. Everywhere else, write "a faster checkout" or "pay in one tap".
+
 | Claim | Product |
 |---|---|
 | Checkout in 30 seconds, 3× faster | Checkout |

@@ -45,12 +45,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Contact sales
 - **Hero cards:** The SIGIT, Artch, WakaiGo, Paper — photo cards only, all the same size, logo and "Read story"
 - **Section heading:** What brands get with FLIK.
-- **Results:** 30 sec — to check out with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
+- **Results:** 1 tap — to pay with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
 - **Logo wall:** every customer (real logo where we have it, name otherwise)
 - **Section heading (tabs):** One platform, every way they sell.
   - **Grey part:** See which brands use each FLIK product.
 - **Tabs:** Checkout / Shipping / In-Store Payment / Merchant Cash Advance
-- **Product text (Checkout):** A 30-second checkout on their own website, with QRIS, e-wallets, virtual accounts, cards and COD.
+- **Product text (Checkout):** A faster checkout on their own website, with QRIS, e-wallets, virtual accounts, cards and COD.
 - **Product text (Shipping):** Every major courier in one dashboard, with rates compared and a tracking link for every shopper.
 - **Product text (In-Store Payment):** QRIS and cards at the counter, with in-store sales in the same dashboard as online.
 - **Product text (Merchant Cash Advance):** Upfront funding for stock or a new outlet, settled automatically from sales.

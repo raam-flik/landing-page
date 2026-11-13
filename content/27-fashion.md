@@ -7,7 +7,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] Structure follows stripe.com/industries/retail (13 Nov 2026), with FLIK facts only. Stripe's parts mapped to FLIK: the opportunity (omnichannel shoppers) → two cards; why Stripe stats → 30s, 15 methods, 7 couriers, 1 balance; use cases (Terminal, Payments, Billing) → Checkout, In-Store, Payment Link pre-orders, Shipping with COD, Cash Advance; customer spotlight (URBN) → ERIGO. Left out: marketplaces, subscriptions, agentic commerce, partner ecosystem, analyst reports (not FLIK products).
+- [ ] Structure follows stripe.com/industries/retail (13 Nov 2026), with FLIK facts only. Stripe's parts mapped to FLIK: the opportunity (omnichannel shoppers) → two cards; why Stripe stats → 1 tap, 15 methods, 7 couriers, 1 balance; use cases (Terminal, Payments, Billing) → Checkout, In-Store, Payment Link pre-orders, Shipping with COD, Cash Advance; customer spotlight (URBN) → ERIGO. Left out: marketplaces, subscriptions, agentic commerce, partner ecosystem, analyst reports (not FLIK products).
 - [ ] Hero: an animated drop (example data: Drop 07, Linen shirt, 40 pieces in S/M/L/XL) selling out across the website, a payment link and the store, with different payment methods.
 - [ ] ERIGO spotlight uses ERIGO's approved story: up to 200% sales growth online and offline, with a Merchant Cash Advance.
 - [ ] Which customers are fashion brands? Only ERIGO and Gerai Hawa are tagged. The stories also show Sigit Store, Paper, Artch and WakaiGo; confirm they are fashion brands (tracker: mp-fashion).
@@ -32,7 +32,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Fashion shoppers find you on social, buy on their phones and visit your store. They expect it all to feel like one brand.
 - **Item:** Shoppers buy where they scroll. — A drop announced on Instagram or TikTok sells in minutes. Shoppers expect to pay in a few taps, with the method they already use, from QRIS to COD.
 - **Item:** Online and in store, one brand. — Pop-ups, outlets and your website should share one view of your sales, and one balance for the money.
-- **Stat:** 30s — to check out with a FLIK account
+- **Stat:** 1 tap — to pay with a FLIK account
 - **Stat:** 15 — payment methods in one checkout, from QRIS to COD
 - **Stat:** 7 — major couriers in one dashboard
 - **Stat:** 1 — FLIK balance for online and in-store sales

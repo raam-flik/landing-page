@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FLIK | Merchant Growth Platform for Growing Brands</title>
-<meta name="description" content="FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.">
+<meta name="description" content="FLIK gives online brands a faster checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.">
 <link rel="canonical" href="https://flik.co.id/">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/">
@@ -1250,7 +1250,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <div class="seg">
       <span class="label"><i></i>FLIK for brand websites</span>
       <h3 class="seg-h">Turn more of your traffic into orders.</h3>
-      <p class="txt seg-p">Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in 30 seconds. That&rsquo;s 3× faster than a standard checkout.</p>
+      <p class="txt seg-p">Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in one tap. That&rsquo;s 3× faster than a standard checkout.</p>
     </div>
 
     <!-- B: shipping at volume -->
@@ -1531,7 +1531,7 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 /* ===== Sitemap data (v5) ===== */
 const MENU=[
   {k:'Products',w:860,cols:[
-    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
+    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','A faster checkout for your store','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
     {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns']]},
     {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Settled as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Funding','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
@@ -1805,7 +1805,7 @@ renderFund();
 const ITABS={
   'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
   'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
+  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers pay in one tap with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
   'API':`<div class="code"><span class="c">// Create a checkout session (from the FLIK developer docs)</span>
 <span class="k">const</span> res = <span class="k">await</span> <span class="p">fetch</span>(<span class="s">'https://api.flik.co.id/v1/checkout/sessions'</span>, {
   method: <span class="s">'POST'</span>,
@@ -1977,7 +1977,7 @@ document.addEventListener('click',e=>{
     ctx.globalAlpha=1;
   }
   /* event chip: one at a time, placed on a dense part of the field */
-  const EV=['Rp289.000 received · QRIS','Payment received · GoPay','Card payment approved · Visa','Rp1.250.000 received · BCA VA','Payment received · ShopeePay','Checked out in 30 seconds','Payment received · DANA','Rp475.000 received · Mandiri VA'];  // payments only (Raam, 12 Nov 2026)
+  const EV=['Rp289.000 received · QRIS','Payment received · GoPay','Card payment approved · Visa','Rp1.250.000 received · BCA VA','Payment received · ShopeePay','Checked out in one tap','Payment received · DANA','Rp475.000 received · Mandiri VA'];  // payments only (Raam, 12 Nov 2026)
   let ei=0,evTimer=null;
   function nextEv(){
     if(!ev)return;ev.classList.remove('on');
@@ -2053,7 +2053,7 @@ document.addEventListener('click',e=>{
 
 /* Product detail modals (the + buttons) */
 const PROD={
-  checkout:['FLIK Checkout','A checkout that takes 30 seconds, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
+  checkout:['FLIK Checkout','A faster checkout, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
   payments:['Payment Methods','Accept 15 payment methods in one checkout.',['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],'/checkout/payment-methods'],
   shipping:['FLIK Shipping','Compare all major couriers and ship for up to 50% off published rates.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
   bulk:['Bulk Shipping','Send from one warehouse or many, to one destination or thousands.',['Single and bulk shipments','Manage pickup warehouses','Every status in one table'],'/shipping/bulk'],
@@ -2066,7 +2066,7 @@ const PROD={
 const BD={
   checkout:{t:'Thirty seconds from cart to paid.',d:'A faster checkout for any storefront you use.',cta:['Explore Checkout','/checkout'],
     list:['Pay in one tap','WhatsApp login, no password','Details saved for next time','Rewards applied automatically','Works with Shopify, WooCommerce and custom stores'],
-    stat:['30 sec','from cart to paid'],stat2:['3×','faster than a standard checkout'],
+    stat:['1 tap','to pay with a FLIK account'],stat2:['0','passwords to remember'],
     det:[['bolt','Remembered everywhere.','One FLIK account works at every store on FLIK Checkout.'],['card','Nothing to pick.','Courier and payment method are selected automatically.'],['truck','Straight to shipping.','Orders ship from your warehouse, and payment lands in your balance after delivery.']],
     more:['payments','shipping','funding'],q:null},
   payments:{t:'However they pay, you get paid.',d:'QRIS, e-wallets, virtual accounts, cards and COD, in one checkout.',cta:['Explore payment methods','/checkout/payment-methods'],
@@ -2095,7 +2095,7 @@ const BD={
     det:[['coins','Talk to us.','A consultation with the FLIK team.'],['check','Get funded.','Funding upfront, before the rush.'],['chart','Sell as usual.','Settlement is deducted as products sell; track it in your dashboard.']],
     more:['checkout','shipping','cod'],q:null}
 };
-const BDNAME={checkout:['Checkout','cart','30-second checkout'],payments:['Payment Methods','card','15 methods in one checkout'],shipping:['Shipping','truck','All major couriers, one dashboard'],track:['Shipment Tracking','pin','Track any package'],cod:['COD Shipping','cash','Cash on delivery, 3% fee (excl. PPN)'],funding:['Merchant Cash Advance','coins','Inventory funding']};
+const BDNAME={checkout:['Checkout','cart','Faster checkout'],payments:['Payment Methods','card','15 methods in one checkout'],shipping:['Shipping','truck','All major couriers, one dashboard'],track:['Shipment Tracking','pin','Track any package'],cod:['COD Shipping','cash','Cash on delivery, 3% fee (excl. PPN)'],funding:['Merchant Cash Advance','coins','Inventory funding']};
 const bdScrim=document.getElementById('bd-scrim'),bd=document.getElementById('bd');let bdFrom=null;
 function bdOpen(key,from){
   const p=BD[key];if(!p)return;if(from)bdFrom=from;
