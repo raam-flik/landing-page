@@ -93,7 +93,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Scan with any bank or e-wallet app — Expires in 14:59
 - **Small heading:** Pay when it arrives · Example
 - **Text:** The courier collects the payment. COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.
-- **Text:** payment methods. Switch each one on or off in Personalisasi Checkout, and FLIK shows each shopper the one they used last.
+- **Text:** payment methods. Switch each one on or off in Checkout Personalisation, and FLIK shows each shopper the one they used last.
 
 ## 6. After the payment
 <!-- html: After the payment: ruled four-step flow to the guide lines #after -->
@@ -106,14 +106,14 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Stat:** 04 — In your balance — Once the package arrives, the money lands in your FLIK balance. COD orders too.
 
 ## 7. Personalization
-<!-- html: Personalization: the dashboard's Personalise checkout editor with a live preview (example data) #dash -->
+<!-- html: Personalization: the dashboard's Checkout Personalisation editor with a live preview (example data) #dash -->
 
 - **Section heading:** Your checkout, your choices.
   - **Grey part:** Choose which payment methods and couriers your shoppers see, and change them anytime from your dashboard.
 
-*Example text inside the product mockup, which follows the dashboard prototype's Personalise checkout screen (only change if needed):*
+*Example text inside the product mockup, which follows the dashboard prototype's Checkout Personalisation screen (only change if needed):*
 
-- **Window title:** Personalise checkout
+- **Window title:** Checkout Personalisation
 - **Buttons:** View checkout page · Cancel · Save changes
 - **Heading:** Logo — Shown at the top of checkout. — Logo from Business profile — Upload
 - **Heading:** Button colour — The Pay now button. Text on it stays white. — Navy (default) · Violet
@@ -163,7 +163,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **List item:** Methods switched on or off from your dashboard
 - **Heading:** For your team
 - **List item:** Shopify and WooCommerce integration
-- **List item:** Checkout Personalization: payment methods and couriers
+- **List item:** Checkout Personalisation: payment methods and couriers
 - **List item:** Order Analytics in Laporan & Analisis
 - **List item:** Shipping from your warehouse with FLIK Shipping
 - **List item:** Payments in your FLIK balance after delivery
@@ -210,7 +210,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** How do shoppers log in?
 - **Answer:** With a one-time code sent to their WhatsApp number. There is no password to create or forget.
 - **Button:** Which payment methods can I offer?
-- **Answer:** QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery. You choose which ones to show in Personalisasi Checkout.
+- **Answer:** QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery. You choose which ones to show in Checkout Personalisation.
 - **Button:** How are orders shipped?
 - **Answer:** Orders ship through FLIK Shipping from your warehouse. You pick the couriers in Pengaturan Pengiriman, and FLIK selects one for each shopper.
 - **Button:** When do I receive the money?

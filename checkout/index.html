@@ -1598,7 +1598,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       </svg><div class="ph ph-sm"><div class="ph-notch"></div><div class="ph-top"><span class="ph-logo">A</span><b>Aruna Studio</b><span class="ph-sec" style="flex:1 1 0;min-width:0;justify-content:flex-end;text-align:right;line-height:1.3">Payments processed by licensed partners</span></div><div id="pmx-scr" class="pmx-scr"></div></div></div>
       <div class="pmx-side">
         <b class="pmx-n">Multiple</b>
-        <p>payment methods. Switch each one on or off in <b>Personalisasi Checkout</b>, and FLIK shows each shopper the one they used last.</p>
+        <p>payment methods. Switch each one on or off in <b>Checkout Personalisation</b>, and FLIK shows each shopper the one they used last.</p>
         <div class="pmx-chips" id="pmx-chips"></div>
       </div>
     </div>
@@ -1618,13 +1618,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== Personalization: the dashboard's Personalise checkout editor with a live preview (example data) ===== -->
+<!-- ===== Personalization: the dashboard's Checkout Personalisation editor with a live preview (example data) ===== -->
 <section class="pad guides" id="dash">
   <div class="wrap">
     <h2 class="sec-h">Your checkout, your choices. <span class="soft">Choose which payment methods and couriers your shoppers see, and change them anytime from your dashboard.</span></h2>
     <div class="dsh-win cpz" id="cpz">
-      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/checkout-personalization</span></div>
-      <div class="cpz-top"><span class="cpz-x" data-ic="x"></span><b>Personalise checkout</b><span class="cpz-acts"><span class="cpz-btn">View checkout page</span><span class="cpz-btn">Cancel</span><span class="cpz-btn p" id="cpz-save">Save changes</span></span></div>
+      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/checkout-personalisation</span></div>
+      <div class="cpz-top"><span class="cpz-x" data-ic="x"></span><b>Checkout Personalisation</b><span class="cpz-acts"><span class="cpz-btn">View checkout page</span><span class="cpz-btn">Cancel</span><span class="cpz-btn p" id="cpz-save">Save changes</span></span></div>
       <div class="cpz-body">
         <div class="cpz-set">
           <div class="cpz-sec"><h5>Logo</h5><p>Shown at the top of checkout.</p><div class="cpz-logo"><span class="ph-logo">A</span><div><b>Logo from Business profile</b><span class="cpz-btn sm">Upload</span></div></div></div>
@@ -1942,7 +1942,7 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 /* ===== Sitemap data (v5) ===== */
 const MENU=[
   {k:'Products',w:860,cols:[
-    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','A faster checkout for your store','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
+    {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','A faster checkout for your store','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalisation','Your payment methods, your couriers','/payment/personalization']]},
     {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns']]},
     {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Settled as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Funding','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
@@ -2118,7 +2118,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
   apply(motionPaused());addEventListener('flik:motion',e=>apply(e.detail.paused));
 })();
 
-/* ===== Personalization: the Personalise checkout editor. Button colour, payment methods, couriers and preview size drive the preview ===== */
+/* ===== Personalization: the Checkout Personalisation editor. Button colour, payment methods, couriers and preview size drive the preview ===== */
 (function(){
   const root=document.getElementById('cpz'),page=document.getElementById('cpz-page'),save=document.getElementById('cpz-save');
   const col=[...document.querySelectorAll('#cpz-col button')],seg=[...document.querySelectorAll('#cpz-seg button')];
@@ -2157,7 +2157,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
   const G=[
     ['user','For shoppers',['Pay in one tap','WhatsApp OTP login, no passwords','Guest checkout or a FLIK account','Details saved across every FLIK store','Address auto-complete','Rewards applied automatically','An email at every status change','Order tracking in the FLIK app']],
     ['card','Payment methods',['QRIS','E-wallets','Bank virtual accounts','Credit and debit cards','Cash on delivery','The shopper\'s last-used method picked first','Methods switched on or off from your dashboard']],
-    ['chart','For your team',['Shopify and WooCommerce integration','Checkout Personalization: payment methods and couriers','Order Analytics in Laporan & Analisis','Shipping from your warehouse with FLIK Shipping','Payments in your FLIK balance after delivery','One dashboard for Checkout, Shipping and Funding']]
+    ['chart','For your team',['Shopify and WooCommerce integration','Checkout Personalisation: payment methods and couriers','Order Analytics in Laporan & Analisis','Shipping from your warehouse with FLIK Shipping','Payments in your FLIK balance after delivery','One dashboard for Checkout, Shipping and Funding']]
   ];
   document.getElementById('gl3').innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');
 })();
@@ -2168,7 +2168,7 @@ const FAQ=[
   ['Does it work with my store?','Yes, if you sell on Shopify or WooCommerce. The FLIK team connects your store, and shoppers are redirected to FLIK when they tap Checkout. Custom stores can use the API.'],
   ['Do shoppers need a FLIK account?','No. They can check out as a guest. With a FLIK account, their details are saved, so next time they check out faster on any store that uses FLIK.'],
   ['How do shoppers log in?','With a one-time code sent to their WhatsApp number. There is no password to create or forget.'],
-  ['Which payment methods can I offer?','QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery. You choose which ones to show in Personalisasi Checkout.'],
+  ['Which payment methods can I offer?','QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery. You choose which ones to show in Checkout Personalisation.'],
   ['How are orders shipped?','Orders ship through FLIK Shipping from your warehouse. You pick the couriers in Pengaturan Pengiriman, and FLIK selects one for each shopper.'],
   ['When do I receive the money?','Once the shopper has paid and the package has arrived, the money lands in your FLIK balance. COD payments too.'],
   ['How much does it cost?','A success fee of 0–2% (excl. PPN) on each successful payment, depending on your payment methods and volume. It pays for the whole checkout, not just accepting the payment: WhatsApp login, saved details, shipping, promotions and loyalty in one place.'],

@@ -14,7 +14,7 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - **Rewards** apply automatically at checkout, at any FLIK merchant.
 - **Auto reconciliation:** every payment is matched to its order automatically (AG, 13 Nov 2026).
 - The shopper gets an email at every status change and can track the order in the **FLIK Shopper App**.
-- The merchant sees every order in **Laporan & Analisis** and chooses payment methods in **Personalisasi Checkout**.
+- The merchant sees every order in **Laporan & Analisis** and chooses payment methods in **Checkout Personalisation**.
 - **Money:** once the shopper has paid and the package has arrived, the money goes to the merchant's FLIK balance.
 
 ## Shipping (FLIK Shipping)
@@ -86,5 +86,6 @@ These come from the current flik.co.id. Confirm before using any new number.
 ## Naming
 
 - Use **FLIK Shipping** or **Shipping**. JagoKurir no longer exists.
+- The checkout settings screen is **Checkout Personalisation** in English and **Personalisasi Checkout** in Bahasa Indonesia (AG, 13 Nov 2026). Don't write "Personalise checkout" or "Checkout Personalization".
 - Product groups are **Checkout**, **Shipping** and **Funding**.
 - Leave Smart QRIS and Order Form off the landing page for now.

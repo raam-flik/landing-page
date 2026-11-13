@@ -20,7 +20,7 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - **Fraud Detection:** Fight fraud and chargebacks
 - **FLIK Connect:** Split each payment across wallets
 - **FLIK Account:** Saved details across every store
-- **Checkout Personalization:** Your payment methods, your couriers
+- **Checkout Personalisation:** Your payment methods, your couriers
 
 **Shipping**
 

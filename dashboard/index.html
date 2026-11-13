@@ -2661,7 +2661,7 @@ html{scrollbar-gutter:stable}#sg.sg{z-index:88}body:has(:is(#sx,#mx,#vx,#wx):not
 .set-act .fright{display:flex;gap:8px;margin:0}
 .sx-opt[data-way]{cursor:pointer}.sx-opt[data-way]:disabled{cursor:default;opacity:.6}
 .pm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}.pm-col{display:grid;gap:16px;align-content:start}.pm-gh{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.pm-gh b{font-weight:600;color:var(--ink)}.pm-gh small{font-size:12.5px;color:var(--muted)}.pm-g .plg{width:28px;height:28px;flex:none}@media (max-width:900px){.pm-grid{grid-template-columns:1fr}}
-/* Checkout personalization */
+/* Checkout personalisation */
 .cpx-sec{margin-top:24px}.cpx-sec h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .cpx-sec .set-logo{border-bottom:0;padding-bottom:0;margin-bottom:0}.cpx-sec .set-logo .ic img{width:auto;max-width:60px;height:auto;max-height:52px}.cpx-lb{display:flex;align-items:center;gap:12px;margin-top:10px}.cpx-lb .btn{margin:0}
 .cpx-sw{display:grid;gap:8px;max-width:420px}.cpx-hint{font-size:12.5px;color:var(--muted);margin:-4px 0 10px}
@@ -3005,13 +3005,13 @@ body:has(#ckp:not([hidden])) #sg{display:none}
 <div class="ie" id="ckp" hidden role="dialog" aria-label="Checkout page">
   <div class="ie-top">
     <button class="ib" id="ckp-close" aria-label="Close"><span data-ic="x"></span></button><span class="sep"></span><b id="ckp-t">Checkout page</b><span class="st gr">Prototype</span>
-    <div class="ie-acts"><span id="ckp-var"></span><button class="btn btn-o" id="ckp-start">Start from the store</button><button class="btn btn-o" id="ckp-proto" aria-haspopup="menu">Prototype<span data-ic="chev"></span></button><button class="btn btn-o" id="ckp-edit">Personalise checkout</button></div>
+    <div class="ie-acts"><span id="ckp-var"></span><button class="btn btn-o" id="ckp-start">Start from the store</button><button class="btn btn-o" id="ckp-proto" aria-haspopup="menu">Prototype<span data-ic="chev"></span></button><button class="btn btn-o" id="ckp-edit">Checkout Personalisation</button></div>
   </div>
   <div class="ckp-b" id="ckp-b"></div>
 </div>
-<div class="ie" id="cpx" hidden role="dialog" aria-label="Personalise checkout">
+<div class="ie" id="cpx" hidden role="dialog" aria-label="Checkout Personalisation">
   <div class="ie-top">
-    <button class="ib" id="cpx-close" aria-label="Close"><span data-ic="x"></span></button><span class="sep"></span><b>Personalise checkout</b>
+    <button class="ib" id="cpx-close" aria-label="Close"><span data-ic="x"></span></button><span class="sep"></span><b>Checkout Personalisation</b>
     <div class="ie-acts"><button class="btn btn-o" id="cpx-open" title="Shows the saved version">View checkout page</button><button class="btn btn-o" id="cpx-cancel">Cancel</button><button class="btn btn-p" id="cpx-save" disabled>Save changes</button></div>
   </div>
   <div class="ie-body"><div class="ie-form" id="cpx-form"></div><div class="ie-pv" id="cpx-pv"></div></div>
@@ -3419,7 +3419,7 @@ function ccMenu(b){if(popFor===b){closePop();return}closePop();popFor=b;const f=
 document.addEventListener('click',e=>{const b=e.target.closest('[data-cc]');if(!b)return;e.preventDefault();e.stopPropagation();ccMenu(b)},true);
 function placePop(anchor,alignRight){pop.dataset.ar=alignRight?'1':'';const r=anchor.getBoundingClientRect();pop.style.top=(r.bottom+6+scrollY)+'px';pop.classList.add('open');const w=pop.offsetWidth;let left=alignRight?r.right-w:r.left;left=Math.max(8,Math.min(left,innerWidth-w-8));pop.style.left=left+'px';
   /* no room below: open upwards when there is room above */const h=pop.offsetHeight;if(r.bottom+6+h>innerHeight-8&&r.top-6-h>8)pop.style.top=(r.top-6-h+scrollY)+'px'}
-/* a menu stays with the button that opened it when a panel scrolls (the invoice editor, Checkout personalization, side panels); it closes once the button scrolls out of sight */
+/* a menu stays with the button that opened it when a panel scrolls (the invoice editor, Checkout personalisation, side panels); it closes once the button scrolls out of sight */
 document.addEventListener('scroll',e=>{const a=popFor,t=e.target;if(!a||!pop.classList.contains('open')||!(t instanceof Element)||t.contains(pop)||!t.contains(a))return;
   const r=a.getBoundingClientRect(),c=t.getBoundingClientRect();if(r.bottom<c.top||r.top>c.bottom){closePop();return}placePop(a,!!pop.dataset.ar)},true);
 document.addEventListener('click',e=>{if(!e.target.closest('#pop'))closePop()});
@@ -8748,7 +8748,7 @@ const SET_TABS={
     return sec('Exports',tbl(['Requested','What','Status',''],L.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="st ${r[2]?'ok':'warn'}">${r[2]?'Ready':'Waiting for FLIK'}</span></td><td>${r[2]?`<button class="btn btn-o" data-expm="${esc(r[1])}">${ic('export',15)}Download CSV</button>`:''}</td></tr>`),[]),
       {ct:'rev',act:own?'<button class="btn btn-p" data-expreq>Request customer export</button>':'',p:'Exports with shopper data above a size FLIK sets need approval. Ready files stay for 7 days.',ro:roOnly('the Owner',['owner'])})},
   'data:close':()=>ONB.closeReq?sec('Close account',`<div class="set-ro">${ic('shield',14)}Closure requested. FLIK settles charges due, your reserve, unpaid invoices and any financing first, then deactivates all users.</div>`,{ct:'rev'}):sec('Close account',`<div class="set-box"><p style="color:var(--muted);line-height:1.5">FLIK first settles charges due, your reserve (once shipments are final), unpaid invoices and any financing. Then every user is deactivated.</p><button class="btn btn-o" style="margin-top:14px;color:var(--bad-tx)" data-close ${ONB.role==='owner'?'':'disabled'}>Request account closure</button></div>`,{ct:'rev',ro:roOnly('the Owner',['owner'])}),
-  'payments:ways':()=>{const L=modesChosen(),go={links:['Create a payment link','payment-links/create'],hosted:['Personalise checkout','checkout-personalization'],plugin:['Request a store connection','settings/payments?t=stores'],api:['Open Developers','settings/developers'],ship:['Create a shipment','shipments/create']},
+  'payments:ways':()=>{const L=modesChosen(),go={links:['Create a payment link','payment-links/create'],hosted:['Checkout Personalisation','checkout-personalization'],plugin:['Request a store connection','settings/payments?t=stores'],api:['Open Developers','settings/developers'],ship:['Create a shipment','shipments/create']},
       who={links:'Sellers on WhatsApp, Instagram or marketplaces, with no website.',hosted:'Stores with their own website that want a ready checkout with shipping and COD.',plugin:'Shopify and WooCommerce stores.',api:'Teams with developers who build their own checkout or app.',ship:'Sellers who take payment elsewhere and only need shipping.',embed:'Platforms, POS and AI agents that need checkout inside their own product.'},
       doc={links:'payment-links',hosted:'checkout',plugin:'plugins',api:'api',ship:'shipping',embed:'embedded'};
     /* simple guide: one line per way (what it is and who it's for), the start button and the docs. Ways FLIK doesn't offer yet get a disabled Coming soon button */
@@ -8771,7 +8771,7 @@ const SET_TABS={
       <dt>Methods shown</dt><dd>${list(pm.map(k=>PMS[k][0]),4)} · <button class="lnk" data-sgo2="payments?t=methods">Edit</button></dd>
       <dt>Couriers shown</dt><dd>${list(cou.map(x=>x[1]),4)} · <button class="lnk" data-sgo2="shipping?t=couriers">Edit</button></dd>
       <dt>Store pickup</dt><dd>${n&&c.pickup?`On · ${n} ${n===1?'warehouse':'warehouses'}`:'Off'}</dd></dl>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn btn-p" data-cpopen>Personalise checkout</button><button class="btn btn-o" data-cklink>${ic('copy',15)}Copy test link</button><button class="btn btn-o" data-ckopen>${ic('ext',15)}Open checkout page</button></div></div>`,{p:'How the shopper\'s checkout looks. It reads your payment methods and the couriers in Shipping.'})
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn btn-p" data-cpopen>Checkout Personalisation</button><button class="btn btn-o" data-cklink>${ic('copy',15)}Copy test link</button><button class="btn btn-o" data-ckopen>${ic('ext',15)}Open checkout page</button></div></div>`,{p:'How the shopper\'s checkout looks. It reads your payment methods and the couriers in Shipping.'})
     +sec('Planned: COD rules',`<p class="set-p">Hide COD, ask for a deposit, or limit it by cart value, with the reason shown to the shopper. Plus COD confirmation by OTP if you opt in. Waiting on legal answers.</p>`)},
   'shipping:pickup':()=>sec('Warehouses','<div id="set-wh"></div>',{act:'<button class="btn btn-p" data-gowhnew>'+ic('plus',15,2)+'Add warehouse</button>',p:'Where couriers collect your parcels. Used for shipping and shown at checkout.'}),
   'shipping:couriers':()=>sec('Couriers','<div id="set-cou"></div><p class="set-p" id="set-cou-note">One list for shipping and checkout. Checkout reads it, so a service you turn off here is hidden from shoppers too.</p>',{act:'<span class="set-act" id="set-cou-act"></span>',p:'Used for shipping and shown at checkout. At least one service stays on.'}),
@@ -9152,7 +9152,7 @@ const freshSync=()=>{if(ONB.sbx)return;freshSwap(!verified());const bv=document.
 freshSync();
 if(ONB.sbx)sbxSwap(true);
 
-/* ===== Checkout personalization: the merchant's logo and button colour on FLIK checkout. Settings on the left, a live preview of the checkout page on the right ===== */
+/* ===== Checkout personalisation: the merchant's logo and button colour on FLIK checkout. Settings on the left, a live preview of the checkout page on the right ===== */
 const CP_DEF=()=>({logo:null,btn:'ink',def:'qris',sort:'cheap',fld:{phone:true,notes:false,company:false},lang:'id',msg:CP_MSG,ret:''}),CP_SW=[['ink','Navy','var(--ink)'],['primary','Violet','var(--primary)']];
 let cpD=null,cpMode='desk',cpPage='ck';
 /* the store website starts as the one in the business profile, until the merchant saves their own (or clears it) */
@@ -9166,7 +9166,7 @@ const cpDirty=()=>JSON.stringify(cpD)!==JSON.stringify(cpGet());
 const cpContrast=hex=>{const m=/^#?([0-9a-f]{6})$/i.exec(hex||'');if(!m)return 21;const L=[0,2,4].map(i=>{const v=parseInt(m[1].substr(i,2),16)/255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)}),l=.2126*L[0]+.7152*L[1]+.0722*L[2];return 1.05/(l+.05)};
 /* store pickup at checkout: shown when a warehouse offers it and the merchant leaves it on. ckMode and ckStore are the shopper's choice on the page */
 let ckMode='ship',ckStore=null;
-/* while Personalise checkout is open, its preview follows the draft's pickup warehouses */
+/* while Checkout Personalisation is open, its preview follows the draft's pickup warehouses */
 const ckStores=()=>WH.filter(w=>w.active&&(cpD&&cpD.pk&&!document.getElementById('cpx').hidden?cpD.pk.includes(w.code):w.pickup)),ckToday=()=>DAYS7[(NOW.getDay()+6)%7],
   ckHrs=w=>{const d=w.days[ckToday()];return d?`Open today ${d[0]}–${d[1]}`:'Closed today'};
 function cpView(c,phone){const btn=cpBtn(c),cl=k=>`<img class="ck-cl" src="${IMG}${k}.png" alt="">`,chev=ic('chev',16),
