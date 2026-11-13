@@ -150,7 +150,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** No code
 - **Button:** Shopify
 - **Button:** WooCommerce
-- **Button:** API
+- **Button:** API (code tab: a shortened "Create a checkout session" example from the Merchant API docs, Accept a payment guide. It used to show an invented "create a shipment" call; shipments are not in the API yet.)
 - **Small heading:** Shopify
 - **Text:** We connect your Shopify store to FLIK Checkout and Shipping for you.
 - **Link:** View integration
@@ -158,7 +158,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Connect your WordPress store in a few steps and switch to FLIK Checkout.
 - **Link:** View integration
 - **Small heading:** FLIK API
-- **Text:** Build your own checkout and shipping flows from your own systems.
+- **Text:** Build your own checkout on the FLIK API, with virtual accounts and QRIS today.
 - **Link:** Read the docs
 
 *Example text inside the product mockup (only change if needed):*

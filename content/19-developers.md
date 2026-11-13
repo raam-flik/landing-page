@@ -3,18 +3,18 @@
 - **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/developers/ (sections: `#how`, `#api`, `#keys`, `#integrations`, `#shopify`, `#woocommerce`, `#resources`, `#live`)
 - **Page file:** `developers/index.html`. The integration steps (code panel) and the FAQ are lists in the page script.
 - **Menu:** Developers › Documentation (`/developers`), API reference (`#api`), Developer resources (`#resources`), Shopify (`#shopify`), WooCommerce (`#woocommerce`). The homepage "View developer docs" button opens this page.
-- **Source:** the engineering team's "Developers Pages Guide" (Merchant dashboard v2, Settings › Developers), 12 Nov 2026. That is an internal design review, not an API reference, so the page only explains concepts. Structure follows docs.stripe.com (stripe.com/developers no longer exists).
+- **Source:** the Merchant API developer docs (https://ye2vctp5ki.ap-southeast-1.awsapprunner.com, first version 2026-11-05), checked 13 Nov 2026, and the engineering team's "Developers Pages Guide" (12 Nov 2026). docs.flik.co.id today shows only the older External Payment API (QRIS, HMAC-signed requests). Structure follows docs.stripe.com.
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 
 ## Things to confirm on this page (engineering)
 
-- [ ] **Built only:** the page shows API credentials (built), publishable keys and SNAP keys (built, interim screen design). Confirm all three can be public.
-- [ ] **Left out on purpose:** payouts keys and AI-agent keys, IP allowlists, and anything about 2FA or finance codes. They are interim, switched on per merchant, or still being decided. Add them only when engineering says so.
-- [ ] **Webhooks** are shown as "Coming soon" (the Webhooks, Events and Logs tabs aren't built).
-- [ ] **No endpoints:** the code panel is illustrative. It shows the standard OAuth 2.0 client-credentials fields and response (`expires_in: 3600`, from "tokens last 1 hour") but no URLs, paths or field names. Add real examples once there is a public API reference (design-system rule: never show API calls that don't exist in the docs).
-- [ ] **API reference** says "Shared on request" and "Request access" opens Contact sales. Change this when public docs exist, and add the link.
-- [ ] **Scope names** are written in words (payments read, payments write), not as code strings, because the real scope strings aren't confirmed.
+- [x] **Public features (13 Nov):** the developer docs describe API keys, publishable keys, payout keys and SNAP partner records publicly, so the page does too.
+- [ ] **Payout keys (13 Nov):** now in the key table, because the docs publish them (one-time code and IP allowlist on live). Agent keys and 2FA stay off the page. Confirm with engineering.
+- [x] **Webhooks (13 Nov):** live in the API (signed events, retries for up to 72 hours, resend), per the docs. "Coming soon" removed. The dashboard tabs may still be unbuilt.
+- [x] **Code panel (13 Nov):** real calls, shortened from the docs' Accept a payment guide: `POST /v1/oauth/token`, `POST /v1/checkout/sessions`, redirect to `session.url`, `checkout.session.completed`.
+- [ ] **Docs address:** the "Read the docs" links point to https://ye2vctp5ki.ap-southeast-1.awsapprunner.com. Swap them for the final address (docs.flik.co.id?) when the docs move there.
+- [x] **Scopes (13 Nov):** the docs list `payment_intents:write`, `payment_intents:read`, `checkout_sessions:write`, `events:read`, `webhook_endpoints:write`, `balance:read`, `payouts:read`, `payouts:write`. The example card keeps the dashboard labels.
 - [ ] **Key values** in the example card are made up and masked; no real key prefixes are shown.
 - [ ] **Shopify and WooCommerce steps** (create account, install plugin, switch on) are generic. Confirm, and add the Shopify App Store and WordPress plugin links when they're public.
 - [ ] **"Sign in"** under Developer settings uses the site's sign-in action (a toast today). Point it to the merchant dashboard sign-in.
@@ -42,25 +42,25 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - Publishable key — masked — Browser-safe
 - Scopes — Payments · read, Payments · write
 - Note (Sandbox): Sandbox keys work only in Sandbox. Nothing carries over to Live.
-- Note (Live): Live keys are activated by FLIK after your business is verified.
+- Note (Live): Live keys need a verified FLIK account.
 
 ## 2. Guides
 <!-- html: Guides: three columns of links -->
 
 - **Column:** Get started — Set up your Sandbox (Separate credentials for testing) / Create API credentials (Client ID and secret) / Go live (Verify your business, then switch)
-- **Column:** Accept payments — FLIK Checkout on Shopify (FLIK sets it up for you) / FLIK Checkout on WooCommerce (Connect your WordPress store) / Build your own checkout (Server credentials and a publishable key)
+- **Column:** Accept payments — FLIK Checkout on Shopify (FLIK sets it up for you) / FLIK Checkout on WooCommerce (Connect your WordPress store) / Build your own checkout (A FLIK-hosted page, or your own)
 - **Column:** API essentials — Authentication (OAuth client credentials) / Keys and scopes (Which key goes where) / SNAP for banks and QRIS (For SNAP-enabled merchants)
 
 ## 3. How it works
 <!-- html: How it works: steps left, code panel right (illustrative, no endpoints) #how -->
 
 - **Section heading:** How an API integration works.
-  - **Grey part:** Your server holds the secret. Your website only ever sees a publishable key.
+  - **Grey part:** Your server holds the secret. FLIK hosts the payment page.
 - **Step:** 1 — Get an access token — Exchange your client ID and secret on your server.
-- **Step:** 2 — Create the payment — Your server creates a payment session for the order.
-- **Step:** 3 — Finish in the browser — Your website starts the payment with a publishable key.
-- **Step:** 4 — Confirm the result — Check the payment from your server. Webhooks are coming soon.
-- **Note:** Illustrative. Endpoint paths and fields are in the API reference, shared with you when you start building.
+- **Step:** 2 — Create a checkout session — Your server sends the cart to FLIK.
+- **Step:** 3 — Send the shopper to pay — FLIK hosts the page. The shopper pays by virtual account or QRIS.
+- **Step:** 4 — Fulfil from the webhook — FLIK sends a signed event when the payment succeeds.
+- **Note:** Shortened from the Accept a payment guide. Every request goes to api.flik.co.id, with test keys and with live keys.
 
 ## 4. The essentials
 <!-- html: API essentials: concept cards + key table #api -->
@@ -70,11 +70,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Card:** Authentication — OAuth 2.0 client credentials. Your server exchanges its client ID and secret for an access token that lasts one hour.
 - **Card:** Sandbox and Live — Two separate modes, each with its own credentials and keys. Nothing carries over from Sandbox to Live.
 - **Card:** Rolling a secret — When you roll a secret, the old one keeps working for 24 hours so you can switch without downtime. A secret is shown once and stored only as a hash.
-- **Card:** Errors — A failed request returns an error code and a request ID. Share the request ID with FLIK support for a faster answer.
+- **Card:** Errors and limits — Every error has a stable code, a page that explains it and a request ID to share with FLIK support. Up to 100 requests a minute per API key.
 - **Table columns:** Key — Where it lives — What it can do
-- **Row:** API credentials — Your server — Client ID and secret for an access token. Scopes: payments read and write.
-- **Row:** Publishable key — Your website or app — Safe in browser and mobile code. It can only start a payment for a session your server already created. Up to 2 active per mode.
-- **Row:** SNAP key — Your bank integration — For SNAP-enabled merchants: requests signed with your private key and checked against your registered RSA-2048 public key. Covers virtual accounts, QRIS, balance inquiry and transfer to bank.
+- **Row:** API key — Your server — Client ID and secret for a one-hour access token. Scopes limit what it can do, such as checkout_sessions:write and payment_intents:read.
+- **Row:** Publishable key — Your website or app — Not a secret. It only reads a checkout session from the browser, with that session's client secret.
+- **Row:** Payout key — Your payout server — Only creates payouts to your registered bank account and reads your balance, so your checkout key can't move money out. A live payout key needs a one-time code and an IP allowlist.
+- **Row:** SNAP partner — Your bank integration — BI SNAP format (ASPI SNAP v1.0.2): requests signed with your private key and checked against your RSA public key (2048 bits or more). Covers virtual accounts, QRIS, balance inquiry and transfer to your bank account.
 
 ## 5. Integrations
 <!-- html: Integrations: Shopify, WooCommerce, no code #integrations -->
@@ -91,9 +92,9 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Developer resources.
   - **Grey part:** Everything you need to build and test.
 - **Item:** Sandbox — Build and test with Sandbox credentials. Sandbox values never touch real money. — Create an account
-- **Item:** Developer settings — Create, roll and revoke API credentials and publishable keys in Settings, Developers in the FLIK dashboard. — Sign in
-- **Item:** API reference (Shared on request) — Endpoints, objects and examples. The FLIK team shares it when you start building. — Request access
-- **Item:** Webhooks (Coming soon) — Get notified about payments as they happen. Until then, check a payment's status from your server.
+- **Item:** API keys — Create, roll and revoke your keys yourself on the API Keys page of the FLIK dashboard. Live keys need a verified account. — Sign in
+- **Item:** API reference — Every endpoint, object and error code, with guides and examples in curl, Node.js, PHP and Go. — Read the docs
+- **Item:** Webhooks — Signed events when a payment succeeds, fails or expires. If your server doesn't answer, FLIK retries for up to 72 hours. — Receive webhooks
 
 ## 7. From Sandbox to Live
 <!-- html: Go live: three steps on the dark band #live -->
@@ -102,7 +103,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Three steps, no surprises.
 - **Step:** Step 1 — Build in Sandbox — Use Sandbox credentials to build and test your integration end to end.
 - **Step:** Step 2 — Verify your business — Complete business verification in the FLIK dashboard.
-- **Step:** Step 3 — FLIK activates Live — Once you're verified, FLIK activates your Live keys. Create Live credentials and switch your server over.
+- **Step:** Step 3 — Go live — Once your account is activated, create Live keys on the API Keys page, add a Live webhook endpoint and run one small real payment.
 
 ## 8. FAQ
 <!-- html: FAQ (single column) #faq-sec -->
@@ -117,13 +118,15 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** What happens when I roll a secret?
   - **Answer:** You get a new secret, shown once. The old one keeps working for 24 hours, so you can update your server without downtime.
 - **Question:** Can I put a key in my website code?
-  - **Answer:** Only a publishable key. It can only start a payment for a session your server created. Keep your client secret on your server.
+  - **Answer:** Only a publishable key. It only reads a checkout session from the browser. Keep your client secret on your server.
+- **Question:** Which payment methods does the API take?
+  - **Answer:** Virtual accounts at BCA, Mandiri, BNI, BRI and Permata, and QRIS. BCA and QRIS are on for every account; the other banks are switched on per account. E-wallets, cards and COD are coming to the API.
 - **Question:** Do you support webhooks?
-  - **Answer:** Webhooks are coming soon. Until then, check a payment's status from your server before you fulfil the order.
+  - **Answer:** Yes. FLIK sends signed events to your webhook endpoint when a payment succeeds, fails or expires, and retries for up to 72 hours if your server doesn't answer. You can also resend an event.
 - **Question:** What is SNAP?
-  - **Answer:** The Indonesian open API standard for payments. SNAP-enabled merchants sign their requests with their own private key for virtual accounts, QRIS, balance inquiry and transfer to bank.
+  - **Answer:** Bank Indonesia's open API standard for payments. FLIK takes virtual account and QRIS payments in the SNAP format too, on the same payment engine. You set up your SNAP partner record on the BI SNAP page of the dashboard.
 - **Question:** How do I go live?
-  - **Answer:** Verify your business in the FLIK dashboard. Once FLIK has verified it, FLIK activates your Live keys.
+  - **Answer:** Verify your business in the FLIK dashboard. Once your account is activated, create Live keys on the API Keys page, add a Live webhook endpoint and run one small real payment.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
 ## 9. Final call to action

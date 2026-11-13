@@ -1413,7 +1413,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div><h3><span class="ic" data-ic="cart"></span>Accept payments</h3><ul>
       <li><a href="#shopify">FLIK Checkout on Shopify</a><small>FLIK sets it up for you</small></li>
       <li><a href="#woocommerce">FLIK Checkout on WooCommerce</a><small>Connect your WordPress store</small></li>
-      <li><a href="#how">Build your own checkout</a><small>Server credentials and a publishable key</small></li></ul></div>
+      <li><a href="#how">Build your own checkout</a><small>A FLIK-hosted page, or your own</small></li></ul></div>
     <div><h3><span class="ic" data-ic="code"></span>API essentials</h3><ul>
       <li><a href="#api">Authentication</a><small>OAuth client credentials</small></li>
       <li><a href="#keys">Keys and scopes</a><small>Which key goes where</small></li>
@@ -1421,13 +1421,13 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   </div>
 </section>
 
-<!-- ===== How it works: steps left, code panel right (illustrative, no endpoints) ===== -->
+<!-- ===== How it works: steps left, code panel right (from the Merchant API docs, Accept a payment) ===== -->
 <section class="pad alt guides" id="how">
   <div class="wrap">
-    <h2 class="sec-h">How an API integration works. <span class="soft">Your server holds the secret. Your website only ever sees a publishable key.</span></h2>
+    <h2 class="sec-h">How an API integration works. <span class="soft">Your server holds the secret. FLIK hosts the payment page.</span></h2>
     <div class="dv-try">
       <div class="dv-steps" role="tablist" aria-label="Integration steps" id="dv-steps"></div>
-      <div class="dv-panel" role="tabpanel" aria-labelledby="dv-tab-0" id="dv-panel"><div class="dv-panel-h"><b id="dv-ph">Get an access token</b><span id="dv-pw">Your server</span></div><div class="code" id="dv-code"></div><p>Illustrative. Endpoint paths and fields are in the API reference, shared with you when you start building.</p></div>
+      <div class="dv-panel" role="tabpanel" aria-labelledby="dv-tab-0" id="dv-panel"><div class="dv-panel-h"><b id="dv-ph">Get an access token</b><span id="dv-pw">Your server</span></div><div class="code" id="dv-code"></div><p>Shortened from the <a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/guides/merchant-api/accept-a-payment" target="_blank" rel="noopener">Accept a payment</a> guide. Every request goes to api.flik.co.id, with test keys and with live keys.</p></div>
     </div>
   </div>
 </section>
@@ -1440,14 +1440,15 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <div><h3><span class="ic" data-ic="code"></span>Authentication</h3><p>OAuth 2.0 client credentials. Your server exchanges its client ID and secret for an access token that lasts one hour.</p></div>
       <div><h3><span class="ic" data-ic="boxes"></span>Sandbox and Live</h3><p>Two separate modes, each with its own credentials and keys. Nothing carries over from Sandbox to Live.</p></div>
       <div><h3><span class="ic" data-ic="bolt"></span>Rolling a secret</h3><p>When you roll a secret, the old one keeps working for 24 hours so you can switch without downtime. A secret is shown once and stored only as a hash.</p></div>
-      <div><h3><span class="ic" data-ic="chart"></span>Errors</h3><p>A failed request returns an error code and a request ID. Share the request ID with FLIK support for a faster answer.</p></div>
+      <div><h3><span class="ic" data-ic="chart"></span>Errors and limits</h3><p>Every error has a stable code, a page that explains it and a request ID to share with FLIK support. Up to 100 requests a minute per API key.</p></div>
     </div>
     <div class="dv-tblwrap" id="keys"><table class="dv-tbl">
       <thead><tr><th scope="col">Key</th><th scope="col">Where it lives</th><th scope="col">What it can do</th></tr></thead>
       <tbody>
-        <tr><td>API credentials</td><td>Your server</td><td>Client ID and secret for an access token. Scopes: payments read and write.</td></tr>
-        <tr><td>Publishable key</td><td>Your website or app</td><td>Safe in browser and mobile code. It can only start a payment for a session your server already created. Up to 2 active per mode.</td></tr>
-        <tr><td>SNAP key</td><td>Your bank integration</td><td>For SNAP-enabled merchants: requests signed with your private key and checked against your registered RSA-2048 public key. Covers virtual accounts, QRIS, balance inquiry and transfer to bank.</td></tr>
+        <tr><td>API key</td><td>Your server</td><td>Client ID and secret for a one-hour access token. Scopes limit what it can do, such as <code>checkout_sessions:write</code> and <code>payment_intents:read</code>.</td></tr>
+        <tr><td>Publishable key</td><td>Your website or app</td><td>Not a secret. It only reads a checkout session from the browser, with that session's client secret.</td></tr>
+        <tr><td>Payout key</td><td>Your payout server</td><td>Only creates payouts to your registered bank account and reads your balance, so your checkout key can't move money out. A live payout key needs a one-time code and an IP allowlist.</td></tr>
+        <tr><td>SNAP partner</td><td>Your bank integration</td><td>BI SNAP format (ASPI SNAP v1.0.2): requests signed with your private key and checked against your RSA public key (2048 bits or more). Covers virtual accounts, QRIS, balance inquiry and transfer to your bank account.</td></tr>
       </tbody></table></div>
   </div>
 </section>
@@ -1470,9 +1471,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <h2 class="sec-h">Developer resources. <span class="soft">Everything you need to build and test.</span></h2>
     <div class="dv-res">
       <div><h3>Sandbox</h3><p>Build and test with Sandbox credentials. Sandbox values never touch real money.</p><a href="#" class="link" data-act="start">Create an account <span class="chev">›</span></a></div>
-      <div><h3>Developer settings</h3><p>Create, roll and revoke API credentials and publishable keys in Settings, Developers in the FLIK dashboard.</p><a href="#" class="link" data-act="signin">Sign in <span class="chev">›</span></a></div>
-      <div><h3>API reference <span class="pill gr">Shared on request</span></h3><p>Endpoints, objects and examples. The FLIK team shares it when you start building.</p><a href="#" class="link" data-act="sales">Request access <span class="chev">›</span></a></div>
-      <div><h3>Webhooks <span class="pill pu">Coming soon</span></h3><p>Get notified about payments as they happen. Until then, check a payment's status from your server.</p></div>
+      <div><h3>API keys</h3><p>Create, roll and revoke your keys yourself on the API Keys page of the FLIK dashboard. Live keys need a verified account.</p><a href="#" class="link" data-act="signin">Sign in <span class="chev">›</span></a></div>
+      <div><h3>API reference</h3><p>Every endpoint, object and error code, with guides and examples in curl, Node.js, PHP and Go.</p><a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/" class="link" target="_blank" rel="noopener">Read the docs <span class="chev">›</span></a></div>
+      <div><h3>Webhooks</h3><p>Signed events when a payment succeeds, fails or expires. If your server doesn't answer, FLIK retries for up to 72 hours.</p><a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/guides/merchant-api/quickstart-webhooks" class="link" target="_blank" rel="noopener">Receive webhooks <span class="chev">›</span></a></div>
     </div>
   </div>
 </section>
@@ -1484,7 +1485,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="dv-live" id="dv-live">
       <div><span class="n">Step 1</span><div class="dv-line"><i></i></div><h3>Build in Sandbox</h3><p>Use Sandbox credentials to build and test your integration end to end.</p></div>
       <div><span class="n">Step 2</span><div class="dv-line"><i></i></div><h3>Verify your business</h3><p>Complete business verification in the FLIK dashboard.</p></div>
-      <div><span class="n">Step 3</span><div class="dv-line"><i></i></div><h3>FLIK activates Live</h3><p>Once you're verified, FLIK activates your Live keys. Create Live credentials and switch your server over.</p></div>
+      <div><span class="n">Step 3</span><div class="dv-line"><i></i></div><h3>Go live</h3><p>Once your account is activated, create Live keys on the API Keys page, add a Live webhook endpoint and run one small real payment.</p></div>
     </div>
   </div>
 </section>
@@ -1725,20 +1726,20 @@ document.querySelectorAll('[data-ic]').forEach(e=>{e.innerHTML=ic(e.dataset.ic,e
 (function(){
   const seg=document.querySelectorAll('.dv-seg button'),cid=document.getElementById('dv-cid'),pk=document.getElementById('dv-pk'),m1=document.getElementById('dv-m1'),note=document.getElementById('dv-note');
   const V={sandbox:['••••••••••••7Q2F','••••••••••••91KD','Sandbox','Sandbox keys work only in Sandbox. Nothing carries over to Live.'],
-           live:['••••••••••••K8VA','••••••••••••3MZT','Live','Live keys are activated by FLIK after your business is verified.']};
+           live:['••••••••••••K8VA','••••••••••••3MZT','Live','Live keys need a verified FLIK account.']};
   seg.forEach(b=>b.addEventListener('click',()=>{const v=V[b.dataset.mode];seg.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
     cid.textContent=v[0];pk.textContent=v[1];m1.textContent=v[2];m1.className='pill '+(b.dataset.mode==='live'?'ok':'gr');note.textContent=v[3]}));
 })();
 
-/* ===== Developers: integration steps drive the code panel (illustrative, no endpoints) ===== */
+/* ===== Developers: integration steps drive the code panel (shortened from the Merchant API docs) ===== */
 (function(){
   const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const C=t=>'<span class="c">'+esc(t)+'</span>',K=t=>'<span class="k">'+esc(t)+'</span>',Sx=t=>'<span class="s">'+esc(t)+'</span>';
   const STEPS=[
-    {t:'Get an access token',d:'Exchange your client ID and secret on your server.',w:'Your server',code:[C('# OAuth 2.0 client credentials'),K('grant_type')+'='+Sx('client_credentials'),K('client_id')+'='+Sx('YOUR_CLIENT_ID'),K('client_secret')+'='+Sx('YOUR_CLIENT_SECRET'),'',C('# Response'),'{ '+K('"access_token"')+': '+Sx('"…"')+', '+K('"token_type"')+': '+Sx('"Bearer"')+', '+K('"expires_in"')+': 3600 }']},
-    {t:'Create the payment',d:'Your server creates a payment session for the order.',w:'Your server',code:[C('# Every API call sends the access token'),K('Authorization')+': Bearer '+Sx('<access_token>'),'',C('# Scope: payments write'),C('# Creates a payment session for the order'),C('# and returns its ID to your website')]},
-    {t:'Finish in the browser',d:'Your website starts the payment with a publishable key.',w:'Your website or app',code:[C('# A publishable key is safe in browser code.'),C('# It can only start a payment for a session'),C('# your server already created.'),'',K('publishable_key')+' = '+Sx('"YOUR_PUBLISHABLE_KEY"'),K('session_id')+' = '+Sx('"<from your server>"')]},
-    {t:'Confirm the result',d:'Check the payment from your server. Webhooks are coming soon.',w:'Your server',code:[C('# Scope: payments read'),C('# Check the payment status from your server'),C('# before you fulfil the order.'),'',C('# Webhooks (coming soon) will notify you'),C('# about payments as they happen.')]},
+    {t:'Get an access token',d:'Exchange your client ID and secret on your server.',w:'Your server',code:[C('# OAuth 2.0 client credentials'),K('POST')+' /v1/oauth/token',K('grant_type')+'='+Sx('client_credentials'),K('client_id')+'='+Sx('fk_test_ci_…'),K('client_secret')+'='+Sx('fk_test_cs_…'),'',C('# Response: a token that lasts one hour'),'{ '+K('"access_token"')+': '+Sx('"…"')+', '+K('"token_type"')+': '+Sx('"Bearer"')+', '+K('"expires_in"')+': 3600 }']},
+    {t:'Create a checkout session',d:'Your server sends the cart to FLIK.',w:'Your server',code:[K('POST')+' /v1/checkout/sessions',K('Authorization')+': Bearer '+Sx('<access_token>'),K('Idempotency-Key')+': '+Sx('session-ORDER-0001'),'','{ '+K('"line_items"')+': [{ '+K('"name"')+': '+Sx('"Example product"')+', '+K('"quantity"')+': 2,',' '+K('"unit_amount"')+': { '+K('"value"')+': '+Sx('"75000.00"')+', '+K('"currency"')+': '+Sx('"IDR"')+' } }],','  '+K('"success_url"')+': '+Sx('"https://example.com/success"')+' }']},
+    {t:'Send the shopper to pay',d:'FLIK hosts the page. The shopper pays by virtual account or QRIS.',w:'Your website',code:[C('# The session has a url for FLIK\'s payment page.'),C('# Redirect the shopper there.'),'',K('303')+' See Other',K('Location')+': '+Sx('session.url'),'',C('# Building your own page instead? Create a'),C('# payment intent and show the VA number or QR code.')]},
+    {t:'Fulfil from the webhook',d:'FLIK sends a signed event when the payment succeeds.',w:'Your server',code:[C('# Verify Flik-Signature on the raw body first.'),K('event.type')+' = '+Sx('"checkout.session.completed"'),'',C('# Fulfil each order once, keyed on the session ID.'),C('# Never mark an order paid from the success_url'),C('# redirect alone.')]},
   ];
   const list=document.getElementById('dv-steps'),code=document.getElementById('dv-code'),ph=document.getElementById('dv-ph'),pw=document.getElementById('dv-pw'),panel=document.getElementById('dv-panel');
   list.innerHTML=STEPS.map((s,i)=>`<button type="button" role="tab" id="dv-tab-${i}" aria-controls="dv-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}"><span class="n">${i+1}</span><span><b>${s.t}</b><small>${s.d}</small></span></button>`).join('');
@@ -1760,10 +1761,11 @@ const FAQ=[
   ['Is there a test environment?','Yes. Sandbox has its own credentials and keys, and nothing carries over to Live. Build and test there first.'],
   ['How long does an access token last?','One hour. Your server requests a new one with its client ID and secret when it expires.'],
   ['What happens when I roll a secret?','You get a new secret, shown once. The old one keeps working for 24 hours, so you can update your server without downtime.'],
-  ['Can I put a key in my website code?','Only a publishable key. It can only start a payment for a session your server created. Keep your client secret on your server.'],
-  ['Do you support webhooks?','Webhooks are coming soon. Until then, check a payment\'s status from your server before you fulfil the order.'],
-  ['What is SNAP?','The Indonesian open API standard for payments. SNAP-enabled merchants sign their requests with their own private key for virtual accounts, QRIS, balance inquiry and transfer to bank.'],
-  ['How do I go live?','Verify your business in the FLIK dashboard. Once FLIK has verified it, FLIK activates your Live keys.'],
+  ['Can I put a key in my website code?','Only a publishable key. It only reads a checkout session from the browser. Keep your client secret on your server.'],
+  ['Which payment methods does the API take?','Virtual accounts at BCA, Mandiri, BNI, BRI and Permata, and QRIS. BCA and QRIS are on for every account; the other banks are switched on per account. E-wallets, cards and COD are coming to the API.'],
+  ['Do you support webhooks?','Yes. FLIK sends signed events to your webhook endpoint when a payment succeeds, fails or expires, and retries for up to 72 hours if your server doesn\'t answer. You can also resend an event.'],
+  ['What is SNAP?','Bank Indonesia\'s open API standard for payments. FLIK takes virtual account and QRIS payments in the SNAP format too, on the same payment engine. You set up your SNAP partner record on the BI SNAP page of the dashboard.'],
+  ['How do I go live?','Verify your business in the FLIK dashboard. Once your account is activated, create Live keys on the API Keys page, add a Live webhook endpoint and run one small real payment.'],
 ];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');

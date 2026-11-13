@@ -320,6 +320,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .itab{padding:10px 14px;font-size:14px;font-weight:500;color:#AAB4CC;border-bottom:2px solid transparent;margin-bottom:-1px}
 .itab.on{color:#fff;border-bottom-color:#00E5FF}
 .ipanel{background:var(--dark-2);border:1px solid var(--dark-line);border-top:0;border-radius:0 0 10px 10px;padding:22px;min-height:290px}
+.dv-setup>div{min-width:0}
 .code{font-family:var(--mono);font-size:13px;line-height:1.75;color:#D7DEF0;white-space:pre;overflow-x:auto}
 .code .k{color:#C792EA}.code .s{color:#A5E075}.code .c{color:#6B7899}.code .p{color:#82AAFF}
 .isteps{display:grid;gap:16px}
@@ -1283,7 +1284,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="paths">
       <div><span class="icd icd-lg"><img src="assets/logos/platform/shopify.png" alt=""></span><h4>Shopify</h4><p>We connect your Shopify store to FLIK Checkout and Shipping for you.</p><a href="#" class="link-l" data-page="/integrations/shopify">View integration <span class="chev">›</span></a></div>
       <div><span class="icd icd-lg"><img src="assets/logos/platform/woocommerce.png" alt=""></span><h4>WooCommerce</h4><p>Connect your WordPress store in a few steps and switch to FLIK Checkout.</p><a href="#" class="link-l" data-page="/integrations/woocommerce">View integration <span class="chev">›</span></a></div>
-      <div><span class="icd" data-ic="code"></span><h4>FLIK API</h4><p>Build your own checkout and shipping flows from your own systems.</p><a href="#" class="link-l" data-page="API reference">Read the docs <span class="chev">›</span></a></div>
+      <div><span class="icd" data-ic="code"></span><h4>FLIK API</h4><p>Build your own checkout on the FLIK API, with virtual accounts and QRIS today.</p><a href="#" class="link-l" data-page="API reference">Read the docs <span class="chev">›</span></a></div>
     </div>
   </div>
 </section>
@@ -1711,17 +1712,17 @@ const ITABS={
   'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
   'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
   'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers check out in 30 seconds with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'API':`<div class="code"><span class="c">// Create a shipment (illustrative example)</span>
-<span class="k">const</span> shipment = <span class="k">await</span> flik.shipments.<span class="p">create</span>({
-  warehouse_id: <span class="s">'wh_jakarta_01'</span>,
-  destination: {
-    name: <span class="s">'Rina Putri'</span>,
-    phone: <span class="s">'+62 812-3456-7890'</span>,
-    city: <span class="s">'Surabaya'</span>,
-  },
-  service: <span class="s">'regular'</span>,
-  cod: { enabled: <span class="k">true</span>, amount: <span class="p">540000</span> },
-});</div><p class="ex">Illustrative only. See the developer docs for the real API.</p>`
+  'API':`<div class="code"><span class="c">// Create a checkout session (from the FLIK developer docs)</span>
+<span class="k">const</span> res = <span class="k">await</span> <span class="p">fetch</span>(<span class="s">'https://api.flik.co.id/v1/checkout/sessions'</span>, {
+  method: <span class="s">'POST'</span>,
+  headers: { Authorization: <span class="s">\`Bearer \${token}\`</span>, <span class="s">'Idempotency-Key'</span>: <span class="s">'session-ORDER-0001'</span> },
+  body: JSON.<span class="p">stringify</span>({
+    line_items: [{ name: <span class="s">'Example product'</span>, quantity: <span class="p">2</span>,
+      unit_amount: { value: <span class="s">'75000.00'</span>, currency: <span class="s">'IDR'</span> } }],
+    success_url: <span class="s">'https://example.com/success'</span>,
+  }),
+});
+<span class="c">// Send the shopper to session.url. They pay by virtual account or QRIS.</span></div><p class="ex">Shortened. See the <a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/guides/merchant-api/accept-a-payment" target="_blank" rel="noopener">Accept a payment</a> guide.</p>`
 };
 let itab='No code';
 function renderI(){
