@@ -31,7 +31,6 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 - **Courier Performance:** Best courier per region
 - **Warehouses:** Manage pickup origins
 - **Return Management:** Track every parcel, including returns
-- **Cross-Border Shipping:** Ship to customers abroad
 
 **Funding**
 

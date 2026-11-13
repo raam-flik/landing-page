@@ -1173,7 +1173,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <div class="stat"><b class="num">3%</b><span>COD fee (excl. PPN), paid by the merchant</span></div>
         </div>
       </div>
-      <div class="globe-box" role="img" aria-label="Example: a shopper in Medan pays Aruna Studio, a sample store, with FLIK Checkout. Aruna Studio ships the order from Jakarta with FLIK Shipping, and the payment lands in its FLIK balance after delivery."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
+      <div class="globe-box" role="img" aria-label="Example: a shopper in Tokyo pays Aruna Studio, a sample store, by card with FLIK Checkout. The payment lands in its FLIK balance, and Aruna Studio ships orders from Jakarta to Medan and Makassar with FLIK Shipping."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
     </div>
   </div>
 </section>
@@ -1445,7 +1445,7 @@ document.getElementById('logo').innerHTML='<svg width="90" height="32" viewBox="
 const MENU=[
   {k:'Products',w:860,cols:[
     {h:'Payment',items:[['Payment','Accept payments online and in store','/payment'],['In-Store Payment','QRIS and cards at your counter','/payment/in-store'],['Checkout','30-second online checkout','/payment/checkout'],['Invoice','Send invoices and get paid faster','/payment/invoice'],['Payment Link','Share a link in chat or social media','/payment/payment-link'],['Payment Methods','QRIS, e-wallets, VA, cards and COD','/payment/methods'],['Early Settlement','Get paid before your settlement date','/payment/early-settlement'],['Fraud Detection','Fight fraud and chargebacks','/payment/fraud-detection'],['FLIK Connect','Split each payment across wallets','/payment/connect'],['FLIK Account','Saved details across every store','/payment/flik-account'],['Checkout Personalization','Your payment methods, your couriers','/payment/personalization']]},
-    {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns'],['Cross-Border Shipping','Ship to customers abroad','/shipping/cross-border']]},
+    {h:'Shipping',items:[['Shipping','All major couriers, one dashboard','/shipping'],['Bulk Shipping','Many warehouses to many destinations','/shipping/bulk'],['COD Shipping','Cash on delivery, 3% fee (excl. PPN)','/shipping/cod'],['Shipment Tracking','Track any package','/shipping/track'],['Courier Performance','Best courier per region','/shipping/courier-performance'],['Warehouses','Manage pickup origins','/shipping/warehouses'],['Return Management','Track every parcel, including returns','/shipping/returns']]},
     {h:'Funding',items:[['Merchant Cash Advance','Upfront funding for selected brands','/funding/merchant-cash-advance'],['Auto Settlement','Settled as your products sell','/funding/auto-settlement'],['Flexibility','Funding that fits your sales cycle','/funding/flexibility'],['Inventory Funding','Stock up before demand peaks','/funding/inventory-financing'],['Outlet Expansion','Cash to open your next outlet','/funding/outlet-expansion'],['Marketing Budget','Fund campaigns that drive sales','/funding/marketing-budget']]}
   ]},
   {k:'Solutions',w:560,cols:[
@@ -1538,11 +1538,11 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const col=t=>{t=Math.max(0,Math.min(.999,t))*(C.length-1);const i=Math.floor(t),f=t-i,a=C[i],b=C[i+1];return a.map((v,k)=>Math.round(v+(b[k]-v)*f))};
   const D=Math.PI/180;
   const v3=(lat,lon)=>[Math.cos(lat*D)*Math.sin(lon*D),Math.sin(lat*D),Math.cos(lat*D)*Math.cos(lon*D)];
-  // Cities (lat, lon). Aruna Studio (a sample store) sells abroad from its Jakarta warehouse.
-  const CITY={Jakarta:v3(-6.2,106.8),Tokyo:v3(35.68,139.69),Singapore:v3(1.35,103.82),'Kuala Lumpur':v3(3.14,101.69)};
+  // Cities (lat, lon). Aruna Studio (a sample store) ships from its Jakarta warehouse.
+  const CITY={Jakarta:v3(-6.2,106.8),Tokyo:v3(35.68,139.69),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4)};
   // Where the camera looks for each city's order (lon, lat of the view centre)
-  const FOCUS={Tokyo:[124,18],Singapore:[110,2],'Kuala Lumpur':[110,2]};  // [view longitude, lift north in degrees]
-  // Example orders (international): a checkout paid from Japan, then shipments to Singapore and Malaysia
+  const FOCUS={Tokyo:[124,18],Medan:[106,2],Makassar:[114,0]};  // [view longitude, lift north in degrees]
+  // Example orders: a card payment from Japan, then shipments across Indonesia (cross-border shipping is off, Bintang 13 Nov 2026)
   const rp=n=>'Rp'+n.toLocaleString('id-ID');
   // view rotation: Indonesia faces the viewer, with a slow sway
   let lon0=120,lat0=-14,baseLat=-14,dLon=0,dLat=0,vLon=0,vLat=0,drag=null,lastTouch=-1e9,fLon=0,fLat=0;
@@ -1563,10 +1563,10 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const STEPS=[
     {k:'pay',city:'Tokyo',from:'Tokyo',to:'Jakarta',dur:3000,color:PRI,icon:'card',b:rp(4250000),s:'Paid from Tokyo, Japan · Card'},
     {k:'bal',city:'Tokyo',at:'Jakarta',dur:2200,icon:'wallet',b:'+'+rp(4250000),s:'Added to Aruna Studio balance'},
-    {k:'ship',city:'Singapore',from:'Jakarta',to:'Singapore',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Singapore',s:'International · 2–4 days · FLK2610140031'},
-    {k:'done',city:'Singapore',at:'Singapore',dur:1800,icon:'check',b:'Delivered',s:'Singapore · Order complete'},
-    {k:'ship',city:'Kuala Lumpur',from:'Jakarta',to:'Kuala Lumpur',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Malaysia',s:'International · 2–4 days · FLK2610140036'},
-    {k:'done',city:'Kuala Lumpur',at:'Kuala Lumpur',dur:1800,icon:'check',b:'Delivered',s:'Kuala Lumpur, Malaysia · Order complete'},
+    {k:'ship',city:'Medan',from:'Jakarta',to:'Medan',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Medan',s:'JNE Reguler · 2–3 days · FLK2610140031'},
+    {k:'done',city:'Medan',at:'Medan',dur:1800,icon:'check',b:'Delivered',s:'Medan · Order complete'},
+    {k:'ship',city:'Makassar',from:'Jakarta',to:'Makassar',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Makassar',s:'SiCepat Reguler · 2–3 days · FLK2610140036'},
+    {k:'done',city:'Makassar',at:'Makassar',dur:1800,icon:'check',b:'Delivered',s:'Makassar · Order complete'},
   ];
   const TOTAL=STEPS.reduce((a,s)=>a+s.dur,0);
 

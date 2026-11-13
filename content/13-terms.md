@@ -19,7 +19,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - [x] **W-17** (AG, 12 Nov 2026: link the Pricing page; Checkout fee 0–2% + PPN): Pricing page or fee schedule to link, including the Checkout success fee rate (the site says 0–2%, not confirmed).
 - [ ] **W-18**: Minimum age, and who may open a merchant account (individuals, entity types).
 - [x] **W-23**: Closed (AG, 24 Oct 2026): COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
-- [ ] **W-24**: Link to courier terms and the prohibited items list for merchants.
+- [x] **W-24**: Link to courier terms and the prohibited items list for merchants. Closed 13 Nov 2026: courier rules from the courier terms doc, prohibited items from JNE's list (Bintang: the benchmark for every courier).
   - Bintang (13 Nov): return fees follow the general rule (shipping not refunded, a courier return fee may apply) and are not published per courier; merchants see their own return fee in the FLIK dashboard. VIP rates are not published. Still needed: the prohibited items list.
   - Courier terms doc ("Syarat dan Ketentuan Kurir - FLIK Checkout", 13 Nov): pickup, same-day cut-off, handover, complaint deadlines and weight differences are now in the Shipping section. Its "Barang Terlarang" sections are empty.
 - [x] **W-26** (AG, 12 Nov 2026: Rp100.000 minimum, Rp4.000 + PPN fee, returned if the payout fails): Balance withdrawals: timing, minimum amount and any fee.
@@ -123,7 +123,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **List item:** Same day: orders fulfilled before 14:00 WIB are picked up the same day, later orders the next day. For instant and same-day services, hand the parcel only to the driver named on the AWB.
 - **List item:** Report a problem with a delivery within 2 calendar days (regular) or 24 hours (instant and same day) of delivery, or of the expected delivery date. FLIK resolves complaints within 7 calendar days.
 - **List item:** If delivery fails, the courier tries again the next day, up to two attempts, then returns the parcel. Courier-direct services return it straight away. On a returned parcel the shipping fee isn't refunded and a return fee set by the courier may apply; the return fee for your account is shown in your FLIK dashboard.
-- **List item:** Don't ship prohibited, illegal or dangerous goods. [[W-24: prohibited items list]]
+- **List item:** Don't ship prohibited, illegal or dangerous goods. Couriers refuse, and you're responsible for any loss or cost if you ship: goods that can explode or catch fire, narcotics and psychotropic drugs, firearms and sharp weapons, gold, stamps, stolen goods, cash, cheques, bilyet giro, money orders and traveller's cheques, indecent material, and anything else Indonesian law prohibits. A courier may add its own rules.
 - **Heading:** Funding
 - **List item:** Merchant Cash Advance is offered to selected merchants after an assessment, under a separate funding agreement.
 - **List item:** It has one fixed margin. Settlement is deducted automatically as your products sell.

@@ -19,7 +19,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Caps:** the 10% cap per merchant; whether Rp15.000 is one use per shopper; any maximum referrals or points per user; any cap on the shipping discount.
 - [ ] **Quota:** "The promo quota is limited for each merchant" needs a real quota, or the line goes (no fake urgency).
 - [ ] **Referral:** how and when the friend's Rp5.000 reward is credited.
-- [ ] **Shipping discount:** which rate the 40% / 30% / 20% comes off, and whether it's taken off the rate when booking.
+- [x] **Shipping discount:** off published rates (Bintang, 13 Nov 2026).
 - [ ] **Merchant registration** (merchant.flik.co.id/register) is outside this site. Its form needs the privacy notice and a separate unticked marketing opt-in.
 
 ## Search results (SEO)
@@ -92,7 +92,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Who can use it:** Merchants with a FLIK account who book shipments with the listed couriers in the FLIK merchant dashboard.
 - **Cap:** 40% with Ninja Xpress, 30% with SPX Express, 20% with JNE, J&T Express, ID Express and Lion Parcel [[confirm: any maximum discount per shipment or per month]].
 - **How it's credited:** Taken off the shipping rate when you book [[confirm]]. No promo code needed. It is a discount, not cashback.
-- **Text:** Up to 40% with Ninja Xpress, and 20–30% with the other listed couriers [[confirm: off which rate?]]. Send packages across Indonesia for less, with many couriers, from your FLIK merchant dashboard. No promo code needed.
+- **Text:** Up to 40% with Ninja Xpress, and 20–30% with the other listed couriers off published rates. Send packages across Indonesia for less, with many couriers, from your FLIK merchant dashboard. No promo code needed.
 - **Courier:** Ninja Xpress — 40% off
 - **Courier:** SPX Express — 30% off
 - **Courier:** JNE, J&T Express, ID Express, Lion Parcel — 20% off

@@ -134,8 +134,9 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: COD: dark section with a balance ledger #cod -->
 
 - **Section heading:** COD that pays you back fast.
-  - **Grey part:** Offer cash on delivery across Indonesia. The COD amount is credited to your FLIK balance after delivery.
+  - **Grey part:** Offer cash on delivery across Indonesia. The COD amount is credited to your FLIK balance as soon as the parcel is delivered.
 - **Text:** 3% — COD fee (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.
+- **List item:** COD with JNE, J&T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel (Bintang, 13 Nov 2026).
 - **List item:** Shipping is paid from your balance when you create the shipment.
 - **List item:** The COD amount is credited automatically after delivery, minus the 3% COD fee (excl. PPN).
 - **List item:** Use the same balance to pay for your next shipments.

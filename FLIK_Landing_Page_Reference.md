@@ -192,7 +192,7 @@ Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pric
 | **Payment Link**<br>Share a link in chat or social media | **Courier Performance**<br>Best courier per region | **Outlet Expansion**<br>Cash to open your next outlet |
 | **Payment Methods**<br>QRIS, e-wallets, VA, cards and COD | **Warehouses**<br>Manage pickup origins | **Marketing Budget**<br>Fund campaigns that drive sales |
 | **Early Settlement**<br>Get paid before your settlement date | **Return Management**<br>Lower RTO, fewer failed deliveries |  |
-| **Fraud Detection**<br>Fight fraud and chargebacks | **Cross-Border Shipping**<br>Ship to customers abroad |  |
+| **Fraud Detection**<br>Fight fraud and chargebacks |  |  |
 | **FLIK Connect**<br>Split each payment across wallets |  |  |
 | **FLIK Account**<br>Saved details across every store |  |  |
 | **Checkout Personalization**<br>Your payment methods, your couriers |  |  |
@@ -224,8 +224,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 │   │   ├── /shipping/track               Shipment Tracking, cek resi (prototype: /shipping/track/; results at ?id=, noindex)
 │   │   ├── /shipping/courier-performance Courier Performance
 │   │   ├── /shipping/warehouses          Warehouses
-│   │   ├── /shipping/returns             Return Management
-│   │   └── /shipping/cross-border        Cross-Border Shipping
+│   │   └── /shipping/returns             Return Management
 │   │
 │   └── FUNDING
 │       ├── /funding/merchant-cash-advance  Merchant Cash Advance
@@ -315,7 +314,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - The Developers docs URL is still to be confirmed.
 - Payment methods: one page, or one page per category?
 - Funding: Balance & Payouts was removed from the menu (2026-10-15). Flexibility, Inventory Financing, Outlet Expansion and Marketing Budget were added; their product details are still to be written.
-- Shipping: coverage is Indonesia, Malaysia and Singapore (2026-10-16). Cross-Border Shipping was added (2026-10-15); couriers and pricing for Malaysia and Singapore are still to be confirmed.
+- Shipping: coverage is Indonesia only. Cross-Border Shipping was removed from the menu on 2026-11-13: Ninja closed its cross-border service and FLIK is working with Lion Parcel on a replacement (Bintang).
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the placeholders on `/pricing` (rate card from AG / finance, FLI-50).
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
