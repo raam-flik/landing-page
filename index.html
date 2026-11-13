@@ -709,19 +709,15 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
   .bf2{left:40px}.bf3{left:80px}
 }
 
-/* Banner background: thin diagonal flow lines, top left to bottom right, with a faint light travelling along each */
+/* Banner background: a stream of fine particles, top left to bottom right, in the hero's size and colour mix */
 .banner-glow{inset:0;animation:none;background:linear-gradient(100deg,#002D5D 30%,#16206E 72%,#2A1B7A)}
-.banner-glow svg{position:absolute;inset:0;width:100%;height:100%}
-.banner-glow path{fill:none;vector-effect:non-scaling-stroke;stroke:rgba(150,170,255,.13);stroke-width:1}
-.banner-glow path.run{stroke:rgba(127,233,255,.5);stroke-width:1.3;stroke-dasharray:40 1100;animation:bn-run 12s linear infinite}
-.banner-glow path.run:nth-of-type(even){stroke:rgba(196,184,255,.5);animation-duration:16s}
+.banner-glow canvas{position:absolute;inset:0;width:100%;height:100%}
 /* Cards lift toward the pointer and press down on click */
 @media (hover:hover){
   .bf{transition:transform .38s cubic-bezier(.2,1.5,.4,1),box-shadow .3s}
   .bf:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 22px 44px rgba(0,16,48,.5);z-index:2}
   .bf:active{transform:translateY(-1px) scale(.985);transition-duration:.08s}
 }
-@keyframes bn-run{from{stroke-dashoffset:1140}to{stroke-dashoffset:0}}
 
 /* Developers diagram: dot field runs the full section width, drifts slowly, and lights up in brief soft flashes */
 .dx-sec{overflow-x:clip}
@@ -1292,7 +1288,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad-s guides">
   <div class="wrap">
     <div class="banner">
-      <div class="banner-glow" aria-hidden="true"><svg viewBox="0 0 1100 292" preserveAspectRatio="none"><path d="M-20 -10 C 300 40, 520 120, 1120 250"/><path d="M-20 45 C 280 110, 620 150, 1120 300"/><path d="M130 -10 C 430 60, 760 130, 1120 195"/><path d="M-20 115 C 240 170, 520 235, 900 302"/><path d="M370 -10 C 620 50, 900 90, 1120 135"/><path d="M-20 190 C 160 220, 330 262, 520 302"/><path class="run" d="M-20 -10 C 300 40, 520 120, 1120 250" style="animation-delay:0s"/><path class="run" d="M-20 45 C 280 110, 620 150, 1120 300" style="animation-delay:-5s"/><path class="run" d="M130 -10 C 430 60, 760 130, 1120 195" style="animation-delay:-9s"/><path class="run" d="M-20 115 C 240 170, 520 235, 900 302" style="animation-delay:-2s"/><path class="run" d="M370 -10 C 620 50, 900 90, 1120 135" style="animation-delay:-12s"/><path class="run" d="M-20 190 C 160 220, 330 262, 520 302" style="animation-delay:-7s"/></svg></div>
+      <div class="banner-glow" aria-hidden="true"><canvas id="bn-canvas"></canvas></div>
       <div class="banner-in">
         <h2>A unified commerce infrastructure.</h2>
         <p class="banner-sub">Payments in, packages out, one balance behind it all.</p>
@@ -2290,42 +2286,43 @@ document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard"
   },2400);
 })();
 
-/* ===== Banner touch: the flow lines bow away from the pointer like strings and spring back.
-   Off on touch screens, with reduced motion, and while animations are paused ===== */
+/* ===== Banner particle stream: fine dots travel top left to bottom right along six diagonal paths and part around the pointer.
+   Still frame with reduced motion; holds while animations are paused or the banner is off screen; pointer effect on mouse devices only ===== */
 (function(){
-  const b=document.querySelector('.banner');if(!b||!b.querySelector('.banner-glow path'))return;
-  if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const paths=[...b.querySelectorAll('.banner-glow path')],N=paths.length/2;   // base lines, then the travelling lights
-  const base=paths.slice(0,N).map(p=>p.getAttribute('d').match(/-?[\d.]+/g).map(Number));
-  const st=base.map(()=>({o1:0,o2:0,v1:0,v2:0}));
-  let mx=0,my=0,sx=0,sy=0,inside=false,raf=0;
-  function frame(){
-    raf=0;const r=b.getBoundingClientRect();
-    sx+=(mx-sx)*.18;sy+=(my-sy)*.18;
-    const px=sx/r.width*1100,py=sy/r.height*292;let moving=Math.abs(mx-sx)+Math.abs(my-sy)>.3;
-    base.forEach((q,i)=>{
-      const [x0,y0,x1,y1,x2,y2,x3,y3]=q;let t1=0,t2=0;
-      if(inside){
-        const t=Math.min(1,Math.max(0,(px-x0)/(x3-x0))),u=1-t,ly=u*u*u*y0+3*u*u*t*y1+3*u*t*t*y2+t*t*t*y3,dy=ly-py,a=Math.abs(dy);
-        if(a<70){const f=(dy<0?-1:1)*(70-a)*1.7;t1=f*u;t2=f*t}
-      }
-      const k=st[i];
-      k.v1=(k.v1+(t1-k.o1)*.14)*.78;k.o1+=k.v1;k.v2=(k.v2+(t2-k.o2)*.14)*.78;k.o2+=k.v2;
-      if(Math.abs(k.v1)+Math.abs(k.v2)>.02||Math.abs(t1-k.o1)+Math.abs(t2-k.o2)>.05)moving=true;
-      const d=`M${x0} ${y0} C ${x1} ${(y1+k.o1).toFixed(1)}, ${x2} ${(y2+k.o2).toFixed(1)}, ${x3} ${y3}`;
-      paths[i].setAttribute('d',d);paths[i+N].setAttribute('d',d);
-    });
-    if(moving)raf=requestAnimationFrame(frame);
+  const cv=document.getElementById('bn-canvas');if(!cv)return;
+  const bn=cv.closest('.banner'),cx=cv.getContext('2d');
+  // the six paths in a 1100 x 292 box: [x0,y0,x1,y1,x2,y2,x3,y3]
+  const P=[[-20,-10,300,40,520,120,1120,250],[-20,45,280,110,620,150,1120,300],[130,-10,430,60,760,130,1120,195],[-20,115,240,170,520,235,900,302],[370,-10,620,50,900,90,1120,135],[-20,190,160,220,330,262,520,302]];
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const rnd=(a,b)=>a+Math.random()*(b-a);
+  const pick=()=>{const k=Math.random();return k<.82?'178,166,255':k<.91?'120,235,255':'255,120,214'};   // mostly violet, a little cyan and pink
+  const spread=()=>(Math.random()+Math.random()+Math.random()-1.5)*58;   // most dots near a path, a thin scatter further out
+  let W=0,H=0,dpr=1,mx=-999,my=-999,vis=true,raf=0,pts=[];
+  function seed(){const n=Math.round(Math.min(1800,Math.max(500,W*H/230)));pts=Array.from({length:n},(_,i)=>({p:i%P.length,t:Math.random(),v:rnd(.0003,.001),off:spread(),r:Math.random()<.22?1.5:1,a:rnd(.3,.85),c:pick(),ox:0,oy:0,vx:0,vy:0}))}
+  function size(){const r=bn.getBoundingClientRect();dpr=Math.min(2,devicePixelRatio||1);W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cx.setTransform(dpr,0,0,dpr,0,0);seed()}
+  function step(){
+    cx.clearRect(0,0,W,H);const sx=W/1100,sy=H/292;
+    for(const q of pts){
+      q.t+=q.v;if(q.t>1){q.t=0;q.off=spread()}
+      const [x0,y0,x1,y1,x2,y2,x3,y3]=P[q.p],t=q.t,u=1-t;
+      const x=(u*u*u*x0+3*u*u*t*x1+3*u*t*t*x2+t*t*t*x3)*sx,y=(u*u*u*y0+3*u*u*t*y1+3*u*t*t*y2+t*t*t*y3)*sy+q.off;
+      let tx=0,ty=0;const dx=x-mx,dy=y-my,d=Math.hypot(dx,dy);
+      if(d<90&&d>.01){const f=(90-d)/90*34;tx=dx/d*f;ty=dy/d*f}
+      q.vx=(q.vx+(tx-q.ox)*.12)*.8;q.ox+=q.vx;q.vy=(q.vy+(ty-q.oy)*.12)*.8;q.oy+=q.vy;
+      cx.fillStyle=`rgba(${q.c},${(q.a*Math.sin(Math.PI*t)).toFixed(3)})`;cx.fillRect(x+q.ox,y+q.oy,q.r,q.r);
+    }
   }
-  const kick=()=>{if(!raf)raf=requestAnimationFrame(frame)};
-  const leave=()=>{inside=false;kick()};
-  b.addEventListener('pointermove',e=>{
-    if(motionPaused()){if(inside)leave();return}
-    const r=b.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
-    if(!inside){inside=true;sx=mx;sy=my}
-    kick();
-  });
-  b.addEventListener('pointerleave',leave);
+  const run=()=>vis&&!reduce&&!document.hidden&&!motionPaused();
+  function loop(){raf=0;step();if(run())raf=requestAnimationFrame(loop)}
+  const kick=()=>{if(!raf&&run())raf=requestAnimationFrame(loop)};
+  size();step();kick();
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();step();kick()},120)});
+  new IntersectionObserver(e=>{vis=e[0].isIntersecting;kick()}).observe(bn);
+  document.addEventListener('visibilitychange',kick);addEventListener('flik:motion',kick);
+  if(fine){
+    bn.addEventListener('pointermove',e=>{const r=bn.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+    bn.addEventListener('pointerleave',()=>{mx=my=-999});
+  }
 })();
 
 /* ===== Developers diagram: fit to width, flip tiles, highlight systems ===== */
