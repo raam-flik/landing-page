@@ -1160,7 +1160,7 @@ html{scroll-padding-top:88px}
   .stats4 .stat{padding:28px 16px}
   .stats4 .stat:nth-child(odd){padding-left:0}
   .stats4 .stat b{font-size:40px;letter-spacing:-.4px}
-  .flow4 .stat b{font-size:22px}
+  .stats4.flow4 .stat b{font-size:22px}
   .pk3,.gl3,.res3{grid-template-columns:1fr}
   .fin h2{font-size:30px}
   #after+section{padding-top:72px}
@@ -1200,10 +1200,28 @@ html{scroll-padding-top:88px}
 .al-r .num{font-weight:500;color:var(--ink)}
 .al-r.me b,.al-r.me .num{color:var(--ok-text)}
 .al-stage .ch-timer{bottom:64px}
-/* use cases: four cards */
-.pk4{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
-.pk4 .pk{cursor:default}
-.pk4 .pk:hover{transform:none;box-shadow:none;border-color:var(--line)}
+/* use cases: one picture, one tab per use case */
+.uc{display:grid;grid-template-columns:280px 1fr;margin-top:48px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.uc-tabs{display:flex;flex-direction:column;gap:2px;padding:12px;border-right:1px solid var(--line)}
+.uc-tabs button{font:inherit;font-size:15px;font-weight:500;text-align:left;color:var(--body);background:none;border:0;border-radius:8px;padding:12px 14px;cursor:pointer;transition:background .2s,color .2s}
+.uc-tabs button:hover{color:var(--ink)}
+.uc-tabs button[aria-pressed="true"]{background:var(--primary-soft);color:var(--primary)}
+.uc-g{background:var(--bg-alt);padding:28px 32px 36px;min-width:0}
+.uc-d{font-size:20px;font-weight:400;letter-spacing:-.3px;line-height:1.35;color:var(--ink);margin-top:10px;max-width:520px;min-height:54px}
+.uc-flow{display:grid;grid-template-columns:minmax(88px,170px) minmax(36px,1fr) minmax(170px,250px);align-items:center;height:168px;max-width:640px;margin-top:16px}
+.uc-flow svg{display:block;width:100%;height:168px}
+.uc-flow path{fill:none;stroke-linecap:round;opacity:.45;vector-effect:non-scaling-stroke}
+.uc-sale,.uc-r{background:#fff;border-radius:8px;box-shadow:var(--sh);font-size:13px}
+.uc-sale{padding:12px 14px}
+.uc-sale b{display:block;font-weight:500;color:var(--ink)}
+.uc-sale small{font-size:12px;color:var(--muted)}
+.uc-rs{display:flex;flex-direction:column;gap:12px}
+.uc-r{height:48px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 14px;animation:uc-in .35s ease both}
+.uc-r span{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:500;min-width:0}
+.uc-r i{width:8px;height:8px;border-radius:2px;flex:none}
+.uc-r .num{color:var(--muted);white-space:nowrap}
+.uc-r.me span,.uc-r.me .num{color:var(--ok-text)}
+@keyframes uc-in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
 .ex-r{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--line-soft);font-size:12.5px}
 .ex-r:first-of-type{border-top:0}
 .ex-r span{display:flex;align-items:center;gap:8px}
@@ -1258,7 +1276,12 @@ html{scroll-padding-top:88px}
 @media (max-width:1080px){.cod,.rb{grid-template-columns:1fr;gap:40px}}
 @media (max-width:760px){
   .al-stage{height:auto;padding:24px 0 96px}.al-stage .ch-timer{bottom:28px}
-  .pk4{grid-template-columns:1fr}
+  .uc{grid-template-columns:1fr}
+  .uc-tabs{flex-direction:row;flex-wrap:wrap;gap:6px;border-right:0;border-bottom:1px solid var(--line)}
+  .uc-tabs button{font-size:14px;padding:8px 12px}
+  .uc-g{padding:20px 16px 24px}
+  .uc-d{font-size:18px;min-height:72px}
+  .uc-sale,.uc-r{font-size:12px}.uc-sale,.uc-r{padding-left:10px;padding-right:10px}
   .rb-r{grid-template-columns:10px auto 1fr 32px;grid-template-areas:"d n n x" ". s v v";row-gap:8px}
   .rb-r>:nth-child(1){grid-area:d}.rb-r>:nth-child(2){grid-area:n}.rb-r>:nth-child(3){grid-area:s}.rb-r>:nth-child(4){grid-area:v}.rb-r>:nth-child(5){grid-area:x}
   .rb-card{padding:18px}.cod-card{padding:20px}
@@ -1445,11 +1468,22 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== Who it's for: four example businesses with an example Split Rule each ===== -->
+<!-- ===== Who it's for: one picture, five use cases with an example Split Rule each ===== -->
 <section class="pad guides" id="who">
   <div class="wrap">
     <h2 class="sec-h">Built for brands that sell together. <span class="soft">When a sale belongs to more than one business, everyone gets their share when the order completes.</span></h2>
-    <div class="pk4" id="pk4"></div>
+    <div class="uc">
+      <div class="uc-tabs" id="uc-tabs" role="group" aria-label="Use cases"></div>
+      <div class="uc-g" aria-live="polite">
+        <span class="label"><i></i>Example</span>
+        <p class="uc-d" id="uc-d"></p>
+        <div class="uc-flow">
+          <div class="uc-sale"><b>One sale</b><small class="num">Rp1.000.000</small></div>
+          <svg id="uc-svg" viewBox="0 0 100 168" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="uc-rs" id="uc-rs"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1458,9 +1492,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h stats-h">Set it once, split every payment. <span class="soft">A Split Rule decides who gets what. FLIK applies it to every completed order.</span></h2>
     <div class="stats4 flow4" id="flow4">
-      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="link"></span><b>Link wallets</b><span>Your partners' wallets are linked to your account. Each is a verified FLIK merchant, and FLIK approves every link.</span></div>
+      <div class="stat"><span class="f4-n">01</span><span class="f4-ic" data-ic="link"></span><b>Link wallets</b><span>FLIK links your partners' wallets to your account. Each is a verified FLIK merchant.</span></div>
       <div class="stat"><span class="f4-n">02</span><span class="f4-ic" data-ic="sliders"></span><b>Create a Split Rule</b><span>Give each recipient a fixed amount in Rp or a percentage.</span></div>
-      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>FLIK splits it</b><span>When an order completes, the net amount is split. Your partners' shares come first; the rest stays with you.</span></div>
+      <div class="stat"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>FLIK splits it</b><span>When an order completes, your partners get their shares. The rest stays with you.</span></div>
       <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="bank"></span><b>Everyone withdraws</b><span>Each wallet has its own balance and statement, and withdraws to its own bank account.</span></div>
     </div>
   </div>
@@ -1852,13 +1886,27 @@ const bar=(el,net,alloc,rem)=>{el.innerHTML=alloc.map((a,i)=>`<i class="${CLS[i]
 
 /* ===== Who it's for (example rules) ===== */
 (function(){
+  /* [title, line, [[recipient, share shown, share of the sale]]]: the remainder row is added for "You" */
   const U=[
-    ['boxes','Brands and suppliers','Pay suppliers or consignment partners their share of every sale.',[['Consignment partner','60%'],['You','Remainder']]],
-    ['home','Outlets and franchises','Send each outlet or franchisee its share, and keep the brand’s part.',[['Franchisee, Bandung','90%'],['You','Remainder']]],
-    ['user','Resellers and affiliates','Pay commission the moment a sale completes.',[['Affiliate','5%'],['Reseller','Rp25.000 fixed'],['You','Remainder']]],
-    ['cart','Multi-vendor stores','Every vendor receives its part of the sale in its own wallet.',[['Vendor A','45%'],['Vendor B','35%'],['You','Remainder']]]
+    ['Brands and suppliers','Pay suppliers or consignment partners their share of every sale.',[['Supplier','60%',.6]]],
+    ['Outlets and franchises','Send each outlet or franchisee its share, and keep the brand’s part.',[['Franchisee','90%',.9]]],
+    ['Resellers and affiliates','Pay commission the moment a sale completes.',[['Affiliate','5%',.05],['Reseller','Rp25.000 fixed',.025]]],
+    ['Multi-vendor stores','Every vendor receives its part of the sale in its own wallet.',[['Vendor A','45%',.45],['Vendor B','35%',.35]]],
+    ['Marketplace platforms','Your seller is paid from every sale. Your commission stays with you.',[['Seller','90%',.9]]]
   ];
-  document.getElementById('pk4').innerHTML=U.map(u=>`<div class="pk"><div class="pk-g"><div class="minip">${u[3].map((r,i)=>`<div class="ex-r"><span><i class="${r[0]==='You'?'cr':CLS[i]}"></i>${r[0]}</span><b class="num" style="font-weight:500">${r[1]}</b></div>`).join('')}</div></div><span class="label"><i></i>Example</span><h3>${u[1]}</h3><p class="txt">${u[2]}</p></div>`).join('');
+  const tabs=document.getElementById('uc-tabs'),d=document.getElementById('uc-d'),rs=document.getElementById('uc-rs'),svg=document.getElementById('uc-svg');
+  const COL=['var(--primary)','var(--ink)'],H=168,RH=48,GAP=12;
+  function show(k){
+    const u=U[k],rows=[...u[2],['You','Remainder',1-u[2].reduce((a,r)=>a+r[2],0)]];
+    const y0=(H-(rows.length*RH+(rows.length-1)*GAP))/2;
+    d.textContent=u[1];
+    rs.innerHTML=rows.map((r,i)=>{const me=i===rows.length-1;return `<div class="uc-r${me?' me':''}"><span><i class="${me?'cr':CLS[i]}"></i>${r[0]}</span><b class="num" style="font-weight:500">${r[1]}</b></div>`}).join('');
+    svg.innerHTML=rows.map((r,i)=>{const cy=y0+i*(RH+GAP)+RH/2;return `<path d="M0 ${H/2} C50 ${H/2},50 ${cy},100 ${cy}" style="stroke:${i===rows.length-1?'var(--ok)':COL[i]};stroke-width:${(2+r[2]*14).toFixed(1)}px"/>`}).join('');
+    [...tabs.children].forEach((b,i)=>b.setAttribute('aria-pressed',i===k));
+  }
+  tabs.innerHTML=U.map(u=>`<button type="button">${u[0]}</button>`).join('');
+  [...tabs.children].forEach((b,i)=>b.addEventListener('click',()=>show(i)));
+  show(0);
 })();
 
 /* ===== How it works: the progress line walks through the four steps ===== */
