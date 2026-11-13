@@ -1,7 +1,7 @@
 # FLIK Connect (Split Payments)
 
 - **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/payment/connect/
-- **Page file:** `payment/connect/index.html`. Use cases, example rules, the rule builder, the history and the FAQ are lists in the page script.
+- **Page file:** `payment/connect/index.html`. Use cases (the `U` list), example rules, the rule builder, the history and the FAQ are lists in the page script.
 - **Linear:** FLI-51. The issue says `/payments/connect`; the sitemap names the group Payment, so the page is at `/payment/connect` next to Early Settlement and Fraud Detection.
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
@@ -49,23 +49,28 @@ Product **FLIK Connect**; feature **Split Payments**; the merchant's setup is a 
 - You (remainder) — Before the FLIK Connect fee
 
 ## 2. Who it's for
-<!-- html: Who it's for: four example businesses with an example Split Rule each #who -->
+<!-- html: Who it's for: one picture, five use cases with an example Split Rule each #who -->
+
+One picture shows a single sale splitting into shares. Each tab swaps the recipients. The marketplace example shows one seller: the MVP has one active Split Rule, so every payment splits the same way.
 
 - **Section heading:** Built for brands that sell together.
   - **Grey part:** When a sale belongs to more than one business, everyone gets their share when the order completes.
-- **Card:** Brands and suppliers — Pay suppliers or consignment partners their share of every sale. — Consignment partner 60%, You remainder
-- **Card:** Outlets and franchises — Send each outlet or franchisee its share, and keep the brand's part. — Franchisee, Bandung 90%, You remainder
-- **Card:** Resellers and affiliates — Pay commission the moment a sale completes. — Affiliate 5%, Reseller Rp25.000 fixed, You remainder
-- **Card:** Multi-vendor stores — Every vendor receives its part of the sale in its own wallet. — Vendor A 45%, Vendor B 35%, You remainder
+- **Label:** Example
+- **Text inside the picture:** One sale — Rp1.000.000
+- **Tab:** Brands and suppliers — Pay suppliers or consignment partners their share of every sale. — Supplier 60%, You remainder
+- **Tab:** Outlets and franchises — Send each outlet or franchisee its share, and keep the brand's part. — Franchisee 90%, You remainder
+- **Tab:** Resellers and affiliates — Pay commission the moment a sale completes. — Affiliate 5%, Reseller Rp25.000 fixed, You remainder
+- **Tab:** Multi-vendor stores — Every vendor receives its part of the sale in its own wallet. — Vendor A 45%, Vendor B 35%, You remainder
+- **Tab:** Marketplace platforms — Your seller is paid from every sale. Your commission stays with you. — Seller 90%, You remainder
 
 ## 3. How it works
 <!-- html: How it works: ruled four-step flow to the guide lines #how -->
 
 - **Section heading:** Set it once, split every payment.
   - **Grey part:** A Split Rule decides who gets what. FLIK applies it to every completed order.
-- **Step:** 01 — Link wallets — Your partners' wallets are linked to your account. Each is a verified FLIK merchant, and FLIK approves every link.
+- **Step:** 01 — Link wallets — FLIK links your partners' wallets to your account. Each is a verified FLIK merchant.
 - **Step:** 02 — Create a Split Rule — Give each recipient a fixed amount in Rp or a percentage.
-- **Step:** 03 — FLIK splits it — When an order completes, the net amount is split. Your partners' shares come first; the rest stays with you.
+- **Step:** 03 — FLIK splits it — When an order completes, your partners get their shares. The rest stays with you.
 - **Step:** 04 — Everyone withdraws — Each wallet has its own balance and statement, and withdraws to its own bank account.
 
 ## 4. Try a Split Rule

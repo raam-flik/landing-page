@@ -52,6 +52,13 @@ Approved by AG, 12 Nov 2026.
 - There is **no automatic** early settlement.
 - Say it pays out money from sales already made. Keep "loan" to the FAQ answer.
 
+## FLIK Connect (Split Payments)
+
+Not live: "Coming soon" only. Naming, fee and limits are in `17-flik-connect.md`.
+
+- **Marketplace platforms** are a use case: the seller is paid its share of each sale and the platform keeps the remainder as its commission. Line: "Your seller is paid from every sale. Your commission stays with you." (AG, 13 Nov 2026)
+- Show **one seller** in marketplace examples. There is one active Split Rule per merchant, so every payment splits the same way.
+
 ## How they connect
 
 - Checkout orders ship through FLIK Shipping, from the merchant's warehouse.
