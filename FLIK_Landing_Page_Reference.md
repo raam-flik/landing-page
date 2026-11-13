@@ -41,7 +41,7 @@ The current site (flik.co.id/en) describes FLIK only as a checkout system. It sh
 ### Merchant dashboard
 | What | Where |
 |---|---|
-| Payment method options | FLIK Checkout → **Personalisasi Checkout** |
+| Payment method options | FLIK Checkout → **Checkout Personalisation** (Bahasa: Personalisasi Checkout) |
 | Courier options | FLIK Shipping → **Pengaturan Pengiriman** |
 | Order tracking | FLIK Checkout → **Laporan & Analisis** |
 | Warehouse (shipment origin) | Settings → **Warehouse** |
@@ -195,7 +195,7 @@ Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pric
 | **Fraud Detection**<br>Fight fraud and chargebacks |  |  |
 | **FLIK Connect**<br>Split each payment across wallets |  |  |
 | **FLIK Account**<br>Saved details across every store |  |  |
-| **Checkout Personalization**<br>Your payment methods, your couriers |  |  |
+| **Checkout Personalisation**<br>Your payment methods, your couriers |  |  |
 
 WhatsApp OTP login and Rewards are no longer separate menu items; they are features on the Checkout page. **Open:** In-Store Payment, Invoice and Payment Link are new products in the menu, so confirm their scope before their pages are written.
 
@@ -215,7 +215,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 │   │   ├── /payment/fraud-detection      Fraud Detection (prototype: /payment/fraud-detection/)
 │   │   ├── /payment/connect              FLIK Connect, Split Payments (prototype: /payment/connect/; coming soon)
 │   │   ├── /payment/flik-account         FLIK Account
-│   │   └── /payment/personalization      Checkout Personalization
+│   │   └── /payment/personalization      Checkout Personalisation
 │   │
 │   ├── SHIPPING
 │   │   ├── /shipping                     Shipping
@@ -303,8 +303,8 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
    - the 3 products link to each other
    - use case and industry pages link to the products they use
    - blog posts link to their product page
-6. **Thin pages:** FLIK Account, Checkout Personalization, Warehouses and Auto Settlement can start as sections on their parent product page. The menu link jumps to that section; they become full pages once there's enough content.
-   - **In the prototype (2026-10-21):** Payment Methods, FLIK Account, Checkout Personalization, Shopify and WooCommerce → sections on Checkout; Bulk Shipping, COD Shipping, Shipment Tracking, Return Management, Courier Performance → sections on Shipping; Auto Settlement, Flexibility, Inventory Financing, Outlet Expansion, Marketing Budget → sections on Merchant Cash Advance. The `ROUTES` map in every page file holds this list. Items with no matching section (Payment, Invoice, Payment Link, Warehouses, Cross-Border Shipping, Pricing, Solutions, Developers docs, Resources) still show "Page not in this prototype yet".
+6. **Thin pages:** FLIK Account, Checkout Personalisation, Warehouses and Auto Settlement can start as sections on their parent product page. The menu link jumps to that section; they become full pages once there's enough content.
+   - **In the prototype (2026-10-21):** Payment Methods, FLIK Account, Checkout Personalisation, Shopify and WooCommerce → sections on Checkout; Bulk Shipping, COD Shipping, Shipment Tracking, Return Management, Courier Performance → sections on Shipping; Auto Settlement, Flexibility, Inventory Financing, Outlet Expansion, Marketing Budget → sections on Merchant Cash Advance. The `ROUTES` map in every page file holds this list. Items with no matching section (Payment, Invoice, Payment Link, Warehouses, Cross-Border Shipping, Pricing, Solutions, Developers docs, Resources) still show "Page not in this prototype yet".
 7. **Cek resi results:** `noindex` the result pages. Only `/shipping/track` itself is indexed.
 8. **Existing URLs:** the current site serves English under `/en/...`. Add 301 redirects from `/en/*` to `/*`.
 9. **Speed:** WebP images with explicit sizes, and alt text in both languages.
