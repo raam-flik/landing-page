@@ -1360,6 +1360,36 @@ main section#customers{padding:112px 0}
 @media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
 @media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
 /* ===== /kit: customer-stories ===== */
+/* ===== kit: scroll-reveal ===== */
+/* Scroll reveal below the hero (AG, 13 Nov 2026; medium level, after squareup.com). Same on every marketing page. Classes are added by JS only, so nothing hides if JS fails.
+   Browsers with scroll-driven animations: motion follows the scroll and reverses when scrolling back.
+     .sr  blocks rise 56 px and fade in   .sr-f  cards open through a widening frame while the visual inside settles from 1.15x
+     .sr-h headings rise word by word (.w, index --i)
+   Other browsers: blocks rise once (.rv). Uses translate/scale (not transform) so hover effects keep working. */
+.rv{opacity:0;translate:0 24px;transition:opacity .7s cubic-bezier(.2,.8,.2,1),translate .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rv-d,0s)}
+.rv.in{opacity:1;translate:none}
+.sr-h .w{display:inline-block}
+@supports (animation-timeline:view()){
+  /* ranges are fixed scroll distances from the moment the element's top enters (--off shifts them for elements on a box's timeline) */
+  .sr{animation:sr-rise linear both;animation-timeline:view();animation-range:cover calc(var(--off,0px) + 20px) cover calc(var(--off,0px) + 360px)}
+  .sr-f{animation:sr-frame linear both;animation-timeline:view();animation-range:cover var(--off,0px) cover calc(var(--off,0px) + 380px)}
+  .sr-f .sr-z{animation:sr-zoom linear both;animation-timeline:--srf;animation-range:cover var(--off,0px) cover calc(var(--off,0px) + 440px)}
+  .sr-f{view-timeline-name:--srf}
+  .sr-h{view-timeline-name:--srh}
+  .sr-h .w{animation:sr-word linear both;animation-timeline:--srh;animation-range:cover calc(var(--off,0px) + 30px + var(--i)*16px) cover calc(var(--off,0px) + 260px + var(--i)*16px)}
+  /* inside a clipped or scrolling box (stats section, banner, stories carousel): follow that box's position on the page instead */
+  .sr.sr-in,.sr-f.sr-in{animation-timeline:--srp}
+  .sr-f.sr-in,.sr-h.sr-in{view-timeline-name:none}
+  /* phones: cards only rise and fade; the widening frame and inner zoom repaint every frame and can stutter on budget Android */
+  @media (max-width:760px){.sr-f{animation-name:sr-rise}.sr-f .sr-z{animation:none}}
+}
+html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
+@keyframes sr-rise{from{opacity:0;translate:0 56px}to{opacity:1;translate:none}}
+@keyframes sr-frame{from{clip-path:inset(12% round 16px);opacity:.4}to{clip-path:inset(0 round 12px);opacity:1}}
+@keyframes sr-zoom{from{scale:1.15}to{scale:1}}
+@keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
+html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
+/* ===== /kit: scroll-reveal ===== */
 </style>
 </head>
 <body>
@@ -1742,6 +1772,45 @@ const motionPaused=()=>document.documentElement.classList.contains('anim-paused'
   if(btn)btn.addEventListener('click',()=>set(!motionPaused(),true));
 })();
 /* ===== /kit: a11y-motion ===== */
+/* ===== kit: scroll-reveal ===== */
+/* Scroll-linked where supported, a one-time rise elsewhere. The first section of <main> is the hero and is left alone. Off for reduced motion and paused animations */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||motionPaused())return;
+  const linked=window.CSS&&CSS.supports('animation-timeline','view()');
+  const secs=[...document.querySelectorAll('main > section')].slice(1);
+  const CARDS='.bc,.story,.banner,.fx-win,.pk';
+  // headings: wrap each word, keeping inner markup such as the grey .soft part
+  const split=h=>{let i=0;const walk=n=>[...n.childNodes].forEach(c=>{
+      if(c.nodeType===3){if(!c.textContent.trim())return;const f=document.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.append(t);return}const w=document.createElement('span');w.className='w';w.style.setProperty('--i',Math.min(i++,12));w.textContent=t;f.append(w)});c.replaceWith(f)}
+      else if(c.nodeType===1&&!c.matches('.pill,svg,img,br'))walk(c)});
+    walk(h);h.classList.add('sr-h')};
+  if(linked){
+    secs.forEach(sec=>{
+      sec.querySelectorAll('h2').forEach(split);
+      sec.querySelectorAll(CARDS).forEach(c=>{c.classList.add('sr-f');const z=c.querySelector(':scope > .vis, :scope > .story-art, :scope > .pk-g');if(z)z.classList.add('sr-z')});
+      const w=sec.querySelector(':scope > .wrap');if(!w)return;
+      [...w.children].forEach(c=>{if(c.matches('h2')||c.querySelector(CARDS)||c.matches(CARDS))return;c.classList.add('sr')});
+    });
+    // a view timeline follows the nearest clipped or scrolling ancestor, so those elements use a timeline named on that ancestor
+    const box=e=>{for(let p=e.parentElement;p&&p!==document.body;p=p.parentElement){const cs=getComputedStyle(p);if(/(auto|scroll|hidden)/.test(cs.overflowX+cs.overflowY))return p}return null};
+    const inBox=[];
+    document.querySelectorAll('.sr,.sr-f,.sr-h').forEach(e=>{const p=box(e);if(!p)return;p.style.viewTimelineName='--srp, --srf, --srh';e.classList.add('sr-in');inBox.push([e,p])});
+    // --off: how far below the box's top the element sits, so its motion starts when the element itself enters (re-measured on load and resize)
+    const measure=()=>{const h=document.documentElement;h.classList.add('sr-measure');inBox.forEach(([e,p])=>e.style.setProperty('--off',Math.max(0,Math.round(e.getBoundingClientRect().top-p.getBoundingClientRect().top))+'px'));h.classList.remove('sr-measure')};
+    measure();addEventListener('load',measure);let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(measure,150)});
+    return;
+  }
+  if(!('IntersectionObserver' in window))return;
+  const els=[];
+  secs.forEach(sec=>{const w=sec.querySelector(':scope > .wrap');if(w)[...w.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--rv-d',Math.min(i,3)*.08+'s');els.push(c)})});
+  const done=t=>{t.classList.remove('rv','in');t.style.removeProperty('--rv-d')};
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;io.unobserve(t);t.classList.add('in');
+    t.addEventListener('transitionend',function f(ev){if(ev.target!==t||ev.propertyName!=='translate')return;t.removeEventListener('transitionend',f);done(t)})}),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(el=>io.observe(el));
+  addEventListener('flik:motion',e=>{if(e.detail.paused){io.disconnect();els.forEach(done)}});
+})();
+/* ===== /kit: scroll-reveal ===== */
 
 /* ===== Icons ===== */
 const P={
