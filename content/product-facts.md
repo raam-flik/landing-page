@@ -39,6 +39,19 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - **Steps:** consultation with the FLIK team, easy integration with the store, upfront funding for stock, then sell as usual.
 - Online sellers **and physical stores** can apply.
 
+## Early Settlement
+
+Approved by AG, 12 Nov 2026.
+
+- Pays out a merchant's sales **before the standard settlement date**. Optional, chosen per payout, for all pending sales or part of them.
+- **Fee:** 0.2% for QRIS, e-wallets and virtual accounts, 0.3% for cards, per payment settled early, plus PPN. Shown before the merchant confirms. No fee on the standard schedule.
+- **Paid into the FLIK balance only.** Moving it to a bank is a normal withdrawal.
+- **Eligible:** QRIS, e-wallets, virtual accounts and cards. COD is credited after delivery.
+- **Who:** every merchant can opt in. FLIK may set a limit per account.
+- **Timing:** as soon as the payment is made; Checkout orders once the order is completed. **No settlement timings (T+ days) in public copy** (AG, 5 Nov 2026).
+- There is **no automatic** early settlement.
+- Say it pays out money from sales already made. Keep "loan" to the FAQ answer.
+
 ## How they connect
 
 - Checkout orders ship through FLIK Shipping, from the merchant's warehouse.
