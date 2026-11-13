@@ -68,7 +68,7 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 
 - Shopper pays — Rp3.000.000 — QRIS, e-wallet, virtual account or card
 - Early settlement · Sooner
-- QRIS and e-wallets · On schedule — Virtual accounts · On schedule — Cards · On schedule
+- QRIS and e-wallets — Virtual accounts — Cards (the lane header says "On schedule")
 - FLIK balance — Waiting / Rp3.000.000 available
 - Waiting — Early — Pending — On schedule
 

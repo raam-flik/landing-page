@@ -1206,7 +1206,7 @@ html{scroll-padding-top:88px}
 .es-chip.off{opacity:0;transform:translateY(6px)}
 .es-chip b{min-width:0}
 /* Same payment, two timelines (flow fork + chips + destination cards) */
-.cmp{display:grid;grid-template-columns:230px 72px 1fr;align-items:center;margin-top:56px}
+.cmp{display:grid;grid-template-columns:230px 72px minmax(0,1fr);align-items:center;margin-top:56px}
 .cmp-src{transition:border-color .3s,box-shadow .3s}
 .cmp-src.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),var(--sh-lg)}
 .cmp-src b{font-size:22px;font-weight:400}
@@ -1221,7 +1221,7 @@ html{scroll-padding-top:88px}
 .lane .chip.done{border-color:var(--primary);color:var(--primary)}
 .lane.early .chip.on{background:var(--primary);border-color:var(--primary);color:#fff}
 .lane .chip.on{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
-.dest{display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:10px;box-shadow:var(--sh);padding:10px 14px;min-width:210px;flex:none;transition:box-shadow .3s}
+.dest{display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:10px;box-shadow:var(--sh);padding:10px 14px;min-width:190px;flex:none;margin-left:auto;transition:box-shadow .3s}
 .dest b{display:block;font-weight:500;font-size:14px}
 .dest small{display:block;color:var(--muted);font-size:12.5px}
 .dest.got{box-shadow:0 0 0 2px var(--primary),var(--sh-lg)}
@@ -1447,9 +1447,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
           <div class="lane-h"><span class="label"><i></i>Standard schedule</span><span class="pill gr" id="day-b">Waiting</span></div>
           <div class="lane-r">
             <span class="fl-c"><i></i></span>
-            <span class="chip" data-s="1">QRIS and e-wallets · On schedule</span>
-            <span class="chip" data-s="2">Virtual accounts · On schedule</span>
-            <span class="chip" data-s="3">Cards · On schedule</span>
+            <span class="chip" data-s="1">QRIS and e-wallets</span>
+            <span class="chip" data-s="2">Virtual accounts</span>
+            <span class="chip" data-s="3">Cards</span>
             <span class="fl-c"><i></i></span>
             <div class="dest"><svg viewBox="0 0 30 30" width="26" height="26" fill="none" aria-hidden="true"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg><span><b>FLIK balance</b><small>Waiting</small></span></div>
           </div>
