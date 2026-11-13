@@ -45,12 +45,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Contact sales
 - **Hero cards:** The SIGIT, Artch, WakaiGo, Paper — photo cards only, all the same size, logo and "Read story"
 - **Section heading:** What brands get with FLIK.
-- **Results:** 30 sec — to check out with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
+- **Results:** 1 tap — to pay with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
 - **Logo wall:** every customer (real logo where we have it, name otherwise)
 - **Section heading (tabs):** One platform, every way they sell.
   - **Grey part:** See which brands use each FLIK product.
 - **Tabs:** Checkout / Shipping / In-Store Payment / Merchant Cash Advance
-- **Product text (Checkout):** A 30-second checkout on their own website, with QRIS, e-wallets, virtual accounts, cards and COD.
+- **Product text (Checkout):** A faster checkout on their own website, with QRIS, e-wallets, virtual accounts, cards and COD.
 - **Product text (Shipping):** Every major courier in one dashboard, with rates compared and a tracking link for every shopper.
 - **Product text (In-Store Payment):** QRIS and cards at the counter, with in-store sales in the same dashboard as online.
 - **Product text (Merchant Cash Advance):** Upfront funding for stock or a new outlet, settled automatically from sales.
@@ -177,7 +177,7 @@ Each brand has its own example story, written for its type of business. They are
 ## Fallback story text (per product, used only if a brand has no story of its own)
 
 - **Checkout headline:** <Brand> gives shoppers a faster way to pay with FLIK Checkout.
-  - **Challenge:** Selling on its own website means <Brand> needs a checkout shoppers trust, with the payment methods Indonesians use every day. Every extra step between the cart and the payment is a chance to lose the sale.
+  - **Challenge:** Selling on its own website means <Brand> needs a checkout shoppers trust, with the payment methods they use every day. Every extra step between the cart and the payment is a chance to lose the sale.
   - **How FLIK helps:** <Brand> replaced its checkout with FLIK Checkout. Shoppers log in with a WhatsApp code, their details fill in from their FLIK account, and they pay by QRIS, e-wallet, virtual account, card or COD on one page.
   - **Result:** Shoppers get from cart to paid in a few taps, and returning shoppers don't type their details again.
 - **Shipping headline:** <Brand> ships every order from one dashboard with FLIK Shipping.

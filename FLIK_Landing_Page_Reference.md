@@ -187,7 +187,7 @@ Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pric
 |---|---|---|
 | **Payment**<br>Accept payments online and in store | **Shipping**<br>All couriers, one dashboard | **Merchant Cash Advance**<br>Upfront funding for selected brands |
 | **In-Store Payment**<br>QRIS and cards at your counter | **Bulk Shipping**<br>Many warehouses to many destinations | **Auto Settlement**<br>Repay as your products sell |
-| **Checkout**<br>30-second online checkout | **COD Shipping**<br>Cash on delivery, 3% fee | **Flexibility**<br>Funding that fits your sales cycle |
+| **Checkout**<br>A faster checkout for your store | **COD Shipping**<br>Cash on delivery, 3% fee | **Flexibility**<br>Funding that fits your sales cycle |
 | **Invoice**<br>Send invoices and get paid faster | **Shipment Tracking**<br>Track any package (cek resi) | **Inventory Financing**<br>Stock up before demand peaks |
 | **Payment Link**<br>Share a link in chat or social media | **Courier Performance**<br>Best courier per region | **Outlet Expansion**<br>Cash to open your next outlet |
 | **Payment Methods**<br>QRIS, e-wallets, VA, cards and COD | **Warehouses**<br>Manage pickup origins | **Marketing Budget**<br>Fund campaigns that drive sales |

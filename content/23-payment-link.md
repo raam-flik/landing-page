@@ -55,7 +55,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small text above heading:** Your customer's side
 - **Heading:** A payment page they already know.
   - **Grey part:** The FLIK checkout, opened from your link.
-- **Feature:** The methods Indonesia uses — QRIS, e-wallets, bank virtual accounts and cards.
+- **Feature:** The methods your customers use — QRIS, e-wallets, bank virtual accounts and cards.
 - **Feature:** Pay with FLIK in a few taps — FLIK shoppers sign in with a code and pay with their last method.
 - **Feature:** An email for the receipt — New shoppers can save their details for next time.
 - **Feature:** The quantity is theirs — When you allow it, shoppers change the quantity on the page.

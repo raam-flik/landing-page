@@ -7,6 +7,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] Claim limit (AG, 13 Nov 2026): "30 seconds" and "3× faster" appear twice at most across the whole site. On this page, "30 seconds" stays only in the Checkout card heading (repeated as its pop-up title) and "3×" only in the "FLIK for brand websites" text. The Checkout pop-up stats are now "1 tap" and "0 passwords".
 - [x] Stats: "10M+ shoppers" and "200+ brands" removed (AG, 24 Oct 2026). The stats now use 30-second checkout, 15 payment methods, 99% shipment creation and the 3% COD fee.
 - [x] Kuvings and Jamise quotes, cards and logos removed (AG, 24 Oct 2026). The customer quote cards are hidden until there are approved quotes.
 - [x] Story card captions are two lines at most (Raam, 13 Nov 2026), the same on the product pages.
@@ -25,7 +26,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Search results (SEO)
 
 - **Page title:** FLIK | Merchant Growth Platform for Growing Brands
-- **Description:** FLIK gives online brands a 30-second checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.
+- **Description:** FLIK gives online brands a faster checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.
 
 ## 1. Hero
 <!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
@@ -49,7 +50,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 *Event chips in the particle field (one at a time, examples only):*
 
-- Payments only (Raam, 12 Nov 2026): Rp289.000 received · QRIS / Payment received · GoPay / Card payment approved · Visa / Rp1.250.000 received · BCA VA / Payment received · ShopeePay / Checked out in 30 seconds / Payment received · DANA / Rp475.000 received · Mandiri VA
+- Payments only (Raam, 12 Nov 2026): Rp289.000 received · QRIS / Payment received · GoPay / Card payment approved · Visa / Rp1.250.000 received · BCA VA / Payment received · ShopeePay / Checked out in one tap / Payment received · DANA / Rp475.000 received · Mandiri VA
 
 ## 2. Solutions bento
 <!-- html: Solutions bento #solutions -->
@@ -92,7 +93,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Checkout**
   - **One-liner:** A faster checkout for any storefront you use.
   - **At a glance:** Pay in one tap · WhatsApp login, no password · Details saved for next time · Rewards applied automatically · Works with Shopify, WooCommerce and custom stores
-  - **Stats:** 30 sec — from cart to paid · 3× — faster than a standard checkout
+  - **Stats:** 1 tap — to pay with a FLIK account · 0 — passwords to remember
   - **Value props:** Remembered everywhere. One FLIK account works at every store on FLIK Checkout. · Nothing to pick. Courier and payment method are selected automatically. · Straight to shipping. Orders ship from your warehouse, and payment lands in your balance after delivery.
 - **Payments**
   - **One-liner:** QRIS, e-wallets, virtual accounts, cards and COD, in one checkout.
@@ -152,7 +153,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** From first sale to full scale.
 - **Label:** FLIK for brand websites
 - **Heading:** Turn more of your traffic into orders.
-- **Text:** Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in 30 seconds. That's 3× faster than a standard checkout.
+- **Text:** Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in one tap. That's 3× faster than a standard checkout.
 - **Label:** FLIK for sellers shipping at volume
 - **Heading:** Ship more, and spend less on every package.
 - **Text:** From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.
