@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Payment: Accept Payments Online, In Store and in Chat | FLIK</title>
-<meta name="description" content="Accept QRIS, e-wallets, virtual accounts, cards and COD on your website, at the counter, by invoice or with a payment link. One FLIK balance for every channel.">
+<title>Payment: Accept Every Way Indonesia Pays | FLIK</title>
+<meta name="description" content="Accept QRIS, e-wallets, bank virtual accounts, cards and COD online, in store, by invoice or with a payment link. One FLIK balance, Fraud Detection included, and per-transaction pricing.">
 <link rel="canonical" href="https://flik.co.id/payment">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/payment">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/payment">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Payment: Accept Payments Online, In Store and in Chat | FLIK", "description": "Accept QRIS, e-wallets, virtual accounts, cards and COD on your website, at the counter, by invoice or with a payment link. One FLIK balance for every channel.", "url": "https://flik.co.id/payment"}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Payment: Accept Every Way Indonesia Pays | FLIK", "description": "Accept QRIS, e-wallets, bank virtual accounts, cards and COD online, in store, by invoice or with a payment link. One FLIK balance, Fraud Detection included, and per-transaction pricing.", "url": "https://flik.co.id/payment"}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1327,6 +1327,86 @@ main section#customers{padding:112px 0}
 @media (max-width:1080px){.pg-cards{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.pg-cards{grid-template-columns:1fr}}
 /* ===== /kit: page ===== */
+
+/* ===== kit: hero-ribbon (the brand ribbon from the earlier homepage hero: orange → magenta → violet → cyan) ===== */
+.rbn-host{position:relative;overflow:hidden}
+.rbn-host>.wrap{position:relative;z-index:2}
+.rbn{position:absolute;top:0;right:0;width:min(1100px,92%);height:100%;pointer-events:none;z-index:0;overflow:visible}
+.rbn-host.lh h1{max-width:720px}.rbn-host.lh .lead{max-width:560px}
+@media (max-width:760px){.rbn{width:100%;height:min(60%,440px);opacity:.45}}
+/* ===== /kit: hero-ribbon ===== */
+
+/* ===== Payment page (Stripe-style overview, FLIK tokens) ===== */
+.py-hero .ch-stage{height:560px}
+.py-stack{position:relative;width:min(520px,100%);height:520px}
+.py-card{position:absolute;background:var(--surface,#fff);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
+.py-card .co-bar{position:relative}.py-card .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.py-c1{left:0;top:40px;width:330px;z-index:2}
+.py-c2{right:0;top:0;width:220px;z-index:3}
+.py-c3{right:10px;bottom:20px;width:260px;z-index:3}
+.py-b{padding:16px;display:grid;gap:9px}
+.py-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line-soft);border-radius:8px}
+.py-row.on{box-shadow:0 0 0 2px var(--primary);border-color:transparent}
+.py-row img{height:26px;width:auto}
+.py-btn{height:38px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500}
+.py-qr{width:96px;height:96px;margin:4px auto;border-radius:8px;background:repeating-conic-gradient(var(--ink) 0 25%,#fff 0 50%) 0 0/12px 12px;box-shadow:inset 0 0 0 6px #fff,0 0 0 1px var(--line)}
+.py-amt{font-size:22px;font-weight:300;letter-spacing:-.4px;color:var(--ink)}
+.py-ex{font-size:11px;color:var(--muted);text-align:right}
+.py-ben{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:8px}
+.py-ben h3{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500;margin-bottom:8px}
+.py-ben p{font-size:14.5px;color:var(--body);line-height:1.55}
+.py-sub{position:sticky;top:68px;z-index:20;background:var(--surface,#fff);border-bottom:1px solid var(--line)}
+.py-sub .wrap{display:flex;gap:4px 20px;align-items:center;overflow-x:auto;scrollbar-width:none;height:52px}
+.py-sub a{white-space:nowrap;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:15px 0;border-bottom:2px solid transparent}
+.py-sub a:hover,.py-sub a.on{color:var(--primary);border-bottom-color:var(--primary)}
+.py-sub .btn{margin-left:auto;height:34px}
+.py-eye{font-size:14px;font-weight:500;color:var(--primary);margin-bottom:12px}
+.py-stat{display:flex;gap:16px;align-items:baseline;margin-top:32px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.py-stat b{font-size:48px;font-weight:300;letter-spacing:-1px;color:var(--ink);line-height:1}
+.py-stat span{color:var(--body);max-width:320px}
+.py-ways{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3.2);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:40px;padding:4px}
+.py-ways::-webkit-scrollbar{display:none}
+.py-way{scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-way-v{height:200px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px}
+.py-way-v .py-card{position:relative;width:100%;max-width:260px}
+.py-way-t{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.py-way-t h3{font-size:18px;font-weight:500}
+.py-way-t p{font-size:14.5px;color:var(--body);line-height:1.5}
+.py-way-t ul{list-style:none;display:grid;gap:6px;margin:4px 0 8px}
+.py-way-t li{display:flex;gap:8px;font-size:14px;color:var(--body)}
+.py-way-t li svg{color:var(--primary);flex:none;margin-top:3px}
+.py-way-t .link{margin-top:auto}
+.py-nav{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.py-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.py-split h3{font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:12px}
+.py-split p{color:var(--body);line-height:1.6}
+.py-pm{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.py-pm>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;height:96px;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface,#fff);font-size:12.5px;color:var(--muted);text-align:center;padding:8px}
+.py-pm img{height:34px;width:auto}
+.py-pm .ic{color:var(--primary)}
+.py-loc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.py-loc>div{border-radius:12px;padding:24px;background:var(--surface,#fff);border:1px solid var(--line-soft)}
+.py-loc b{display:block;font-size:30px;font-weight:300;letter-spacing:-.6px;color:var(--ink);margin-bottom:6px}
+.py-loc span{color:var(--body);font-size:14.5px;line-height:1.5}
+.py-prot{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.py-rate{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border:1px solid var(--line);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-rate>div{padding:24px;border-right:1px solid var(--line-soft)}.py-rate>div:last-child{border-right:0}
+.py-rate small{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.py-rate b{display:block;font-size:26px;font-weight:300;letter-spacing:-.5px;color:var(--ink)}
+.py-rate span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:40px}
+.py-price>div{border-radius:12px;padding:28px;border:1px solid var(--line-soft);background:var(--surface,#fff)}
+.py-price h3{font-size:20px;font-weight:500;margin-bottom:8px}
+.py-price p{color:var(--body);font-size:14.5px;line-height:1.55;margin-bottom:16px}
+.py-dev{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.py-dev .ipanel{background:var(--dark-2,#0B3A6E);border-radius:12px;padding:22px;min-width:0}
+.py-dev ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin:20px 0 24px}
+.py-dev li{display:flex;gap:8px;font-size:14.5px;color:var(--body)}.py-dev li svg{color:var(--primary);flex:none;margin-top:3px}
+@media (max-width:1080px){.py-ben{grid-template-columns:1fr 1fr}.py-ways{grid-auto-columns:calc((100% - 16px)/1.6)}.py-split,.py-dev{grid-template-columns:1fr}.py-rate{grid-template-columns:1fr 1fr}.py-rate>div:nth-child(2){border-right:0}.py-rate>div:nth-child(n+3){border-top:1px solid var(--line-soft)}}
+@media (max-width:760px){.py-hero .ch-stage{height:440px}.py-stack{height:420px}.py-c1{width:260px;top:30px}.py-c2{width:180px}.py-c3{width:220px;right:0}.py-ben,.py-loc,.py-prot,.py-price{grid-template-columns:1fr}.py-ways{grid-auto-columns:85%}.py-pm{grid-template-columns:repeat(3,1fr)}.py-sub{top:60px}.py-sub .btn{display:none}.py-dev ul{grid-template-columns:1fr}}
+#instore .py-card{color:var(--body)}#instore .py-card b,#instore .py-row>span:first-child{color:var(--ink)}
+#instore .txt{color:var(--on-dark-muted,#AAB4CC)}
+/* ===== /Payment page ===== */
 </style>
 </head>
 <body>
@@ -1350,49 +1430,179 @@ main section#customers{padding:112px 0}
 
 
 <main id="top" tabindex="-1">
-<section class="ch guides">
+<!-- ===== Hero (stripe.com/payments: text left, product UI right, brand ribbon) ===== -->
+<section class="ch guides py-hero rbn-host">
+  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".6" filter="url(#rbn-b)"/><g class="rbn-lines" fill="none" stroke="url(#rbn-g)" stroke-width="3"></g></svg>
   <div class="wrap ch-in">
     <div class="ch-t">
       <p class="eyebrow">FLIK Payment</p>
-      <h1 class="ch-h">Accept payments everywhere you sell. <span class="soft">Online, in store and in chat.</span></h1>
-      <p class="lead">Take QRIS, e-wallets, bank virtual accounts, cards and COD on your website, at the counter, by invoice or with a link. Every payment lands in one FLIK balance.</p>
-      <div class="hero-cta"><button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button><a href="#ways" class="btn btn-secondary">See the ways to get paid <span class="chev">›</span></a></div>
-      <ul class="ch-facts"><li><span data-ic="check-s"></span>QRIS, e-wallets, virtual accounts, cards and COD</li><li><span data-ic="check-s"></span>One balance for every channel</li><li><span data-ic="check-s"></span>Payments processed by licensed partners</li></ul>
+      <h1 class="ch-h">Every way Indonesia pays, in one place. <span class="soft">Online, in store and in chat.</span></h1>
+      <p class="lead">Accept QRIS, e-wallets, bank virtual accounts, cards and COD on your website, at the counter, by invoice or with a link. Every payment lands in one FLIK balance.</p>
+      <div class="hero-cta"><button class="btn btn-primary live" data-act="start">Start accepting payments <span class="chev">›</span></button><button class="btn btn-secondary" data-act="sales" data-interest="Payments">Contact sales <span class="chev">›</span></button></div>
+      <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
     </div>
-    <div class="ch-stage">
-      <div class="ch-glow" aria-hidden="true"></div>
-      <div class="fx-win pgw" role="img" aria-label="Example: one FLIK balance with payments from every channel"><div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id</span></div><div class="pgw-b"><div class="pgw-h">Balance<span class="pill ok">Available</span></div><div class="pgw-amt num">Rp24.860.000</div><span class="pgw-sub">From every way you sell, in one place</span><div class="pgw-r"><span><b>Checkout · QRIS</b><small>Order #4821</small></span><span class="num">Rp350.000</span></div><div class="pgw-r"><span><b>In-Store · Card</b><small>Counter 1</small></span><span class="num">Rp128.000</span></div><div class="pgw-r"><span><b>Invoice · BCA VA</b><small>INV-0192</small></span><span class="num">Rp4.500.000</span></div><div class="pgw-r"><span><b>Payment link · GoPay</b><small>Pre-order batch 2</small></span><span class="num">Rp289.000</span></div><span class="pgw-ex">Example</span></div></div>
-    </div>
+    <div class="ch-stage"><div class="py-stack" role="img" aria-label="Example: a FLIK checkout, a QRIS payment at the counter and a payment link shared on WhatsApp"><div class="py-card py-c1"><div class="co-bar"><i></i><i></i><i></i><span>checkout.flik.co.id</span></div><div class="py-b"><b style="font-weight:500;color:var(--ink)">Pay Aruna Studio</b><div class="py-amt num">Rp538.000</div><div class="py-row on"><span>QRIS</span><img class="" src="../assets/logos/payment/qris.png" alt="QRIS"></div><div class="py-row"><span>E-wallet</span><span><img class="" src="../assets/logos/payment/gopay.png" alt="GoPay"><img class="" src="../assets/logos/payment/ovo.png" alt="OVO"></span></div><div class="py-row"><span>Bank virtual account</span><img class="" src="../assets/logos/payment/bca.png" alt="BCA"></div><div class="py-row"><span>Card</span><span><img class="" src="../assets/logos/payment/visa.png" alt="Visa"><img class="" src="../assets/logos/payment/mastercard.png" alt="Mastercard"></span></div><div class="py-btn">Pay now</div><div class="py-ex">Example</div></div></div><div class="py-card py-c2"><div class="co-bar"><i></i><i></i><i></i><span>In-Store</span></div><div class="py-b"><b style="font-weight:500;color:var(--ink)">Counter 1</b><div class="py-qr" aria-hidden="true"></div><div class="py-row"><span>Rp45.000</span><span class="pill ok">Paid</span></div></div></div><div class="py-card py-c3"><div class="co-bar"><i></i><i></i><i></i><span>Payment link</span></div><div class="py-b"><b style="font-weight:500;color:var(--ink)">Pre-order: Linen shirt</b><div class="py-row"><span>18 payments</span><span class="num">Rp6.282.000</span></div><div class="py-row"><span>Shared on WhatsApp</span><span class="pill pu">Active</span></div></div></div></div></div>
   </div>
+  <div class="logos-band"><div class="logos-clip"><div class="logos-track" id="logos"></div></div></div>
 </section>
 
-<section class="pad guides" id="ways">
-  <div class="wrap">
-    <h2 class="sec-h">Every way to get paid. <span class="soft">Pick one or use them together.</span></h2>
-    <div class="pg-cards"><a href="#" class="res" data-page="/payment/checkout"><span class="rtag"><span data-ic="cart"></span>Product</span><b>Checkout</b><span>A 30-second checkout for your Shopify or WooCommerce store.</span><em>Explore Checkout <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/in-store"><span class="rtag"><span data-ic="qris"></span>Product</span><b>In-Store Payment</b><span>QRIS and cards at your counter, on the FLIK EDC.</span><em>Explore In-Store Payment <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/invoice"><span class="rtag"><span data-ic="mail"></span>Product</span><b>Invoice</b><span>Send an invoice by email. Customers pay it online.</span><em>Explore Invoice <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/payment-link"><span class="rtag"><span data-ic="chat"></span>Product</span><b>Payment Link</b><span>Share a link in WhatsApp or social media and get paid.</span><em>Explore Payment Link <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="bolt"></span>Product</span><b>Early Settlement</b><span>Get paid before your settlement date, for 0.2% or 0.3% + PPN.</span><em>Explore Early Settlement <span class="chev">›</span></em></a><a href="#" class="res" data-page="/payment/fraud-detection"><span class="rtag"><span data-ic="lock"></span>Product</span><b>Fraud Detection</b><span>Fight fraud and chargebacks, included for every merchant.</span><em>Explore Fraud Detection <span class="chev">›</span></em></a></div>
-  </div>
-</section>
-
-<section class="pad-t guides stats-sec">
-  <div class="wrap">
-    <h2 class="sec-h stats-h">How a payment reaches you. <span class="soft">From the shopper to your bank account.</span></h2>
-    <div class="stats4 pg-steps"><div class="stat"><b class="num">1</b><span><strong class="pg-st">The customer pays</strong>By QRIS, e-wallet, virtual account, card or COD.</span></div><div class="stat"><b class="num">2</b><span><strong class="pg-st">FLIK confirms it</strong>You see the payment in the dashboard straight away.</span></div><div class="stat"><b class="num">3</b><span><strong class="pg-st">It lands in your balance</strong>Once the order is completed and FLIK has the funds.</span></div><div class="stat"><b class="num">4</b><span><strong class="pg-st">You withdraw</strong>To your bank account, from Rp100.000, for Rp4.000 + PPN.</span></div></div>
-  </div>
-</section>
-
-<section class="pad alt guides" id="glance">
-  <div class="wrap">
-    <h2 class="sec-h">Payments at a glance.</h2>
-    <div class="gl3" id="gl3"></div>
-  </div>
-</section>
-
+<!-- ===== Four reasons ===== -->
 <section class="pad-s guides">
-  <div class="wrap">
-    <h3 class="res-h">More from FLIK</h3>
-    <div class="res3"><a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Ship what you sell</b><span>All major couriers in one dashboard, for up to 50% off published rates.</span><em>Explore Shipping <span class="chev">›</span></em></a><a href="#" class="res" data-page="/funding/merchant-cash-advance"><span class="rtag"><span data-ic="coins"></span>Product</span><b>Fund the next step</b><span>Merchant Cash Advance, settled automatically from your sales.</span><em>Explore Funding <span class="chev">›</span></em></a><a href="#" class="res" data-page="/pricing"><span class="rtag"><span data-ic="chart"></span>Pricing</span><b>See every fee</b><span>Payment method rates, with the PPN on each fee.</span><em>See pricing <span class="chev">›</span></em></a></div>
+  <div class="wrap py-ben">
+    <div><h3><span class="fx-ic" data-ic="cart"></span>Convert more shoppers</h3><p>A 30-second checkout with WhatsApp login and saved details, and 15 payment methods on one page.</p></div>
+    <div><h3><span class="fx-ic" data-ic="qris"></span>Every way Indonesia pays</h3><p>QRIS, GoPay, OVO, DANA, ShopeePay, bank virtual accounts, cards and COD, online and at the counter.</p></div>
+    <div><h3><span class="fx-ic" data-ic="lock"></span>Less fraud, fewer chargebacks</h3><p>Fraud Detection checks payments, refunds and withdrawals, and FLIK helps with every chargeback.</p></div>
+    <div><h3><span class="fx-ic" data-ic="wallet"></span>Paid into one balance</h3><p>Every channel lands in one FLIK balance. Withdraw from Rp100.000, or settle early when you need cash sooner.</p></div>
   </div>
 </section>
+
+<!-- ===== Section tabs (sticky) ===== -->
+<nav class="py-sub" aria-label="On this page"><div class="wrap">
+  <a href="#online">Online payments</a><a href="#methods">Payment methods</a><a href="#instore">In store</a><a href="#protect">Protection</a><a href="#money">Your money</a><a href="#dev">Developers</a><a href="#rates">Pricing</a>
+  <button class="btn btn-primary" data-act="start">Start now <span class="chev">›</span></button>
+</div></nav>
+
+<!-- ===== Online payments ===== -->
+<section class="pad guides" id="online">
+  <div class="wrap">
+    <p class="py-eye">Online payments</p>
+    <h2 class="sec-h">A checkout built to convert. <span class="soft">Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they prefer.</span></h2>
+    <div class="py-stat"><b class="num">30s</b><span>to check out with a FLIK account, 3× faster than a standard checkout.</span></div>
+    <div class="py-nav" style="margin-top:56px"><h3 style="font-size:20px;font-weight:500">Every way to get paid online</h3><div class="car-nav"><button class="cbtn" data-car="pyways" data-dir="-1" aria-label="Previous">‹</button><button class="cbtn" data-car="pyways" data-dir="1" aria-label="Next">›</button></div></div>
+    <div class="py-ways" id="pyways">
+      <article class="py-way"><div class="py-way-v"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>checkout.flik.co.id</span></div><div class="py-b"><div class="py-row"><span>Logged in with FLIK</span><span class="pill ok">WhatsApp</span></div><div class="py-row on"><span>QRIS</span><img class="" src="../assets/logos/payment/qris.png" alt="QRIS"></div><div class="py-btn">Pay Rp538.000</div></div></div></div><div class="py-way-t"><h3>Checkout</h3><p>A FLIK checkout page for your Shopify or WooCommerce store.</p><ul><li><span data-ic="check-s"></span>FLIK sets it up for you</li><li><span data-ic="check-s"></span>WhatsApp login, saved details</li><li><span data-ic="check-s"></span>Rewards applied automatically</li></ul><a href="#" class="link" data-page="/payment/checkout">Explore Checkout <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>Payment link</span></div><div class="py-b"><b style="font-weight:500;color:var(--ink)">Book my spot</b><div class="py-amt num">Rp150.000</div><div class="py-btn">Book my spot</div></div></div></div><div class="py-way-t"><h3>Payment Link</h3><p>Get paid from a chat, with no website needed.</p><ul><li><span data-ic="check-s"></span>Products, or an amount the customer chooses</li><li><span data-ic="check-s"></span>Your own button text</li><li><span data-ic="check-s"></span>Share it anywhere</li></ul><a href="#" class="link" data-page="/payment/payment-link">Explore Payment Link <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>Invoice INV-0192</span></div><div class="py-b"><div class="py-row"><span>Due in 14 days</span><span class="pill pu">Sent</span></div><div class="py-row"><span>Total</span><b class="num">Rp1.425.000</b></div><div class="py-btn">Pay invoice</div></div></div></div><div class="py-way-t"><h3>Invoice</h3><p>Send an invoice by email. Customers pay it online.</p><ul><li><span data-ic="check-s"></span>Due in 7, 14, 30 or 60 days</li><li><span data-ic="check-s"></span>Send a reminder</li><li><span data-ic="check-s"></span>Customers and items saved</li></ul><a href="#" class="link" data-page="/payment/invoice">Explore Invoice <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card "><div class="co-bar"><i></i><i></i><i></i><span>api.flik.co.id</span></div><div class="py-b"><div class="code" style="color:var(--ink);font-size:12px;white-space:pre"><span class="k">POST</span> /v1/checkout/sessions
+{ "line_items": [ … ],
+  "success_url": "…" }</div><div class="py-row"><span>checkout.session.completed</span><span class="pill ok">Webhook</span></div></div></div></div><div class="py-way-t"><h3>Merchant API</h3><p>Build your own checkout on the FLIK API.</p><ul><li><span data-ic="check-s"></span>Virtual accounts and QRIS today</li><li><span data-ic="check-s"></span>Signed webhooks</li><li><span data-ic="check-s"></span>Test mode before you go live</li></ul><a href="#" class="link" data-page="/developers">Read the docs <span class="chev">›</span></a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Payment methods + FLIK account ===== -->
+<section class="pad alt guides" id="methods">
+  <div class="wrap">
+    <p class="py-eye">Payment methods</p>
+    <h2 class="sec-h">The methods your customers already use. <span class="soft">Switch them on from the dashboard, and FLIK picks the one each shopper used last.</span></h2>
+    <div class="py-split">
+      <div class="py-pm">
+        <div><img class="" src="../assets/logos/payment/qris.png" alt="QRIS">QRIS</div><div><img class="" src="../assets/logos/payment/gopay.png" alt="GoPay">GoPay</div><div><img class="" src="../assets/logos/payment/ovo.png" alt="OVO">OVO</div><div><img class="" src="../assets/logos/payment/dana.png" alt="DANA">DANA</div>
+        <div><img class="" src="../assets/logos/payment/shopeepay.png" alt="ShopeePay">ShopeePay</div><div><img class="" src="../assets/logos/payment/bca.png" alt="BCA">BCA VA</div><div><img class="" src="../assets/logos/payment/mandiri.png" alt="Mandiri">Mandiri VA</div><div><img class="" src="../assets/logos/payment/bni.png" alt="BNI">BNI VA</div>
+        <div><img class="" src="../assets/logos/payment/bri.png" alt="BRI">BRI VA</div><div><img class="" src="../assets/logos/payment/visa.png" alt="Visa">Visa</div><div><img class="" src="../assets/logos/payment/mastercard.png" alt="Mastercard">Mastercard</div><div><span class="ic" data-ic="cash"></span>Cash on delivery</div>
+      </div>
+      <div>
+        <h3>One FLIK account for every store.</h3>
+        <p>Shoppers log in with a one-time code on WhatsApp. No password. Their name, address and last payment method fill in at every store that uses FLIK Checkout, so returning shoppers pay in a few taps.</p>
+        <div class="py-stat"><b class="num">15</b><span>payment methods in one checkout, from QRIS to COD.</span></div>
+        <a href="#" class="link" data-page="/payment/checkout" style="display:inline-block;margin-top:20px">Explore Checkout <span class="chev">›</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Built for Indonesia (Stripe: global payments) ===== -->
+<section class="pad guides">
+  <div class="wrap">
+    <p class="py-eye">Built for Indonesia</p>
+    <h2 class="sec-h">Local payments, done properly. <span class="soft">In rupiah, with the banks, wallets and rules Indonesian shoppers know.</span></h2>
+    <div class="py-loc">
+      <div><b>0%</b><span>QRIS fee on payments up to Rp100.000. Above that, 0.7% with PPN included.</span></div>
+      <div><b>5 banks</b><span>Virtual accounts at BCA, Mandiri, BNI, BRI and Permata, each payment with its own number.</span></div>
+      <div><b>COD</b><span>Cash on delivery for a 3% fee (excl. PPN), deducted after delivery, never upfront.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== In store ===== -->
+<section class="pad dark guides" id="instore">
+  <div class="wrap py-split" style="margin-top:0">
+    <div>
+      <p class="py-eye" style="color:var(--on-dark-accent,#7FF3FF)">In-store payments</p>
+      <h2 class="sec-h">Online and in store, one balance. <span class="soft">QRIS and cards at the counter on the FLIK EDC.</span></h2>
+      <p class="txt" style="margin-top:20px">Customers scan or use their card, the receipt prints on the spot, and in-store sales sit next to your online orders in the dashboard.</p>
+      <div class="hero-cta" style="margin-top:28px"><a href="#" class="btn btn-primary" data-page="/payment/in-store">Explore In-Store Payment <span class="chev">›</span></a></div>
+    </div>
+    <div><div class="py-card" style="position:relative;max-width:420px;margin-left:auto"><div class="co-bar"><i></i><i></i><i></i><span>FLIK EDC</span></div><div class="py-b"><div class="py-row"><span>QRIS · Rp45.000</span><span class="pill ok">Paid</span></div><div class="py-row"><span>Debit card · GPN · Rp128.000</span><span class="pill ok">Approved</span></div><div class="py-row"><span>Credit card · Visa · Rp350.000</span><span class="pill ok">Approved</span></div><div class="py-row"><span>Receipt</span><span>Printed</span></div><div class="py-ex">Example</div></div></div></div>
+  </div>
+</section>
+
+<!-- ===== Protection (Stripe: Payments Intelligence) ===== -->
+<section class="pad guides" id="protect">
+  <div class="wrap">
+    <p class="py-eye">Protection</p>
+    <h2 class="sec-h">Less fraud, fewer chargebacks. <span class="soft">Included for every FLIK merchant.</span></h2>
+    <div class="py-prot pg-cards" style="margin-top:40px">
+      <a href="#" class="res" data-page="/payment/fraud-detection"><span class="rtag"><span data-ic="lock"></span>Fraud Detection</span><b>Every payment, refund and withdrawal checked</b><span>Unusual activity goes to FLIK's risk team. Risky COD orders flagged (coming soon).</span><em>Explore Fraud Detection <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/payment/fraud-detection"><span class="rtag"><span data-ic="chat"></span>Chargebacks</span><b>Help with every dispute</b><span>You're told the reason and deadline, upload evidence in the dashboard, and FLIK sends it to the payment partner.</span><em>How it works <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/legal/terms"><span class="rtag"><span data-ic="bank"></span>Licensed partners</span><b>Processed by licensed partners</b><span>Payments run through CashuUp, Nicepay and Xendit. FLIK is not a bank, and every merchant is verified first.</span><em>Read the Terms <span class="chev">›</span></em></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Your money ===== -->
+<section class="pad alt guides" id="money">
+  <div class="wrap">
+    <p class="py-eye">Your money</p>
+    <h2 class="sec-h">From payment to bank account. <span class="soft">One balance for every channel, with money out when you need it.</span></h2>
+    <div class="stats4 pg-steps">
+      <div class="stat"><b class="num">1</b><span><strong class="pg-st">The customer pays</strong>By QRIS, e-wallet, virtual account, card or COD.</span></div>
+      <div class="stat"><b class="num">2</b><span><strong class="pg-st">It lands in your balance</strong>Once the order is completed and FLIK has the funds.</span></div>
+      <div class="stat"><b class="num">3</b><span><strong class="pg-st">Need it sooner?</strong>Settle early for 0.2% (non-card) or 0.3% (card) + PPN.</span></div>
+      <div class="stat"><b class="num">4</b><span><strong class="pg-st">Withdraw</strong>To your bank from Rp100.000, for Rp4.000 + PPN.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Developers ===== -->
+<section class="pad guides" id="dev">
+  <div class="wrap py-dev">
+    <div>
+      <p class="py-eye">Developers</p>
+      <h2 class="sec-h">Build your own checkout. <span class="soft">One API for virtual accounts and QRIS, with test mode first.</span></h2>
+      <ul><li><span data-ic="check-s"></span>OAuth client credentials</li><li><span data-ic="check-s"></span>Hosted checkout sessions</li><li><span data-ic="check-s"></span>Signed webhooks, retried for 72 hours</li><li><span data-ic="check-s"></span>Test mode with no real money</li></ul>
+      <a href="#" class="btn btn-secondary" data-page="/developers">Explore the docs <span class="chev">›</span></a>
+    </div>
+    <div class="ipanel"><div class="code"><span class="c">// Create a checkout session (FLIK Merchant API)</span>
+<span class="k">POST</span> https://api.flik.co.id/v1/checkout/sessions
+{
+  <span class="s">"line_items"</span>: [{ <span class="s">"name"</span>: <span class="s">"Linen shirt"</span>, <span class="s">"quantity"</span>: <span class="p">2</span>,
+    <span class="s">"unit_amount"</span>: { <span class="s">"value"</span>: <span class="s">"75000.00"</span>, <span class="s">"currency"</span>: <span class="s">"IDR"</span> } }],
+  <span class="s">"success_url"</span>: <span class="s">"https://example.com/success"</span>
+}
+<span class="c">// Send the shopper to session.url</span></div></div>
+  </div>
+</section>
+
+<!-- ===== Pricing ===== -->
+<section class="pad alt guides" id="rates">
+  <div class="wrap">
+    <p class="py-eye">Pricing</p>
+    <h2 class="sec-h">Pay per transaction. <span class="soft">No setup fee. PPN is shown on every fee.</span></h2>
+    <div class="py-rate">
+      <div><small>QRIS</small><b>0.7%</b><span>PPN included. 0% up to Rp100.000.</span></div>
+      <div><small>E-wallets</small><b>From 1.5%</b><span>+ PPN</span></div>
+      <div><small>Bank virtual accounts</small><b>Rp4.000</b><span>+ PPN</span></div>
+      <div><small>Credit cards</small><b>2.8% + Rp2.000</b><span>+ PPN</span></div>
+    </div>
+    <div class="py-price">
+      <div><h3>Standard pricing</h3><p>The rate of each payment method, with the PPN shown as its own line. Debit cards, Checkout, COD and Early Settlement are on the Pricing page.</p><a href="#" class="link" data-page="/pricing">See all pricing <span class="chev">›</span></a></div>
+      <div><h3>Selling at volume?</h3><p>Talk to the FLIK team about rates for your business.</p><button class="btn btn-secondary" data-act="sales" data-interest="Payments">Contact sales <span class="chev">›</span></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== kit: customer-stories (Brands taking payments with FLIK.) ===== -->
+<section class="pad guides" id="customers">
+  <div class="wrap">
+    <h2 class="sec-h">Brands taking payments with FLIK. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2>
+    <div class="stories-wrap">
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-violet" style="background-image:url('../assets/customers/sigit-store-1.jpg')"><span class="st-logo"><img src="../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span><span class="st-big">Sigit Store</span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-violet" style="background-image:url('../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../assets/logos/merchant/artch.png?v=2" alt="Artch"></span><span class="st-big">Artch</span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-orange" style="background-image:url('../assets/customers/wakaigo-1.jpg')"><span class="st-logo"><img src="../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span><span class="st-big">WakaiGo</span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-orange" style="background-image:url('../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img class="sq" src="../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock.</p><a href="../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article></div>
+      <div class="st-foot"><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+    </div>
+  </div>
+</section>
+<!-- ===== /kit: customer-stories ===== -->
 
 <section class="pad guides" id="faq-sec">
   <div class="wrap faq1">
@@ -1407,11 +1617,11 @@ main section#customers{padding:112px 0}
     <h2>Start taking payments with FLIK.</h2>
     <p class="txt">Create your account, verify your business, and choose how you want to get paid.</p>
     <div class="hero-cta" style="justify-content:center">
-      <button class="btn btn-primary live" data-act="start" data-interest="Payments">Get started <span class="chev">›</span></button>
+      <button class="btn btn-primary live" data-act="start" data-interest="Payments">Start accepting payments <span class="chev">›</span></button>
       <button class="btn btn-secondary" data-act="sales">Contact sales</button>
     </div>
     <p class="cta-note">By continuing you agree to the <a href="/legal/terms" data-page="/legal/terms">Terms</a> and <a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a>.</p>
-    <div class="fin-price"><b>Pricing</b><span>Rates per payment method, with PPN shown on every fee.</span><a href="#" class="link" data-page="/pricing">See pricing <span class="chev">›</span></a></div>
+    
   </div>
 </section>
 </main>
@@ -1628,16 +1838,44 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 
 /* ===== Page: at a glance ===== */
-(function(){const G=[["card", "Methods", ["QRIS", "E-wallets: GoPay, ShopeePay, OVO, DANA and others", "Bank virtual accounts", "Credit and debit cards", "Cash on delivery"]], ["wallet", "Your money", ["One FLIK balance for every channel", "Withdraw from Rp100.000", "Rp4.000 + PPN per withdrawal", "Or settle early for 0.2% / 0.3% + PPN"]], ["lock", "Safe by default", ["Processed by licensed payment partners", "Fraud Detection included", "Help with every chargeback", "FLIK is not a bank"]]];const el=document.getElementById('gl3');if(el)el.innerHTML=G.map(g=>`<div class="gl"><h3>${ic(g[0],18)}${g[1]}</h3><ul>${g[2].map(x=>`<li>${ic('check',16,2)}${x}</li>`).join('')}</ul></div>`).join('');})();
 
 /* ===== FAQ ===== */
-const FAQ=[["Which payment methods can I accept?", "QRIS, e-wallets such as GoPay, ShopeePay, OVO and DANA, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Where does the money go?", "Every payment lands in your FLIK balance once the order is completed and FLIK has received the funds. You withdraw to your bank account from Rp100.000, for Rp4.000 + PPN per withdrawal."], ["What does it cost?", "Each payment method has its own rate, shown on the Pricing page with the PPN on each fee."], ["Is FLIK a bank?", "No. Payments are processed by licensed payment partners: CashuUp, Nicepay and Xendit."], ["Do I need to verify my business?", "Yes. Verify your identity and business before you send invoices, withdraw or get live API keys."]];
+const FAQ=[["Which payment methods can I accept?", "QRIS, e-wallets such as GoPay, ShopeePay, OVO and DANA, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Where does the money go?", "Every payment lands in your FLIK balance once the order is completed and FLIK has received the funds. Withdraw to your bank from Rp100.000, for Rp4.000 + PPN per withdrawal."], ["Can I get paid sooner?", "Yes. Early Settlement pays out before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN."], ["What does it cost?", "Each payment method has its own rate, shown on the Pricing page with the PPN on each fee. There is no setup fee."], ["Is FLIK a bank?", "No. Payments are processed by licensed payment partners: CashuUp, Nicepay and Xendit."], ["Do I need to verify my business?", "Yes. Verify your identity and business before you send invoices, withdraw or get live API keys."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
 
+/* ===== kit: customer-stories carousel ===== */
+document.querySelectorAll('#customers .cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
+
 /* ===== icons in tags ===== */
 document.querySelectorAll('main [data-ic]').forEach(e=>{if(!e.innerHTML.trim())e.innerHTML=ic(e.dataset.ic,e.closest('.rtag')?15:18)});
+
+/* ===== Payment page: way carousel and section tabs ===== */
+document.querySelectorAll('.cbtn[data-car="pyways"]').forEach(b=>b.onclick=()=>{const c=document.getElementById('pyways');c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
+(function(){const links=[...document.querySelectorAll('.py-sub a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-45% 0px -50% 0px'});secs.forEach(s=>s&&io.observe(s))})();
+
+/* ===== kit: hero-ribbon (thin gradient lines forming a twisting sheet that ends in the hero's bottom-right corner) ===== */
+document.querySelectorAll('svg.rbn').forEach(svg=>{
+  const g=svg.querySelector('.rbn-lines'),fill=svg.querySelector('.rbn-fill');
+  const N=56,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
+  let CX=980,CY=880;
+  function setCorner(){const r=svg.getBoundingClientRect(),m=svg.getScreenCTM();if(!m||!r.width)return;const q=svg.createSVGPoint();q.x=r.right-24;q.y=r.bottom-8;const v=q.matrixTransform(m.inverse());CX=v.x;CY=v.y}
+  setCorner();addEventListener('resize',setCorner);document.fonts&&document.fonts.ready.then(setCorner);
+  const pt=(s,t)=>{const w1=70*Math.sin(t*.45+s*2.2),w2=60*Math.cos(t*.37+s*1.7);return [[360+s*600,-40],[400+(1-s)*440+w1,250+s*90],[1000-s*400+w2,420+(1-s)*140],[CX-s*70,CY]]};
+  const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
+  let vis=true;const paused=()=>typeof motionPaused==='function'&&motionPaused();
+  function draw(t){
+    if(vis&&!paused()){t/=1000;paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
+      const a=pt(0,t),b=pt(1,t);fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`)}
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(svg);
+  vis=true;draw(0);vis=svg.getBoundingClientRect().top<innerHeight;if(!reduce)requestAnimationFrame(draw);
+});
+/* ===== /kit: hero-ribbon ===== */
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
