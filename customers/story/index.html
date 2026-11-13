@@ -102,14 +102,14 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .signin:hover{color:var(--primary-hover)}
 .burger{display:none;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px}
 
-.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s linear .2s}
+.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:22px 24px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s linear .2s}
 .nav-item.open .mega{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s}
 .mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px} /* hover bridge over the gap under the menu button */
-.mega-cols{display:grid;gap:36px}
-.mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
-.mega a.mi{display:block;padding:7px 0}
-.mega a.mi b{display:block;font-size:15px;font-weight:500;color:var(--primary)}
-.mega a.mi span{display:block;font-size:14px;color:var(--muted);margin-top:1px}
+.mega-cols{display:grid;gap:32px;max-height:calc(100vh - 140px);overflow-y:auto;overscroll-behavior:contain}
+.mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.mega a.mi{display:block;padding:5px 0}
+.mega a.mi b{display:block;font-size:14px;font-weight:500;color:var(--primary)}
+.mega a.mi span{display:block;font-size:13px;line-height:1.4;color:var(--muted);margin-top:1px}
 .mega a.mi:hover b{color:var(--primary-hover)}
 .mega a.mi:hover span{color:var(--body)}
 

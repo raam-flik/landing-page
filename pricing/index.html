@@ -102,14 +102,14 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .signin:hover{color:var(--primary-hover)}
 .burger{display:none;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px}
 
-.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:28px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s linear .2s}
+.mega{position:absolute;top:calc(100% + 10px);left:-20px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line-soft);padding:22px 24px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s linear .2s}
 .nav-item.open .mega{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility 0s}
 .mega::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px} /* hover bridge over the gap under the menu button */
-.mega-cols{display:grid;gap:36px}
-.mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
-.mega a.mi{display:block;padding:7px 0}
-.mega a.mi b{display:block;font-size:15px;font-weight:500;color:var(--primary)}
-.mega a.mi span{display:block;font-size:14px;color:var(--muted);margin-top:1px}
+.mega-cols{display:grid;gap:32px;max-height:calc(100vh - 140px);overflow-y:auto;overscroll-behavior:contain}
+.mega h4{font-size:13px;font-weight:500;color:var(--ink);padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.mega a.mi{display:block;padding:5px 0}
+.mega a.mi b{display:block;font-size:14px;font-weight:500;color:var(--primary)}
+.mega a.mi span{display:block;font-size:13px;line-height:1.4;color:var(--muted);margin-top:1px}
 .mega a.mi:hover b{color:var(--primary-hover)}
 .mega a.mi:hover span{color:var(--body)}
 
@@ -1187,11 +1187,10 @@ html{scroll-padding-top:88px}
 .lh .lead{max-width:640px;margin-top:20px}
 .pt-tabs{margin-top:36px}
 .pp[hidden]{display:none}
-.prh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:56px}
-.prh h2{font-size:28px;font-weight:400;letter-spacing:-.4px}
-.prh p{color:var(--muted);font-size:14.5px;margin-top:6px}
-.prh-note{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
-.rt{width:100%;border-collapse:collapse;margin-top:20px;font-size:15px}
+.prh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.prh .sec-h{max-width:820px}
+.prh-note{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);max-width:300px;flex:none}
+.rt{width:100%;border-collapse:collapse;font-size:15px}
 .rt th{text-align:left;font-size:13px;font-weight:500;color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
 .rt td{padding:18px 16px;border-bottom:1px solid var(--line-soft);vertical-align:middle;color:var(--body)}
 .rt tr:last-child td{border-bottom:0}
@@ -1199,18 +1198,19 @@ html{scroll-padding-top:88px}
 .rt .m b{display:block;font-weight:500;color:var(--ink)}
 .rt .m small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .rt .m .fl-plogos{margin-top:8px}
+.rt .m small.rt-note{display:block;width:fit-content;margin-top:8px;padding:3px 8px;border-radius:6px;background:var(--primary-soft);color:var(--primary);font-size:12.5px}
 .rt .num{font-variant-numeric:tabular-nums}
 .rt .tot{font-weight:500;color:var(--ink)}
 .rate-ph{font-family:var(--mono);font-size:13.5px;color:var(--muted);background:var(--bg-alt);border:1px dashed var(--line);border-radius:var(--radius-control);padding:2px 6px;white-space:nowrap}
-.rt-wrap{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--sh);padding:4px 8px}
-.of{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.rt-wrap{margin-top:48px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--sh);padding:4px 8px}
+.of{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
 .of>div{border:1px solid var(--line-soft);border-radius:var(--r-lg);padding:24px;display:grid;gap:8px;align-content:start;background:var(--surface)}
 .of h3{font-size:16px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .of .big{font-size:36px;font-weight:300;letter-spacing:-.8px;color:var(--ink);line-height:1.1}
 .of .big small{font-size:16px;letter-spacing:0;color:var(--muted);font-weight:400}
 .of p{font-size:14.5px;color:var(--body);line-height:1.55}
 .of .link{margin-top:4px}
-.vat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:20px;padding:32px;border-radius:var(--r-lg);background:var(--bg-alt)}
+.vat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px;padding:32px;border-radius:var(--r-lg);background:var(--bg-alt)}
 .vat-eq{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:15px}
 .vat-eq>span{display:grid;gap:2px;padding:12px 16px;border-radius:var(--r-card);background:var(--surface);box-shadow:var(--sh);min-width:96px}
 .vat-eq>span small{font-size:12px;color:var(--muted)}
@@ -1218,7 +1218,8 @@ html{scroll-padding-top:88px}
 .vat-eq>i{font-style:normal;font-size:20px;color:var(--muted)}
 .vat-eq>span.t{background:var(--primary-soft);box-shadow:none}
 .vat-eq>span.t b{color:var(--primary)}
-.cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.alt .res{background:var(--surface)}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
 @media (max-width:1080px){.of{grid-template-columns:1fr 1fr}.vat{grid-template-columns:1fr}}
 @media (max-width:760px){
   .lh{padding-top:110px}.lh h1{font-size:34px;letter-spacing:-.8px}
@@ -1364,27 +1365,39 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 </section>
 
 <!-- ===== Payments tab ===== -->
-<section class="pad-s guides pp" id="payments" data-p="payments">
+<section class="pad guides pp" id="payments" data-p="payments">
   <div class="wrap">
-    <div class="prh"><div><h2>Payment methods</h2><p>The fee for each method, the PPN on that fee, and the total.</p></div><span class="prh-note">QRIS: 0% up to Rp100.000; 0.7% above, PPN included. Volume pricing on request.</span></div>
-    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN on fee</th><th>Total</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0.63%</td><td data-l="PPN on fee">0.07%</td><td data-l="Total" class="tot">0.7%</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN on fee">From 0.165%</td><td data-l="Total" class="tot">From 1.665%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN on fee">Rp440</td><td data-l="Total" class="tot">Rp4.440</td></tr><tr><td class="m"><b>Credit and debit cards</b><small>Visa, Mastercard and local debit cards</small><span class="fl-plogos"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN on fee">0.308% + Rp220</td><td data-l="Total" class="tot">3.108% + Rp2.220</td></tr></tbody></table></div>
+    <div class="prh"><h2 class="sec-h">Payment methods. <span class="soft">The fee for each method, the PPN on that fee, and the total.</span></h2></div>
+    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN on fee</th><th>Total</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><small class="rt-note">0% on payments up to Rp100.000. Above that, 0.7% with PPN included.</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0% / 0.63%</td><td data-l="PPN on fee">0% / 0.07%</td><td data-l="Total" class="tot">0% / 0.7%</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN on fee">From 0.165%</td><td data-l="Total" class="tot">From 1.665%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN on fee">Rp440</td><td data-l="Total" class="tot">Rp4.440</td></tr><tr><td class="m"><b>Credit cards</b><small>Visa and Mastercard</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/visa.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mastercard.png" alt=""></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN on fee">0.308% + Rp220</td><td data-l="Total" class="tot">3.108% + Rp2.220</td></tr><!-- PLACEHOLDER (AG, 12 Nov 2026): debit card and GPN rate to come from AG / finance. --><tr><td class="m"><b>Debit cards and GPN</b><small>Local debit cards on the GPN network</small><span class="fl-plogos"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span></span></td><td data-l="Fee">[rate]</td><td data-l="PPN on fee">[PPN]</td><td data-l="Total" class="tot">[total]</td></tr></tbody></table></div>
+  </div>
+</section>
 
-    <div class="prh"><div><h2>Other fees</h2><p>Each fee is charged with PPN on top.</p></div></div>
+<section class="pad alt guides pp" data-p="payments">
+  <div class="wrap">
+    <div class="prh"><h2 class="sec-h">Other fees. <span class="soft">Each fee is charged with PPN on top.</span></h2></div>
     <div class="of">
       <div><h3><span class="fx-ic" data-ic="cart"></span>FLIK Checkout</h3><span class="big num">0–2% <small>+ PPN</small></span><p>A success fee on each successful payment, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume.</p><a href="#" class="link" data-page="/checkout">Explore Checkout <span class="chev">›</span></a></div>
       <div><h3><span class="fx-ic" data-ic="truck"></span>Cash on delivery</h3><span class="big num">3% <small>+ PPN</small></span><p>Of the COD amount. It's deducted when the COD amount reaches your balance after delivery, so you never pay it upfront.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
       <div><h3><span class="fx-ic" data-ic="link"></span>FLIK Connect <span class="pill pu">Coming soon</span></h3><span class="big num">0.5% <small>+ PPN</small></span><p>Of the amount split to partners, max Rp10.000 per transaction, paid by the main merchant. Partners pay nothing to receive their split.</p><a href="#" class="link" data-page="/payment/connect">Explore FLIK Connect <span class="chev">›</span></a></div>
     </div>
+  </div>
+</section>
 
-    <div class="prh"><div><h2>How PPN works</h2><p>PPN applies to FLIK's fees, not to your sales.</p></div></div>
+<section class="pad guides pp" data-p="payments">
+  <div class="wrap">
+    <div class="prh"><h2 class="sec-h">How PPN works. <span class="soft">PPN applies to FLIK's fees, not to your sales.</span></h2></div>
     <div class="vat">
       <div><p class="txt">Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line, on your invoice and in your dashboard. For example, at 11%:</p></div>
       <div class="vat-eq" aria-label="Example: a Rp500 fee plus Rp55 PPN is Rp555 in total">
         <span><small>Fee</small><b class="num">Rp500</b></span><i>+</i><span><small>PPN 11%</small><b class="num">Rp55</b></span><i>=</i><span class="t"><small>Total</small><b class="num">Rp555</b></span>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="prh"><div><h2>Need your money sooner?</h2><p>Money reaches your FLIK balance once the order is completed. Need it sooner? Settle early.</p></div></div>
+<section class="pad alt guides pp" data-p="payments">
+  <div class="wrap">
+    <div class="prh"><h2 class="sec-h">Need your money sooner? <span class="soft">Money reaches your FLIK balance once the order is completed.</span></h2></div>
     <div class="cards2">
       <a href="#" class="res" data-page="/payment/early-settlement"><span class="rtag"><span data-ic="bolt"></span>Early Settlement</span><b>Get paid before your settlement date</b><span>Turn pending sales into cash sooner, for 0.2% (non-card) or 0.3% (card) + PPN.</span><em>Explore Early Settlement <span class="chev">›</span></em></a>
       <a href="#" class="res" data-act="sales"><span class="rtag"><span data-ic="chart"></span>Volume pricing</span><b>Selling at volume?</b><span>Talk to the FLIK team about rates for your business.</span><em>Contact sales <span class="chev">›</span></em></a>
@@ -1393,9 +1406,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 </section>
 
 <!-- ===== Shipping tab (summary of fees stated on the Shipping page) ===== -->
-<section class="pad-s guides pp" id="shipping-fees" data-p="shipping" hidden>
+<section class="pad guides pp" id="shipping-fees" data-p="shipping" hidden>
   <div class="wrap">
-    <div class="prh"><div><h2>Shipping</h2><p>No registration fee. You pay per shipment from your FLIK balance.</p></div></div>
+    <div class="prh"><h2 class="sec-h">Shipping. <span class="soft">No registration fee. You pay per shipment from your FLIK balance.</span></h2></div>
     <div class="of">
       <div><h3><span class="fx-ic" data-ic="user"></span>Joining</h3><span class="big num">Free</span><p>No registration fee and no monthly fee.</p></div>
       <div><h3><span class="fx-ic" data-ic="truck"></span>Shipments</h3><span class="big num">Up to 50% <small>off</small></span><p>Off published courier rates. Rates compared in one place, paid per shipment from your balance before it is created.</p><a href="#" class="link" data-page="/shipping">Check rates <span class="chev">›</span></a></div>
@@ -1405,12 +1418,11 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 </section>
 
 <!-- ===== Funding tab (summary of terms stated on the funding pages) ===== -->
-<section class="pad-s guides pp" id="funding-fees" data-p="funding" hidden>
+<section class="pad guides pp" id="funding-fees" data-p="funding" hidden>
   <div class="wrap">
-    <div class="prh"><div><h2>Funding</h2><p>Clear terms, agreed before you sign.</p></div></div>
+    <div class="prh"><h2 class="sec-h">Funding. <span class="soft">Clear terms, agreed before you sign.</span></h2></div>
     <div class="cards2">
       <div class="of" style="grid-template-columns:1fr;margin:0"><div><h3><span class="fx-ic" data-ic="coins"></span>Merchant Cash Advance</h3><span class="big">One fixed margin</span><p>Agreed upfront and never changes. No compounding interest and no hidden fees. Settled automatically from your sales.</p><a href="#" class="link" data-page="/funding/merchant-cash-advance">Explore Merchant Cash Advance <span class="chev">›</span></a></div></div>
-      <div class="of" style="grid-template-columns:1fr;margin:0"><div><h3><span class="fx-ic" data-ic="bolt"></span>Early Settlement</h3><span class="big">0.2% / 0.3% <small>+ PPN</small></span><p>Per payment settled early: 0.2% non-card, 0.3% card. Shown before you confirm. The standard settlement schedule stays free.</p><a href="#" class="link" data-page="/payment/early-settlement">Explore Early Settlement <span class="chev">›</span></a></div></div>
     </div>
   </div>
 </section>
