@@ -12,8 +12,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] Stat: "10+ growing businesses trust Merchant Cash Advance" is supported and kept (AG, 24 Oct 2026). "1 fixed margin" and "0 hidden fees" replaced with "15 payment methods" and "30 sec checkout".
 - [x] Lending words removed (loan, interest, borrow, lender, credit). "Repay" is now "settled", "Approved" is now "Offer" / "Receive your offer", "financing" is now "funding". "One fixed margin" and "no hidden fees" removed. The "Ethical pricing" badge removed (AG, 24 Oct 2026).
 - [ ] `[[set per offer]]`: the monthly platform fee (*Biaya Platform*) rate shown in "What it costs" and in the hero preview. Each offer sets it. Confirm whether to show a rate or range publicly.
-- [ ] `[[GC: confirm public disclosure]]` on "Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter." (We grow when you grow block).
-- [ ] `[[GC: confirm public disclosure]]` on "A share of each sale goes toward settlement, so slower sales mean smaller settlements." The offer letter sets a daily maximum and fixed tranche schedule, so GC should confirm this is accurate. It replaces "Slow weeks never squeeze you".
+- [x] **GC OK (Legal, 12 Nov 2026):** "Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter." (We grow when you grow block).
+- [x] **GC OK (Legal, 12 Nov 2026, as marketing wording, provided the offer letter explains what happens when the daily settlement target isn't met):** "A share of each sale goes toward settlement, so slower sales mean smaller settlements." The offer letter sets a daily maximum and fixed tranche schedule, so GC should confirm this is accurate. It replaces "Slow weeks never squeeze you".
 - [ ] "Businesses usually need at least 6 months of sales" (eligibility check, not eligible state) is kept as Raam wrote it. Confirm it matches credit policy.
 - [ ] Fees: 1% administration fee per placement and "All fees exclude PPN" come from the offer letter terms. Confirm they can be shown publicly.
 
@@ -87,12 +87,12 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** A share of each sale, online or in store, goes toward settlement automatically.
 - **Label:** Flexibility
 - **Heading:** Settlement follows your sales.
-- **Text:** A share of each sale goes toward settlement, so slower sales mean smaller settlements. [[GC: confirm public disclosure]]
+- **Text:** A share of each sale goes toward settlement, so slower sales mean smaller settlements.
 - **Label:** Ownership
 - **Heading:** Your brand stays yours.
 - **Text:** FLIK funds your stock, not your shares. You keep full ownership.
 - **Heading:** We grow when you grow.
-- **Text:** Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter. [[GC: confirm public disclosure]]
+- **Text:** Merchant Cash Advance is offered to selected merchants. Terms are set out in each offer letter.
 
 ## 5. Success story
 <!-- html: Success story: removed (fictional merchant and hotlinked stock photo, AG 24 Oct 2026) -->
