@@ -8,8 +8,10 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - **Returning shoppers** with a FLIK account go straight to checkout. **New shoppers** can check out as a guest, or create a FLIK account so their details are saved for every store that uses FLIK.
 - The shopper fills in name, WhatsApp number, email and delivery address. **The courier and payment method are selected automatically.**
 - **Login:** a one-time code (OTP) sent to WhatsApp. No password.
+- Shoppers can **pay in one tap** (AG, 13 Nov 2026).
 - **Payment methods:** QRIS, e-wallets, bank virtual accounts, debit and credit cards, and COD.
 - **Rewards** apply automatically at checkout, at any FLIK merchant.
+- **Auto reconciliation:** every payment is matched to its order automatically (AG, 13 Nov 2026).
 - The shopper gets an email at every status change and can track the order in the **FLIK Shopper App**.
 - The merchant sees every order in **Laporan & Analisis** and chooses payment methods in **Personalisasi Checkout**.
 - **Money:** once the shopper has paid and the package has arrived, the money goes to the merchant's FLIK balance.
@@ -19,8 +21,10 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - A **shipping aggregator**: send, track and manage shipments with many couriers from one dashboard.
 - **Single** shipments (1 warehouse to 1 or many destinations) and **bulk** shipments (many warehouses to many destinations).
 - Services: regular, same day, next day, instant and cargo. COD and non-COD.
+- **Cross-border shipping** is available (AG, 13 Nov 2026).
 - The merchant pays from the FLIK balance before the shipment is created, and tops up first if the balance is too low.
 - **Free to register.** Shopify and WooCommerce stores connect directly.
+- **Tracking alerts:** automatic triggers notify the merchant's operations team when a delivery hits a problem (AG, 13 Nov 2026).
 - **Failed delivery:** the courier tries again the next day, up to two attempts. Courier-direct services return the package straight away.
 - **Pickup** after the AWB is created: regular 3–5 hours, same day the same day if fulfilled before 14:00 WIB (otherwise the next day), instant straight away (courier terms doc, 13 Nov 2026).
 - Support: Monday to Friday, 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 813-3532-8100.
@@ -52,6 +56,7 @@ These come from the current flik.co.id. Confirm before using any new number.
 | Shipping up to 50% off published rates (AG, 12 Nov 2026) | Shipping |
 | COD fee only 3% | Shipping |
 | 99% shipment creation success rate | Shipping |
+| 100K+ COD orders delivered this year (2026; AG, 13 Nov 2026) | Shipping |
 | Trusted by 10+ growing businesses | Merchant Cash Advance |
 | 10M+ shoppers, 200+ brands | All products, homepage |
 
