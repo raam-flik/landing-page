@@ -1345,49 +1345,53 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 
 
-/* ===== kit: hero-field (the homepage particle field, shaped per product: a shield ring on Fraud Detection, tap-to-pay pulses on In-Store Payment) ===== */
-.hf{position:absolute;inset:-12% -22% -8% -18%;pointer-events:none;z-index:0}
-.hf canvas{position:absolute;inset:0;width:100%;height:100%}
-.ch-stage>:not(.hf):not(.ch-glow){z-index:1}
-.fd-stage>.fd-win{position:relative}
-.ch-stage .ch-glow{opacity:.45}
-.hf-ev{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 0 8px;border-radius:999px;background:var(--surface,#fff);box-shadow:0 0 0 1px var(--line),0 4px 12px -4px rgba(0,45,93,.18);font-size:11.5px;font-weight:500;color:var(--ink);white-space:nowrap;opacity:0;transform:translate(-50%,-50%) scale(.92);transition:opacity .45s,transform .45s;z-index:3}
-.hf-ev i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
-.hf-ev.warn i{background:var(--warning,#FF7A2E)}
-.hf-ev.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
-@media (max-width:760px){.hf{inset:-6% -8%}.hf-ev{display:none}}
-/* ===== /kit: hero-field ===== */
+
 
 /* ===== kit: customer-stories (the homepage "Powering brands" story cards and carousel, on Checkout, Shipping, Merchant Cash Advance and In-Store Payment) ===== */
 main section#customers{padding:112px 0}
 @media (max-width:760px){main section#customers{padding:72px 0}}
 #customers+section{padding-top:112px}
 @media (max-width:760px){#customers+section{padding-top:72px}}
-.stories-wrap{position:relative;margin-top:40px}
-.stories{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
-.stories::-webkit-scrollbar{display:none}
-.story{scroll-snap-align:start;display:flex;flex-direction:column;gap:14px}
-.story-art{position:relative;aspect-ratio:4/5;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:18px;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px;overflow:hidden;isolation:isolate}
-.story.s1 .story-art{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
-.story.s2 .story-art{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
-.story.s3 .story-art{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
-.story.s4 .story-art{background:linear-gradient(160deg,#002D5D,#3B24A8 50%,#FF7A2E)}
-.story .story-art.sph{background-size:cover;background-position:center}
-.story .story-art.sph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.15) 0%,rgba(var(--tint),.45) 55%,rgba(var(--tint),.9) 100%)}
-.story-art.t-violet{--tint:106,75,255}.story-art.t-magenta{--tint:255,45,184}.story-art.t-orange{--tint:255,122,46}.story-art.t-navy{--tint:0,45,93}
-.story-art .st-logo{display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
-.story-art .st-logo.dark{background:var(--ink)}
-.story-art .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
-.story-art .st-logo img.sq{max-height:26px}
-.story-art .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
-.story p{font-size:15px;line-height:1.5;color:var(--ink)}
-.st-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
-.car-nav{display:flex;gap:8px}
-.cbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--primary);display:flex;align-items:center;justify-content:center;background:#fff}
-.cbtn:hover{border-color:var(--primary)}
-@media (max-width:1080px){.stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
-@media (max-width:760px){.stories{grid-auto-columns:78%}}
+#customers .stories-wrap{position:relative;margin-top:40px}
+#customers .stories{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+#customers .stories::-webkit-scrollbar{display:none}
+#customers .story{scroll-snap-align:start;display:flex;flex-direction:column;gap:14px;margin:0;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;grid-template-columns:none}
+#customers .story-art{position:relative;aspect-ratio:4/5;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:18px;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px;overflow:hidden;isolation:isolate}
+#customers .story.s1 .story-art{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
+#customers .story.s2 .story-art{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
+#customers .story.s3 .story-art{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
+#customers .story.s4 .story-art{background:linear-gradient(160deg,#002D5D,#3B24A8 50%,#FF7A2E)}
+#customers .story .story-art.sph{background-size:cover;background-position:center}
+#customers .story .story-art.sph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.15) 0%,rgba(var(--tint),.45) 55%,rgba(var(--tint),.9) 100%)}
+#customers .story-art.t-violet{--tint:106,75,255}.story-art.t-magenta{--tint:255,45,184}.story-art.t-orange{--tint:255,122,46}.story-art.t-navy{--tint:0,45,93}
+#customers .story-art .st-logo{display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
+#customers .story-art .st-logo.dark{background:var(--ink)}
+#customers .story-art .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
+#customers .story-art .st-logo img.sq{max-height:26px}
+#customers .story-art .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
+#customers .story p{font-size:15px;line-height:1.5;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:3em}
+#customers .st-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
+#customers .car-nav{display:flex;gap:8px}
+#customers .cbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--primary);display:flex;align-items:center;justify-content:center;background:#fff}
+#customers .cbtn:hover{border-color:var(--primary)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
 /* ===== /kit: customer-stories ===== */
+
+
+/* ===== kit: pay-tiles (In-Store Payment hero: the ways customers pay float round the EDC, and one at a time lands as a payment) ===== */
+.pt-field{position:absolute;inset:0;pointer-events:none;z-index:2}
+.pt{position:absolute;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:14px;background:var(--surface,#fff);box-shadow:0 0 0 1px var(--line),0 14px 28px -14px rgba(0,45,93,.28);display:flex;align-items:center;justify-content:center;animation:pt-float 6s ease-in-out infinite;transition:box-shadow .35s,transform .35s}
+.pt img{display:block;width:48px;height:48px;object-fit:contain}
+.pt.sm{width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:12px;opacity:.9}.pt.sm img{width:38px;height:38px}
+.pt.on{box-shadow:0 0 0 2px var(--primary),0 18px 34px -14px rgba(106,75,255,.45)}
+.pt-paid{position:absolute;left:50%;top:calc(100% + 8px);transform:translate(-50%,-4px);display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 8px 0 6px;border-radius:999px;background:var(--surface,#fff);box-shadow:0 0 0 1px var(--line),0 4px 12px -4px rgba(0,45,93,.18);font-size:11px;font-weight:500;color:var(--ink);white-space:nowrap;opacity:0;transition:opacity .35s,transform .35s}
+.pt-paid i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.pt.on .pt-paid{opacity:1;transform:translate(-50%,0)}
+@keyframes pt-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@media (prefers-reduced-motion:reduce){.pt{animation:none}}
+@media (max-width:760px){.pt-field{display:none}}
+/* ===== /kit: pay-tiles ===== */
 </style>
 </head>
 <body>
@@ -1432,8 +1436,7 @@ main section#customers{padding:112px 0}
     </div>
     <div class="ch-stage edc-stage">
       <div class="ch-glow" aria-hidden="true"></div>
-      <div class="hf" data-mode="pulse" data-target=".edc-mount" data-ev='[["Rp45.000 paid \u00b7 QRIS", "ok"], ["Card approved \u00b7 Visa", "ok"], ["Receipt printed", "ok"], ["Rp128.000 paid \u00b7 GoPay", "ok"], ["Debit card approved \u00b7 GPN", "ok"], ["Rp32.000 paid \u00b7 QRIS", "ok"]]' aria-hidden="true"><canvas></canvas><span class="hf-ev"><i></i><span></span></span></div>
-      
+      <div class="pt-field" aria-hidden="true"><span class="pt " style="left:10%;top:16%;animation-delay:0s"><img src="../../assets/logos/payment/qris.png" alt=""><span class="pt-paid"><i></i>Rp45.000 paid · QRIS</span></span><span class="pt sm" style="left:4%;top:48%;animation-delay:-1.4s"><img src="../../assets/logos/payment/gopay.png" alt=""><span class="pt-paid"><i></i>Rp128.000 paid · GoPay</span></span><span class="pt " style="left:14%;top:80%;animation-delay:-3.1s"><img src="../../assets/logos/payment/visa.png" alt=""><span class="pt-paid"><i></i>Rp350.000 paid · Visa</span></span><span class="pt " style="left:90%;top:12%;animation-delay:-2.2s"><img src="../../assets/logos/payment/mastercard.png" alt=""><span class="pt-paid"><i></i>Rp210.000 paid · Mastercard</span></span><span class="pt sm" style="left:97%;top:44%;animation-delay:-4.0s"><img src="../../assets/logos/payment/ovo.png" alt=""><span class="pt-paid"><i></i>Rp32.000 paid · OVO</span></span><span class="pt " style="left:88%;top:74%;animation-delay:-0.7s"><img src="../../assets/logos/payment/dana.png" alt=""><span class="pt-paid"><i></i>Rp76.000 paid · DANA</span></span><span class="pt sm" style="left:50%;top:-2%;animation-delay:-2.8s"><img src="../../assets/logos/payment/shopeepay.png" alt=""><span class="pt-paid"><i></i>Rp58.000 paid · ShopeePay</span></span></div><!-- /pt-field -->
       <div class="edc-mount" id="edc" role="img" aria-label="The FLIK EDC payment device in 3D, showing today's transactions on its screen (example data)" aria-describedby="edc-desc"></div>
       <p class="sr-only" id="edc-desc">A handheld FLIK EDC payment terminal with a touchscreen and a receipt printer. Its screen shows an example home screen: today's successful transactions and total sales split by QRIS and card, a button to print the settlement receipt, and the latest transactions. The device turns slowly and can be dragged to turn.</p>
       <div class="ch-timer" aria-hidden="true"><span data-ic="printer-s"></span><span>Receipt printer built in</span></div>
@@ -1546,7 +1549,7 @@ main section#customers{padding:112px 0}
   <div class="wrap">
     <h2 class="sec-h">Brands that grow with In-Store Payment. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches across Indonesia, with operations kept under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S' story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush faster and funds its growth with FLIK.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock with FLIK.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/aneka.png?v=2" alt="Aneka Family"></span><span class="st-big">Aneka Family</span></div><p>Aneka Family takes QRIS and cards at the counter with FLIK.</p><a href="../../customers/story/?c=aneka-family" class="link">Read Aneka Family's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/donat-bahagia.png?v=2" alt="Donat Bahagia"></span><span class="st-big">Donat Bahagia</span></div><p>Donat Bahagia makes paying as easy as picking a donut.</p><a href="../../customers/story/?c=donat-bahagia" class="link">Read Donat Bahagia's story <span class="chev">›</span></a></article></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/aneka.png?v=2" alt="Aneka Family"></span><span class="st-big">Aneka Family</span></div><p>Aneka Family takes QRIS and cards at the counter.</p><a href="../../customers/story/?c=aneka-family" class="link">Read Aneka Family's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/donat-bahagia.png?v=2" alt="Donat Bahagia"></span><span class="st-big">Donat Bahagia</span></div><p>Donat Bahagia makes paying as easy as picking a donut.</p><a href="../../customers/story/?c=donat-bahagia" class="link">Read Donat Bahagia's story <span class="chev">›</span></a></article></div>
       <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     </div>
   </div>
@@ -1875,62 +1878,18 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 
 
 
-/* ===== kit: hero-field (dots in the homepage colours; mode "shield" orbits a ring round the mockup and turns risky dots away, mode "pulse" sends rings out from the device) ===== */
-document.querySelectorAll('.hf').forEach(field=>{
-  const cv=field.querySelector('canvas'),ctx=cv.getContext('2d'),ev=field.querySelector('.hf-ev'),evT=ev&&ev.querySelector('span');
-  const mode=field.dataset.mode,EV=JSON.parse(field.dataset.ev||'[]'),target=field.parentElement.querySelector(field.dataset.target);
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-  const V=css('--primary')||'#6A4BFF',COLS=[[V,.86],['#00E5FF',.07],['#FF2DB8',.07]],RISK='#FF7A2E';
-  const pick=()=>{const k=Math.random();return k<COLS[0][1]?COLS[0][0]:k<COLS[0][1]+COLS[1][1]?COLS[1][0]:COLS[2][0]};
-  let W=0,H=0,cx=0,cy=0,R=0,P=[],K=[],vis=true;const t0=performance.now();
-  function size(){
-    const b=field.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1);W=b.width;H=b.height;
-    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
-    const m=(target||field).getBoundingClientRect();cx=m.left-b.left+m.width/2;cy=m.top-b.top+m.height/2;R=Math.max(m.width,m.height)*.62;
-    const n=Math.round(Math.min(2600,Math.max(900,W*H/260)));P=[];
-    for(let i=0;i<n;i++){
-      if(mode==='shield'){const far=Math.random()<.35;const r=far?R*(1.3+Math.random()*.9):R*(.92+Math.pow(Math.random(),2)*.3);
-        P.push({r,a:Math.random()*6.283,w:(far?.03:.11)*(R/(r+1)),j:Math.random()*6.283,s:Math.random()<.2?2:1.4,o:far?.2+Math.random()*.25:.45+Math.random()*.5,col:pick()})}
-      else{P.push({ph:Math.random()*.25,a:Math.random()*6.283,ring:Math.floor(Math.random()*4),s:Math.random()<.2?2:1.4,o:.4+Math.random()*.5,col:pick(),jit:(Math.random()-.5)*10})}
-    }
-  }
-  function spawnRisk(){const a=Math.random()*6.283;K.push({a,r:R*2.1,v:R*.006+.6,life:1})}
-  function draw(t){
-    ctx.clearRect(0,0,W,H);
-    if(mode==='shield'){
-      for(const p of P){const a=p.a+p.w*t,wob=Math.sin(t*1.1+p.j)*5,x=cx+Math.cos(a)*(p.r+wob),y=cy+Math.sin(a)*(p.r+wob)*.82;
-        if(x<0||x>W||y<0||y>H)continue;ctx.globalAlpha=p.o;ctx.fillStyle=p.col;ctx.fillRect(x,y,p.s,p.s)}
-      for(const k of K){if(k.r>R*1.02)k.r-=k.v;else k.life-=.035;const x=cx+Math.cos(k.a)*k.r,y=cy+Math.sin(k.a)*k.r*.82;
-        ctx.globalAlpha=Math.max(0,k.life);ctx.fillStyle=RISK;ctx.beginPath();ctx.arc(x,y,k.r>R*1.02?2.6:2.6+(1-k.life)*9,0,6.283);
-        if(k.r>R*1.02)ctx.fill();else{ctx.strokeStyle=RISK;ctx.lineWidth=1.2;ctx.stroke()}}
-      K=K.filter(k=>k.life>0);
-    }else{
-      const span=R*1.7;
-      for(const p of P){const prog=((t*.09+p.ph+p.ring*.25)%1),r=R*.32+prog*span,x=cx+Math.cos(p.a)*(r+p.jit),y=cy+Math.sin(p.a)*(r+p.jit)*.9;
-        if(x<0||x>W||y<0||y>H)continue;ctx.globalAlpha=Math.min(1,p.o*1.35)*Math.pow(1-prog,.7)*(prog<.08?prog/.08:1);ctx.fillStyle=p.col;ctx.fillRect(x,y,p.s,p.s)}
-    }
-    ctx.globalAlpha=1;
-  }
-  let ei=0;
-  function nextEv(){if(!ev||!EV.length)return;ev.classList.remove('on');
-    setTimeout(()=>{const e=EV[ei%EV.length],b=field.getBoundingClientRect(),m=(target||field).getBoundingClientRect();
-      const L=m.left-b.left,T=m.top-b.top,Rr=m.right-b.left,Bb=m.bottom-b.top,vw=document.documentElement.clientWidth-b.left;
-      const S=[[Rr-70,T-20],[L+90,Bb+22],[Rr+96,T+(Bb-T)*.42],[L+110,T-20],[Rr-80,Bb+22]];  // around the mockup, never on it
-      const q=S[ei%S.length];ei++;
-      ev.style.left=Math.max(90,Math.min(Math.min(W,vw)-96,q[0]))+'px';ev.style.top=Math.max(16,Math.min(H-16,q[1]))+'px';
-      ev.classList.toggle('warn',e[1]==='warn');evT.textContent=e[0];ev.classList.add('on');if(mode==='shield'&&e[1]==='warn')spawnRisk()},450)}
-  function loop(now){if(vis&&!(typeof motionPaused==='function'&&motionPaused())){const t=(now-t0)/1000;if(mode==='shield'&&Math.random()<.008)spawnRisk();draw(t)}requestAnimationFrame(loop)}
-  size();
-  if(reduce){draw(0);if(ev){nextEv()}}else{requestAnimationFrame(loop);nextEv();setInterval(()=>{if(vis)nextEv()},2800)}
-  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();if(reduce)draw(0)},150)});
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(field);
-});
-/* ===== /kit: hero-field ===== */
+
 
 /* ===== kit: customer-stories carousel (arrows scroll the story row, as on the homepage) ===== */
 document.querySelectorAll('#customers .cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
 /* ===== /kit: customer-stories ===== */
+
+
+/* ===== kit: pay-tiles (one tile at a time shows a paid badge, as if that payment just landed on the EDC) ===== */
+(function(){const f=document.querySelector('.pt-field');if(!f)return;const ts=[...f.querySelectorAll('.pt')];let i=0;
+  const step=()=>{if(typeof motionPaused==='function'&&motionPaused())return;ts.forEach(t=>t.classList.remove('on'));ts[i%ts.length].classList.add('on');i+=3};
+  step();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!document.hidden)step()},2400);})();
+/* ===== /kit: pay-tiles ===== */
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+

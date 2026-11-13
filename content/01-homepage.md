@@ -9,6 +9,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - [x] Stats: "10M+ shoppers" and "200+ brands" removed (AG, 24 Oct 2026). The stats now use 30-second checkout, 15 payment methods, 99% shipment creation and the 3% COD fee.
 - [x] Kuvings and Jamise quotes, cards and logos removed (AG, 24 Oct 2026). The customer quote cards are hidden until there are approved quotes.
+- [x] Story card captions are two lines at most (Raam, 13 Nov 2026), the same on the product pages.
 - [x] Story cards (12 Nov): ERIGO and EMADO'S, from their real success stories, linking to their story pages. ZMNow.id is removed (no source).
 - [x] The globe animation now shows the sample store "Aruna Studio", labelled as an example (AG, 24 Oct 2026).
 - [ ] The "What's happening" posts are placeholders.
@@ -112,13 +113,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Label:** FLIK for sellers shipping at volume
 - **Heading:** Ship more, and spend less on every package.
 - **Text:** From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.
-- **Text:** Keeping ERIGO in stock with a Merchant Cash Advance helped drive sales up to 200%, online and in stores.
+- **Text:** Keeping ERIGO in stock drove sales up to 200%.
 - **Link:** Read ERIGO's story (opens /customers/story/?c=erigo)
-- **Text:** EMADO'S opened 30+ branches across Indonesia, with operations kept under control.
+- **Text:** EMADO'S opened 30+ branches, with operations under control.
 - **Link:** Read EMADO'S story (opens /customers/story/?c=emados)
-- **Text:** COD with a 3% fee (excl. PPN), credited to your balance after delivery.
+- **Text:** COD for a 3% fee (excl. PPN), credited after delivery.
 - **Link:** Explore COD shipping
-- **Text:** Save up to 50% off published courier rates, with all major couriers in one dashboard.
+- **Text:** Up to 50% off published courier rates, all couriers in one place.
 - **Link:** Explore Shipping
 - **Small heading:** Free to register.
 - **Text:** There's no registration fee to use FLIK Shipping.

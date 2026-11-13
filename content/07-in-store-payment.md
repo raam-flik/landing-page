@@ -24,7 +24,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - [x] `[[confirm: sales by outlet]]`: FAQ "more than one outlet".
 - [x] Resources: the Fraud Detection card says it is planned (FLI-47) and the Early Settlement card no longer promises same-day payouts (FLI-46).
 
-- [x] **Hero field (Raam, 13 Nov 2026):** the ribbon didn't fit here. The homepage particle field sends tap-to-pay rings out from the device, with chips around it (Rp45.000 paid · QRIS, Card approved · Visa, Receipt printed, Rp128.000 paid · GoPay, Debit card approved · GPN, Rp32.000 paid · QRIS).
+- [x] **Hero tiles (Raam, 13 Nov 2026):** no ribbon and no dots. The ways customers pay (QRIS, GoPay, Visa, Mastercard, OVO, DANA, ShopeePay) float round the EDC as logo tiles, and one at a time shows a paid badge, for example "Rp45.000 paid · QRIS". Amounts are examples.
 
 ## Search results (SEO)
 
@@ -142,6 +142,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
   - **Grey part:** How Indonesian brands use it, in their own stories.
 - **Story cards (carousel, every brand on this product, in this order):** EMADO'S, Kopikalyan, Haus!, Aneka Family, Donat Bahagia. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". Real stories go first: EMADO'S (30+ branches), Kopikalyan, Haus!.
 - **Link:** See all customer stories
+- Captions are two lines at most, shortened from each story's headline (the story page keeps the full headline).
 - Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
 
 ## 7. FAQ

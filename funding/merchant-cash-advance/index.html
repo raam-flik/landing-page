@@ -1329,35 +1329,36 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
 
 
+
 /* ===== kit: customer-stories (the homepage "Powering brands" story cards and carousel, on Checkout, Shipping, Merchant Cash Advance and In-Store Payment) ===== */
 main section#customers{padding:112px 0}
 @media (max-width:760px){main section#customers{padding:72px 0}}
 #customers+section{padding-top:112px}
 @media (max-width:760px){#customers+section{padding-top:72px}}
-.stories-wrap{position:relative;margin-top:40px}
-.stories{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
-.stories::-webkit-scrollbar{display:none}
-.story{scroll-snap-align:start;display:flex;flex-direction:column;gap:14px}
-.story-art{position:relative;aspect-ratio:4/5;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:18px;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px;overflow:hidden;isolation:isolate}
-.story.s1 .story-art{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
-.story.s2 .story-art{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
-.story.s3 .story-art{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
-.story.s4 .story-art{background:linear-gradient(160deg,#002D5D,#3B24A8 50%,#FF7A2E)}
-.story .story-art.sph{background-size:cover;background-position:center}
-.story .story-art.sph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.15) 0%,rgba(var(--tint),.45) 55%,rgba(var(--tint),.9) 100%)}
-.story-art.t-violet{--tint:106,75,255}.story-art.t-magenta{--tint:255,45,184}.story-art.t-orange{--tint:255,122,46}.story-art.t-navy{--tint:0,45,93}
-.story-art .st-logo{display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
-.story-art .st-logo.dark{background:var(--ink)}
-.story-art .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
-.story-art .st-logo img.sq{max-height:26px}
-.story-art .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
-.story p{font-size:15px;line-height:1.5;color:var(--ink)}
-.st-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
-.car-nav{display:flex;gap:8px}
-.cbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--primary);display:flex;align-items:center;justify-content:center;background:#fff}
-.cbtn:hover{border-color:var(--primary)}
-@media (max-width:1080px){.stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
-@media (max-width:760px){.stories{grid-auto-columns:78%}}
+#customers .stories-wrap{position:relative;margin-top:40px}
+#customers .stories{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+#customers .stories::-webkit-scrollbar{display:none}
+#customers .story{scroll-snap-align:start;display:flex;flex-direction:column;gap:14px;margin:0;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;grid-template-columns:none}
+#customers .story-art{position:relative;aspect-ratio:4/5;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:18px;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px;overflow:hidden;isolation:isolate}
+#customers .story.s1 .story-art{background:radial-gradient(circle at 30% 30%,#FF66CC,#6A4BFF 60%,#002D5D)}
+#customers .story.s2 .story-art{background:radial-gradient(circle at 70% 20%,#FF7A2E,#FF2DB8 55%,#8A1C7A)}
+#customers .story.s3 .story-art{background:linear-gradient(200deg,#00E5FF,#6A4BFF 70%)}
+#customers .story.s4 .story-art{background:linear-gradient(160deg,#002D5D,#3B24A8 50%,#FF7A2E)}
+#customers .story .story-art.sph{background-size:cover;background-position:center}
+#customers .story .story-art.sph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.15) 0%,rgba(var(--tint),.45) 55%,rgba(var(--tint),.9) 100%)}
+#customers .story-art.t-violet{--tint:106,75,255}.story-art.t-magenta{--tint:255,45,184}.story-art.t-orange{--tint:255,122,46}.story-art.t-navy{--tint:0,45,93}
+#customers .story-art .st-logo{display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
+#customers .story-art .st-logo.dark{background:var(--ink)}
+#customers .story-art .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
+#customers .story-art .st-logo img.sq{max-height:26px}
+#customers .story-art .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
+#customers .story p{font-size:15px;line-height:1.5;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:3em}
+#customers .st-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
+#customers .car-nav{display:flex;gap:8px}
+#customers .cbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-size:20px;color:var(--primary);display:flex;align-items:center;justify-content:center;background:#fff}
+#customers .cbtn:hover{border-color:var(--primary)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
 /* ===== /kit: customer-stories ===== */
 </style>
 </head>
@@ -1629,7 +1630,7 @@ main section#customers{padding:112px 0}
   <div class="wrap">
     <h2 class="sec-h">Brands that grow with Merchant Cash Advance. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock helped drive sales up to 200%, online and in stores.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches across Indonesia, with operations kept under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S' story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-magenta" style="background-image:url('../../assets/customers/heylocal-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="st-big">500,000+<small>transactions in peak season</small></span></div><p>HEYLOCAL stocked up for 500,000+ transactions in peak season.</p><a href="../../customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush faster and funds its growth with FLIK.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock with FLIK.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-magenta" style="background-image:url('../../assets/customers/heylocal-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="st-big">500,000+<small>transactions in peak season</small></span></div><p>HEYLOCAL stocked up for 500,000+ peak-season sales.</p><a href="../../customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article></div>
       <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     </div>
   </div>
@@ -2042,6 +2043,7 @@ const FAQ=[
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
+
 
 
 
