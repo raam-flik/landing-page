@@ -112,4 +112,4 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Can FLIK flag risky COD orders?
   - **Answer:** Coming soon: a risk level for each order, WhatsApp confirmation before pickup and an address check.
 - **Question:** How do I withdraw my money?
-  - **Answer:** Withdraw to your bank from Rp100.000, for Rp4.000 + PPN, or settle early when you need cash sooner.
+  - **Answer:** Withdraw to your bank from Rp100.000, or settle early when you need cash sooner.
