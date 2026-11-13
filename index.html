@@ -1006,10 +1006,30 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   .link::before,.link-l::before{inset:-11px -4px}
   .cta-note a::before{inset:-14px -2px}
 }
-/* Sections below the hero rise in once as they scroll into view. Added by JS only, so nothing hides if JS fails */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rv-d,0s)}
-.rv.in{opacity:1;transform:none}
-html.anim-paused .rv{opacity:1;transform:none;transition:none}
+/* Scroll reveal below the hero (AG, 13 Nov 2026; medium level, after squareup.com). Classes are added by JS only, so nothing hides if JS fails.
+   Browsers with scroll-driven animations: motion follows the scroll and reverses when scrolling back.
+     .sr  blocks rise 56 px and fade in   .sr-f  cards open through a widening frame while the visual inside settles from 1.15x
+     .sr-h headings rise word by word (.w, index --i)
+   Other browsers: blocks rise once (.rv). Uses translate/scale (not transform) so hover effects keep working. */
+.rv{opacity:0;translate:0 24px;transition:opacity .7s cubic-bezier(.2,.8,.2,1),translate .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rv-d,0s)}
+.rv.in{opacity:1;translate:none}
+.sr-h .w{display:inline-block}
+@supports (animation-timeline:view()){
+  .sr{animation:sr-rise linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+  .sr-f{animation:sr-frame linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+  .sr-f .sr-z{animation:sr-zoom linear both;animation-timeline:--srf;animation-range:entry 0% cover 30%}
+  .sr-f{view-timeline-name:--srf}
+  .sr-h{view-timeline-name:--srh}
+  .sr-h .w{animation:sr-word linear both;animation-timeline:--srh;animation-range:entry calc(5% + var(--i)*4%) entry calc(60% + var(--i)*4%)}
+  /* inside a clipped or scrolling box (stats section, banner, stories carousel): follow that box's position on the page instead */
+  .sr.sr-in,.sr-f.sr-in{animation-timeline:--srp}
+  .sr-f.sr-in,.sr-h.sr-in{view-timeline-name:none}
+}
+@keyframes sr-rise{from{opacity:0;translate:0 56px}to{opacity:1;translate:none}}
+@keyframes sr-frame{from{clip-path:inset(12% round 16px);opacity:.4}to{clip-path:inset(0 round 12px);opacity:1}}
+@keyframes sr-zoom{from{scale:1.15}to{scale:1}}
+@keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
+html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 </style>
 </head>
 <body>
@@ -1426,14 +1446,36 @@ const motionPaused=()=>document.documentElement.classList.contains('anim-paused'
 })();
 /* ===== /kit: a11y-motion ===== */
 
-/* ===== Scroll reveal: each block below the hero rises in once (off for reduced motion and paused animations) ===== */
+/* ===== Scroll reveal (see the CSS note): scroll-linked where supported, a one-time rise elsewhere. Off for reduced motion and paused animations ===== */
 (function(){
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)||motionPaused())return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||motionPaused())return;
+  const linked=window.CSS&&CSS.supports('animation-timeline','view()');
+  const secs=[...document.querySelectorAll('main > section:not(.s-hero)')];
+  const CARDS='.bc,.story,.banner';
+  // headings: wrap each word, keeping inner markup such as the grey .soft part
+  const split=h=>{let i=0;const walk=n=>[...n.childNodes].forEach(c=>{
+      if(c.nodeType===3){if(!c.textContent.trim())return;const f=document.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.append(t);return}const w=document.createElement('span');w.className='w';w.style.setProperty('--i',Math.min(i++,12));w.textContent=t;f.append(w)});c.replaceWith(f)}
+      else if(c.nodeType===1&&!c.matches('.pill,svg,img,br'))walk(c)});
+    walk(h);h.classList.add('sr-h')};
+  if(linked){
+    secs.forEach(sec=>{
+      sec.querySelectorAll('h2').forEach(split);
+      sec.querySelectorAll(CARDS).forEach(c=>{c.classList.add('sr-f');const z=c.querySelector(':scope > .vis, :scope > .story-art');if(z)z.classList.add('sr-z')});
+      const w=sec.querySelector(':scope > .wrap');if(!w)return;
+      [...w.children].forEach(c=>{if(c.matches('h2')||c.querySelector(CARDS)||c.matches(CARDS))return;c.classList.add('sr')});
+    });
+    // a view timeline follows the nearest clipped or scrolling ancestor, so those elements use a timeline named on that ancestor
+    const box=e=>{for(let p=e.parentElement;p&&p!==document.body;p=p.parentElement){const cs=getComputedStyle(p);if(/(auto|scroll|hidden)/.test(cs.overflowX+cs.overflowY))return p}return null};
+    document.querySelectorAll('.sr,.sr-f,.sr-h').forEach(e=>{const p=box(e);if(!p)return;p.style.viewTimelineName='--srp, --srf, --srh';e.classList.add('sr-in')});
+    return;
+  }
+  if(!('IntersectionObserver' in window))return;
   const els=[];
-  document.querySelectorAll('main > section:not(.s-hero) > .wrap').forEach(w=>[...w.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--rv-d',Math.min(i,3)*.08+'s');els.push(c)}));
+  secs.forEach(sec=>{const w=sec.querySelector(':scope > .wrap');if(w)[...w.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--rv-d',Math.min(i,3)*.08+'s');els.push(c)})});
   const done=t=>{t.classList.remove('rv','in');t.style.removeProperty('--rv-d')};
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;io.unobserve(t);t.classList.add('in');
-    t.addEventListener('transitionend',function f(ev){if(ev.target!==t||ev.propertyName!=='transform')return;t.removeEventListener('transitionend',f);done(t)})}),{rootMargin:'0px 0px -8% 0px'});
+    t.addEventListener('transitionend',function f(ev){if(ev.target!==t||ev.propertyName!=='translate')return;t.removeEventListener('transitionend',f);done(t)})}),{rootMargin:'0px 0px -8% 0px'});
   els.forEach(el=>io.observe(el));
   addEventListener('flik:motion',e=>{if(e.detail.paused){io.disconnect();els.forEach(done)}});
 })();
