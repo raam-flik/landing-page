@@ -66,11 +66,23 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Form label:** Courier
 - **Form label:** Payment
 
-## 4. Guest or FLIK account
-<!-- html: Guest or FLIK account: full-width band with a flow diagram #paths -->
+## 4. One account
+<!-- html: One account: full-width band, a shopper with the places they shop, the FLIK shopper network, then your store (example data) #paths -->
 
-- **Section heading:** One account, every store.
-  - **Grey part:** Shoppers can check out as a guest or with a FLIK account. With an account, their details are ready on every store that uses FLIK Checkout.
+- **Section heading:** One account, wherever they shop.
+  - **Grey part:** Stores, social media, blogs. Every shopper with a FLIK account is already one tap from yours.
+- **Tiles around the shopper:** Shopify (logo) · WooCommerce (logo) · Your website · Blog · X (logo) · Instagram (logo) · WhatsApp (logo)
+- **Label:** One FLIK account
+- **Small heading:** FLIK shopper network
+- **Heading:** Shoppers from every FLIK brand
+- **Text:** They sign up once with a WhatsApp code, and their details go with them.
+- **Label:** Recognised at your store
+- **Heading:** Welcome back, Rina
+- **List item:** Address filled in
+- **List item:** Courier picked
+- **List item:** Payment method ready
+- **Button:** Pay in one tap
+- **Text:** Example. A shopper who joined at another FLIK brand, on their first visit to yours.
 
 ## 5. Payment methods
 <!-- html: Payment methods: dark section, tabs drive a phone #methods -->

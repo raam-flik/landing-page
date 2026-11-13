@@ -847,7 +847,7 @@ html{scroll-padding-top:88px}
 .ph-s.on{opacity:1;transform:none}
 .ph-s label{font-size:12px;font-weight:500;color:var(--body)}
 .ph-in{height:40px;border:1px solid var(--primary);box-shadow:0 0 0 1px var(--primary);border-radius:8px;display:flex;align-items:center;gap:6px;padding:0 12px;font-size:14px}
-.ph-in .cc{color:var(--muted)}
+.ph-in .ph-cc{color:var(--muted)}
 .caret{display:inline-block;width:1.5px;height:16px;background:var(--primary);animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .ph-btn{height:40px;border-radius:8px;background:var(--primary);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}
@@ -935,6 +935,30 @@ html{scroll-padding-top:88px}
 .fl-split path{fill:none;stroke:#D2C8FF;stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;animation:fl-dash 1.2s linear infinite}
 @keyframes fl-dash{to{stroke-dashoffset:-12}}
 .fl-col{display:grid;gap:16px}
+/* One account: shopper hub, shopper network, your store */
+.net{display:grid;grid-template-columns:minmax(0,1.25fr) 56px minmax(0,1fr) 56px minmax(0,1.05fr);align-items:center;margin-top:56px}
+.net-hub{position:relative;width:100%;max-width:360px;aspect-ratio:1;margin:0 auto}
+.net-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.net-lines path{fill:none;stroke:#D2C8FF;stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;animation:fl-dash 1.2s linear infinite}
+.net-ch{position:absolute;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:14px;background:#fff;border:1px solid var(--line-soft);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--primary)}
+.net-ch img{width:46px;height:46px;object-fit:contain}
+.net-ch em{font-style:normal;font-size:10.5px;line-height:1.1;color:var(--muted);text-align:center}
+.net-me{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.net-av{width:76px;height:76px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px var(--bg-alt),0 0 0 9px #D2C8FF}
+.net-av svg{width:34px;height:34px}
+.net-avw{position:relative;display:flex}
+.net-f{position:absolute;right:-6px;bottom:-4px;width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--line-soft);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center}
+.net-f svg{width:16px;height:16px}
+.net-me .pill{box-shadow:0 0 0 4px var(--bg-alt)}
+.net-dots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:100%;margin:8px 0 10px}
+.net-dots i{aspect-ratio:1;border-radius:50%;background:var(--bg-alt);border:1px solid var(--line);color:var(--faint);display:flex;align-items:center;justify-content:center}
+.net-dots svg{width:55%;height:55%}
+.net-dots i.on{background:var(--primary-soft);border-color:#D2C8FF;color:var(--primary)}
+.net-rows{list-style:none;margin:6px 0 8px;padding:0;display:grid;gap:6px;width:100%;font-size:13.5px;color:var(--body)}
+.net-rows li{display:flex;align-items:center;gap:8px}
+.net-rows li span{color:var(--ok);display:flex}
+.net-rows svg{width:16px;height:16px}
+.net-pay{align-self:stretch;height:36px;border-radius:8px;background:var(--primary);color:#fff!important;font-size:14px!important;font-weight:500;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
 
 /* Payment methods (dark) */
 #methods{overflow:hidden}
@@ -1121,6 +1145,8 @@ html{scroll-padding-top:88px}
   .fl-c i{animation:fl-dot-v 2.4s linear infinite;left:50%;margin-left:-4px;top:0;margin-top:0}
   @keyframes fl-dot-v{to{top:calc(100% - 8px)}}
   .fl-split svg{display:none}
+  .net{grid-template-columns:1fr;max-width:520px}
+  .net-hub{max-width:320px}
   .pmx{grid-template-columns:1fr 1fr;gap:32px}
   .pmx-side{grid-column:1/-1}
   .stats4{--bleed:16px;grid-template-columns:1fr 1fr}
@@ -1393,7 +1419,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
         <div class="ph-screens">
           <div class="ph-s on" data-s="0">
             <label>WhatsApp number</label>
-            <div class="ph-in"><span class="cc">+62</span><span id="ph-wa"></span><i class="caret"></i></div>
+            <div class="ph-in"><span class="ph-cc">+62</span><span id="ph-wa"></span><i class="caret"></i></div>
             <span class="ph-btn">Send code via WhatsApp</span>
             <p class="ph-note">No password needed.</p>
           </div>
@@ -1490,21 +1516,26 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== Guest or FLIK account: full-width band with a flow diagram ===== -->
+<!-- ===== One account: full-width band, a shopper with the places they shop, the FLIK shopper network, then your store (example data) ===== -->
 <section class="band guides" id="paths">
   <div class="wrap">
-    <h2 class="sec-h">One account, every store. <span class="soft">Shoppers can check out as a guest or with a FLIK account. With an account, their details are ready on every store that uses FLIK Checkout.</span></h2>
-    <div class="flow">
-      <div class="fl-n"><span class="fl-ic" data-ic="cart"></span><small>Wherever you sell</small><b>Shopper taps Checkout</b><span>Chat, social media or your storefront</span></div>
+    <h2 class="sec-h">One account, wherever they shop. <span class="soft">Stores, social media, blogs. Every shopper with a FLIK account is already one tap from yours.</span></h2>
+    <div class="net">
+      <div class="net-hub">
+        <svg class="net-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 50 L50.0 9.0"/><path d="M50 50 L82.1 24.4"/><path d="M50 50 L90.0 59.1"/><path d="M50 50 L67.8 86.9"/><path d="M50 50 L32.2 86.9"/><path d="M50 50 L10.0 59.1"/><path d="M50 50 L17.9 24.4"/></svg>
+        <span class="net-ch" style="left:50.0%;top:9.0%"><img src="../assets/logos/platform/shopify.png" alt="Shopify"></span>
+        <span class="net-ch" style="left:82.1%;top:24.4%"><img src="../assets/logos/platform/woocommerce.png" alt="WooCommerce"></span>
+        <span class="net-ch" style="left:90.0%;top:59.1%"><span data-ic="globe"></span><em>Your website</em></span>
+        <span class="net-ch" style="left:67.8%;top:86.9%"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h8l3 3v14h-11zM9.5 11h5M9.5 14.5h5M9.5 7.5h2"/></svg><em>Blog</em></span>
+        <span class="net-ch" style="left:32.2%;top:86.9%"><svg viewBox="0 0 24 24" width="28" height="28" fill="#000" role="img" aria-label="X"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span>
+        <span class="net-ch" style="left:10.0%;top:59.1%"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" role="img" aria-label="Instagram"><defs><linearGradient id="net-ig" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="url(#net-ig)" stroke-width="2"/><circle cx="12" cy="12" r="4.4" stroke="url(#net-ig)" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="url(#net-ig)"/></svg></span>
+        <span class="net-ch" style="left:17.9%;top:24.4%"><svg viewBox="0 0 24 24" width="34" height="34" fill="#25D366" role="img" aria-label="WhatsApp"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
+        <div class="net-me"><span class="net-avw"><span class="net-av" data-ic="user"></span><span class="net-f" role="img" aria-label="FLIK"><svg viewBox="6.9 3.9 24.5 24.3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z" fill="#F26324"/><path d="M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z" fill="#F26324"/></svg></span></span><span class="pill pu">One FLIK account</span></div>
+      </div>
       <div class="fl-c"><i></i></div>
-      <div class="fl-n fl-mid"><span class="fl-ic" data-ic="lock"></span><small>FLIK Checkout</small><b>Redirected to FLIK</b><span>Your products, your prices, a faster form</span></div>
-      <div class="fl-split">
-        <svg viewBox="0 0 80 200" preserveAspectRatio="none"><path d="M0 100 C40 100 40 40 80 40"/><path d="M0 100 C40 100 40 160 80 160"/></svg>
-      </div>
-      <div class="fl-col">
-        <div class="fl-n"><span class="pill ok">FLIK session found</span><b>Straight to payment</b><span>Address, courier and payment are already filled in.</span></div>
-        <div class="fl-n"><span class="pill gr">New shopper</span><b>Guest checkout or FLIK account</b><span>Register with a WhatsApp code once, and skip the form on any FLIK store next time.</span></div>
-      </div>
+      <div class="fl-n net-pool"><small>FLIK shopper network</small><div class="net-dots" aria-hidden="true"><i data-ic="user"></i><i class="on" data-ic="user"></i><i data-ic="user"></i><i data-ic="user"></i><i class="on" data-ic="user"></i><i data-ic="user"></i><i class="on" data-ic="user"></i><i data-ic="user"></i><i data-ic="user"></i><i class="on" data-ic="user"></i><i class="on" data-ic="user"></i><i data-ic="user"></i></div><b>Shoppers from every FLIK brand</b><span>They sign up once with a WhatsApp code, and their details go with them.</span></div>
+      <div class="fl-c"><i></i></div>
+      <div class="fl-n fl-mid net-you"><span class="pill ok">Recognised at your store</span><b>Welcome back, Rina</b><ul class="net-rows"><li><span data-ic="check"></span>Address filled in</li><li><span data-ic="check"></span>Courier picked</li><li><span data-ic="check"></span>Payment method ready</li></ul><span class="net-pay">Pay in one tap</span><span>Example. A shopper who joined at another FLIK brand, on their first visit to yours.</span></div>
     </div>
   </div>
 </section>
