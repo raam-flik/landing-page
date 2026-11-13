@@ -10,6 +10,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] Stats: "10M+ shoppers" and "200+ brands" removed (AG, 24 Oct 2026). The stats now use 30-second checkout, 15 payment methods, 99% shipment creation and the 3% COD fee.
 - [x] Kuvings and Jamise quotes, cards and logos removed (AG, 24 Oct 2026). The customer quote cards are hidden until there are approved quotes.
 - [x] Story card captions are two lines at most (Raam, 13 Nov 2026), the same on the product pages.
+- [x] Story cards use the same card as the product pages' customer stories (Raam, 13 Nov 2026): ERIGO and EMADO'S with their photo, logo and stat, linking to their story pages; the COD 3% and 50% cards keep their gradients with the same layout.
 - [x] Story cards (12 Nov): ERIGO and EMADO'S, from their real success stories, linking to their story pages. ZMNow.id is removed (no source).
 - [x] The globe animation now shows the sample store "Aruna Studio", labelled as an example (AG, 24 Oct 2026).
 - [ ] The "What's happening" posts are placeholders.
@@ -50,7 +51,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Grow your brand with checkout, shipping and funding tools that work on their own or together.
 - **Heading:** Accept payments in a 30-second checkout
 - **Heading:** Offer 15 payment methods
-- **Heading:** Ship with all major couriers for up to 50% less
+- **Heading:** Ship with all major couriers for up to 50% off published rates
 - **Heading:** Track any package in real time
 - **Heading:** Sell with COD for only a 3% fee (excl. PPN)
 - **Heading:** Fund your inventory, settled automatically as you sell

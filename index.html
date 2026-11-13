@@ -978,6 +978,17 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   .cc-open .cc-save{margin-left:0;flex:1 1 100%}
 }
 /* ===== /kit: cookie-consent ===== */
+
+/* ===== Homepage stories: the same card as the product pages' customer stories (photo, logo, big line, two-line caption) ===== */
+#stories .story-art{position:relative;flex-direction:column;justify-content:space-between;align-items:flex-start;overflow:hidden;isolation:isolate}
+#stories .story-art.sph{background-size:cover;background-position:center}
+#stories .story-art.sph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.15) 0%,rgba(var(--tint),.45) 55%,rgba(var(--tint),.9) 100%)}
+#stories .story-art.t-violet{--tint:106,75,255}#stories .story-art.t-magenta{--tint:255,45,184}#stories .story-art.t-orange{--tint:255,122,46}#stories .story-art.t-navy{--tint:0,45,93}
+#stories .st-logo{display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:7px;background:var(--surface,#fff)}
+#stories .st-logo.dark{background:var(--ink)}
+#stories .st-logo img{display:block;max-height:20px;max-width:96px;width:auto;object-fit:contain}
+#stories .st-big small{display:block;font-size:13px;font-weight:500;letter-spacing:0;opacity:.92;margin-top:4px}
+/* ===== /Homepage stories ===== */
 </style>
 </head>
 <body>
@@ -1092,7 +1103,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- Rates -->
       <article class="bc s2" id="shipping">
-        <h3>Ship with all major couriers for up to 50% less</h3>
+        <h3>Ship with all major couriers for up to 50% off published rates</h3>
         <button class="exp" data-prod="shipping" aria-label="More about Shipping">+</button>
         <div class="vis g3"><div class="minip" id="rates" style="width:100%;max-width:300px"></div></div>
       </article>
@@ -1200,11 +1211,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <h3 class="seg-h">Ship more, and spend less on every package.</h3>
       <p class="txt seg-p">From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.</p>
       <div class="stories-wrap">
-        <div class="stories" id="stories">
-          <article class="story s1"><div class="story-art"><span>ERIGO</span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="#" class="link" data-page="Erigo case study">Read ERIGO's story <span class="chev">›</span></a></article>
-          <article class="story s2"><div class="story-art"><span>EMADO'S</span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="#" class="link" data-page="Emados case study">Read EMADO'S story <span class="chev">›</span></a></article>
-          <article class="story s3"><div class="story-art"><span>3%</span></div><p>COD for a 3% fee (excl. PPN), credited after delivery.</p><a href="#" class="link" data-page="/shipping/cod">Explore COD shipping <span class="chev">›</span></a></article>
-          <article class="story s4"><div class="story-art"><span>50%</span></div><p>Up to 50% off published courier rates, all couriers in one place.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
+        <div class="stories" id="stories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span></span><span class="st-big">3%<small>COD fee (excl. PPN), after delivery</small></span></div><p>COD for a 3% fee (excl. PPN), credited after delivery.</p><a href="#" class="link" data-page="/shipping/cod">Explore COD shipping <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span></span><span class="st-big">50%<small>off published courier rates, up to</small></span></div><p>Up to 50% off published courier rates, all couriers in one place.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
         </div>
         <div class="car-nav"><button class="cbtn" data-car="stories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="stories" data-dir="1" aria-label="Next stories">›</button></div>
       </div>

@@ -15,6 +15,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] "COD that pays you back fast" (COD heading) is kept as Raam wrote it. Please confirm "fast" is OK next to "credited after delivery".
 - [ ] PPN rate in the COD mockups is shown as an example (11%). Please confirm the rate to show.
 
+- [x] **Hero globe (Raam, 13 Nov 2026):** now draws the land like the homepage globe (Natural Earth land map), so it reads as a real globe instead of an even dot field.
 ## Search results (SEO)
 
 - **Page title:** The Shipping Engine for Growing Brands | FLIK Shipping
@@ -25,7 +26,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above headline:** FLIK Shipping
 - **Headline (H1):** The shipping engine for growing brands.
-  - **Grey part:** All major couriers, up to 50% less.
+  - **Grey part:** All major couriers, up to 50% off published rates.
 - **Intro text:** Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
 - **Button:** Start shipping free
 - **Button:** Contact sales
