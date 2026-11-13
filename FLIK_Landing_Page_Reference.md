@@ -192,7 +192,7 @@ Logo · Products ▾ · Solutions ▾ · Developers ▾ · Resources ▾ · Pric
 | **Payment Link**<br>Share a link in chat or social media | **Courier Performance**<br>Best courier per region | **Outlet Expansion**<br>Cash to open your next outlet |
 | **Payment Methods**<br>QRIS, e-wallets, VA, cards and COD | **Warehouses**<br>Manage pickup origins | **Marketing Budget**<br>Fund campaigns that drive sales |
 | **Early Settlement**<br>Get paid before your settlement date | **Return Management**<br>Lower RTO, fewer failed deliveries |  |
-| **Fraud Detection**<br>Screen payments for fraud and risk | **Cross-Border Shipping**<br>Ship to customers abroad |  |
+| **Fraud Detection**<br>Fight fraud and chargebacks | **Cross-Border Shipping**<br>Ship to customers abroad |  |
 | **FLIK Connect**<br>Split each payment across wallets |  |  |
 | **FLIK Account**<br>Saved details across every store |  |  |
 | **Checkout Personalization**<br>Your payment methods, your couriers |  |  |
@@ -281,7 +281,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 | `/payment/in-store` | Accept QRIS and Card Payments In Store \| FLIK | Terima Pembayaran QRIS dan Kartu di Toko \| FLIK | EDC QRIS, mesin EDC, card payments in store / mesin EDC, terima QRIS di toko |
 | `/payment/early-settlement` | Get Paid Before Your Settlement Date \| FLIK Early Settlement | Dana Cair Lebih Cepat dari Jadwal Settlement \| FLIK | early settlement, faster payout / pencairan dana lebih cepat, settlement lebih awal |
 | `/payment/connect` | Split Payments Across Wallets \| FLIK Connect | Bagi Pembayaran ke Banyak Dompet \| FLIK Connect | split payments, payment splitting Indonesia / bagi hasil pembayaran, split payment |
-| `/payment/fraud-detection` | Fraud Detection for Every Payment \| FLIK | Deteksi Fraud untuk Setiap Pembayaran \| FLIK | payment fraud detection, COD fraud / deteksi fraud pembayaran, order fiktif COD |
+| `/payment/fraud-detection` | Fraud Detection: Fight Fraud and Chargebacks \| FLIK | Deteksi Fraud untuk Setiap Pembayaran \| FLIK | payment fraud detection, COD fraud / deteksi fraud pembayaran, order fiktif COD |
 | `/shipping` | Ship for Up to 40% Less, All Couriers \| FLIK Shipping | Ongkir Hemat hingga 40%, Semua Kurir \| FLIK Shipping | courier aggregator Indonesia / ekspedisi online murah |
 | `/shipping/cod` | COD Shipping with Only 3% Fee \| FLIK Shipping | Kirim COD dengan Fee Hanya 3% \| FLIK Shipping | COD shipping / kirim paket COD |
 | `/shipping/track` | Track Your Package, All Couriers \| FLIK | Cek Resi Semua Kurir \| FLIK | track package Indonesia / cek resi (very high search volume) |
