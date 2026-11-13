@@ -767,6 +767,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .bd-details{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .bd-details .ic{width:36px;height:36px;border-radius:10px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .bd-details p{font-size:15px;line-height:1.55;color:var(--body)}
+.bd-details p b{font-weight:500;color:var(--ink)}
 .bd-more h3{font-size:22px;font-weight:400;letter-spacing:-.3px;margin-bottom:20px}
 .bd-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .bd-card{text-align:left;border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,box-shadow .2s,transform .2s}
@@ -916,7 +917,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 .film-v{display:block;width:100%;max-height:calc(100vh - 120px);background:var(--ink)}
 @media (max-width:760px){.hx-film{right:calc(50% - 108px);bottom:124px}}  /* phones: centred above the logo strip */
 @media (max-width:760px){
-  .hx h1{font-size:40px;letter-spacing:-1px}
+  .hx h1{font-size:32px;letter-spacing:-.8px}
+  .hx h1 br{display:inline}  /* one sentence per line on phones (AG, 13 Nov 2026) */
   .hx .hero-cta{flex-direction:column;align-items:stretch;gap:8px;width:100%}
   .hx .hx-link{justify-content:center;height:46px}
   .hx .logos-band{margin-top:270px}
@@ -1020,8 +1022,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
   </div>
   <div class="wrap hero-in hx-in">
     <p class="hx-eyebrow">From cart to cash, in one platform</p>
-    <h1>Merchant Growth Platform <br>for Growing Brands</h1>
-    <p class="lead">Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.</p>
+    <h1>You build the brand. <br>We run the engine.</h1>
+    <p class="lead">Get paid. Get it delivered. Let every sale fuel the next.</p>
     <div class="hero-cta">
       <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
       <a href="#" class="link hx-link" data-act="sales">Contact sales <span class="chev">›</span></a>
@@ -1043,12 +1045,12 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Solutions bento ===== -->
 <section class="pad-t guides" id="solutions">
   <div class="wrap">
-    <h2 class="sec-h">Flexible solutions for every way you sell. <span class="soft">Grow your brand with checkout, shipping and funding tools that work on their own or together.</span></h2>
+    <h2 class="sec-h">Start with payments. Add the rest when you&rsquo;re ready. <span class="soft">Grow your brand with checkout, shipping and funding tools that work on their own or together.</span></h2>
 
     <div class="bento">
       <!-- Checkout -->
       <article class="bc s4" id="checkout">
-        <h3>Accept payments in a 30-second checkout</h3>
+        <h3>Thirty seconds from cart to paid.</h3>
         <button class="exp" data-prod="checkout" aria-label="More about Checkout">+</button>
         <div class="vis g1">
           <div class="co" id="co">
@@ -1094,7 +1096,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- Payment methods -->
       <article class="bc s2">
-        <h3>Offer 15 payment methods</h3>
+        <h3>However they pay, you get paid.</h3>
         <button class="exp" data-prod="payments" aria-label="More about payment methods">+</button>
         <div class="vis g2">
           <div class="minip pmlist" id="pmlist"></div>
@@ -1103,14 +1105,14 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- Rates -->
       <article class="bc s2" id="shipping">
-        <h3>Ship with all major couriers for up to 50% off published rates</h3>
+        <h3>Every major courier, at up to half the published rate.</h3>
         <button class="exp" data-prod="shipping" aria-label="More about Shipping">+</button>
         <div class="vis g3"><div class="minip" id="rates" style="width:100%;max-width:300px"></div></div>
       </article>
 
       <!-- Tracking -->
       <article class="bc s2">
-        <h3>Track any package in real time</h3>
+        <h3>Know where every package is. So do your shoppers.</h3>
         <button class="exp" data-prod="track" aria-label="More about tracking">+</button>
         <div class="vis g2">
           <div class="minip" style="width:100%;max-width:360px">
@@ -1122,7 +1124,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- COD -->
       <article class="bc s2">
-        <h3>Sell with COD for only a 3% fee (excl. PPN)</h3>
+        <h3>Say yes to cash on delivery.</h3>
         <button class="exp" data-prod="cod" aria-label="More about COD">+</button>
         <div class="vis g1">
           <div class="minip" style="width:100%;max-width:340px">
@@ -1137,7 +1139,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 
       <!-- Funding -->
       <article class="bc s6" id="funding">
-        <h3>Fund your inventory, settled automatically as you sell</h3>
+        <h3>Growth fuel, settled as you sell.</h3>
         <button class="exp" data-prod="funding" aria-label="More about Funding">+</button>
         <div class="vis g3 vis-fund">
           <div class="fund static">
@@ -1166,11 +1168,10 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <div class="stats-grid">
       <div>
         <h2>The backbone of growing brands</h2>
+        <p class="txt" style="margin-top:12px">Every one of them a sale our brands made.</p>
         <div class="stats2">
-          <div class="stat"><b class="num">30 sec</b><span>to check out with FLIK Checkout</span></div>
-          <div class="stat"><b class="num">15</b><span>payment methods in one checkout</span></div>
-          <div class="stat"><b class="num">99%</b><span>shipment creation success rate</span></div>
-          <div class="stat"><b class="num">3%</b><span>COD fee (excl. PPN), paid by the merchant</span></div>
+          <div class="stat"><b class="num">1M+</b><span>orders paid and shipped through FLIK this year</span></div>
+          <div class="stat"><b class="num" style="white-space:nowrap">Rp100bn+</b><span>in growth funding for brands</span></div>
         </div>
       </div>
       <div class="globe-box" role="img" aria-label="Example: a shopper in Tokyo pays Aruna Studio, a sample store, by card with FLIK Checkout. The payment lands in its FLIK balance, and Aruna Studio ships orders from Jakarta to Medan and Makassar with FLIK Shipping."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
@@ -1186,7 +1187,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
       <div class="banner-in">
         <p class="banner-k"><span>Checkout</span><i></i><span>Shipping</span><i></i><span>Funding</span></p>
         <h2>A unified commerce infrastructure.</h2>
-        <p class="banner-sub">Payments, shipping and funding in one flow, so every sale fuels the next one.</p>
+        <p class="banner-sub">Payments in, packages out, one balance behind it all.</p>
         <button class="btn btn-light" data-act="sales">Book a demo <span class="chev">›</span></button>
       </div>
     </div>
@@ -1196,13 +1197,13 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <!-- ===== Segments ===== -->
 <section class="pad guides">
   <div class="wrap">
-    <h2 class="sec-h">Powering brands at every stage. <span class="soft">Run your business on a platform that grows with you.</span></h2>
+    <h2 class="sec-h">Built to grow with you. <span class="soft">From first sale to full scale.</span></h2>
 
     <!-- A: brand websites -->
     <div class="seg">
       <span class="label"><i></i>FLIK for brand websites</span>
       <h3 class="seg-h">Turn more of your traffic into orders.</h3>
-      <p class="txt seg-p">Brands on Shopify and WooCommerce use FLIK Checkout to give shoppers a faster way to pay, with every payment method and all major couriers built in.</p>
+      <p class="txt seg-p">Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in 30 seconds. That&rsquo;s 3× faster than a standard checkout.</p>
     </div>
 
     <!-- B: shipping at volume -->
@@ -1224,8 +1225,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
     <!-- C: scaling -->
     <div class="seg" style="border-bottom:0">
       <span class="label"><i></i>FLIK for brands ready to scale</span>
-      <h3 class="seg-h">Fund the next stage of your growth.</h3>
-      <p class="txt seg-p">FLIK Merchant Cash Advance gives selected brands upfront funding for inventory, settled automatically as products sell. Trusted by 10+ growing businesses.</p>
+      <h3 class="seg-h">Fuel for your next stage.</h3>
+      <p class="txt seg-p">Upfront funding for selected brands. Your sales take care of the rest.</p>
       <div class="split" style="margin-top:40px">
         <div class="split-text">
           <div class="steps" id="steps" style="margin-top:0"></div>
@@ -1237,9 +1238,9 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
         <div class="panel"><div class="fund" id="fund"></div></div>
       </div>
       <div class="benefits">
-        <div><h4>Increased sales.</h4><p class="txt">Keep sales moving with dedicated cash flow for inventory and marketing.</p></div>
-        <div><h4>Transparent system.</h4><p class="txt">Clear margins with no hidden fees.</p></div>
-        <div><h4>Settled as you sell.</h4><p class="txt">Repayment is deducted automatically from your product sales.</p></div>
+        <div><h4>Stock for the rush.</h4><p class="txt">Keep sales moving with dedicated cash flow for inventory and marketing.</p></div>
+        <div><h4>One fixed margin.</h4><p class="txt">Agreed before you sign, with no hidden fees.</p></div>
+        <div><h4>Settled as you sell.</h4><p class="txt">Settlement is deducted automatically from your product sales.</p></div>
       </div>
     </div>
   </div>
@@ -1249,7 +1250,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="pad dark guides">
   <div class="wrap">
     <div class="dv-intro">
-        <h2 style="color:#fff">Reliable, flexible integration for every store.</h2>
+        <h2 style="color:#fff">Go live without rebuilding your store.</h2>
         <p class="lead" style="margin-top:16px">Connect FLIK with a plugin, build with the API, or run everything from the dashboard with no code.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a href="#" class="btn btn-light" data-page="Developer docs">View developer docs <span class="chev">›</span></a></div>
     </div>
@@ -1311,7 +1312,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 <section class="pad alt guides">
   <div class="wrap fcta">
     <div>
-      <h3>Ready to get started?</h3>
+      <h3>Start with your next order.</h3>
       <p class="txt">Create an account in minutes, or talk to our team about the right setup for your brand.</p>
       <div class="acts">
         <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
@@ -1977,35 +1978,35 @@ const PROD={
 };
 /* Product dialog: opened from a bento card or its "+" button */
 const BD={
-  checkout:{t:'Accept payments in a 30-second checkout',d:'FLIK Checkout replaces the checkout on your Shopify or WooCommerce store. Shoppers pay in 30 seconds, with every payment method and all major couriers built in.',cta:['Explore Checkout','/checkout'],
-    list:['A checkout that is 3× faster','Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords to forget','Rewards applied automatically at checkout'],
-    stat:['30 sec','to check out with a saved FLIK account'],stat2:['3×','faster than a standard checkout form'],
-    det:[['bolt','Shoppers enter their name, WhatsApp number, email and address once. Courier and payment method are selected automatically.'],['card','15 payment methods in one checkout, from QRIS and e-wallets to virtual accounts, cards and COD.'],['truck','Orders ship through FLIK Shipping from your own warehouse, and payments land in your balance after delivery.']],
+  checkout:{t:'Thirty seconds from cart to paid.',d:'A faster checkout for any storefront you use.',cta:['Explore Checkout','/checkout'],
+    list:['Pay in one tap','WhatsApp login, no password','Details saved for next time','Rewards applied automatically','Works with Shopify, WooCommerce and custom stores'],
+    stat:['30 sec','from cart to paid'],stat2:['3×','faster than a standard checkout'],
+    det:[['bolt','Remembered everywhere.','One FLIK account works at every store on FLIK Checkout.'],['card','Nothing to pick.','Courier and payment method are selected automatically.'],['truck','Straight to shipping.','Orders ship from your warehouse, and payment lands in your balance after delivery.']],
     more:['payments','shipping','funding'],q:null},
-  payments:{t:'Offer 15 payment methods',d:'Let shoppers pay the way they prefer, from QRIS and e-wallets to bank virtual accounts, cards and cash on delivery, all in one checkout.',cta:['Explore payment methods','/checkout/payment-methods'],
-    list:['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],
-    stat:['15','payment methods in one checkout'],stat2:['30 sec','from cart to paid'],
-    det:[['qris','QRIS works with any banking or e-wallet app your shoppers already use.'],['chart','Choose which methods to show in Checkout Personalization.'],['wallet','Every payment lands in your FLIK balance once the order is delivered.']],
+  payments:{t:'However they pay, you get paid.',d:'QRIS, e-wallets, virtual accounts, cards and COD, in one checkout.',cta:['Explore payment methods','/checkout/payment-methods'],
+    list:['Online checkout','Payment links','Invoices','In-store QRIS and cards','Your choice of methods'],
+    stat:['15','ways to pay'],stat2:['1','balance for every payment'],
+    det:[['qris','Online or in-store.','Take payments on your site, by link or invoice, or at the counter.'],['chart','Your mix.','Choose which methods to show.'],['check','Auto reconciliation.','Every payment is matched to its order automatically.']],
     more:['checkout','cod','funding'],q:null},
-  shipping:{t:'Ship with all major couriers for up to 50% off published rates',d:'FLIK Shipping is a courier aggregator. Enter addresses one by one or in bulk, compare every rate, and manage every shipment from one dashboard.',cta:['Explore Shipping','/shipping'],
-    list:['Regular, same day, next day, instant and cargo','Single and bulk shipments','Free to register, no registration fee','Courier performance by region'],
+  shipping:{t:'Every major courier, at up to half the published rate.',d:'Compare, book and track every courier from one dashboard.',cta:['Explore Shipping','/shipping'],
+    list:['Regular to instant and cargo','One parcel or thousands','COD and non-COD','Cross-border shipping','Free to register'],
     stat:['50%','off published courier rates, up to'],stat2:['99%','shipment creation success rate'],
-    det:[['truck','Compare every available rate, then choose the service and a pickup schedule.'],['pin','Pickup starts after the AWB is ready: 3–5 hours for regular; same day if fulfilled before 14:00 WIB.'],['globe','Coverage across Indonesia, for both COD and non-COD shipments.']],
+    det:[['truck','Compare before you book.','See every rate, then pick the service.'],['pin','Pickup you can plan.','3–5 hours for regular; same day if fulfilled before 14:00 WIB.'],['chart','Know your couriers.','See courier performance by region.']],
     more:['track','cod','checkout'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
-  track:{t:'Track any package in real time',d:'Tracking numbers are ready the moment a shipment is created, so you and your customers can follow every package from pickup to delivery.',cta:['Explore tracking','/shipping/track'],
-    list:['Status from pickup to delivery','Works across all major couriers','An email to the shopper at every status change','Order tracking in the FLIK Shopper App'],
-    stat:['99%','shipment creation success rate'],stat2:['Instant','tracking number when a shipment is created'],
-    det:[['bolt','Tracking numbers are available immediately, so customers stay in the loop.'],['mail','Shoppers get an email every time the status changes.'],['phone','The Shopper App shows delivery details and order history anytime.']],
+  track:{t:'Know where every package is. So do your shoppers.',d:'Follow every package from pickup to doorstep.',cta:['Explore tracking','/shipping/track'],
+    list:['All major couriers','Alerts when a delivery hits a problem'],
+    stat:['Instant','tracking number when a shipment is created'],
+    det:[['mail','They don’t have to ask.','Shoppers can check where their package is.'],['phone','In their pocket.','The Shopper App shows delivery details anytime.'],['bolt','Ready at once.','The tracking number exists the moment you create a shipment.']],
     more:['shipping','cod','checkout'],q:['ZMNow.id','ZMNow.id handles payments, shipping and rewards without juggling systems.','ZMNow.id · Products used: Checkout, Shipping',1]},
-  cod:{t:'Sell with COD for only a 3% fee (excl. PPN)',d:'Offer cash on delivery across Indonesia. The COD fee is 3% (excl. PPN), paid by the merchant and deducted when the COD amount is credited after delivery.',cta:['Explore COD shipping','/shipping/cod'],
-    list:['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited automatically once the order is completed','Credited to your balance after delivery'],
-    stat:['3%','COD fee (excl. PPN), paid by the merchant'],stat2:['2×','delivery attempts before a return'],
-    det:[['cash','The 3% COD fee (excl. PPN) is deducted when the COD amount is credited after a successful delivery.'],['wallet','The COD amount is credited to your balance after delivery.'],['chart','Track courier performance by region and choose the best one.']],
+  cod:{t:'Say yes to cash on delivery.',d:'Let shoppers pay cash at the door, across Indonesia.',cta:['Explore COD shipping','/shipping/cod'],
+    list:['Paid at the door','Credited after delivery','A second delivery attempt'],
+    stat:['100K+','COD orders delivered this year'],stat2:['3%','COD fee (excl. PPN), paid by the merchant'],
+    det:[['cash','One clear fee.','3% (excl. PPN), deducted when the COD amount is credited.'],['truck','A second try.','The courier tries again the next day before returning.'],['chart','Pick what works.','See courier performance by region.']],
     more:['shipping','track','funding'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
-  funding:{t:'Fund your inventory, settled automatically as you sell',d:'FLIK Merchant Cash Advance gives selected brands upfront funding for inventory. Settlement is deducted automatically as your products sell.',cta:['Explore Merchant Cash Advance','/funding/merchant-cash-advance'],
-    list:['Consultation with the FLIK team','Easy integration with your store','Upfront funding to stock inventory','Sell as usual, settled automatically'],
-    stat:['10+','growing businesses trust Merchant Cash Advance'],stat2:['0','hidden fees'],
-    det:[['coins','Dedicated cash flow for inventory and marketing, so sales keep moving.'],['check','Clear margins with no hidden fees.'],['chart','Track the outstanding amount and the latest payments in your dashboard.']],
+  funding:{t:'Growth fuel, settled as you sell.',d:'Upfront funding for selected brands. Your sales take care of the rest.',cta:['Explore Merchant Cash Advance','/funding/merchant-cash-advance'],
+    list:['For stock, marketing or expansion','One fixed margin','No hidden fees','You keep full ownership'],
+    stat:['Rp100bn+','in growth funding for brands'],stat2:['Fixed','margin, agreed upfront'],
+    det:[['coins','Talk to us.','A consultation with the FLIK team.'],['check','Get funded.','Funding upfront, before the rush.'],['chart','Sell as usual.','Settlement is deducted as products sell; track it in your dashboard.']],
     more:['checkout','shipping','cod'],q:null}
 };
 const BDNAME={checkout:['Checkout','cart','30-second checkout'],payments:['Payment Methods','card','15 methods in one checkout'],shipping:['Shipping','truck','All major couriers, one dashboard'],track:['Shipment Tracking','pin','Track any package'],cod:['COD Shipping','cash','Cash on delivery, 3% fee (excl. PPN)'],funding:['Merchant Cash Advance','coins','Inventory funding']};
@@ -2017,9 +2018,9 @@ function bdOpen(key,from){
   bd.innerHTML=`<button class="bd-x" data-bd-close aria-label="Close">${ic('x',18)}</button><div class="bd-in">
     <div class="bd-head"><div><h2 id="bd-title">${p.t}</h2><p>${p.d}</p><div class="bd-btns">${btn1}<a href="#" class="btn btn-secondary" data-page="/pricing">See pricing</a></div></div>
       <ul class="bd-list">${p.list.map(x=>`<li><span class="ck">${ic('check',11,3)}</span>${x}</li>`).join('')}</ul></div>
-    <div class="bd-gfx"><div class="bd-art" aria-hidden="true"></div><div class="bd-side"><div class="bd-stat"><b class="num">${p.stat[0]}</b><span>${p.stat[1]}</span></div><div class="bd-stat dark"><b class="num">${p.stat2[0]}</b><span>${p.stat2[1]}</span></div></div></div>
-    <div class="bd-details">${p.det.map(d=>`<div><span class="ic">${ic(d[0],18)}</span><p>${d[1]}</p></div>`).join('')}</div>
-    <div class="bd-more"><h3>More to discover</h3><div class="bd-cards">${p.more.map(k=>`<button class="bd-card" data-bd="${k}"><span class="ic">${ic(BDNAME[k][1],16)}</span><b>${BDNAME[k][0]}</b><span>${BD[k].d.split('. ')[0]}.</span><em>Learn more <span class="chev">›</span></em></button>`).join('')}</div></div>
+    <div class="bd-gfx"><div class="bd-art" aria-hidden="true"></div><div class="bd-side"><div class="bd-stat"><b class="num">${p.stat[0]}</b><span>${p.stat[1]}</span></div>${p.stat2?`<div class="bd-stat dark"><b class="num">${p.stat2[0]}</b><span>${p.stat2[1]}</span></div>`:''}</div></div>
+    <div class="bd-details">${p.det.map(d=>`<div><span class="ic">${ic(d[0],18)}</span><p><b>${d[1]}</b> ${d[2]}</p></div>`).join('')}</div>
+    <div class="bd-more"><h3>More to discover</h3><div class="bd-cards">${p.more.map(k=>`<button class="bd-card" data-bd="${k}"><span class="ic">${ic(BDNAME[k][1],16)}</span><b>${BDNAME[k][0]}</b><span>${BD[k].d}</span><em>Learn more <span class="chev">›</span></em></button>`).join('')}</div></div>
     ${p.q?`<div class="bd-quote"><span class="brand">${p.q[0]}</span>${p.q[3]?`<p style="font-size:22px;line-height:1.45;font-weight:300;color:var(--ink)">${p.q[1]}</p>`:`<q>${p.q[1]}</q>`}<small>${p.q[2]}</small></div>`:''}
     <div class="bd-foot"><h3>Get started with ${BDNAME[key][0]}</h3><div class="bd-btns">${btn1}<button class="btn btn-secondary" data-act="sales">Contact sales</button></div></div>
   </div>`;

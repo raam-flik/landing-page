@@ -14,6 +14,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] Story cards (12 Nov): ERIGO and EMADO'S, from their real success stories, linking to their story pages. ZMNow.id is removed (no source).
 - [x] The globe animation now shows the sample store "Aruna Studio", labelled as an example (AG, 24 Oct 2026).
 - [ ] The "What's happening" posts are placeholders.
+- [ ] **Copy pass (AG, 13 Nov 2026):** new hero, bento headings, stats, segment and funding headings, developers heading and final CTA heading. The voice has more character than the "calm and plain" house style, on purpose.
+- [ ] **Stats (AG, 13 Nov 2026):** now two scale stats; the COD fee is no longer a stat. "1M+ orders" may change to "Millions" once the all-time order count is confirmed.
+- [x] **New claims in the product pop-ups, confirmed (AG, 13 Nov 2026) and added to `product-facts.md`:** "Pay in one tap"; "Alerts when a delivery hits a problem" (tracking); "100K+ COD orders delivered this year".
+- [x] **Cross-border shipping** is in the Shipping pop-up; AG confirms FLIK ships cross-border (13 Nov 2026). This differs from the note in section 3 (Raam and Bintang, 13 Nov: off since Ninja closed it), so align with Bintang. The globe still ships to Medan and Makassar.
+- [x] **Auto reconciliation** added to the Payments pop-up and to `product-facts.md` (AG, 13 Nov 2026).
+- [ ] **Pop-up customer lines to confirm:** Shipping and COD show "Erigo runs delivery, payment and returns from one place with FLIK", kept for now (AG, 13 Nov 2026), though the customer list has Erigo on Merchant Cash Advance only. Tracking shows ZMNow.id, which was removed elsewhere for having no source.
+- [ ] **ERIGO's "up to 200%" figure:** confirm before launch (AG, 13 Nov 2026).
 
 ## Search results (SEO)
 
@@ -24,8 +31,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
 
 - **Small text above headline:** From cart to cash, in one platform
-- **Headline (H1):** Merchant Growth Platform<br>for Growing Brands
-- **Intro text:** Turning merchant transactions into a real-time growth engine. You build the brand, we provide the engine.
+- **Headline (H1):** You build the brand.<br>We run the engine.
+- **Intro text:** Get paid. Get it delivered. Let every sale fuel the next.
 - **Button:** Get started
 - **Link:** Contact sales
 
@@ -47,14 +54,15 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 2. Solutions bento
 <!-- html: Solutions bento #solutions -->
 
-- **Section heading:** Flexible solutions for every way you sell.
+- **Section heading:** Start with payments. Add the rest when you're ready.
   - **Grey part:** Grow your brand with checkout, shipping and funding tools that work on their own or together.
-- **Heading:** Accept payments in a 30-second checkout
-- **Heading:** Offer 15 payment methods
-- **Heading:** Ship with all major couriers for up to 50% off published rates
-- **Heading:** Track any package in real time
-- **Heading:** Sell with COD for only a 3% fee (excl. PPN)
-- **Heading:** Fund your inventory, settled automatically as you sell
+- **Heading:** Thirty seconds from cart to paid.
+- **Heading:** However they pay, you get paid.
+- **Heading:** Every major courier, at up to half the published rate.
+- **Heading:** Know where every package is. So do your shoppers.
+- **Heading:** Say yes to cash on delivery.
+  - The 3% fee (excl. PPN) has left this heading; it stays in the card's mockup ("COD fee (3%, excl. PPN)") and in the COD dialog.
+- **Heading:** Growth fuel, settled as you sell.
 
 *Example text inside the product mockup (only change if needed):*
 
@@ -79,14 +87,48 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - Merchant Cash Advance · Example
 - Auto settlement · Example
 
+*Product pop-ups (open from a card or its + button; AG, 13 Nov 2026). Each has a one-liner, an at-a-glance list, one or two stats, and three labelled value props. The one-liner also shows on the "More to discover" cards:*
+
+- **Checkout**
+  - **One-liner:** A faster checkout for any storefront you use.
+  - **At a glance:** Pay in one tap · WhatsApp login, no password · Details saved for next time · Rewards applied automatically · Works with Shopify, WooCommerce and custom stores
+  - **Stats:** 30 sec — from cart to paid · 3× — faster than a standard checkout
+  - **Value props:** Remembered everywhere. One FLIK account works at every store on FLIK Checkout. · Nothing to pick. Courier and payment method are selected automatically. · Straight to shipping. Orders ship from your warehouse, and payment lands in your balance after delivery.
+- **Payments**
+  - **One-liner:** QRIS, e-wallets, virtual accounts, cards and COD, in one checkout.
+  - **At a glance:** Online checkout · Payment links · Invoices · In-store QRIS and cards · Your choice of methods
+  - **Stats:** 15 — ways to pay · 1 — balance for every payment
+  - **Value props:** Online or in-store. Take payments on your site, by link or invoice, or at the counter. · Your mix. Choose which methods to show. · Auto reconciliation. Every payment is matched to its order automatically.
+- **Shipping**
+  - **One-liner:** Compare, book and track every courier from one dashboard.
+  - **At a glance:** Regular to instant and cargo · One parcel or thousands · COD and non-COD · Cross-border shipping · Free to register
+  - **Stats:** 50% — off published courier rates, up to · 99% — shipment creation success rate
+  - **Value props:** Compare before you book. See every rate, then pick the service. · Pickup you can plan. 3–5 hours for regular; same day if fulfilled before 14:00 WIB. · Know your couriers. See courier performance by region.
+- **Tracking**
+  - **One-liner:** Follow every package from pickup to doorstep.
+  - **At a glance:** All major couriers · Alerts when a delivery hits a problem
+  - **Stats:** Instant — tracking number when a shipment is created (one stat only)
+  - **Value props:** They don't have to ask. Shoppers can check where their package is. · In their pocket. The Shopper App shows delivery details anytime. · Ready at once. The tracking number exists the moment you create a shipment.
+- **COD**
+  - **One-liner:** Let shoppers pay cash at the door, across Indonesia.
+  - **At a glance:** Paid at the door · Credited after delivery · A second delivery attempt
+  - **Stats:** 100K+ — COD orders delivered this year · 3% — COD fee (excl. PPN), paid by the merchant
+  - **Value props:** One clear fee. 3% (excl. PPN), deducted when the COD amount is credited. · A second try. The courier tries again the next day before returning. · Pick what works. See courier performance by region.
+- **Funding**
+  - **One-liner:** Upfront funding for selected brands. Your sales take care of the rest.
+  - **At a glance:** For stock, marketing or expansion · One fixed margin · No hidden fees · You keep full ownership
+  - **Stats:** Rp100bn+ — in growth funding for brands · Fixed — margin, agreed upfront
+  - **Value props:** Talk to us. A consultation with the FLIK team. · Get funded. Funding upfront, before the rush. · Sell as usual. Settlement is deducted as products sell; track it in your dashboard.
+
 ## 3. Stats + globe
 <!-- html: Stats + globe -->
 
 - **Section heading:** The backbone of growing brands
-- **Stat:** 30 sec — to check out with FLIK Checkout
-- **Stat:** 15 — payment methods in one checkout
-- **Stat:** 99% — shipment creation success rate
-- **Stat:** 3% — COD fee (excl. PPN), paid by the merchant
+  - **Text under heading:** Every one of them a sale our brands made.
+- **Stat:** 1M+ — orders paid and shipped through FLIK this year
+- **Stat:** Rp100bn+ — in growth funding for brands
+
+- [x] Stats go from four to two, in one row, with a new line under the heading (AG, 13 Nov 2026).
 
 *Globe story (example data; the sample store Aruna Studio ships from Jakarta). Dots are land, the sea is empty (Natural Earth map):*
 
@@ -100,17 +142,17 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Text:** Checkout — Shipping — Funding
 - **Section heading:** A unified commerce infrastructure.
-- **Text:** Payments, shipping and funding in one flow, so every sale fuels the next one.
+- **Text:** Payments in, packages out, one balance behind it all.
 - **Button:** Book a demo
 
 ## 5. Segments
 <!-- html: Segments -->
 
-- **Section heading:** Powering brands at every stage.
-  - **Grey part:** Run your business on a platform that grows with you.
+- **Section heading:** Built to grow with you.
+  - **Grey part:** From first sale to full scale.
 - **Label:** FLIK for brand websites
 - **Heading:** Turn more of your traffic into orders.
-- **Text:** Brands on Shopify and WooCommerce use FLIK Checkout to give shoppers a faster way to pay, with every payment method and all major couriers built in.
+- **Text:** Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in 30 seconds. That's 3× faster than a standard checkout.
 - **Label:** FLIK for sellers shipping at volume
 - **Heading:** Ship more, and spend less on every package.
 - **Text:** From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.
@@ -130,21 +172,21 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Send from many warehouses to many destinations at once.
 - **Button:** Learn more
 - **Label:** FLIK for brands ready to scale
-- **Heading:** Fund the next stage of your growth.
-- **Text:** FLIK Merchant Cash Advance gives selected brands upfront funding for inventory, settled automatically as products sell. Trusted by 10+ growing businesses.
+- **Heading:** Fuel for your next stage.
+- **Text:** Upfront funding for selected brands. Your sales take care of the rest.
 - **Button:** Talk to the FLIK team
 - **Button:** Learn more
-- **Small heading:** Increased sales.
+- **Small heading:** Stock for the rush.
 - **Text:** Keep sales moving with dedicated cash flow for inventory and marketing.
-- **Small heading:** Transparent system.
-- **Text:** Clear margins with no hidden fees.
+- **Small heading:** One fixed margin.
+- **Text:** Agreed before you sign, with no hidden fees.
 - **Small heading:** Settled as you sell.
-- **Text:** Repayment is deducted automatically from your product sales.
+- **Text:** Settlement is deducted automatically from your product sales.
 
 ## 6. Developers
 <!-- html: Developers (dark) -->
 
-- **Section heading:** Reliable, flexible integration for every store.
+- **Section heading:** Go live without rebuilding your store.
 - **Intro text:** Connect FLIK with a plugin, build with the API, or run everything from the dashboard with no code.
 - **Button:** View developer docs
 - **Heading:** Connect to the systems you already use. Every order from your store flows through FLIK Checkout and Shipping, out to every payment method and all major couriers.
@@ -196,7 +238,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 8. Final CTA
 <!-- html: Final CTA -->
 
-- **Heading:** Ready to get started?
+- **Heading:** Start with your next order.
 - **Text:** Create an account in minutes, or talk to our team about the right setup for your brand.
 - **Button:** Get started
 - **Button:** Contact sales
