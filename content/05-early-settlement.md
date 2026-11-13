@@ -29,12 +29,11 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 - **Small text above headline:** FLIK Early Settlement
 - **Headline (H1):** Sold today, paid sooner.
   - **Grey part:** Less waiting for settlement.
-- **Intro text:** Turning paid orders into cash you can use sooner. You keep selling, FLIK speeds up the payout.
+- **Intro text:** Put the sales you've already made into stock, ads or payroll.
 - **Button:** Talk to the FLIK team
 - **Button:** See how it works
-- **List item:** Paid before your standard settlement date
-- **List item:** The fee is shown before you confirm
-- **List item:** Not a loan, nothing to repay
+- **List item:** Settle early only when you choose
+- **List item:** Your own money, just earlier
 
 *Example text inside the product mockup (only change if needed):*
 
@@ -52,17 +51,17 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 <!-- html: Same payment, two timelines: one payment forks into the early and the standard lane (inspired by xendit.co early settlement; example schedule) #gap -->
 
 - **Section heading:** Same payment, two timelines.
-  - **Grey part:** With Early Settlement, a shopper's payment is yours to use before the standard settlement date.
+  - **Grey part:** Take it now or wait. You choose each time.
 - **Lane label:** With Early Settlement
 - **Lane label:** Standard schedule
 - **Heading:** With Early Settlement
-- **List item:** Use the money before the standard settlement date.
-- **List item:** Paid into your FLIK balance, ready to use or withdraw.
+- **List item:** Yours to use ahead of the usual date.
+- **List item:** Lands in your FLIK balance, ready to spend or withdraw.
 - **List item:** See the fee before every payout.
 - **Heading:** On the standard schedule
-- **List item:** Money arrives on the standard schedule for each payment method.
-- **List item:** No early settlement fee on the standard schedule.
-- **List item:** Settles automatically, with nothing to request.
+- **List item:** Arrives on the usual date for each payment method.
+- **List item:** No early settlement fee.
+- **List item:** Automatic, with nothing to request.
 
 *Example text inside the diagram (only change if needed):*
 
@@ -82,11 +81,11 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 - **Heading:** Straight to your balance
 - **Text:** Ready to spend, or withdraw to your bank.
 - **Heading:** Fee before you confirm
-- **Text:** See exactly what you will receive.
-- **Heading:** A fee by payment method
-- **Text:** 0.2% for QRIS, e-wallets and virtual accounts. 0.3% for cards.
+- **Text:** See exactly what you'll receive.
+- **Heading:** Priced by payment method
+- **Text:** Cards cost a little more than QRIS, e-wallets and virtual accounts.
 - **Heading:** Every payout on record
-- **Text:** Each early payout is listed in your reports.
+- **Text:** Find each one in your reports.
 
 *Example text inside the product mockup (only change if needed):*
 
@@ -105,12 +104,10 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 ## 4. Payment methods
 <!-- html: Payment methods: a settlement ledger (the Shipping COD pattern, on white so partner logos keep their colours; example data) #settle-methods -->
 
-- **Section heading:** Early, from every way your customers pay.
-  - **Grey part:** QRIS, e-wallets, virtual accounts and cards can settle early. Cash on delivery settles once the package is delivered.
-- **Big number:** Sooner — than the standard settlement date
+- **Section heading:** Paid by QRIS, e-wallet or card? Settle it early.
+  - **Grey part:** Virtual accounts too. COD settles after delivery.
 - **List item:** Pending sales from every payment method, in one balance.
 - **List item:** Each early payout shows the original settlement date.
-- **List item:** Use the money for stock, suppliers, ads or payroll.
 - **Link:** Payment Methods
 
 *Example text inside the product mockup (only change if needed):*
@@ -130,35 +127,31 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 
 - **Section heading:** Early Settlement at a glance.
 - **Heading:** Your cash flow
-- **List item:** Paid before your standard settlement date
-- **List item:** Settle all pending sales or part of them
+- **List item:** Settle all or part
 - **List item:** Paid into your FLIK balance
-- **List item:** Settle only when you need it
-- **List item:** No early settlement fee on the standard schedule
+- **List item:** Only on days you choose
 - **Heading:** Payment methods
 - **List item:** QRIS
 - **List item:** E-wallets
 - **List item:** Bank virtual accounts
 - **List item:** Credit and debit cards
-- **List item:** Cash on delivery settles after delivery
+- **List item:** COD settles after delivery
 - **Heading:** Clear terms
-- **List item:** 0.2% non-card, 0.3% card, + PPN
-- **List item:** The fee shows before you confirm
-- **List item:** Not a loan: nothing to repay
-- **List item:** Every payout listed in your reports
+- **List item:** One fee per early payment
+- **List item:** Every payout in your reports
 
 ## 6. Pricing
 <!-- html: Pricing (like stripe.com/payments/checkout "Know what you'll pay") #pricing -->
 
 - **Label:** Pricing
 - **Section heading:** Know what you'll pay.
-  - **Grey part:** You only pay the early settlement fee when you settle early.
+  - **Grey part:** You pay only when you settle early.
 - **Heading:** Early settlement
 - **Link:** Pricing details
-- **Text:** A percentage of each payment you settle early: 0.2% for QRIS, e-wallets and virtual accounts, 0.3% for cards, plus PPN. Shown on screen before you confirm.
-- **Price:** 0.2% / 0.3% — non-card / card, + PPN, per transaction settled early
+- **Text:** A percentage of each payment you settle early, shown before you confirm.
+- **Price:** 0.2% / 0.3% — non-card / card, + PPN, per payment settled early
 - **Heading:** Standard settlement
-- **Text:** Sales you don't settle early arrive on the usual schedule, at no extra cost.
+- **Text:** Leave a sale alone and it arrives on its usual date.
 - **Price:** No extra fee — on the standard schedule
 
 ## 7. FAQ
@@ -166,19 +159,19 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 
 - **Section heading:** Questions, answered.
 - **Question:** What is Early Settlement?
-  - **Answer:** It pays out your sales before the standard settlement date, so money from paid orders is ready sooner.
+  - **Answer:** It pays out your sales before the standard settlement date, so the money is ready when you need it.
 - **Question:** Who is it for?
   - **Answer:** Every merchant who accepts payments with FLIK can switch it on. FLIK may set a limit for each account.
 - **Question:** How fast do I get paid?
   - **Answer:** As soon as the payment is made. For Checkout orders, once the order is completed.
 - **Question:** What does it cost?
-  - **Answer:** 0.2% of each QRIS, e-wallet or virtual account payment you settle early, and 0.3% of each card payment, plus PPN. The fee shows before you confirm. There is no fee on the standard schedule.
+  - **Answer:** 0.2% of each QRIS, e-wallet or virtual account payment you settle early, and 0.3% of each card payment, plus PPN. You pay nothing extra if you wait.
 - **Question:** Is it a loan?
-  - **Answer:** No. Early Settlement pays out money from sales you already made, so there is nothing to repay.
+  - **Answer:** No. Early Settlement pays out money from sales you've already made.
 - **Question:** Which transactions can I settle early?
   - **Answer:** Paid transactions waiting for settlement, such as QRIS, e-wallets, virtual accounts and cards. Cash on delivery orders settle after the package is delivered.
 - **Question:** Can I keep the standard schedule?
-  - **Answer:** Yes. Early Settlement is optional. Use it on the days you need it and keep the standard schedule the rest of the time.
+  - **Answer:** Yes. It's optional. Use it on the days you need it.
 - **Question:** How is it different from Merchant Cash Advance?
   - **Answer:** Early Settlement pays out money you already earned. Merchant Cash Advance funds your growth upfront and is settled from future sales.
 - **Text:** Can't find what you need? Talk to the FLIK team
@@ -189,7 +182,7 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 - **Small heading:** More from FLIK
 - **Card:** Product — Sell with FLIK Checkout — A faster checkout. Every paid order flows into your balance. — Explore Checkout
 - **Card:** Product — Fund your next stage — Need more than your pending sales? Merchant Cash Advance funds growth upfront. — Explore Funding
-- **Card:** Guide — Cash flow between settlements — When to settle early, and when the standard schedule is enough. — Read more
+- **Card:** Guide — Cash flow between settlements — When to settle early, and when to wait. — Read more
 
 ## 9. Final call to action
 <!-- html: Final CTA (centered) -->
@@ -199,5 +192,5 @@ Early Settlement is new (Linear FLI-46). On 12 Nov 2026 AG set the fee and ended
 - **Button:** Talk to the FLIK team
 - **Button:** Create an account
 - **Label:** Pricing
-- **Text:** 0.2% non-card, 0.3% card, + PPN, shown before you confirm. No extra fee on the standard schedule.
+- **Text:** One fee per payment you settle early. Nothing extra when you wait.
 - **Link:** See pricing
