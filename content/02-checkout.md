@@ -31,7 +31,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Contact sales
 - **Button:** See how it works
 - **List item:** Faster than a standard checkout
-- **List item:** Multiple payment methods
+- **List item:** Integrated shipping, promotions, and other superpowers
 - **List item:** No passwords to remember
 
 *Example text inside the product mockup (only change if needed):*
