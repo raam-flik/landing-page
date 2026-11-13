@@ -886,6 +886,9 @@ html{scroll-padding-top:88px}
 .fx-el{position:relative;border-radius:8px;transition:opacity .3s,box-shadow .3s,background .3s}
 .fx-win.hl .fx-el{opacity:.45}
 .fx-win.hl .fx-el.on{opacity:1;box-shadow:0 0 0 2px var(--primary),0 0 0 7px rgba(106,75,255,.14);background:#fff}
+/* Early Settlement payout card: the highlight sits around the whole field with room inside, and the selected option keeps a plain border */
+#fx-win .fx-form .fx-el:not(.fx-acc){padding:8px 10px;margin:0 -10px}
+#fx-win .fx-dest .fx-in.sel{border-color:var(--line);box-shadow:none}
 .fx-el label{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-bottom:4px}
 .fx-in{height:36px;border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 10px;font-size:13px;white-space:nowrap;overflow:hidden}
 .fx-in.warn{border-color:var(--warn)}
@@ -1245,7 +1248,7 @@ html{scroll-padding-top:88px}
 .fx-hist .co-row{align-items:center}
 /* Payment methods: a ledger (the Shipping COD pattern, on white) */
 .cod{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
-.cod-fee{display:flex;align-items:baseline;gap:16px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.cod-fee{display:flex;align-items:center;gap:16px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
 .cod-fee b{font-size:72px;font-weight:300;letter-spacing:-2px;line-height:1}
 .cod-fee span{color:var(--muted);font-size:16px;max-width:240px}
 .cod-pts{list-style:none;display:grid;gap:10px;margin:24px 0}
