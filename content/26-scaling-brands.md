@@ -64,7 +64,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** The tools brands reach for when sales take off.
 - **Item:** Ship at volume — Ship from all your warehouses to many destinations at once, and compare every major courier in one dashboard.
 - **Item:** Fund the next stage — Selected brands use a Merchant Cash Advance to stock up, open outlets or fund campaigns, settled automatically as products sell.
-- **Item:** Keep cash moving — One balance for online and in-store sales. Settle early when you need cash sooner, and withdraw from Rp100.000.
+- **Item:** Keep cash moving — One balance for online and in-store sales. Settle early when you need cash sooner, and withdraw to your bank.
 - **Item:** Less fraud as you grow — Fraud Detection checks payments, refunds and withdrawals, and FLIK helps with every chargeback. Risky COD orders flagged (coming soon).
 - **List item:** Bulk shipping from many warehouses
 - **List item:** Pickup today if ready by 14:00 WIB

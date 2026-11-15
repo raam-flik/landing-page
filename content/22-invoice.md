@@ -96,7 +96,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Do I have to match payments to invoices?
   - **Answer:** No. Each invoice is paid on its own payment page, so FLIK marks the right invoice Paid.
 - **Question:** Where does the money go?
-  - **Answer:** Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner.
+  - **Answer:** Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank, or settle early when you need cash sooner.
 - **Question:** What does it cost?
   - **Answer:** There is no setup fee. Each paid invoice costs the rate of the payment method your customer used, shown on the Pricing page.
 - **Question:** Do I need to verify my business?

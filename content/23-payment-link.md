@@ -68,7 +68,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Step:** 01 — The customer pays — On your FLIK payment page.
 - **Step:** 02 — In your balance — Once FLIK has received the funds.
 - **Step:** 03 — Need it sooner? — Early Settlement pays out before the standard date.
-- **Step:** 04 — Withdraw — To your bank account, from Rp100.000.
+- **Step:** 04 — Withdraw — To your bank account.
 
 ## 6. Pay only when you're paid.
 
@@ -118,6 +118,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Payment link or invoice?
   - **Answer:** Use a payment link to sell the same products to many customers. Use an invoice to bill one customer, with a due date and a PDF.
 - **Question:** Where does the money go?
-  - **Answer:** Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner.
+  - **Answer:** Into your FLIK balance, the same balance as your other FLIK payments. Withdraw to your bank, or settle early when you need cash sooner.
 - **Question:** What does it cost?
   - **Answer:** There is no setup fee. Each payment costs the rate of the payment method your customer used, shown on the Pricing page.

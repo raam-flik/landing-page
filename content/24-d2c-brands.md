@@ -104,7 +104,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** No setup fee.
 - **Item:** Standard pricing — Payment method rates, shipping and Early Settlement are all on the Pricing page.
 - **Item:** Selling at volume? — Talk to the FLIK team about rates for your brand.
-- **Rate:** FLIK Checkout — 0–2% — Success fee on each successful payment, excl. PPN
+- **Rate:** FLIK Checkout — 0–2% — Success fee on top of your payment fees, excl. PPN
 - **Rate:** Shipping — Up to 50% off — Published courier rates, paid per shipment
 - **Rate:** Cash on delivery — 3% — Of the order value, excl. PPN, after delivery
 
@@ -142,8 +142,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Which couriers can I ship with?
   - **Answer:** JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 50% off published rates.
 - **Question:** What does it cost?
-  - **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN).
+  - **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, on top of your payment fees, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN).
 - **Question:** Can I fund stock for a drop?
   - **Answer:** Selected brands can get a Merchant Cash Advance, paid back automatically from sales.
 - **Question:** Where does the money go?
-  - **Answer:** Into your FLIK balance. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner.
+  - **Answer:** Into your FLIK balance. Withdraw to your bank, or settle early when you need cash sooner.
