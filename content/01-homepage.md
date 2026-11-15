@@ -142,7 +142,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Feature banner -->
 
 - **Section heading:** A unified commerce infrastructure.
-- **Line with three points:** Checkout — Shipping — Funding
+- **Line with three points:** Payments — Shipping — Funding ("Payments", not "Checkout": it matches "Payments in, packages out" and the product order, AG 15 Nov 2026)
 - Design (AG, 15 Nov 2026): a light, square band in pastel blue, lilac and pink with a violet particle stream. The three product cards were removed because they repeated the tiles above.
 - **Text:** Payments in, packages out, one balance behind it all.
 - **Button:** Book a demo
@@ -178,8 +178,8 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Link on each card:** Read [brand]'s story
 
 ### 5c. Funding and registration
-- **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding
-- **Card:** Free to register. — There's no registration fee to use FLIK Shipping. — Get started
+- **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding. Fragment (example): Funding — Rp 250.000.000 — Settled from sales 62%
+- **Card:** Free to register. — There's no registration fee to use FLIK Shipping. — Get started. Fragment: Your FLIK account — Registration fee Rp 0 — Create your account
 
 ### 5d. Platforms
 - **Label:** FLIK for platforms
