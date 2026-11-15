@@ -705,7 +705,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .en-cap span{opacity:0;transition:opacity .25s}
 .en-spot.on .en-cap span{opacity:1;transition:opacity .45s .25s}
 .bs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
-.bs-row{display:flex;gap:16px;margin-top:40px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
+.bs-row{display:flex;gap:16px;margin-top:40px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}  /* overflow-y hidden: a sideways swipe on a phone must not drag the row up and down */
+@media (hover:none) and (pointer:coarse){#brand-stories .car-nav{display:none}}  /* touch screens swipe; the arrows stay for mouse users */
 .bs-row::-webkit-scrollbar{display:none}
 .bs-card{flex:0 0 272px;scroll-snap-align:start}
 .bs-art{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;aspect-ratio:4/5;padding:16px;color:#fff;background:var(--dark) center/cover;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
@@ -1034,7 +1035,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 .hx-film-d{color:var(--muted);font-variant-numeric:tabular-nums}
 .modal.film{max-width:960px;background:var(--ink)}
 .film-v{display:block;width:100%;max-height:calc(100vh - 120px);background:var(--ink)}
-@media (max-width:760px){.hx-film{right:calc(50% - 108px);bottom:124px}}  /* phones: centred above the logo strip */
+@media (max-width:760px){.hx-film{right:12px;bottom:124px;width:140px;padding:6px;border-radius:8px}.hx-film-h{font-size:10.5px;padding:0 1px 4px}.hx-film-x{width:16px;height:16px;font-size:14px}.hx-film-f{font-size:10.5px;padding:5px 1px 0;gap:4px}.hx-film-w{font-size:10.5px;gap:4px;white-space:nowrap}.hx-play{width:12px;height:12px}.hx-play::after{left:4px;top:3px}}  /* phones: small card, bottom right of the hero art, above the logo strip */
 @media (max-width:760px){
   .hx h1{font-size:32px;letter-spacing:-.8px}
   .hx h1 br{display:inline}  /* one sentence per line on phones (AG, 13 Nov 2026) */
@@ -1365,7 +1366,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Enterprise ===== -->
 <section class="pad guides" id="enterprise">
   <div class="wrap">
-    <h2 class="sec-h">Bigger operations run on FLIK too. <span class="soft">Hospitals, schools and property developers, each with a workflow built around them.</span></h2>
+    <h2 class="sec-h">Enterprise brands run on FLIK too. <span class="soft">Each with a workflow built around them.</span></h2>
     <div class="en-spots">
       <article class="en-spot on" tabindex="0" role="button" aria-expanded="true"><div class="en-ph" style="background-image:url('assets/sections/enterprise-property.jpg')"><small>Property</small></div><p class="en-cap"><b>Ruma</b><span> runs its property sales operations with FLIK.</span></p></article>
       <article class="en-spot" tabindex="0" role="button" aria-expanded="false"><div class="en-ph" style="background-image:url('assets/sections/enterprise-school.jpg')"><small>Education</small></div><p class="en-cap"><b>Masakecil</b><span> collects term fees with FLIK.</span></p></article>
