@@ -159,8 +159,8 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - [ ] The three enterprise images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `enterprise-hospital.jpg`. They are bright, photographic images sharing one pastel morning sky in the FLIK lilac, pink and blue (AG, 15 Nov 2026); an earlier dusk set is in the branch history. The property, school and hospital images were regenerated from photos AG supplied of each brand's own space; confirm the three brands are happy with that use.
 
 ### 5a. Enterprise
-- **Section heading:** Bigger operations run on FLIK too.
-  - **Grey part:** Hospitals, schools and property developers, each with a workflow built around them.
+- **Section heading:** Enterprise brands run on FLIK too.
+  - **Grey part:** Each with a workflow built around them.
 - No "FLIK for enterprise" label (AG, 15 Nov 2026): the heading and the industry tags on the photos carry it.
 - **Spotlight (tag on photo: Property):** Ruma runs its property sales operations with FLIK.
 - **Spotlight (tag on photo: Education):** Masakecil collects term fees with FLIK.

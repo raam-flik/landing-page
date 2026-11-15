@@ -1422,6 +1422,14 @@ main section#customers{padding:112px 0}
 #instore .txt{color:var(--on-dark-muted,#AAB4CC)}
 #instore .hero-cta{justify-content:flex-start;align-items:flex-start}#instore .hero-cta .btn{margin-left:0;margin-right:auto}#instore .hero-cta{margin-left:0;margin-right:0;max-width:none;width:auto}
 @media (max-width:1080px){#instore .py-card{margin-left:0!important}}
+/* In store: the FLIK EDC as a static image (rendered from payment/in-store/edc-3d.js), with example payment chips */
+.is-edc{position:relative;max-width:420px;margin:0 0 0 auto}
+.is-edc img{display:block;height:500px;width:auto;max-width:100%;margin:0 auto;filter:drop-shadow(0 28px 36px rgba(0,0,0,.35))}
+.is-chip{position:absolute;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:#fff;color:var(--ink);font-size:13px;white-space:nowrap;box-shadow:var(--sh-lg)}
+.is-chip.c1{left:-48px;top:22%}.is-chip.c2{right:0;top:58%}
+.is-edc figcaption{margin-top:14px;text-align:center;font-size:12px;color:var(--on-dark-muted,#AAB4CC)}
+@media (max-width:1080px){.is-edc{margin:0 auto}}
+@media (max-width:760px){.is-edc img{height:420px}.is-chip{display:none}}
 /* ===== /Payment page ===== */
 /* ===== kit: scroll-reveal ===== */
 /* Scroll reveal below the hero (AG, 13 Nov 2026; medium level, after squareup.com). Same on every marketing page. Classes are added by JS only, so nothing hides if JS fails.
@@ -1556,7 +1564,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <p class="txt" style="margin-top:20px">Customers scan or use their card, the receipt prints on the spot, and in-store sales sit next to your online orders in the dashboard.</p>
       <div class="hero-cta" style="margin-top:28px"><a href="#" class="btn btn-primary" data-page="/payment/in-store">Explore In-Store Payment <span class="chev">›</span></a></div>
     </div>
-    <div><div class="py-card" style="position:relative;max-width:420px;margin-left:auto"><div class="co-bar"><i></i><i></i><i></i><span>FLIK EDC</span></div><div class="py-b"><div class="py-row"><span>QRIS · Rp45.000</span><span class="pill ok">Paid</span></div><div class="py-row"><span>Debit card · GPN · Rp128.000</span><span class="pill ok">Approved</span></div><div class="py-row"><span>Credit card · Visa · Rp350.000</span><span class="pill ok">Approved</span></div><div class="py-row"><span>Receipt</span><span>Printed</span></div><div class="py-ex">Example</div></div></div></div>
+    <div><figure class="is-edc"><img src="../assets/payment/edc-terminal.png" width="772" height="1499" loading="lazy" alt="The FLIK EDC, a handheld payment device with a touchscreen and a receipt printer. Its screen shows example sales for the day, split by QRIS and card."><span class="is-chip c1" aria-hidden="true">QRIS · Rp45.000 <span class="pill ok">Paid</span></span><span class="is-chip c2" aria-hidden="true">Card · Rp350.000 <span class="pill ok">Approved</span></span><figcaption>Example screen</figcaption></figure></div>
   </div>
 </section>
 
