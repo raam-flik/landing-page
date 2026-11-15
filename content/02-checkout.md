@@ -177,8 +177,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** One fee for the whole checkout, not just the payment: shopper trust, a checkout built to convert, and shipping, promotions and loyalty in one place.
 - **Heading:** Success fee
 - **Link:** Pricing details
-- **Text:** 0–2% (excl. PPN) on each successful payment. The rate depends on your payment methods and volume.
-- **Price:** 0–2% — excl. PPN, on each successful payment
+- **Text:** 0–2% (excl. PPN) on each successful payment, on top of your payment fees. The rate depends on your payment methods and volume.
+- **Price:** 0–2% — excl. PPN, on top of your payment fees
 - **Heading:** When the fee applies
 - **Text:** The Checkout fee is earned when the payment succeeds.
 - **Price:** On success — earned when the payment succeeds
@@ -216,7 +216,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** When do I receive the money?
 - **Answer:** Once the shopper has paid and the package has arrived, the money lands in your FLIK balance. COD payments too.
 - **Button:** How much does it cost?
-- **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, depending on your payment methods and volume. It pays for the whole checkout, not just accepting the payment: WhatsApp login, saved details, shipping, promotions and loyalty in one place.
+- **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, on top of your payment fees. The rate depends on your payment methods and volume. It pays for the whole checkout, not just accepting the payment: WhatsApp login, saved details, shipping, promotions and loyalty in one place.
 - **Button:** Can FLIK help fund my promotions?
 - **Answer:** Yes. We co-fund promotion programs for merchants on FLIK Checkout. Ask us for the details.
 - **Text:** Can't find what you need? Talk to the FLIK team
@@ -236,5 +236,5 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Contact sales
 - **Button:** Create an account
 - **Label:** Pricing
-- **Text:** 0–2% (excl. PPN) on each successful payment, for the whole checkout.
+- **Text:** 0–2% (excl. PPN) on top of your payment fees, for the whole checkout.
 - **Link:** See pricing

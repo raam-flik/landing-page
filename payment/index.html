@@ -1506,7 +1506,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <div><h3><span class="fx-ic" data-ic="cart"></span>Convert more shoppers</h3><p>A fast checkout with WhatsApp login, saved details and 15 payment methods on one page.</p></div>
     <div><h3><span class="fx-ic" data-ic="qris"></span>The methods shoppers trust</h3><p>QRIS, GoPay, OVO, DANA, ShopeePay, bank virtual accounts, cards and COD, online and at the counter.</p></div>
     <div><h3><span class="fx-ic" data-ic="lock"></span>Less fraud, fewer chargebacks</h3><p>Fraud Detection checks payments, refunds and withdrawals, and FLIK helps with every chargeback.</p></div>
-    <div><h3><span class="fx-ic" data-ic="wallet"></span>Paid into one balance</h3><p>Every channel lands in one FLIK balance. Withdraw from Rp100.000, or settle early when you need cash sooner.</p></div>
+    <div><h3><span class="fx-ic" data-ic="wallet"></span>Paid into one balance</h3><p>Every channel lands in one FLIK balance. Withdraw to your bank, or settle early when you need cash sooner.</p></div>
   </div>
 </section>
 
@@ -1914,7 +1914,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 /* ===== Page: at a glance ===== */
 
 /* ===== FAQ ===== */
-const FAQ=[["Which payment methods can I accept?", "QRIS, e-wallets such as GoPay, ShopeePay, OVO and DANA, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Where does the money go?", "Every payment lands in your FLIK balance once the order is completed and FLIK has received the funds. Withdraw to your bank from Rp100.000."], ["Can I get paid sooner?", "Yes. Early Settlement pays out before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN."], ["What does it cost?", "Each payment method has its own rate, shown on the Pricing page. There is no setup fee."], ["Is FLIK a bank?", "No. Payments are processed by licensed payment partners."], ["Do I need to verify my business?", "Yes. Verify your identity and business before you send invoices, withdraw or get live API keys."]];
+const FAQ=[["Which payment methods can I accept?", "QRIS, e-wallets such as GoPay, ShopeePay, OVO and DANA, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Where does the money go?", "Every payment lands in your FLIK balance once the order is completed and FLIK has received the funds. Withdraw to your bank."], ["Can I get paid sooner?", "Yes. Early Settlement pays out before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN."], ["What does it cost?", "Each payment method has its own rate, shown on the Pricing page. There is no setup fee."], ["Is FLIK a bank?", "No. Payments are processed by licensed payment partners."], ["Do I need to verify my business?", "Yes. Verify your identity and business before you send invoices, withdraw or get live API keys."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});

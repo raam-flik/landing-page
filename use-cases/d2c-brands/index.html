@@ -1756,7 +1756,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <p class="py-eye">Pricing</p>
     <h2 class="sec-h">Pay as you sell. <span class="soft">No setup fee.</span></h2>
     <div class="py-rate" style="grid-template-columns:repeat(3,1fr)">
-      <div><small>FLIK Checkout</small><b>0–2%</b><span>Success fee on each successful payment, excl. PPN</span></div>
+      <div><small>FLIK Checkout</small><b>0–2%</b><span>Success fee on top of your payment fees, excl. PPN</span></div>
       <div><small>Shipping</small><b>Up to 50% off</b><span>Published courier rates, paid per shipment</span></div>
       <div><small>Cash on delivery</small><b>3%</b><span>Of the order value, excl. PPN, after delivery</span></div>
     </div>
@@ -2050,7 +2050,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 /* ===== Page: at a glance ===== */
 
 /* ===== FAQ ===== */
-const FAQ=[["Which stores does FLIK work with?", "Shopify and WooCommerce. FLIK sets up FLIK Checkout for you. Building your own store? Use the FLIK API."], ["Do shoppers need a FLIK account?", "No. They can check out as a guest, or create a FLIK account so their details are saved for every store that uses FLIK."], ["Which payment methods can shoppers use?", "QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Which couriers can I ship with?", "JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 50% off published rates."], ["What does it cost?", "A success fee of 0–2% (excl. PPN) on each successful payment, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN)."], ["Can I fund stock for a drop?", "Selected brands can get a Merchant Cash Advance, paid back automatically from sales."], ["Where does the money go?", "Into your FLIK balance. Withdraw to your bank from Rp100.000, or settle early when you need cash sooner."]];
+const FAQ=[["Which stores does FLIK work with?", "Shopify and WooCommerce. FLIK sets up FLIK Checkout for you. Building your own store? Use the FLIK API."], ["Do shoppers need a FLIK account?", "No. They can check out as a guest, or create a FLIK account so their details are saved for every store that uses FLIK."], ["Which payment methods can shoppers use?", "QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Which couriers can I ship with?", "JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 50% off published rates."], ["What does it cost?", "A success fee of 0–2% (excl. PPN) on each successful payment, on top of your payment fees, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN)."], ["Can I fund stock for a drop?", "Selected brands can get a Merchant Cash Advance, paid back automatically from sales."], ["Where does the money go?", "Into your FLIK balance. Withdraw to your bank, or settle early when you need cash sooner."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});

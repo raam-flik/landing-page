@@ -50,7 +50,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Row:** Debit cards and GPN — Local debit cards on the GPN network — [rate] — [PPN] — [total]
 - **Section heading:** Other fees.
   - **Grey part:** Each fee is charged with PPN on top.
-- **Card:** FLIK Checkout — 0–2% + PPN — A success fee on each successful payment, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume. — Explore Checkout
+- **Card:** FLIK Checkout — 0–2% + PPN — A success fee on each successful payment, on top of your payment fees, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume. — Explore Checkout
 - **Card:** Cash on delivery — 3% + PPN — Of the COD amount. It's deducted when the COD amount reaches your balance after delivery, so you never pay it upfront. — COD Shipping
 - **Card:** FLIK Connect (Coming soon) — 0.5% + PPN — Of the amount split to partners, max Rp10.000 per transaction, paid by the main merchant. Partners pay nothing to receive their split. — Explore FLIK Connect
 - **Section heading:** How PPN works.

@@ -30,7 +30,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Item:** Convert more shoppers — A fast checkout with WhatsApp login, saved details and 15 payment methods on one page.
 - **Item:** The methods shoppers trust — QRIS, GoPay, OVO, DANA, ShopeePay, bank virtual accounts, cards and COD, online and at the counter.
 - **Item:** Less fraud, fewer chargebacks — Fraud Detection checks payments, refunds and withdrawals, and FLIK helps with every chargeback.
-- **Item:** Paid into one balance — Every channel lands in one FLIK balance. Withdraw from Rp100.000, or settle early when you need cash sooner.
+- **Item:** Paid into one balance — Every channel lands in one FLIK balance. Withdraw to your bank, or settle early when you need cash sooner.
 
 ## 3. A checkout built to convert.
 
@@ -143,7 +143,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Which payment methods can I accept?
   - **Answer:** QRIS, e-wallets such as GoPay, ShopeePay, OVO and DANA, bank virtual accounts, credit and debit cards, and cash on delivery.
 - **Question:** Where does the money go?
-  - **Answer:** Every payment lands in your FLIK balance once the order is completed and FLIK has received the funds. Withdraw to your bank from Rp100.000.
+  - **Answer:** Every payment lands in your FLIK balance once the order is completed and FLIK has received the funds. Withdraw to your bank.
 - **Question:** Can I get paid sooner?
   - **Answer:** Yes. Early Settlement pays out before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN.
 - **Question:** What does it cost?
