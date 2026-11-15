@@ -180,7 +180,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 ### 5c. Funding and registration
 - **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding.
 - **Card:** Start for free. — No registration fee. Create your account and start selling. — Get started. (AG, 15 Nov 2026: don't tie this to Shipping.)
-- Both cards are dark navy with a soft corner glow, text and a link only; no product mockup, to avoid distraction (AG, 15 Nov 2026).
+- Both cards are white with a hairline border, text and a link only; no product mockup. The colour sits in the corner glow, in deeper tones (pink-violet, navy-violet), not in the background (AG, 15 Nov 2026).
 
 ### 5d. Platforms
 - No "FLIK for platforms" label (AG, 15 Nov 2026): the heading carries it.

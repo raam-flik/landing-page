@@ -718,14 +718,14 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .bs-card .link{margin-top:8px}
 .bs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8)}.bs-all::before{display:none}
 .mc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-/* Two dark cards that stand out from the light sections around them: navy with one soft corner glow, text and a link only */
-.mc-card{position:relative;isolation:isolate;overflow:hidden;min-height:176px;background:var(--dark);padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:10px}
-.mc-card::before{content:"";position:absolute;z-index:-1;right:-110px;top:-120px;width:420px;height:420px;border-radius:50%;filter:blur(18px)}
-.mc-fund::before{background:radial-gradient(closest-side,rgba(174,29,124,.85),rgba(158,77,200,.55) 55%,transparent)}
-.mc-reg::before{background:radial-gradient(closest-side,rgba(59,167,255,.7),rgba(106,75,255,.6) 55%,transparent)}
-.mc-card p{font-size:16px;line-height:1.5;color:rgba(255,255,255,.76);max-width:62%}
-.mc-card p b{font-weight:500;color:#fff}
-.mc-card .link{margin-top:0;color:#CFC6FF}.mc-card .link:hover{color:#fff}
+/* Two quiet cards: white, hairline border, text and a link, with one deep-coloured glow in the corner */
+.mc-card{position:relative;isolation:isolate;overflow:hidden;min-height:176px;border:1px solid var(--line);background:#fff;padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:10px}
+.mc-card::before{content:"";position:absolute;z-index:-1;right:-170px;top:-250px;width:520px;height:520px;border-radius:50%;filter:blur(20px)}
+.mc-fund::before{background:radial-gradient(closest-side,rgba(174,29,124,.72),rgba(158,77,200,.5) 55%,transparent)}
+.mc-reg::before{background:radial-gradient(closest-side,rgba(59,36,168,.72),rgba(106,75,255,.5) 55%,transparent)}
+.mc-card p{font-size:16px;line-height:1.5;color:var(--muted);max-width:58%}
+.mc-card p b{font-weight:500;color:var(--ink)}
+.mc-card .link{margin-top:0}
 /* Platforms: one order on a marketplace, split by FLIK Connect between two sellers and the platform (example figures) */
 .pf-ui{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:100/43;margin-top:48px;background:#fff;border:1px solid var(--line)}
 /* same card style as the funding and start-for-free cards, in its light form: white, hairline border, soft corner glows */
