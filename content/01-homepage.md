@@ -155,7 +155,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - [ ] Ruma and Masakecil: the one-line descriptions below are drafts. Confirm what each uses FLIK for, and supply logos.
 - [ ] "AI automations": confirm what is on offer today.
 - [ ] FLIK Connect is not live. The Platforms section carries a "coming soon" note beside its button.
-- [ ] The three section images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `platforms-marketplace.jpg`.
+- [ ] The three section images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `platforms-marketplace.jpg`. The property and school images were regenerated from photos AG supplied of each brand's own space; confirm both brands are happy with that use.
 
 ### 5a. Enterprise
 - **Label:** FLIK for enterprise
