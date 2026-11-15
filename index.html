@@ -692,20 +692,17 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .hl-ic svg{width:20px;height:20px}
 .hl-tri p{font-size:16px;line-height:1.55;color:var(--muted);max-width:340px}
 .hl-tri p b{font-weight:500;color:var(--ink)}
-.en-spots{display:flex;gap:16px;margin-top:48px;height:440px}
-/* expanding panels: every brand stays visible; the one under the pointer (or tapped, or focused) widens and shows its line */
-.en-spot{position:relative;isolation:isolate;overflow:hidden;flex:1 1 0;min-width:0;background:#E3EDFF center/cover;display:flex;align-items:flex-end;padding:20px;color:var(--ink);cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
+.en-spots{display:flex;gap:16px;margin-top:48px}
+/* expanding panels: every brand stays visible; the one under the pointer (or tapped, or focused) widens and its caption shows in full */
+.en-spot{flex:1 1 0;min-width:0;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
 .en-spot.on{flex-grow:3.2;cursor:default}
-.en-spot h3{transition:font-size .4s}
-.en-spot:not(.on) h3{font-size:22px}
-.en-spot>div{min-width:0;max-width:100%;background:#fff;padding:14px 18px 16px}
-.en-spot p{width:340px;max-width:none;max-height:0;opacity:0;overflow:hidden;transition:opacity .3s,max-height .5s}
-.en-spot.on p{max-height:80px;opacity:1;color:var(--body);margin-top:8px;transition:opacity .45s .2s,max-height .5s}
 .en-spot:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-/* name plate: a white label over the photo, so the image stays untinted and the text stays readable */
-.en-spot small{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
-.en-spot h3{font-size:30px;font-weight:400;letter-spacing:-.5px;line-height:1.1;margin:6px 0 0;color:var(--ink)}
-.en-spot p{font-size:15px;line-height:1.5}
+.en-ph{position:relative;height:440px;background:#E3EDFF center/cover}
+.en-ph small{position:absolute;left:16px;top:16px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:5px 10px}
+.en-cap{margin-top:14px;font-size:15px;line-height:1.5;color:var(--body);white-space:nowrap;overflow:hidden}
+.en-cap b{font-weight:500;color:var(--ink)}
+.en-cap span{opacity:0;transition:opacity .25s}
+.en-spot.on .en-cap span{opacity:1;transition:opacity .45s .25s}
 .bs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
 .bs-row{display:flex;gap:16px;margin-top:40px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
 .bs-row::-webkit-scrollbar{display:none}
@@ -754,8 +751,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .pf-split div{display:flex;justify-content:space-between;padding:4px 0}.pf-split b{font-weight:600}
 .pf-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:44px}
 .pf-note{font-size:14px;color:var(--muted)}
-@media (max-width:900px){.hl-tri{grid-template-columns:1fr;gap:32px;margin-top:40px}.hl-tri p{max-width:none}.mc{grid-template-columns:1fr}.en-spots{flex-direction:column;height:auto}.en-spot{flex:none;height:112px;transition:height .55s cubic-bezier(.2,.8,.2,1)}.en-spot.on{height:300px}.en-spot p{width:auto}.pf-ui{aspect-ratio:auto;padding:16px;display:flex;flex-direction:column;gap:14px}.pf-win,.pf-order{position:static;width:auto}.pf-grid{grid-template-columns:repeat(2,1fr)}.pf-prod:nth-child(n+3){display:none}}
-@media (max-width:600px){.bs-head{flex-direction:column;align-items:flex-start}.bs-card{flex-basis:240px}.en-spot{padding:20px}.en-spot h3{font-size:26px}.mc-card{padding:24px}.mc-card p{max-width:62%}}
+@media (max-width:900px){.hl-tri{grid-template-columns:1fr;gap:32px;margin-top:40px}.hl-tri p{max-width:none}.mc{grid-template-columns:1fr}.en-spots{flex-direction:column;gap:20px}.en-spot{flex:none}.en-ph{height:112px;transition:height .55s cubic-bezier(.2,.8,.2,1)}.en-spot.on .en-ph{height:300px}.en-cap{white-space:normal;margin-top:10px}.en-cap span{opacity:1}.pf-ui{aspect-ratio:auto;padding:16px;display:flex;flex-direction:column;gap:14px}.pf-win,.pf-order{position:static;width:auto}.pf-grid{grid-template-columns:repeat(2,1fr)}.pf-prod:nth-child(n+3){display:none}}
+@media (max-width:600px){.bs-head{flex-direction:column;align-items:flex-start}.bs-card{flex-basis:240px}.mc-card{padding:24px}.mc-card p{max-width:62%}}
 
 /* Banner flow: Checkout → Shipping → Funding as three real fragments joined by a line */
 .banner{align-items:center}
@@ -1381,9 +1378,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <span class="label"><i></i>FLIK for enterprise</span>
     <h2 class="sec-h hl-h">Built around how you already run. <span class="soft">For larger operations with their own way of working.</span></h2>
     <div class="en-spots">
-      <article class="en-spot on" tabindex="0" role="button" aria-expanded="true" style="background-image:url('assets/sections/enterprise-property.jpg')"><div><small>Property</small><h3>Ruma</h3><p>Property payments, from booking fee to the last instalment.</p></div></article>
-      <article class="en-spot" tabindex="0" role="button" aria-expanded="false" style="background-image:url('assets/sections/enterprise-school.jpg')"><div><small>Education</small><h3>Masakecil</h3><p>School fees collected on time, term after term.</p></div></article>
-      <article class="en-spot" tabindex="0" role="button" aria-expanded="false" style="background-image:url('assets/sections/enterprise-hospital.jpg')"><div><small>Health</small><h3>Queen Latifa Hospital</h3><p>Patients pay at the counter with FLIK In-Store Payment.</p></div></article>
+      <article class="en-spot on" tabindex="0" role="button" aria-expanded="true"><div class="en-ph" style="background-image:url('assets/sections/enterprise-property.jpg')"><small>Property</small></div><p class="en-cap"><b>Ruma</b><span> collects property payments with FLIK.</span></p></article>
+      <article class="en-spot" tabindex="0" role="button" aria-expanded="false"><div class="en-ph" style="background-image:url('assets/sections/enterprise-school.jpg')"><small>Education</small></div><p class="en-cap"><b>Masakecil</b><span> collects school fees with FLIK.</span></p></article>
+      <article class="en-spot" tabindex="0" role="button" aria-expanded="false"><div class="en-ph" style="background-image:url('assets/sections/enterprise-hospital.jpg')"><small>Health</small></div><p class="en-cap"><b>Queen Latifa Hospital</b><span> takes payments at the counter with FLIK.</span></p></article>
     </div>
     <div class="hl-tri">
       <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><p><b>Customised workflows.</b> Work with a FLIK expert to shape payments, collections and settlement around your operation.</p><a href="#" class="link" data-act="sales" data-interest="Enterprise">Talk to an expert <span class="chev">›</span></a></div>

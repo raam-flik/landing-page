@@ -161,9 +161,11 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Label:** FLIK for enterprise
 - **Section heading:** Built around how you already run.
   - **Grey part:** For larger operations with their own way of working.
-- **Spotlight:** Property — Ruma — Property payments, from booking fee to the last instalment.
-- **Spotlight:** Education — Masakecil — School fees collected on time, term after term.
-- **Spotlight:** Health — Queen Latifa Hospital — Patients pay at the counter with FLIK In-Store Payment. (AG, 15 Nov 2026: they use in-store payment.)
+- **Spotlight (tag on photo: Property):** Ruma collects property payments with FLIK.
+- **Spotlight (tag on photo: Education):** Masakecil collects school fees with FLIK.
+- **Spotlight (tag on photo: Health):** Queen Latifa Hospital takes payments at the counter with FLIK. (AG, 15 Nov 2026: they use in-store payment.)
+- Caption rule (AG, 15 Nov 2026): one sentence under the photo, starting with the customer's name and ending "with FLIK". The industry stays as a small tag on the photo.
+- The three enterprise images are locked (AG, 15 Nov 2026). Don't regenerate them.
 - **Item:** Customised workflows. — Work with a FLIK expert to shape payments, collections and settlement around your operation. — Talk to an expert
 - **Item:** AI automations. — Take routine work off your team with automations set up for the way your business runs. — See what's possible
 - **Item:** Dedicated support. — A named FLIK team for onboarding, going live and the day-to-day questions after. — Contact sales
