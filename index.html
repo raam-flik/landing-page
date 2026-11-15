@@ -736,18 +736,23 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .pf-lines path{fill:none;vector-effect:non-scaling-stroke}
 .pf-lines .base path{stroke:rgba(106,75,255,.35);stroke-width:1.5;stroke-dasharray:3 4}
 .pf-lines .live path{stroke:var(--primary);stroke-width:2;stroke-dasharray:22 200;stroke-dashoffset:222;animation:dx-run 2.6s linear infinite}
-.pf-order{position:absolute;left:5%;top:50%;transform:translateY(-50%);width:26%;min-width:250px;background:#fff;box-shadow:0 24px 60px rgba(0,45,93,.18);padding:18px 20px;font-size:13px;color:var(--ink)}
+.pf-order{position:absolute;left:5%;top:50%;transform:translateY(-50%);width:29%;min-width:290px;background:#fff;box-shadow:0 24px 60px rgba(0,45,93,.18);padding:18px 20px;font-size:13px;color:var(--ink)}
 .pf-oh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.pf-oh b{font-size:15px;font-weight:600}
 .pf-oh span{font-size:10.5px;font-weight:600;color:var(--muted);background:#F1F4FA;border-radius:999px;padding:2px 8px}
-.pf-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.pf-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}.pf-row>span:last-child,.pf-row>b:last-child{margin-left:auto;white-space:nowrap}
+.pf-thumb{width:52px;height:52px;object-fit:cover;flex:none}
+.pf-pay{margin-top:6px;background:var(--primary);color:#fff;font-weight:600;text-align:center;padding:10px}
 .pf-row small{display:block;font-size:11px;color:var(--muted)}
 .pf-tot b{font-weight:600}
 .pf-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-32px);display:flex;flex-direction:column;align-items:center;gap:8px}
 .pf-hub span{width:64px;height:64px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(106,75,255,.14),0 14px 34px rgba(106,75,255,.35)}
 .pf-hub svg{width:34px;height:34px}
 .pf-hub small{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap}
-.pf-outs{position:absolute;right:5%;top:0;bottom:0;width:25%;min-width:230px;display:flex;flex-direction:column;justify-content:space-around;padding:5% 0}
-.pf-out{background:#fff;box-shadow:0 18px 44px rgba(0,45,93,.16);padding:14px 16px;font-size:13px;color:var(--ink);display:flex;flex-direction:column;gap:2px}
+.pf-outs{position:absolute;right:5%;top:0;bottom:0;width:26%;min-width:250px;display:flex;flex-direction:column;justify-content:space-around;padding:5% 0}
+.pf-out{background:#fff;box-shadow:0 18px 44px rgba(0,45,93,.16);padding:12px 16px;font-size:13px;color:var(--ink);display:flex;align-items:center;gap:12px}
+.pf-out>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pf-av{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.pf-shop{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.14);color:#fff}.pf-shop svg{width:20px;height:20px}
 .pf-out span{font-size:12px;color:var(--muted)}.pf-out b{font-size:17px;font-weight:600;letter-spacing:-.2px}
 .pf-you{background:var(--ink);color:#fff}.pf-you span{color:rgba(255,255,255,.75)}
 @media (prefers-reduced-motion:reduce){.pf-lines .live{display:none}}
@@ -1400,18 +1405,19 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h">One platform, many merchants. <span class="soft">Pay every party, earn from every sale, stay in control.</span></h2>
     <div class="pf-ui" role="img" aria-label="Example: a shopper pays one order on a marketplace. FLIK Connect splits the payment between two sellers and the platform.">
-      <svg class="pf-lines" viewBox="0 0 100 43" preserveAspectRatio="none" aria-hidden="true"><g class="base"><path d="M30 21.5 H46"/><path d="M54 21.5 C 62 21.5, 60 8, 70 8"/><path d="M54 21.5 H70"/><path d="M54 21.5 C 62 21.5, 60 35, 70 35"/></g><g class="live"><path d="M30 21.5 H46"/><path d="M54 21.5 C 62 21.5, 60 8, 70 8" style="animation-delay:.5s"/><path d="M54 21.5 H70" style="animation-delay:.9s"/><path d="M54 21.5 C 62 21.5, 60 35, 70 35" style="animation-delay:1.3s"/></g></svg>
+      <svg class="pf-lines" viewBox="0 0 100 43" preserveAspectRatio="none" aria-hidden="true"><g class="base"><path d="M33 21.5 H46"/><path d="M54 21.5 C 62 21.5, 60 8, 70 8"/><path d="M54 21.5 H70"/><path d="M54 21.5 C 62 21.5, 60 35, 70 35"/></g><g class="live"><path d="M33 21.5 H46"/><path d="M54 21.5 C 62 21.5, 60 8, 70 8" style="animation-delay:.5s"/><path d="M54 21.5 H70" style="animation-delay:.9s"/><path d="M54 21.5 C 62 21.5, 60 35, 70 35" style="animation-delay:1.3s"/></g></svg>
       <div class="pf-order" aria-hidden="true">
         <div class="pf-oh"><b>Your marketplace</b><span>Example</span></div>
-        <div class="pf-row"><span>Linen Shirt<small>Fashion seller</small></span><span>Rp 349.000</span></div>
-        <div class="pf-row"><span>Canvas Tote Bag<small>Home seller</small></span><span>Rp 189.000</span></div>
+        <div class="pf-row"><img class="pf-thumb" src="assets/sections/market-shirt.jpg" alt=""><span>Linen Shirt<small>Fashion seller</small></span><span>Rp 349.000</span></div>
+        <div class="pf-row"><img class="pf-thumb" src="assets/sections/market-tote.jpg" alt=""><span>Canvas Tote Bag<small>Home seller</small></span><span>Rp 189.000</span></div>
         <div class="pf-row pf-tot"><b>Shopper pays</b><b>Rp 538.000</b></div>
+        <div class="pf-pay fk">Pay Rp 538.000</div>
       </div>
       <div class="pf-hub" aria-hidden="true"><span><svg viewBox="0 0 30 30" fill="none"><path d="M23.2088 17.4254C23.2088 13.1436 20.7668 11.9717 17.755 11.9717H12.1924V20.7969C12.1924 23.8087 13.5039 26.2507 17.6461 26.2507V17.4254H23.2088Z" fill="#F26324"/><path d="M26.442 9.00748C26.442 3.71863 24 3 20.9882 3H2.94434V20.7678C2.94434 23.7796 3.6806 26.2215 9.22868 26.2215V9.00748H26.4427H26.442Z" fill="#F26324"/></svg></span><small>FLIK Connect</small></div>
       <div class="pf-outs" aria-hidden="true">
-        <div class="pf-out"><span>Fashion seller</span><b>Rp 314.100</b></div>
-        <div class="pf-out"><span>Home seller</span><b>Rp 170.100</b></div>
-        <div class="pf-out pf-you"><span>Your platform fee · 10%</span><b>Rp 53.800</b></div>
+        <div class="pf-out"><img class="pf-av" src="assets/sections/seller-1.jpg" alt=""><div><span>Fashion seller</span><b>Rp 314.100</b></div></div>
+        <div class="pf-out"><img class="pf-av" src="assets/sections/seller-2.jpg" alt=""><div><span>Home seller</span><b>Rp 170.100</b></div></div>
+        <div class="pf-out pf-you"><i class="pf-av pf-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9.5 20v-6h5v6"/></svg></i><div><span>Your platform fee · 10%</span><b>Rp 53.800</b></div></div>
       </div>
     </div>
     <div class="hl-tri">
