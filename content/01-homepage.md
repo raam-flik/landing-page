@@ -155,7 +155,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - [ ] Ruma and Masakecil: the one-line descriptions below are drafts. Confirm what each uses FLIK for, and supply logos.
 - [ ] "AI automations": confirm what is on offer today.
 - [ ] FLIK Connect is not live. The Platforms section carries a "coming soon" note beside its button.
-- [ ] The three section images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `enterprise-hospital.jpg`, `platforms-marketplace.jpg`. The property, school and hospital images were regenerated from photos AG supplied of each brand's own space; confirm the three brands are happy with that use.
+- [ ] The three enterprise images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `enterprise-hospital.jpg`. They are bright, photographic images sharing one pastel morning sky in the FLIK lilac, pink and blue (AG, 15 Nov 2026); an earlier dusk set is in the branch history. The property, school and hospital images were regenerated from photos AG supplied of each brand's own space; confirm the three brands are happy with that use.
 
 ### 5a. Enterprise
 - **Label:** FLIK for enterprise
@@ -182,7 +182,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Label:** FLIK for platforms
 - **Section heading:** One platform, many merchants.
   - **Grey part:** Pay every party, earn from every sale, stay in control.
-- **Image chip (example):** Split payment · Example — Seller 90% — Platform 10%
+- **Marketplace mockup (drawn in the page, example figures):** "Your marketplace" with four products from four sellers. One order: Linen Shirt Rp 349.000 (Fashion seller) and Canvas Tote Bag Rp 189.000 (Home seller), paid Rp 538.000. Split automatically: Fashion seller Rp 314.100, Home seller Rp 170.100, Platform fee · 10% Rp 53.800.
 - **Item:** Get to market faster. — Custom payment flows between you, your merchants and their partners, set up with our team.
 - **Item:** Open a new revenue line. — Talk to us about offering FLIK Funding to the merchants already on your platform.
 - **Item:** Manage platform risk. — Governance over who gets paid, when, and under which rules.

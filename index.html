@@ -694,23 +694,23 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .hl-tri p b{font-weight:500;color:var(--ink)}
 .en-spots{display:flex;gap:16px;margin-top:48px;height:440px}
 /* expanding panels: every brand stays visible; the one under the pointer (or tapped, or focused) widens and shows its line */
-.en-spot{position:relative;isolation:isolate;overflow:hidden;border-radius:14px;flex:1 1 0;min-width:0;background:var(--dark) center/cover;display:flex;align-items:flex-end;padding:28px;color:#fff;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
+.en-spot{position:relative;isolation:isolate;overflow:hidden;flex:1 1 0;min-width:0;background:#E3EDFF center/cover;display:flex;align-items:flex-end;padding:20px;color:var(--ink);cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
 .en-spot.on{flex-grow:3.2;cursor:default}
 .en-spot h3{transition:font-size .4s}
 .en-spot:not(.on) h3{font-size:22px}
-.en-spot>div{min-width:0}
-.en-spot p{width:360px;max-width:none;max-height:0;opacity:0;overflow:hidden;transition:opacity .3s,max-height .5s}
-.en-spot.on p{max-height:80px;opacity:.9;transition:opacity .45s .2s,max-height .5s}
+.en-spot>div{min-width:0;max-width:100%;background:#fff;padding:14px 18px 16px}
+.en-spot p{width:340px;max-width:none;max-height:0;opacity:0;overflow:hidden;transition:opacity .3s,max-height .5s}
+.en-spot.on p{max-height:80px;opacity:1;color:var(--body);margin-top:8px;transition:opacity .45s .2s,max-height .5s}
 .en-spot:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-.en-spot::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,24,56,0) 42%,rgba(0,24,56,.82))}
-.en-spot small{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;opacity:.85}
-.en-spot h3{font-size:30px;font-weight:400;letter-spacing:-.5px;line-height:1.1;margin:6px 0 8px;color:#fff}
+/* name plate: a white label over the photo, so the image stays untinted and the text stays readable */
+.en-spot small{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.en-spot h3{font-size:30px;font-weight:400;letter-spacing:-.5px;line-height:1.1;margin:6px 0 0;color:var(--ink)}
 .en-spot p{font-size:15px;line-height:1.5}
 .bs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
 .bs-row{display:flex;gap:16px;margin-top:40px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
 .bs-row::-webkit-scrollbar{display:none}
 .bs-card{flex:0 0 272px;scroll-snap-align:start}
-.bs-art{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;aspect-ratio:4/5;border-radius:12px;padding:16px;color:#fff;background:var(--dark) center/cover;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.bs-art{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;aspect-ratio:4/5;padding:16px;color:#fff;background:var(--dark) center/cover;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .bs-art::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--t),0) 52%,rgba(var(--t),.88))}
 .bs-card:hover .bs-art{transform:translateY(-4px)}
 .bs-logo{background:#fff;border-radius:8px;padding:6px 9px;display:flex}.bs-logo.dark{background:var(--ink)}
@@ -730,15 +730,32 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .mc-a2 i:nth-child(1){background:linear-gradient(160deg,#7FE9FF,#3BA7FF);clip-path:polygon(34% 0,100% 0,100% 100%,70% 100%)}
 .mc-a2 i:nth-child(2){background:linear-gradient(200deg,#8E7BFF,#6A4BFF);clip-path:polygon(34% 0,70% 100%,0 100%)}
 .mc-a2 i:nth-child(3){background:linear-gradient(180deg,#3B24A8,#002D5D);clip-path:polygon(100% 38%,100% 100%,72% 100%)}
-.pf-hero{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:21/9;margin-top:48px;background:var(--dark) url('assets/sections/platforms-marketplace.jpg') center/cover}
-.pf-chip{position:absolute;left:28px;bottom:28px;width:220px;background:#fff;border-radius:10px;box-shadow:0 18px 40px rgba(0,16,48,.4);padding:12px 14px;font-size:13px;color:var(--ink)}
-.pf-chip small{display:block;font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.pf-chip div{display:flex;justify-content:space-between;padding:6px 0}.pf-chip div+div{border-top:1px solid var(--line)}
-.pf-chip b{font-weight:600}
+/* Platforms: an online marketplace drawn as UI, with one order split between two sellers and the platform (example figures) */
+.pf-ui{position:relative;overflow:hidden;aspect-ratio:21/9;margin-top:48px;background:linear-gradient(180deg,#F1F6FF,#DDE9FF)}
+.pf-win{position:absolute;left:6%;top:11%;width:60%;background:#fff;box-shadow:0 24px 60px rgba(0,45,93,.16);padding:20px 22px 0;font-size:13px;color:var(--ink)}
+.pf-top{display:flex;align-items:center;gap:14px}.pf-top b{font-size:15px;font-weight:600;white-space:nowrap}
+.pf-search{flex:1;height:30px;background:#F1F4FA;border-radius:999px}
+.pf-cart{font-size:12px;font-weight:500;color:var(--primary);background:var(--primary-soft);border-radius:999px;padding:5px 12px;white-space:nowrap}
+.pf-cats{display:flex;gap:8px;margin:16px 0}.pf-cats span{height:26px;min-width:74px;border-radius:999px;background:#F1F4FA;font-size:12px;display:flex;align-items:center;justify-content:center;padding:0 12px}
+.pf-cats .on{background:var(--ink);color:#fff;font-weight:500;white-space:nowrap}
+.pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pf-prod{display:flex;flex-direction:column;gap:6px;padding-bottom:22px}.pf-prod b{font-weight:500}
+.pf-img{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}.pf-img i{display:block;background:rgba(255,255,255,.7)}
+.pf-seller{align-self:flex-start;font-size:10.5px;font-weight:500;color:var(--muted);background:#F1F4FA;border-radius:999px;padding:2px 8px}
+.pf-prod em{font-style:normal;font-weight:600}
+.pf-sk{display:block;height:9px;width:78%;border-radius:5px;background:#E8ECF4}.pf-sk.s{width:46%}
+.pf-order{position:absolute;right:6%;top:15%;width:300px;background:#fff;box-shadow:0 28px 64px rgba(0,45,93,.22);padding:18px 20px;font-size:13px;color:var(--ink)}
+.pf-oh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.pf-oh b{font-size:15px;font-weight:600}
+.pf-oh span{font-size:10.5px;font-weight:600;color:var(--muted);background:#F1F4FA;border-radius:999px;padding:2px 8px}
+.pf-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.pf-row small{display:block;font-size:11px;color:var(--muted)}
+.pf-split{margin-top:6px;background:var(--primary-soft);padding:12px 14px}
+.pf-split small{display:block;font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--primary);margin-bottom:6px}
+.pf-split div{display:flex;justify-content:space-between;padding:4px 0}.pf-split b{font-weight:600}
 .pf-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:44px}
 .pf-note{font-size:14px;color:var(--muted)}
-@media (max-width:900px){.hl-tri{grid-template-columns:1fr;gap:32px;margin-top:40px}.hl-tri p{max-width:none}.mc{grid-template-columns:1fr}.en-spots{flex-direction:column;height:auto}.en-spot{flex:none;height:112px;transition:height .55s cubic-bezier(.2,.8,.2,1)}.en-spot.on{height:300px}.en-spot p{width:auto}.pf-hero{aspect-ratio:4/3}}
-@media (max-width:600px){.bs-head{flex-direction:column;align-items:flex-start}.bs-card{flex-basis:240px}.en-spot{padding:20px}.en-spot h3{font-size:26px}.mc-card{padding:24px}.mc-card p{max-width:62%}.pf-chip{left:16px;bottom:16px;width:190px}}
+@media (max-width:900px){.hl-tri{grid-template-columns:1fr;gap:32px;margin-top:40px}.hl-tri p{max-width:none}.mc{grid-template-columns:1fr}.en-spots{flex-direction:column;height:auto}.en-spot{flex:none;height:112px;transition:height .55s cubic-bezier(.2,.8,.2,1)}.en-spot.on{height:300px}.en-spot p{width:auto}.pf-ui{aspect-ratio:auto;padding:16px;display:flex;flex-direction:column;gap:14px}.pf-win,.pf-order{position:static;width:auto}.pf-grid{grid-template-columns:repeat(2,1fr)}.pf-prod:nth-child(n+3){display:none}}
+@media (max-width:600px){.bs-head{flex-direction:column;align-items:flex-start}.bs-card{flex-basis:240px}.en-spot{padding:20px}.en-spot h3{font-size:26px}.mc-card{padding:24px}.mc-card p{max-width:62%}}
 
 /* Banner flow: Checkout → Shipping → Funding as three real fragments joined by a line */
 .banner{align-items:center}
@@ -1402,8 +1419,28 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <span class="label"><i></i>FLIK for platforms</span>
     <h2 class="sec-h hl-h">One platform, many merchants. <span class="soft">Pay every party, earn from every sale, stay in control.</span></h2>
-    <div class="pf-hero" role="img" aria-label="A busy indoor marketplace with many independent stalls">
-      <div class="pf-chip" aria-hidden="true"><small>Split payment · Example</small><div><span>Seller</span><b>90%</b></div><div><span>Platform</span><b>10%</b></div></div>
+    <div class="pf-ui" role="img" aria-label="Example: an online marketplace with products from several sellers. One order is split automatically between two sellers and the platform.">
+      <div class="pf-win" aria-hidden="true">
+        <div class="pf-top"><b>Your marketplace</b><span class="pf-search"></span><span class="pf-cart">Cart · 2</span></div>
+        <div class="pf-cats"><span class="on">All sellers</span><span></span><span></span><span></span></div>
+        <div class="pf-grid">
+          <div class="pf-prod"><span class="pf-img" style="background:linear-gradient(160deg,#DCE9FF,#C5D8FF)"><i style="width:46%;height:58%;border-radius:10px 10px 4px 4px"></i></span><b>Linen Shirt</b><span class="pf-seller">Fashion seller</span><em>Rp 349.000</em></div>
+          <div class="pf-prod"><span class="pf-img" style="background:linear-gradient(160deg,#E9E3FF,#D5CBFF)"><i style="width:50%;height:44%;border-radius:6px"></i></span><b>Canvas Tote Bag</b><span class="pf-seller">Home seller</span><em>Rp 189.000</em></div>
+          <div class="pf-prod"><span class="pf-img" style="background:linear-gradient(160deg,#DFF6FF,#C2ECFF)"><i style="width:40%;height:40%;border-radius:50%"></i></span><i class="pf-sk"></i><span class="pf-seller">Beauty seller</span><i class="pf-sk s"></i></div>
+          <div class="pf-prod"><span class="pf-img" style="background:linear-gradient(160deg,#FFE9F6,#FFD3EC)"><i style="width:56%;height:34%;border-radius:40px"></i></span><i class="pf-sk"></i><span class="pf-seller">Food seller</span><i class="pf-sk s"></i></div>
+        </div>
+      </div>
+      <div class="pf-order" aria-hidden="true">
+        <div class="pf-oh"><b>Order</b><span>Example</span></div>
+        <div class="pf-row"><span>Linen Shirt<small>Fashion seller</small></span><span>Rp 349.000</span></div>
+        <div class="pf-row"><span>Canvas Tote Bag<small>Home seller</small></span><span>Rp 189.000</span></div>
+        <div class="pf-row pf-tot"><b>Paid</b><b>Rp 538.000</b></div>
+        <div class="pf-split"><small>Split automatically</small>
+          <div><span>Fashion seller</span><b>Rp 314.100</b></div>
+          <div><span>Home seller</span><b>Rp 170.100</b></div>
+          <div><span>Platform fee · 10%</span><b>Rp 53.800</b></div>
+        </div>
+      </div>
     </div>
     <div class="hl-tri">
       <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l7 7-7 7M12 5l7 7-7 7"/></svg></span><p><b>Get to market faster.</b> Custom payment flows between you, your merchants and their partners, set up with our team.</p></div>
