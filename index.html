@@ -696,6 +696,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 /* expanding panels: every brand stays visible; the one under the pointer (or tapped, or focused) widens and shows its line */
 .en-spot{position:relative;isolation:isolate;overflow:hidden;border-radius:14px;flex:1 1 0;min-width:0;background:var(--dark) center/cover;display:flex;align-items:flex-end;padding:28px;color:#fff;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
 .en-spot.on{flex-grow:3.2;cursor:default}
+.en-spot h3{transition:font-size .4s}
+.en-spot:not(.on) h3{font-size:22px}
 .en-spot>div{min-width:0}
 .en-spot p{width:360px;max-width:none;max-height:0;opacity:0;overflow:hidden;transition:opacity .3s,max-height .5s}
 .en-spot.on p{max-height:80px;opacity:.9;transition:opacity .45s .2s,max-height .5s}
@@ -1364,6 +1366,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <div class="en-spots">
       <article class="en-spot on" tabindex="0" role="button" aria-expanded="true" style="background-image:url('assets/sections/enterprise-property.jpg')"><div><small>Property</small><h3>Ruma</h3><p>Property payments, from booking fee to the last instalment.</p></div></article>
       <article class="en-spot" tabindex="0" role="button" aria-expanded="false" style="background-image:url('assets/sections/enterprise-school.jpg')"><div><small>Education</small><h3>Masakecil</h3><p>School fees collected on time, term after term.</p></div></article>
+      <article class="en-spot" tabindex="0" role="button" aria-expanded="false" style="background-image:url('assets/sections/enterprise-hospital.jpg')"><div><small>Health</small><h3>Queen Latifa Hospital</h3><p>Patients pay at the counter with FLIK In-Store Payment.</p></div></article>
     </div>
     <div class="hl-tri">
       <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><p><b>Customised workflows.</b> Work with a FLIK expert to shape payments, collections and settlement around your operation.</p><a href="#" class="link" data-act="sales" data-interest="Enterprise">Talk to an expert <span class="chev">›</span></a></div>

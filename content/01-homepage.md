@@ -155,7 +155,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - [ ] Ruma and Masakecil: the one-line descriptions below are drafts. Confirm what each uses FLIK for, and supply logos.
 - [ ] "AI automations": confirm what is on offer today.
 - [ ] FLIK Connect is not live. The Platforms section carries a "coming soon" note beside its button.
-- [ ] The three section images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `platforms-marketplace.jpg`. The property and school images were regenerated from photos AG supplied of each brand's own space; confirm both brands are happy with that use.
+- [ ] The three section images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `enterprise-hospital.jpg`, `platforms-marketplace.jpg`. The property, school and hospital images were regenerated from photos AG supplied of each brand's own space; confirm the three brands are happy with that use.
 
 ### 5a. Enterprise
 - **Label:** FLIK for enterprise
@@ -163,6 +163,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
   - **Grey part:** For larger operations with their own way of working.
 - **Spotlight:** Property — Ruma — Property payments, from booking fee to the last instalment.
 - **Spotlight:** Education — Masakecil — School fees collected on time, term after term.
+- **Spotlight:** Health — Queen Latifa Hospital — Patients pay at the counter with FLIK In-Store Payment. (AG, 15 Nov 2026: they use in-store payment.)
 - **Item:** Customised workflows. — Work with a FLIK expert to shape payments, collections and settlement around your operation. — Talk to an expert
 - **Item:** AI automations. — Take routine work off your team with automations set up for the way your business runs. — See what's possible
 - **Item:** Dedicated support. — A named FLIK team for onboarding, going live and the day-to-day questions after. — Contact sales
