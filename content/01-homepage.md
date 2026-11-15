@@ -142,46 +142,56 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Feature banner -->
 
 - **Section heading:** A unified commerce infrastructure.
-- **Diagram cards (example figures):** Checkout — Pay Rp 540.000 · Shipping — Regular · 2–3 days, Rp 12.000 · Funding — Rp 250.000.000, 62% repaid
+- **Line with three points:** Payments — Shipping — Funding ("Payments", not "Checkout": it matches "Payments in, packages out" and the product order, AG 15 Nov 2026)
+- Design (AG, 15 Nov 2026): a light, square band in pastel blue, lilac and pink with a violet particle stream. The three product cards were removed because they repeated the tiles above.
 - **Text:** Payments in, packages out, one balance behind it all.
 - **Button:** Book a demo
 
-## 5. Segments
-<!-- html: Segments -->
+## 5. Enterprise, brand stories, funding and registration, platforms
+<!-- html: Enterprise / Brand stories carousel / Funding and registration / Platforms -->
 
-- **Section heading:** Built to grow with you.
-  - **Grey part:** From first sale to full scale.
-- **Label:** FLIK for brand websites
-- **Heading:** Turn more of your traffic into orders.
-- **Text:** Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in one tap. That's 3× faster than a standard checkout.
-- **Label:** FLIK for sellers shipping at volume
-- **Heading:** Ship more, and spend less on every package.
-- **Text:** From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.
-- **Text:** Keeping ERIGO in stock drove sales up to 200%.
-- **Link:** Read ERIGO's story (opens /customers/story/?c=erigo)
-- **Text:** EMADO'S opened 30+ branches, with operations under control.
-- **Link:** Read EMADO'S story (opens /customers/story/?c=emados)
-- **Text:** COD for a 3% fee (excl. PPN), credited after delivery.
-- **Link:** Explore COD shipping
-- **Text:** Up to 50% off published courier rates, all couriers in one place.
-- **Link:** Explore Shipping
-- **Small heading:** Free to register.
-- **Text:** There's no registration fee to use FLIK Shipping.
-- **Button:** Get started
-- **Small heading:** Bulk shipping.
-- **Text:** Send from many warehouses to many destinations at once.
-- **Button:** Learn more
-- **Label:** FLIK for brands ready to scale
-- **Heading:** Fuel for your next stage.
-- **Text:** Upfront funding for selected brands. Your sales take care of the rest.
-- **Button:** Talk to the FLIK team
-- **Button:** Learn more
-- **Small heading:** Stock for the rush.
-- **Text:** Keep sales moving with dedicated cash flow for inventory and marketing.
-- **Small heading:** One fixed margin.
-- **Text:** Agreed before you sign, with no hidden fees.
-- **Small heading:** Settled as you sell.
-- **Text:** Settlement is deducted automatically from your product sales.
+Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards higher up already say what each product does.
+
+**To confirm (AG):**
+- [ ] Ruma and Masakecil: the one-line descriptions below are drafts. Confirm what each uses FLIK for, and supply logos.
+- [ ] "AI automations": confirm what is on offer today.
+- [ ] FLIK Connect is not live. The Platforms section carries a "coming soon" note beside its button.
+- [ ] The three enterprise images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `enterprise-hospital.jpg`. They are bright, photographic images sharing one pastel morning sky in the FLIK lilac, pink and blue (AG, 15 Nov 2026); an earlier dusk set is in the branch history. The property, school and hospital images were regenerated from photos AG supplied of each brand's own space; confirm the three brands are happy with that use.
+
+### 5a. Enterprise
+- **Section heading:** Bigger operations run on FLIK too.
+  - **Grey part:** Hospitals, schools and property developers, each with a workflow built around them.
+- No "FLIK for enterprise" label (AG, 15 Nov 2026): the heading and the industry tags on the photos carry it.
+- **Spotlight (tag on photo: Property):** Ruma runs its property sales operations with FLIK.
+- **Spotlight (tag on photo: Education):** Masakecil collects term fees with FLIK.
+- **Spotlight (tag on photo: Health):** Queen Latifa Hospital settles in-patient bills at the counter with FLIK. (AG, 15 Nov 2026: in-store payment.)
+- Caption rule (AG, 15 Nov 2026): one sentence under the photo, starting with the customer's name and ending "with FLIK". Say what kind of payment it is in that industry (sales operations, term fees, in-patient bills), not just "accepts payments". The industry stays as a small tag on the photo.
+- The three enterprise images are locked (AG, 15 Nov 2026). Don't regenerate them.
+- **Item:** Customised workflows. — Work with a FLIK expert to shape payments, collections and settlement around your operation. — Talk to an expert
+- **Item:** AI automations. — Take routine work off your team with automations set up for the way your business runs. — See what's possible
+- **Item:** Dedicated support. — A named FLIK team for onboarding, going live and the day-to-day questions after. — Contact sales
+
+### 5b. Brand stories (carousel)
+- **Section heading:** Brands growing with FLIK.
+  - **Grey part:** See how they sell, ship and scale.
+- **Cards (headline from each customer story):** ERIGO, EMADO'S, Sigit Store, HEYLOCAL, Artch, Paper, WakaiGo, then "All stories — See every brand building with FLIK".
+- **Link on each card:** Read [brand]'s story
+
+### 5c. Funding and registration
+- **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding.
+- **Card:** Start for free. — No registration fee. Create your account and start selling. — Get started. (AG, 15 Nov 2026: don't tie this to Shipping.)
+- Both cards are white with a hairline border, text and a link only; no product mockup. The colour sits in the corner glow, in deeper tones (pink-violet, navy-violet), not in the background (AG, 15 Nov 2026).
+
+### 5d. Platforms
+- No "FLIK for platforms" label (AG, 15 Nov 2026): the heading carries it.
+- **Section heading:** One platform, many merchants.
+  - **Grey part:** Pay every party, earn from every sale, stay in control.
+- **Illustration (drawn in the page, example figures):** "Your marketplace" order: Linen Shirt Rp 349.000 (Fashion seller), Canvas Tote Bag Rp 189.000 (Home seller), Shopper pays Rp 538.000. Lines run through a FLIK Connect mark to three payouts: Fashion seller Rp 314.100, Home seller Rp 170.100, Your platform fee · 10% Rp 53.800. The order shows two generated product photos and a "Pay Rp 538.000" button; the two seller payouts carry generated portraits of fictional sellers (`assets/sections/market-*.jpg`, `seller-*.jpg`, Higgsfield, 15 Nov 2026).
+- **Item:** Get to market faster. — Custom payment flows between you, your merchants and their partners, set up with our team.
+- **Item:** Open a new revenue line. — Talk to us about offering FLIK Payments, Shipping and Funding to the merchants already on your platform. (AG, 15 Nov 2026: all three, not Funding alone.)
+- **Item:** Manage platform risk. — Governance over who gets paid, when, and under which rules.
+- **Button:** Explore FLIK Connect
+- **Note beside button:** FLIK Connect is coming soon. Join the waitlist.
 
 ## 6. Developers
 <!-- html: Developers (dark) -->
