@@ -699,7 +699,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .en-spot:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
 .en-ph{position:relative;height:440px;background:#E3EDFF center/cover}
 .en-ph small{position:absolute;left:16px;top:16px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:5px 10px}
-.en-cap{margin-top:14px;font-size:15px;line-height:1.5;color:var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.en-cap{margin-top:14px;font-size:15px;line-height:1.5;color:var(--body);white-space:nowrap;overflow:hidden}
+.en-spot.on .en-cap{text-overflow:ellipsis}
 .en-cap b{font-weight:500;color:var(--ink)}
 .en-cap span{opacity:0;transition:opacity .25s}
 .en-spot.on .en-cap span{opacity:1;transition:opacity .45s .25s}
@@ -754,39 +755,23 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 @media (max-width:900px){.hl-tri{grid-template-columns:1fr;gap:32px;margin-top:40px}.hl-tri p{max-width:none}.mc{grid-template-columns:1fr}.en-spots{flex-direction:column;gap:20px}.en-spot{flex:none}.en-ph{height:112px;transition:height .55s cubic-bezier(.2,.8,.2,1)}.en-spot.on .en-ph{height:300px}.en-cap{white-space:normal;margin-top:10px}.en-cap span{opacity:1}.pf-ui{aspect-ratio:auto;padding:16px;display:flex;flex-direction:column;gap:14px}.pf-win,.pf-order{position:static;width:auto}.pf-grid{grid-template-columns:repeat(2,1fr)}.pf-prod:nth-child(n+3){display:none}}
 @media (max-width:600px){.bs-head{flex-direction:column;align-items:flex-start}.bs-card{flex-basis:240px}.mc-card{padding:24px}.mc-card p{max-width:62%}}
 
-/* Banner flow: Checkout → Shipping → Funding as three real fragments joined by a line */
-.banner{align-items:center}
+/* Banner (15 Nov 2026): a light, square band in the pastel sky of the enterprise photos. A violet particle stream runs behind it, as in the hero.
+   One thin line with three points stands in for the product cards, which repeated the tiles above. */
+.banner{align-items:center;border-radius:0;background:linear-gradient(100deg,#EAF2FF 0%,#EDE7FF 55%,#FFE6F4 100%)}
 .banner-in{flex:1 1 auto;min-width:0}
-.banner-flow{position:relative;flex:none;width:468px;height:236px;margin:28px 40px 28px 0}
-.bf{position:absolute;width:232px;background:#fff;border-radius:var(--r-card);box-shadow:0 14px 34px rgba(0,16,48,.38);padding:10px 12px 12px;font-size:12px;line-height:1.35;color:var(--ink)}
-.bf1{left:0;top:0}.bf2{left:118px;top:80px}.bf3{left:236px;top:160px}
-.bf+.bf::before{content:"";position:absolute;left:26px;top:-14px;height:14px;border-left:2px dashed rgba(255,255,255,.75)}
-.bf-k{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.bf-k em{font-style:normal;letter-spacing:0;text-transform:none;font-size:10px;color:var(--ok-text);background:var(--ok-soft);border-radius:999px;padding:1px 7px}
-.bf-pay{background:var(--primary);color:#fff;font-weight:600;text-align:center;border-radius:var(--r-btn);padding:7px}
-.bf-rate{display:flex;justify-content:space-between;gap:8px;background:var(--primary-soft);border-radius:var(--r-btn);padding:7px 8px;font-weight:600}
-.bf-amt{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;font-weight:500}
-.bf-amt small{font-size:11px;color:var(--muted);font-weight:400}
-.bf-bar{height:5px;border-radius:999px;background:var(--line);margin-top:7px;overflow:hidden}
-.bf-bar i{display:block;width:62%;height:100%;background:var(--primary)}
+.banner h2{color:var(--ink)}
+.banner-sub{color:var(--body)}
+.banner-glow{inset:0;animation:none;background:none}
+.banner-glow canvas{position:absolute;inset:0;width:100%;height:100%}
+.banner-line{position:relative;flex:none;display:flex;align-items:flex-start;width:420px;margin:0 88px 0 0}
+.banner-line span{position:relative;width:0;display:flex;justify-content:center;padding-top:24px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap}
+.banner-line span::before{content:"";position:absolute;top:0;left:-6px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px var(--primary)}
+.banner-line i{flex:1;height:2px;margin-top:5px;background:linear-gradient(90deg,var(--primary),#C23CF0);opacity:.45}
 @media (max-width:900px){
   .banner{flex-direction:column;align-items:stretch}
-  .banner-flow{margin:0 40px 40px auto}
+  .banner-line{width:auto;max-width:420px;margin:4px 72px 44px}
 }
-@media (max-width:600px){
-  .banner-flow{width:312px;margin:0 auto 28px}
-  .bf2{left:40px}.bf3{left:80px}
-}
-
-/* Banner background: a stream of fine particles, top left to bottom right, in the hero's size and colour mix */
-.banner-glow{inset:0;animation:none;background:linear-gradient(100deg,#002D5D 30%,#16206E 72%,#2A1B7A)}
-.banner-glow canvas{position:absolute;inset:0;width:100%;height:100%}
-/* Cards lift toward the pointer and press down on click */
-@media (hover:hover){
-  .bf{transition:transform .38s cubic-bezier(.2,1.5,.4,1),box-shadow .3s}
-  .bf:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 22px 44px rgba(0,16,48,.5);z-index:2}
-  .bf:active{transform:translateY(-1px) scale(.985);transition-duration:.08s}
-}
+@media (max-width:600px){.banner-line{margin:0 56px 36px}.banner-line span{font-size:13px}}
 
 /* Developers diagram: dot field runs the full section width, drifts slowly, and lights up in brief soft flashes */
 .dx-sec{overflow-x:clip}
@@ -1361,13 +1346,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <div class="banner-in">
         <h2>A unified commerce infrastructure.</h2>
         <p class="banner-sub">Payments in, packages out, one balance behind it all.</p>
-        <button class="btn btn-light" data-act="sales">Book a demo <span class="chev">›</span></button>
+        <button class="btn btn-primary" data-act="sales">Book a demo <span class="chev">›</span></button>
       </div>
-      <div class="banner-flow" aria-hidden="true">
-        <div class="bf bf1"><div class="bf-k">Checkout</div><div class="bf-pay fk">Pay Rp 540.000</div></div>
-        <div class="bf bf2"><div class="bf-k">Shipping</div><div class="bf-rate"><span>Regular · 2–3 days</span><span>Rp 12.000</span></div></div>
-        <div class="bf bf3"><div class="bf-k">Funding <em>Example</em></div><div class="bf-amt"><span>Rp 250.000.000</span><small>62% repaid</small></div><div class="bf-bar"><i></i></div></div>
-      </div>
+      <div class="banner-line" aria-hidden="true"><span>Checkout</span><i></i><span>Shipping</span><i></i><span>Funding</span></div>
     </div>
   </div>
 </section>
@@ -1375,8 +1356,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Enterprise ===== -->
 <section class="pad guides" id="enterprise">
   <div class="wrap">
-    <span class="label"><i></i>FLIK for enterprise</span>
-    <h2 class="sec-h hl-h">Built around how you already run. <span class="soft">For larger operations with their own way of working.</span></h2>
+    <h2 class="sec-h">Bigger operations run on FLIK too. <span class="soft">Hospitals, schools and property developers, each with a workflow built around them.</span></h2>
     <div class="en-spots">
       <article class="en-spot on" tabindex="0" role="button" aria-expanded="true"><div class="en-ph" style="background-image:url('assets/sections/enterprise-property.jpg')"><small>Property</small></div><p class="en-cap"><b>Ruma</b><span> runs its property sales operations with FLIK.</span></p></article>
       <article class="en-spot" tabindex="0" role="button" aria-expanded="false"><div class="en-ph" style="background-image:url('assets/sections/enterprise-school.jpg')"><small>Education</small></div><p class="en-cap"><b>Masakecil</b><span> collects term fees with FLIK.</span></p></article>
@@ -2396,7 +2376,7 @@ document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard"
   const P=[[-20,-10,300,40,520,120,1120,250],[-20,45,280,110,620,150,1120,300],[130,-10,430,60,760,130,1120,195],[-20,115,240,170,520,235,900,302],[370,-10,620,50,900,90,1120,135],[-20,190,160,220,330,262,520,302]];
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
   const rnd=(a,b)=>a+Math.random()*(b-a);
-  const pick=()=>{const k=Math.random();return k<.82?'178,166,255':k<.91?'120,235,255':'255,120,214'};   // mostly violet, a little cyan and pink
+  const pick=()=>{const k=Math.random();return k<.82?'106,75,255':k<.91?'0,190,230':'255,45,184'};   // the hero's mix: mostly violet, a little cyan and pink
   const spread=()=>(Math.random()+Math.random()+Math.random()-1.5)*58;   // most dots near a path, a thin scatter further out
   let W=0,H=0,dpr=1,mx=-999,my=-999,vis=true,raf=0,pts=[];
   function seed(){const n=Math.round(Math.min(1800,Math.max(500,W*H/230)));pts=Array.from({length:n},(_,i)=>({p:i%P.length,t:Math.random(),v:rnd(.0003,.001),off:spread(),r:Math.random()<.22?1.5:1,a:rnd(.3,.85),c:pick(),ox:0,oy:0,vx:0,vy:0}))}
