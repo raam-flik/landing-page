@@ -165,6 +165,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Spotlight (tag on photo: Property):** Ruma runs its property sales operations with FLIK.
 - **Spotlight (tag on photo: Education):** Masakecil collects term fees with FLIK.
 - **Spotlight (tag on photo: Health):** Queen Latifa Hospital settles in-patient bills at the counter with FLIK. (AG, 15 Nov 2026: in-store payment.)
+- On phones and tablets the three panels stay in one row and scroll sideways (AG, 15 Nov 2026).
 - Caption rule (AG, 15 Nov 2026): one sentence under the photo, starting with the customer's name and ending "with FLIK". Say what kind of payment it is in that industry (sales operations, term fees, in-patient bills), not just "accepts payments". The industry stays as a small tag on the photo.
 - The three enterprise images are locked (AG, 15 Nov 2026). Don't regenerate them.
 - **Item:** Customised workflows. — Work with a FLIK expert to shape payments, collections and settlement around your operation. — Talk to an expert
