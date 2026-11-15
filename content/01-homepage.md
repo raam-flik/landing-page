@@ -188,7 +188,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
   - **Grey part:** Pay every party, earn from every sale, stay in control.
 - **Illustration (drawn in the page, example figures):** "Your marketplace" order: Linen Shirt Rp 349.000 (Fashion seller), Canvas Tote Bag Rp 189.000 (Home seller), Shopper pays Rp 538.000. Lines run through a FLIK Connect mark to three payouts: Fashion seller Rp 314.100, Home seller Rp 170.100, Your platform fee · 10% Rp 53.800. The order shows two generated product photos and a "Pay Rp 538.000" button; the two seller payouts carry generated portraits of fictional sellers (`assets/sections/market-*.jpg`, `seller-*.jpg`, Higgsfield, 15 Nov 2026).
 - **Item:** Get to market faster. — Custom payment flows between you, your merchants and their partners, set up with our team.
-- **Item:** Open a new revenue line. — Talk to us about offering FLIK Funding to the merchants already on your platform.
+- **Item:** Open a new revenue line. — Talk to us about offering FLIK Payments, Shipping and Funding to the merchants already on your platform. (AG, 15 Nov 2026: all three, not Funding alone.)
 - **Item:** Manage platform risk. — Governance over who gets paid, when, and under which rules.
 - **Button:** Explore FLIK Connect
 - **Note beside button:** FLIK Connect is coming soon. Join the waitlist.
