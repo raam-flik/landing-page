@@ -122,6 +122,10 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .dgroup .dlist{display:none;padding:0 0 14px}
 .dgroup.open .dlist{display:block}
 .dgroup.open>button svg{transform:rotate(180deg)}
+.dsub>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 0;font-size:15px;font-weight:500;color:var(--ink)}
+.dsub .dsublist{display:none;padding:0 0 8px 12px}
+.dsub.open .dsublist{display:block}
+.dsub.open>button svg{transform:rotate(180deg)}
 .dlist h5{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:12px 0 4px}
 .dlist a{display:block;padding:8px 0;color:var(--primary);font-weight:500;font-size:15px}
 .drawer .btns{display:grid;gap:10px;margin-top:24px}
@@ -1849,7 +1853,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openItem){const b=o
 /* Mobile drawer */
 const drawer=document.getElementById('drawer');
 drawer.innerHTML=`<div class="drawer-top"><span class="logo">${document.getElementById('logo').innerHTML}</span><button class="x" id="dclose" aria-label="Close menu">${ic('x',20)}</button></div>`+
-  MENU.map(m=>`<div class="dgroup"><button aria-expanded="false">${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>`<h5>${c.h}</h5>${c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}`).join('')}</div></div>`).join('')+
+  MENU.map(m=>`<div class="dgroup"><button aria-expanded="false">${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>{const L=c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('');return m.cols.reduce((n,x)=>n+x.items.length,0)>10?`<div class="dsub"><button aria-expanded="false">${c.h}${ic('down',14,2)}</button><div class="dsublist">${L}</div></div>`:`<h5>${c.h}</h5>${L}`}).join('')}</div></div>`).join('')+
   `<div class="dgroup"><button data-page="/pricing">Pricing</button></div><div class="btns"><button class="btn btn-primary" data-act="start">Get started</button><button class="btn btn-secondary" data-act="sales">Contact sales</button><button class="btn btn-secondary" data-act="signin">Sign in</button></div>`;
 /* ===== kit: a11y-drawer ===== */
 /* Mobile drawer: inert while closed; focus moves in on open and back to the burger on close. setDrawer(false) on a closed drawer does nothing. */
@@ -1863,6 +1867,7 @@ const setDrawer=o=>{
 burger.onclick=()=>setDrawer(true);
 document.getElementById('dclose').onclick=()=>setDrawer(false);
 drawer.querySelectorAll('.dgroup>button:not([data-page])').forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',String(b.parentElement.classList.toggle('open'))));
+drawer.querySelectorAll('.dsub>button').forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',String(b.parentElement.classList.toggle('open'))));
 /* ===== /kit: a11y-drawer ===== */
 
 /* Header border on scroll */

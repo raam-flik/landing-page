@@ -8,6 +8,8 @@ Each menu item is **Name:** short description. Items without a page yet show "Pa
 
 ### Products
 
+On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row to see its links. The other menus open straight to their links.
+
 **Payment**
 
 - **Payment:** Accept payments online and in store
