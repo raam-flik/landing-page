@@ -178,14 +178,15 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Link on each card:** Read [brand]'s story
 
 ### 5c. Funding and registration
-- **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding. Fragment (example): Funding — Rp 250.000.000 — Settled from sales 62%
-- **Card:** Free to register. — There's no registration fee to use FLIK Shipping. — Get started. Fragment: Your FLIK account — Registration fee Rp 0 — Create your account
+- **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding.
+- **Card:** Start for free. — No registration fee. Create your account and start selling. — Get started. (AG, 15 Nov 2026: don't tie this to Shipping.)
+- Both cards are dark navy with a soft corner glow, text and a link only; no product mockup, to avoid distraction (AG, 15 Nov 2026).
 
 ### 5d. Platforms
-- **Label:** FLIK for platforms
+- No "FLIK for platforms" label (AG, 15 Nov 2026): the heading carries it.
 - **Section heading:** One platform, many merchants.
   - **Grey part:** Pay every party, earn from every sale, stay in control.
-- **Marketplace mockup (drawn in the page, example figures):** "Your marketplace" with four products from four sellers. One order: Linen Shirt Rp 349.000 (Fashion seller) and Canvas Tote Bag Rp 189.000 (Home seller), paid Rp 538.000. Split automatically: Fashion seller Rp 314.100, Home seller Rp 170.100, Platform fee · 10% Rp 53.800.
+- **Illustration (drawn in the page, example figures):** "Your marketplace" order: Linen Shirt Rp 349.000 (Fashion seller), Canvas Tote Bag Rp 189.000 (Home seller), Shopper pays Rp 538.000. Lines run through a FLIK Connect mark to three payouts: Fashion seller Rp 314.100, Home seller Rp 170.100, Your platform fee · 10% Rp 53.800.
 - **Item:** Get to market faster. — Custom payment flows between you, your merchants and their partners, set up with our team.
 - **Item:** Open a new revenue line. — Talk to us about offering FLIK Funding to the merchants already on your platform.
 - **Item:** Manage platform risk. — Governance over who gets paid, when, and under which rules.
