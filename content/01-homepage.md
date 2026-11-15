@@ -146,42 +146,47 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Text:** Payments in, packages out, one balance behind it all.
 - **Button:** Book a demo
 
-## 5. Segments
-<!-- html: Segments -->
+## 5. Enterprise, brand stories, funding and registration, platforms
+<!-- html: Enterprise / Brand stories carousel / Funding and registration / Platforms -->
 
-- **Section heading:** Built to grow with you.
-  - **Grey part:** From first sale to full scale.
-- **Label:** FLIK for brand websites
-- **Heading:** Turn more of your traffic into orders.
-- **Text:** Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in one tap. That's 3× faster than a standard checkout.
-- **Label:** FLIK for sellers shipping at volume
-- **Heading:** Ship more, and spend less on every package.
-- **Text:** From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.
-- **Text:** Keeping ERIGO in stock drove sales up to 200%.
-- **Link:** Read ERIGO's story (opens /customers/story/?c=erigo)
-- **Text:** EMADO'S opened 30+ branches, with operations under control.
-- **Link:** Read EMADO'S story (opens /customers/story/?c=emados)
-- **Text:** COD for a 3% fee (excl. PPN), credited after delivery.
-- **Link:** Explore COD shipping
-- **Text:** Up to 50% off published courier rates, all couriers in one place.
-- **Link:** Explore Shipping
-- **Small heading:** Free to register.
-- **Text:** There's no registration fee to use FLIK Shipping.
-- **Button:** Get started
-- **Small heading:** Bulk shipping.
-- **Text:** Send from many warehouses to many destinations at once.
-- **Button:** Learn more
-- **Label:** FLIK for brands ready to scale
-- **Heading:** Fuel for your next stage.
-- **Text:** Upfront funding for selected brands. Your sales take care of the rest.
-- **Button:** Talk to the FLIK team
-- **Button:** Learn more
-- **Small heading:** Stock for the rush.
-- **Text:** Keep sales moving with dedicated cash flow for inventory and marketing.
-- **Small heading:** One fixed margin.
-- **Text:** Agreed before you sign, with no hidden fees.
-- **Small heading:** Settled as you sell.
-- **Text:** Settlement is deducted automatically from your product sales.
+Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards higher up already say what each product does.
+
+**To confirm (AG):**
+- [ ] Ruma and Masakecil: the one-line descriptions below are drafts. Confirm what each uses FLIK for, and supply logos.
+- [ ] "AI automations": confirm what is on offer today.
+- [ ] FLIK Connect is not live. The Platforms section carries a "coming soon" note beside its button.
+- [ ] The three section images are generated (Higgsfield, 15 Nov 2026): `assets/sections/enterprise-property.jpg`, `enterprise-school.jpg`, `platforms-marketplace.jpg`.
+
+### 5a. Enterprise
+- **Label:** FLIK for enterprise
+- **Section heading:** Built around how you already run.
+  - **Grey part:** For larger operations with their own way of working.
+- **Spotlight:** Property — Ruma — Property payments, from booking fee to the last instalment.
+- **Spotlight:** Education — Masakecil — School fees collected on time, term after term.
+- **Item:** Customised workflows. — Work with a FLIK expert to shape payments, collections and settlement around your operation. — Talk to an expert
+- **Item:** AI automations. — Take routine work off your team with automations set up for the way your business runs. — See what's possible
+- **Item:** Dedicated support. — A named FLIK team for onboarding, going live and the day-to-day questions after. — Contact sales
+
+### 5b. Brand stories (carousel)
+- **Section heading:** Brands growing with FLIK.
+  - **Grey part:** See how they sell, ship and scale.
+- **Cards (headline from each customer story):** ERIGO, EMADO'S, Sigit Store, HEYLOCAL, Artch, Paper, WakaiGo, then "All stories — See every brand building with FLIK".
+- **Link on each card:** Read [brand]'s story
+
+### 5c. Funding and registration
+- **Card:** FLIK Funding. — Upfront funding for selected brands. Your sales take care of the rest. — Explore funding
+- **Card:** Free to register. — There's no registration fee to use FLIK Shipping. — Get started
+
+### 5d. Platforms
+- **Label:** FLIK for platforms
+- **Section heading:** One platform, many merchants.
+  - **Grey part:** Pay every party, earn from every sale, stay in control.
+- **Image chip (example):** Split payment · Example — Seller 90% — Platform 10%
+- **Item:** Get to market faster. — Custom payment flows between you, your merchants and their partners, set up with our team.
+- **Item:** Open a new revenue line. — Talk to us about offering FLIK Funding to the merchants already on your platform.
+- **Item:** Manage platform risk. — Governance over who gets paid, when, and under which rules.
+- **Button:** Explore FLIK Connect
+- **Note beside button:** FLIK Connect is coming soon. Join the waitlist.
 
 ## 6. Developers
 <!-- html: Developers (dark) -->

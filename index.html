@@ -685,6 +685,53 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
   .banner h2{font-size:30px}
 }
 
+/* ===== Homepage lower half (15 Nov 2026): enterprise, brand stories, funding and registration, platforms ===== */
+.hl-h{margin-top:16px}
+.hl-tri{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:56px}
+.hl-ic{width:40px;height:40px;border-radius:8px;border:1px solid #D9D3FF;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.hl-ic svg{width:20px;height:20px}
+.hl-tri p{font-size:16px;line-height:1.55;color:var(--muted);max-width:340px}
+.hl-tri p b{font-weight:500;color:var(--ink)}
+.en-spots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.en-spot{position:relative;isolation:isolate;overflow:hidden;border-radius:14px;aspect-ratio:16/10;background:var(--dark) center/cover;display:flex;align-items:flex-end;padding:28px;color:#fff}
+.en-spot::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,24,56,0) 42%,rgba(0,24,56,.82))}
+.en-spot small{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;opacity:.85}
+.en-spot h3{font-size:30px;font-weight:400;letter-spacing:-.5px;line-height:1.1;margin:6px 0 8px;color:#fff}
+.en-spot p{font-size:15px;line-height:1.5;opacity:.9;max-width:360px}
+.bs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.bs-row{display:flex;gap:16px;margin-top:40px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
+.bs-row::-webkit-scrollbar{display:none}
+.bs-card{flex:0 0 272px;scroll-snap-align:start}
+.bs-art{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;aspect-ratio:4/5;border-radius:12px;padding:16px;color:#fff;background:var(--dark) center/cover;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.bs-art::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--t),0) 52%,rgba(var(--t),.88))}
+.bs-card:hover .bs-art{transform:translateY(-4px)}
+.bs-logo{background:#fff;border-radius:8px;padding:6px 9px;display:flex}.bs-logo.dark{background:var(--ink)}
+.bs-logo img{display:block;max-height:18px;max-width:84px;width:auto;object-fit:contain}
+.bs-big{font-size:26px;font-weight:500;letter-spacing:-.4px;line-height:1.1}.bs-big small{display:block;font-size:12.5px;font-weight:400;letter-spacing:0;line-height:1.35;margin-top:5px;opacity:.92}
+.bs-card p{font-size:15px;line-height:1.5;color:var(--body);margin-top:14px}
+.bs-card .link{margin-top:8px}
+.bs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8)}.bs-all::before{display:none}
+.mc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mc-card{position:relative;overflow:hidden;min-height:168px;border:1px solid var(--line);border-radius:10px;background:var(--bg-alt);padding:28px 32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:10px}
+.mc-card p{font-size:16px;line-height:1.5;color:var(--muted);max-width:56%}
+.mc-card p b{font-weight:500;color:var(--ink)}
+.mc-card .link{margin-top:0}
+.mc-art{position:absolute;right:0;top:0;bottom:0;width:40%}
+.mc-a1{background:linear-gradient(150deg,#FF8AE0,#C23CF0 38%,#6A4BFF 70%,#3B24A8);clip-path:polygon(46% 0,100% 0,100% 100%,0 100%)}
+.mc-a2 i{position:absolute;inset:0}
+.mc-a2 i:nth-child(1){background:linear-gradient(160deg,#7FE9FF,#3BA7FF);clip-path:polygon(34% 0,100% 0,100% 100%,70% 100%)}
+.mc-a2 i:nth-child(2){background:linear-gradient(200deg,#8E7BFF,#6A4BFF);clip-path:polygon(34% 0,70% 100%,0 100%)}
+.mc-a2 i:nth-child(3){background:linear-gradient(180deg,#3B24A8,#002D5D);clip-path:polygon(100% 38%,100% 100%,72% 100%)}
+.pf-hero{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:21/9;margin-top:48px;background:var(--dark) url('assets/sections/platforms-marketplace.jpg') center/cover}
+.pf-chip{position:absolute;left:28px;bottom:28px;width:220px;background:#fff;border-radius:10px;box-shadow:0 18px 40px rgba(0,16,48,.4);padding:12px 14px;font-size:13px;color:var(--ink)}
+.pf-chip small{display:block;font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.pf-chip div{display:flex;justify-content:space-between;padding:6px 0}.pf-chip div+div{border-top:1px solid var(--line)}
+.pf-chip b{font-weight:600}
+.pf-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:44px}
+.pf-note{font-size:14px;color:var(--muted)}
+@media (max-width:900px){.hl-tri{grid-template-columns:1fr;gap:32px;margin-top:40px}.hl-tri p{max-width:none}.en-spots,.mc{grid-template-columns:1fr}.pf-hero{aspect-ratio:4/3}}
+@media (max-width:600px){.bs-head{flex-direction:column;align-items:flex-start}.bs-card{flex-basis:240px}.en-spot{aspect-ratio:4/3;padding:20px}.en-spot h3{font-size:26px}.mc-card{padding:24px}.mc-card p{max-width:62%}.pf-chip{left:16px;bottom:16px;width:190px}}
+
 /* Banner flow: Checkout → Shipping → Funding as three real fragments joined by a line */
 .banner{align-items:center}
 .banner-in{flex:1 1 auto;min-width:0}
@@ -1303,55 +1350,58 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<!-- ===== Segments ===== -->
-<section class="pad guides">
+<!-- ===== Enterprise ===== -->
+<section class="pad guides" id="enterprise">
   <div class="wrap">
-    <h2 class="sec-h">Built to grow with you. <span class="soft">From first sale to full scale.</span></h2>
-
-    <!-- A: brand websites -->
-    <div class="seg">
-      <span class="label"><i></i>FLIK for brand websites</span>
-      <h3 class="seg-h">Turn more of your traffic into orders.</h3>
-      <p class="txt seg-p">Every extra step costs you a sale, so we cut them. No passwords, no retyping, paid in one tap. That&rsquo;s 3× faster than a standard checkout.</p>
+    <span class="label"><i></i>FLIK for enterprise</span>
+    <h2 class="sec-h hl-h">Built around how you already run. <span class="soft">For larger operations with their own way of working.</span></h2>
+    <div class="en-spots">
+      <article class="en-spot" style="background-image:url('assets/sections/enterprise-property.jpg')"><div><small>Property</small><h3>Ruma</h3><p>Property payments, from booking fee to the last instalment.</p></div></article>
+      <article class="en-spot" style="background-image:url('assets/sections/enterprise-school.jpg')"><div><small>Education</small><h3>Masakecil</h3><p>School fees collected on time, term after term.</p></div></article>
     </div>
-
-    <!-- B: shipping at volume -->
-    <div class="seg">
-      <span class="label"><i></i>FLIK for sellers shipping at volume</span>
-      <h3 class="seg-h">Ship more, and spend less on every package.</h3>
-      <p class="txt seg-p">From one parcel to thousands, FLIK Shipping compares all major couriers, handles COD and credits your balance after delivery.</p>
-      <div class="stories-wrap">
-        <div class="stories" id="stories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span></span><span class="st-big">3%<small>COD fee (excl. PPN), after delivery</small></span></div><p>COD for a 3% fee (excl. PPN), credited after delivery.</p><a href="#" class="link" data-page="/shipping/cod">Explore COD shipping <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span></span><span class="st-big">50%<small>off published courier rates, up to</small></span></div><p>Up to 50% off published courier rates, all couriers in one place.</p><a href="#" class="link" data-page="/shipping">Explore Shipping <span class="chev">›</span></a></article>
-        </div>
-        <div class="car-nav"><button class="cbtn" data-car="stories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="stories" data-dir="1" aria-label="Next stories">›</button></div>
-      </div>
-      <div class="offers">
-        <div class="offer"><h4>Free to register.</h4><p class="txt">There's no registration fee to use FLIK Shipping.</p><button class="btn btn-primary" data-act="start">Get started <span class="chev">›</span></button></div>
-        <div class="offer"><h4>Bulk shipping.</h4><p class="txt">Send from many warehouses to many destinations at once.</p><a href="#" class="btn btn-secondary" data-page="/shipping/bulk">Learn more <span class="chev">›</span></a></div>
-      </div>
+    <div class="hl-tri">
+      <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><p><b>Customised workflows.</b> Work with a FLIK expert to shape payments, collections and settlement around your operation.</p><a href="#" class="link" data-act="sales" data-interest="Enterprise">Talk to an expert <span class="chev">›</span></a></div>
+      <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/><path d="M18.5 15.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8.8-1.9z"/></svg></span><p><b>AI automations.</b> Take routine work off your team with automations set up for the way your business runs.</p><a href="#" class="link" data-act="sales" data-interest="Enterprise">See what's possible <span class="chev">›</span></a></div>
+      <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8M12 17h.01"/></svg></span><p><b>Dedicated support.</b> A named FLIK team for onboarding, going live and the day-to-day questions after.</p><a href="#" class="link" data-act="sales" data-interest="Enterprise">Contact sales <span class="chev">›</span></a></div>
     </div>
+  </div>
+</section>
 
-    <!-- C: scaling -->
-    <div class="seg" style="border-bottom:0">
-      <span class="label"><i></i>FLIK for brands ready to scale</span>
-      <h3 class="seg-h">Fuel for your next stage.</h3>
-      <p class="txt seg-p">Upfront funding for selected brands. Your sales take care of the rest.</p>
-      <div class="split" style="margin-top:40px">
-        <div class="split-text">
-          <div class="steps" id="steps" style="margin-top:0"></div>
-          <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-            <button class="btn btn-primary" data-act="sales" data-interest="Funding">Talk to the FLIK team <span class="chev">›</span></button>
-            <a href="#" class="btn btn-secondary" data-page="/funding/merchant-cash-advance">Learn more</a>
-          </div>
-        </div>
-        <div class="panel"><div class="fund" id="fund"></div></div>
-      </div>
-      <div class="benefits">
-        <div><h4>Stock for the rush.</h4><p class="txt">Keep sales moving with dedicated cash flow for inventory and marketing.</p></div>
-        <div><h4>One fixed margin.</h4><p class="txt">Agreed before you sign, with no hidden fees.</p></div>
-        <div><h4>Settled as you sell.</h4><p class="txt">Settlement is deducted automatically from your product sales.</p></div>
-      </div>
+<!-- ===== Brand stories carousel ===== -->
+<section class="pad alt guides" id="brand-stories">
+  <div class="wrap">
+    <div class="bs-head">
+      <h2 class="sec-h hl-h">Brands growing with FLIK. <span class="soft">See how they sell, ship and scale.</span></h2>
+      <div class="car-nav"><button class="cbtn" data-car="bstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="bstories" data-dir="1" aria-label="Next stories">›</button></div>
     </div>
+    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/story/?c=erigo" style="--t:0,45,93;background-image:url('assets/customers/erigo-1.jpg');background-position:56% center" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="bs-big">Up to 200%<small>sales growth, online and in stores</small></span></a><p>Keeping ERIGO in stock helped drive sales up to 200%, online and in stores.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=emados" style="--t:120,52,10;background-image:url('assets/customers/emados-1.jpg');background-position:center" aria-label="Read EMADO'S story"><span class="bs-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="bs-big">30+<small>branches opened across Indonesia</small></span></a><p>EMADO'S opened 30+ branches across Indonesia, with operations kept under control.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=sigit-store" style="--t:0,45,93;background-image:url('assets/customers/sigit-store-1.jpg?v=2');background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=heylocal" style="--t:174,29,124;background-image:url('assets/customers/heylocal-1.jpg');background-position:38% top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="bs-big">500,000+<small>transactions in peak season</small></span></a><p>HEYLOCAL stocked up for 500,000+ transactions in peak season.</p><a href="customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=artch" style="--t:59,36,168;background-image:url('assets/customers/artch-1.jpg');background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.png?v=2" alt="Artch"></span></a><p>Artch gives its shoppers a checkout that keeps up with them.</p><a href="customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=paper" style="--t:174,29,124;background-image:url('assets/customers/paper-1.jpg?v=2');background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.png?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=wakaigo" style="--t:0,45,93;background-image:url('assets/customers/wakaigo-1.jpg?v=2');background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all" href="#" data-page="/customers"><span></span><span class="bs-big">All stories<small>See every brand building with FLIK</small></span></a></article></div>
+  </div>
+</section>
+
+<!-- ===== Funding and registration ===== -->
+<section class="pad-s guides">
+  <div class="wrap">
+    <div class="mc">
+      <div class="mc-card"><p><b>FLIK Funding.</b> Upfront funding for selected brands. Your sales take care of the rest.</p><a href="#" class="link" data-page="/funding/merchant-cash-advance">Explore funding <span class="chev">›</span></a><span class="mc-art mc-a1" aria-hidden="true"></span></div>
+      <div class="mc-card"><p><b>Free to register.</b> There's no registration fee to use FLIK Shipping.</p><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a><span class="mc-art mc-a2" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Platforms ===== -->
+<section class="pad guides" id="platforms" style="padding-top:40px">
+  <div class="wrap">
+    <span class="label"><i></i>FLIK for platforms</span>
+    <h2 class="sec-h hl-h">One platform, many merchants. <span class="soft">Pay every party, earn from every sale, stay in control.</span></h2>
+    <div class="pf-hero" role="img" aria-label="A busy indoor marketplace with many independent stalls">
+      <div class="pf-chip" aria-hidden="true"><small>Split payment · Example</small><div><span>Seller</span><b>90%</b></div><div><span>Platform</span><b>10%</b></div></div>
+    </div>
+    <div class="hl-tri">
+      <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l7 7-7 7M12 5l7 7-7 7"/></svg></span><p><b>Get to market faster.</b> Custom payment flows between you, your merchants and their partners, set up with our team.</p></div>
+      <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 4 7-8M15 8h5v5"/></svg></span><p><b>Open a new revenue line.</b> Talk to us about offering FLIK Funding to the merchants already on your platform.</p></div>
+      <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3z"/><path d="M12 8v8"/></svg></span><p><b>Manage platform risk.</b> Governance over who gets paid, when, and under which rules.</p></div>
+    </div>
+    <div class="pf-cta"><a href="#" class="btn btn-primary" data-page="/payment/connect">Explore FLIK Connect <span class="chev">›</span></a><span class="pf-note">FLIK Connect is coming soon. Join the waitlist.</span></div>
   </div>
 </section>
 
@@ -1859,7 +1909,7 @@ function renderFund(){
    <div class="fund-list">${f.list.length?f.list.map(l=>`<div class="co-row"><span><b style="font-weight:500;display:block">${l[1]}</b><span class="m" style="font-size:12px">${l[0]}</span></span><span class="num">${l[2]}</span></div>`).join(''):'<p class="txt" style="font-size:12.5px;padding:6px 0">No transactions yet.</p>'}</div>
    <div class="fstate">${ic('check',15,2)}${f.state} · No hidden fees</div>`;
 }
-renderFund();
+if(document.getElementById('steps'))renderFund();
 
 /* ===== Integration tabs ===== */
 const ITABS={
