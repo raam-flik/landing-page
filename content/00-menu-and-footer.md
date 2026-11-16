@@ -60,14 +60,17 @@ On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row 
 
 **Build**
 
-- **Documentation:** Guides to get started
-- **API reference:** Endpoints and objects
-- **Developer resources:** SDKs and tools
+- **Overview:** Ways to build with FLIK
+- **Documentation:** Guides to your first payment
+- **API reference:** Endpoints, objects and errors
+- **Sandbox:** Test with sample data, no real money
 
 **Integrations**
 
-- **Shopify:** Checkout and Shipping for Shopify
-- **WooCommerce:** Checkout and Shipping for WooCommerce
+- **Shopify:** FLIK Checkout for your Shopify store
+- **WooCommerce:** FLIK Checkout for your WordPress store
+
+> Note (AG, 16 Nov 2026): links change with this edit. Overview opens `/developers`. Documentation opens the developer docs home and API reference opens `/api/merchant-api` on the docs site, both in a new tab (https://ye2vctp5ki.ap-southeast-1.awsapprunner.com until the docs move to their final address). Sandbox opens `/developers#sandbox`, a section still to be added in `content/19-developers.md`. Shopify and WooCommerce keep `/developers#shopify` and `#woocommerce`. "Developer resources" leaves the menu. The SDK is coming, so it stays off the menu until it ships.
 
 ### Resources
 
@@ -115,9 +118,10 @@ On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row 
 
 **Developers**
 
+- Overview
 - Documentation
 - API reference
-- Developer resources
+- Sandbox
 - Shopify
 - WooCommerce
 
