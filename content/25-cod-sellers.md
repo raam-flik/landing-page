@@ -82,7 +82,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Card:** D2C brands — Sell more on your own website, with checkout, shipping and funding in one place.
 - **Card:** Scaling brands — Payments, shipping and funding that keep up as you grow.
-- **Card:** Fashion — Sell every drop online, in chat and in store.
+- **Card:** Fashion — Sell every collection online, in chat and in store.
 - **Card:** Home appliances — Big-ticket sales, from the showroom to the doorstep.
 
 ## 9. Questions, answered.
