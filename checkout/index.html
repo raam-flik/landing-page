@@ -1138,6 +1138,58 @@ html{scroll-padding-top:88px}
 .pk-pl .grow{flex:1;min-width:0}
 .pk-ic{width:28px;height:28px;border-radius:6px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
 
+
+/* Pick your path: cards in the Payment page style (Raam, 16 Nov) */
+.py-card{position:absolute;background:var(--surface,#fff);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
+.py-card .co-bar{position:relative}.py-card .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.py-b{padding:16px;display:grid;gap:9px}
+.py-ways{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3.2);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:40px;padding:4px}
+.py-ways::-webkit-scrollbar{display:none}
+.py-way{scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-way-v{height:320px;overflow:hidden;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px}
+.py-way-v .py-card{position:relative;width:100%;max-width:280px}
+.pw-sum{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--body)}.pw-sum b{color:var(--ink);font-weight:500}
+.pw-mut{color:var(--muted);font-size:11.5px}
+.pw-code{padding:14px;display:grid;gap:10px}.pw-code>*{min-width:0}.pw-code .py-row span:first-child{overflow:hidden;text-overflow:ellipsis}.pw-code .code{background:#002D5D;overflow:hidden;border-radius:8px;padding:12px;font-size:12px;line-height:1.55}
+.py-way-t{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.py-way-t h3{font-size:18px;font-weight:500}
+.py-way-t p{font-size:14.5px;color:var(--body);line-height:1.5}
+.py-way-t ul{list-style:none;display:grid;gap:6px;margin:4px 0 8px}
+.py-way-t li{display:flex;gap:8px;font-size:14px;color:var(--body)}
+.py-way-t li svg{color:var(--primary);flex:none;margin-top:3px}
+.py-way-t .link{margin-top:auto}
+#integrate .py-way,#integrate .py-card,#integrate .pw-code .code{border-radius:6px}
+#integrate .pw-code .code{margin:0;white-space:pre;color:#fff}
+#integrate .py-way-t .label{margin-bottom:2px}
+#integrate .pk-tg{font-size:12.5px}
+#integrate .co-bar span{white-space:nowrap}
+#integrate .py-way-v .pw-code{max-width:320px}#integrate .pw-code .code{font-size:11.5px}
+@media (max-width:1080px){#integrate .pk3{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){#integrate .pk3{grid-template-columns:1fr}#integrate .pw-code .code{font-size:10.5px}}
+
+
+/* One account: smaller on phones (Raam, 16 Nov) */
+@media (max-width:760px){
+  #paths .net{margin-top:36px;max-width:320px;margin-left:auto;margin-right:auto}
+  #paths .net-hub{max-width:260px}
+  #paths .net-ch{width:50px;height:50px;border-radius:10px}
+  #paths .net-ch img{width:34px;height:34px}
+  #paths .net-ch>svg{transform:scale(.78)}
+  #paths .net-ch em{font-size:9px}
+  #paths .net-av{width:56px;height:56px;box-shadow:0 0 0 6px var(--bg-alt),0 0 0 7px #D2C8FF}
+  #paths .net-av svg{width:26px;height:26px}
+  #paths .net-f{width:24px;height:24px}#paths .net-f svg{width:13px;height:13px}
+  #paths .net-me .pill{font-size:11px}
+  #paths .fl-c{height:28px}
+  #paths .fl-n{padding:16px;gap:4px}
+  #paths .fl-n b{font-size:15px}
+  #paths .fl-n>span:last-child{font-size:12.5px}
+  #paths .net-dots{grid-template-columns:repeat(8,1fr);gap:6px;margin:6px 0 8px}
+  #paths .net-dots i:nth-child(n+9){display:none}
+  #paths .net-rows{font-size:13px;gap:4px;margin:4px 0 6px}
+  #paths .net-pay{height:34px;font-size:13.5px!important}
+}
+
 /* At a glance */
 .gl3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .gl{background:#fff;border:1px solid var(--line-soft);border-radius:12px;padding:28px}
@@ -1249,7 +1301,7 @@ html{scroll-padding-top:88px}
 .prg-b .txt{max-width:560px;font-size:16px}
 .prg-p b{display:block;font-size:40px;font-weight:300;letter-spacing:-.8px;line-height:1.1;color:var(--ink)}
 .prg-p span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px}
-.prg-r:hover .ha .ha-l{opacity:1}
+/* (row hover no longer shows half an arrow; the arrow animates only on the link itself) */
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
@@ -1415,6 +1467,21 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 /* ===== /kit: scroll-reveal ===== */
 /* FLIK F mark on shopper pay and checkout buttons */
 .fk::before{content:"";display:inline-block;flex:none;width:1em;height:1em;margin-right:.5em;vertical-align:-.12em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ===== Stories like the homepage (Raam, 16 Nov): arrows top-right, row runs off the edge, clean photos, figures only ===== */
+#customers .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+#customers .cs-head .sec-h{margin-bottom:0}
+#customers .stories-wrap{margin-top:40px}
+#customers .stories{grid-auto-columns:calc((100% - 48px)/3.85)}
+#customers .story .story-art.sph::before{background:linear-gradient(180deg,rgba(var(--tint),0) 52%,rgba(var(--tint),.88))}
+#customers .story-art{justify-content:space-between}
+#customers .story-art .st-big{font-size:26px;font-weight:500;letter-spacing:-.4px;line-height:1.1;margin-top:auto}
+#customers .story-art .st-big small{font-size:12.5px;font-weight:400;line-height:1.35;margin-top:5px}
+#customers a.story-art.cs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8);color:#fff;text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#customers a.story-art.cs-all:hover{transform:translateY(-4px)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
+@media (max-width:600px){#customers .cs-head{flex-direction:column;align-items:flex-start;gap:16px}}
 </style>
 </head>
 <body>
@@ -1671,38 +1738,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h">Pick your path. <span class="soft">Connect the store you already have. Your products, prices and orders stay where they are.</span></h2>
     <div class="pk3">
-      <a href="#" class="pk" data-page="/integrations/shopify">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">FLIK Checkout</b><span class="pill ok">Installed</span></div>
-          <div class="pk-tg"><span>Use FLIK as your checkout</span><i class="tg on"></i></div>
-          <div class="pk-tg"><span>Ship with FLIK Shipping</span><i class="tg on"></i></div>
-        </div></div>
-        <span class="label"><img class="label-lg" src="../assets/logos/platform/shopify.png" alt="">Shopify</span>
-        <h3>We connect your store.</h3>
-        <p class="txt">FLIK replaces the Shopify checkout. Shoppers are redirected to FLIK when they tap Checkout.</p>
-        <em class="link">Shopify integration <span class="chev">›</span></em>
-      </a>
-      <a href="#" class="pk" data-page="/integrations/woocommerce">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Plugins</b><span class="m" style="font-size:12px">WordPress</span></div>
-          <div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>FLIK Checkout for WooCommerce</b><small>Version 2.4</small></span><span class="pill pu">Active</span></div>
-        </div></div>
-        <span class="label"><img class="label-lg" src="../assets/logos/platform/woocommerce.png" alt="">WooCommerce</span>
-        <h3>We set it up for you.</h3>
-        <p class="txt">The FLIK team connects your store, and your WooCommerce orders go through FLIK Checkout.</p>
-        <em class="link">WooCommerce integration <span class="chev">›</span></em>
-      </a>
-      <a href="#" class="pk" data-page="Developer docs">
-        <div class="pk-g dk"><pre class="code"><span class="c">// create a checkout session</span>
+      <article class="py-way"><div class="py-way-v"><div class="py-card" role="img" aria-label="Example: the FLIK Checkout app installed in Shopify"><div class="co-bar"><i></i><i></i><i></i><span>admin.shopify.com</span></div><div class="py-b"><div class="pw-sum"><b>FLIK Checkout</b><span class="pill ok">Installed</span></div><div class="pk-tg"><span>Use FLIK as your checkout</span><i class="tg on"></i></div><div class="pk-tg"><span>Ship with FLIK Shipping</span><i class="tg on"></i></div></div></div></div><div class="py-way-t"><span class="label"><img class="label-lg" src="../assets/logos/platform/shopify.png" alt="">Shopify</span><h3>We connect your store</h3><p>FLIK replaces the Shopify checkout. Shoppers are redirected to FLIK when they tap Checkout.</p><ul><li><span data-ic="check-s"></span>FLIK connects it for you</li><li><span data-ic="check-s"></span>Products, prices and orders stay in Shopify</li><li><span data-ic="check-s"></span>Ship with FLIK Shipping</li></ul><a href="#" class="link" data-page="/integrations/shopify">Shopify integration <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card" role="img" aria-label="Example: the FLIK Checkout plugin active in WordPress"><div class="co-bar"><i></i><i></i><i></i><span>yourstore.com/wp-admin</span></div><div class="py-b"><div class="pw-sum"><b>Plugins</b><span class="pw-mut">WordPress</span></div><div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>FLIK Checkout for WooCommerce</b><small>Version 2.4</small></span><span class="pill pu">Active</span></div></div></div></div><div class="py-way-t"><span class="label"><img class="label-lg" src="../assets/logos/platform/woocommerce.png" alt="">WooCommerce</span><h3>We set it up for you</h3><p>The FLIK team connects your store, and your WooCommerce orders go through FLIK Checkout.</p><ul><li><span data-ic="check-s"></span>The FLIK team sets it up</li><li><span data-ic="check-s"></span>A WordPress plugin</li><li><span data-ic="check-s"></span>Orders go through FLIK Checkout</li></ul><a href="#" class="link" data-page="/integrations/woocommerce">WooCommerce integration <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card pw-code" role="img" aria-label="Example: creating a FLIK checkout session in code"><pre class="code"><span class="c">// create a checkout session</span>
 <span class="k">const</span> s = <span class="k">await</span> flik.checkout.create({
   items: [{ sku: <span class="s">'LS-M'</span>, qty: <span class="p">1</span> }],
 });
-redirect(s.url);</pre></div>
-        <span class="label"><i></i>API</span>
-        <h3>Build it your way.</h3>
-        <p class="txt">For custom stores: create a checkout session and send shoppers to FLIK.</p>
-        <em class="link">Developer docs <span class="chev">›</span></em>
-      </a>
+redirect(s.url);</pre></div></div><div class="py-way-t"><span class="label"><i></i>API</span><h3>Build it your way</h3><p>For custom stores: create a checkout session and send shoppers to FLIK.</p><ul><li><span data-ic="check-s"></span>For custom stores</li><li><span data-ic="check-s"></span>Create a checkout session</li><li><span data-ic="check-s"></span>Send shoppers to FLIK</li></ul><a href="#" class="link" data-page="Developer docs">Developer docs <span class="chev">›</span></a></div></article>
     </div>
   </div>
 </section>
@@ -1749,10 +1791,9 @@ redirect(s.url);</pre></div>
 <!-- ===== kit: customer-stories (FLIK Checkout) ===== -->
 <section class="pad alt guides" id="customers">
   <div class="wrap">
-    <h2 class="sec-h">Brands that grow with FLIK Checkout. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
+    <div class="cs-head"><h2 class="sec-h">Brands that grow with FLIK Checkout. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-violet" style="background-image:url('../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span><span class="st-big">Sigit Store</span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-violet" style="background-image:url('../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../assets/logos/merchant/artch.png?v=2" alt="Artch"></span><span class="st-big">Artch</span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-orange" style="background-image:url('../assets/customers/wakaigo-1.jpg?v=2')"><span class="st-logo"><img src="../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span><span class="st-big">WakaiGo</span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="background-image:url('../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../assets/logos/merchant/paper.png?v=2" alt="Paper"></span><span class="st-big">Paper</span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/osim.png?v=2" alt="OSIM"></span><span class="st-big">OSIM</span></div><p>OSIM makes buying wellness online feel effortless.</p><a href="../customers/story/?c=osim" class="link">Read OSIM's story <span class="chev">›</span></a></article></div>
-      <div class="st-foot"><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-violet" style="--tint:0,45,93;background-image:url('../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-violet" style="--tint:59,36,168;background-image:url('../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../assets/logos/merchant/artch.png?v=2" alt="Artch"></span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-orange" style="--tint:0,45,93;background-image:url('../assets/customers/wakaigo-1.jpg?v=2')"><span class="st-logo"><img src="../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="story"><a class="story-art cs-all" href="../customers/" aria-label="See all customer stories"><span></span><span class="st-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/osim.png?v=2" alt="OSIM"></span></div><p>OSIM makes buying wellness online feel effortless.</p><a href="../customers/story/?c=osim" class="link">Read OSIM's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="--tint:174,29,124;background-image:url('../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../assets/logos/merchant/paper.png?v=2" alt="Paper"></span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article></div>
     </div>
   </div>
 </section>
@@ -1772,7 +1813,7 @@ redirect(s.url);</pre></div>
   <div class="wrap">
     <h3 class="res-h">More from FLIK</h3>
     <div class="res3">
-      <a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Ship every checkout order</b><span>All major couriers in one dashboard, for up to 50% off published rates.</span><em>Explore Shipping <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/shipping"><span class="rtag"><span data-ic="truck"></span>Product</span><b>Ship every checkout order</b><span>All major couriers in one dashboard, for up to 45% off published rates.</span><em>Explore Shipping <span class="chev">›</span></em></a>
       <a href="#" class="res" data-page="/funding/merchant-cash-advance"><span class="rtag"><span data-ic="coins"></span>Product</span><b>Fund the stock you sell</b><span>Merchant Cash Advance is settled automatically from your sales.</span><em>Explore Funding <span class="chev">›</span></em></a>
       <a href="#" class="res" data-page="/checkout/payment-methods"><span class="rtag"><span data-ic="card"></span>Guide</span><b>All payment methods</b><span>What each method costs, and when shoppers use it.</span><em>Read more <span class="chev">›</span></em></a>
     </div>

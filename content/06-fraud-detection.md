@@ -59,6 +59,7 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **Label:** How it works
 - **Section heading:** Nothing leaves without a second look.
   - **Grey part:** Here's what we look at.
+- **Outcomes:** a strip along the bottom of the example card; the example's own result (Under review) is highlighted
 - **Outcome:** Usual — Cleared — Goes through as usual.
 - **Outcome:** Unusual — Under review — FLIK's risk team takes a look.
 - **Outcome:** Fraud — Stopped — The money stays in your balance.
@@ -80,7 +81,7 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - Result — FLIK's risk team takes a look — Under review
 
 ## 3. What it covers
-<!-- html: What it covers: ruled five-step flow, the progress line walks and an example check follows (example data) #steps -->
+<!-- html: What it covers: ruled five-step flow, the progress line walks (the example card under it was removed) #steps -->
 
 - **Section heading:** Watched at every step.
   - **Grey part:** From first payment to last withdrawal.
@@ -90,13 +91,6 @@ Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The
 - **Step:** 04 — Withdrawals — Checked before money leaves.
 - **Step:** 05 — COD orders — Risky orders flagged.
 
-*Example text inside the example card (only change if needed):*
-
-- Example · Payments — 214 payments today — Cleared
-- Example · Refunds — 3 refunds today — Normal
-- Example · Chargebacks — Card payment of Rp1.250.000 disputed — Evidence sent
-- Example · Withdrawal — Rp12.500.000 to your usual BCA account — Cleared
-- Example · COD order — Order #4830 · past failed deliveries — High risk
 
 ## 4. Chargebacks
 <!-- html: Chargebacks: the list highlights one card dispute (example data) #signals -->

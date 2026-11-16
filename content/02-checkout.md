@@ -128,16 +128,19 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Pick your path.
   - **Grey part:** Connect the store you already have. Your products, prices and orders stay where they are.
 - **Label:** Shopify
-- **Heading:** We connect your store.
+- **Heading:** We connect your store
 - **Text:** FLIK replaces the Shopify checkout. Shoppers are redirected to FLIK when they tap Checkout.
+- **Checklist:** FLIK connects it for you · Products, prices and orders stay in Shopify · Ship with FLIK Shipping
 - **Link:** Shopify integration
 - **Label:** WooCommerce
-- **Heading:** We set it up for you.
+- **Heading:** We set it up for you
 - **Text:** The FLIK team connects your store, and your WooCommerce orders go through FLIK Checkout.
+- **Checklist:** The FLIK team sets it up · A WordPress plugin · Orders go through FLIK Checkout
 - **Link:** WooCommerce integration
 - **Label:** API
-- **Heading:** Build it your way.
+- **Heading:** Build it your way
 - **Text:** For custom stores: create a checkout session and send shoppers to FLIK.
+- **Checklist:** For custom stores · Create a checkout session · Send shoppers to FLIK
 - **Link:** Developer docs
 
 ## 9. Checkout at a glance
@@ -193,7 +196,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Brands that grow with FLIK Checkout.
   - **Grey part:** How Indonesian brands use it, in their own stories.
 - **Story cards (carousel, every brand on this product, in this order):** Sigit Store, Artch, Paper, WakaiGo, OSIM. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". Real stories go first: The SIGIT, Artch, WakaiGo.
-- **Link:** See all customer stories
+- **Fourth card:** All stories · "See how every brand sells, ships and grows with FLIK." · link: See all customer stories (to Customers)
 - Captions are two lines at most, shortened from each story's headline (the story page keeps the full headline).
 - Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
 

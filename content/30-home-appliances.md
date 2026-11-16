@@ -33,7 +33,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Item:** Showroom and online, one brand. — Shoppers try it in the showroom and buy it online, or the other way round. Your sales and your money should be in one place.
 - **Stat:** 15 — payment methods in one checkout, from QRIS to COD
 - **Stat:** 5 — services per order: regular, next day, same day, instant and cargo
-- **Stat:** 50% — off published courier rates, at most
+- **Stat:** 45% — off published courier rates, at most
 - **Stat:** 1 — FLIK balance for showroom and online sales
 
 ## 3. Everything an appliance brand sells with.

@@ -37,7 +37,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Small text above heading:** Online payments
 - **Heading:** A checkout built to convert.
   - **Grey part:** Shoppers log in with a WhatsApp code, their details fill in, and they pay the way they prefer.
-- **Item:** A prebuilt checkout, shareable links, or your own build‹›
+- **Eyebrow:** Ways to take payments
+- **Heading:** Checkout, links or your own build. *Pick how you get paid.* (arrows ‹ › on the right)
     
       checkout.flik.co.idLogged in with FLIKWhatsAppQRISPay Rp538.000Prebuilt checkout page — FLIK Checkout for your Shopify or WooCommerce store.
 - **Item:** Shareable payment links — Get paid from a chat, with no website needed.
@@ -126,7 +127,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## 10. Brands taking payments with FLIK.
 
 - **Heading:** Brands taking payments with FLIK.
-  - **Grey part:** How brands use FLIK to get paid.
+  - **Grey part:** See how they get paid.
 
 ## 11. Questions, answered.
 

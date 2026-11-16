@@ -8,7 +8,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Things to confirm on this page
 
 - [x] Coverage: Malaysia and Singapore removed everywhere, including the search data (`areaServed` is now Indonesia only). Coverage is "across Indonesia" (AG, 24 Oct 2026).
-- [x] Shipping discount is "up to 50% off published rates" (AG, 12 Nov 2026; was "up to 40% less", AG 24 Oct). Claims: "up to 40% less", "COD fee 3% (excl. PPN)" and "99% of shipments created successfully" are allowed (AG, 24 Oct 2026). The "3 countries" stat is replaced with "15 payment methods".
+- [x] Shipping discount is "up to 45% off published rates" (Raam, 16 Nov 2026; was "up to 50%", AG 12 Nov; "up to 40% less", AG 24 Oct). Claims: "up to 40% less", "COD fee 3% (excl. PPN)" and "99% of shipments created successfully" are allowed (AG, 24 Oct 2026). The "3 countries" stat is replaced with "15 payment methods".
 - [x] Struck-through "was" prices and invented discounts removed from the rate checker and the globe. Prices are labelled "Example" (AG, 24 Oct 2026).
 - [x] "Lower RTO", "Fewer coming back", the −38% badge and the returns chart removed. The page now uses neutral copy about tracking every parcel and handling returns (AG, 24 Oct 2026).
 - [x] COD: "paid upfront" and "No other withdrawal costs" removed. The COD ledger mockup now shows a "PPN on fee (example, 11%)" row so the balance adds up (AG, 24 Oct 2026).
@@ -19,14 +19,14 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Search results (SEO)
 
 - **Page title:** The Shipping Engine for Growing Brands | FLIK Shipping
-- **Description:** FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 50% off published rates, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.
+- **Description:** FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 45% off published rates, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.
 
 ## 1. Hero
 <!-- html: Hero: text left, a working rate checker on the right -->
 
 - **Small text above headline:** FLIK Shipping
 - **Headline (H1):** The shipping engine for growing brands.
-  - **Grey part:** All major couriers, up to 50% off published rates.
+  - **Grey part:** All major couriers, up to 45% off published rates.
 - **Intro text:** Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.
 - **Button:** Start shipping free
 - **Button:** Contact sales
@@ -40,7 +40,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** One dashboard for every shipment.
   - **Grey part:** From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.
-- **Stat:** 50% — off published rates, at most
+- **Stat:** 45% — off published rates, at most
 - **Stat:** 3% — COD fee (excl. PPN), paid by the merchant
 - **Stat:** 99% — of shipments created successfully
 - **Stat:** 15 — payment methods in one checkout
@@ -51,7 +51,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Compare all major couriers in seconds.
   - **Grey part:** Pick a route and a weight, then sort by the cheapest or the fastest.
 - **List item:** Regular, next day, same day, instant and cargo
-- **List item:** Up to 50% off published shipping rates
+- **List item:** Up to 45% off published shipping rates
 - **List item:** Live rates in your dashboard
 - **Label (top of rate checker):** Example
 - **Form label:** From
@@ -165,16 +165,19 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Orders flow in on their own.
   - **Grey part:** Connect your store and every new order is ready to ship in the FLIK dashboard.
 - **Label:** Shopify
-- **Heading:** Orders sync from Shopify.
+- **Heading:** Orders sync from Shopify
 - **Text:** New orders appear in your FLIK Shipping dashboard, ready to ship.
+- **Checklist:** New orders come in on their own · Ready to ship in one dashboard · Track every package
 - **Link:** Shopify integration
 - **Label:** WooCommerce
-- **Heading:** We set it up for you.
+- **Heading:** We set it up for you
 - **Text:** The FLIK team connects your WooCommerce store to the FLIK Shipping dashboard.
+- **Checklist:** The FLIK team sets it up · A WordPress plugin · Rates shown at checkout
 - **Link:** WooCommerce integration
 - **Label:** FLIK Checkout
-- **Heading:** Sold with FLIK, shipped with FLIK.
-- **Text:** Checkout orders ship through FLIK Shipping with the couriers you set in Pengaturan Pengiriman.
+- **Heading:** Sold with FLIK, shipped with FLIK
+- **Text:** Checkout orders ship through FLIK Shipping with the couriers you set in Shipping settings.
+- **Checklist:** Courier picked at checkout · Ships from your warehouse · Your choice of couriers
 - **Link:** Explore Checkout
 
 ## 10. Who it is for
@@ -191,7 +194,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Brands that grow with FLIK Shipping.
   - **Grey part:** How Indonesian brands use it, in their own stories.
 - **Story cards (carousel, every brand on this product, in this order):** Zaafer, Gerai Hawa, Manta Liberta, Teenage Death Star. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". Real stories go first: Gerai Hawa, Teenage Death Star, Zaafer.
-- **Link:** See all customer stories
+- **Fourth card:** All stories · "See how every brand sells, ships and grows with FLIK." · link: See all customer stories (to Customers)
 - Captions are two lines at most, shortened from each story's headline (the story page keeps the full headline).
 - Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
 

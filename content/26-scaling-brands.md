@@ -9,7 +9,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - [ ] Structure follows stripe.com/startups (13 Nov 2026), with FLIK facts only. Stripe's parts mapped to FLIK: launch / monetize / scale → Launch, Sell more, Scale cards; no code to API → Payment Link, Invoice, Checkout, In-Store, Merchant API; grow without growing pains → bulk shipping, Cash Advance, Early Settlement, Fraud Detection; need help → sales, Help Center, Developers. Left out: company incorporation (Atlas), credits and perks, investor programs, global expansion, revenue reporting (not FLIK products).
 - [ ] Hero: an animated orders chart (example data: Aruna Studio, a year of orders) where each jump is labelled with a FLIK step: Checkout on, in-store QRIS, Cash Advance, bulk shipping from 2 warehouses. "+38% on last month" is example data, not a FLIK result.
-- [ ] Numbers row: 15 payment methods, 7 couriers, up to 50% off published rates, 1 balance (all already on other pages).
+- [ ] Numbers row: 15 payment methods, 7 couriers, up to 45% off published rates, 1 balance (all already on other pages).
 - [ ] Cash Advance facts from the Funding page: selected merchants, at least 6 months of sales, one fixed margin, no compounding interest, settled from a share of each sale.
 - [ ] Story cards are example stories except EMADO'S and ERIGO.
 
@@ -79,7 +79,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Stat:** 15 — payment methods in one checkout, from QRIS to COD
 - **Stat:** 7 — major couriers in one dashboard
-- **Stat:** 50% — off published courier rates, at most
+- **Stat:** 45% — off published courier rates, at most
 - **Stat:** 1 — FLIK balance for online and in-store sales
 
 ## 6. Brands scaling with FLIK.

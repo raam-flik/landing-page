@@ -76,7 +76,7 @@ These come from the current flik.co.id. Confirm before using any new number.
 |---|---|
 | Checkout in 30 seconds, 3× faster | Checkout |
 | 15 payment methods | Checkout |
-| Shipping up to 50% off published rates (AG, 12 Nov 2026) | Shipping |
+| Shipping up to 45% off published rates (AG, 12 Nov 2026) | Shipping |
 | COD fee only 3% | Shipping |
 | 99% shipment creation success rate | Shipping |
 | 100K+ COD orders delivered this year (2026; AG, 13 Nov 2026) | Shipping |

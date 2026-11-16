@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FLIK | Merchant Growth Platform for Growing Brands</title>
-<meta name="description" content="FLIK gives online brands a faster checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.">
+<meta name="description" content="FLIK gives online brands a faster checkout, shipping with all major couriers for up to 45% off published rates, and inventory funding, all from one dashboard.">
 <link rel="canonical" href="https://flik.co.id/">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/">
@@ -840,6 +840,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .gp-ic{width:24px;height:24px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--primary)}
 .gp-ship .gp-ic{background:#FFF1E8;color:#D9591A}
 .gp-done .gp-ic{background:var(--ok-soft);color:var(--ok)}
+.gp-ic img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 1px var(--line)}
 .gp-k{background:var(--ink);color:#fff;font-weight:600;font-size:12px}
 .gp-brand{transition:opacity .3s}
 .gp-brand.dim{box-shadow:0 2px 6px rgba(50,50,93,.12)}
@@ -1373,7 +1374,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
           <div class="stat"><b class="num" style="white-space:nowrap">Rp100bn+</b><span>in growth funding for brands</span></div>
         </div>
       </div>
-      <div class="globe-box" role="img" aria-label="Example: a shopper in Tokyo pays Aruna Studio, a sample store, by card with FLIK Checkout. The payment lands in its FLIK balance, and Aruna Studio ships orders from Surabaya to Singapore and from Bandung to Kuala Lumpur with FLIK Shipping."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
+      <div class="globe-box" role="img" aria-label="Example: a shopper in Tokyo pays Aruna Studio, a sample store, by card with FLIK Checkout. The payment lands in its FLIK balance, and Aruna Studio ships orders from Surabaya to Singapore and from Bandung to Kuala Lumpur with Lion Parcel through FLIK Shipping."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
     </div>
   </div>
 </section>
@@ -1816,10 +1817,10 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const STEPS=[
     {k:'pay',city:'Tokyo',from:'Tokyo',to:'Jakarta',dur:3000,color:PRI,icon:'card',b:rp(4250000),s:'Paid from Tokyo, Japan · Card'},
     {k:'bal',city:'Tokyo',at:'Jakarta',dur:2200,icon:'wallet',b:'+'+rp(4250000),s:'Added to Aruna Studio balance'},
-    {k:'ship',city:'Singapore',from:'Surabaya',to:'Singapore',dur:2800,color:SHIP,icon:'truck',b:'Surabaya → Singapore',s:'Cross-border shipping · FLK2610140031'},
-    {k:'done',city:'Singapore',at:'Singapore',dur:1800,icon:'check',b:'Delivered',s:'Singapore · Order complete'},
-    {k:'ship',city:'Kuala Lumpur',from:'Bandung',to:'Kuala Lumpur',dur:2800,color:SHIP,icon:'truck',b:'Bandung → Kuala Lumpur',s:'Cross-border shipping · FLK2610140036'},
-    {k:'done',city:'Kuala Lumpur',at:'Kuala Lumpur',dur:1800,icon:'check',b:'Delivered',s:'Kuala Lumpur · Order complete'},
+    {k:'ship',city:'Singapore',from:'Surabaya',to:'Singapore',dur:2800,color:SHIP,icon:'truck',logo:'assets/logos/courier/lionparcel.png',b:'Surabaya → Singapore',s:'Lion Parcel · FLK2610140031'},
+    {k:'done',city:'Singapore',at:'Singapore',dur:1800,icon:'check',b:'Delivered',s:'Singapore · Lion Parcel'},
+    {k:'ship',city:'Kuala Lumpur',from:'Bandung',to:'Kuala Lumpur',dur:2800,color:SHIP,icon:'truck',logo:'assets/logos/courier/lionparcel.png',b:'Bandung → Kuala Lumpur',s:'Lion Parcel · FLK2610140036'},
+    {k:'done',city:'Kuala Lumpur',at:'Kuala Lumpur',dur:1800,icon:'check',b:'Delivered',s:'Kuala Lumpur · Lion Parcel'},
   ];
   const TOTAL=STEPS.reduce((a,s)=>a+s.dur,0);
 
@@ -1875,7 +1876,7 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
     }
     if(i!==lastStep){lastStep=i;
       pill.className='gp gp-'+st.k;
-      pill.innerHTML=`<span class="gp-ic">${ic(st.icon,13,2)}</span><span><b class="num">${st.b}</b><small>${st.s}</small></span>`;
+      pill.innerHTML=`<span class="gp-ic">${st.logo?`<img src="${st.logo}" alt="">`:ic(st.icon,13,2)}</span><span><b class="num">${st.b}</b><small>${st.s}</small></span>`;
     }
     pill.style.opacity=(p<.08?p/.08:p>.9?(1-p)/.1:1).toFixed(2);
     const hw=pill.offsetWidth/2+6;px=Math.max(hw,Math.min(W-hw,px));
@@ -2217,7 +2218,7 @@ document.addEventListener('click',e=>{
 const PROD={
   checkout:['FLIK Checkout','A faster checkout, connected to Shopify and WooCommerce.',['Returning shoppers check out with their FLIK account','WhatsApp OTP login, no passwords','Rewards applied automatically','Every order tracked in Order Analytics'],'/checkout'],
   payments:['Payment Methods','Accept 15 payment methods in one checkout.',['QRIS','E-wallets','Credit and debit cards','Bank virtual accounts','Cash on delivery (COD)'],'/checkout/payment-methods'],
-  shipping:['FLIK Shipping','Compare all major couriers and ship for up to 50% off published rates.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
+  shipping:['FLIK Shipping','Compare all major couriers and ship for up to 45% off published rates.',['Regular, same day, next day, instant and cargo','Free to register','Tracking numbers ready instantly','Courier performance by region'],'/shipping'],
   bulk:['Bulk Shipping','Send from one warehouse or many, to one destination or thousands.',['Single and bulk shipments','Manage pickup warehouses','Every status in one table'],'/shipping/bulk'],
   track:['Shipment Tracking','Let your customers follow every package.',['Tracking number ready the moment a shipment is created','Status from pickup to delivery','Works across all major couriers'],'/shipping/track'],
   cod:['COD Shipping','Offer cash on delivery with a 3% fee (excl. PPN).',['COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery','Credited to your balance after delivery'],'/shipping/cod'],
@@ -2238,7 +2239,7 @@ const BD={
     more:['checkout','cod','funding'],q:null},
   shipping:{t:'Every major courier, at up to half the published rate.',d:'Compare, book and track every courier from one dashboard.',cta:['Explore Shipping','/shipping'],
     list:['Regular to instant and cargo','One parcel or thousands','COD and non-COD','Cross-border shipping','Free to register'],
-    stat:['50%','off published courier rates, up to'],stat2:['99%','shipment creation success rate'],
+    stat:['45%','off published courier rates, up to'],stat2:['99%','shipment creation success rate'],
     det:[['truck','Compare before you book.','See every rate, then pick the service.'],['pin','Pickup you can plan.','3–5 hours for regular; same day if fulfilled before 14:00 WIB.'],['chart','Know your couriers.','See courier performance by region.']],
     more:['track','cod','checkout'],q:['ERIGO','Erigo runs delivery, payment and returns from one place with FLIK.','Erigo · Products used: Shipping, Checkout',1]},
   track:{t:'Know where every package is. So do your shoppers.',d:'Follow every package from pickup to doorstep.',cta:['Explore tracking','/shipping/track'],

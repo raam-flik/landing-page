@@ -145,7 +145,7 @@ In-Store Payment is in the menu but its scope was never written down (see the si
 - **Section heading:** Brands that grow with In-Store Payment.
   - **Grey part:** How Indonesian brands use it, in their own stories.
 - **Story cards (carousel, every brand on this product, in this order):** EMADO'S, Kopikalyan, Haus!, Aneka Family, Donat Bahagia. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". The real story goes first: EMADO'S (30+ branches). Kopikalyan, Haus!, Aneka Family and Donat Bahagia are example stories.
-- **Link:** See all customer stories
+- **Fourth card:** All stories · "See how every brand sells, ships and grows with FLIK." · link: See all customer stories (to Customers)
 - Captions are two lines at most, shortened from each story's headline (the story page keeps the full headline).
 - Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
 

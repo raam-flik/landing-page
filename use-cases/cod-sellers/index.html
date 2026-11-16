@@ -1178,7 +1178,7 @@ html{scroll-padding-top:88px}
 .prg-b .txt{max-width:560px;font-size:16px}
 .prg-p b{display:block;font-size:40px;font-weight:300;letter-spacing:-.8px;line-height:1.1;color:var(--ink)}
 .prg-p span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px}
-.prg-r:hover .ha .ha-l{opacity:1}
+/* (row hover no longer shows half an arrow; the arrow animates only on the link itself) */
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
@@ -1395,7 +1395,7 @@ main section#customers{padding:112px 0}
 .py-rate small{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
 .py-rate b{display:block;font-size:26px;font-weight:300;letter-spacing:-.5px;color:var(--ink)}
 .py-rate span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
-.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:40px}
+.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:16px}
 .py-price>div{border-radius:12px;padding:28px;border:1px solid var(--line-soft);background:var(--surface,#fff)}
 .py-price h3{font-size:20px;font-weight:500;margin-bottom:8px}
 .py-price p{color:var(--body);font-size:14.5px;line-height:1.55;margin-bottom:16px}
@@ -1613,6 +1613,21 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+
+/* ===== Stories like the homepage (Raam, 16 Nov): arrows top-right, row runs off the edge, clean photos, figures only ===== */
+#customers .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+#customers .cs-head .sec-h{margin-bottom:0}
+#customers .stories-wrap{margin-top:40px}
+#customers .stories{grid-auto-columns:calc((100% - 48px)/3.85)}
+#customers .story .story-art.sph::before{background:linear-gradient(180deg,rgba(var(--tint),0) 52%,rgba(var(--tint),.88))}
+#customers .story-art{justify-content:space-between}
+#customers .story-art .st-big{font-size:26px;font-weight:500;letter-spacing:-.4px;line-height:1.1;margin-top:auto}
+#customers .story-art .st-big small{font-size:12.5px;font-weight:400;line-height:1.35;margin-top:5px}
+#customers a.story-art.cs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8);color:#fff;text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#customers a.story-art.cs-all:hover{transform:translateY(-4px)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
+@media (max-width:600px){#customers .cs-head{flex-direction:column;align-items:flex-start;gap:16px}}
 </style>
 </head>
 <body>
@@ -1687,7 +1702,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad alt guides" id="cod">
   <div class="wrap">
     <p class="py-eye">COD Shipping</p>
-    <h2 class="sec-h">Every COD order in one place. <span class="soft">All major couriers, up to 50% off published rates.</span></h2>
+    <h2 class="sec-h">Every COD order in one place. <span class="soft">All major couriers, up to 45% off published rates.</span></h2>
     <div style="margin-top:16px"><div class="fx" data-fx><ul class="fx-list"><li data-f="cou"><span class="fx-ic" data-ic="truck"></span><div><b>COD with every major courier</b><span>JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, compared in one dashboard.</span></div></li><li data-f="amt"><span class="fx-ic" data-ic="cash"></span><div><b>Set the COD amount</b><span>The courier collects it from the shopper on delivery.</span></div></li><li data-f="fee"><span class="fx-ic" data-ic="wallet"></span><div><b>3%, nothing upfront</b><span>The COD fee (excl. PPN) is deducted when the COD money is credited.</span></div></li><li data-f="ret"><span class="fx-ic" data-ic="bell"></span><div><b>Failed delivery? Two tries</b><span>The courier tries again the next day, up to two attempts. No COD fee on a returned parcel.</span></div></li><li data-f="track"><span class="fx-ic" data-ic="pin"></span><div><b>A tracking link for every shopper</b><span>Shoppers follow their parcel, so they're ready with the cash.</span></div></li></ul><div class="fx-g"><div class="py-card fx-win"><div class="co-bar"><i></i><i></i><i></i><span>FLIK dashboard · Create shipment</span></div><div class="py-b"><div class="pl-h">Order #SL-2201 · 0.8 kg · Jakarta → Surabaya</div><div class="fx-el pl-grp" data-f="cou"><div class="py-row on"><span><img class="d2-cou" src="../../assets/logos/courier/jnt.png" alt="J&amp;T"> EZ · 2–3 days</span><span class="pill pu">COD</span></div><div class="py-row"><span><img class="d2-cou" src="../../assets/logos/courier/jne.png" alt="JNE"> REG · 2–3 days</span><span class="pill pu">COD</span></div><div class="py-row"><span><img class="d2-cou" src="../../assets/logos/courier/sicepat.png" alt="SiCepat"> REG · 1–2 days</span><span class="pill pu">COD</span></div></div><div class="fx-el pl-grp" data-f="amt"><div class="iv-lab">COD amount</div><div class="iv-in" style="color:var(--ink)">Rp249.000</div></div><div class="fx-el " data-f="fee"><div class="py-row"><span>COD fee 3% (excl. PPN)</span><span>After delivery</span></div></div><div class="fx-el " data-f="ret"><div class="py-row"><span>Delivery attempts</span><span>Up to 2</span></div></div><div class="fx-el " data-f="track"><div class="py-row"><span>Tracking link for the shopper</span><span class="pill gr">Auto</span></div></div><div class="iv-acts"><span class="py-btn">Create COD shipment</span></div></div></div></div></div></div>
   </div>
 </section>
@@ -1708,10 +1723,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== kit: customer-stories (Brands shipping with FLIK.) ===== -->
 <section class="pad alt guides" id="customers">
   <div class="wrap">
-    <h2 class="sec-h">Brands shipping with FLIK. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2>
+    <div class="cs-head"><h2 class="sec-h">Brands shipping with FLIK. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></span><span class="st-big">Teenage Death Star</span></div><p>Teenage Death Star gets merch to fans nationwide.</p><a href="../../customers/story/?c=teenage-death-star" class="link">Read Teenage Death Star's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="background-image:url('../../assets/customers/heylocal-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="st-big">500,000+<small>transactions in peak season</small></span></div><p>HEYLOCAL stocked up for 500,000+ peak-season sales.</p><a href="../../customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span><span class="st-big">Sigit Store</span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-magenta" style="background-image:url('../../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/paper.png?v=2" alt="Paper"></span><span class="st-big">Paper</span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article></div>
-      <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="--tint:0,45,93;background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="--tint:120,52,10;background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></span></div><p>Teenage Death Star gets merch to fans nationwide.</p><a href="../../customers/story/?c=teenage-death-star" class="link">Read Teenage Death Star's story <span class="chev">›</span></a></article><article class="story"><a class="story-art cs-all" href="../../customers/" aria-label="See all customer stories"><span></span><span class="st-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a></article><article class="story s1"><div class="story-art sph t-violet" style="--tint:0,45,93;background-image:url('../../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-magenta" style="--tint:174,29,124;background-image:url('../../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/paper.png?v=2" alt="Paper"></span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="--tint:174,29,124;background-image:url('../../assets/customers/heylocal-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="st-big">500,000+<small>transactions in peak season</small></span></div><p>HEYLOCAL stocked up for 500,000+ peak-season sales.</p><a href="../../customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article></div>
     </div>
   </div>
 </section>
@@ -1724,7 +1738,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <h2 class="sec-h">Pay per shipment. <span class="soft">Free to register.</span></h2>
     <div class="py-rate" style="grid-template-columns:repeat(3,1fr)">
       <div><small>COD fee</small><b>3%</b><span>Of the COD amount, excl. PPN, after delivery</span></div>
-      <div><small>Shipping</small><b>Up to 50% off</b><span>Published courier rates, paid per shipment</span></div>
+      <div><small>Shipping</small><b>Up to 45% off</b><span>Published courier rates, paid per shipment</span></div>
       <div><small>Returned parcel</small><b>No COD fee</b><span>The return fee for each courier is shown in your dashboard</span></div>
     </div>
     <div class="py-price">

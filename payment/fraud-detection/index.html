@@ -1178,7 +1178,7 @@ html{scroll-padding-top:88px}
 .prg-b .txt{max-width:560px;font-size:16px}
 .prg-p b{display:block;font-size:40px;font-weight:300;letter-spacing:-.8px;line-height:1.1;color:var(--ink)}
 .prg-p span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px}
-.prg-r:hover .ha .ha-l{opacity:1}
+/* (row hover no longer shows half an arrow; the arrow animates only on the link itself) */
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
@@ -1209,6 +1209,7 @@ html{scroll-padding-top:88px}
 .flow5{grid-template-columns:repeat(5,1fr)}
 .flow5 .stat b{font-size:24px}
 .st-ex{display:flex;justify-content:center;margin-top:28px;min-height:64px}
+#steps{padding-bottom:0}  /* the example card under the steps was removed; one section gap (Chargebacks' top padding) is enough */
 .st-card{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r-lg);box-shadow:var(--sh);padding:14px 18px;animation:fd-in .45s cubic-bezier(.2,.8,.2,1);max-width:100%}
 .st-card .fl-ic{margin:0;flex:none}
 .st-card small{display:block;color:var(--muted);font-size:12px}
@@ -1425,6 +1426,10 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+#decide .rd .v3{grid-column:1/-1;max-width:none;margin:0;gap:0;border-top:1px dashed #C9D2DE}
+#decide .v3>div{padding:20px 22px;border-right:1px solid var(--line-soft);position:relative}#decide .v3>div:last-child{border-right:0}
+#decide .v3>div.on{background:var(--warn-soft)}#decide .v3>div.on::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--warn)}
+@media (max-width:760px){#decide .v3{grid-template-columns:1fr}#decide .v3>div{border-right:0;border-bottom:1px solid var(--line-soft);padding:16px 12px}}
 </style>
 </head>
 <body>
@@ -1511,11 +1516,11 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
         <div class="rd-s"><span class="rd-ic ok" data-ic="coins-s"></span><span><small>Refund pattern</small><b>Normal for you</b></span></div>
         <div class="rd-v"><span><small>Result</small><b>FLIK's risk team takes a look</b></span><span class="pill warn">Under review</span></div>
       </div>
-    </div>
-    <div class="rd-out">
-      <div><span class="pill ok">Usual</span><b>Cleared</b><span>Goes through as usual.</span></div>
-      <div><span class="pill warn">Unusual</span><b>Under review</b><span>FLIK's risk team takes a look.</span></div>
-      <div><span class="pill bad">Fraud</span><b>Stopped</b><span>The money stays in your balance.</span></div>
+      <div class="rd-out v3">
+        <div><span class="pill ok">Usual</span><b>Cleared</b><span>Goes through as usual.</span></div>
+        <div class="on"><span class="pill warn">Unusual</span><b>Under review</b><span>FLIK's risk team takes a look.</span></div>
+        <div><span class="pill bad">Fraud</span><b>Stopped</b><span>The money stays in your balance.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1531,7 +1536,6 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <div class="stat"><span class="f4-n">04</span><span class="f4-ic" data-ic="wallet"></span><b>Withdrawals</b><span>Checked before money leaves.</span></div>
       <div class="stat"><span class="f4-n">05</span><span class="f4-ic" data-ic="truck"></span><b>COD orders</b><span>Risky orders flagged.</span></div>
     </div>
-    <div class="st-ex" id="st-ex" aria-live="polite"></div>
   </div>
 </section>
 
@@ -1952,7 +1956,7 @@ document.querySelectorAll('.rd').forEach(rd=>{
   const E=[['qris','Payments','214 payments today','ok','Cleared'],['coins','Refunds','3 refunds today','ok','Normal'],['card','Chargebacks','Card payment of Rp1.250.000 disputed','warn','Evidence sent'],['wallet','Withdrawal','Rp12.500.000 to your usual BCA account','ok','Cleared'],['truck','COD order','Order #4830 · past failed deliveries','warn','High risk']];
   let k=0;
   const paint=()=>{s.forEach((x,i)=>{x.classList.toggle('on',i===k);x.classList.toggle('done',i<k)});box.style.setProperty('--p',((k+1)/s.length*100)+'%');
-    const e=E[k];ex.innerHTML=`<div class="st-card"><span class="fl-ic">${ic(e[0],18)}</span><span><small>Example · ${e[1]}</small><b>${e[2]}</b></span><span class="pill ${e[3]}">${e[4]}</span></div>`};
+    const e=E[k];if(ex)ex.innerHTML=`<div class="st-card"><span class="fl-ic">${ic(e[0],18)}</span><span><small>Example · ${e[1]}</small><b>${e[2]}</b></span><span class="pill ${e[3]}">${e[4]}</span></div>`};
   paint();const visible=onScreen(box);
   if(!REDUCE)setInterval(()=>{if(visible()){k=(k+1)%s.length;paint()}},2400);
 })();

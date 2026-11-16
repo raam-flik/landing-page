@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Shipping Engine for Growing Brands | FLIK Shipping</title>
-<meta name="description" content="FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 50% off published rates, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.">
+<meta name="description" content="FLIK Shipping compares all major couriers in one dashboard. Ship across Indonesia for up to 45% off published rates, single or bulk, with a 3% COD fee (excl. PPN) and parcel tracking.">
 <link rel="canonical" href="https://flik.co.id/shipping">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/shipping">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/shipping">
@@ -1280,6 +1280,51 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+
+/* ===== Stories like the homepage (Raam, 16 Nov): arrows top-right, row runs off the edge, clean photos, figures only ===== */
+#customers .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+#customers .cs-head .sec-h{margin-bottom:0}
+#customers .stories-wrap{margin-top:40px}
+#customers .stories{grid-auto-columns:calc((100% - 48px)/3.85)}
+#customers .story .story-art.sph::before{background:linear-gradient(180deg,rgba(var(--tint),0) 52%,rgba(var(--tint),.88))}
+#customers .story-art{justify-content:space-between}
+#customers .story-art .st-big{font-size:26px;font-weight:500;letter-spacing:-.4px;line-height:1.1;margin-top:auto}
+#customers .story-art .st-big small{font-size:12.5px;font-weight:400;line-height:1.35;margin-top:5px}
+#customers a.story-art.cs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8);color:#fff;text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#customers a.story-art.cs-all:hover{transform:translateY(-4px)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
+@media (max-width:600px){#customers .cs-head{flex-direction:column;align-items:flex-start;gap:16px}}
+
+/* Integrations: cards in the Payment page style (Raam, 16 Nov) */
+.py-card{position:absolute;background:var(--surface,#fff);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;font-size:13px}
+.py-card .co-bar{position:relative}.py-card .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
+.py-b{padding:16px;display:grid;gap:9px}
+.py-ways{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3.2);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:40px;padding:4px}
+.py-ways::-webkit-scrollbar{display:none}
+.py-way{scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:12px;background:var(--surface,#fff);overflow:hidden}
+.py-way-v{height:320px;overflow:hidden;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:20px}
+.py-way-v .py-card{position:relative;width:100%;max-width:280px}
+.pw-sum{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--body)}.pw-sum b{color:var(--ink);font-weight:500}
+.pw-mut{color:var(--muted);font-size:11.5px}
+.pw-code{padding:14px;display:grid;gap:10px}.pw-code>*{min-width:0}.pw-code .py-row span:first-child{overflow:hidden;text-overflow:ellipsis}.pw-code .code{background:#002D5D;overflow:hidden;border-radius:8px;padding:12px;font-size:12px;line-height:1.55}
+.py-way-t{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.py-way-t h3{font-size:18px;font-weight:500}
+.py-way-t p{font-size:14.5px;color:var(--body);line-height:1.5}
+.py-way-t ul{list-style:none;display:grid;gap:6px;margin:4px 0 8px}
+.py-way-t li{display:flex;gap:8px;font-size:14px;color:var(--body)}
+.py-way-t li svg{color:var(--primary);flex:none;margin-top:3px}
+.py-way-t .link{margin-top:auto}
+#integrate .py-way,#integrate .py-card,#integrate .pw-code .code{border-radius:6px}
+#integrate .pw-code .code{margin:0;white-space:pre;color:#fff}
+#integrate .py-way-t .label{margin-bottom:2px}
+#integrate .pk-tg{font-size:12.5px}
+#integrate .co-bar span{white-space:nowrap}
+#integrate .py-way-v .pw-code{max-width:320px}#integrate .pw-code .code{font-size:11.5px}
+@media (max-width:1080px){#integrate .pk3{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){#integrate .pk3{grid-template-columns:1fr}#integrate .pw-code .code{font-size:10.5px}}
+
+
 </style>
 </head>
 <body>
@@ -1314,7 +1359,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap sh-in sh-c">
     <div class="sh-t">
       <p class="eyebrow">FLIK Shipping</p>
-      <h1 class="sh-h">The shipping engine for growing brands. <span class="soft">All major couriers, up to 50% off published rates.</span></h1>
+      <h1 class="sh-h">The shipping engine for growing brands. <span class="soft">All major couriers, up to 45% off published rates.</span></h1>
       <p class="lead">Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="start">Start shipping free <span class="chev">›</span></button>
@@ -1326,7 +1371,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
         <li><span data-ic="check-s"></span>99% of shipments created successfully</li>
       </ul>
     </div>
-    <div class="sh-globe" role="img" aria-label="Example: Aruna Studio, a sample store, ships orders from Jakarta across Indonesia. For each order FLIK picks the best-priced courier, the package is tracked to delivery, and COD money is credited to the balance after delivery.">
+    <div class="sh-globe" role="img" aria-label="Example: Aruna Studio, a sample store, ships orders from Jakarta across Indonesia, and from Surabaya to Singapore and Bandung to Kuala Lumpur with Lion Parcel. For each order FLIK picks the best-priced courier, the package is tracked to delivery, and COD money is credited to the balance after delivery.">
       <div class="sh-gstage" aria-hidden="true"><canvas id="sh-globe"></canvas><div id="sh-globe-ui"></div></div>
     </div>
     <p class="sh-cour" id="sh-cour"></p>
@@ -1343,7 +1388,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h stats-h">One dashboard for every shipment. <span class="soft">From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.</span></h2>
     <div class="stats4">
-      <div class="stat"><b class="num">50%</b><span>off published rates, at most</span></div>
+      <div class="stat"><b class="num">45%</b><span>off published rates, at most</span></div>
       <div class="stat"><b class="num">3%</b><span>COD fee (excl. PPN), paid by the merchant</span></div>
       <div class="stat"><b class="num">99%</b><span>of shipments created successfully</span></div>
       <div class="stat"><b class="num">15</b><span>payment methods in one checkout</span></div>
@@ -1358,7 +1403,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <h2 class="sec-h">Compare all major couriers in seconds. <span class="soft">Pick a route and a weight, then sort by the cheapest or the fastest.</span></h2>
       <ul class="bk-pts">
         <li><span data-ic="check-s"></span>Regular, next day, same day, instant and cargo</li>
-        <li><span data-ic="check-s"></span>Up to 50% off published shipping rates</li>
+        <li><span data-ic="check-s"></span>Up to 45% off published shipping rates</li>
         <li><span data-ic="check-s"></span>Live rates in your dashboard</li>
       </ul>
     </div>
@@ -1476,38 +1521,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h">Orders flow in on their own. <span class="soft">Connect your store and every new order is ready to ship in the FLIK dashboard.</span></h2>
     <div class="pk3">
-      <a href="#" class="pk" data-page="/integrations/shopify">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">New orders</b><span class="pill pu">Shopify</span></div>
-          <div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>#1042 · Linen Shirt</b><small>Jakarta → Bandung</small></span><span class="pill ok">Ready</span></div>
-          <div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>#1043 · Canvas Tote</b><small>Jakarta → Medan</small></span><span class="pill ok">Ready</span></div>
-        </div></div>
-        <span class="label"><img class="label-lg" src="../assets/logos/platform/shopify.png" alt="">Shopify</span>
-        <h3>Orders sync from Shopify.</h3>
-        <p class="txt">New orders appear in your FLIK Shipping dashboard, ready to ship.</p>
-        <em class="link">Shopify integration <span class="chev">›</span></em>
-      </a>
-      <a href="#" class="pk" data-page="/integrations/woocommerce">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">Plugins</b><span class="m" style="font-size:12px">WordPress</span></div>
-          <div class="pk-pl"><span class="pk-ic" data-ic="truck-s"></span><span class="grow"><b>FLIK Shipping for WooCommerce</b><small>Rates shown at checkout</small></span><span class="pill pu">Active</span></div>
-        </div></div>
-        <span class="label"><img class="label-lg" src="../assets/logos/platform/woocommerce.png" alt="">WooCommerce</span>
-        <h3>We set it up for you.</h3>
-        <p class="txt">The FLIK team connects your WooCommerce store to the FLIK Shipping dashboard.</p>
-        <em class="link">WooCommerce integration <span class="chev">›</span></em>
-      </a>
-      <a href="#" class="pk" data-page="/checkout">
-        <div class="pk-g"><div class="minip">
-          <div class="co-row"><b style="font-weight:500">FLIK Checkout</b><span class="pill ok">Paid</span></div>
-          <div class="pk-tg"><span>Courier picked at checkout</span><b style="font-weight:500">JNE Reguler</b></div>
-          <div class="pk-tg"><span>Ships from</span><b style="font-weight:500">Gudang Jakarta Barat</b></div>
-        </div></div>
-        <span class="label"><i></i>FLIK Checkout</span>
-        <h3>Sold with FLIK, shipped with FLIK.</h3>
-        <p class="txt">Checkout orders ship through FLIK Shipping with the couriers you set in Pengaturan Pengiriman.</p>
-        <em class="link">Explore Checkout <span class="chev">›</span></em>
-      </a>
+      <article class="py-way"><div class="py-way-v"><div class="py-card" role="img" aria-label="Example: new Shopify orders ready to ship in the FLIK dashboard"><div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/orders</span></div><div class="py-b"><div class="pw-sum"><b>New orders</b><span class="pill pu">Shopify</span></div><div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>#1042 · Linen Shirt</b><small>Jakarta → Bandung</small></span><span class="pill ok">Ready</span></div><div class="pk-pl"><span class="pk-ic" data-ic="cart-s"></span><span class="grow"><b>#1043 · Canvas Tote</b><small>Jakarta → Medan</small></span><span class="pill ok">Ready</span></div></div></div></div><div class="py-way-t"><span class="label"><img class="label-lg" src="../assets/logos/platform/shopify.png" alt="">Shopify</span><h3>Orders sync from Shopify</h3><p>New orders appear in your FLIK Shipping dashboard, ready to ship.</p><ul><li><span data-ic="check-s"></span>New orders come in on their own</li><li><span data-ic="check-s"></span>Ready to ship in one dashboard</li><li><span data-ic="check-s"></span>Track every package</li></ul><a href="#" class="link" data-page="/integrations/shopify">Shopify integration <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card" role="img" aria-label="Example: the FLIK Shipping plugin active in WordPress"><div class="co-bar"><i></i><i></i><i></i><span>yourstore.com/wp-admin</span></div><div class="py-b"><div class="pw-sum"><b>Plugins</b><span class="pw-mut">WordPress</span></div><div class="pk-pl"><span class="pk-ic" data-ic="truck-s"></span><span class="grow"><b>FLIK Shipping for WooCommerce</b><small>Rates shown at checkout</small></span><span class="pill pu">Active</span></div></div></div></div><div class="py-way-t"><span class="label"><img class="label-lg" src="../assets/logos/platform/woocommerce.png" alt="">WooCommerce</span><h3>We set it up for you</h3><p>The FLIK team connects your WooCommerce store to the FLIK Shipping dashboard.</p><ul><li><span data-ic="check-s"></span>The FLIK team sets it up</li><li><span data-ic="check-s"></span>A WordPress plugin</li><li><span data-ic="check-s"></span>Rates shown at checkout</li></ul><a href="#" class="link" data-page="/integrations/woocommerce">WooCommerce integration <span class="chev">›</span></a></div></article>
+      <article class="py-way"><div class="py-way-v"><div class="py-card" role="img" aria-label="Example: a paid FLIK Checkout order with the courier picked at checkout"><div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/orders</span></div><div class="py-b"><div class="pw-sum"><b>FLIK Checkout</b><span class="pill ok">Paid</span></div><div class="pk-tg"><span>Courier picked at checkout</span><b style="font-weight:500">JNE Reguler</b></div><div class="pk-tg"><span>Ships from</span><b style="font-weight:500">Gudang Jakarta Barat</b></div></div></div></div><div class="py-way-t"><span class="label"><i></i>FLIK Checkout</span><h3>Sold with FLIK, shipped with FLIK</h3><p>Checkout orders ship through FLIK Shipping with the couriers you set in Shipping settings.</p><ul><li><span data-ic="check-s"></span>Courier picked at checkout</li><li><span data-ic="check-s"></span>Ships from your warehouse</li><li><span data-ic="check-s"></span>Your choice of couriers</li></ul><a href="#" class="link" data-page="/checkout">Explore Checkout <span class="chev">›</span></a></div></article>
     </div>
   </div>
 </section>
@@ -1527,10 +1543,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== kit: customer-stories (FLIK Shipping) ===== -->
 <section class="pad guides" id="customers">
   <div class="wrap">
-    <h2 class="sec-h">Brands that grow with FLIK Shipping. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
+    <div class="cs-head"><h2 class="sec-h">Brands that grow with FLIK Shipping. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></span><span class="st-big">Gerai Hawa</span></div><p>Gerai Hawa ships modest fashion across Indonesia.</p><a href="../customers/story/?c=gerai-hawa" class="link">Read Gerai Hawa's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></span><span class="st-big">Teenage Death Star</span></div><p>Teenage Death Star gets merch to fans nationwide.</p><a href="../customers/story/?c=teenage-death-star" class="link">Read Teenage Death Star's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/zaafer.png?v=2" alt="Zaafer"></span><span class="st-big">Zaafer</span></div><p>Zaafer ships every order from one dashboard.</p><a href="../customers/story/?c=zaafer" class="link">Read Zaafer's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/manta-liberta.png?v=2" alt="Manta Liberta"></span><span class="st-big">Manta Liberta</span></div><p>Manta Liberta spends less time on shipping.</p><a href="../customers/story/?c=manta-liberta" class="link">Read Manta Liberta's story <span class="chev">›</span></a></article></div>
-      <div class="st-foot"><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/geraihawa.png?v=2" alt="Gerai Hawa"></span></div><p>Gerai Hawa ships modest fashion across Indonesia.</p><a href="../customers/story/?c=gerai-hawa" class="link">Read Gerai Hawa's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../assets/logos/merchant/teenage-death-star.png?v=2" alt="Teenage Death Star"></span></div><p>Teenage Death Star gets merch to fans nationwide.</p><a href="../customers/story/?c=teenage-death-star" class="link">Read Teenage Death Star's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/zaafer.png?v=2" alt="Zaafer"></span></div><p>Zaafer ships every order from one dashboard.</p><a href="../customers/story/?c=zaafer" class="link">Read Zaafer's story <span class="chev">›</span></a></article><article class="story"><a class="story-art cs-all" href="../customers/" aria-label="See all customer stories"><span></span><span class="st-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="../customers/" class="link">See all customer stories <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img src="../assets/logos/merchant/manta-liberta.png?v=2" alt="Manta Liberta"></span></div><p>Manta Liberta spends less time on shipping.</p><a href="../customers/story/?c=manta-liberta" class="link">Read Manta Liberta's story <span class="chev">›</span></a></article></div>
     </div>
   </div>
 </section>
@@ -1907,10 +1922,13 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const col=t=>{t=Math.max(0,Math.min(.999,t))*(C.length-1);const i=Math.floor(t),f=t-i,a=C[i],b=C[i+1];return a.map((v,k)=>Math.round(v+(b[k]-v)*f))};
   const v3=(lat,lon)=>[Math.cos(lat*D)*Math.sin(lon*D),Math.sin(lat*D),Math.cos(lat*D)*Math.cos(lon*D)];
   const HUB=v3(-1.6,113.6);
-  const CITY={Jakarta:v3(-6.2,106.8),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4),Jayapura:v3(-2.55,140.7),Denpasar:v3(-8.65,115.2),Balikpapan:v3(-1.25,116.85),Surabaya:v3(-7.25,112.75)};
+  const CITY={Jakarta:v3(-6.2,106.8),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4),Jayapura:v3(-2.55,140.7),Denpasar:v3(-8.65,115.2),Balikpapan:v3(-1.25,116.85),Surabaya:v3(-7.25,112.75),Bandung:v3(-6.91,107.61),Singapore:v3(1.35,103.82),'Kuala Lumpur':v3(3.14,101.69)};
   const DESTS=Object.keys(CITY).filter(k=>k!=='Jakarta');
   // one shipment per scenario: courier picked → in transit → delivered (→ COD credited)
   const SC=[
+    // cross-border examples, same as the homepage globe (Raam, 16 Nov 2026; cross-border status still to confirm, tracker h-intl)
+    {city:'Singapore',from:'Surabaya',xb:true,cour:'Lion Parcel',logo:LOGO.lion,awb:'FLK2610170081'},
+    {city:'Kuala Lumpur',from:'Bandung',xb:true,cour:'Lion Parcel',logo:LOGO.lion,awb:'FLK2610170086'},
     {city:'Medan',cour:'JNE Reguler',logo:LOGO.jne,price:24000,awb:'FLK2610170041',eta:'2–3 days'},
     {city:'Makassar',cour:'SPX Express',logo:LOGO.spx,price:27500,awb:'FLK2610170058',eta:'2–3 days'},
     {city:'Surabaya',cour:'SPX Express',logo:LOGO.spx,price:21000,awb:'FLK2610170066',eta:'2–3 days'},
@@ -1926,7 +1944,14 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   function arcPts(a,b){const out=[];for(let i=0;i<=48;i++){const t=i/48;out.push(proj(slerp(a,b,t),1+.05*Math.sin(Math.PI*t)))}return out}
   const STEPS=[];
   SC.forEach((o,n)=>{
-    STEPS.push({n,k:'in',fromP:CITY.Jakarta,toP:HUB,dur:1500,color:PRI,icon:'boxes',b:'New order',s:'Aruna Studio · Jakarta warehouse'});
+    const from=o.from||'Jakarta';
+    STEPS.push({n,k:'in',fromP:CITY[from],toP:HUB,dur:1500,color:PRI,icon:'boxes',b:o.xb?'New order to '+o.city:'New order',s:'Aruna Studio · '+from+' warehouse'});
+    if(o.xb){
+      STEPS.push({n,k:'pick',atP:HUB,dur:1700,logo:o.logo,b:o.cour+' picked',s:'Cross-border · '+from+' → '+o.city});
+      STEPS.push({n,k:'ship',fromP:HUB,toP:CITY[o.city],dur:2600,color:'#FF7A2E',logo:o.logo,b:'On the way to '+o.city,s:'Cross-border · '+o.awb});
+      STEPS.push({n,k:'done',atP:CITY[o.city],dur:1500,icon:'check',b:'Delivered',s:o.city+' · '+o.cour});
+      return;
+    }
     STEPS.push({n,k:'pick',atP:HUB,dur:1700,logo:o.logo,b:o.cour+' picked',s:`Example price · ${rp(o.price)}`});
     STEPS.push({n,k:'ship',fromP:HUB,toP:CITY[o.city],dur:2400,color:'#FF7A2E',logo:o.logo,b:'On the way to '+o.city,s:o.eta+' · '+o.awb});
     STEPS.push({n,k:'done',atP:CITY[o.city],dur:1500,icon:'check',b:'Delivered',s:o.city+' · '+o.cour});
@@ -1953,7 +1978,7 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
     let acc=0,i=0;while(i<STEPS.length-1&&acc+STEPS[i].dur<=el){acc+=STEPS[i].dur;i++}
     const st=STEPS[i],p=(el-acc)/st.dur;
     const sc=SC[st.n];
-    DESTS.forEach(c=>cityDot(c,c===sc.city));cityDot('Jakarta',true);
+    DESTS.forEach(c=>cityDot(c,c===sc.city||c===sc.from));cityDot('Jakarta',!sc.from);
     let px,py;
     if(st.fromP){const ap=arcPts(st.fromP,st.toP);const prog=Math.min(1,p/.6),fade=p>.85?1-(p-.85)/.15:1;const hd=drawArc(ap,prog,st.color,fade);px=hd[0];py=hd[1]-18}
     else{const[x,y]=proj(st.atP);px=x;py=y-(st.k==='pick'?30:14);const r=6+p*26;ctx.beginPath();ctx.arc(x,y,r,0,6.283);ctx.strokeStyle=st.k==='done'?'#1EA672':PRI;ctx.globalAlpha=Math.max(0,1-p);ctx.lineWidth=1.5;ctx.stroke();ctx.globalAlpha=1}

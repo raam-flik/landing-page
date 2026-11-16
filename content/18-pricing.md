@@ -16,7 +16,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] **FLIK Connect (AG, 12 Nov 2026):** 0.5% of the amount split to partners, max Rp10.000 per transaction, + PPN, paid by the main merchant; partners pay nothing. Was 3% of the whole transaction (AG, 21 Oct). Shown as "Coming soon".
 - [ ] **PPN wording (finance):** "Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line." The example uses 11%: Rp500 fee + Rp55 PPN = Rp555 (from the split-payment ledger example).
 - [x] **When fees are charged** (FAQ, fixed 12 Nov 2026: the COD fee comes off at delivery, not at booking): "Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery." Confirm.
-- [x] **Shipping and Funding tabs (AG, 12 Nov 2026):** Shipping shows "up to 50% off published courier rates", with no per-courier rate card. Funding shows no rates: the MCA fee is set per offer. Early Settlement is a Payments product, so it is only on the Payments tab.
+- [x] **Shipping and Funding tabs (AG, 12 Nov 2026):** Shipping shows "up to 45% off published courier rates", with no per-courier rate card. Funding shows no rates: the MCA fee is set per offer. Early Settlement is a Payments product, so it is only on the Payments tab.
 
 - [x] **Hero ribbon (AG, 13 Nov 2026):** the page looked quiet, so the brand ribbon from the earlier homepage hero (orange → magenta → violet → cyan, animated lines) now sits top right in the hero. Same kit on Help. Fraud Detection and In-Store Payment use the particle field instead.
 
@@ -68,7 +68,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Section heading:** Shipping.
   - **Grey part:** No registration fee. You pay per shipment from your FLIK balance.
 - **Card:** Joining — Free — No registration fee and no monthly fee.
-- **Card:** Shipments — Up to 50% off — Off published courier rates. Rates compared in one place, paid per shipment from your balance before it is created. — Check rates
+- **Card:** Shipments — Up to 45% off — Off published courier rates. Rates compared in one place, paid per shipment from your balance before it is created. — Check rates
 - **Card:** Cash on delivery — 3% + PPN — Of the COD amount, deducted after delivery. Nothing upfront. — COD Shipping
 
 ## 4. Funding tab

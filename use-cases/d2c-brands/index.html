@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>D2C Brands: Sell More on Your Own Website | FLIK</title>
-<meta name="description" content="For brands on Shopify and WooCommerce: a checkout built to convert, every major courier at up to 50% off published rates, fraud protection and funding for your next drop. FLIK sets it up for you.">
+<meta name="description" content="For brands on Shopify and WooCommerce: a checkout built to convert, every major courier at up to 45% off published rates, fraud protection and funding for your next drop. FLIK sets it up for you.">
 <link rel="canonical" href="https://flik.co.id/use-cases/d2c-brands">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/use-cases/d2c-brands">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/use-cases/d2c-brands">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "D2C Brands: Sell More on Your Own Website | FLIK", "description": "For brands on Shopify and WooCommerce: a checkout built to convert, every major courier at up to 50% off published rates, fraud protection and funding for your next drop. FLIK sets it up for you.", "url": "https://flik.co.id/use-cases/d2c-brands"}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "D2C Brands: Sell More on Your Own Website | FLIK", "description": "For brands on Shopify and WooCommerce: a checkout built to convert, every major courier at up to 45% off published rates, fraud protection and funding for your next drop. FLIK sets it up for you.", "url": "https://flik.co.id/use-cases/d2c-brands"}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1178,7 +1178,7 @@ html{scroll-padding-top:88px}
 .prg-b .txt{max-width:560px;font-size:16px}
 .prg-p b{display:block;font-size:40px;font-weight:300;letter-spacing:-.8px;line-height:1.1;color:var(--ink)}
 .prg-p span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px}
-.prg-r:hover .ha .ha-l{opacity:1}
+/* (row hover no longer shows half an arrow; the arrow animates only on the link itself) */
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
@@ -1395,7 +1395,7 @@ main section#customers{padding:112px 0}
 .py-rate small{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
 .py-rate b{display:block;font-size:26px;font-weight:300;letter-spacing:-.5px;color:var(--ink)}
 .py-rate span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
-.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:40px}
+.py-price{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:16px}
 .py-price>div{border-radius:12px;padding:28px;border:1px solid var(--line-soft);background:var(--surface,#fff)}
 .py-price h3{font-size:20px;font-weight:500;margin-bottom:8px}
 .py-price p{color:var(--body);font-size:14.5px;line-height:1.55;margin-bottom:16px}
@@ -1611,6 +1611,21 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 /* ===== /kit: scroll-reveal ===== */
 /* FLIK F mark on shopper pay and checkout buttons */
 .fk::before{content:"";display:inline-block;flex:none;width:1em;height:1em;margin-right:.5em;vertical-align:-.12em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ===== Stories like the homepage (Raam, 16 Nov): arrows top-right, row runs off the edge, clean photos, figures only ===== */
+#customers .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+#customers .cs-head .sec-h{margin-bottom:0}
+#customers .stories-wrap{margin-top:40px}
+#customers .stories{grid-auto-columns:calc((100% - 48px)/3.85)}
+#customers .story .story-art.sph::before{background:linear-gradient(180deg,rgba(var(--tint),0) 52%,rgba(var(--tint),.88))}
+#customers .story-art{justify-content:space-between}
+#customers .story-art .st-big{font-size:26px;font-weight:500;letter-spacing:-.4px;line-height:1.1;margin-top:auto}
+#customers .story-art .st-big small{font-size:12.5px;font-weight:400;line-height:1.35;margin-top:5px}
+#customers a.story-art.cs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8);color:#fff;text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#customers a.story-art.cs-all:hover{transform:translateY(-4px)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
+@media (max-width:600px){#customers .cs-head{flex-direction:column;align-items:flex-start;gap:16px}}
 </style>
 </head>
 <body>
@@ -1709,7 +1724,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad guides" id="shipping">
   <div class="wrap">
     <p class="py-eye">Shipping</p>
-    <h2 class="sec-h">Ship every order from one dashboard. <span class="soft">All major couriers, up to 50% off published rates.</span></h2>
+    <h2 class="sec-h">Ship every order from one dashboard. <span class="soft">All major couriers, up to 45% off published rates.</span></h2>
     <div style="margin-top:16px"><div class="fx" data-fx><ul class="fx-list"><li data-f="cou"><span class="fx-ic" data-ic="truck"></span><div><b>Every major courier</b><span>JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, side by side.</span></div></li><li data-f="pick"><span class="fx-ic" data-ic="home"></span><div><b>Pickup from your warehouse</b><span>Pickup today if the order is ready by 14:00 WIB.</span></div></li><li data-f="cod"><span class="fx-ic" data-ic="cash"></span><div><b>Cash on delivery</b><span>3% of the order value, credited as soon as the parcel is delivered.</span></div></li><li data-f="track"><span class="fx-ic" data-ic="bell"></span><div><b>Tracking for your shoppers</b><span>Every shopper gets a link to follow their parcel.</span></div></li></ul><div class="fx-g"><div class="py-card fx-win"><div class="co-bar"><i></i><i></i><i></i><span>FLIK dashboard · Create shipment</span></div><div class="py-b"><div class="pl-h">Order #AR-1042 · 1.2 kg · Jakarta → Bandung</div><div class="fx-el pl-grp" data-f="cou"><div class="py-row on"><span><img class="d2-cou" src="../../assets/logos/courier/jne.png" alt="JNE"> REG · 2–3 days</span><span class="num">Rp14.000</span></div><div class="py-row"><span><img class="d2-cou" src="../../assets/logos/courier/jnt.png" alt="J&amp;T"> EZ · 2–3 days</span><span class="num">Rp15.000</span></div><div class="py-row"><span><img class="d2-cou" src="../../assets/logos/courier/sicepat.png" alt="SiCepat"> REG · 1–2 days</span><span class="num">Rp16.000</span></div></div><div class="fx-el " data-f="pick"><div class="py-row"><span>Pickup today if ready by 14:00</span><span class="pill ok">Pickup</span></div></div><div class="fx-el " data-f="cod"><div class="py-row"><span>Cash on delivery · Rp587.000</span><span class="pill pu">COD 3%</span></div></div><div class="fx-el " data-f="track"><div class="py-row"><span>Tracking link sent to the shopper</span><span class="pill gr">Auto</span></div></div><div class="iv-acts"><span class="py-btn">Create shipment</span></div></div></div></div></div></div>
   </div>
 </section>
@@ -1745,10 +1760,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== kit: customer-stories (Brands selling on their own website.) ===== -->
 <section class="pad alt guides" id="customers">
   <div class="wrap">
-    <h2 class="sec-h">Brands selling on their own website. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2>
+    <div class="cs-head"><h2 class="sec-h">Brands selling on their own website. <span class="soft">How Indonesian brands use FLIK, in their own stories.</span></h2><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span><span class="st-big">Sigit Store</span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="background-image:url('../../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/paper.png?v=2" alt="Paper"></span><span class="st-big">Paper</span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/wakaigo-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span><span class="st-big">WakaiGo</span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-violet" style="background-image:url('../../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/artch.png?v=2" alt="Artch"></span><span class="st-big">Artch</span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article></div>
-      <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-navy" style="--tint:0,45,93;background-image:url('../../assets/customers/erigo-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="st-big">Up to 200%<small>sales growth, online and in stores</small></span></div><p>Keeping ERIGO in stock drove sales up to 200%.</p><a href="../../customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-orange" style="--tint:120,52,10;background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art sph t-violet" style="--tint:0,45,93;background-image:url('../../assets/customers/sigit-store-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></div><p>The SIGIT sells merch straight to fans with FLIK Checkout.</p><a href="../../customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="story"><a class="story-art cs-all" href="../../customers/" aria-label="See all customer stories"><span></span><span class="st-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a></article><article class="story s1"><div class="story-art sph t-orange" style="--tint:0,45,93;background-image:url('../../assets/customers/wakaigo-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></div><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="../../customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art sph t-violet" style="--tint:59,36,168;background-image:url('../../assets/customers/artch-1.jpg')"><span class="st-logo"><img src="../../assets/logos/merchant/artch.png?v=2" alt="Artch"></span></div><p>Artch gives shoppers a checkout that keeps up with them.</p><a href="../../customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art sph t-magenta" style="--tint:174,29,124;background-image:url('../../assets/customers/paper-1.jpg?v=2')"><span class="st-logo"><img src="../../assets/logos/merchant/paper.png?v=2" alt="Paper"></span></div><p>Paper keeps its checkout as clean as its brand.</p><a href="../../customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article></div>
     </div>
   </div>
 </section>
@@ -1761,7 +1775,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <h2 class="sec-h">Pay as you sell. <span class="soft">No setup fee.</span></h2>
     <div class="py-rate" style="grid-template-columns:repeat(3,1fr)">
       <div><small>FLIK Checkout</small><b>0–2%</b><span>Success fee on top of your payment fees, excl. PPN</span></div>
-      <div><small>Shipping</small><b>Up to 50% off</b><span>Published courier rates, paid per shipment</span></div>
+      <div><small>Shipping</small><b>Up to 45% off</b><span>Published courier rates, paid per shipment</span></div>
       <div><small>Cash on delivery</small><b>3%</b><span>Of the order value, excl. PPN, after delivery</span></div>
     </div>
     <div class="py-price">
@@ -2055,7 +2069,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 /* ===== Page: at a glance ===== */
 
 /* ===== FAQ ===== */
-const FAQ=[["Which stores does FLIK work with?", "Shopify and WooCommerce. FLIK sets up FLIK Checkout for you. Building your own store? Use the FLIK API."], ["Do shoppers need a FLIK account?", "No. They can check out as a guest, or create a FLIK account so their details are saved for every store that uses FLIK."], ["Which payment methods can shoppers use?", "QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Which couriers can I ship with?", "JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 50% off published rates."], ["What does it cost?", "A success fee of 0–2% (excl. PPN) on each successful payment, on top of your payment fees, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN)."], ["Can I fund stock for a drop?", "Selected brands can get a Merchant Cash Advance, paid back automatically from sales."], ["Where does the money go?", "Into your FLIK balance. Withdraw to your bank, or settle early when you need cash sooner."]];
+const FAQ=[["Which stores does FLIK work with?", "Shopify and WooCommerce. FLIK sets up FLIK Checkout for you. Building your own store? Use the FLIK API."], ["Do shoppers need a FLIK account?", "No. They can check out as a guest, or create a FLIK account so their details are saved for every store that uses FLIK."], ["Which payment methods can shoppers use?", "QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery."], ["Which couriers can I ship with?", "JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 45% off published rates."], ["What does it cost?", "A success fee of 0–2% (excl. PPN) on each successful payment, on top of your payment fees, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN)."], ["Can I fund stock for a drop?", "Selected brands can get a Merchant Cash Advance, paid back automatically from sales."], ["Where does the money go?", "Into your FLIK balance. Withdraw to your bank, or settle early when you need cash sooner."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});

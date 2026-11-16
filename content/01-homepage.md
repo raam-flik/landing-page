@@ -26,7 +26,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Search results (SEO)
 
 - **Page title:** FLIK | Merchant Growth Platform for Growing Brands
-- **Description:** FLIK gives online brands a faster checkout, shipping with all major couriers for up to 50% off published rates, and inventory funding, all from one dashboard.
+- **Description:** FLIK gives online brands a faster checkout, shipping with all major couriers for up to 45% off published rates, and inventory funding, all from one dashboard.
 
 ## 1. Hero
 <!-- html: Hero (like sequencehq.com: centred text over a field of particles; FLIK events surface among them) -->
@@ -103,7 +103,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Shipping**
   - **One-liner:** Compare, book and track every courier from one dashboard.
   - **At a glance:** Regular to instant and cargo · One parcel or thousands · COD and non-COD · Cross-border shipping · Free to register
-  - **Stats:** 50% — off published courier rates, up to · 99% — shipment creation success rate
+  - **Stats:** 45% — off published courier rates, up to · 99% — shipment creation success rate
   - **Value props:** Compare before you book. See every rate, then pick the service. · Pickup you can plan. 3–5 hours for regular; same day if fulfilled before 14:00 WIB. · Know your couriers. See courier performance by region.
 - **Tracking**
   - **One-liner:** Follow every package from pickup to doorstep.

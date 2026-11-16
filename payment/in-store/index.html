@@ -1178,7 +1178,7 @@ html{scroll-padding-top:88px}
 .prg-b .txt{max-width:560px;font-size:16px}
 .prg-p b{display:block;font-size:40px;font-weight:300;letter-spacing:-.8px;line-height:1.1;color:var(--ink)}
 .prg-p span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px}
-.prg-r:hover .ha .ha-l{opacity:1}
+/* (row hover no longer shows half an arrow; the arrow animates only on the link itself) */
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
@@ -1443,6 +1443,21 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+
+/* ===== Stories like the homepage (Raam, 16 Nov): arrows top-right, row runs off the edge, clean photos, figures only ===== */
+#customers .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+#customers .cs-head .sec-h{margin-bottom:0}
+#customers .stories-wrap{margin-top:40px}
+#customers .stories{grid-auto-columns:calc((100% - 48px)/3.85)}
+#customers .story .story-art.sph::before{background:linear-gradient(180deg,rgba(var(--tint),0) 52%,rgba(var(--tint),.88))}
+#customers .story-art{justify-content:space-between}
+#customers .story-art .st-big{font-size:26px;font-weight:500;letter-spacing:-.4px;line-height:1.1;margin-top:auto}
+#customers .story-art .st-big small{font-size:12.5px;font-weight:400;line-height:1.35;margin-top:5px}
+#customers a.story-art.cs-all{background:linear-gradient(160deg,#002D5D,#3B24A8 60%,#9E4DC8);color:#fff;text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#customers a.story-art.cs-all:hover{transform:translateY(-4px)}
+@media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
+@media (max-width:600px){#customers .cs-head{flex-direction:column;align-items:flex-start;gap:16px}}
 </style>
 </head>
 <body>
@@ -1606,10 +1621,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== kit: customer-stories (In-Store Payment) ===== -->
 <section class="pad alt guides" id="customers">
   <div class="wrap">
-    <h2 class="sec-h">Brands that grow with In-Store Payment. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2>
+    <div class="cs-head"><h2 class="sec-h">Brands that grow with In-Store Payment. <span class="soft">How Indonesian brands use it, in their own stories.</span></h2><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
     <div class="stories-wrap">
-      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-orange" style="background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span><span class="st-big">Kopikalyan</span></div><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span><span class="st-big">Haus!</span></div><p>Haus! serves long queues faster and funds new stock.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/aneka.png?v=2" alt="Aneka Family"></span><span class="st-big">Aneka Family</span></div><p>Aneka Family takes QRIS and cards at the counter.</p><a href="../../customers/story/?c=aneka-family" class="link">Read Aneka Family's story <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/donat-bahagia.png?v=2" alt="Donat Bahagia"></span><span class="st-big">Donat Bahagia</span></div><p>Donat Bahagia makes paying as easy as picking a donut.</p><a href="../../customers/story/?c=donat-bahagia" class="link">Read Donat Bahagia's story <span class="chev">›</span></a></article></div>
-      <div class="st-foot"><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a><div class="car-nav"><button class="cbtn" data-car="cstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="cstories" data-dir="1" aria-label="Next stories">›</button></div></div>
+      <div class="stories" id="cstories"><article class="story s1"><div class="story-art sph t-orange" style="--tint:120,52,10;background-image:url('../../assets/customers/emados-1.jpg')"><span class="st-logo dark"><img src="../../assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="st-big">30+<small>branches opened across Indonesia</small></span></div><p>EMADO'S opened 30+ branches, with operations under control.</p><a href="../../customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="story s2"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span></div><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="../../customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="story s3"><div class="story-art"><span class="st-logo"><img src="../../assets/logos/merchant/haus.png?v=2" alt="Haus!"></span></div><p>Haus! serves long queues faster and funds new stock.</p><a href="../../customers/story/?c=haus" class="link">Read Haus!'s story <span class="chev">›</span></a></article><article class="story"><a class="story-art cs-all" href="../../customers/" aria-label="See all customer stories"><span></span><span class="st-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="../../customers/" class="link">See all customer stories <span class="chev">›</span></a></article><article class="story s1"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/donat-bahagia.png?v=2" alt="Donat Bahagia"></span></div><p>Donat Bahagia makes paying as easy as picking a donut.</p><a href="../../customers/story/?c=donat-bahagia" class="link">Read Donat Bahagia's story <span class="chev">›</span></a></article><article class="story s4"><div class="story-art"><span class="st-logo"><img class="sq" src="../../assets/logos/merchant/aneka.png?v=2" alt="Aneka Family"></span></div><p>Aneka Family takes QRIS and cards at the counter.</p><a href="../../customers/story/?c=aneka-family" class="link">Read Aneka Family's story <span class="chev">›</span></a></article></div>
     </div>
   </div>
 </section>

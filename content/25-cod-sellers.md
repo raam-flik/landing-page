@@ -46,7 +46,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above heading:** COD Shipping
 - **Heading:** Every COD order in one place.
-  - **Grey part:** All major couriers, up to 50% off published rates.
+  - **Grey part:** All major couriers, up to 45% off published rates.
 - **Feature:** COD with every major courier — JNE, J&T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, compared in one dashboard.
 - **Feature:** Set the COD amount — The courier collects it from the shopper on delivery.
 - **Feature:** 3%, nothing upfront — The COD fee (excl. PPN) is deducted when the COD money is credited.
@@ -75,7 +75,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Item:** Standard pricing — Courier rates, COD and Early Settlement are all on the Pricing page.
 - **Item:** Shipping at volume? — Talk to the FLIK team about rates for your business.
 - **Rate:** COD fee — 3% — Of the COD amount, excl. PPN, after delivery
-- **Rate:** Shipping — Up to 50% off — Published courier rates, paid per shipment
+- **Rate:** Shipping — Up to 45% off — Published courier rates, paid per shipment
 - **Rate:** Returned parcel — No COD fee — The return fee for each courier is shown in your dashboard
 
 ## 8. (no heading)

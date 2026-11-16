@@ -164,7 +164,7 @@ Hidden until there is a real, approved story.
 - **Section heading:** Brands that grow with Merchant Cash Advance.
   - **Grey part:** How Indonesian brands use it, in their own stories.
 - **Story cards (carousel, every brand on this product, in this order):** ERIGO, EMADO'S, HEYLOCAL, Kopikalyan, Haus!. Each card: brand logo, a big line (the stat for real stories, the brand name for example stories), the story headline and "Read <brand>'s story". Real stories go first: ERIGO (Up to 200%), EMADO'S (30+ branches), HEYLOCAL (500,000+ transactions).
-- **Link:** See all customer stories
+- **Fourth card:** All stories · "See how every brand sells, ships and grows with FLIK." · link: See all customer stories (to Customers)
 - Captions are two lines at most, shortened from each story's headline (the story page keeps the full headline).
 - Data and headlines come from the Customers page. ERIGO, EMADO'S and HEYLOCAL are real stories (with their stat); the others are example stories until each brand approves its own. No quotes are invented.
 

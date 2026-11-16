@@ -10,13 +10,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] Structure follows stripe.com/use-cases/ecommerce (13 Nov 2026), with FLIK facts only. Stripe's parts mapped to FLIK: checkout → FLIK Checkout, Radar → Fraud Detection, acceptance optimisation → Shipping, unified experiences → Payment Link, In-Store, Cash Advance and Early Settlement, integrations and professional services → "FLIK sets it up for you". Left out: agentic commerce, subscriptions, global payments and acceptance-rate figures (not FLIK products or no confirmed numbers).
 - [ ] Stats (1 tap, 0 passwords, 15 methods, 1 account; "30s" and "3×" removed under the site-wide claim limit, AG, 13 Nov 2026) are the same as the Payment page.
 - [ ] Fraud Detection launches in December 2026 (tracker: fd-launch); risky COD orders are marked "coming soon".
-- [ ] Pricing summary: Checkout success fee 0–2% excl. PPN, shipping up to 50% off published rates, COD 3% excl. PPN. Merchant Cash Advance is for selected brands.
+- [ ] Pricing summary: Checkout success fee 0–2% excl. PPN, shipping up to 45% off published rates, COD 3% excl. PPN. Merchant Cash Advance is for selected brands.
 - [ ] Hero: D2C's own animated demo (built on the Checkout page's phone): the shopper picks a size on the brand's product page, pays in the FLIK checkout with saved details, a voucher and QRIS, then the brand's dashboard card goes from 41 to 42 orders and the balance rises, and a "Pickup today · JNE" chip appears. Mockups are example data (Aruna Studio, order #AR-1042, voucher NEWARUNA, courier prices). Story cards are example stories except EMADO'S and ERIGO.
 
 ## Search results (SEO)
 
 - **Page title:** D2C Brands: Sell More on Your Own Website | FLIK
-- **Description:** For brands on Shopify and WooCommerce: a checkout built to convert, every major courier at up to 50% off published rates, fraud protection and funding for your next drop. FLIK sets it up for you.
+- **Description:** For brands on Shopify and WooCommerce: a checkout built to convert, every major courier at up to 45% off published rates, fraud protection and funding for your next drop. FLIK sets it up for you.
 
 ## 1. Sell more on your own website.
 
@@ -53,7 +53,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Small text above heading:** Shipping
 - **Heading:** Ship every order from one dashboard.
-  - **Grey part:** All major couriers, up to 50% off published rates.
+  - **Grey part:** All major couriers, up to 45% off published rates.
 - **Feature:** Every major courier — JNE, J&T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, side by side.
 - **Feature:** Pickup from your warehouse — Pickup today if the order is ready by 14:00 WIB.
 - **Feature:** Cash on delivery — 3% of the order value, credited as soon as the parcel is delivered.
@@ -105,7 +105,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Item:** Standard pricing — Payment method rates, shipping and Early Settlement are all on the Pricing page.
 - **Item:** Selling at volume? — Talk to the FLIK team about rates for your brand.
 - **Rate:** FLIK Checkout — 0–2% — Success fee on top of your payment fees, excl. PPN
-- **Rate:** Shipping — Up to 50% off — Published courier rates, paid per shipment
+- **Rate:** Shipping — Up to 45% off — Published courier rates, paid per shipment
 - **Rate:** Cash on delivery — 3% — Of the order value, excl. PPN, after delivery
 
 ## 9. (no heading)
@@ -140,7 +140,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Question:** Which payment methods can shoppers use?
   - **Answer:** QRIS, e-wallets, bank virtual accounts, credit and debit cards, and cash on delivery.
 - **Question:** Which couriers can I ship with?
-  - **Answer:** JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 50% off published rates.
+  - **Answer:** JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel, at up to 45% off published rates.
 - **Question:** What does it cost?
   - **Answer:** A success fee of 0–2% (excl. PPN) on each successful payment, on top of your payment fees, for the whole checkout. Shipping is paid per shipment, and COD is 3% of the order value (excl. PPN).
 - **Question:** Can I fund stock for a drop?
