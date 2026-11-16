@@ -18,13 +18,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** Fashion Brands: Sell Every Collection, Everywhere | FLIK
+- **Page title:** Fashion Brands: Sell Every Launch, Everywhere | FLIK
 - **Description:** For fashion brands: a checkout that keeps up on launch day, bulk shipping for the day after, payment links and in-store payments, and COD you can keep an eye on. One FLIK balance.
 
-## 1. Sell every collection, everywhere.
+## 1. Sell every launch, everywhere.
 
 - **Small text above heading:** For fashion brands
-- **Heading:** Sell every collection, everywhere.
+- **Heading:** Sell every launch, everywhere.
   - **Grey part:** Online, in chat and in store.
 - **Text:** You make the collection. FLIK gets it paid and delivered, wherever your shoppers are.
 - **Rate:** Live now · Example — Linen shirt, sand — Rp349.000 · website, chat and store
