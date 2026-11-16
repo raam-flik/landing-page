@@ -1198,6 +1198,10 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 .cs-all::after,.bs-all.has-wall::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,#EAF2FF 0%,#EDE7FF 55%,#FFE6F4 100%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.3) 40%,#000 76%);mask-image:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.3) 40%,#000 76%)}
 #customers .cs-all .st-big,.bs-all.has-wall .bs-big{color:var(--ink)}
 .all-wall i{box-shadow:0 4px 12px rgba(50,50,93,.12)}
+/* logos only, no tiles (Raam, 16 Nov); white logos turn dark so they show on the pastel */
+.all-wall:not(.covers) i{background:none;box-shadow:none}
+.all-wall:not(.covers) img{max-width:86%;max-height:58%}
+.all-wall:not(.covers) i.dk img{filter:brightness(0);opacity:.85}
 .all-wall.covers{left:-26%;right:-26%;top:-10%;grid-template-columns:repeat(4,1fr)}
 .all-wall.covers i{aspect-ratio:4/5;overflow:hidden;background:#fff}
 .all-wall.covers img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;transform:scale(1.55)}

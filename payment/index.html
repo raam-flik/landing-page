@@ -1486,6 +1486,10 @@ main #customers a.story-art.cs-all,.bs-art.bs-all.has-wall{background:linear-gra
 .cs-all::after,.bs-all.has-wall::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,#EAF2FF 0%,#EDE7FF 55%,#FFE6F4 100%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.3) 40%,#000 76%);mask-image:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.3) 40%,#000 76%)}
 main #customers .cs-all .st-big,.bs-all.has-wall .bs-big{color:var(--ink)}
 .all-wall i{box-shadow:0 4px 12px rgba(50,50,93,.12)}
+/* logos only, no tiles (Raam, 16 Nov); white logos turn dark so they show on the pastel */
+.all-wall:not(.covers) i{background:none;box-shadow:none}
+.all-wall:not(.covers) img{max-width:86%;max-height:58%}
+.all-wall:not(.covers) i.dk img{filter:brightness(0);opacity:.85}
 .cs-all>*:not(.all-wall),.bs-all.has-wall>*:not(.all-wall){position:relative;z-index:2}
 /* ===== Stories like the homepage (Raam, 16 Nov): arrows top-right, row runs off the edge, clean photos, figures only ===== */
 #customers .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
