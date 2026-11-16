@@ -1245,6 +1245,12 @@ html{scroll-padding-top:88px}
 .dv-int h3{font-size:17px;font-weight:500}
 .dv-int p{font-size:14.5px;line-height:1.55}
 .dv-int ol{margin:0;padding-left:18px;font-size:14px;color:var(--body);display:grid;gap:4px}
+/* Test mode: the Payment page benefit row (py-ben) */
+.py-ben{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:8px}
+.py-ben h3{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500;margin-bottom:8px}
+.py-ben p{font-size:14.5px;color:var(--body);line-height:1.55}
+@media (max-width:1080px){.py-ben{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.py-ben{grid-template-columns:1fr;gap:24px}}
 .dv-res{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
 .dv-res>div{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:8px;align-content:start}
 .dv-res h3{font-size:16px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -1396,7 +1402,7 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 }
 html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-rise{from{opacity:0;translate:0 56px}to{opacity:1;translate:none}}
-@keyframes sr-frame{from{clip-path:inset(12% round 16px);opacity:.4}to{clip-path:inset(0 round 12px);opacity:1}}
+@keyframes sr-frame{from{clip-path:inset(12% round 6px);opacity:.4}to{clip-path:inset(0 round 6px);opacity:1}}
 @keyframes sr-zoom{from{scale:1.15}to{scale:1}}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
@@ -1476,11 +1482,11 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad guides" id="sandbox">
   <div class="wrap">
     <h2 class="sec-h">Break things safely. <span class="soft">Test keys, simulated payments, no real money.</span></h2>
-    <div class="dv-res">
-      <div><h3>Test keys that work straight away</h3><p>Create them yourself in the FLIK dashboard. A test key never touches a live payment, and a live key never touches a test one.</p></div>
-      <div><h3>Every outcome, on demand</h3><p>Pay, expire or fail a test payment with one call. Fixed test amounts give you a decline.</p></div>
-      <div><h3>The same events as live</h3><p>Test payments send the same signed events, to your test webhook endpoints only.</p></div>
-      <div><h3>Nothing reaches a bank</h3><p>A simulator answers every test payment. No payment provider is called.</p></div>
+    <div class="py-ben" style="margin-top:40px">
+      <div><h3><span class="fx-ic" data-ic="lock"></span>Test keys that work straight away</h3><p>Create them yourself in the FLIK dashboard. A test key never touches a live payment, and a live key never touches a test one.</p></div>
+      <div><h3><span class="fx-ic" data-ic="sliders"></span>Every outcome, on demand</h3><p>Pay, expire or fail a test payment with one call. Fixed test amounts give you a decline.</p></div>
+      <div><h3><span class="fx-ic" data-ic="bell"></span>The same events as live</h3><p>Test payments send the same signed events, to your test webhook endpoints only.</p></div>
+      <div><h3><span class="fx-ic" data-ic="bank"></span>Nothing reaches a bank</h3><p>A simulator answers every test payment. No payment provider is called.</p></div>
     </div>
     <p class="txt" style="margin-top:24px"><a href="#" class="link" data-doc="/guides/merchant-api/sandbox" target="_blank" rel="noopener">Read the test mode guide <span class="chev">›</span></a></p>
   </div>
