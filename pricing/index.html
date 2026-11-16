@@ -1387,7 +1387,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Page header with product tabs ===== -->
 <!-- PLACEHOLDER rates (FLI-50): the rate card (MDR per method, settlement periods, Checkout fee) comes from AG / finance. Values in [brackets] are placeholders; don't copy competitor rates. -->
 <section class="lh guides rbn-host">
-  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".6" filter="url(#rbn-b)"/><g class="rbn-lines" fill="none" stroke="url(#rbn-g)" stroke-width=".9"></g></svg>
+  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".35" filter="url(#rbn-b)"/><g class="rbn-lines"></g></svg>
         <div class="wrap">
     <p class="eyebrow">Pricing</p>
     <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction.</span></h1>
@@ -1749,20 +1749,38 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 
 
 
-/* ===== kit: hero-ribbon (thin gradient lines forming a sheet that runs diagonally from the hero's top centre to its bottom-right corner, with one slow twist; drawn in hero pixels) ===== */
+/* ===== kit: hero-ribbon (a satin sheet with a smooth colour blend, soft folds and a fine silk grain, running diagonally from the hero's top centre to its bottom-right corner; drawn in hero pixels) ===== */
 document.querySelectorAll('svg.rbn').forEach(svg=>{
-  const g=svg.querySelector('.rbn-lines'),fill=svg.querySelector('.rbn-fill');
-  const N=150,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
+  const NS='http://www.w3.org/2000/svg',g=svg.querySelector('.rbn-lines'),glow=svg.querySelector('.rbn-fill'),defs=svg.querySelector('defs');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const el=(n,at,par)=>{const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);par.appendChild(e);return e};
+  /* one sheet of cloth. Its colour runs smoothly across the width (orange, pink, violet, soft blue); a slow light-and-shadow wave on top gives the satin folds. Light tints only: no dark purple, blue or red, and highlights but no shadows */
+  const RAMP=[[0,'#FF7A2E'],[.28,'#FF7A62'],[.5,'#FF5CB8'],[.74,'#A884FF'],[1,'#8FB2FF']];
+  const SHEETS=[{a:0,b:1,ph:0,ox:0,oy:0}];
+  const K=150;
+  const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)),mix=(A,B,f)=>A.map((v,k)=>v+(B[k]-v)*f);
+  const shade=u=>{let i=0;while(i<RAMP.length-2&&u>RAMP[i+1][0])i++;const x=(u-RAMP[i][0])/(RAMP[i+1][0]-RAMP[i][0]),f=x*x*(3-2*x);
+    let c=mix(hex(RAMP[i][1]),hex(RAMP[i+1][1]),f);const l=Math.sin(u*Math.PI*4.4+.5);
+    c=mix(c,[255,255,255],l>0?.30*l*l:0);return 'rgb('+c.map(Math.round).join(',')+')'};
+  SHEETS.forEach(sh=>{
+    sh.sh=[];sh.fill=el('path',{fill:'none'},g);
+    sh.th=[];for(let j=0;j<=K;j++)sh.th.push(el('path',{fill:'none',stroke:shade(j/K),'stroke-width':1},g));
+    sh.gr=[];for(let j=2;j<K;j+=4)sh.gr.push(el('path',{fill:'none',stroke:'#fff','stroke-width':.6,opacity:(.03+.07*Math.sin(Math.PI*j/K)).toFixed(2)},g));
+  });
   let W=1000,H=900;
-  function size(){const r=svg.getBoundingClientRect();if(!r.width||!r.height)return;W=r.width;H=r.height;svg.setAttribute('viewBox',`0 0 ${W} ${H}`)}
+  function size(){const r=svg.getBoundingClientRect();if(!r.width||!r.height)return;W=r.width;H=r.height;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    SHEETS.forEach(sh=>{const w=Math.max(3,(sh.b-sh.a)*.62*W/K*2.4);sh.th.forEach(p=>p.setAttribute('stroke-width',w.toFixed(1)))})}
   size();addEventListener('resize',size);document.fonts&&document.fonts.ready.then(size);
-  const pt=(s,t)=>{const w1=.03*W*Math.sin(t*.4+s*1.6),w2=.03*W*Math.cos(t*.33+s*1.3),e=s*s,r=Math.sqrt(s);return [[W*(.43+.14*s),-30],[W*(.56+.10*e)+w1,H*(.34+.10*s)],[W*(.90-.18*r)+w2,H*(.50+.28*s)],[W*(1.30-.52*s),H+40]]};
+  const pt=(s,t,sh)=>{const ph=sh.ph,w1=.03*W*Math.sin(t*.4+s*1.6+ph),w2=.03*W*Math.cos(t*.33+s*1.3+ph*.8),e=s*s,r=Math.sqrt(s);return [[W*(.40+.20*s),-30],[W*(.54+.12*e+sh.ox)+w1,H*(.34+.10*s+sh.oy)],[W*(.92-.20*r-sh.ox)+w2,H*(.50+.28*s-sh.oy)],[W*(1.34-.58*s),H+40]]};
   const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
+  const band=(a,b)=>d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`;
   let vis=true;const paused=()=>typeof motionPaused==='function'&&motionPaused();
   function draw(t){
-    if(vis&&!paused()){t/=1000;paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
-      const a=pt(0,t),b=pt(1,t);fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`)}
+    if(vis&&!paused()){t/=1000;
+      SHEETS.forEach(sh=>{const at=u=>pt(sh.a+(sh.b-sh.a)*u,t,sh),A=at(0),B=at(1),o=band(A,B);
+        sh.sh.forEach(p=>p.setAttribute('d',o));sh.fill.setAttribute('d',o);
+        sh.th.forEach((p,j)=>p.setAttribute('d',d(at(j/K))));sh.gr.forEach((p,j)=>p.setAttribute('d',d(at((4*j+2)/K))))});
+      glow.setAttribute('d',band(pt(0,t,SHEETS[0]),pt(1,t,SHEETS[0])))}
     if(!reduce)requestAnimationFrame(draw);
   }
   new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(svg);
