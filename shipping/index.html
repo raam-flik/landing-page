@@ -831,6 +831,8 @@ html{scroll-padding-top:88px}
 .dsh-tabs button.on{background:#fff;color:var(--ink);box-shadow:var(--sh)}
 .dsh-tabs button.on [data-ic]{color:var(--primary)}
 .dsh-tabs [data-ic]{display:flex}
+#bk-tabs button{white-space:nowrap}
+@media (max-width:420px){#bk-tabs button{padding:0 12px;gap:6px}}
 .rc-ex{font-size:12px;color:var(--faint)}
 
 /* Hero: text left, rate checker right, route lines behind (clipped at the guide lines) */
@@ -881,11 +883,6 @@ html{scroll-padding-top:88px}
 .sv-ic{width:36px;height:36px;border-radius:10px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh);margin-bottom:6px}
 .sv h3{font-size:19px;font-weight:400;letter-spacing:-.3px}
 .sv p{font-size:14px;color:var(--body);line-height:1.5}
-.sv-meter{margin-top:auto;padding-top:14px;display:grid;gap:6px;font-size:11.5px;color:var(--muted)}
-.sv-meter div{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center}
-.sv-meter i{height:6px;border-radius:999px;background:var(--line);position:relative;overflow:hidden}
-.sv-meter i::after{content:"";position:absolute;inset:0;width:var(--v);border-radius:inherit;background:var(--primary)}
-.sv-meter div:last-child i::after{background:#FF2DB8}
 .sv-pk{font-size:12px;color:var(--primary);background:var(--primary-soft);border-radius:999px;padding:3px 10px;align-self:flex-start}
 
 /* Single / bulk band */
@@ -1048,6 +1045,96 @@ html{scroll-padding-top:88px}
 .fin-price{margin-top:48px;padding-top:28px;border-top:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;font-size:15px;color:var(--body)}
 .fin-price b{font-weight:600;color:var(--ink)}
 #faq-sec+section{padding-top:72px}
+
+/* Delivery health check + Monitoring: rebuilt from the dashboard's Shipping screens (StatusBadge tones, KPI tiles, tables). Example data */
+.dx-st{display:inline-flex;align-items:center;height:22px;padding:0 7px;border-radius:5px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.dx-st.ok{background:var(--ok-soft);color:#0E6E48}
+.dx-st.pu{background:var(--primary-soft);color:var(--primary-hover)}
+.dx-st.gr{background:#EEF1F5;color:var(--body)}
+.dx-st.warn{background:var(--warn-soft);color:#8A5A12}
+.dx-st.bad{background:var(--bad-soft);color:#A3112E}
+.dx-card{background:#fff;border-radius:8px;box-shadow:var(--sh);padding:20px}
+.hx{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;margin-top:48px;align-items:center}
+.hx-side{display:grid;gap:22px}
+.hx-body{padding:20px;display:grid;gap:18px}
+.hx-t b{display:block;color:var(--ink);font-weight:600;font-size:15px}
+.hx-t span{color:var(--muted);font-size:13px;line-height:1.5}
+.hx-r{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:14px;margin-top:14px;border-top:1px solid var(--line)}
+.hx-avg{display:flex;align-items:baseline;gap:8px;color:var(--muted)}
+.hx-avg b{font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
+.hx-b{display:flex;gap:6px;flex-wrap:wrap}
+.hx-rev{margin-left:auto;height:32px;padding:0 12px;border-radius:6px;border:1px solid var(--line);font-weight:500;color:var(--ink);background:#fff;display:inline-flex;align-items:center}
+.hx-head,.hx-row{display:grid;grid-template-columns:1.1fr 1.4fr .8fr 204px;gap:14px;align-items:center;padding:11px 4px}
+.hx-head{color:var(--muted);font-size:12px;border-bottom:1px solid var(--line);padding-top:0}
+.hx-row{border-bottom:1px solid var(--line-soft)}
+.hx-row:last-of-type{border-bottom:0}
+.hx-row b{display:block;font-weight:500;color:var(--ink)}
+.hx-row small{display:block;font-size:12px;color:var(--muted)}
+.hx-sc{display:inline-flex;align-items:baseline;gap:6px;font-size:12.5px;font-weight:500}
+.hx-row .hx-sc b{display:inline;font-size:18px;font-weight:600;color:inherit}
+.hx-sc.warn{color:#8A5A12}.hx-sc.bad{color:#A3112E}
+.hx-row select{width:100%;height:32px;border:1px solid var(--line);border-radius:6px;padding:0 8px;font:inherit;font-size:12.5px;color:var(--ink);background:#fff}
+.hx-body .rc-ex,.mn-body .rc-ex{margin:0}
+.mn-win{margin-top:48px}
+.mn-body{padding:24px 24px 18px}
+.mn-ph{font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
+.mn-tabs{display:flex;gap:22px;border-bottom:1px solid var(--line);margin-top:12px;overflow-x:auto;scrollbar-width:none}
+.mn-tabs::-webkit-scrollbar{display:none}
+.mn-tabs>*{display:inline-flex;align-items:center;gap:6px;padding:10px 0;font-size:13.5px;color:var(--body);white-space:nowrap;border-bottom:2px solid transparent}
+.mn-tabs button:hover{color:var(--ink)}
+.mn-tabs button.on{color:var(--primary);border-color:var(--primary);font-weight:500}
+.mn-n{display:inline-flex;align-items:center;height:18px;padding:0 6px;border-radius:5px;background:var(--warn-soft);color:#8A5A12;font-size:11.5px;font-weight:600}
+.mn-pan{padding-top:18px;display:grid;gap:16px;align-content:start;min-height:420px}
+.mn-pan[hidden]{display:none}
+.mn-live{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.mn-live b{color:var(--ink);font-weight:600}
+.mn-dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.mn-h{font-size:15px;font-weight:600;color:var(--ink)}
+.mn-tot{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:10px 0 14px;color:var(--muted)}
+.mn-tot b{font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-.5px}
+.mn-bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.mn-bar i{display:block;min-width:5px}
+.mn-bar .pu{background:var(--primary)}.mn-bar .gr{background:#C5CEDA}.mn-bar .warn{background:#EDBE5F}.mn-bar .bad{background:var(--bad)}
+.mn-leg{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:14px}
+.mn-leg span{display:inline-flex;align-items:center;gap:8px}
+.mn-leg b{font-weight:600;color:var(--ink)}
+.mn-leg small{color:var(--muted);font-size:12.5px}
+.mn-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.mn-tile{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border-radius:8px;box-shadow:var(--sh);background:#fff}
+.mn-tile span{color:var(--muted)}
+.mn-tile b{font-size:22px;font-weight:600;color:var(--ink)}
+.mn-tile small{font-size:12.5px;color:var(--muted)}
+.mn-over{color:#A3112E!important}
+.mn-head,.mn-row{display:grid;grid-template-columns:1.3fr .8fr 1.2fr 1.5fr 1.2fr;gap:14px;align-items:center;padding:11px 4px}
+.mn-head{color:var(--muted);font-size:12px;border-bottom:1px solid var(--line);padding-top:0}
+.mn-row{border-bottom:1px solid var(--line-soft)}
+.mn-row:last-child{border-bottom:0}
+.mn-awb{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink)}
+.mn-k{display:flex;align-items:center;gap:8px}
+.mn-k img{width:22px;height:22px;border-radius:5px;object-fit:contain;flex:none}
+.mn-pts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px}
+@media (max-width:1080px){.hx{grid-template-columns:1fr;gap:40px}}
+@media (max-width:900px){.mn-pts{grid-template-columns:1fr;gap:22px}}
+@media (max-width:760px){
+  .hx-body,.mn-body{padding:16px}
+  .hx-head,.mn-head{display:none}
+  .hx-row{grid-template-columns:1fr auto;gap:8px 14px;padding:12px 0}
+  .hx-row>:nth-child(2){text-align:right}
+  .hx-row>:nth-child(4){grid-column:1/-1}
+  .hx-rev{margin-left:0}
+  .mn-tiles{grid-template-columns:1fr 1fr}.mn-pan{min-height:0}
+  .mn-row{grid-template-columns:1fr auto;gap:6px 14px;padding:12px 0}
+  .mn-row>:nth-child(4),.mn-row>:nth-child(5){grid-column:1/-1}
+}
+
+/* Cross-border strip (under the five speeds) */
+.xb{display:flex;align-items:center;gap:18px;margin-top:12px;padding:20px 22px;border-radius:12px;background:var(--bg-alt)}
+.xb-ic{flex:none;width:36px;height:36px;border-radius:10px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh)}
+.xb-t{flex:1;min-width:0}
+.xb-t h3{font-size:19px;font-weight:400;letter-spacing:-.3px}
+.xb-t p{font-size:14px;color:var(--body);line-height:1.5;margin-top:2px}
+.xb .link{flex:none}
+@media (max-width:760px){.xb{flex-wrap:wrap;gap:14px}.xb-t{flex:1 1 60%}.xb .link{flex-basis:100%}}
 
 /* Responsive */
 @media (max-width:1080px){
@@ -1315,15 +1402,15 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <div class="sh-t">
       <p class="eyebrow">FLIK Shipping</p>
       <h1 class="sh-h">The shipping engine for growing brands. <span class="soft">All major couriers, up to 50% off published rates.</span></h1>
-      <p class="lead">Turning every order into a tracked delivery across Indonesia. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.</p>
+      <p class="lead">Turning every order into a tracked delivery. Compare rates, ship one by one or in bulk, and follow every package. You make the sale, we move it.</p>
       <div class="hero-cta">
         <button class="btn btn-primary live" data-act="start">Start shipping free <span class="chev">›</span></button>
         <button class="btn btn-secondary" data-act="sales" data-interest="Shipping">Contact sales</button>
       </div>
       <ul class="ch-facts">
         <li><span data-ic="check-s"></span>No registration fee</li>
-        <li><span data-ic="check-s"></span>COD fee 3% (excl. PPN)</li>
-        <li><span data-ic="check-s"></span>99% of shipments created successfully</li>
+        <li><span data-ic="check-s"></span>COD and non-COD</li>
+        <li><span data-ic="check-s"></span>Cross-border shipping</li>
       </ul>
     </div>
     <div class="sh-globe" role="img" aria-label="Example: Aruna Studio, a sample store, ships orders from Jakarta across Indonesia. For each order FLIK picks the best-priced courier, the package is tracked to delivery, and COD money is credited to the balance after delivery.">
@@ -1344,9 +1431,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <h2 class="sec-h stats-h">One dashboard for every shipment. <span class="soft">From your first order to your busiest sale, FLIK handles the couriers so you can focus on selling.</span></h2>
     <div class="stats4">
       <div class="stat"><b class="num">50%</b><span>off published rates, at most</span></div>
-      <div class="stat"><b class="num">3%</b><span>COD fee (excl. PPN), paid by the merchant</span></div>
-      <div class="stat"><b class="num">99%</b><span>of shipments created successfully</span></div>
-      <div class="stat"><b class="num">15</b><span>payment methods in one checkout</span></div>
+      <div class="stat"><b class="num">100K+</b><span>COD orders delivered this year</span></div>
+      <div class="stat"><b class="num">13</b><span>couriers in one dashboard</span></div>
+      <div class="stat"><b class="num">38</b><span>logistics options</span></div>
     </div>
   </div>
 </section>
@@ -1386,6 +1473,14 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h">The right speed for every order. <span class="soft">Instant, same day, next day, regular or cargo. Pick one per order, or let FLIK pick the cheapest or fastest.</span></h2>
     <div class="sv5" id="sv5"></div>
+    <div class="xb" id="cross-border">
+      <span class="xb-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.5 4.2 5.5 4.2 9s-1.4 6.5-4.2 9c-2.8-2.5-4.2-5.5-4.2-9S9.2 5.5 12 3z"/></svg></span>
+      <div class="xb-t">
+        <h3>A shopper abroad is still your shopper.</h3>
+        <p>FLIK ships cross-border too.</p>
+      </div>
+      <a href="#" class="link" data-act="sales" data-interest="Shipping">Ask about destinations and rates <span class="chev">›</span></a>
+    </div>
   </div>
 </section>
 
@@ -1393,11 +1488,11 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="band guides" id="bulk">
   <div class="wrap bk">
     <div class="bk-t">
-      <h2 class="sec-h">One package or a thousand.</h2>
+      <h2 class="sec-h">One warehouse or all of them.</h2>
       <p class="lead">Ship from one warehouse to one or many addresses, or from all your warehouses at once. Every shipment is paid from your FLIK balance before it is created.</p>
       <div class="dsh-tabs" id="bk-tabs" role="tablist">
-        <button class="on" data-m="single"><span data-ic="boxes-s"></span>Single</button>
-        <button data-m="bulk"><span data-ic="truck-s"></span>Bulk</button>
+        <button class="on" data-m="single"><span data-ic="boxes-s"></span>One warehouse</button>
+        <button data-m="bulk"><span data-ic="truck-s"></span>Many warehouses</button>
       </div>
       <ul class="bk-pts" id="bk-pts"></ul>
     </div>
@@ -1430,14 +1525,12 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad dark guides" id="cod">
   <div class="wrap cod">
     <div class="cod-t">
-      <h2 class="sec-h">COD that pays you back fast. <span class="soft">Offer cash on delivery across Indonesia. The COD amount is credited to your FLIK balance as soon as the parcel is delivered.</span></h2>
-      <div class="cod-fee"><b class="num">3%</b><span>COD fee (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery.</span></div>
+      <h2 class="sec-h">COD that pays you back fast. <span class="soft">Paid into your FLIK balance as soon as the parcel is delivered.</span></h2>
+      <div class="cod-fee"><b class="num">3%</b><span>COD fee (excl. PPN), deducted when you're paid.</span></div>
       <ul class="cod-pts">
-        <li><span data-ic="check-s"></span>COD with JNE, J&amp;T, SiCepat, SPX Express, ID Express, AnterAja and Lion Parcel.</li><li><span data-ic="check-s"></span>Shipping is paid from your balance when you create the shipment.</li>
-        <li><span data-ic="check-s"></span>The COD amount is credited automatically after delivery, minus the 3% COD fee (excl. PPN).</li>
-        <li><span data-ic="check-s"></span>Use the same balance to pay for your next shipments.</li>
+        <li><span data-ic="check-s"></span>Your COD money pays for the next shipments.</li>
+        <li><span data-ic="check-s"></span>Missed the shopper? The courier tries again the next day.</li>
       </ul>
-      <a href="#" class="link lt" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a>
     </div>
     <div class="cod-g">
       <div class="cod-card">
@@ -1445,6 +1538,37 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
         <b class="cod-bal num" id="cod-bal">Rp 18.240.500</b>
         <div class="cod-list" id="cod-list"></div>
         <div class="cod-act"><span class="btn btn-primary">Withdraw</span><span class="btn btn-dark-outline">Top up</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Delivery health check: a score on every shipment before it ships (example data) ===== -->
+<section class="pad-t guides" id="health">
+  <div class="wrap">
+    <h2 class="sec-h">Spot the risky order before it ships. <span class="soft">Every shipment gets a delivery health score, so you know which ones to check first.</span></h2>
+    <div class="hx">
+      <div class="hx-side">
+        <div class="tk-pt"><span class="tk-ic" data-ic="chart"></span><div><b>A score on every shipment</b><p class="txt">From 0 to 100, with the reason beside it. Higher means the parcel is more likely to arrive.</p></div></div>
+        <div class="tk-pt"><span class="tk-ic" data-ic="chat"></span><div><b>Ask before you ship</b><p class="txt">Ask a COD shopper to confirm on WhatsApp, or send a payment link instead. The order ships once they reply.</p></div></div>
+        <div class="tk-pt"><span class="tk-ic" data-ic="check"></span><div><b>Always your call</b><p class="txt">The score is advice. Ship anyway, fix the details, or remove the order.</p></div></div>
+      </div>
+      <div class="cp-win">
+        <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/shipping/shipment</span></div>
+        <div class="hx-body">
+          <div class="dx-card">
+            <div class="hx-t"><b>Delivery health check</b><span>A score from 0 to 100 for each shipment. Higher means less risk.</span></div>
+            <div class="hx-r"><div class="hx-avg"><span>Average</span><b class="num">91</b></div><div class="hx-b"><span class="dx-st ok">236 good</span><span class="dx-st warn">9 fair</span><span class="dx-st bad">3 risky</span></div><span class="hx-rev">Review 12</span></div>
+          </div>
+          <div>
+            <div class="hx-head"><span>Shopper</span><span>Health score</span><span>Payment</span><span>Action</span></div>
+            <div class="hx-row"><span><b>Rina Kusuma</b><small class="num">0812 ···· 7731</small></span><span><span class="hx-sc bad"><b class="num">42</b>Risky</span><small>Past deliveries to this number failed</small></span><span><span class="dx-st pu">COD</span><small class="num">Rp2.400.000</small></span><span><select aria-label="Action for Rina Kusuma (example)"><option>Ship anyway</option><option selected>Confirm on WhatsApp</option><option>Payment link on WhatsApp</option><option>Remove order</option></select></span></div>
+            <div class="hx-row"><span><b>Dimas Prasetyo</b><small class="num">0857 ···· 2046</small></span><span><span class="hx-sc bad"><b class="num">55</b>Risky</span><small>Past deliveries to this number failed</small></span><span><span class="dx-st pu">COD</span><small class="num">Rp1.150.000</small></span><span><select aria-label="Action for Dimas Prasetyo (example)"><option>Ship anyway</option><option>Confirm on WhatsApp</option><option selected>Payment link on WhatsApp</option><option>Remove order</option></select></span></div>
+            <div class="hx-row"><span><b>Sari Wulandari</b><small class="num">0821 ···· 9912</small></span><span><span class="hx-sc warn"><b class="num">68</b>Fair</span><small>Fewer deliveries succeed in this area</small></span><span><span class="dx-st pu">COD</span><small class="num">Rp385.000</small></span><span><select aria-label="Action for Sari Wulandari (example)"><option selected>Ship anyway</option><option>Confirm on WhatsApp</option><option>Payment link on WhatsApp</option><option>Remove order</option></select></span></div>
+            <div class="hx-row"><span><b>Agus Setiawan</b><small class="num">0813 ···· 5508</small></span><span><span class="hx-sc warn"><b class="num">74</b>Fair</span><small>No delivery history for this number yet</small></span><span><span class="dx-st pu">COD</span><small class="num">Rp640.000</small></span><span><select aria-label="Action for Agus Setiawan (example)"><option selected>Ship anyway</option><option>Confirm on WhatsApp</option><option>Payment link on WhatsApp</option><option>Remove order</option></select></span></div>
+          </div>
+          <p class="rc-ex">Example data.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1467,6 +1591,51 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
         <div class="tk-pt"><span class="tk-ic" data-ic="refresh"></span><div><b>A second try before returning</b><p class="txt">If a delivery fails, the courier tries again the next day, up to two attempts.</p></div></div>
         <div class="tk-pt"><span class="tk-ic" data-ic="chart"></span><div><b>Returns in one place</b><p class="txt">Follow every parcel, including the ones that come back. See failed deliveries in the dashboard, and switch to the courier that delivers best in that region.</p></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Monitoring: every shipment on the move, and the ones that need action (example data) ===== -->
+<section class="band guides" id="monitoring">
+  <div class="wrap">
+    <h2 class="sec-h">Problems come to you. <span class="soft">Late, failed or lost: every shipment that needs you lands in one list.</span></h2>
+    <div class="cp-win mn-win">
+      <div class="co-bar"><i></i><i></i><i></i><span>dashboard.flik.co.id/shipping/monitoring</span></div>
+      <div class="mn-body">
+        <div class="mn-ph">Monitoring</div>
+        <div class="mn-tabs" role="tablist" aria-label="Monitoring views (example)">
+          <button role="tab" class="on" aria-selected="true" aria-controls="mn-live" data-mn="live">Live</button>
+          <button role="tab" aria-selected="false" aria-controls="mn-act" data-mn="act">Needs action <span class="mn-n num">65</span></button>
+          <span>On hold</span><span>Tickets <span class="mn-n num">7</span></span><span>Claims</span>
+        </div>
+        <div class="mn-pan" id="mn-live" role="tabpanel">
+          <div class="mn-live"><span class="mn-dot" aria-hidden="true"></span><b>Live</b><span>Today · updated 12:52</span></div>
+          <div class="dx-card">
+            <div class="mn-h">Shipping condition</div>
+            <div class="mn-tot"><b class="num">94,2%</b><span>on track · 1.240 shipments on the move</span></div>
+            <div class="mn-bar" role="img" aria-label="On track 1.168, delayed 41, at risk 24, problem 7"><i class="pu" style="flex:1168"></i><i class="gr" style="flex:41"></i><i class="warn" style="flex:24"></i><i class="bad" style="flex:7"></i></div>
+            <div class="mn-leg"><span><span class="dx-st pu">On track</span><b class="num">1.168</b><small class="num">94,2%</small></span><span><span class="dx-st gr">Delayed</span><b class="num">41</b><small class="num">3,3%</small></span><span><span class="dx-st warn">At risk</span><b class="num">24</b><small class="num">1,9%</small></span><span><span class="dx-st bad">Problem</span><b class="num">7</b><small class="num">0,6%</small></span></div>
+          </div>
+          <div class="mn-h">On the move now</div>
+          <div class="mn-tiles"><div class="mn-tile"><span>Wait pickup</span><b class="num">86</b><small>All within SLA</small></div><div class="mn-tile"><span>Picked up</span><b class="num">142</b><small>All within SLA</small></div><div class="mn-tile"><span>In transit</span><b class="num">731</b><small class="mn-over">29 past SLA</small></div><div class="mn-tile"><span>Out for delivery</span><b class="num">250</b><small class="mn-over">12 past SLA</small></div></div>
+        </div>
+        <div class="mn-pan" id="mn-act" role="tabpanel" hidden>
+          <div>
+            <div class="mn-head"><span>AWB</span><span>Monitoring</span><span>Courier</span><span>Issue</span><span>Age</span></div>
+            <div class="mn-row"><span class="mn-awb">SPXID04108101137</span><span><span class="dx-st bad">Problem</span></span><span class="mn-k"><img src="../assets/logos/courier/spx.png" alt="" loading="lazy">SPX Express</span><span>Unconfirmed return</span><span class="num">9d 14h · <span class="mn-over">5d 14h over</span></span></div>
+            <div class="mn-row"><span class="mn-awb">JNE04105638328</span><span><span class="dx-st bad">Problem</span></span><span class="mn-k"><img src="../assets/logos/courier/jne.png" alt="" loading="lazy">JNE</span><span>Lost</span><span class="num">8d 11h · <span class="mn-over">5d 11h over</span></span></div>
+            <div class="mn-row"><span class="mn-awb">004541113716</span><span><span class="dx-st warn">At risk</span></span><span class="mn-k"><img src="../assets/logos/courier/sicepat.png" alt="" loading="lazy">SiCepat</span><span>Address not found</span><span class="num">3d 2h</span></div>
+            <div class="mn-row"><span class="mn-awb">JX4105907574</span><span><span class="dx-st warn">At risk</span></span><span class="mn-k"><img src="../assets/logos/courier/jnt.png" alt="" loading="lazy">J&amp;T Express</span><span>Customer refused the parcel</span><span class="num">2d 19h</span></div>
+            <div class="mn-row"><span class="mn-awb">99LP4111149952</span><span><span class="dx-st gr">Delayed</span></span><span class="mn-k"><img src="../assets/logos/courier/lionparcel.png" alt="" loading="lazy">Lion Parcel</span><span>Past the courier's SLA</span><span class="num">4d 6h · <span class="mn-over">1d 6h over</span></span></div>
+          </div>
+        </div>
+        <p class="rc-ex" style="margin-top:14px">Example data.</p>
+      </div>
+    </div>
+    <div class="mn-pts">
+      <div class="tk-pt"><span class="tk-ic" data-ic="bell"></span><div><b>Alerts for your team</b><p class="txt">When a delivery hits a problem, your operations team is told automatically.</p></div></div>
+      <div class="tk-pt"><span class="tk-ic" data-ic="clock"></span><div><b>Late parcels flagged</b><p class="txt">Each shipment is checked against the courier's delivery time for its route.</p></div></div>
+      <div class="tk-pt"><span class="tk-ic" data-ic="chat"></span><div><b>Tickets and claims in one place</b><p class="txt">Ask FLIK to chase a late parcel, or file a claim when one is lost or damaged.</p></div></div>
     </div>
   </div>
 </section>
@@ -1518,7 +1687,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <h2 class="sec-h">Built for brands that ship every day.</h2>
     <div class="sg3">
       <a href="#" class="sg" data-page="/use-cases/d2c-brands"><span class="sg-ic" data-ic="home"></span><b>D2C brands</b><span>Selling on your own website and shipping from your own warehouse.</span><div class="sg-k"><span><b>Single + bulk</b>shipments</span><span><b>Shopify</b>and WooCommerce</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
-      <a href="#" class="sg" data-page="/use-cases/cod-sellers"><span class="sg-ic" data-ic="cash"></span><b>COD sellers</b><span>Most of your shoppers pay when the package arrives.</span><div class="sg-k"><span><b>3%</b>COD fee (excl. PPN)</span><span><b>After delivery</b>money in balance</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
+      <a href="#" class="sg" data-page="/use-cases/cod-sellers"><span class="sg-ic" data-ic="cash"></span><b>COD sellers</b><span>Most of your shoppers pay when the package arrives.</span><div class="sg-k"><span><b>7 couriers</b>with COD</span><span><b>After delivery</b>money in balance</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
       <a href="#" class="sg" data-page="/use-cases/scaling-brands"><span class="sg-ic" data-ic="chart"></span><b>Scaling brands</b><span>Many warehouses, peak seasons, and thousands of orders a day.</span><div class="sg-k"><span><b>Bulk</b>from every warehouse</span><span><b>By region</b>courier performance</span></div><em class="link">Learn more <span class="chev">›</span></em></a>
     </div>
   </div>
@@ -1931,7 +2100,7 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
     STEPS.push({n,k:'ship',fromP:HUB,toP:CITY[o.city],dur:2400,color:'#FF7A2E',logo:o.logo,b:'On the way to '+o.city,s:o.eta+' · '+o.awb});
     STEPS.push({n,k:'done',atP:CITY[o.city],dur:1500,icon:'check',b:'Delivered',s:o.city+' · '+o.cour});
     // COD credited after delivery, net of the 3% fee and PPN on the fee (example, 11%)
-    if(o.cod)STEPS.push({n,k:'bal',atP:CITY.Jakarta,dur:1800,icon:'wallet',b:'+'+rp(o.cod-Math.round(o.cod*.03)-Math.round(o.cod*.03*.11)),s:'COD credited after delivery · 3% fee + PPN'});
+    if(o.cod)STEPS.push({n,k:'bal',atP:CITY.Jakarta,dur:1800,icon:'wallet',b:'+'+rp(o.cod-Math.round(o.cod*.03)-Math.round(o.cod*.03*.11)),s:'COD credited after delivery · net of fee'});
   });
   const TOTAL=STEPS.reduce((a,s)=>a+s.dur,0);
   const brand=document.createElement('div');brand.className='gp gp-brand';brand.innerHTML='<span class="gp-ic gp-k">A</span><span><b>Aruna Studio</b><small>Warehouse · Jakarta</small></span>';ui.appendChild(brand);
@@ -1978,13 +2147,13 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
 /* ===== Services ===== */
 (function(){
   const S=[
-    ['bolt','Instant','Within the city, delivered in hours by motorbike.','Pickup right after the AWB',100,92],
-    ['clock','Same day','Delivered the same day within the city.','Pickup today if fulfilled by 14:00',82,72],
-    ['calendar','Next day','Delivered the next day to nearby cities.','',62,52],
-    ['truck','Regular','Everyday orders to anywhere in Indonesia.','Pickup in 3–5 hours',40,26],
-    ['boxes','Cargo','Heavy and bulky items at a lower rate per kg.','',20,14]
+    ['bolt','Instant','Within the city, delivered in hours by motorbike.','Pickup right after the AWB'],
+    ['clock','Same day','Delivered the same day within the city.','Pickup today if fulfilled by 14:00'],
+    ['calendar','Next day','Delivered the next day to nearby cities.',''],
+    ['truck','Regular','Everyday orders to anywhere in Indonesia.','Pickup in 3–5 hours'],
+    ['boxes','Cargo','Heavy and bulky items at a lower rate per kg.','']
   ];
-  document.getElementById('sv5').innerHTML=S.map(s=>`<div class="sv"><span class="sv-ic">${ic(s[0],18)}</span><h3>${s[1]}</h3><p>${s[2]}</p>${s[3]?`<span class="sv-pk">${s[3]}</span>`:''}<div class="sv-meter"><div><span>Speed</span><i style="--v:${s[4]}%"></i></div><div><span>Cost</span><i style="--v:${s[5]}%"></i></div></div></div>`).join('');
+  document.getElementById('sv5').innerHTML=S.map(s=>`<div class="sv"><span class="sv-ic">${ic(s[0],18)}</span><h3>${s[1]}</h3><p>${s[2]}</p>${s[3]?`<span class="sv-pk">${s[3]}</span>`:''}</div>`).join('');
 })();
 
 /* ===== Single or bulk ===== */
@@ -1997,7 +2166,7 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
       pts:['One warehouse to one or many addresses','Choose the service and a pickup time','Paid from your FLIK balance before it is created']},
     bulk:{wh:[['Gudang Jakarta Barat',40],['Gudang Surabaya',150],['Gudang Medan',260]],links:[[0,0],[0,4],[1,1],[1,3],[1,5],[2,2]],
       bar:`<span class="pk-ic">${ic('truck',15)}</span><span class="grow"><b>248 orders from 3 warehouses</b><small>orders.csv · Rp 3.214.500 from balance</small></span><span class="btn btn-primary">Create 248 shipments</span>`,
-      pts:['Many warehouses to many destinations at once','Upload a file, or pull orders from your store','Top up your balance if it runs low, then ship']}
+      pts:['Many warehouses to many destinations at once','Upload a file, or pull orders from your store','COD money in, next shipments paid']}
   };
   const dy=i=>8+i*58;
   function draw(k){
@@ -2044,14 +2213,14 @@ function cImg(k){const f={'JNE':'jne','J&T':'jnt','SCP':'sicepat','AA':'anteraja
   const list=document.getElementById('cod-list'),bal=document.getElementById('cod-bal');
   const EV=[
     ['cash','COD collected · ARN-1042','Delivered in Bandung',351230],
-    ['coins','COD fee 3% · ARN-1042','Deducted when credited',-10537],
+    ['coins','COD fee · ARN-1042','Deducted when credited',-10537],
     ['coins','PPN on fee (example, 11%) · ARN-1042','On the COD fee',-1159],
     ['truck','Shipping · ARN-1051','JNE Reguler to Medan',-24000],
     ['cash','COD collected · ARN-1043','Delivered in Surabaya',489000],
-    ['coins','COD fee 3% · ARN-1043','Deducted when credited',-14670],
+    ['coins','COD fee · ARN-1043','Deducted when credited',-14670],
     ['coins','PPN on fee (example, 11%) · ARN-1043','On the COD fee',-1614],
     ['cash','COD collected · ARN-1044','Delivered in Denpasar',275500],
-    ['coins','COD fee 3% · ARN-1044','Deducted when credited',-8265],
+    ['coins','COD fee · ARN-1044','Deducted when credited',-8265],
     ['coins','PPN on fee (example, 11%) · ARN-1044','On the COD fee',-909]
   ];
   let total=18240500,k=0;
@@ -2059,6 +2228,12 @@ function cImg(k){const f={'JNE':'jne','J&T':'jnt','SCP':'sicepat','AA':'anteraja
   list.innerHTML=EV.slice(0,4).map(row).join('');k=4;
   const visible=onScreen(list);
   if(!REDUCE)setInterval(()=>{if(!visible()||motionPaused())return;const e=EV[k++%EV.length];list.insertAdjacentHTML('afterbegin',row(e));while(list.children.length>4)list.lastElementChild.remove();total+=e[3];bal.textContent=rp(total)},2600);
+})();
+
+/* ===== Monitoring: Live and Needs action tabs (example data) ===== */
+(function(){
+  const T=[...document.querySelectorAll('[data-mn]')];
+  T.forEach(b=>b.onclick=()=>T.forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on}));
 })();
 
 /* ===== Track a package (demo) ===== */
@@ -2083,8 +2258,9 @@ const FAQ=[
   ['What is FLIK Shipping?','A shipping service that helps businesses ship for less through one dashboard, with access to many couriers across Indonesia.'],
   ['How does it work?','Enter the delivery addresses, one by one or in bulk, and FLIK shows every available rate. Choose the service (regular, same day, next day, instant or cargo) and a pickup time.'],
   ['How much does it cost?','Joining is free and there is no registration fee. You pay for each shipment from your FLIK balance before it is created.'],
-  ['When is the COD fee charged?','The COD fee is 3% (excl. PPN), paid by the merchant. It is deducted when the COD amount is credited to your balance after delivery. Shipping is paid from your balance when you create the shipment.'],
+  ['When is the COD fee charged?','The COD fee is paid by the merchant. It is deducted when the COD amount is credited to your balance after delivery. Shipping is paid from your balance when you create the shipment.'],
   ['How do I receive COD funds?','They are credited to your FLIK balance automatically once the delivery is complete.'],
+  ['Can I ship abroad?','Yes. Cross-border shipping is available. Talk to the FLIK team about destinations and rates.'],
   ['Can I cancel a shipment?','Yes, until the courier picks up the package.'],
   ['What happens if a delivery fails?','The courier tries again the next day, up to two attempts. If it still fails, the package is returned to you. Courier-direct services don\'t retry: undelivered packages are returned right away.'],
   ['How long does pickup take?','Regular: 3–5 hours after the AWB is ready. Same day: orders fulfilled before 14:00 WIB are picked up the same day, later ones the next day. Instant: a driver comes right away.'],
