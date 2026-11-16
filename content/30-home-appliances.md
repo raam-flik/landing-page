@@ -58,7 +58,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Card:** D2C brands — Sell more on your own website, with checkout, shipping and funding in one place.
 - **Card:** COD sellers — Ship cash on delivery and get the money as soon as the parcel is delivered.
 - **Card:** Scaling brands — Payments, shipping and funding that keep up as you grow.
-- **Card:** Fashion — Sell every drop online, in chat and in store.
+- **Card:** Fashion — Sell every launch online, in chat and in store.
 
 ## 6. Questions, answered.
 

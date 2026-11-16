@@ -23,6 +23,7 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - **Single** shipments (1 warehouse to 1 or many destinations) and **bulk** shipments (many warehouses to many destinations).
 - Services: regular, same day, next day, instant and cargo. COD and non-COD.
 - **Cross-border shipping** is available (AG, 13 Nov 2026).
+- **13 couriers and 38 shipping options** (AG, 16 Nov 2026).
 - The merchant pays from the FLIK balance before the shipment is created, and tops up first if the balance is too low.
 - **Free to register.** Shopify and WooCommerce stores connect directly.
 - **Tracking alerts:** automatic triggers notify the merchant's operations team when a delivery hits a problem (AG, 13 Nov 2026).

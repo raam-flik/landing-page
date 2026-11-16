@@ -112,7 +112,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Card:** COD sellers — Ship cash on delivery and get the money as soon as the parcel is delivered.
 - **Card:** Scaling brands — Payments, shipping and funding that keep up as you grow.
-- **Card:** Fashion — Sell every drop online, in chat and in store.
+- **Card:** Fashion — Sell every launch online, in chat and in store.
 - **Card:** Home appliances — Big-ticket sales, from the showroom to the doorstep.
 
 ## 10. Questions, answered.

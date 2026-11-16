@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pricing: Payment Fees, PPN and Settlement | FLIK</title>
-<meta name="description" content="FLIK pricing: the fee for every payment method, PPN on each fee, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.">
+<title>Pricing: Payment, Shipping and Funding Fees | FLIK</title>
+<meta name="description" content="FLIK pricing: the fee for every payment method, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.">
 <link rel="canonical" href="https://flik.co.id/pricing">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/pricing">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/pricing">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"FLIK Pricing","url":"https://flik.co.id/pricing","description":"Payment fees per method with PPN, settlement periods, and Checkout, COD and FLIK Connect fees."}
+{"@context":"https://schema.org","@type":"WebPage","name":"FLIK Pricing","url":"https://flik.co.id/pricing","description":"Payment fees per method, and the Checkout, COD and FLIK Connect fees."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1180,7 +1180,7 @@ html{scroll-padding-top:88px}
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
-/* ===== Pricing page: product tabs, rate table (cards on phones), other fees, PPN note ===== */
+/* ===== Pricing page: product tabs, rate table (cards on phones), other fees ===== */
 :root{--surface:#FFFFFF;--radius-control:6px}
 .fl-plogo{width:24px;height:24px;border-radius:var(--radius-control);object-fit:contain;flex:none;display:inline-block;vertical-align:middle}
 .fl-plogo--icon{display:inline-flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--primary)}
@@ -1204,7 +1204,6 @@ html{scroll-padding-top:88px}
 .rt .m .fl-plogos{margin-top:8px}
 .rt .m small.rt-note{display:block;width:fit-content;margin-top:8px;padding:3px 8px;border-radius:6px;background:var(--primary-soft);color:var(--primary);font-size:12.5px}
 .rt .num{font-variant-numeric:tabular-nums}
-.rt .tot{font-weight:500;color:var(--ink)}
 .rate-ph{font-family:var(--mono);font-size:13.5px;color:var(--muted);background:var(--bg-alt);border:1px dashed var(--line);border-radius:var(--radius-control);padding:2px 6px;white-space:nowrap}
 .rt-wrap{margin-top:48px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--sh);padding:4px 8px}
 .of{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
@@ -1214,17 +1213,9 @@ html{scroll-padding-top:88px}
 .of .big small{font-size:16px;letter-spacing:0;color:var(--muted);font-weight:400}
 .of p{font-size:14.5px;color:var(--body);line-height:1.55}
 .of .link{margin-top:4px}
-.vat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px;padding:32px;border-radius:var(--r-lg);background:var(--bg-alt)}
-.vat-eq{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:15px}
-.vat-eq>span{display:grid;gap:2px;padding:12px 16px;border-radius:var(--r-card);background:var(--surface);box-shadow:var(--sh);min-width:96px}
-.vat-eq>span small{font-size:12px;color:var(--muted)}
-.vat-eq>span b{font-size:20px;font-weight:400;color:var(--ink)}
-.vat-eq>i{font-style:normal;font-size:20px;color:var(--muted)}
-.vat-eq>span.t{background:var(--primary-soft);box-shadow:none}
-.vat-eq>span.t b{color:var(--primary)}
 .alt .res{background:var(--surface)}
 .cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
-@media (max-width:1080px){.of{grid-template-columns:1fr 1fr}.vat{grid-template-columns:1fr}}
+@media (max-width:1080px){.of{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
   .lh{padding-top:110px}.lh h1{font-size:34px;letter-spacing:-.8px}
   .prh{flex-direction:column;align-items:flex-start}
@@ -1236,7 +1227,6 @@ html{scroll-padding-top:88px}
   .rt td:first-child{display:block;padding-top:12px}
   .rt td[data-l]::before{content:attr(data-l);font-size:13px;color:var(--muted)}
   .of,.cards2{grid-template-columns:1fr}
-  .vat{padding:20px}
 }
 
 
@@ -1336,9 +1326,8 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 /* ===== kit: hero-ribbon (the brand ribbon from the earlier homepage hero: orange → magenta → violet → cyan) ===== */
 .rbn-host{position:relative;overflow:hidden}
 .rbn-host>.wrap{position:relative;z-index:2}
-.rbn{position:absolute;top:0;right:0;width:min(1100px,92%);height:100%;pointer-events:none;z-index:0;overflow:visible}
+.rbn{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .rbn-host.lh h1{max-width:720px}.rbn-host.lh .lead{max-width:560px}
-@media (max-width:760px){.rbn{width:100%;height:min(60%,440px);opacity:.45}}
 /* ===== /kit: hero-ribbon ===== */
 /* ===== kit: scroll-reveal ===== */
 /* Scroll reveal below the hero (AG, 13 Nov 2026; medium level, after squareup.com). Same on every marketing page. Classes are added by JS only, so nothing hides if JS fails.
@@ -1397,11 +1386,11 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Page header with product tabs ===== -->
 <!-- PLACEHOLDER rates (FLI-50): the rate card (MDR per method, settlement periods, Checkout fee) comes from AG / finance. Values in [brackets] are placeholders; don't copy competitor rates. -->
 <section class="lh guides rbn-host">
-  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".6" filter="url(#rbn-b)"/><g class="rbn-lines" fill="none" stroke="url(#rbn-g)" stroke-width="3"></g></svg>
+  <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".35" filter="url(#rbn-b)"/><g class="rbn-lines"></g></svg>
         <div class="wrap">
     <p class="eyebrow">Pricing</p>
-    <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction, and see the PPN on every fee.</span></h1>
-    <p class="lead">Fees exclude PPN. PPN is added on each fee at the prevailing rate, so the fee, the PPN and the total are always shown side by side.</p>
+    <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction.</span></h1>
+    <p class="lead">One fee per payment method, charged per transaction. Volume pricing on request.</p>
     <div class="dsh-tabs pt-tabs" id="pt-tabs" role="tablist" aria-label="Pricing by product">
       <button class="on" data-t="payments" role="tab" aria-selected="true"><span data-ic="card-s"></span>Payments</button>
       <button data-t="shipping" role="tab" aria-selected="false"><span data-ic="truck-s"></span>Shipping</button>
@@ -1413,14 +1402,14 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Payments tab ===== -->
 <section class="pad guides pp" id="payments" data-p="payments">
   <div class="wrap">
-    <div class="prh"><h2 class="sec-h">Payment methods. <span class="soft">The fee for each method, the PPN on that fee, and the total.</span></h2></div>
-    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN on fee</th><th>Total</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><small class="rt-note">0% on payments up to Rp100.000. Above that, 0.7% with PPN included.</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0% / 0.63%</td><td data-l="PPN on fee">0% / 0.07%</td><td data-l="Total" class="tot">0% / 0.7%</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN on fee">From 0.165%</td><td data-l="Total" class="tot">From 1.665%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN on fee">Rp440</td><td data-l="Total" class="tot">Rp4.440</td></tr><tr><td class="m"><b>Credit cards</b><small>Visa and Mastercard</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/visa.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mastercard.png" alt=""></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN on fee">0.308% + Rp220</td><td data-l="Total" class="tot">3.108% + Rp2.220</td></tr><!-- PLACEHOLDER (AG, 12 Nov 2026): debit card and GPN rate to come from AG / finance. --><tr><td class="m"><b>Debit cards and GPN</b><small>Local debit cards on the GPN network</small><span class="fl-plogos"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span></span></td><td data-l="Fee">[rate]</td><td data-l="PPN on fee">[PPN]</td><td data-l="Total" class="tot">[total]</td></tr></tbody></table></div>
+    <div class="prh"><h2 class="sec-h">Payment methods. <span class="soft">One fee for each method.</span></h2></div>
+    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><small class="rt-note">0% on payments up to Rp100.000.</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0.7%</td><td data-l="PPN">Included</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN">11%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN">11%</td></tr><tr><td class="m"><b>Credit and debit cards</b><small>Visa, Mastercard and GPN, paid online</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/visa.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mastercard.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/gpn.png" alt=""></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN">11%</td></tr></tbody></table></div>
   </div>
 </section>
 
 <section class="pad alt guides pp" data-p="payments">
   <div class="wrap">
-    <div class="prh"><h2 class="sec-h">Other fees. <span class="soft">Each fee is charged with PPN on top.</span></h2></div>
+    <div class="prh"><h2 class="sec-h">Other fees. <span class="soft">Charged only when you use them.</span></h2></div>
     <div class="of">
       <div><h3><span class="fx-ic" data-ic="cart"></span>FLIK Checkout</h3><span class="big num">0–2% <small>+ PPN</small></span><p>A success fee on each successful payment, on top of your payment fees, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume.</p><a href="#" class="link" data-page="/checkout">Explore Checkout <span class="chev">›</span></a></div>
       <div><h3><span class="fx-ic" data-ic="truck"></span>Cash on delivery</h3><span class="big num">3% <small>+ PPN</small></span><p>Of the COD amount. It's deducted when the COD amount reaches your balance after delivery, so you never pay it upfront.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
@@ -1430,18 +1419,6 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </section>
 
 <section class="pad guides pp" data-p="payments">
-  <div class="wrap">
-    <div class="prh"><h2 class="sec-h">How PPN works. <span class="soft">PPN applies to FLIK's fees, not to your sales.</span></h2></div>
-    <div class="vat">
-      <div><p class="txt">Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line, on your invoice and in your dashboard. For example, at 11%:</p></div>
-      <div class="vat-eq" aria-label="Example: a Rp500 fee plus Rp55 PPN is Rp555 in total">
-        <span><small>Fee</small><b class="num">Rp500</b></span><i>+</i><span><small>PPN 11%</small><b class="num">Rp55</b></span><i>=</i><span class="t"><small>Total</small><b class="num">Rp555</b></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad alt guides pp" data-p="payments">
   <div class="wrap">
     <div class="prh"><h2 class="sec-h">Need your money sooner? <span class="soft">Money reaches your FLIK balance once the order is completed.</span></h2></div>
     <div class="cards2">
@@ -1757,7 +1734,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 /* ===== FAQ ===== */
 const FAQ=[
-  ['Do the fees include PPN?','No. Every fee on this page excludes PPN. PPN is added to each fee at the prevailing rate and shown as its own line.'],
+  ['Do the fees include PPN?','The QRIS fee includes PPN. Every other fee excludes PPN, which is added at 11%.'],
   ['When are fees charged?','Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery.'],
   ['When does the money reach my balance?','Once the order is completed and FLIK has received the funds. Need it sooner? Use Early Settlement.'],
   ['Can I get paid faster?','Yes. Early Settlement pays out your sales before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN.'],
@@ -1771,20 +1748,40 @@ fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElem
 
 
 
-/* ===== kit: hero-ribbon (thin gradient lines forming a twisting sheet that ends in the hero's bottom-right corner) ===== */
+/* ===== kit: hero-ribbon (a satin sheet with a smooth colour blend, soft folds and a fine silk grain, running diagonally from the hero's top centre to its bottom-right corner; drawn in hero pixels) ===== */
 document.querySelectorAll('svg.rbn').forEach(svg=>{
-  const g=svg.querySelector('.rbn-lines'),fill=svg.querySelector('.rbn-fill');
-  const N=56,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const paths=[];for(let i=0;i<N;i++){const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('opacity',(.35+.65*Math.sin(Math.PI*i/(N-1))).toFixed(2));g.appendChild(p);paths.push(p)}
-  let CX=980,CY=880;
-  function setCorner(){const r=svg.getBoundingClientRect(),m=svg.getScreenCTM();if(!m||!r.width)return;const q=svg.createSVGPoint();q.x=r.right-24;q.y=r.bottom-8;const v=q.matrixTransform(m.inverse());CX=v.x;CY=v.y}
-  setCorner();addEventListener('resize',setCorner);document.fonts&&document.fonts.ready.then(setCorner);
-  const pt=(s,t)=>{const w1=70*Math.sin(t*.45+s*2.2),w2=60*Math.cos(t*.37+s*1.7);return [[360+s*600,-40],[400+(1-s)*440+w1,250+s*90],[1000-s*400+w2,420+(1-s)*140],[CX-s*70,CY]]};
+  const NS='http://www.w3.org/2000/svg',g=svg.querySelector('.rbn-lines'),glow=svg.querySelector('.rbn-fill'),defs=svg.querySelector('defs');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const el=(n,at,par)=>{const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);par.appendChild(e);return e};
+  /* one sheet of cloth. Its colour runs smoothly across the width (orange, pink, violet, soft blue); a slow light-and-shadow wave on top gives the satin folds. Light tints only: no dark purple, blue or red, and highlights but no shadows */
+  const RAMP=[[0,'#FF7A2E'],[.28,'#FF7A62'],[.5,'#FF5CB8'],[.74,'#A884FF'],[1,'#8FB2FF']];
+  const SHEETS=[{a:0,b:1,ph:0,ox:0,oy:0}];
+  const K=150;
+  const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)),mix=(A,B,f)=>A.map((v,k)=>v+(B[k]-v)*f);
+  const shade=u=>{let i=0;while(i<RAMP.length-2&&u>RAMP[i+1][0])i++;const x=(u-RAMP[i][0])/(RAMP[i+1][0]-RAMP[i][0]),f=x*x*(3-2*x);
+    let c=mix(hex(RAMP[i][1]),hex(RAMP[i+1][1]),f);const l=Math.sin(u*Math.PI*4.4+.5);
+    c=mix(c,[255,255,255],l>0?.30*l*l:0);return 'rgb('+c.map(Math.round).join(',')+')'};
+  SHEETS.forEach(sh=>{
+    sh.sh=[];sh.fill=el('path',{fill:'none'},g);
+    sh.th=[];for(let j=0;j<=K;j++)sh.th.push(el('path',{fill:'none',stroke:shade(j/K),'stroke-width':1},g));
+    sh.gr=[];for(let j=2;j<K;j+=4)sh.gr.push(el('path',{fill:'none',stroke:'#fff','stroke-width':.6,opacity:(.03+.07*Math.sin(Math.PI*j/K)).toFixed(2)},g));
+  });
+  let W=1000,H=900;
+  function size(){const r=svg.getBoundingClientRect();if(!r.width||!r.height)return;W=r.width;H=r.height;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    SHEETS.forEach(sh=>{const w=Math.max(3,(sh.b-sh.a)*.62*W/K*2.4);sh.th.forEach(p=>p.setAttribute('stroke-width',w.toFixed(1)))})}
+  size();addEventListener('resize',size);document.fonts&&document.fonts.ready.then(size);
+  const pt=(s,t,sh)=>{const ph=sh.ph,w1=.03*W*Math.sin(t*.4+s*1.6+ph),w2=.03*W*Math.cos(t*.33+s*1.3+ph*.8),e=s*s,r=Math.sqrt(s);/* phones: full colour, so the ribbon keeps to the right edge and stays clear of the text */
+    if(W<760)return [[W*(.60+.24*s),-30],[W*(.80+.10*e)+w1*.5,H*(.26+.08*s)],[W*(1.04-.12*r)+w2*.5,H*(.46+.26*s)],[W*(1.30-.46*s),H+40]];
+    return [[W*(.40+.20*s),-30],[W*(.54+.12*e+sh.ox)+w1,H*(.34+.10*s+sh.oy)],[W*(.92-.20*r-sh.ox)+w2,H*(.50+.28*s-sh.oy)],[W*(1.34-.58*s),H+40]]};
   const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
+  const band=(a,b)=>d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`;
   let vis=true;const paused=()=>typeof motionPaused==='function'&&motionPaused();
   function draw(t){
-    if(vis&&!paused()){t/=1000;paths.forEach((p,i)=>p.setAttribute('d',d(pt(i/(N-1),t))));
-      const a=pt(0,t),b=pt(1,t);fill.setAttribute('d',d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`)}
+    if(vis&&!paused()){t/=1000;
+      SHEETS.forEach(sh=>{const at=u=>pt(sh.a+(sh.b-sh.a)*u,t,sh),A=at(0),B=at(1),o=band(A,B);
+        sh.sh.forEach(p=>p.setAttribute('d',o));sh.fill.setAttribute('d',o);
+        sh.th.forEach((p,j)=>p.setAttribute('d',d(at(j/K))));sh.gr.forEach((p,j)=>p.setAttribute('d',d(at((4*j+2)/K))))});
+      glow.setAttribute('d',band(pt(0,t,SHEETS[0]),pt(1,t,SHEETS[0])))}
     if(!reduce)requestAnimationFrame(draw);
   }
   new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe(svg);
