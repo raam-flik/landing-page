@@ -1599,14 +1599,18 @@ const MENU=[
     {h:'By industry',items:[['Fashion','Apparel and accessories','/industries/fashion'],['Home appliances','Kitchen and home','/industries/home-appliances']]}
   ]},
   {k:'Developers',w:560,cols:[
-    {h:'Build',items:[['Documentation','Guides to get started','Developer docs'],['API reference','Endpoints and objects','API reference'],['Developer resources','SDKs and tools','Developer resources']]},
-    {h:'Integrations',items:[['Shopify','Checkout and Shipping for Shopify','/integrations/shopify'],['WooCommerce','Checkout and Shipping for WooCommerce','/integrations/woocommerce']]}
+    {h:'Build',items:[['Overview','Ways to build with FLIK','/developers'],['Documentation','Guides to your first payment','docs:/'],['API reference','Endpoints, objects and errors','docs:/api/merchant-api'],['Sandbox','Test with sample data, no real money','/developers#sandbox']]},
+    {h:'Integrations',items:[['Shopify','FLIK Checkout for your Shopify store','/integrations/shopify'],['WooCommerce','FLIK Checkout for your WordPress store','/integrations/woocommerce']]}
   ]},
   {k:'Resources',w:560,cols:[
     {h:'Learn',items:[['Customers','Brands that grow with FLIK','/customers'],['Blog','News and guides','/blog'],['Promo','Current offers','/promo'],['Help center','FAQ and support','/help']]},
     {h:'Company',items:[['About','Our story','/about'],['Contact','Get in touch','/contact'],['Book a demo','See FLIK in action','/demo']]}
   ]}
 ];
+/* ===== kit: docs-links (menu items whose target starts "docs:" open the developer docs in a new tab; the docs address lives here only) ===== */
+const DOCS_URL='https://ye2vctp5ki.ap-southeast-1.awsapprunner.com';
+document.addEventListener('click',e=>{const a=e.target.closest('[data-page^="docs:"]');if(a){e.preventDefault();e.stopImmediatePropagation();open(DOCS_URL+a.dataset.page.slice(5),'_blank','noopener')}},true);
+/* ===== /kit: docs-links ===== */
 const nav=document.getElementById('nav');
 nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false" aria-controls="mega-${i}">${m.k}${ic('down',14,2)}</button>
   <div class="mega" id="mega-${i}" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
@@ -1659,7 +1663,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../';
-const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
+const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','/developers#sandbox':'developers/#sandbox','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'developers/#shopify','/integrations/woocommerce':'developers/#woocommerce',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Developers: Build with the FLIK API | FLIK</title>
-<meta name="description" content="Build payments and shipping into your own systems with FLIK. OAuth API credentials, publishable keys, a separate Sandbox, and plugins for Shopify and WooCommerce.">
+<meta name="description" content="Accept payments on your own site or app with the FLIK Merchant API. OAuth credentials, signed webhooks, a full test mode, and help connecting Shopify and WooCommerce.">
 <link rel="canonical" href="https://flik.co.id/developers">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/developers">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/developers">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"FLIK for developers","url":"https://flik.co.id/developers","description":"Build payments and shipping into your own systems with the FLIK API, or connect a Shopify or WooCommerce store."}
+{"@context":"https://schema.org","@type":"WebPage","name":"FLIK for developers","url":"https://flik.co.id/developers","description":"Accept payments on your own site or app with the FLIK Merchant API, or connect a Shopify or WooCommerce store."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1249,6 +1249,17 @@ html{scroll-padding-top:88px}
 .dv-res>div{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:8px;align-content:start}
 .dv-res h3{font-size:16px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .dv-res p{font-size:14.5px;line-height:1.55}
+.dv-two{grid-template-columns:1fr 1fr}
+.dv-int h3 .pill{margin-left:6px;vertical-align:middle}
+.dv-soon{grid-template-columns:repeat(3,1fr);row-gap:28px}
+.dv-run{display:grid;gap:0}
+.dv-run-row{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:start;padding:10px 0;border-top:1px solid var(--dark-line,#1C4573)}
+.dv-run-row:first-of-type{border-top:0;padding-top:0}
+.dv-run-l{font-size:12.5px;color:var(--on-dark-muted,#AAB4CC);line-height:1.75;padding-top:1px}
+.dv-run .code{min-height:0}
+.dv-panel p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.dv-tbl td a{color:var(--primary);white-space:nowrap}
+.dv-onlink{color:#fff}.dv-onlink:hover{color:var(--on-dark-accent,#7FF3FF)}
 .dv-live{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;counter-reset:dl}
 .dv-live>div{display:grid;gap:8px;align-content:start}
 .dv-live .n{font-size:13px;font-weight:500;color:var(--on-dark-accent,#7FF3FF)}
@@ -1258,13 +1269,14 @@ html{scroll-padding-top:88px}
 .dv-line i{display:block;height:100%;width:0;background:var(--on-dark-accent,#7FF3FF);transition:width 1.2s ease}
 .dv-live.on .dv-line i{width:100%}
 .dv-live>div:nth-child(2) .dv-line i{transition-delay:.5s}.dv-live>div:nth-child(3) .dv-line i{transition-delay:1s}
-@media (max-width:1080px){.dv-hero-in{grid-template-columns:1fr}.dv-ess,.dv-res{grid-template-columns:1fr 1fr}.dv-int{grid-template-columns:1fr 1fr}}
+@media (max-width:1080px){.dv-hero-in{grid-template-columns:1fr}.dv-ess,.dv-res{grid-template-columns:1fr 1fr}.dv-int{grid-template-columns:1fr 1fr}.dv-soon{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
   .dv-hero{padding:110px 0 48px}
   .dv-hero h1{font-size:38px;letter-spacing:-1px}
   .dv-hero .hero-cta{flex-direction:column;align-items:stretch}
   .dv-hero .hero-cta .btn{height:46px}
   .dv-cols,.dv-ess,.dv-res,.dv-int,.dv-live{grid-template-columns:1fr}
+  .dv-run-row{grid-template-columns:1fr;gap:2px}
   .dv-try{grid-template-columns:1fr}
   .dv-key{grid-template-columns:1fr auto;gap:6px 12px}.dv-key>span:first-child{grid-column:1/-1}
 }
@@ -1413,45 +1425,39 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 
 <main id="top" tabindex="-1">
 
-<!-- ===== Hero: text left, an example Developers settings card right ===== -->
+<!-- ===== Hero: text left, an example test payment (request, response, event, webhook) right ===== -->
 <section class="dv-hero guides">
   <div class="wrap dv-hero-in">
     <div>
       <p class="eyebrow" style="margin-bottom:14px">Developers</p>
-      <h1>Build with FLIK. <span class="soft">Payments and shipping, from your own systems.</span></h1>
-      <p class="lead">Connect your store with a plugin, or build on the FLIK API with OAuth credentials. Build and test in Sandbox, then go live once FLIK has verified your business.</p>
+      <h1>See it work before you write a line. <span class="soft">Payments in your own site or app, by API.</span></h1>
+      <p class="lead">Create a checkout session, watch the event arrive, then build your own.</p>
       <div class="hero-cta">
-        <button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button>
-        <a href="#how" class="btn btn-secondary">See how it works <span class="chev">›</span></a>
+        <button class="btn btn-primary live" data-act="start">Get test keys <span class="chev">›</span></button>
+        <a href="#" class="btn btn-secondary" data-doc="/" target="_blank" rel="noopener">Read the docs <span class="chev">›</span></a>
       </div>
     </div>
-    <div class="dv-keys" aria-label="Example: API keys in the FLIK dashboard">
-      <div class="dv-keys-h"><div><b>Settings · Developers</b><small>Example</small></div>
-        <div class="dv-seg" role="group" aria-label="Mode"><button type="button" data-mode="sandbox" aria-pressed="true">Sandbox</button><button type="button" data-mode="live" aria-pressed="false">Live</button></div></div>
-      <div class="dv-key"><span>Client ID</span><code id="dv-cid">••••••••••••7Q2F</code><span class="pill gr" id="dv-m1">Sandbox</span></div>
-      <div class="dv-key"><span>Client secret</span><code>Shown once</code><span class="pill gr">Hidden</span></div>
-      <div class="dv-key"><span>Publishable key</span><code id="dv-pk">••••••••••••91KD</code><span class="pill pu">Browser-safe</span></div>
-      <div class="dv-key"><span>Scopes</span><div class="dv-scopes"><span class="pill pu">Payments · read</span><span class="pill pu">Payments · write</span></div><span></span></div>
-      <p class="dv-note" id="dv-note">Sandbox keys work only in Sandbox. Nothing carries over to Live.</p>
+    <div class="dv-panel dv-run" aria-label="Example: a test payment with the Merchant API">
+      <div class="dv-panel-h"><b>A test payment, end to end</b><span>Example · test mode</span></div>
+      <div class="dv-run-row"><span class="dv-run-l">Request</span><div class="code"><span class="k">POST</span> /v1/checkout/sessions</div></div>
+      <div class="dv-run-row"><span class="dv-run-l">Response</span><div class="code">{ <span class="k">"id"</span>: <span class="s">"cs_t-…"</span>, <span class="k">"livemode"</span>: false,
+  <span class="k">"url"</span>: <span class="s">"https://…"</span> }</div></div>
+      <div class="dv-run-row"><span class="dv-run-l">Event</span><div class="code"><span class="s">checkout.session.completed</span></div></div>
+      <div class="dv-run-row"><span class="dv-run-l">Webhook</span><div class="code">Your endpoint answered <span class="s">200</span></div></div>
+      <p>Shortened from the <a href="#" class="" data-doc="/guides/merchant-api/accept-a-payment" target="_blank" rel="noopener">Accept a payment <span class="chev">›</span></a> guide.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== Guides: three columns of links ===== -->
-<section class="pad" id="guides" style="padding-top:24px">
-  <div class="wrap dv-cols">
-    <div><h3><span class="ic" data-ic="bolt"></span>Get started</h3><ul>
-      <li><a href="#resources">Set up your Sandbox</a><small>Separate credentials for testing</small></li>
-      <li><a href="#api">Create API credentials</a><small>Client ID and secret</small></li>
-      <li><a href="#live">Go live</a><small>Verify your business, then switch</small></li></ul></div>
-    <div><h3><span class="ic" data-ic="cart"></span>Accept payments</h3><ul>
-      <li><a href="#shopify">FLIK Checkout on Shopify</a><small>FLIK sets it up for you</small></li>
-      <li><a href="#woocommerce">FLIK Checkout on WooCommerce</a><small>Connect your WordPress store</small></li>
-      <li><a href="#how">Build your own checkout</a><small>A FLIK-hosted page, or your own</small></li></ul></div>
-    <div><h3><span class="ic" data-ic="code"></span>API essentials</h3><ul>
-      <li><a href="#api">Authentication</a><small>OAuth client credentials</small></li>
-      <li><a href="#keys">Keys and scopes</a><small>Which key goes where</small></li>
-      <li><a href="#keys">SNAP for banks and QRIS</a><small>For SNAP-enabled merchants</small></li></ul></div>
+<!-- ===== Two ways to build: checkout session or payment intent ===== -->
+<section class="pad" id="ways" style="padding-top:24px">
+  <div class="wrap">
+    <h2 class="sec-h">Two ways to take a payment. <span class="soft">Same keys, same webhooks, same test mode.</span></h2>
+    <div class="dv-int dv-two">
+      <div><h3>Checkout session <span class="pill pu">Recommended</span></h3><p>You send the cart. FLIK hosts the payment page, and your shopper can try again there if a payment expires.</p><ol><li>The least code</li><li>No payment page to maintain</li><li>Your shopper picks how to pay</li></ol><a href="#" class="link" data-doc="/guides/merchant-api/accept-a-payment" target="_blank" rel="noopener">Accept a payment <span class="chev">›</span></a></div>
+      <div><h3>Payment intent</h3><p>You build the payment step into your own page or app, and show the payment details yourself.</p><ol><li>Your page, your design</li><li>You pick the payment method</li><li>You decide what happens when a payment expires</li></ol><a href="#" class="link" data-doc="/guides/merchant-api/quickstart-accept-payment" target="_blank" rel="noopener">Accept a payment on your own page <span class="chev">›</span></a></div>
+    </div>
+    <p class="txt" style="margin-top:20px">Start with one and add the other later. <a href="#" class="link" data-doc="/guides/merchant-api/choose-integration" target="_blank" rel="noopener">Compare the two <span class="chev">›</span></a></p>
   </div>
 </section>
 
@@ -1461,65 +1467,84 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <h2 class="sec-h">How an API integration works. <span class="soft">Your server holds the secret. FLIK hosts the payment page.</span></h2>
     <div class="dv-try">
       <div class="dv-steps" role="tablist" aria-label="Integration steps" id="dv-steps"></div>
-      <div class="dv-panel" role="tabpanel" aria-labelledby="dv-tab-0" id="dv-panel"><div class="dv-panel-h"><b id="dv-ph">Get an access token</b><span id="dv-pw">Your server</span></div><div class="code" id="dv-code"></div><p>Shortened from the <a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/guides/merchant-api/accept-a-payment" target="_blank" rel="noopener">Accept a payment</a> guide. Every request goes to api.flik.co.id, with test keys and with live keys.</p></div>
+      <div class="dv-panel" role="tabpanel" aria-labelledby="dv-tab-0" id="dv-panel"><div class="dv-panel-h"><b id="dv-ph">Get an access token</b><span id="dv-pw">Your server</span></div><div class="code" id="dv-code"></div><p>Every request goes to api.flik.co.id, with test keys and with live keys. <a href="#" id="dv-pg" target="_blank" rel="noopener"></a></p></div>
     </div>
   </div>
 </section>
 
+<!-- ===== Test mode: test keys and simulated payments (menu: Sandbox) ===== -->
+<section class="pad guides" id="sandbox">
+  <div class="wrap">
+    <h2 class="sec-h">Break things safely. <span class="soft">Test keys, simulated payments, no real money.</span></h2>
+    <div class="dv-res">
+      <div><h3>Test keys that work straight away</h3><p>Create them yourself in the FLIK dashboard. A test key never touches a live payment, and a live key never touches a test one.</p></div>
+      <div><h3>Every outcome, on demand</h3><p>Pay, expire or fail a test payment with one call. Fixed test amounts give you a decline.</p></div>
+      <div><h3>The same events as live</h3><p>Test payments send the same signed events, to your test webhook endpoints only.</p></div>
+      <div><h3>Nothing reaches a bank</h3><p>A simulator answers every test payment. No payment provider is called.</p></div>
+    </div>
+    <p class="txt" style="margin-top:24px"><a href="#" class="link" data-doc="/guides/merchant-api/sandbox" target="_blank" rel="noopener">Read the test mode guide <span class="chev">›</span></a></p>
+  </div>
+</section>
+
 <!-- ===== API essentials: concept cards + key table ===== -->
-<section class="pad guides" id="api">
+<section class="pad alt guides" id="api">
   <div class="wrap">
     <h2 class="sec-h">The essentials. <span class="soft">What every integration needs to know.</span></h2>
     <div class="dv-ess">
-      <div><h3><span class="ic" data-ic="code"></span>Authentication</h3><p>OAuth 2.0 client credentials. Your server exchanges its client ID and secret for an access token that lasts one hour.</p></div>
-      <div><h3><span class="ic" data-ic="boxes"></span>Sandbox and Live</h3><p>Two separate modes, each with its own credentials and keys. Nothing carries over from Sandbox to Live.</p></div>
-      <div><h3><span class="ic" data-ic="bolt"></span>Rolling a secret</h3><p>When you roll a secret, the old one keeps working for 24 hours so you can switch without downtime. A secret is shown once and stored only as a hash.</p></div>
-      <div><h3><span class="ic" data-ic="chart"></span>Errors and limits</h3><p>Every error has a stable code, a page that explains it and a request ID to share with FLIK support. Up to 100 requests a minute per API key.</p></div>
+      <div><h3><span class="ic" data-ic="code"></span>Authentication</h3><p>OAuth 2.0 client credentials. Your server exchanges its client ID and secret for a one-hour access token. Roll a secret and the old one keeps working for 24 hours.</p><a href="#" class="link" data-doc="/guides/merchant-api/concepts/authentication-and-keys" target="_blank" rel="noopener">Authentication and keys <span class="chev">›</span></a></div>
+      <div><h3><span class="ic" data-ic="boxes"></span>Test and live</h3><p>Two separate modes, each with its own keys, webhook endpoints and events. Nothing carries over from test to live.</p><a href="#" class="link" data-doc="/guides/merchant-api/concepts/test-vs-live" target="_blank" rel="noopener">Test mode and live mode <span class="chev">›</span></a></div>
+      <div><h3><span class="ic" data-ic="chart"></span>Errors and limits</h3><p>Every error has a stable code, a page that explains it and a request ID to share with FLIK support. Up to 100 requests a minute per API key.</p><a href="#" class="link" data-doc="/errors" target="_blank" rel="noopener">Error index <span class="chev">›</span></a></div>
+      <div><h3><span class="ic" data-ic="bolt"></span>Made for AI coding tools</h3><p>Every docs page is also plain Markdown, with rules that keep generated code correct.</p><a href="#" class="link" data-doc="/llms.txt" target="_blank" rel="noopener">Docs for AI tools <span class="chev">›</span></a></div>
     </div>
     <div class="dv-tblwrap" id="keys"><table class="dv-tbl">
       <thead><tr><th scope="col">Key</th><th scope="col">Where it lives</th><th scope="col">What it can do</th></tr></thead>
       <tbody>
         <tr><td>API key</td><td>Your server</td><td>Client ID and secret for a one-hour access token. Scopes limit what it can do, such as <code>checkout_sessions:write</code> and <code>payment_intents:read</code>.</td></tr>
         <tr><td>Publishable key</td><td>Your website or app</td><td>Not a secret. It only reads a checkout session from the browser, with that session's client secret.</td></tr>
-        <tr><td>Payout key</td><td>Your payout server</td><td>Only creates payouts to your registered bank account and reads your balance, so your checkout key can't move money out. A live payout key needs a one-time code and an IP allowlist.</td></tr>
-        <tr><td>SNAP partner</td><td>Your bank integration</td><td>BI SNAP format (ASPI SNAP v1.0.2): requests signed with your private key and checked against your RSA public key (2048 bits or more). Covers virtual accounts, QRIS, balance inquiry and transfer to your bank account.</td></tr>
+        <tr><td>Payout key</td><td>Your payout server</td><td>Only creates payouts to your registered bank account and reads your balance, so your checkout key can't move money out. A live payout key needs a one-time code and an IP allowlist. <a href="#" class="" data-doc="/guides/merchant-api/payouts" target="_blank" rel="noopener">Payouts <span class="chev">›</span></a></td></tr>
+        <tr><td>SNAP partner</td><td>Your bank integration</td><td>BI SNAP format (ASPI SNAP v1.0.2): requests signed with your private key and checked against your RSA public key (2048 bits or more). Covers virtual accounts, QRIS, balance inquiry and transfer to your bank account. <a href="#" class="" data-doc="/guides/snap" target="_blank" rel="noopener">BI SNAP <span class="chev">›</span></a></td></tr>
       </tbody></table></div>
+    <p class="txt" style="margin-top:24px"><a href="#" class="link" data-doc="/api/merchant-api" target="_blank" rel="noopener">See the full API reference <span class="chev">›</span></a></p>
   </div>
 </section>
 
-<!-- ===== Integrations: Shopify, WooCommerce, no code ===== -->
-<section class="pad alt guides" id="integrations">
+<!-- ===== Coming soon: more ways to build ===== -->
+<section class="pad guides" id="coming">
   <div class="wrap">
-    <h2 class="sec-h">Or skip the code. <span class="soft">We connect the platforms you already sell on.</span></h2>
-    <div class="dv-int">
-      <div id="shopify"><img class="lgo" src="../assets/logos/platform/shopify.png" alt=""><h3>Shopify</h3><p>We connect your Shopify store to FLIK Checkout and Shipping for you.</p><ol><li>Create your FLIK account</li><li>Tell us your store</li><li>We set it up and switch on FLIK Checkout</li></ol><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
-      <div id="woocommerce"><img class="lgo" src="../assets/logos/platform/woocommerce.png" alt=""><h3>WooCommerce</h3><p>We connect your WordPress store and switch it to FLIK Checkout.</p><ol><li>Create your FLIK account</li><li>Tell us your store</li><li>We set it up and switch on FLIK Checkout</li></ol><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
-      <div id="nocode"><span class="lgo ic-tile" data-ic="home"></span><h3>No code</h3><p>Send payment links and invoices, and create shipments from the FLIK dashboard. Nothing to install.</p><ol><li>Create your FLIK account</li><li>Verify your business</li><li>Start from the dashboard</li></ol><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
+    <h2 class="sec-h">Coming soon. <span class="soft">More ways to build, on the same API.</span></h2>
+    <div class="dv-res dv-soon">
+      <div><h3>Embedded checkout</h3><p>The FLIK checkout inside your own page.</p></div>
+      <div><h3>Customizable elements</h3><p>Payment components for a checkout in your own design.</p></div>
+      <div><h3>Headless sessions</h3><p>A checkout run entirely through the API, for AI agents and point-of-sale systems.</p></div>
+      <div><h3>SDK</h3><p>Client libraries for the Merchant API.</p></div>
+      <div><h3>More ways to pay</h3><p>E-wallets, cards and cash on delivery.</p></div>
+      <div><h3>Shipping and promotions</h3><p>Delivery options and discount codes on a checkout session.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- ===== Developer resources ===== -->
-<section class="pad guides" id="resources">
-  <div class="wrap">
-    <h2 class="sec-h">Developer resources. <span class="soft">Everything you need to build and test.</span></h2>
-    <div class="dv-res">
-      <div><h3>Sandbox</h3><p>Build and test with Sandbox credentials. Sandbox values never touch real money.</p><a href="#" class="link" data-act="start">Create an account <span class="chev">›</span></a></div>
-      <div><h3>API keys</h3><p>Create, roll and revoke your keys yourself on the API Keys page of the FLIK dashboard. Live keys need a verified account.</p><a href="#" class="link" data-act="signin">Sign in <span class="chev">›</span></a></div>
-      <div><h3>API reference</h3><p>Every endpoint, object and error code, with guides and examples in curl, Node.js, PHP and Go.</p><a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/" class="link" target="_blank" rel="noopener">Read the docs <span class="chev">›</span></a></div>
-      <div><h3>Webhooks</h3><p>Signed events when a payment succeeds, fails or expires. If your server doesn't answer, FLIK retries for up to 72 hours.</p><a href="https://ye2vctp5ki.ap-southeast-1.awsapprunner.com/guides/merchant-api/quickstart-webhooks" class="link" target="_blank" rel="noopener">Receive webhooks <span class="chev">›</span></a></div>
-    </div>
+    <p class="txt" style="margin-top:24px">None of these is available yet, so don't build against them. <a href="#" class="link" data-doc="/guides/coming" target="_blank" rel="noopener">See what's coming <span class="chev">›</span></a></p>
   </div>
 </section>
 
 <!-- ===== Go live: three steps on the dark band ===== -->
 <section class="pad dark guides" id="live">
   <div class="wrap">
-    <h2 class="sec-h" style="color:#fff">From Sandbox to Live. <span class="soft" style="color:var(--on-dark-muted,#AAB4CC)">Three steps, no surprises.</span></h2>
+    <h2 class="sec-h" style="color:#fff">Go live when your tests say so. <span class="soft" style="color:var(--on-dark-muted,#AAB4CC)">Three steps, then one small real payment.</span></h2>
     <div class="dv-live" id="dv-live">
-      <div><span class="n">Step 1</span><div class="dv-line"><i></i></div><h3>Build in Sandbox</h3><p>Use Sandbox credentials to build and test your integration end to end.</p></div>
-      <div><span class="n">Step 2</span><div class="dv-line"><i></i></div><h3>Verify your business</h3><p>Complete business verification in the FLIK dashboard.</p></div>
-      <div><span class="n">Step 3</span><div class="dv-line"><i></i></div><h3>Go live</h3><p>Once your account is activated, create Live keys on the API Keys page, add a Live webhook endpoint and run one small real payment.</p></div>
+      <div><span class="n">Step 1</span><div class="dv-line"><i></i></div><h3>Pass your own tests</h3><p>Run a paid, a failed, an expired and a late payment in test mode, plus a duplicate webhook.</p></div>
+      <div><span class="n">Step 2</span><div class="dv-line"><i></i></div><h3>Verify your business</h3><p>Complete account verification in the FLIK dashboard. Live keys need an activated account.</p></div>
+      <div><span class="n">Step 3</span><div class="dv-line"><i></i></div><h3>Switch your keys</h3><p>Create live keys and a live webhook endpoint, swap them into your configuration and run one small real payment.</p></div>
+    </div>
+    <p style="margin-top:28px"><a href="#" class="link dv-onlink" data-doc="/guides/merchant-api/go-live-checklist" target="_blank" rel="noopener">Open the go-live checklist <span class="chev">›</span></a></p>
+  </div>
+</section>
+
+<!-- ===== Integrations: Shopify, WooCommerce, no code ===== -->
+<section class="pad alt guides" id="integrations">
+  <div class="wrap">
+    <h2 class="sec-h">Not building? <span class="soft">We connect the platforms you already sell on.</span></h2>
+    <div class="dv-int">
+      <div id="shopify"><img class="lgo" src="../assets/logos/platform/shopify.png" alt=""><h3>Shopify</h3><p>We connect your Shopify store to FLIK Checkout and Shipping for you.</p><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
+      <div id="woocommerce"><img class="lgo" src="../assets/logos/platform/woocommerce.png" alt=""><h3>WooCommerce</h3><p>We connect your WordPress store and switch it to FLIK Checkout.</p><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
+      <div id="nocode"><span class="lgo ic-tile" data-ic="home"></span><h3>No code</h3><p>Send payment links and invoices, and create shipments from the FLIK dashboard. Nothing to install.</p><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
     </div>
   </div>
 </section>
@@ -1529,7 +1554,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap faq1">
     <h2 class="sec-h">Questions, answered.</h2>
     <div id="faq"></div>
-    <p class="txt" style="margin-top:20px">Can't find what you need? <a href="#" class="link" data-act="sales">Talk to the FLIK team <span class="chev">›</span></a></p>
+    <p class="txt" style="margin-top:20px">Can't find what you need? <a href="#" class="link" data-act="sales">Talk to the FLIK team <span class="chev">›</span></a> <a href="#" class="link" data-doc="/guides/support" target="_blank" rel="noopener">Integration support <span class="chev">›</span></a></p>
   </div>
 </section>
 
@@ -1537,7 +1562,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad alt guides">
   <div class="wrap" style="text-align:center">
     <h2 class="sec-h" style="margin:0 auto">Start building today.</h2>
-    <p class="lead" style="margin:16px auto 0;max-width:560px">Create your FLIK account and get Sandbox credentials, or talk to the FLIK team about your integration.</p>
+    <p class="lead" style="margin:16px auto 0;max-width:560px">Create your FLIK account and get test keys, or talk to the FLIK team about your integration.</p>
     <div class="hero-cta" style="justify-content:center;margin-top:28px"><button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button><button class="btn btn-secondary" data-act="sales">Talk to the FLIK team <span class="chev">›</span></button></div>
   </div>
 </section>
@@ -1706,14 +1731,18 @@ const MENU=[
     {h:'By industry',items:[['Fashion','Apparel and accessories','/industries/fashion'],['Home appliances','Kitchen and home','/industries/home-appliances']]}
   ]},
   {k:'Developers',w:560,cols:[
-    {h:'Build',items:[['Documentation','Guides to get started','Developer docs'],['API reference','Endpoints and objects','API reference'],['Developer resources','SDKs and tools','Developer resources']]},
-    {h:'Integrations',items:[['Shopify','Checkout and Shipping for Shopify','/integrations/shopify'],['WooCommerce','Checkout and Shipping for WooCommerce','/integrations/woocommerce']]}
+    {h:'Build',items:[['Overview','Ways to build with FLIK','/developers'],['Documentation','Guides to your first payment','docs:/'],['API reference','Endpoints, objects and errors','docs:/api/merchant-api'],['Sandbox','Test with sample data, no real money','/developers#sandbox']]},
+    {h:'Integrations',items:[['Shopify','FLIK Checkout for your Shopify store','/integrations/shopify'],['WooCommerce','FLIK Checkout for your WordPress store','/integrations/woocommerce']]}
   ]},
   {k:'Resources',w:560,cols:[
     {h:'Learn',items:[['Customers','Brands that grow with FLIK','/customers'],['Blog','News and guides','/blog'],['Promo','Current offers','/promo'],['Help center','FAQ and support','/help']]},
     {h:'Company',items:[['About','Our story','/about'],['Contact','Get in touch','/contact'],['Book a demo','See FLIK in action','/demo']]}
   ]}
 ];
+/* ===== kit: docs-links (menu items whose target starts "docs:" open the developer docs in a new tab; the docs address lives here only) ===== */
+const DOCS_URL='https://ye2vctp5ki.ap-southeast-1.awsapprunner.com';
+document.addEventListener('click',e=>{const a=e.target.closest('[data-page^="docs:"]');if(a){e.preventDefault();e.stopImmediatePropagation();open(DOCS_URL+a.dataset.page.slice(5),'_blank','noopener')}},true);
+/* ===== /kit: docs-links ===== */
 const nav=document.getElementById('nav');
 nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false" aria-controls="mega-${i}">${m.k}${ic('down',14,2)}</button>
   <div class="mega" id="mega-${i}" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
@@ -1766,7 +1795,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 
 /* ===== Local routes (pages that exist in this prototype) ===== */
 const ROOT='../';
-const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','Developer resources':'developers/#resources','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
+const ROUTES={'/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Developer docs':'developers/','API reference':'developers/#api','/developers#sandbox':'developers/#sandbox','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'developers/#shopify','/integrations/woocommerce':'developers/#woocommerce',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
@@ -1796,30 +1825,25 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 /* ===== Developers: icons in headings ===== */
 document.querySelectorAll('[data-ic]').forEach(e=>{e.innerHTML=ic(e.dataset.ic,e.classList.contains('lgo')?20:18)});
 
-/* ===== Developers: Sandbox / Live toggle on the example keys card ===== */
-(function(){
-  const seg=document.querySelectorAll('.dv-seg button'),cid=document.getElementById('dv-cid'),pk=document.getElementById('dv-pk'),m1=document.getElementById('dv-m1'),note=document.getElementById('dv-note');
-  const V={sandbox:['••••••••••••7Q2F','••••••••••••91KD','Sandbox','Sandbox keys work only in Sandbox. Nothing carries over to Live.'],
-           live:['••••••••••••K8VA','••••••••••••3MZT','Live','Live keys need a verified FLIK account.']};
-  seg.forEach(b=>b.addEventListener('click',()=>{const v=V[b.dataset.mode];seg.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
-    cid.textContent=v[0];pk.textContent=v[1];m1.textContent=v[2];m1.className='pill '+(b.dataset.mode==='live'?'ok':'gr');note.textContent=v[3]}));
-})();
+/* ===== Developers: docs links (the docs address is DOCS_URL, in the docs-links kit above) ===== */
+const DOCS=DOCS_URL;
+document.querySelectorAll('[data-doc]').forEach(a=>{a.href=DOCS+a.dataset.doc});
 
 /* ===== Developers: integration steps drive the code panel (shortened from the Merchant API docs) ===== */
 (function(){
   const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const C=t=>'<span class="c">'+esc(t)+'</span>',K=t=>'<span class="k">'+esc(t)+'</span>',Sx=t=>'<span class="s">'+esc(t)+'</span>';
   const STEPS=[
-    {t:'Get an access token',d:'Exchange your client ID and secret on your server.',w:'Your server',code:[C('# OAuth 2.0 client credentials'),K('POST')+' /v1/oauth/token',K('grant_type')+'='+Sx('client_credentials'),K('client_id')+'='+Sx('fk_test_ci_…'),K('client_secret')+'='+Sx('fk_test_cs_…'),'',C('# Response: a token that lasts one hour'),'{ '+K('"access_token"')+': '+Sx('"…"')+', '+K('"token_type"')+': '+Sx('"Bearer"')+', '+K('"expires_in"')+': 3600 }']},
-    {t:'Create a checkout session',d:'Your server sends the cart to FLIK.',w:'Your server',code:[K('POST')+' /v1/checkout/sessions',K('Authorization')+': Bearer '+Sx('<access_token>'),K('Idempotency-Key')+': '+Sx('session-ORDER-0001'),'','{ '+K('"line_items"')+': [{ '+K('"name"')+': '+Sx('"Example product"')+', '+K('"quantity"')+': 2,',' '+K('"unit_amount"')+': { '+K('"value"')+': '+Sx('"75000.00"')+', '+K('"currency"')+': '+Sx('"IDR"')+' } }],','  '+K('"success_url"')+': '+Sx('"https://example.com/success"')+' }']},
-    {t:'Send the shopper to pay',d:'FLIK hosts the page. The shopper pays by virtual account or QRIS.',w:'Your website',code:[C('# The session has a url for FLIK\'s payment page.'),C('# Redirect the shopper there.'),'',K('303')+' See Other',K('Location')+': '+Sx('session.url'),'',C('# Building your own page instead? Create a'),C('# payment intent and show the VA number or QR code.')]},
-    {t:'Fulfil from the webhook',d:'FLIK sends a signed event when the payment succeeds.',w:'Your server',code:[C('# Verify Flik-Signature on the raw body first.'),K('event.type')+' = '+Sx('"checkout.session.completed"'),'',C('# Fulfil each order once, keyed on the session ID.'),C('# Never mark an order paid from the success_url'),C('# redirect alone.')]},
+    {g:['Get API keys and a token','/guides/merchant-api/quickstart-token'],t:'Get an access token',d:'Exchange your client ID and secret on your server.',w:'Your server',code:[C('# OAuth 2.0 client credentials'),K('POST')+' /v1/oauth/token',K('grant_type')+'='+Sx('client_credentials'),K('client_id')+'='+Sx('fk_test_ci_…'),K('client_secret')+'='+Sx('fk_test_cs_…'),'',C('# Response: a token that lasts one hour'),'{ '+K('"access_token"')+': '+Sx('"…"')+', '+K('"token_type"')+': '+Sx('"Bearer"')+', '+K('"expires_in"')+': 3600 }']},
+    {g:['Checkout sessions','/guides/merchant-api/checkout-sessions'],t:'Create a checkout session',d:'Your server sends the cart to FLIK.',w:'Your server',code:[K('POST')+' /v1/checkout/sessions',K('Authorization')+': Bearer '+Sx('<access_token>'),K('Idempotency-Key')+': '+Sx('session-ORDER-0001'),'','{ '+K('"line_items"')+': [{ '+K('"name"')+': '+Sx('"Example product"')+', '+K('"quantity"')+': 2,',' '+K('"unit_amount"')+': { '+K('"value"')+': '+Sx('"75000.00"')+', '+K('"currency"')+': '+Sx('"IDR"')+' } }],','  '+K('"success_url"')+': '+Sx('"https://example.com/success"')+' }']},
+    {g:['Accept a payment','/guides/merchant-api/accept-a-payment'],t:'Send the shopper to pay',d:'FLIK hosts the page. Your shopper picks how to pay.',w:'Your website',code:[C('# The session has a url for FLIK\'s payment page.'),C('# Redirect the shopper there.'),'',K('303')+' See Other',K('Location')+': '+Sx('session.url'),'',C('# Building your own page instead? Create a'),C('# payment intent and show the VA number or QR code.')]},
+    {g:['Receive and verify webhooks','/guides/merchant-api/quickstart-webhooks'],t:'Fulfil from the webhook',d:'FLIK sends a signed event when the payment succeeds.',w:'Your server',code:[C('# Verify Flik-Signature on the raw body first.'),K('event.type')+' = '+Sx('"checkout.session.completed"'),'',C('# Fulfil each order once, keyed on the session ID.'),C('# Never mark an order paid from the success_url'),C('# redirect alone.')]},
   ];
-  const list=document.getElementById('dv-steps'),code=document.getElementById('dv-code'),ph=document.getElementById('dv-ph'),pw=document.getElementById('dv-pw'),panel=document.getElementById('dv-panel');
+  const list=document.getElementById('dv-steps'),code=document.getElementById('dv-code'),ph=document.getElementById('dv-ph'),pw=document.getElementById('dv-pw'),panel=document.getElementById('dv-panel'),pg=document.getElementById('dv-pg');
   list.innerHTML=STEPS.map((s,i)=>`<button type="button" role="tab" id="dv-tab-${i}" aria-controls="dv-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}"><span class="n">${i+1}</span><span><b>${s.t}</b><small>${s.d}</small></span></button>`).join('');
   const tabs=[...list.children];let cur=0,held=0;
   function show(i,focus){cur=i;tabs.forEach((b,j)=>{b.setAttribute('aria-selected',String(j===i));b.tabIndex=j===i?0:-1});
-    const s=STEPS[i];ph.textContent=s.t;pw.textContent=s.w;code.innerHTML=s.code.join('\n');panel.setAttribute('aria-labelledby','dv-tab-'+i);if(focus)tabs[i].focus()}
+    const s=STEPS[i];ph.textContent=s.t;pw.textContent=s.w;pg.innerHTML=s.g[0]+' guide <span class="chev">›</span>';pg.href=DOCS+s.g[1];code.innerHTML=s.code.join('\n');panel.setAttribute('aria-labelledby','dv-tab-'+i);if(focus)tabs[i].focus()}
   tabs.forEach((b,i)=>b.addEventListener('click',()=>{held=Date.now()+15000;show(i)}));
   list.addEventListener('keydown',e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(!k)return;e.preventDefault();held=Date.now()+15000;show((cur+k+tabs.length)%tabs.length,true)});
   show(0);
@@ -1831,15 +1855,16 @@ document.querySelectorAll('[data-ic]').forEach(e=>{e.innerHTML=ic(e.dataset.ic,e
 
 /* ===== FAQ ===== */
 const FAQ=[
-  ['Do I need to write code?','No. Use the Shopify or WooCommerce plugin, or work from the FLIK dashboard. The API is for teams that want to build their own flow.'],
-  ['Is there a test environment?','Yes. Sandbox has its own credentials and keys, and nothing carries over to Live. Build and test there first.'],
+  ['Do I need to write code?','No. We connect your Shopify or WooCommerce store for you, or you can work from the FLIK dashboard. The API is for teams that want to build their own flow.'],
+  ['Is there a test environment?','Yes. Test mode has its own keys, and test keys work straight away. A simulator answers every test payment, so no real money moves.'],
   ['How long does an access token last?','One hour. Your server requests a new one with its client ID and secret when it expires.'],
   ['What happens when I roll a secret?','You get a new secret, shown once. The old one keeps working for 24 hours, so you can update your server without downtime.'],
   ['Can I put a key in my website code?','Only a publishable key. It only reads a checkout session from the browser. Keep your client secret on your server.'],
   ['Which payment methods does the API take?','Virtual accounts at BCA, Mandiri, BNI, BRI and Permata, and QRIS. BCA and QRIS are on for every account; the other banks are switched on per account. E-wallets, cards and COD are coming to the API.'],
   ['Do you support webhooks?','Yes. FLIK sends signed events to your webhook endpoint when a payment succeeds, fails or expires, and retries for up to 72 hours if your server doesn\'t answer. You can also resend an event.'],
   ['What is SNAP?','Bank Indonesia\'s open API standard for payments. FLIK takes virtual account and QRIS payments in the SNAP format too, on the same payment engine. You set up your SNAP partner record on the BI SNAP page of the dashboard.'],
-  ['How do I go live?','Verify your business in the FLIK dashboard. Once your account is activated, create Live keys on the API Keys page, add a Live webhook endpoint and run one small real payment.'],
+  ['How do I go live?','Verify your business in the FLIK dashboard. Once your account is activated, create live keys on the API Keys page, add a live webhook endpoint and run one small real payment.'],
+  ['Is there an SDK?','Not yet. An SDK is coming. Today the docs give examples in curl, Node.js, PHP and Go.'],
 ];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');

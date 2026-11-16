@@ -176,7 +176,7 @@ Modelled on stripe.com: a short top menu, a Products menu split into product col
 - **Solutions** means by use case and by industry. Integrations belong under Developers.
 - **Not in the sitemap:** a customers / case studies page, a shopper page, Smart QRIS, Order Form.
 - **Customers** (`/customers`, 12 Nov 2026): under Resources › Learn. Customers page (hero collage, logo wall, tabs by product, all customers) and one story template at `/customers/story/?c=<slug>`. 16 brands from Raam's list per product; no quotes or numbers until brands supply them. See `content/20-customers.md`.
-- **Developers** (`/developers`, 12 Nov 2026): one page for the whole Developers menu (Documentation, API reference `#api`, Developer resources `#resources`, Shopify `#shopify`, WooCommerce `#woocommerce`). Concepts only, from engineering's Settings › Developers guide; no endpoints until there is a public API reference. See `content/19-developers.md`.
+- **Developers** (`/developers`, 12 Nov 2026; menu revised 16 Nov 2026): Overview opens the page. Documentation and API reference open the developer docs site, which now has a public API reference. Sandbox (`#sandbox`), Shopify (`#shopify`) and WooCommerce (`#woocommerce`) are sections on the page. "Developer resources" left the menu; the SDK is coming and joins the menu when it ships. See `content/19-developers.md` and `content/00-menu-and-footer.md`.
 - **Pricing** (`/pricing`, FLI-50, 2026-10-22): tabs for Payments (rate table with fee, PPN, total and settlement per method; Checkout, COD and FLIK Connect fees; PPN note), Shipping and Funding. Rates are placeholders until AG / finance supply the rate card; see `content/18-pricing.md`.
 
 ### Top bar
@@ -245,9 +245,10 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 │       └── /industries/home-appliances
 │
 ├── DEVELOPERS
-│   ├── Documentation                     (existing docs, URL to confirm)
-│   ├── API reference
-│   ├── Developer resources
+│   ├── Overview                          /developers
+│   ├── Documentation                     (docs site home, final URL to confirm)
+│   ├── API reference                     (docs site, /api/merchant-api)
+│   ├── Sandbox                           /developers#sandbox
 │   └── INTEGRATIONS
 │       ├── /integrations/shopify
 │       └── /integrations/woocommerce
