@@ -1328,7 +1328,6 @@ html.anim-paused *,html.anim-paused *::before,html.anim-paused *::after{animatio
 .rbn-host>.wrap{position:relative;z-index:2}
 .rbn{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .rbn-host.lh h1{max-width:720px}.rbn-host.lh .lead{max-width:560px}
-@media (max-width:760px){.rbn{opacity:.4}}
 /* ===== /kit: hero-ribbon ===== */
 /* ===== kit: scroll-reveal ===== */
 /* Scroll reveal below the hero (AG, 13 Nov 2026; medium level, after squareup.com). Same on every marketing page. Classes are added by JS only, so nothing hides if JS fails.
@@ -1771,7 +1770,9 @@ document.querySelectorAll('svg.rbn').forEach(svg=>{
   function size(){const r=svg.getBoundingClientRect();if(!r.width||!r.height)return;W=r.width;H=r.height;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
     SHEETS.forEach(sh=>{const w=Math.max(3,(sh.b-sh.a)*.62*W/K*2.4);sh.th.forEach(p=>p.setAttribute('stroke-width',w.toFixed(1)))})}
   size();addEventListener('resize',size);document.fonts&&document.fonts.ready.then(size);
-  const pt=(s,t,sh)=>{const ph=sh.ph,w1=.03*W*Math.sin(t*.4+s*1.6+ph),w2=.03*W*Math.cos(t*.33+s*1.3+ph*.8),e=s*s,r=Math.sqrt(s);return [[W*(.40+.20*s),-30],[W*(.54+.12*e+sh.ox)+w1,H*(.34+.10*s+sh.oy)],[W*(.92-.20*r-sh.ox)+w2,H*(.50+.28*s-sh.oy)],[W*(1.34-.58*s),H+40]]};
+  const pt=(s,t,sh)=>{const ph=sh.ph,w1=.03*W*Math.sin(t*.4+s*1.6+ph),w2=.03*W*Math.cos(t*.33+s*1.3+ph*.8),e=s*s,r=Math.sqrt(s);/* phones: full colour, so the ribbon keeps to the right edge and stays clear of the text */
+    if(W<760)return [[W*(.60+.24*s),-30],[W*(.80+.10*e)+w1*.5,H*(.26+.08*s)],[W*(1.04-.12*r)+w2*.5,H*(.46+.26*s)],[W*(1.30-.46*s),H+40]];
+    return [[W*(.40+.20*s),-30],[W*(.54+.12*e+sh.ox)+w1,H*(.34+.10*s+sh.oy)],[W*(.92-.20*r-sh.ox)+w2,H*(.50+.28*s-sh.oy)],[W*(1.34-.58*s),H+40]]};
   const d=q=>`M${q[0][0]},${q[0][1]} C${q[1][0]},${q[1][1]} ${q[2][0]},${q[2][1]} ${q[3][0]},${q[3][1]}`;
   const band=(a,b)=>d(a)+` L${b[3][0]},${b[3][1]} C${b[2][0]},${b[2][1]} ${b[1][0]},${b[1][1]} ${b[0][0]},${b[0][1]} Z`;
   let vis=true;const paused=()=>typeof motionPaused==='function'&&motionPaused();
