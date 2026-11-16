@@ -8,13 +8,13 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] **Debit cards and GPN rate (AG, 12 Nov 2026):** AG asked for debit cards and GPN to be priced separately from Visa and Mastercard credit cards. The row shows [rate] until AG or finance gives the fee.
+- [x] **Debit cards and GPN rate (AG, 16 Nov 2026):** online credit and debit cards on Visa, Mastercard and GPN share one rate, 2.8% + Rp2.000 + PPN, in one row. This replaces the 12 Nov ask to price debit and GPN separately.
 - [x] **Rate card (AG, 12 Nov 2026):** QRIS 0.7% including PPN, and 0% on payments of Rp100.000 or less (BI rule from 1 Oct 2026). E-wallets from 1.5% + PPN. VA Rp4.000 + PPN. Cards 2.8% + Rp2.000 + PPN. PPN at 11%. No settlement column.
 - [ ] **Other live methods:** add a row for any other live method (for example PayLater or retail outlets).
 - [x] **FLIK Checkout fee:** 0–2% + PPN stays, positioned as the fee for the whole checkout, not just payment acceptance (AG, 12 Nov 2026). "No fee if the package isn't delivered" was removed: the fee is earned on success and isn't refunded, as on the Checkout page.
 - [x] **COD fee:** 3% + PPN, deducted when the COD amount is credited after delivery, never upfront (AG, 12 Nov 2026).
 - [x] **FLIK Connect (AG, 12 Nov 2026):** 0.5% of the amount split to partners, max Rp10.000 per transaction, + PPN, paid by the main merchant; partners pay nothing. Was 3% of the whole transaction (AG, 21 Oct). Shown as "Coming soon".
-- [ ] **PPN wording (finance):** "Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line." The example uses 11%: Rp500 fee + Rp55 PPN = Rp555 (from the split-payment ledger example).
+- [x] **PPN wording (AG, 16 Nov 2026):** PPN is played down. The table shows only Fee and PPN (11%, or "Included" for QRIS). No PPN in headlines, no "How PPN works" section, no Total column. The FAQ keeps one answer: "The QRIS fee includes PPN. Every other fee excludes PPN, which is added at 11%."
 - [x] **When fees are charged** (FAQ, fixed 12 Nov 2026: the COD fee comes off at delivery, not at booking): "Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery." Confirm.
 - [x] **Shipping and Funding tabs (AG, 12 Nov 2026):** Shipping shows "up to 50% off published courier rates", with no per-courier rate card. Funding shows no rates: the MCA fee is set per offer. Early Settlement is a Payments product, so it is only on the Payments tab.
 
@@ -22,16 +22,16 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** Pricing: Payment Fees, PPN and Settlement | FLIK
-- **Description:** FLIK pricing: the fee for every payment method, PPN on each fee, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.
+- **Page title:** Pricing: Payment, Shipping and Funding Fees | FLIK
+- **Description:** FLIK pricing: the fee for every payment method, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.
 
 ## 1. Page header
 <!-- html: Page header with product tabs -->
 
 - **Small text above headline:** Pricing
 - **Headline (H1):** Simple pricing, no surprises.
-  - **Grey part:** Pay per transaction, and see the PPN on every fee.
-- **Intro text:** Fees exclude PPN. PPN is added on each fee at the prevailing rate, so the fee, the PPN and the total are always shown side by side.
+  - **Grey part:** Pay per transaction.
+- **Intro text:** One fee per payment method, charged per transaction. Volume pricing on request.
 - **Tab:** Payments
 - **Tab:** Shipping
 - **Tab:** Funding
@@ -40,23 +40,18 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Payments tab #payments -->
 
 - **Section heading:** Payment methods.
-  - **Grey part:** The fee for each method, the PPN on that fee, and the total.
-- **Columns:** Method — Fee — PPN on fee — Total
-- **Row:** QRIS — Any bank or e-wallet app that scans QRIS — 0% / 0.63% — 0% / 0.07% — 0% / 0.7%
-  - **Note in the row:** 0% on payments up to Rp100.000. Above that, 0.7% with PPN included.
-- **Row:** E-wallets — GoPay, ShopeePay, OVO, DANA and others — From 1.5% — From 0.165% — From 1.665%
-- **Row:** Bank virtual accounts — BCA, Mandiri, BNI, BRI, Permata, BSI — Rp4.000 — Rp440 — Rp4.440
-- **Row:** Credit cards — Visa and Mastercard — 2.8% + Rp2.000 — 0.308% + Rp220 — 3.108% + Rp2.220
-- **Row:** Debit cards and GPN — Local debit cards on the GPN network — [rate] — [PPN] — [total]
+  - **Grey part:** One fee for each method.
+- **Columns:** Method — Fee — PPN
+- **Row:** QRIS — Any bank or e-wallet app that scans QRIS — 0.7% — Included
+  - **Note in the row:** 0% on payments up to Rp100.000.
+- **Row:** E-wallets — GoPay, ShopeePay, OVO, DANA and others — From 1.5% — 11%
+- **Row:** Bank virtual accounts — BCA, Mandiri, BNI, BRI, Permata, BSI — Rp4.000 — 11%
+- **Row:** Credit and debit cards — Visa, Mastercard and GPN, paid online — 2.8% + Rp2.000 — 11%
 - **Section heading:** Other fees.
-  - **Grey part:** Each fee is charged with PPN on top.
+  - **Grey part:** Charged only when you use them.
 - **Card:** FLIK Checkout — 0–2% + PPN — A success fee on each successful payment, on top of your payment fees, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume. — Explore Checkout
 - **Card:** Cash on delivery — 3% + PPN — Of the COD amount. It's deducted when the COD amount reaches your balance after delivery, so you never pay it upfront. — COD Shipping
 - **Card:** FLIK Connect (Coming soon) — 0.5% + PPN — Of the amount split to partners, max Rp10.000 per transaction, paid by the main merchant. Partners pay nothing to receive their split. — Explore FLIK Connect
-- **Section heading:** How PPN works.
-  - **Grey part:** PPN applies to FLIK's fees, not to your sales.
-- **Text:** Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line, on your invoice and in your dashboard. For example, at 11%:
-- **Example:** Fee Rp500 + PPN 11% Rp55 = Total Rp555
 - **Section heading:** Need your money sooner?
   - **Grey part:** Money reaches your FLIK balance once the order is completed.
 - **Card:** Early Settlement — Get paid before your settlement date — Turn pending sales into cash sooner, for 0.2% (non-card) or 0.3% (card) + PPN. — Explore Early Settlement
@@ -83,7 +78,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Section heading:** Questions, answered.
 - **Question:** Do the fees include PPN?
-  - **Answer:** No. Every fee on this page excludes PPN. PPN is added to each fee at the prevailing rate and shown as its own line.
+  - **Answer:** The QRIS fee includes PPN. Every other fee excludes PPN, which is added at 11%.
 - **Question:** When are fees charged?
   - **Answer:** Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery.
 - **Question:** When does the money reach my balance?

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pricing: Payment Fees, PPN and Settlement | FLIK</title>
-<meta name="description" content="FLIK pricing: the fee for every payment method, PPN on each fee, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.">
+<title>Pricing: Payment, Shipping and Funding Fees | FLIK</title>
+<meta name="description" content="FLIK pricing: the fee for every payment method, and the Checkout, COD and FLIK Connect fees. Volume pricing on request.">
 <link rel="canonical" href="https://flik.co.id/pricing">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/pricing">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/pricing">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"FLIK Pricing","url":"https://flik.co.id/pricing","description":"Payment fees per method with PPN, settlement periods, and Checkout, COD and FLIK Connect fees."}
+{"@context":"https://schema.org","@type":"WebPage","name":"FLIK Pricing","url":"https://flik.co.id/pricing","description":"Payment fees per method, and the Checkout, COD and FLIK Connect fees."}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -1180,7 +1180,7 @@ html{scroll-padding-top:88px}
 #pricing+section{padding-top:0}
 @media (max-width:760px){.prg-b{grid-template-columns:1fr;gap:16px}.prg-p b{font-size:34px}}
 
-/* ===== Pricing page: product tabs, rate table (cards on phones), other fees, PPN note ===== */
+/* ===== Pricing page: product tabs, rate table (cards on phones), other fees ===== */
 :root{--surface:#FFFFFF;--radius-control:6px}
 .fl-plogo{width:24px;height:24px;border-radius:var(--radius-control);object-fit:contain;flex:none;display:inline-block;vertical-align:middle}
 .fl-plogo--icon{display:inline-flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--primary)}
@@ -1204,7 +1204,6 @@ html{scroll-padding-top:88px}
 .rt .m .fl-plogos{margin-top:8px}
 .rt .m small.rt-note{display:block;width:fit-content;margin-top:8px;padding:3px 8px;border-radius:6px;background:var(--primary-soft);color:var(--primary);font-size:12.5px}
 .rt .num{font-variant-numeric:tabular-nums}
-.rt .tot{font-weight:500;color:var(--ink)}
 .rate-ph{font-family:var(--mono);font-size:13.5px;color:var(--muted);background:var(--bg-alt);border:1px dashed var(--line);border-radius:var(--radius-control);padding:2px 6px;white-space:nowrap}
 .rt-wrap{margin-top:48px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--sh);padding:4px 8px}
 .of{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
@@ -1214,17 +1213,9 @@ html{scroll-padding-top:88px}
 .of .big small{font-size:16px;letter-spacing:0;color:var(--muted);font-weight:400}
 .of p{font-size:14.5px;color:var(--body);line-height:1.55}
 .of .link{margin-top:4px}
-.vat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px;padding:32px;border-radius:var(--r-lg);background:var(--bg-alt)}
-.vat-eq{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:15px}
-.vat-eq>span{display:grid;gap:2px;padding:12px 16px;border-radius:var(--r-card);background:var(--surface);box-shadow:var(--sh);min-width:96px}
-.vat-eq>span small{font-size:12px;color:var(--muted)}
-.vat-eq>span b{font-size:20px;font-weight:400;color:var(--ink)}
-.vat-eq>i{font-style:normal;font-size:20px;color:var(--muted)}
-.vat-eq>span.t{background:var(--primary-soft);box-shadow:none}
-.vat-eq>span.t b{color:var(--primary)}
 .alt .res{background:var(--surface)}
 .cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
-@media (max-width:1080px){.of{grid-template-columns:1fr 1fr}.vat{grid-template-columns:1fr}}
+@media (max-width:1080px){.of{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
   .lh{padding-top:110px}.lh h1{font-size:34px;letter-spacing:-.8px}
   .prh{flex-direction:column;align-items:flex-start}
@@ -1236,7 +1227,6 @@ html{scroll-padding-top:88px}
   .rt td:first-child{display:block;padding-top:12px}
   .rt td[data-l]::before{content:attr(data-l);font-size:13px;color:var(--muted)}
   .of,.cards2{grid-template-columns:1fr}
-  .vat{padding:20px}
 }
 
 
@@ -1400,8 +1390,8 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <svg class="rbn" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="rbn-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2E"/><stop offset=".38" stop-color="#FF7A2E"/><stop offset=".58" stop-color="#FF2DB8"/><stop offset=".8" stop-color="#6A4BFF"/><stop offset="1" stop-color="#00E5FF"/></linearGradient><filter id="rbn-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter></defs><path class="rbn-fill" fill="url(#rbn-g)" opacity=".6" filter="url(#rbn-b)"/><g class="rbn-lines" fill="none" stroke="url(#rbn-g)" stroke-width="3"></g></svg>
         <div class="wrap">
     <p class="eyebrow">Pricing</p>
-    <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction, and see the PPN on every fee.</span></h1>
-    <p class="lead">Fees exclude PPN. PPN is added on each fee at the prevailing rate, so the fee, the PPN and the total are always shown side by side.</p>
+    <h1>Simple pricing, no surprises. <span class="soft">Pay per transaction.</span></h1>
+    <p class="lead">One fee per payment method, charged per transaction. Volume pricing on request.</p>
     <div class="dsh-tabs pt-tabs" id="pt-tabs" role="tablist" aria-label="Pricing by product">
       <button class="on" data-t="payments" role="tab" aria-selected="true"><span data-ic="card-s"></span>Payments</button>
       <button data-t="shipping" role="tab" aria-selected="false"><span data-ic="truck-s"></span>Shipping</button>
@@ -1413,14 +1403,14 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== Payments tab ===== -->
 <section class="pad guides pp" id="payments" data-p="payments">
   <div class="wrap">
-    <div class="prh"><h2 class="sec-h">Payment methods. <span class="soft">The fee for each method, the PPN on that fee, and the total.</span></h2></div>
-    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN on fee</th><th>Total</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><small class="rt-note">0% on payments up to Rp100.000. Above that, 0.7% with PPN included.</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0% / 0.63%</td><td data-l="PPN on fee">0% / 0.07%</td><td data-l="Total" class="tot">0% / 0.7%</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN on fee">From 0.165%</td><td data-l="Total" class="tot">From 1.665%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN on fee">Rp440</td><td data-l="Total" class="tot">Rp4.440</td></tr><tr><td class="m"><b>Credit cards</b><small>Visa and Mastercard</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/visa.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mastercard.png" alt=""></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN on fee">0.308% + Rp220</td><td data-l="Total" class="tot">3.108% + Rp2.220</td></tr><!-- PLACEHOLDER (AG, 12 Nov 2026): debit card and GPN rate to come from AG / finance. --><tr><td class="m"><b>Debit cards and GPN</b><small>Local debit cards on the GPN network</small><span class="fl-plogos"><span class="fl-plogo fl-plogo--icon" data-ic="card-s"></span></span></td><td data-l="Fee">[rate]</td><td data-l="PPN on fee">[PPN]</td><td data-l="Total" class="tot">[total]</td></tr></tbody></table></div>
+    <div class="prh"><h2 class="sec-h">Payment methods. <span class="soft">One fee for each method.</span></h2></div>
+    <div class="rt-wrap"><table class="rt"><thead><tr><th>Method</th><th>Fee</th><th>PPN</th></tr></thead><tbody><tr><td class="m"><b>QRIS</b><small>Any bank or e-wallet app that scans QRIS</small><small class="rt-note">0% on payments up to Rp100.000.</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/qris.png" alt=""></span></td><td data-l="Fee">0.7%</td><td data-l="PPN">Included</td></tr><tr><td class="m"><b>E-wallets</b><small>GoPay, ShopeePay, OVO, DANA and others</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/gopay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/shopeepay.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/ovo.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/dana.png" alt=""></span></td><td data-l="Fee">From 1.5%</td><td data-l="PPN">11%</td></tr><tr><td class="m"><b>Bank virtual accounts</b><small>BCA, Mandiri, BNI, BRI, Permata, BSI</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/bca.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mandiri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bni.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bri.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/permata.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/bsi.png" alt=""></span></td><td data-l="Fee">Rp4.000</td><td data-l="PPN">11%</td></tr><tr><td class="m"><b>Credit and debit cards</b><small>Visa, Mastercard and GPN, paid online</small><span class="fl-plogos"><img class="fl-plogo" src="../assets/logos/payment/visa.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/mastercard.png" alt=""><img class="fl-plogo" src="../assets/logos/payment/gpn.png" alt=""></span></td><td data-l="Fee">2.8% + Rp2.000</td><td data-l="PPN">11%</td></tr></tbody></table></div>
   </div>
 </section>
 
 <section class="pad alt guides pp" data-p="payments">
   <div class="wrap">
-    <div class="prh"><h2 class="sec-h">Other fees. <span class="soft">Each fee is charged with PPN on top.</span></h2></div>
+    <div class="prh"><h2 class="sec-h">Other fees. <span class="soft">Charged only when you use them.</span></h2></div>
     <div class="of">
       <div><h3><span class="fx-ic" data-ic="cart"></span>FLIK Checkout</h3><span class="big num">0–2% <small>+ PPN</small></span><p>A success fee on each successful payment, on top of your payment fees, for the whole checkout: shopper trust, higher conversion, and shipping, promotions and loyalty in one place. The rate depends on your payment methods and volume.</p><a href="#" class="link" data-page="/checkout">Explore Checkout <span class="chev">›</span></a></div>
       <div><h3><span class="fx-ic" data-ic="truck"></span>Cash on delivery</h3><span class="big num">3% <small>+ PPN</small></span><p>Of the COD amount. It's deducted when the COD amount reaches your balance after delivery, so you never pay it upfront.</p><a href="#" class="link" data-page="/shipping/cod">COD Shipping <span class="chev">›</span></a></div>
@@ -1430,18 +1420,6 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </section>
 
 <section class="pad guides pp" data-p="payments">
-  <div class="wrap">
-    <div class="prh"><h2 class="sec-h">How PPN works. <span class="soft">PPN applies to FLIK's fees, not to your sales.</span></h2></div>
-    <div class="vat">
-      <div><p class="txt">Every fee on this page excludes PPN. PPN is added at the prevailing rate and shown as its own line, on your invoice and in your dashboard. For example, at 11%:</p></div>
-      <div class="vat-eq" aria-label="Example: a Rp500 fee plus Rp55 PPN is Rp555 in total">
-        <span><small>Fee</small><b class="num">Rp500</b></span><i>+</i><span><small>PPN 11%</small><b class="num">Rp55</b></span><i>=</i><span class="t"><small>Total</small><b class="num">Rp555</b></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad alt guides pp" data-p="payments">
   <div class="wrap">
     <div class="prh"><h2 class="sec-h">Need your money sooner? <span class="soft">Money reaches your FLIK balance once the order is completed.</span></h2></div>
     <div class="cards2">
@@ -1757,7 +1735,7 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 
 /* ===== FAQ ===== */
 const FAQ=[
-  ['Do the fees include PPN?','No. Every fee on this page excludes PPN. PPN is added to each fee at the prevailing rate and shown as its own line.'],
+  ['Do the fees include PPN?','The QRIS fee includes PPN. Every other fee excludes PPN, which is added at 11%.'],
   ['When are fees charged?','Payment fees are taken from each payment before it is settled to your balance. Shipping fees are paid from your balance when you create the shipment. The COD fee is deducted when the COD amount reaches your balance after delivery.'],
   ['When does the money reach my balance?','Once the order is completed and FLIK has received the funds. Need it sooner? Use Early Settlement.'],
   ['Can I get paid faster?','Yes. Early Settlement pays out your sales before the standard settlement date, for 0.2% of each non-card payment or 0.3% of each card payment, plus PPN.'],
