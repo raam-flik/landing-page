@@ -17,7 +17,7 @@
 </script>
 <style>
 /* ===== kit: fonts ===== */
-/* Self-hosted (AG, 24 Oct 2026). Paths are relative to the site root; from a page in a subfolder prefix ROOT (../, ../../). Weights 300-600 match the old Google Fonts request (700 maps to 600, as before). Licences: fonts/OFL-*.txt */
+/* Self-hosted (AG, 24 Oct 2026). Paths are relative to the site root; from a page in a subfolder prefix ROOT (../, ../). Weights 300-600 match the old Google Fonts request (700 maps to 600, as before). Licences: fonts/OFL-*.txt */
 @font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url('../fonts/Inter-latin-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/JetBrainsMono-Regular.woff2') format('woff2')}
 /* ===== /kit: fonts ===== */
@@ -1479,6 +1479,33 @@ a.ct-row:hover{border-color:var(--primary);background:var(--primary-soft)}
 @media (max-width:1080px){.ct3{grid-template-columns:1fr}.of{grid-template-columns:1fr}}
 @media (max-width:760px){.ch-stage:has(#ct){height:auto;padding:32px 16px}}
 /* ===== /Contact page ===== */
+
+/* contact cards: two buttons side by side fit on one row */
+.acts .btn{padding-left:14px;padding-right:14px}
+
+/* Hero support card (Raam picked C, 16 Nov): each channel shows its live state on Jakarta time; sales offers the next intro-call slots */
+.cv-live{width:100%;max-width:440px;background:#fff;border-radius:6px;box-shadow:var(--sh-lg);overflow:hidden}
+.lv-b{padding:18px;display:grid;gap:10px}
+.lv-top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:2px 2px 8px}
+.lv-top small{display:block;font-size:12px;color:var(--muted)}.lv-top b{font-size:17px;font-weight:500;color:var(--ink)}
+.lv-clock{font-size:12px;font-weight:500;color:var(--primary);background:var(--primary-soft);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.lv-ch{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:6px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
+a.lv-ch:hover{border-color:var(--primary)}
+.lv-ch.hot{border-color:transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(120deg,#6A4BFF,#FF2DB8) border-box;border:1px solid transparent}
+.lv-ch b{display:block;font-size:14.5px;font-weight:500;color:var(--ink)}.lv-ch small{font-size:12.5px;color:var(--muted)}
+.lv-ch>div{flex:1;min-width:0}
+.lv-ic{width:36px;height:36px;border-radius:6px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none;align-self:flex-start}
+.lv-st{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#0E6E48;white-space:nowrap}
+.lv-st.muted{color:var(--muted);white-space:normal;text-align:right;max-width:110px;font-weight:400}
+.lv-pulse{position:relative;width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.lv-pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--ok);opacity:0;animation:lv-p 1.8s infinite}
+.cv-live.closed .lv-st{color:var(--muted)}.cv-live.closed .lv-pulse{background:var(--faint)}.cv-live.closed .lv-pulse::after{display:none}
+.lv-slots{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.lv-slots a{font-size:12.5px;font-weight:500;color:var(--primary);border:1px solid var(--line);border-radius:999px;padding:5px 10px;transition:border-color .15s,background .15s}
+.lv-slots a:hover{border-color:var(--primary);background:var(--primary-soft)}
+@keyframes lv-p{0%{opacity:.7;transform:scale(.6)}100%{opacity:0;transform:scale(1.6)}}
+@media (prefers-reduced-motion:reduce){.lv-pulse::after{animation:none}}
+@media (max-width:760px){.lv-top{flex-wrap:wrap;align-items:center}.lv-top b{font-size:15.5px}.lv-b{padding:14px}.lv-st.muted{max-width:96px}}
 </style>
 </head>
 <body>
@@ -1511,7 +1538,12 @@ a.ct-row:hover{border-color:var(--primary);background:var(--primary-soft)}
       <p class="lead">Talk to sales about how FLIK fits your business, or reach support about your account, a payment or a shipment. Support is open Monday to Friday, 09:00–18:00 WIB.</p>
       <div class="hero-cta"><button class="btn btn-primary live" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button><a class="btn btn-secondary" href="mailto:support@flik.co.id">Email support <span class="chev">›</span></a></div>
     </div>
-    <div class="ch-stage"><div class="ch-glow" aria-hidden="true"></div><div class="ct" id="ct"><div class="co-bar"><i></i><i></i><i></i><span>FLIK support</span></div><div class="ct-b"><div class="ct-st" id="ct-st"><span class="ct-dot"></span><div><b id="ct-h">Support hours</b><small id="ct-s">Monday to Friday, 09:00–18:00 WIB</small></div></div><div class="ct-wk" id="ct-wk"><span class=on>Mon</span><span class=on>Tue</span><span class=on>Wed</span><span class=on>Thu</span><span class=on>Fri</span><span>Sat</span><span>Sun</span></div><a class="ct-row" href="mailto:support@flik.co.id"><span data-ic="mail"></span><div><b>support@flik.co.id</b><small>Email support</small></div><span class="chev">›</span></a><a class="ct-row" href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)"><span data-ic="chat"></span><div><b>+62 813-3532-8100</b><small>WhatsApp</small></div><span class="chev">›</span></a><a class="ct-row" href="#" data-act="sales" data-interest="Contact"><span data-ic="user"></span><div><b>Talk to sales</b><small>Book an intro call</small></div><span class="chev">›</span></a></div></div></div>
+    <div class="ch-stage"><div class="ch-glow" aria-hidden="true"></div><div class="ct cv-live" id="ct"><div class="co-bar"><i></i><i></i><i></i><span>FLIK support</span></div><div class="lv-b">
+<div class="lv-top"><div><small>Talk to a person at FLIK</small><b id="lv-h">We're here until 18:00 WIB</b></div><span class="lv-clock" id="lv-t">16:49 WIB</span></div>
+<a class="lv-ch hot" href="https://wa.me/6281335328100" target="_blank" rel="noopener"><span class="lv-ic" data-ic="chat"></span><div><b>WhatsApp</b><small>+62 813-3532-8100</small></div><span class="lv-st" id="lv-wa"><i class="lv-pulse"></i>Online now</span></a>
+<a class="lv-ch" href="mailto:support@flik.co.id"><span class="lv-ic" data-ic="mail"></span><div><b>Email</b><small>support@flik.co.id</small></div><span class="lv-st muted">Reply within 1 business day</span></a>
+<div class="lv-ch lv-sales"><span class="lv-ic" data-ic="user"></span><div style="flex:1"><b>Talk to sales</b><small>Pick a time for an intro call</small><div class="lv-slots" id="lv-slots"></div></div></div>
+</div></div>
   </div>
 </section>
 
@@ -1520,9 +1552,9 @@ a.ct-row:hover{border-color:var(--primary);background:var(--primary-soft)}
   <div class="wrap">
     <h2 class="sec-h">Who would you like to talk to? <span class="soft">Pick what you need help with.</span></h2>
     <div class="ct3">
-      <div><span class="tile" data-ic="chart"></span><h3>Sales</h3><p>We'd love to talk about how FLIK can work for your business, from checkout and shipping to funding and volume pricing.</p><ul><li><span data-ic="check-s"></span>An intro call with the FLIK team</li><li><span data-ic="check-s"></span>Rates for your business</li><li><span data-ic="check-s"></span>Help switching your store over</li></ul><div class="acts"><button class="btn btn-primary" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button><a href="#" class="link" data-page="/demo">Book a demo <span class="chev">›</span></a></div></div>
-      <div><span class="tile" data-ic="chat"></span><h3>Help and support</h3><p>Questions about your account, a payment, a payout or a shipment. Monday to Friday, 09:00–18:00 WIB.</p><ul><li><span data-ic="mail"></span><a class="link" href="mailto:support@flik.co.id">support@flik.co.id</a></li><li><span data-ic="phone"></span><a class="link" href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)">+62 813-3532-8100 (WhatsApp)</a></li></ul><div class="acts"><a href="#" class="btn btn-secondary" data-page="/help">Visit the Help Center <span class="chev">›</span></a></div></div>
-      <div><span class="tile" data-ic="cart"></span><h3>Bought from a store?</h3><p>If you paid at a store that uses FLIK, contact the store first about your order, delivery or refund. If you can't reach them, contact FLIK support.</p><ul><li><span data-ic="check-s"></span>Have your order or payment details ready</li><li><span data-ic="check-s"></span>Track a parcel with its tracking number</li></ul><div class="acts"><a href="#" class="btn btn-secondary" data-page="/shipping/track">Track a parcel <span class="chev">›</span></a><a href="#" class="link" data-page="/legal/refund">Refund Policy <span class="chev">›</span></a></div></div>
+      <div><span class="tile" data-ic="chart"></span><h3>Sales</h3><p>We'd love to talk about how FLIK can work for your business, from checkout and shipping to funding and volume pricing.</p><ul><li><span data-ic="check-s"></span>An intro call with the FLIK team</li><li><span data-ic="check-s"></span>Rates for your business</li><li><span data-ic="check-s"></span>Help switching your store over</li></ul><div class="acts"><button class="btn btn-primary" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button><a href="#" class="btn btn-secondary" data-page="/demo">Book a demo <span class="chev">›</span></a></div></div>
+      <div><span class="tile" data-ic="chat"></span><h3>Help and support</h3><p>Questions about your account, a payment, a payout or a shipment. Monday to Friday, 09:00–18:00 WIB.</p><ul><li><span data-ic="mail"></span><a class="link" href="mailto:support@flik.co.id">support@flik.co.id</a></li><li><span data-ic="phone"></span><a class="link" href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)">+62 813-3532-8100 (WhatsApp)</a></li></ul><div class="acts"><a href="#" class="btn btn-primary" data-page="/help">Visit the Help Center <span class="chev">›</span></a></div></div>
+      <div><span class="tile" data-ic="cart"></span><h3>Bought from a store?</h3><p>If you paid at a store that uses FLIK, contact the store first about your order, delivery or refund. If you can't reach them, contact FLIK support.</p><ul><li><span data-ic="check-s"></span>Have your order or payment details ready</li><li><span data-ic="check-s"></span>Track a parcel with its tracking number</li></ul><div class="acts"><a href="#" class="btn btn-primary" data-page="/shipping/track">Track a parcel <span class="chev">›</span></a><a href="#" class="btn btn-secondary" data-page="/legal/refund">Refund Policy <span class="chev">›</span></a></div></div>
     </div>
   </div>
 </section>
@@ -1706,7 +1738,7 @@ const P={
   lock:'<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"/>',
   gift:'<rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M5 12.5v8h14v-8M12 8v12.5M12 8S10.5 3.5 8 4.2C6 4.8 7 8 12 8zM12 8s1.5-4.5 4-3.8C18 4.8 17 8 12 8z"/>',
-  chat:'<path d="M4 19.5 5.3 15A8 8 0 1 1 9 18.7z"/><path d="M9 10.5c.5 1.6 1.9 3 3.5 3.5l1.2-1.1 2 .9"/>',
+  chat:'<path d="M3.6 20.4 4.9 16A8.5 8.5 0 1 1 8 19.1z"/><path d="M9.4 8.3c.3-.3.7-.3 1 0l.9 1c.2.3.2.7 0 1l-.5.6c.6 1.2 1.5 2.1 2.7 2.7l.6-.5c.3-.2.7-.2 1 0l1 .9c.3.3.3.7 0 1l-.7.7c-.6.6-1.6.7-2.4.3-1.7-.9-3-2.2-3.9-3.9-.4-.8-.3-1.8.3-2.4z"/>',
   sliders:'<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
   bell:'<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'
@@ -2012,6 +2044,19 @@ document.addEventListener('click',e=>{
   if(current)announce(current);else show(false);
 })();
 /* ===== /kit: cookie-consent ===== */
+
+function jkt(){let p;try{p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date())}catch(e){return null}
+  const g=t=>(p.find(x=>x.type===t)||{}).value,day=g('weekday'),hh=+g('hour'),mm=+g('minute');const idx=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(day);
+  return {idx,hh,mm,open:idx>=0&&idx<5&&hh>=9&&hh<18,t:String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0')}}
+function nextOpen(n){if(n.open)return 'until 18:00 WIB';if(n.idx<5&&n.hh<9)return 'back today at 09:00 WIB';if(n.idx<4)return 'back tomorrow at 09:00 WIB';return 'back Monday at 09:00 WIB'}
+
+(function(){const n=jkt();if(!n)return;const c=document.getElementById('ct');c.classList.toggle('closed',!n.open);
+ document.getElementById('lv-t').textContent=n.t+' WIB';
+ document.getElementById('lv-h').textContent=n.open?"We're here until 18:00 WIB":"We're "+nextOpen(n);
+ document.getElementById('lv-wa').lastChild.textContent=n.open?'Online now':'Away';
+ // next three working days for an intro call
+ const D=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],out=[];let i=n.idx;while(out.length<3){i=(i+1)%7;if(i<5)out.push(D[i])}
+ const T=['10:00','14:00','11:00'];document.getElementById('lv-slots').innerHTML=out.map((d,k)=>`<a href="#" data-act="sales" data-interest="Contact">${d} · ${T[k]}</a>`).join('')+'<a href="#" data-page="/demo">More times</a>';})();
 </script>
 </body>
 </html>

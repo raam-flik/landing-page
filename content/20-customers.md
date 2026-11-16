@@ -14,7 +14,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [x] **Logos:** all 16 customers now use their real logo (11 added from Raam, 12 Nov 2026; originals in `design-system/assets/Logos/merchant/original/`). Heylocal and Kopikalyan came in small, so send larger files if you have them. Erigo's logo is white, so it sits on a navy tile.
 - [ ] **Photos (Raam, 12 Nov 2026):** The SIGIT, Paper, WakaiGo and Artch have brand photos on their story cards and story pages (`assets/customers/`). The outdoor backpack photo is Artch's (Raam, 12 Nov 2026). WakaiGo's first photo had an AI image mark in the corner, which was cropped out; confirm the brand is happy to publish it. Send photos for the other brands to replace their colour cards.
 - [ ] **Names:** Sigit Store's logo reads "THE SIGIT" and Wakaigo is written "WakaiGo"; the page uses Sigit Store and WakaiGo. Kopi Kalian is now Kopikalyan (Raam, 12 Nov 2026). Donat Bahagia's logo reads "dobah".
-- [ ] **Logo matches to check:** Aneka Family uses `aneka.png` (the "aneka" badge); Emados uses `emandos.png` (reads "EMADO'S", white artwork, so it sits on a navy tile).
+- [ ] **Logo matches to check:** Anita Family (was Aneka Family, renamed by Raam 16 Nov 2026) has no logo file yet: its name shows in the chip, and the old `aneka.png` badge is no longer used. Send the Anita logo; Emados uses `emandos.png` (reads "EMADO'S", white artwork, so it sits on a navy tile).
 - [ ] **Categories** are shown only where the brand is well known: OSIM (Wellness), Gerai Hawa (Modest fashion), Teenage Death Star (Music and merchandise), Kopikalyan (Coffee), Emados, Haus! and Donat Bahagia (Food and beverage), Erigo (Fashion). Confirm, and add categories for the others.
 - [ ] **Erigo:** the list says Merchant Cash Advance only, but the homepage story card says "Erigo runs delivery, payment and returns from one place with FLIK". Which products does Erigo use?
 - [ ] **Example stories (Raam, 12 Nov 2026):** every story page now has its own example story, written for that brand's type of business (see below); previously a general story (challenge, how FLIK helps, result) built from the products the brand uses, labelled "Example story". The text describes what each FLIK product does; it is not the brand's own account. Replace each with the approved real story before relying on it publicly.
@@ -33,7 +33,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Checkout:** Sigit Store, Artch, Paper, Wakaigo, OSIM
 - **Shipping:** Zaafer, Gerai Hawa, Manta Liberta, Teenage Death Star
-- **In-Store Payment (QRIS):** Kopikalyan, Aneka Family, Emados, Haus!, Donat Bahagia
+- **In-Store Payment (QRIS):** Kopikalyan, Anita Family, Emados, Haus!, Donat Bahagia
 - **Merchant Cash Advance:** Heylocal, Emados, Erigo, Haus!, Kopikalyan
 
 ## 1. Customers page
@@ -139,10 +139,10 @@ Each brand has its own example story, written for its type of business. They are
   - **How FLIK helps (instore):** With FLIK In-Store Payment, Kopikalyan customers pay by QRIS or card at the counter in seconds, and every sale lands in the FLIK dashboard.
   - **How FLIK helps (mca):** A FLIK Merchant Cash Advance gives Kopikalyan funding upfront for one fixed margin, settled automatically from its daily sales.
   - **Result:** The queue moves faster at the counter, and growth is funded from the sales it creates.
-- **aneka-family** — Aneka Family takes QRIS and cards at the counter with FLIK.
-  - **Intro:** Aneka Family serves customers in store every day.
+- **anita-family** — Anita Family takes QRIS and cards at the counter with FLIK.
+  - **Intro:** Anita Family serves customers in store every day.
   - **Challenge:** Customers want to pay their way, and cash alone slows the counter down and makes closing the day harder.
-  - **How FLIK helps (instore):** With FLIK In-Store Payment, Aneka Family takes QRIS and cards at the counter, and every payment is recorded in the FLIK dashboard automatically.
+  - **How FLIK helps (instore):** With FLIK In-Store Payment, Anita Family takes QRIS and cards at the counter, and every payment is recorded in the FLIK dashboard automatically.
   - **Result:** Customers pay the way they like, and the end of the day takes less counting.
 - **emados** — Emados keeps the shawarma queue moving and funds its growth with FLIK.
   - **Intro:** Emados serves shawarma to busy customers who want their food, and their payment, to be quick.
