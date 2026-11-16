@@ -53,7 +53,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 <!-- html: 1. About this policy -->
 
 - **Text:** This policy is from **PT Flik Teknologi Indonesia** (“**FLIK**”, “**we**”). It applies to orders paid through FLIK Checkout, parcels sent with FLIK Shipping, and fees that merchants pay FLIK.
-- **Text:** Merchants sell the goods. FLIK provides the checkout and shipping technology. Payments are processed by licensed payment partners. FLIK is not a bank. Partners: CashuUp, Nicepay and Xendit
+- **Text:** Merchants sell the goods. FLIK provides the checkout and shipping technology. Payments are processed by licensed payment partners. FLIK is not a bank. Partners: CashUp, Nicepay and Xendit
 - **Text:** **Language.** This page is in English for now. A Bahasa Indonesia version will follow. If the two versions differ, the Bahasa Indonesia version prevails.
 
 ## 2. Refunds for shoppers

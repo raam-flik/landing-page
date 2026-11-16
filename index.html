@@ -649,6 +649,11 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .banner-k i{width:18px;height:1px;background:rgba(255,255,255,.55)}
 @media (max-width:760px){.banner h2{font-size:36px;letter-spacing:-.8px}.banner-sub{font-size:16px}.banner-k{gap:6px;flex-wrap:nowrap}.banner-k span{font-size:12px;padding:3px 10px}.banner-k i{width:10px}}
 /* ===== Bento: 6 boxes, the last one full width ===== */
+/* bento boxes: slightly rounded (6px, was 12px), and the scroll reveal ends at the same corners (Raam, 16 Nov) */
+.bc,.bc::after{border-radius:6px}
+@keyframes sr-frame-6{from{clip-path:inset(12% round 6px);opacity:.4}to{clip-path:inset(0 round 6px);opacity:1}}
+@media (min-width:761px){.bc.sr-f{animation-name:sr-frame-6}}
+
 .bc.s6{grid-column:1/-1;min-height:0}
 .bc.s6 .vis{padding-top:8px}
 .vis-fund{gap:20px;align-items:flex-end}
@@ -701,7 +706,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .en-spot{flex:1 1 0;min-width:0;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
 .en-spot.on{flex-grow:3.2;cursor:default}
 .en-spot:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-.en-ph{position:relative;height:440px;background:#E3EDFF center/cover}
+.en-ph{position:relative;height:440px;background:#E3EDFF center/cover;border-radius:6px;overflow:hidden}
 .en-ph small{position:absolute;left:16px;top:16px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:5px 10px}
 .en-cap{margin-top:14px;font-size:15px;line-height:1.5;color:var(--body);white-space:nowrap;overflow:hidden}
 .en-spot.on .en-cap{text-overflow:ellipsis}
@@ -725,6 +730,9 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .mc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 /* Two quiet cards: white, hairline border, text and a link, with one deep-coloured glow in the corner */
 .mc-card{position:relative;isolation:isolate;overflow:hidden;min-height:176px;border:1px solid var(--line);background:#fff;padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:10px}
+/* story photos and the Funding / Start for free cards: same 6px corners as the banner and bento (Raam, 16 Nov) */
+.bs-art,.mc-card{border-radius:6px}
+
 .mc-card::before{content:"";position:absolute;z-index:-1;right:-130px;top:-190px;width:380px;height:380px;border-radius:50%;filter:blur(26px)}
 .mc-fund::before{background:radial-gradient(closest-side,rgba(194,60,240,.55),rgba(255,138,224,.3) 60%,transparent)}
 .mc-reg::before{background:radial-gradient(closest-side,rgba(106,75,255,.55),rgba(59,167,255,.3) 60%,transparent)}
@@ -733,6 +741,9 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .mc-card .link{margin-top:0}
 /* Platforms: one order on a marketplace, split by FLIK Connect between two sellers and the platform (example figures) */
 .pf-ui{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:100/43;margin-top:48px;background:#fff;border:1px solid var(--line)}
+/* platforms illustration: same 6px corners as the rest of the homepage (Raam, 16 Nov) */
+.pf-ui,.pf-order,.pf-out,.pf-pay,.pf-thumb,.pf-hub>span:first-child,.pf-hub>i:first-child,.pf-hub>div:first-child{border-radius:6px}
+
 /* same card style as the funding and start-for-free cards, in its light form: white, hairline border, soft corner glows */
 .pf-ui::before,.pf-ui::after{content:"";position:absolute;z-index:-1;width:560px;height:560px;border-radius:50%;filter:blur(22px)}
 .pf-ui::before{right:-160px;top:-220px;background:radial-gradient(closest-side,rgba(158,77,200,.26),rgba(255,138,224,.12) 55%,transparent)}
@@ -773,6 +784,13 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 /* Banner (15 Nov 2026): a light, square band in the pastel sky of the enterprise photos. A violet particle stream runs behind it, as in the hero.
    One thin line with three points stands in for the product cards, which repeated the tiles above. */
 .banner{align-items:center;border-radius:0;background:linear-gradient(100deg,#EAF2FF 0%,#EDE7FF 55%,#FFE6F4 100%)}
+/* Enterprise sits closer to the banner: the gap matches the space above the banner (Raam, 16 Nov) */
+#enterprise{padding-top:40px}
+@media (max-width:760px){#enterprise{padding-top:42px}}
+/* banner: slightly rounded (6px), same as the bento boxes; its scroll reveal ends at the same corners (Raam, 16 Nov) */
+@keyframes sr-frame-sq{from{clip-path:inset(12%);opacity:.4}to{clip-path:inset(0);opacity:1}}
+.banner{border-radius:6px}
+@media (min-width:761px){.banner.sr-f{animation-name:sr-frame-6}}
 .banner-in{flex:1 1 auto;min-width:0}
 .banner h2{color:var(--ink)}
 .banner-sub{color:var(--body)}
@@ -1165,6 +1183,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 /* ===== /kit: scroll-reveal ===== */
 /* FLIK F mark on shopper pay and checkout buttons */
 .fk::before{content:"";display:inline-block;flex:none;width:1em;height:1em;margin-right:.5em;vertical-align:-.12em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ===== Homepage corners (Raam, 16 Nov): every card, panel, tile and chip uses 6px; buttons keep the design-system Button radius ===== */
+.co,.fund,.hx-film,.minip,.ncard,.dx-flik,.dx-sys,.dx-tile>*,.hl-ic,.bs-logo,.ipanel,.hl,.dx-b{border-radius:6px}
+.dx-tile span,.dx-sys span,.dx-sys span.hl,.dx-stage .dx-b{border-radius:6px}
+.ncard{overflow:hidden}
+/* story captions: two lines at most */
+.bs-card>p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style>
 </head>
 <body>
@@ -1348,7 +1373,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
           <div class="stat"><b class="num" style="white-space:nowrap">Rp100bn+</b><span>in growth funding for brands</span></div>
         </div>
       </div>
-      <div class="globe-box" role="img" aria-label="Example: a shopper in Tokyo pays Aruna Studio, a sample store, by card with FLIK Checkout. The payment lands in its FLIK balance, and Aruna Studio ships orders from Jakarta to Medan and Makassar with FLIK Shipping."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
+      <div class="globe-box" role="img" aria-label="Example: a shopper in Tokyo pays Aruna Studio, a sample store, by card with FLIK Checkout. The payment lands in its FLIK balance, and Aruna Studio ships orders from Surabaya to Singapore and from Bandung to Kuala Lumpur with FLIK Shipping."><div class="globe-stage" aria-hidden="true"><canvas id="globe"></canvas><div id="globe-ui"></div></div></div>
     </div>
   </div>
 </section>
@@ -1392,7 +1417,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <h2 class="sec-h hl-h">Brands growing with FLIK. <span class="soft">See how they sell, ship and scale.</span></h2>
       <div class="car-nav"><button class="cbtn" data-car="bstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="bstories" data-dir="1" aria-label="Next stories">›</button></div>
     </div>
-    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/story/?c=erigo" style="--t:0,45,93;background-image:url('assets/customers/erigo-1.jpg');background-position:56% center" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="bs-big">Up to 200%<small>sales growth, online and in stores</small></span></a><p>Keeping ERIGO in stock helped drive sales up to 200%, online and in stores.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=emados" style="--t:120,52,10;background-image:url('assets/customers/emados-1.jpg');background-position:center" aria-label="Read EMADO'S story"><span class="bs-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="bs-big">30+<small>branches opened across Indonesia</small></span></a><p>EMADO'S opened 30+ branches across Indonesia, with operations kept under control.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=sigit-store" style="--t:0,45,93;background-image:url('assets/customers/sigit-store-1.jpg?v=2');background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=heylocal" style="--t:174,29,124;background-image:url('assets/customers/heylocal-1.jpg');background-position:38% top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="bs-big">500,000+<small>transactions in peak season</small></span></a><p>HEYLOCAL stocked up for 500,000+ transactions in peak season.</p><a href="customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=artch" style="--t:59,36,168;background-image:url('assets/customers/artch-1.jpg');background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.png?v=2" alt="Artch"></span></a><p>Artch gives its shoppers a checkout that keeps up with them.</p><a href="customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=paper" style="--t:174,29,124;background-image:url('assets/customers/paper-1.jpg?v=2');background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.png?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=wakaigo" style="--t:0,45,93;background-image:url('assets/customers/wakaigo-1.jpg?v=2');background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all" href="#" data-page="/customers"><span></span><span class="bs-big">All stories<small>See every brand building with FLIK</small></span></a></article></div>
+    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/story/?c=erigo" style="--t:0,45,93;background-image:url('assets/customers/erigo-1.jpg');background-position:56% center" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="bs-big">Up to 200%<small>sales growth, online and in stores</small></span></a><p>Stock funding helped ERIGO grow sales up to 200%.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=emados" style="--t:120,52,10;background-image:url('assets/customers/emados-1.jpg');background-position:center" aria-label="Read EMADO'S story"><span class="bs-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="bs-big">30+<small>branches opened across Indonesia</small></span></a><p>EMADO'S opened 30+ branches across Indonesia with FLIK.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=sigit-store" style="--t:0,45,93;background-image:url('assets/customers/sigit-store-1.jpg?v=2');background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=heylocal" style="--t:174,29,124;background-image:url('assets/customers/heylocal-1.jpg');background-position:38% top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="bs-big">500,000+<small>transactions in peak season</small></span></a><p>HEYLOCAL stocked up in time for its peak season.</p><a href="customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=artch" style="--t:59,36,168;background-image:url('assets/customers/artch-1.jpg');background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.png?v=2" alt="Artch"></span></a><p>Artch's checkout keeps up with its shoppers.</p><a href="customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=paper" style="--t:174,29,124;background-image:url('assets/customers/paper-1.jpg?v=2');background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.png?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=wakaigo" style="--t:0,45,93;background-image:url('assets/customers/wakaigo-1.jpg?v=2');background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all" href="#" data-page="/customers"><span></span><span class="bs-big">All stories<small>See every brand building with FLIK</small></span></a></article></div>
   </div>
 </section>
 
@@ -1767,10 +1792,10 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const D=Math.PI/180;
   const v3=(lat,lon)=>[Math.cos(lat*D)*Math.sin(lon*D),Math.sin(lat*D),Math.cos(lat*D)*Math.cos(lon*D)];
   // Cities (lat, lon). Aruna Studio (a sample store) ships from its Jakarta warehouse.
-  const CITY={Jakarta:v3(-6.2,106.8),Tokyo:v3(35.68,139.69),Medan:v3(3.6,98.7),Makassar:v3(-5.15,119.4)};
+  const CITY={Jakarta:v3(-6.2,106.8),Tokyo:v3(35.68,139.69),Surabaya:v3(-7.25,112.75),Bandung:v3(-6.91,107.61),Singapore:v3(1.35,103.82),'Kuala Lumpur':v3(3.14,101.69)};
   // Where the camera looks for each city's order (lon, lat of the view centre)
-  const FOCUS={Tokyo:[124,18],Medan:[106,2],Makassar:[114,0]};  // [view longitude, lift north in degrees]
-  // Example orders: a card payment from Japan, then shipments across Indonesia (cross-border shipping is off, Bintang 13 Nov 2026)
+  const FOCUS={Tokyo:[124,18],Singapore:[101,-1],'Kuala Lumpur':[96,0]};  // [view longitude, lift north in degrees]
+  // Example orders: a card payment from Japan, then cross-border shipments from Indonesia to Singapore and Malaysia (Raam, 16 Nov 2026; cross-border status still to confirm, tracker c-crossborder)
   const rp=n=>'Rp'+n.toLocaleString('id-ID');
   // view rotation: Indonesia faces the viewer, with a slow sway
   let lon0=120,lat0=-14,baseLat=-14,dLon=0,dLat=0,vLon=0,vLat=0,drag=null,lastTouch=-1e9,fLon=0,fLat=0;
@@ -1791,15 +1816,15 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const STEPS=[
     {k:'pay',city:'Tokyo',from:'Tokyo',to:'Jakarta',dur:3000,color:PRI,icon:'card',b:rp(4250000),s:'Paid from Tokyo, Japan · Card'},
     {k:'bal',city:'Tokyo',at:'Jakarta',dur:2200,icon:'wallet',b:'+'+rp(4250000),s:'Added to Aruna Studio balance'},
-    {k:'ship',city:'Medan',from:'Jakarta',to:'Medan',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Medan',s:'JNE Reguler · 2–3 days · FLK2610140031'},
-    {k:'done',city:'Medan',at:'Medan',dur:1800,icon:'check',b:'Delivered',s:'Medan · Order complete'},
-    {k:'ship',city:'Makassar',from:'Jakarta',to:'Makassar',dur:2800,color:SHIP,icon:'truck',b:'Shipped to Makassar',s:'SiCepat Reguler · 2–3 days · FLK2610140036'},
-    {k:'done',city:'Makassar',at:'Makassar',dur:1800,icon:'check',b:'Delivered',s:'Makassar · Order complete'},
+    {k:'ship',city:'Singapore',from:'Surabaya',to:'Singapore',dur:2800,color:SHIP,icon:'truck',b:'Surabaya → Singapore',s:'Cross-border shipping · FLK2610140031'},
+    {k:'done',city:'Singapore',at:'Singapore',dur:1800,icon:'check',b:'Delivered',s:'Singapore · Order complete'},
+    {k:'ship',city:'Kuala Lumpur',from:'Bandung',to:'Kuala Lumpur',dur:2800,color:SHIP,icon:'truck',b:'Bandung → Kuala Lumpur',s:'Cross-border shipping · FLK2610140036'},
+    {k:'done',city:'Kuala Lumpur',at:'Kuala Lumpur',dur:1800,icon:'check',b:'Delivered',s:'Kuala Lumpur · Order complete'},
   ];
   const TOTAL=STEPS.reduce((a,s)=>a+s.dur,0);
 
   // Pills (HTML, positioned over the canvas)
-  const brand=document.createElement('div');brand.className='gp gp-brand';brand.innerHTML=`<span class="gp-ic gp-k">A</span><span><b>Aruna Studio</b><small>Example · Warehouse · Jakarta</small></span>`;ui.appendChild(brand);
+  const brand=document.createElement('div');brand.className='gp gp-brand';brand.innerHTML=`<span class="gp-ic gp-k">A</span><span><b>Aruna Studio</b><small>Example · Jakarta</small></span>`;ui.appendChild(brand);
   const pill=document.createElement('div');pill.className='gp';ui.appendChild(pill);
   let lastStep=-1;
   function place(el,x,y){el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`}

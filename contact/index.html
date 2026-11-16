@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact FLIK: Sales, Support and Office | FLIK</title>
-<meta name="description" content="Contact FLIK sales or support by email or WhatsApp, Monday to Friday 09:00–18:00 WIB. Office: Cibis Nine, Jakarta Selatan.">
+<meta name="description" content="Talk to FLIK sales, or reach support by email or WhatsApp, Monday to Friday 09:00–18:00 WIB. Office: Cibis Nine, Jakarta Selatan.">
 <link rel="canonical" href="https://flik.co.id/contact">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/contact">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/contact">
@@ -13,7 +13,7 @@
 <link rel="preload" href="../fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Contact FLIK: Sales, Support and Office | FLIK", "description": "Contact FLIK sales or support by email or WhatsApp, Monday to Friday 09:00–18:00 WIB. Office: Cibis Nine, Jakarta Selatan.", "url": "https://flik.co.id/contact"}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Contact FLIK: Sales, Support and Office | FLIK", "description": "Talk to FLIK sales, or reach support by email or WhatsApp, Monday to Friday 09:00–18:00 WIB. Office: Cibis Nine, Jakarta Selatan.", "url": "https://flik.co.id/contact"}
 </script>
 <style>
 /* ===== kit: fonts ===== */
@@ -811,6 +811,8 @@ html{scroll-padding-top:88px}
 
 /* Hero: text left, phone right, soft mesh behind the phone (clipped at the guide lines) */
 .ch{position:relative;overflow:hidden;margin-top:-69px;padding-top:150px}
+/* hero: same visible space above the text (below the menu) as below it (above the logos) */
+@media (min-width:1081px){.ch{padding-top:122px}section.ch .logos-band{margin-top:52px}}
 .ch::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(106,75,255,.13) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);mask-image:radial-gradient(60% 70% at 78% 40%,#000,transparent 75%);clip-path:inset(0 max(16px,calc(50% - 633px)))}
 .ch.guides::before,.ch.guides::after{z-index:3}
 .ch-in{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
@@ -849,7 +851,7 @@ html{scroll-padding-top:88px}
 .ph-s.on{opacity:1;transform:none}
 .ph-s label{font-size:12px;font-weight:500;color:var(--body)}
 .ph-in{height:40px;border:1px solid var(--primary);box-shadow:0 0 0 1px var(--primary);border-radius:8px;display:flex;align-items:center;gap:6px;padding:0 12px;font-size:14px}
-.ph-in .cc{color:var(--muted)}
+.ph-in .ph-cc{color:var(--muted)}
 .caret{display:inline-block;width:1.5px;height:16px;background:var(--primary);animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .ph-btn{height:40px;border-radius:8px;background:var(--primary);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}
@@ -937,6 +939,30 @@ html{scroll-padding-top:88px}
 .fl-split path{fill:none;stroke:#D2C8FF;stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;animation:fl-dash 1.2s linear infinite}
 @keyframes fl-dash{to{stroke-dashoffset:-12}}
 .fl-col{display:grid;gap:16px}
+/* One account: shopper hub, shopper network, your store */
+.net{display:grid;grid-template-columns:minmax(0,1.25fr) 56px minmax(0,1fr) 56px minmax(0,1.05fr);align-items:center;margin-top:56px}
+.net-hub{position:relative;width:100%;max-width:360px;aspect-ratio:1;margin:0 auto}
+.net-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.net-lines path{fill:none;stroke:#D2C8FF;stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;animation:fl-dash 1.2s linear infinite}
+.net-ch{position:absolute;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:14px;background:#fff;border:1px solid var(--line-soft);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--primary)}
+.net-ch img{width:46px;height:46px;object-fit:contain}
+.net-ch em{font-style:normal;font-size:10.5px;line-height:1.1;color:var(--muted);text-align:center}
+.net-me{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.net-av{width:76px;height:76px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px var(--bg-alt),0 0 0 9px #D2C8FF}
+.net-av svg{width:34px;height:34px}
+.net-avw{position:relative;display:flex}
+.net-f{position:absolute;right:-6px;bottom:-4px;width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--line-soft);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center}
+.net-f svg{width:16px;height:16px}
+.net-me .pill{box-shadow:0 0 0 4px var(--bg-alt)}
+.net-dots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:100%;margin:8px 0 10px}
+.net-dots i{aspect-ratio:1;border-radius:50%;background:var(--bg-alt);border:1px solid var(--line);color:var(--faint);display:flex;align-items:center;justify-content:center}
+.net-dots svg{width:55%;height:55%}
+.net-dots i.on{background:var(--primary-soft);border-color:#D2C8FF;color:var(--primary)}
+.net-rows{list-style:none;margin:6px 0 8px;padding:0;display:grid;gap:6px;width:100%;font-size:13.5px;color:var(--body)}
+.net-rows li{display:flex;align-items:center;gap:8px}
+.net-rows li span{color:var(--ok);display:flex}
+.net-rows svg{width:16px;height:16px}
+.net-pay{align-self:stretch;height:36px;border-radius:8px;background:var(--primary);color:#fff!important;font-size:14px!important;font-weight:500;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
 
 /* Payment methods (dark) */
 #methods{overflow:hidden}
@@ -977,26 +1003,71 @@ html{scroll-padding-top:88px}
 .pmx-chips span.on{border-color:#00E5FF;background:rgba(0,229,255,.16);color:#fff}
 
 /* Dashboard */
-.dsh-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--line-soft);margin-top:40px}
-.dsh-tabs button{display:flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:7px;font-size:14.5px;font-weight:500;color:var(--muted);transition:background .2s,color .2s,box-shadow .2s}
-.dsh-tabs button.on{background:#fff;color:var(--ink);box-shadow:var(--sh)}
-.dsh-tabs button.on [data-ic]{color:var(--primary)}
-.dsh-tabs [data-ic]{display:flex}
 .dsh-win{margin-top:20px;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-lg);overflow:hidden;background:#fff;font-size:13px}
 .dsh-win .co-bar{position:relative}
 .dsh-win .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0}
-.dsh-body{display:grid;grid-template-columns:220px 1fr;min-height:420px}
-.dsh-side{border-right:1px solid var(--line);background:var(--bg-alt);padding:18px 12px;display:flex;flex-direction:column;gap:2px}
-.dsh-f{margin:0 8px 14px}
-.dsh-side small{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;padding:12px 10px 6px}
-.dsh-side>span[data-t]{padding:8px 10px;border-radius:6px;color:var(--body);cursor:pointer;transition:background .2s,color .2s}
-.dsh-side>span[data-t].on{background:#fff;color:var(--primary);font-weight:500;box-shadow:var(--sh)}
-.dsh-panel{padding:26px;animation:pmx-in .35s ease}
-.dsh-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.dsh-h b{font-size:17px;font-weight:500}
-.dsh-cz{display:grid;grid-template-columns:1fr 280px;gap:28px}
-.dsh-cz h6{font-size:12px;font-weight:500;color:var(--muted);margin:0 0 8px}
-.dsh-cz h6+*{margin-bottom:18px}
+.dsh-win{margin-top:40px}
+.cpz-top{display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-bottom:1px solid var(--line)}
+.cpz-top b{font-weight:500;font-size:14px}
+.cpz-x{display:flex;color:var(--muted);padding-right:12px;border-right:1px solid var(--line)}
+.cpz-x svg{width:16px;height:16px}
+.cpz-acts{margin-left:auto;display:flex;gap:8px}
+.cpz-btn{display:inline-flex;align-items:center;height:30px;padding:0 12px;border:1px solid var(--line);border-radius:6px;font-size:12.5px;font-weight:500;color:var(--ink);background:#fff;white-space:nowrap}
+.cpz-btn.sm{height:26px;padding:0 10px;font-size:12px}
+.cpz-btn.p{border-color:transparent;background:#C9BFFF;color:#fff;transition:background .2s}
+.cpz-btn.p.on{background:var(--primary)}
+.cpz-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:470px}
+.cpz-set{padding:24px 28px;display:grid;gap:22px;align-content:start}
+.cpz-sec h5{font-size:15px;font-weight:500;color:var(--ink);margin:0 0 2px}
+.cpz-sec p{font-size:12.5px;color:var(--muted);margin:0 0 10px;line-height:1.45}
+.cpz-logo{display:flex;align-items:center;gap:12px}
+.cpz-logo .ph-logo{width:44px;height:44px;border-radius:10px;font-size:18px}
+.cpz-logo div{display:grid;gap:6px;justify-items:start}
+.cpz-logo b{font-weight:500;font-size:13px}
+.cpz-col{display:grid;gap:6px;max-width:340px}
+.cpz-col button{display:flex;align-items:center;gap:10px;height:36px;padding:0 12px;border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--ink);text-align:left;transition:border-color .2s,box-shadow .2s}
+.cpz-col button.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.cpz-col i{width:14px;height:14px;border-radius:50%;flex:none}
+.cpz-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cpz-chips button,.cpz-more{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;color:var(--ink);background:#fff;transition:opacity .2s,border-color .2s}
+.cpz-chips button::after{content:"×";color:var(--muted);font-size:14px;line-height:1;margin-left:2px}
+.cpz-chips button.off{opacity:.45;border-style:dashed}
+.cpz-chips button.off::after{content:"+"}
+.cpz-chips img{height:14px;width:auto;max-width:34px;object-fit:contain}
+.cpz-chips [data-ic]{display:flex;color:var(--muted)}
+.cpz-chips [data-ic] svg{width:15px;height:15px}
+.cpz-chips em{display:none;font-style:normal;font-size:11px;font-weight:500;color:var(--primary);background:var(--primary-soft);border-radius:4px;padding:1px 5px}
+.cpz-chips button.def em{display:inline}
+.cpz-more{color:var(--muted)}
+.cpz-prev{background:var(--bg-alt);border-left:1px solid var(--line);padding:24px 28px;display:flex;flex-direction:column;gap:12px}
+.cpz-ph{display:flex;align-items:center;justify-content:space-between}
+.cpz-ph b{font-size:15px;font-weight:500}
+.cpz-seg{display:inline-flex;padding:2px;border-radius:7px;background:#fff;border:1px solid var(--line)}
+.cpz-seg button{height:26px;padding:0 10px;border-radius:5px;font-size:12px;color:var(--muted)}
+.cpz-seg button.on{background:var(--bg-alt);color:var(--ink);font-weight:500;box-shadow:var(--sh)}
+.cpz-tabs{display:flex;gap:18px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.cpz-tabs span{padding-bottom:8px}
+.cpz-tabs .on{color:var(--primary);font-weight:500;box-shadow:0 1px 0 var(--primary)}
+.cpz-page{--acc:#002D5D;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:11.5px;width:100%;margin:0 auto;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.cpz-page.cpz-phone{width:250px}
+.cpz-pg-h{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line-soft)}
+.cpz-pg-h .ph-logo{width:20px;height:20px;font-size:10px;border-radius:5px}
+.cpz-pg-h b{font-weight:500}
+.cpz-pg-h small{margin-left:auto;color:var(--muted);font-size:10.5px}
+.cpz-pg{display:grid;grid-template-columns:1.35fr 1fr;gap:10px;padding:12px;background:var(--bg-alt);align-items:start}
+.cpz-page.cpz-phone .cpz-pg{grid-template-columns:1fr}
+.cpz-card{background:#fff;border:1px solid var(--line-soft);border-radius:8px;padding:10px 12px;display:grid;gap:7px}
+.cpz-card>b{font-weight:500;font-size:12px}
+.cpz-row{display:flex;align-items:center;gap:8px;padding:6px 8px;border:1px solid var(--line-soft);border-radius:6px;min-width:0}
+.cpz-row>span:not([data-ic]){flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cpz-row [data-ic]{display:flex;color:var(--muted);flex:none}
+.cpz-row [data-ic] svg{width:14px;height:14px}
+.cpz-row img{height:12px;width:auto;max-width:30px;object-fit:contain;flex:none}
+.cpz-row small{color:var(--muted);font-size:10.5px;flex:none}
+.cpz-sum div{display:flex;justify-content:space-between;color:var(--body)}
+.cpz-sum .t{color:var(--ink);font-weight:600;border-top:1px solid var(--line-soft);padding-top:7px}
+.cpz-pay{height:30px;border-radius:6px;background:var(--acc);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.cpz-pg-f{display:flex;align-items:center;gap:6px;padding:8px 14px;border-top:1px solid var(--line-soft);color:var(--muted);font-size:10.5px}
 .sw{display:flex;gap:8px}
 .sw button{width:30px;height:30px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 2px #fff;outline:1px solid var(--line);transition:outline-color .2s}
 .sw button.on{outline:2px solid var(--c)}
@@ -1038,7 +1109,7 @@ html{scroll-padding-top:88px}
 .flow4{position:relative}
 .flow4::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:var(--p,0%);background:var(--primary);transition:width .6s cubic-bezier(.2,.8,.2,1)}
 .flow4 .stat{gap:10px;transition:background .3s}
-.flow4 .stat b{font-size:28px;letter-spacing:-.5px}
+.stats4.flow4 .stat b{font-size:24px;letter-spacing:-.4px;line-height:1.2}
 .flow4 .stat span:not(.f4-n):not(.f4-ic){font-size:15px}
 .f4-n{font-family:var(--mono);font-size:12px!important;color:var(--faint)!important}
 .stats4 .stat .f4-ic{padding:0}
@@ -1123,14 +1194,16 @@ html{scroll-padding-top:88px}
   .fl-c i{animation:fl-dot-v 2.4s linear infinite;left:50%;margin-left:-4px;top:0;margin-top:0}
   @keyframes fl-dot-v{to{top:calc(100% - 8px)}}
   .fl-split svg{display:none}
+  .net{grid-template-columns:1fr;max-width:520px}
+  .net-hub{max-width:320px}
   .pmx{grid-template-columns:1fr 1fr;gap:32px}
   .pmx-side{grid-column:1/-1}
   .stats4{--bleed:16px;grid-template-columns:1fr 1fr}
   .stats4 .stat:nth-child(2){border-right:0}
   .stats4 .stat:nth-child(3){padding-left:var(--bleed)}
   .stats4 .stat:nth-child(n+3){border-top:1px solid var(--line-soft)}
-  .dsh-body{grid-template-columns:1fr}
-  .dsh-side{display:none}
+  .cpz-body{grid-template-columns:1fr}
+  .cpz-prev{border-left:0;border-top:1px solid var(--line)}
   .pk3,.gl3,.res3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
@@ -1151,10 +1224,10 @@ html{scroll-padding-top:88px}
   .pmx-tabs{grid-template-columns:1fr 1fr}
   .pmx-tabs small{display:none}
   .pmx-n{font-size:44px}
-  .dsh-tabs{display:flex;width:100%}
-  .dsh-tabs button{flex:1;justify-content:center;padding:0 8px}
-  .dsh-panel{padding:16px}
-  .dsh-cz,.shp{grid-template-columns:1fr}
+  .cpz-acts .cpz-btn:not(.p){display:none}
+  .cpz-set,.cpz-prev{padding:18px 16px}
+  .cpz-pg{grid-template-columns:1fr}
+  .shp{grid-template-columns:1fr}
   .kpi{grid-template-columns:1fr}
   .kpi div+div{border-left:0;border-top:1px solid var(--line)}
   .fun div{grid-template-columns:100px 1fr 40px}
@@ -1191,7 +1264,7 @@ html{scroll-padding-top:88px}
 .tg{background:var(--field-line)}                                         /* toggle off 4.75:1 (was #D7DDE6 1.4:1) */
 .opt .rd{border-color:var(--field-line)}                                  /* radio ring 4.75:1 (was #B7C0CD 1.8:1) */
 /* This page's own pairs */
-.dsh-side small,.f4-n{color:var(--muted)!important}                       /* #64748D on #F8FAFD 4.5:1, on #fff 4.75:1 (was #8898AA 2.8:1 / 2.95:1) */
+.f4-n{color:var(--muted)!important}                       /* #64748D on #F8FAFD 4.5:1, on #fff 4.75:1 (was #8898AA 2.8:1 / 2.95:1) */
 .fx-rew .co-row span:first-child,.fx-rew .num,.ph-r.rw .num{color:var(--ok-text)} /* #0E6E48 on #fff 6.3:1 (was #1EA672 3.1:1) */
 .pmx-tabs small{color:#AAB4CC}                                            /* on #002D5D 6.6:1, on #0B3A6E 5.5:1 (was #7F8BAE 4.05:1 / 3.4:1) */
 /* ===== /kit: contrast ===== */
@@ -1310,28 +1383,6 @@ main section#customers{padding:112px 0}
 @media (max-width:1080px){#customers .stories{grid-auto-columns:calc((100% - 16px)/2.3)}}
 @media (max-width:760px){#customers .stories{grid-auto-columns:78%}}
 /* ===== /kit: customer-stories ===== */
-
-/* ===== kit: page (shared layout for the newer pages: hero window, steps, cards) ===== */
-.pgw{width:min(460px,100%)}
-.pgw-b{padding:18px;display:grid;gap:10px}
-.pgw-h{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--ink)}
-.pgw-amt{font-size:28px;font-weight:300;letter-spacing:-.6px;color:var(--ink);line-height:1.1}
-.pgw-sub{font-size:12px;color:var(--muted)}
-.pgw-r{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line-soft);border-radius:8px;font-size:13px;background:var(--surface,#fff)}
-.pgw-r b{font-weight:500;color:var(--ink)}
-.pgw-r small{display:block;color:var(--muted);font-size:11.5px;margin-top:1px}
-.pgw-logos{display:flex;flex-wrap:wrap;gap:6px}.pgw-logos img{height:34px;width:auto}
-.pgw-btn{height:40px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
-.pgw-ex{justify-self:end;font-size:11px;color:var(--muted)}
-.pg-steps .stat{min-width:0}
-.stats4.flow4.pg-steps .stat b{font-size:24px;letter-spacing:-.4px;line-height:1.2}
-.stats4.flow4.pg-steps .stat span:not(.f4-n):not(.f4-ic){font-size:15px}
-.pg-steps .pg-st{display:block;font-size:17px;font-weight:500;color:var(--ink);margin-bottom:4px;letter-spacing:-.1px}
-.pg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.pg-cards .res{background:var(--surface,#fff)}
-@media (max-width:1080px){.pg-cards{grid-template-columns:1fr 1fr}}
-@media (max-width:760px){.pg-cards{grid-template-columns:1fr}}
-/* ===== /kit: page ===== */
 /* ===== kit: scroll-reveal ===== */
 /* Scroll reveal below the hero (AG, 13 Nov 2026; medium level, after squareup.com). Same on every marketing page. Classes are added by JS only, so nothing hides if JS fails.
    Browsers with scroll-driven animations: motion follows the scroll and reverses when scrolling back.
@@ -1362,6 +1413,72 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+/* FLIK F mark on shopper pay and checkout buttons */
+.fk::before{content:"";display:inline-block;flex:none;width:1em;height:1em;margin-right:.5em;vertical-align:-.12em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 4 24.2 24'%3E%3Cpath d='M27.6189 18.8131C27.6189 14.5313 25.177 13.3594 22.1652 13.3594H16.6025V22.1846C16.6025 25.1964 17.914 27.6383 22.0563 27.6383V18.8131H27.6189Z'/%3E%3Cpath d='M30.8521 10.3952C30.8521 5.10632 28.4102 4.3877 25.3984 4.3877H7.35449V22.1555C7.35449 25.1673 8.09076 27.6092 13.6388 27.6092V10.3952H30.8529H30.8521Z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ===== kit: page (shared layout for the newer pages: hero window, steps, cards) ===== */
+.pgw{width:min(460px,100%)}
+.pgw-b{padding:18px;display:grid;gap:10px}
+.pgw-h{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--ink)}
+.pgw-amt{font-size:28px;font-weight:300;letter-spacing:-.6px;color:var(--ink);line-height:1.1}
+.pgw-sub{font-size:12px;color:var(--muted)}
+.pgw-r{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line-soft);border-radius:8px;font-size:13px;background:var(--surface,#fff)}
+.pgw-r b{font-weight:500;color:var(--ink)}
+.pgw-r small{display:block;color:var(--muted);font-size:11.5px;margin-top:1px}
+.pgw-logos{display:flex;flex-wrap:wrap;gap:6px}.pgw-logos img{height:34px;width:auto}
+.pgw-btn{height:40px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
+.pgw-ex{justify-self:end;font-size:11px;color:var(--muted)}
+.pg-steps .stat{min-width:0}
+.stats4.flow4.pg-steps .stat b{font-size:24px;letter-spacing:-.4px;line-height:1.2}
+.stats4.flow4.pg-steps .stat span:not(.f4-n):not(.f4-ic){font-size:15px}
+.pg-steps .pg-st{display:block;font-size:17px;font-weight:500;color:var(--ink);margin-bottom:4px;letter-spacing:-.1px}
+.pg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.pg-cards .res{background:var(--surface,#fff)}
+@media (max-width:1080px){.pg-cards{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.pg-cards{grid-template-columns:1fr}}
+/* ===== /kit: page ===== */
+
+/* ===== Contact page (stripe.com/contact structure: sales, support, other contacts) ===== */
+/* hero: support status on Jakarta time */
+.ct{position:relative;z-index:2;width:min(440px,100%);background:var(--surface,#fff);border-radius:14px;box-shadow:var(--sh-lg);overflow:hidden}
+.ct .co-bar{position:relative}.ct .co-bar span{position:absolute;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap}
+.ct-b{padding:20px;display:grid;gap:12px}
+.ct-st{display:flex;align-items:center;gap:12px}
+.ct-dot{width:12px;height:12px;border-radius:50%;background:var(--faint);flex:none;box-shadow:0 0 0 5px var(--line-soft)}
+.ct-st.open .ct-dot{background:var(--ok);box-shadow:0 0 0 5px var(--ok-soft);animation:ct-p 2s ease-in-out infinite}
+@keyframes ct-p{50%{box-shadow:0 0 0 9px var(--ok-soft)}}
+html.anim-paused .ct-dot{animation:none}
+@media (prefers-reduced-motion:reduce){.ct-dot{animation:none!important}}
+.ct-st b{display:block;font-size:17px;font-weight:600;color:var(--ink)}
+.ct-st small{display:block;font-size:12.5px;color:var(--muted)}
+.ct-row{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line-soft);border-radius:10px;text-decoration:none;color:var(--ink);transition:border-color .2s,background .2s}
+a.ct-row:hover{border-color:var(--primary);background:var(--primary-soft)}
+.ct-row>span:first-child{width:34px;height:34px;border-radius:8px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.ct-row b{display:block;font-weight:500;font-size:13.5px}.ct-row small{display:block;font-size:12px;color:var(--muted)}
+.ct-row .chev{margin-left:auto;color:var(--primary)}
+.ct-wk{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:2px}
+.ct-wk span{text-align:center;font-size:11px;padding:6px 0;border-radius:6px;background:var(--bg-alt);color:var(--muted)}
+.ct-wk span.on{background:var(--primary-soft);color:var(--primary);font-weight:500}
+.ct-wk span.today{box-shadow:inset 0 0 0 1.5px var(--primary)}
+/* three ways in */
+.ct3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.ct3>div{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:var(--surface,#fff);padding:28px;display:flex;flex-direction:column;gap:12px}
+.ct3 .tile{width:44px;height:44px;border-radius:10px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center}
+.ct3 h3{font-size:19px;font-weight:500;letter-spacing:-.2px}
+.ct3 p{font-size:14.5px;color:var(--body);line-height:1.55}
+.ct3 ul{list-style:none;display:grid;gap:8px;margin:2px 0 6px}
+.ct3 li{display:flex;gap:8px;font-size:14px;color:var(--body)}.ct3 li [data-ic]{color:var(--primary);flex:none;margin-top:2px}
+.ct3 .acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ct3 a{word-break:break-word}
+/* office */
+.of{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:40px}
+.of>div{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:var(--surface,#fff);padding:28px;display:grid;gap:10px;align-content:start}
+.of h3{font-size:19px;font-weight:500}
+.of p{color:var(--body);line-height:1.6;font-size:15px}
+.of dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14.5px}.of dt{color:var(--muted)}.of dd{color:var(--ink)}
+@media (max-width:1080px){.ct3{grid-template-columns:1fr}.of{grid-template-columns:1fr}}
+@media (max-width:760px){.ch-stage:has(#ct){height:auto;padding:32px 16px}}
+/* ===== /Contact page ===== */
 </style>
 </head>
 <body>
@@ -1385,26 +1502,51 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 
 
 <main id="top" tabindex="-1">
+<!-- ===== Hero (stripe.com/contact: get in touch; FLIK: support status on Jakarta time) ===== -->
 <section class="ch guides">
   <div class="wrap ch-in">
     <div class="ch-t">
       <p class="eyebrow">Contact</p>
-      <h1 class="ch-h">Talk to FLIK. <span class="soft">Sales, support and everything in between.</span></h1>
-      <p class="lead">Questions about an order, your account or how FLIK fits your business? Reach the team that can help.</p>
-      <div class="hero-cta"><a href="mailto:support@flik.co.id" class="btn btn-primary live">Email support <span class="chev">›</span></a><button class="btn btn-secondary" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button></div>
-      <ul class="ch-facts"><li><span data-ic="check-s"></span>Support Mon–Fri, 09:00–18:00 WIB</li><li><span data-ic="check-s"></span>Email and WhatsApp</li><li><span data-ic="check-s"></span>Office in Jakarta Selatan</li></ul>
+      <h1 class="ch-h">Get in touch. <span class="soft">Let us know how we can help.</span></h1>
+      <p class="lead">Talk to sales about how FLIK fits your business, or reach support about your account, a payment or a shipment. Support is open Monday to Friday, 09:00–18:00 WIB.</p>
+      <div class="hero-cta"><button class="btn btn-primary live" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button><a class="btn btn-secondary" href="mailto:support@flik.co.id">Email support <span class="chev">›</span></a></div>
     </div>
-    <div class="ch-stage">
-      <div class="ch-glow" aria-hidden="true"></div>
-      <div class="fx-win pgw" role="img" aria-label="Example: how to reach FLIK"><div class="co-bar"><i></i><i></i><i></i><span>flik.co.id/contact</span></div><div class="pgw-b"><div class="pgw-h">FLIK support<span class="pill ok">Mon–Fri</span></div><span class="pgw-sub">09:00–18:00 WIB</span><div class="pgw-r"><span><b>Email</b><small>support@flik.co.id</small></span></div><div class="pgw-r"><span><b>WhatsApp</b><small>+62 813-3532-8100</small></span></div><div class="pgw-r"><span><b>Office</b><small>Cibis Nine, Jakarta Selatan</small></span></div><span class="pgw-ex">Example</span></div></div>
+    <div class="ch-stage"><div class="ch-glow" aria-hidden="true"></div><div class="ct" id="ct"><div class="co-bar"><i></i><i></i><i></i><span>FLIK support</span></div><div class="ct-b"><div class="ct-st" id="ct-st"><span class="ct-dot"></span><div><b id="ct-h">Support hours</b><small id="ct-s">Monday to Friday, 09:00–18:00 WIB</small></div></div><div class="ct-wk" id="ct-wk"><span class=on>Mon</span><span class=on>Tue</span><span class=on>Wed</span><span class=on>Thu</span><span class=on>Fri</span><span>Sat</span><span>Sun</span></div><a class="ct-row" href="mailto:support@flik.co.id"><span data-ic="mail"></span><div><b>support@flik.co.id</b><small>Email support</small></div><span class="chev">›</span></a><a class="ct-row" href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)"><span data-ic="chat"></span><div><b>+62 813-3532-8100</b><small>WhatsApp</small></div><span class="chev">›</span></a><a class="ct-row" href="#" data-act="sales" data-interest="Contact"><span data-ic="user"></span><div><b>Talk to sales</b><small>Book an intro call</small></div><span class="chev">›</span></a></div></div></div>
+  </div>
+</section>
+
+<!-- ===== Three ways in (Stripe: sales, help and support, media) ===== -->
+<section class="pad guides" id="ways">
+  <div class="wrap">
+    <h2 class="sec-h">Who would you like to talk to? <span class="soft">Pick what you need help with.</span></h2>
+    <div class="ct3">
+      <div><span class="tile" data-ic="chart"></span><h3>Sales</h3><p>We'd love to talk about how FLIK can work for your business, from checkout and shipping to funding and volume pricing.</p><ul><li><span data-ic="check-s"></span>An intro call with the FLIK team</li><li><span data-ic="check-s"></span>Rates for your business</li><li><span data-ic="check-s"></span>Help switching your store over</li></ul><div class="acts"><button class="btn btn-primary" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button><a href="#" class="link" data-page="/demo">Book a demo <span class="chev">›</span></a></div></div>
+      <div><span class="tile" data-ic="chat"></span><h3>Help and support</h3><p>Questions about your account, a payment, a payout or a shipment. Monday to Friday, 09:00–18:00 WIB.</p><ul><li><span data-ic="mail"></span><a class="link" href="mailto:support@flik.co.id">support@flik.co.id</a></li><li><span data-ic="phone"></span><a class="link" href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)">+62 813-3532-8100 (WhatsApp)</a></li></ul><div class="acts"><a href="#" class="btn btn-secondary" data-page="/help">Visit the Help Center <span class="chev">›</span></a></div></div>
+      <div><span class="tile" data-ic="cart"></span><h3>Bought from a store?</h3><p>If you paid at a store that uses FLIK, contact the store first about your order, delivery or refund. If you can't reach them, contact FLIK support.</p><ul><li><span data-ic="check-s"></span>Have your order or payment details ready</li><li><span data-ic="check-s"></span>Track a parcel with its tracking number</li></ul><div class="acts"><a href="#" class="btn btn-secondary" data-page="/shipping/track">Track a parcel <span class="chev">›</span></a><a href="#" class="link" data-page="/legal/refund">Refund Policy <span class="chev">›</span></a></div></div>
     </div>
   </div>
 </section>
 
-<section class="pad guides" id="contact-ways">
+<!-- ===== Other contacts (Stripe: developers, general communications) ===== -->
+<section class="pad alt guides" id="more">
   <div class="wrap">
-    <h2 class="sec-h">Who to contact. <span class="soft">Pick what you need help with.</span></h2>
-    <div class="pg-cards"><a href="#" class="res" data-act="sales"><span class="rtag"><span data-ic="chart"></span>Sales</span><b>Talk to sales</b><span>See if FLIK fits your business, or ask about volume pricing.</span><em>Book a call <span class="chev">›</span></em></a><a href="mailto:support@flik.co.id" class="res"><span class="rtag"><span data-ic="mail"></span>Support</span><b>Email support</b><span>support@flik.co.id, Monday to Friday, 09:00–18:00 WIB.</span><em>Send an email <span class="chev">›</span></em></a><a class="res" href="https://wa.me/6281335328100" target="_blank" rel="noopener"><span class="rtag"><span data-ic="chat"></span>Support</span><b>WhatsApp</b><span>+62 813-3532-8100, Monday to Friday, 09:00–18:00 WIB.</span><em>Chat with support <span class="chev">›</span></em></a><a href="#" class="res" data-page="/legal/data-request"><span class="rtag"><span data-ic="lock"></span>Privacy</span><b>Your data</b><span>privacy@flik.co.id, or the data request form.</span><em>Make a request <span class="chev">›</span></em></a><a href="#" class="res" data-page="/help"><span class="rtag"><span data-ic="user"></span>Help</span><b>Help center</b><span>Answers about Checkout, Shipping, Funding and your account.</span><em>Visit the help center <span class="chev">›</span></em></a><a href="#" class="res" data-page="/help"><span class="rtag"><span data-ic="pin"></span>Office</span><b>PT Flik Teknologi Indonesia</b><span>Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.</span><em>Consumer complaints <span class="chev">›</span></em></a></div>
+    <h2 class="sec-h">Other ways to reach us. <span class="soft">For developers, your data and complaints.</span></h2>
+    <div class="res3" style="margin-top:40px">
+      <a href="#" class="res" data-page="/developers"><span class="rtag"><span data-ic="code"></span>Developers</span><b>Building with the FLIK API?</b><span>Guides, API reference and Sandbox. For technical questions, email support with your request ID.</span><em>Read the docs <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/legal/data-request"><span class="rtag"><span data-ic="lock"></span>Your data</span><b>Questions about your personal data</b><span>Email privacy@flik.co.id, or send a request to see, correct or delete your data.</span><em>Make a data request <span class="chev">›</span></em></a>
+      <a href="#" class="res" data-page="/help"><span class="rtag"><span data-ic="user"></span>Complaints</span><b>Make a complaint</b><span>Contact FLIK support first. The Help Center lists the steps, including the consumer protection contacts.</span><em>See how <span class="chev">›</span></em></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Office ===== -->
+<section class="pad guides" id="office">
+  <div class="wrap">
+    <h2 class="sec-h">Our office. <span class="soft">PT Flik Teknologi Indonesia, Jakarta.</span></h2>
+    <div class="of">
+      <div><h3>Address</h3><p>Cibis Nine, Lantai 15<br>Jl. Raya Cilandak KKO, Cilandak Timur<br>Pasar Minggu, Jakarta Selatan 12560</p></div>
+      <div><h3>Hours and contacts</h3><dl><dt>Support</dt><dd>Mon–Fri, 09:00–18:00 WIB</dd><dt>Email</dt><dd><a class="link" href="mailto:support@flik.co.id">support@flik.co.id</a></dd><dt>WhatsApp</dt><dd><a class="link" href="https://wa.me/6281335328100" target="_blank" rel="noopener">+62 813-3532-8100</a></dd><dt>Privacy</dt><dd><a class="link" href="mailto:privacy@flik.co.id">privacy@flik.co.id</a></dd></dl></div>
+    </div>
   </div>
 </section>
 
@@ -1421,7 +1563,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <h2>Want to see FLIK first?</h2>
     <p class="txt">Book a demo with the FLIK team and see Checkout, Shipping and Funding on your own business.</p>
     <div class="hero-cta" style="justify-content:center">
-      <button class="btn btn-primary live" data-act="sales" data-interest="Demo">Book a demo <span class="chev">›</span></button>
+      <button class="btn btn-primary live" data-act="sales" data-interest="Contact">Talk to sales <span class="chev">›</span></button>
       <button class="btn btn-secondary" data-act="start">Create an account</button>
     </div>
     
@@ -1683,13 +1825,29 @@ const onScreen=(el,fn)=>{let v=false;new IntersectionObserver(es=>{v=es[0].isInt
 /* ===== Page: at a glance ===== */
 
 /* ===== FAQ ===== */
-const FAQ=[["When is support available?", "Monday to Friday, 09:00–18:00 WIB, by email at support@flik.co.id or WhatsApp at +62 813-3532-8100."], ["I bought from a store that uses FLIK. Who do I contact?", "Contact the store first about your order. If you can't reach them, contact FLIK support and we will follow it up."], ["How do I make a complaint?", "Contact FLIK support first. The Help center lists the steps, including the consumer complaints contacts."], ["How do I ask about my personal data?", "Email privacy@flik.co.id or use the data request form."]];
+const FAQ=[["When is support available?", "Monday to Friday, 09:00–18:00 WIB, by email at support@flik.co.id or WhatsApp at +62 813-3532-8100."], ["I bought from a store that uses FLIK. Who do I contact?", "Contact the store first about your order. If you can't reach them, contact FLIK support."], ["How do I talk to sales?", "Book an intro call with the FLIK team. Tell us about your business and we'll show you how FLIK fits."], ["How do I make a complaint?", "Contact FLIK support first. The Help Center lists the steps, including the consumer protection contacts."], ["How do I ask about my personal data?", "Email privacy@flik.co.id or use the data request form."]];
 const fq=document.getElementById('faq');
 fq.innerHTML=FAQ.map((q,i)=>`<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q[0]}<span class="pl">${ic('plus',14,2)}</span></button><div class="ans">${q[1]}</div></div>`).join('');
 fq.querySelectorAll('.qa>button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
 
 /* ===== icons in tags ===== */
 document.querySelectorAll('main [data-ic]').forEach(e=>{if(!e.innerHTML.trim())e.innerHTML=ic(e.dataset.ic,e.closest('.rtag')?15:18)});
+
+/* ===== Hero: support status, worked out on Jakarta time (WIB) ===== */
+(function(){
+  const st=document.getElementById('ct-st');if(!st)return;
+  const h=document.getElementById('ct-h'),s=document.getElementById('ct-s'),wk=[...document.querySelectorAll('#ct-wk span')];
+  function upd(){
+    let p;try{p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date())}catch(e){return}
+    const g=t=>(p.find(x=>x.type===t)||{}).value,day=g('weekday'),hh=+g('hour'),mm=g('minute');
+    const idx=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(day),open=idx>=0&&idx<5&&hh>=9&&hh<18;
+    wk.forEach((x,i)=>x.classList.toggle('today',i===idx));
+    st.classList.toggle('open',open);
+    h.textContent=open?'Support is open now':'Support is closed now';
+    s.textContent=(open?'Until 18:00 WIB':'Back '+(idx>=0&&idx<4&&hh>=18?'tomorrow':idx===4&&hh<9||idx<5&&hh<9?'today':'on Monday')+' at 09:00 WIB')+' · It\'s '+String(hh).padStart(2,'0')+':'+mm+' in Jakarta';
+  }
+  upd();setInterval(upd,30000);
+})();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
   MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+

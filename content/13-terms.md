@@ -69,7 +69,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** The website gives general information about FLIK's products. It isn't an offer or advice. Features, prices and examples may change.
 - **List item:** The **rate checker** on the Shipping page shows rates for comparison. The price that applies is the one confirmed when you book a shipment in the merchant dashboard.
 - **List item:** **Funding** information isn't an offer of financing. Merchant Cash Advance is for selected merchants and depends on an assessment.
-- **List item:** **Payments** are processed by licensed payment partners. FLIK is not a bank. Partners: CashuUp, Nicepay and Xendit
+- **List item:** **Payments** are processed by licensed payment partners. FLIK is not a bank. Partners: CashUp, Nicepay and Xendit
 - **List item:** **Numbers and claims**, such as rates or results, describe the time they were published.
 
 ## 4. Intellectual property
@@ -115,7 +115,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **List item:** For shipping, you pay from your FLIK balance before a shipment is created.
 - **List item:** COD fee 3% (excl. PPN), paid by the merchant, deducted when the COD amount is credited after delivery. No COD fee is charged on a returned parcel.
 - **List item:** Checkout payments and COD funds reach your FLIK balance after delivery. You can withdraw your balance on request, at least Rp100.000 at a time. Each withdrawal costs Rp4.000 + PPN, and the fee is returned if the payout fails.
-- **List item:** Payments are processed by licensed payment partners. FLIK is not a bank. Partners: CashuUp, Nicepay and Xendit
+- **List item:** Payments are processed by licensed payment partners. FLIK is not a bank. Partners: CashUp, Nicepay and Xendit
 - **List item:** Refunds and fee corrections follow our [Refund Policy](./refund/).
 - **Heading:** Shipping
 - **List item:** Couriers carry your parcels. Their terms, weight rules and claim rules also apply. If a parcel weighs more than booked, the difference in the shipping fee is charged to you.

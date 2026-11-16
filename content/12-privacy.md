@@ -123,7 +123,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 <!-- html: 6. Who we share it with -->
 
 - **Table columns:** Recipient — Data — Why
-- **Table row:** Payment partners: CashuUp, Nicepay and Xendit — Transactions, payout bank account — Process payments, refunds and payouts
+- **Table row:** Payment partners: CashUp, Nicepay and Xendit — Transactions, payout bank account — Process payments, refunds and payouts
 - **Table row:** Couriers on FLIK Shipping (listed on the Shipping page) — Sender and recipient name, phone, address, COD amount — Pick up and deliver parcels, collect COD
 - **Table row:** Store platforms you connect, such as Shopify or WooCommerce — Store and order data — Run the integration you set up
 - **Table row:** Credit bureaus and funding partners: [[W-12: names]] — Funding application and repayment data — Assess and provide funding
