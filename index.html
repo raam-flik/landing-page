@@ -1189,8 +1189,36 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 .co,.fund,.hx-film,.minip,.ncard,.dx-flik,.dx-sys,.dx-tile>*,.hl-ic,.bs-logo,.ipanel,.hl,.dx-b{border-radius:6px}
 .dx-tile span,.dx-sys span,.dx-sys span.hl,.dx-stage .dx-b{border-radius:6px}
 .ncard{overflow:hidden}
+/* ===== All stories card (Raam, 16 Nov): a tilted wall of the brands' logos behind a soft violet wash ===== */
+.all-wall{position:absolute;left:-30%;right:-30%;top:-12%;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;transform:rotate(-12deg);transform-origin:center;z-index:0;pointer-events:none}
+.all-wall i{aspect-ratio:1.55;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,20,60,.2)}
+.all-wall i.dk{background:var(--ink)}
+.all-wall img{max-width:74%;max-height:46%;object-fit:contain;display:block}
+#customers a.story-art.cs-all,.bs-art.bs-all.has-wall{background:linear-gradient(100deg,#EAF2FF 0%,#EDE7FF 55%,#FFE6F4 100%);color:var(--ink)}
+.cs-all::after,.bs-all.has-wall::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,#EAF2FF 0%,#EDE7FF 55%,#FFE6F4 100%);-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.3) 40%,#000 76%);mask-image:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.3) 40%,#000 76%)}
+#customers .cs-all .st-big,.bs-all.has-wall .bs-big{color:var(--ink)}
+.all-wall i{box-shadow:0 4px 12px rgba(50,50,93,.12)}
+.all-wall.covers{left:-26%;right:-26%;top:-10%;grid-template-columns:repeat(4,1fr)}
+.all-wall.covers i{aspect-ratio:4/5;overflow:hidden;background:#fff}
+.all-wall.covers img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;transform:scale(1.55)}
+.cs-all>*:not(.all-wall),.bs-all.has-wall>*:not(.all-wall){position:relative;z-index:2}
 /* story captions: two lines at most */
 .bs-card>p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* ===== Stories like the product pages (Raam, 16 Nov): white section, about 3.85 cards per row, logo chip and captions as on Checkout/Shipping, All stories 4th with text and link ===== */
+.bs-card{flex:0 0 calc((100% - 48px)/3.85);display:flex;flex-direction:column}
+.bs-art{padding:18px}
+.bs-logo{height:34px;padding:0 10px;align-items:center}
+.bs-logo img{max-height:20px;max-width:96px}
+.bs-card>p{color:var(--ink);min-height:3em}
+@media (max-width:1080px){.bs-card{flex-basis:calc((100% - 16px)/2.3)}}
+@media (max-width:760px){.bs-card{flex-basis:78%}}
+
+/* What's happening cards: a topic chip in place of the logo, a lighter fade so the cover stays clear */
+.bs-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.bs-post::before{background:linear-gradient(180deg,rgba(var(--t),0) 70%,rgba(var(--t),.18))}
+#whats-happening .bs-head .sec-h{margin-bottom:0}
+#enterprise{padding-bottom:0}
+
 </style>
 </head>
 <body>
@@ -1412,13 +1440,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </section>
 
 <!-- ===== Brand stories carousel ===== -->
-<section class="pad alt guides" id="brand-stories">
+<section class="pad guides" id="brand-stories">
   <div class="wrap">
     <div class="bs-head">
       <h2 class="sec-h hl-h">Brands growing with FLIK. <span class="soft">See how they sell, ship and scale.</span></h2>
       <div class="car-nav"><button class="cbtn" data-car="bstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="bstories" data-dir="1" aria-label="Next stories">›</button></div>
     </div>
-    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/story/?c=erigo" style="--t:0,45,93;background-image:url('assets/customers/erigo-1.jpg');background-position:56% center" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span><span class="bs-big">Up to 200%<small>sales growth, online and in stores</small></span></a><p>Stock funding helped ERIGO grow sales up to 200%.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=emados" style="--t:120,52,10;background-image:url('assets/customers/emados-1.jpg');background-position:center" aria-label="Read EMADO'S story"><span class="bs-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span><span class="bs-big">30+<small>branches opened across Indonesia</small></span></a><p>EMADO'S opened 30+ branches across Indonesia with FLIK.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=sigit-store" style="--t:0,45,93;background-image:url('assets/customers/sigit-store-1.jpg?v=3');background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=heylocal" style="--t:174,29,124;background-image:url('assets/customers/heylocal-1.jpg');background-position:38% top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span><span class="bs-big">500,000+<small>transactions in peak season</small></span></a><p>HEYLOCAL stocked up in time for its peak season.</p><a href="customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=artch" style="--t:59,36,168;background-image:url('assets/customers/artch-1.jpg?v=3');background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.png?v=2" alt="Artch"></span></a><p>Artch's checkout keeps up with its shoppers.</p><a href="customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=paper" style="--t:174,29,124;background-image:url('assets/customers/paper-1.jpg?v=3');background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.png?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=wakaigo" style="--t:0,45,93;background-image:url('assets/customers/wakaigo-1.jpg?v=3');background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all" href="#" data-page="/customers"><span></span><span class="bs-big">All stories<small>See every brand building with FLIK</small></span></a></article></div>
+    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/story/?c=erigo" style="--t:0,45,93;background-image:url('assets/customers/erigo-1.jpg');background-position:56% center" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span></a><p>Stock funding helped ERIGO grow sales up to 200%.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=emados" style="--t:120,52,10;background-image:url('assets/customers/emados-1.jpg');background-position:center" aria-label="Read EMADO'S story"><span class="bs-logo dark"><img src="assets/logos/merchant/emandos.png?v=2" alt="EMADO'S"></span></a><p>EMADO'S opened 30+ branches across Indonesia with FLIK.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=sigit-store" style="--t:0,45,93;background-image:url('assets/customers/sigit-store-1.jpg?v=3');background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all has-wall" href="#" data-page="/customers" aria-label="See all customer stories"><span class="all-wall" aria-hidden="true"><i><img src="assets/logos/merchant/sigit-store.png" alt=""></i><i class="dk"><img src="assets/logos/merchant/erigo.png" alt=""></i><i><img src="assets/logos/merchant/artch.png" alt=""></i><i><img src="assets/logos/merchant/heylocal.png" alt=""></i><i><img src="assets/logos/merchant/osim.png" alt=""></i><i><img src="assets/logos/merchant/paper.png" alt=""></i><i class="dk"><img src="assets/logos/merchant/emandos.png" alt=""></i><i><img src="assets/logos/merchant/wakaigo.png" alt=""></i><i><img src="assets/logos/merchant/zaafer.png" alt=""></i><i><img src="assets/logos/merchant/kopikalyan.png" alt=""></i><i><img src="assets/logos/merchant/geraihawa.png" alt=""></i><i><img src="assets/logos/merchant/haus.png" alt=""></i><i><img src="assets/logos/merchant/manta-liberta.png" alt=""></i><i><img src="assets/logos/merchant/donat-bahagia.png" alt=""></i><i><img src="assets/logos/merchant/teenage-death-star.png" alt=""></i><i><img src="assets/logos/merchant/aneka.png" alt=""></i><i><img src="assets/logos/merchant/sigit-store.png" alt=""></i><i class="dk"><img src="assets/logos/merchant/erigo.png" alt=""></i><i><img src="assets/logos/merchant/artch.png" alt=""></i><i><img src="assets/logos/merchant/heylocal.png" alt=""></i><i><img src="assets/logos/merchant/osim.png" alt=""></i><i><img src="assets/logos/merchant/paper.png" alt=""></i><i class="dk"><img src="assets/logos/merchant/emandos.png" alt=""></i><i><img src="assets/logos/merchant/wakaigo.png" alt=""></i><i><img src="assets/logos/merchant/zaafer.png" alt=""></i><i><img src="assets/logos/merchant/kopikalyan.png" alt=""></i><i><img src="assets/logos/merchant/geraihawa.png" alt=""></i><i><img src="assets/logos/merchant/haus.png" alt=""></i><i><img src="assets/logos/merchant/manta-liberta.png" alt=""></i><i><img src="assets/logos/merchant/donat-bahagia.png" alt=""></i></span><span></span><span class="bs-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="#" data-page="/customers" class="link">See all customer stories <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=heylocal" style="--t:174,29,124;background-image:url('assets/customers/heylocal-1.jpg');background-position:38% top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span></a><p>HEYLOCAL stocked up in time for its peak season.</p><a href="customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=artch" style="--t:59,36,168;background-image:url('assets/customers/artch-1.jpg?v=3');background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.png?v=2" alt="Artch"></span></a><p>Artch's checkout keeps up with its shoppers.</p><a href="customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=paper" style="--t:174,29,124;background-image:url('assets/customers/paper-1.jpg?v=3');background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.png?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=wakaigo" style="--t:0,45,93;background-image:url('assets/customers/wakaigo-1.jpg?v=3');background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article></div>
   </div>
 </section>
 
@@ -1511,13 +1539,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </section>
 
 <!-- ===== What's happening ===== -->
-<section class="pad guides">
+<section class="pad guides" id="whats-happening">
   <div class="wrap">
-    <div class="news-head">
-      <h2 class="sec-h" style="margin:0">What's happening <span class="soft" style="display:block">See the latest from FLIK.</span></h2>
-      <div class="car-nav"><button class="cbtn" data-car="news" data-dir="-1" aria-label="Previous posts">‹</button><button class="cbtn" data-car="news" data-dir="1" aria-label="Next posts">›</button></div>
+    <div class="bs-head">
+      <h2 class="sec-h">What's happening. <span class="soft">Guides and news to help you sell more.</span></h2>
+      <div class="car-nav"><button class="cbtn" data-car="news" data-dir="-1" aria-label="Previous articles">‹</button><button class="cbtn" data-car="news" data-dir="1" aria-label="Next articles">›</button></div>
     </div>
-    <div class="news" id="news"></div>
+    <div class="bs-row" id="news"></div>
   </div>
 </section>
 
@@ -2301,14 +2329,17 @@ document.querySelectorAll('#solutions .bc').forEach(card=>card.addEventListener(
 document.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{const c=document.getElementById(b.dataset.car);c.scrollBy({left:(+b.dataset.dir)*c.clientWidth*.8})});
 
 /* What's happening (placeholder posts) */
+/* What's happening: the latest blog articles, in the success-story card style (tag chip, photo-style cover, caption, link); All articles 4th, like All stories */
 const NEWS=[
-  ['Promo','Ship for less this month','Get extra cashback on shipments created from the FLIK dashboard.','linear-gradient(135deg,#FF7A2E,#FF2DB8)','/promo'],
-  ['Product','15 payment methods in one checkout','QRIS, e-wallets, cards, virtual accounts and COD, all in FLIK Checkout.','linear-gradient(135deg,#6A4BFF,#FF2DB8)','/checkout/payment-methods'],
-  ['Guide','How to sell with COD and get paid faster','What to know about COD fees, failed deliveries and payouts.','linear-gradient(135deg,#002D5D,#6A4BFF)','/blog'],
-  ['Product','Bulk shipping from many warehouses','Send to many destinations at once from one dashboard.','linear-gradient(135deg,#00E5FF,#8B73FF)','/shipping/bulk'],
-  ['Guide','Funding inventory without hidden fees','How Merchant Cash Advance works, step by step.','linear-gradient(135deg,#FF7A2E,#00E5FF)','/funding/merchant-cash-advance']
+  ['Shipping','cut-failed-cod-deliveries','cod-failed-deliveries','How to cut failed COD deliveries and get paid faster','0,45,93'],
+  ['Payments','payment-methods-indonesian-shoppers','payment-methods-indonesia','Which payment methods should your online store offer?','59,36,168'],
+  ['Payment links','sell-on-whatsapp-with-payment-links','whatsapp-payment-links','Sell on WhatsApp and Instagram with payment links','0,45,93'],
+  ['Funding','plan-stock-and-cash-for-sale-days','sale-day-stock-plan','Plan your stock and cash for 12.12 and other sale days','59,36,168']
 ];
-document.getElementById('news').innerHTML=NEWS.map(n=>`<a href="#" class="ncard" data-page="${n[4]}"><div class="nart" style="background:${n[3]}"></div><div class="nb"><span class="nt">${n[0]}</span><h4>${n[1]}</h4><p>${n[2]}</p><span class="link">Read more <span class="chev">›</span></span></div></a>`).join('');
+const newsCard=n=>`<article class="bs-card"><a class="bs-art bs-post" href="blog/?post=${n[1]}" style="--t:${n[4]};background-image:url('assets/blog/${n[2]}-p.jpg')" aria-label="Read: ${n[3]}"><span class="bs-logo bs-tag">${n[0]}</span></a><p>${n[3]}</p><a href="blog/?post=${n[1]}" class="link">Read article <span class="chev">›</span></a></article>`;
+document.getElementById('news').innerHTML=NEWS.slice(0,3).map(newsCard).join('')+
+  `<article class="bs-card"><a class="bs-art bs-all has-wall" href="blog/" aria-label="See all articles"><span class="all-wall covers" aria-hidden="true"><i><img src="assets/blog/cod-failed-deliveries-p.jpg" alt=""></i><i><img src="assets/blog/payment-methods-indonesia-p.jpg" alt=""></i><i><img src="assets/blog/whatsapp-payment-links-p.jpg" alt=""></i><i><img src="assets/blog/sale-day-stock-plan-p.jpg" alt=""></i><i><img src="assets/blog/cod-failed-deliveries-p.jpg" alt=""></i><i><img src="assets/blog/payment-methods-indonesia-p.jpg" alt=""></i><i><img src="assets/blog/whatsapp-payment-links-p.jpg" alt=""></i><i><img src="assets/blog/sale-day-stock-plan-p.jpg" alt=""></i><i><img src="assets/blog/cod-failed-deliveries-p.jpg" alt=""></i><i><img src="assets/blog/payment-methods-indonesia-p.jpg" alt=""></i><i><img src="assets/blog/whatsapp-payment-links-p.jpg" alt=""></i><i><img src="assets/blog/sale-day-stock-plan-p.jpg" alt=""></i><i><img src="assets/blog/cod-failed-deliveries-p.jpg" alt=""></i><i><img src="assets/blog/payment-methods-indonesia-p.jpg" alt=""></i><i><img src="assets/blog/whatsapp-payment-links-p.jpg" alt=""></i><i><img src="assets/blog/sale-day-stock-plan-p.jpg" alt=""></i></span><span></span><span class="bs-big">All articles</span></a><p>Guides on payments, shipping and growing your brand.</p><a href="blog/" class="link">See all articles <span class="chev">›</span></a></article>`+
+  NEWS.slice(3).map(newsCard).join('');
 /* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
 (function(){
   const SVG='<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path class="ha-l" d="M0 5h7"/><path class="ha-t" d="M1 1l4 4-4 4"/></svg>';
