@@ -1246,7 +1246,7 @@ html{scroll-padding-top:88px}
 /* brand photo cards: photo + a navy scrim at the bottom so the headline stays readable */
 .sc.sc-ph{background-color:var(--ink);background-size:cover;background-position:center}
 /* like stripe.com/customers: a brand-colour wash over the photo, solid at the bottom (FLIK ribbon colours) */
-.sc.sc-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),.38) 0%,rgba(var(--tint),.5) 55%,rgba(var(--tint),.92) 100%)}
+.sc.sc-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--tint),0) 0%,rgba(var(--tint),.2) 50%,rgba(var(--tint),.78) 100%)}
 .sc.t-violet{--tint:106,75,255}.sc.t-magenta{--tint:255,45,184}.sc.t-orange{--tint:255,122,46}.sc.t-navy{--tint:0,45,93}
 .cs-photos{display:grid;gap:16px;margin:-24px 0 56px}
 .cs-photos.n1{grid-template-columns:1fr}.cs-photos.n2{grid-template-columns:1.4fr 1fr}
@@ -1275,7 +1275,6 @@ html{scroll-padding-top:88px}
 .cx-tabs button[aria-selected="true"]{background:var(--primary);color:#fff}
 .cx-feat{display:grid;grid-template-columns:200px 1fr;gap:48px;margin-top:40px;align-items:start}
 .cx-meta{display:grid;gap:22px}
-.cx-meta>div{border-left:1px solid var(--primary);padding-left:12px}
 .cx-meta b{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:8px}
 .cx-meta ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13.5px;color:var(--body)}
 .cx-meta p{font-size:13.5px;color:var(--body)}
@@ -1304,6 +1303,11 @@ html{scroll-padding-top:88px}
 .cx-res>div{border-left:1px solid var(--primary);padding-left:16px}
 .cx-res b{display:block;font-size:44px;line-height:1.1;font-weight:300;color:var(--ink);letter-spacing:-1px}  /* same as the homepage stats */
 .cx-res span{display:block;font-size:15px;color:var(--muted);margin-top:8px;line-height:1.45}
+.cx-band{margin-top:64px}
+.cx-band .logos-track>a,.cx-band .logos-track>span>a{display:flex;align-items:center;flex:none}
+.cx-band .lg.dk{filter:brightness(0);opacity:.6}
+.cx-band a:hover .lg{filter:none;opacity:1}
+.cx-band a:hover .lg.dk{filter:brightness(0);opacity:.85}
 .cx-wall{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:56px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cx-wall a{min-width:0;display:flex;align-items:center;justify-content:center;height:56px;padding:6px;border-radius:6px;transition:background .15s}
 .cx-wall a:hover{background:var(--surface-alt,#F8FAFD)}
@@ -1314,7 +1318,7 @@ html{scroll-padding-top:88px}
 .cx-wall .darkchip{background:var(--ink);border-radius:6px;padding:6px 8px;display:inline-flex}
 .cx-bt{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px}
 .cx-bt h3{font-size:24px;font-weight:500;  /* same as story-page section headings */ letter-spacing:-.3px;color:var(--ink)}
-.cx-bt .blk{border-left:1px solid var(--primary);padding-left:16px;margin-top:22px}
+.cx-bt .blk{margin-top:22px}
 .cx-bt .blk b{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
 .cx-bt .blk p{font-size:15px;line-height:1.6;color:var(--body)}
 .cx-bt .blk p+p{margin-top:8px}
@@ -1337,14 +1341,15 @@ html{scroll-padding-top:88px}
 .mk-ex{font-size:12px;color:var(--muted)}
 .cx-sol{display:grid;grid-template-columns:1fr 1fr;gap:24px 56px;margin-top:24px;max-width:900px}
 .cx-sol p{font-size:16px;line-height:1.6}
-.cx-chk{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 32px;margin-top:28px;max-width:640px}
+.cx-chk{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 56px;margin-top:28px;max-width:900px}
+.cx-chk a{justify-self:start}
 .cx-chk a{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-size:14.5px;font-weight:500}
-.cx-start{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
+.cx-start{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:start}
 .cx-start h2{font-size:36px}
 .cx-start .lead{margin-top:12px}
-.cx-start>div>b{display:block;font-size:15px;font-weight:500;color:var(--ink);border-left:1px solid var(--primary);padding-left:12px}
-.cx-start>div>p{font-size:14.5px;color:var(--body);margin:8px 0 12px;padding-left:13px;line-height:1.55}
-.cx-start>div>.link{margin-left:13px;font-size:14px}
+.cx-start>div>b{display:block;font-size:15px;font-weight:500;color:var(--ink)}
+.cx-start>div>p{font-size:14.5px;color:var(--body);margin:8px 0 12px;line-height:1.55}
+.cx-start>div>.link{font-size:14px}
 @media (max-width:1080px){.cx-res{grid-template-columns:1fr 1fr}.cx-wall{grid-template-columns:repeat(4,1fr)}.cx-bt,.cx-sol{grid-template-columns:1fr}.cx-start{grid-template-columns:1fr}}
 @media (max-width:760px){.cx-wall{grid-template-columns:repeat(2,1fr)}.cx-chk{grid-template-columns:1fr}.cx-vis{padding:24px;min-height:300px}.cx-res b{font-size:34px}.cx-bt{gap:32px}}
 /* story page */
@@ -1547,17 +1552,12 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </section>
 
 <!-- ===== What brands get (approved product facts) + logo wall ===== -->
-<section class="pad guides" style="padding-top:24px">
+<section class="pad guides stats-sec" style="padding-top:24px">
   <div class="wrap">
     <h2 class="sec-h">What brands get with FLIK.</h2>
-    <div class="cx-res">
-      <div><b>1 tap</b><span>to pay with FLIK Checkout</span></div>
-      <div><b>15</b><span>payment methods in one checkout</span></div>
-      <div><b>Up to 45%</b><span>off published courier rates, with all major couriers</span></div>
-      <div><b>99%</b><span>of shipments created successfully</span></div>
-    </div>
-    <div class="cx-wall" id="cx-wall" aria-label="FLIK customers"></div>
+    <div class="stats4"><div class="stat"><b class="num">1 tap</b><span>to pay with FLIK Checkout</span></div><div class="stat"><b class="num">15</b><span>payment methods in one checkout</span></div><div class="stat"><b class="num">Up to 45%</b><span>off published courier rates, with all major couriers</span></div><div class="stat"><b class="num">99%</b><span>of shipments created successfully</span></div></div>
   </div>
+  <div class="logos-band cx-band" aria-label="FLIK customers"><div class="logos-clip"><div class="logos-track" id="cx-wall"></div></div></div>
 </section>
 <!-- ===== Customers by product: tabs, featured story, logo row ===== -->
 <section class="pad alt guides" id="by-product">
@@ -1607,7 +1607,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap cx-start">
     <div><h2>Ready to get started?</h2><p class="lead">Create an account and start selling, or talk to the FLIK team about a setup for your business.</p>
       <div class="hero-cta" style="justify-content:flex-start;margin-top:24px;gap:20px;align-items:center"><button class="btn btn-primary live" data-act="start">Get started <span class="chev">›</span></button><a href="#" class="link" data-act="sales">Contact sales <span class="chev">›</span></a></div></div>
-    <div><b>Always know what you'll pay</b><p>Fees per transaction. No hidden costs.</p><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
+    <div><b>Always know what you'll pay</b><p>Fees per transaction.<br>No hidden costs.</p><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
     <div><b>Start your integration</b><p>Connect with a Shopify or WooCommerce plugin, or build on the FLIK API.</p><a href="#" class="link" data-page="Developer docs">Developer docs <span class="chev">›</span></a></div>
   </div>
 </section>
@@ -2048,7 +2048,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
   ft.addEventListener('click',e=>{const b=e.target.closest('button[data-f]');if(b)filter(b.dataset.f)});
   filter('all');
   // logo wall
-  document.getElementById('cx-wall').innerHTML=CUSTOMERS.map(c=>`<a href="${storyUrl(c)}" aria-label="${c.name}">${c.dark?`<span class="darkchip">${mark(c)}</span>`:mark(c)}</a>`).join('');
+  {const w=CUSTOMERS.filter(c=>c.logo).map(c=>`<a href="${storyUrl(c)}" aria-label="${c.name} story"><img class="lg${c.dark?' dk':''}" src="${ROOT}assets/logos/merchant/${c.logo}?v=2" alt="${c.name}" loading="lazy"></a>`).join('');document.getElementById('cx-wall').innerHTML=w+'<span style="display:contents" aria-hidden="true">'+w.replace(/alt="[^"]*"/g,'alt=""').replace(/<a /g,'<a tabindex="-1" ')+'</span>'}
   // building together: example brands with a small FLIK screen
   const OK=ic('check',11,2.4);
   const MK={

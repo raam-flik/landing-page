@@ -45,8 +45,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** Contact sales
 - **Hero cards:** The SIGIT, Artch, WakaiGo, Paper — photo cards only, all the same size, logo and "Read story"
 - **Section heading:** What brands get with FLIK.
-- **Results:** 1 tap — to pay with FLIK Checkout / 15 — payment methods in one checkout / Up to 40% — less on shipping, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
-- **Logo wall:** every customer (real logo where we have it, name otherwise)
+- **Results:** 1 tap — to pay with FLIK Checkout / 15 — payment methods in one checkout / Up to 45% — off published courier rates, with all major couriers / 99% — of shipments created successfully (FLIK product facts approved for the homepage, not results claimed for any one brand)
+- **Logo strip:** every customer with a logo, in the same scrolling strip as under the heroes; each logo opens its story. The numbers above use the shared stats row (Enterprise, F&B).
 - **Section heading (tabs):** One platform, every way they sell.
   - **Grey part:** See which brands use each FLIK product.
 - **Tabs:** Checkout / Shipping / In-Store Payment / Merchant Cash Advance
