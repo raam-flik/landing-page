@@ -31,7 +31,7 @@ On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row 
 - **COD Shipping:** Cash on delivery, 3% fee (excl. PPN)
 - **Shipment Tracking:** Track any package
 - **Courier Performance:** Best courier per region
-- **Warehouses:** Manage pickup origins
+- **Warehouses:** Ship from one or all of them (goes to Shipping → One warehouse or all of them, Raam 17 Nov 2026)
 - **Return Management:** Track every parcel, including returns
 
 **Funding**
@@ -50,11 +50,13 @@ On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row 
 - **D2C brands:** Sell on your own website
 - **COD sellers:** Cash on delivery at scale
 - **Scaling brands:** Fund inventory to grow
+- **Enterprise:** Custom setup for large brands (page: use-cases/enterprise/, Raam 17 Nov 2026)
 
 **By industry**
 
 - **Fashion:** Apparel and accessories
 - **Home appliances:** Kitchen and home
+- **F&B:** Cafés, restaurants and outlets (page: industries/food-beverage/, Raam 17 Nov 2026)
 
 ### Developers
 

@@ -25,7 +25,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Value:** Your setup, mapped — How your shoppers pay, how you ship, and where FLIK fits.
 - **Value:** Pricing for your volume — The fees for your payment methods, shipping and sales size.
 - **Value:** A clear next step — We help you connect your store and go live.
-- **Logo caption:** Brands that sell, ship and grow with FLIK (OSIM, HEYLOCAL, Artch, WakaiGo, Manta Liberta, Paper)
+- **Logo caption:** Brands that sell, ship and grow with FLIK (ERIGO, EMADO'S, WakaiGo, OSIM, HEYLOCAL, Haus!)
 
 ### Form card
 
