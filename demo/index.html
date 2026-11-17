@@ -1374,6 +1374,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 .dm-vals b{display:block;font-size:16px;font-weight:500;color:var(--ink)}
 .dm-vals span:not(.dm-ic){font-size:14.5px;line-height:1.5;color:var(--body)}
 .dm-ic{width:36px;height:36px;border-radius:6px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.dm-hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .dm-logos{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft)}
 .dm-logos small{font-size:12.5px;color:var(--muted)}
 .dm-logos>div{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 28px;margin-top:16px;align-items:center}
@@ -1459,6 +1460,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
         </div>
         <div class="fld"><fieldset><legend>Interested in <em>(optional)</em></legend><div class="chips" id="d-chips"><button type="button" class="chip" aria-pressed="false">Checkout</button><button type="button" class="chip" aria-pressed="false">Shipping</button><button type="button" class="chip" aria-pressed="false">Funding</button></div></fieldset></div>
         <div class="fld"><label for="d-msg">Anything we should know? <em>(optional)</em></label><textarea id="d-msg" name="d-msg" placeholder="Where you sell today, what's slowing you down"></textarea></div>
+        <div class="dm-hp" aria-hidden="true"><label for="d-hp">Leave this empty</label><input id="d-hp" name="company_url" type="text" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn-primary dm-go">Book my demo <span class="chev">›</span></button>
         <p class="fnote">Free and online, with no commitment. We'll use these details only to set up your demo. <a href="#" data-page="/legal/privacy">Privacy Policy</a></p>
       </form>
@@ -1917,6 +1919,8 @@ document.addEventListener('click',e=>{
 /* ===== /kit: cookie-consent ===== */
 
 /* ===== Book a demo form: checked like every FLIK form, a short sending state, then the thank-you eases in ===== */
+/* Each request is added as a row to the "Leads" Google Sheet through its Apps Script web app (script: content/demo-form-google-sheet.gs). Empty = prototype only, nothing is sent. */
+const DEMO_SHEET_URL='https://script.google.com/macros/s/AKfycbz6YKoh-3S5k1vSQISsoXGRG4iITB4oHfyQ5IYScqamDupme32SOv_PmdyTjKK4ovqKHQ/exec';
 (function(){
   const f=document.getElementById('dm-form');if(!f)return;
   const card=document.getElementById('dm-card'),done=document.getElementById('dm-done'),go=f.querySelector('.dm-go');
@@ -1928,7 +1932,13 @@ document.addEventListener('click',e=>{
     // 1. sending: the button holds a spinner and can't be pressed twice
     const label=go.innerHTML;go.disabled=true;go.classList.add('dm-busy');go.innerHTML='<span class="spin" aria-hidden="true"></span>Booking your demo…';
     f.setAttribute('aria-busy','true');
-    await sleep(1100);
+    const v=id=>document.getElementById(id).value.trim();
+    if(DEMO_SHEET_URL){
+      const body=new URLSearchParams({name:v('d-name'),email:v('d-email'),wa:v('d-wa'),company:v('d-co'),site:v('d-site'),size:v('d-size'),
+        interest:[...f.querySelectorAll('#d-chips .chip.on')].map(c=>c.textContent.trim()).join(', '),msg:v('d-msg'),page:location.pathname,company_url:v('d-hp')});
+      try{await Promise.all([fetch(DEMO_SHEET_URL,{method:'POST',mode:'no-cors',body}),sleep(700)])}
+      catch(err){go.disabled=false;go.classList.remove('dm-busy');go.innerHTML=label;f.removeAttribute('aria-busy');toast("We couldn't send your details. Check your connection and try again.");return}
+    }else await sleep(1100);
     // 2. the form fades out, the card eases to the thank-you's height, the thank-you fades in
     const n=document.getElementById('d-name').value.trim().split(/\s+/)[0];
     document.getElementById('dm-done-h').textContent=n?`Thanks, ${n}. We'll be in touch.`:"Thanks, we'll be in touch.";
