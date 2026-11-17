@@ -1354,6 +1354,8 @@ a.il:hover{color:var(--primary-hover)}
 .skip:focus{top:12px}
 /* Focus ring in this page's purple: #6A4BFF is 5.2:1 on #fff, 4.9:1 on #F8FAFD, 4.6:1 on #F2EFFF */
 :is(a,button,input,select,textarea,summary,[tabindex]:not([tabindex="-1"]),[role="button"]):focus-visible{outline:2px solid var(--primary)!important;outline-offset:2px!important}
+/* text fields already show the design system focus ring (violet border), so no second outline (Raam, 17 Nov 2026) */
+.fld :is(input:not([type=checkbox]):not([type=radio]),select,textarea):focus-visible{outline:none!important}
 /* #6A4BFF is only 2.65:1 on #002D5D, so dark areas use the lighter #C4B8FF (7.6:1 on #002D5D, 6.3:1 on #0B3A6E) */
 :is(.dark,.banner,.bd-stat.dark) :is(a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])):focus-visible{outline-color:#C4B8FF!important}
 [tabindex="-1"]:focus{outline:none}

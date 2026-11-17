@@ -1202,6 +1202,8 @@ html{scroll-padding-top:88px}
 .skip:focus{top:12px}
 /* Focus ring in this page's purple: #6A4BFF is 5.2:1 on #fff, 4.9:1 on #F8FAFD, 4.6:1 on #F2EFFF */
 :is(a,button,input,select,textarea,summary,[tabindex]:not([tabindex="-1"]),[role="button"]):focus-visible{outline:2px solid var(--primary)!important;outline-offset:2px!important}
+/* text fields already show the design system focus ring (violet border), so no second outline (Raam, 17 Nov 2026) */
+.fld :is(input:not([type=checkbox]):not([type=radio]),select,textarea):focus-visible{outline:none!important}
 /* #6A4BFF is only 2.65:1 on #002D5D, so dark areas use the lighter #C4B8FF (7.6:1 on #002D5D, 6.3:1 on #0B3A6E) */
 :is(.dark,.banner,.bd-stat.dark) :is(a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])):focus-visible{outline-color:#C4B8FF!important}
 [tabindex="-1"]:focus{outline:none}
@@ -1362,6 +1364,49 @@ html.sr-measure :is(.sr,.sr-f,.sr-f .sr-z,.sr-h .w){animation:none!important}
 @keyframes sr-word{from{opacity:0;translate:0 .5em}to{opacity:1;translate:none}}
 html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:none;scale:none;clip-path:none;animation:none;transition:none}
 /* ===== /kit: scroll-reveal ===== */
+
+/* ===== Book a demo (Raam, 17 Nov 2026; like stripe.com/contact/sales): the form is open in the hero, value lines and logos on the left ===== */
+.dm-hero{padding-bottom:96px}
+.dm-in{display:grid;grid-template-columns:1fr 480px;gap:64px;align-items:start;position:relative;z-index:2}
+.dm-t .ch-h{font-size:48px}
+.dm-vals{list-style:none;display:grid;gap:18px;margin-top:36px}
+.dm-vals li{display:flex;gap:14px;align-items:flex-start}
+.dm-vals b{display:block;font-size:16px;font-weight:500;color:var(--ink)}
+.dm-vals span:not(.dm-ic){font-size:14.5px;line-height:1.5;color:var(--body)}
+.dm-ic{width:36px;height:36px;border-radius:6px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;flex:none}
+.dm-logos{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.dm-logos small{font-size:12.5px;color:var(--muted)}
+.dm-logos>div{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 28px;margin-top:16px;align-items:center}
+.dm-logos img{max-height:26px;max-width:110px;width:auto;object-fit:contain;justify-self:start}
+.dm-card{background:#fff;border:1px solid var(--line-soft);border-radius:6px;box-shadow:var(--sh-lg);padding:28px}
+.dm-card form{display:grid;gap:16px}
+.dm-card form[hidden]{display:none}
+.dm-card{overflow:hidden}
+
+.dm-go{gap:10px}
+.dm-go.dm-busy{cursor:progress;opacity:.92}
+.dm-go:disabled{pointer-events:none}
+.dm-card form{transition:opacity .22s,translate .22s}
+.dm-card form.dm-out{opacity:0;translate:0 -8px}
+@keyframes dm-show{from{opacity:0;translate:0 10px}to{opacity:1;translate:none}}
+@keyframes dm-pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.dm-card form{transition:none}.dm-done.dm-show,.dm-done.dm-show .dm-ok{animation:none}}
+
+.dm-h{font-size:22px;font-weight:500;letter-spacing:-.3px;color:var(--ink);line-height:1.25}
+.dm-sub{font-size:14px;color:var(--muted);margin-top:-8px}
+.dm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld input,.fld select{line-height:normal}
+.fld select{width:100%;height:42px;border:1px solid var(--field-line);border-radius:6px;padding:0 36px 0 12px;font-size:15px;color:var(--ink);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748D' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;-webkit-appearance:none;appearance:none;outline:none;cursor:pointer}
+.fld select:focus{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.fld select.empty{color:var(--muted)}
+.fld legend em,.fld label em{font-style:normal;color:var(--muted);font-weight:400}
+.dm-go{width:100%;justify-content:center;height:46px}
+.dm-done{display:grid;justify-items:start;gap:14px;padding:12px 0}
+.dm-done[hidden]{display:none}
+.dm-done .dm-sub{margin-top:0}
+.dm-ok{width:44px;height:44px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:flex;align-items:center;justify-content:center}
+@media (max-width:1080px){.dm-in{grid-template-columns:1fr;gap:40px}.dm-card{max-width:560px}}
+@media (max-width:760px){.dm-t .ch-h{font-size:34px}.dm-grid{grid-template-columns:1fr}.dm-card{padding:20px}.dm-logos>div{grid-template-columns:repeat(3,1fr);gap:16px 20px}.dm-logos img{max-width:88px;max-height:22px}.dm-hero{padding-bottom:64px}}
 </style>
 </head>
 <body>
@@ -1385,26 +1430,43 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 
 
 <main id="top" tabindex="-1">
-<section class="ch guides">
-  <div class="wrap ch-in">
-    <div class="ch-t">
+<section class="ch guides dm-hero">
+  <div class="wrap dm-in">
+    <div class="dm-t">
       <p class="eyebrow">Book a demo</p>
-      <h1 class="ch-h">See FLIK on your business. <span class="soft">A call with the FLIK team.</span></h1>
-      <p class="lead">Tell us how you sell today. We will show you how Checkout, Shipping and Funding fit, answer your questions, and walk you through set-up.</p>
-      <div class="hero-cta"><button class="btn btn-primary live" data-act="sales" data-interest="Demo">Book a time <span class="chev">›</span></button><a href="#what" class="btn btn-secondary">What we cover <span class="chev">›</span></a></div>
-      <ul class="ch-facts"><li><span data-ic="check-s"></span>Online, at a time that suits you</li><li><span data-ic="check-s"></span>For brands of every size</li><li><span data-ic="check-s"></span>No commitment</li></ul>
+      <h1 class="ch-h">See where FLIK fits your business. <span class="soft">One call, built around how you sell.</span></h1>
+      <p class="lead">Tell us how you sell today. We'll show you what to switch on first.</p>
+      <ul class="dm-vals">
+        <li><span class="dm-ic" data-ic="cart"></span><div><b>Your setup, mapped</b><span>How your shoppers pay, how you ship, and where FLIK fits.</span></div></li>
+        <li><span class="dm-ic" data-ic="chart"></span><div><b>Pricing for your volume</b><span>The fees for your payment methods, shipping and sales size.</span></div></li>
+        <li><span class="dm-ic" data-ic="bolt"></span><div><b>A clear next step</b><span>We help you connect your store and go live.</span></div></li>
+      </ul>
+      <div class="dm-logos"><small>Brands that sell, ship and grow with FLIK</small><div><img src="../assets/logos/merchant/osim.png?v=2" alt="OSIM"><img src="../assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"><img src="../assets/logos/merchant/artch.png?v=2" alt="Artch"><img src="../assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"><img src="../assets/logos/merchant/manta-liberta.png?v=2" alt="Manta Liberta"><img src="../assets/logos/merchant/paper.png?v=2" alt="Paper"></div></div>
     </div>
-    <div class="ch-stage">
-      <div class="ch-glow" aria-hidden="true"></div>
-      <div class="fx-win pgw" role="img" aria-label="Example: a demo booking with the FLIK team"><div class="co-bar"><i></i><i></i><i></i><span>flik.co.id/demo</span></div><div class="pgw-b"><div class="pgw-h">FLIK intro call<span class="pill pu">Online</span></div><span class="pgw-sub">Pick a time that suits you</span><div class="pgw-r"><span><b>Your business</b><small>What you sell and where</small></span></div><div class="pgw-r"><span><b>A walk-through</b><small>Checkout, Shipping and Funding</small></span></div><div class="pgw-r"><span><b>Next steps</b><small>Pricing and set-up for your store</small></span></div><div class="pgw-btn">Book a time</div><span class="pgw-ex">Example</span></div></div>
+    <div class="dm-card" id="dm-card">
+      <form id="dm-form" novalidate>
+        <h2 class="dm-h">Book your demo</h2>
+        <p class="dm-sub">We'll reply within one business day.</p>
+        <div class="dm-grid">
+          <div class="fld"><label for="d-name">Full name</label><input id="d-name" name="d-name" type="text" placeholder="Rina Putri" required aria-required="true" autocomplete="name"><p class="fld-err" id="d-name-err" hidden></p></div>
+          <div class="fld"><label for="d-email">Work email</label><input id="d-email" name="d-email" type="email" placeholder="rina@brand.co.id" required aria-required="true" autocomplete="email"><p class="fld-err" id="d-email-err" hidden></p></div>
+          <div class="fld"><label for="d-wa">WhatsApp number</label><input id="d-wa" name="d-wa" type="tel" placeholder="+62 812-3456-7890" required aria-required="true" autocomplete="tel"><p class="fld-err" id="d-wa-err" hidden></p></div>
+          <div class="fld"><label for="d-co">Business name</label><input id="d-co" name="d-co" type="text" placeholder="Aruna Studio" required aria-required="true" autocomplete="organization"><p class="fld-err" id="d-co-err" hidden></p></div>
+          <div class="fld"><label for="d-site">Website or store link <em>(optional)</em></label><input id="d-site" name="d-site" type="text" placeholder="arunastudio.com"><p class="fld-err" id="d-site-err" hidden></p></div>
+          <div class="fld"><label for="d-size">Monthly sales <em>(optional)</em></label><select id="d-size" name="d-size" class="empty"><option value="">Select a range</option><option>Under Rp100.000.000</option><option>Rp100.000.000–Rp500.000.000</option><option>Rp500.000.000–Rp2.000.000.000</option><option>Over Rp2.000.000.000</option></select></div>
+        </div>
+        <div class="fld"><fieldset><legend>Interested in <em>(optional)</em></legend><div class="chips" id="d-chips"><button type="button" class="chip" aria-pressed="false">Checkout</button><button type="button" class="chip" aria-pressed="false">Shipping</button><button type="button" class="chip" aria-pressed="false">Funding</button></div></fieldset></div>
+        <div class="fld"><label for="d-msg">Anything we should know? <em>(optional)</em></label><textarea id="d-msg" name="d-msg" placeholder="Where you sell today, what's slowing you down"></textarea></div>
+        <button type="submit" class="btn btn-primary dm-go">Book my demo <span class="chev">›</span></button>
+        <p class="fnote">Free and online, with no commitment. We'll use these details only to set up your demo. <a href="#" data-page="/legal/privacy">Privacy Policy</a></p>
+      </form>
+      <div class="dm-done" id="dm-done" hidden>
+        <span class="dm-ok" data-ic="check"></span>
+        <h2 class="dm-h" id="dm-done-h">Thanks, we'll be in touch.</h2>
+        <p class="dm-sub">The FLIK team will contact you within one business day to set up your demo.</p>
+        <button type="button" class="btn btn-primary live" data-act="sales" data-interest="Demo">Pick a time now <span class="chev">›</span></button>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="pad guides" id="what">
-  <div class="wrap">
-    <h2 class="sec-h stats-h">What we cover. <span class="soft">Built around your business.</span></h2>
-    <div class="stats4 flow4 pg-steps"><div class="stat done"><span class="f4-n">01</span><span class="f4-ic" data-ic="card"></span><b>Your business</b><span>What you sell, where, and how you ship and get paid today.</span></div><div class="stat done"><span class="f4-n">02</span><span class="f4-ic" data-ic="wallet"></span><b>A walk-through</b><span>The FLIK products that fit, in the dashboard.</span></div><div class="stat done"><span class="f4-n">03</span><span class="f4-ic" data-ic="bolt"></span><b>Pricing</b><span>The fees for your payment methods and volume.</span></div><div class="stat done"><span class="f4-n">04</span><span class="f4-ic" data-ic="bank"></span><b>Set-up</b><span>How FLIK connects your store, and what happens next.</span></div></div>
   </div>
 </section>
 
@@ -1423,17 +1485,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   </div>
 </section>
 
-<section class="pad alt guides">
-  <div class="wrap fin">
-    <h2>Book your demo.</h2>
-    <p class="txt">Pick a time that suits you. The FLIK team will take it from there.</p>
-    <div class="hero-cta" style="justify-content:center">
-      <button class="btn btn-primary live" data-act="sales" data-interest="Demo">Book a time <span class="chev">›</span></button>
-      <button class="btn btn-secondary" data-act="start">Create an account</button>
-    </div>
-    
-  </div>
-</section>
+
 </main>
 
 
@@ -1861,6 +1913,44 @@ document.addEventListener('click',e=>{
   if(current)announce(current);else show(false);
 })();
 /* ===== /kit: cookie-consent ===== */
+
+/* ===== Book a demo form: checked like every FLIK form, a short sending state, then the thank-you eases in ===== */
+(function(){
+  const f=document.getElementById('dm-form');if(!f)return;
+  const card=document.getElementById('dm-card'),done=document.getElementById('dm-done'),go=f.querySelector('.dm-go');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  f.querySelectorAll('.chip').forEach(c=>c.onclick=()=>c.setAttribute('aria-pressed',String(c.classList.toggle('on'))));
+  const sz=document.getElementById('d-size');sz.addEventListener('change',()=>sz.classList.toggle('empty',!sz.value));
+  const sleep=ms=>new Promise(r=>setTimeout(r,reduce?0:ms));
+  wireForm(f,async()=>{
+    // 1. sending: the button holds a spinner and can't be pressed twice
+    const label=go.innerHTML;go.disabled=true;go.classList.add('dm-busy');go.innerHTML='<span class="spin" aria-hidden="true"></span>Booking your demo…';
+    f.setAttribute('aria-busy','true');
+    await sleep(1100);
+    // 2. the form fades out, the card eases to the thank-you's height, the thank-you fades in
+    const n=document.getElementById('d-name').value.trim().split(/\s+/)[0];
+    document.getElementById('dm-done-h').textContent=n?`Thanks, ${n}. We'll be in touch.`:"Thanks, we'll be in touch.";
+    // one motion: the form fades out in place while the card glides down to the thank-you's height and the thank-you fades in
+    const cs=getComputedStyle(card),padT=parseFloat(cs.paddingTop),padL=parseFloat(cs.paddingLeft),padR=parseFloat(cs.paddingRight);
+    const h0=card.offsetHeight;
+    f.style.cssText=`position:absolute;top:${padT}px;left:${padL}px;right:${padR}px`;   // out of the flow, still visible
+    done.hidden=false;
+    const h1=card.offsetHeight;                                                          // the card's height with only the thank-you
+    if(!reduce){
+      card.style.position='relative';
+      const ease='cubic-bezier(.22,.9,.24,1)';
+      f.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-12px)'}],{duration:200,easing:'ease-out',fill:'forwards'});
+      done.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:480,delay:200,easing:ease,fill:'backwards'});
+      done.querySelector('.dm-ok').animate([{transform:'scale(.4)',opacity:0},{transform:'none',opacity:1}],{duration:480,delay:340,easing:'cubic-bezier(.3,1.6,.5,1)',fill:'backwards'});
+      // phones: bring the card into view while it shrinks
+      const top=card.getBoundingClientRect().top;if(top<0||top>innerHeight*.6)scrollTo({top:scrollY+top-90,behavior:'smooth'});
+      await card.animate([{height:h0+'px'},{height:h1+'px'}],{duration:600,easing:ease}).finished;
+    }
+    f.hidden=true;f.style.cssText='';card.style.position='';
+    f.removeAttribute('aria-busy');go.disabled=false;go.classList.remove('dm-busy');go.innerHTML=label;
+    done.querySelector('button').focus({preventScroll:true});
+  });
+})();
 </script>
 </body>
 </html>
