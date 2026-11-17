@@ -1670,7 +1670,7 @@ const POSTS=[{"slug": "cut-failed-cod-deliveries", "tag": "Shipping", "img": "co
 (function(){
   const views=[...document.querySelectorAll('[data-view]')],bf=document.getElementById('bf'),bl=document.getElementById('bl'),art=document.getElementById('art'),more=document.getElementById('more');
   const url=s=>'?post='+s;
-  const cov=(p,sz,cls)=>p.img?`<span class="cov cov-ph${cls||''}" style="background-image:url('../assets/blog/${p.img}-l.jpg')" role="img" aria-label="${p.title}"></span>`:`<span class="cov${cls||''}"><span class="cov-ic">${ic(p.ic,sz)}</span></span>`;
+  const cov=(p,sz,cls)=>p.img?`<span class="cov cov-ph${cls||''}" style="background-image:url('../assets/blog/${p.img}-l.jpg?v=2')" role="img" aria-label="${p.title}"></span>`:`<span class="cov${cls||''}"><span class="cov-ic">${ic(p.ic,sz)}</span></span>`;
   const meta=p=>`<span class="bm"><span>${p.date}</span><i></i><span>${p.min} min read</span></span>`;
   const card=p=>`<a href="${url(p.slug)}" class="res" data-post="${p.slug}">${cov(p,24)}<span class="rtag"><span data-ic="mail"></span>${p.tag||'Guide'} · ${p.date}</span><b>${p.title}</b><span>${p.desc}</span><em>Read article <span class="chev">›</span></em></a>`;
   const [first,...rest]=POSTS;
