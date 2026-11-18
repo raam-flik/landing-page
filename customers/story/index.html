@@ -1821,17 +1821,17 @@ const CUSTOMERS=[
   {slug:'paper',name:'Paper',logo:'paper.png',photos:['paper-1.jpg?v=4'],tint:'magenta',prods:['checkout']},
   {slug:'wakaigo',name:'WakaiGo',logo:'wakaigo.png',photos:['wakaigo-1.jpg?v=4'],tint:'orange',prods:['checkout']},
   {slug:'osim',name:'OSIM',logo:'osim.png',photos:['osim-1.jpg?v=4'],tint:'navy',cat:'Wellness',prods:['checkout']},
-  {slug:'zaafer',name:'Zaafer',logo:'zaafer.png',photos:['zaafer-1.jpg?v=4'],tint:'violet',prods:['shipping']},
+  {slug:'zaafer',name:'Zaafer',logo:'zaafer.png',pos:'top',photos:['zaafer-1.jpg?v=4'],tint:'violet',prods:['shipping']},
   {slug:'gerai-hawa',name:'Gerai Hawa',logo:'geraihawa.png',photos:['gerai-hawa-1.jpg?v=5'],tint:'navy',cat:'Modest fashion',prods:['shipping']},
-  {slug:'manta-liberta',name:'Manta Liberta',logo:'manta-liberta.png',photos:['manta-liberta-1.jpg?v=4'],tint:'navy',prods:['shipping']},
+  {slug:'manta-liberta',name:'Manta Liberta',logo:'manta-liberta.png',pos:'15%',photos:['manta-liberta-1.jpg?v=4'],tint:'navy',prods:['shipping']},
   {slug:'teenage-death-star',name:'Teenage Death Star',logo:'teenage-death-star.png',photos:['teenage-death-star-1.jpg?v=4'],tint:'magenta',sq:true,cat:'Music and merchandise',site:'https://teenagedeathstar.com',prods:['shipping']},
   {slug:'kopikalyan',name:'Kopikalyan',logo:'kopikalyan.png',sq:true,photos:['kopikalyan-1.jpg?v=5'],tint:'navy',cat:'Coffee',prods:['instore','mca']},
   {slug:'anita-family',name:'Anita Family',logo:'anita-family.png',photos:['anita-family-1.jpg?v=4'],tint:'magenta',prods:['instore']},
-  {slug:'emados',name:'EMADO\'S',logo:'emandos.png?v=3',photos:['emados-1.jpg?v=4'],tint:'orange',site:'https://linktr.ee/emados',cat:'Food and beverage',prods:['instore','mca']},
-  {slug:'haus',name:'Haus!',logo:'haus.png',photos:['haus-1.jpg?v=4'],tint:'magenta',cat:'Food and beverage',prods:['instore','mca']},
+  {slug:'emados',name:'EMADO\'S',logo:'emandos.png?v=3',pos:'60%',photos:['emados-1.jpg?v=4'],tint:'orange',site:'https://linktr.ee/emados',cat:'Food and beverage',prods:['instore','mca']},
+  {slug:'haus',name:'Haus!',logo:'haus.png',pos:'25%',photos:['haus-1.jpg?v=4'],tint:'magenta',cat:'Food and beverage',prods:['instore','mca']},
   {slug:'donat-bahagia',name:'Donat Bahagia',logo:'donat-bahagia.png',sq:true,photos:['donat-bahagia-1.jpg?v=6'],tint:'orange',cat:'Food and beverage',prods:['instore']},
-  {slug:'heylocal',name:'HEYLOCAL',logo:'heylocal.png',photos:['heylocal-1.jpg?v=5'],tint:'magenta',prods:['mca']},
-  {slug:'erigo',name:'ERIGO',logo:'erigo.png',dark:true,photos:['erigo-1.jpg?v=6'],tint:'navy',site:'https://erigo.co.id',cat:'Fashion',prods:['mca']},
+  {slug:'heylocal',name:'HEYLOCAL',logo:'heylocal.png',pos:'top',photos:['heylocal-1.jpg?v=5'],tint:'magenta',prods:['mca']},
+  {slug:'erigo',name:'ERIGO',logo:'erigo.png',dark:true,pos:'35%',photos:['erigo-1.jpg?v=6'],tint:'navy',site:'https://erigo.co.id',cat:'Fashion',prods:['mca']},
 ];
 /* Example stories (Raam, 12 Nov 2026): general text per product, no quotes or numbers, shown as "Example story" until each brand approves its own */
 const STORY={
@@ -1969,7 +1969,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
           ${c.site?sec('Website',`<a href="${c.site}" target="_blank" rel="noopener">${c.site.replace(/^https?:\/\//,'')}</a>`):''}
         </aside>
       </div>
-      ${c.photos?`<div class="cs-photos n${c.photos.length}">${c.photos.map(f=>`<img src="${ROOT}assets/customers/${f}" alt="${c.name}" loading="lazy">`).join('')}</div>`:''}
+      ${c.photos?`<div class="cs-photos n${c.photos.length}">${c.photos.map(f=>`<img src="${ROOT}assets/customers/${f}" alt="${c.name}" loading="lazy"${c.pos?` style="object-position:center ${c.pos}"`:''}>`).join('')}</div>`:''}
       <div class="cs-body" style="padding-bottom:96px">
         <aside class="cs-aside">${((STORIES[c.slug]||{}).stats||[]).map(x=>`<div class="cs-stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}<b>Ready to grow?</b><button class="btn btn-primary" data-act="sales" style="justify-self:start">Contact sales <span class="chev">›</span></button></aside>
         <div class="cs-main">
@@ -1981,7 +1981,7 @@ const prodList=c=>c.prods.map(p=>PRODUCTS[p].name).join(' · ');
       </div>`;
   }
   const more=CUSTOMERS.filter(x=>x!==c&&(!c||x.prods.some(p=>c.prods.includes(p)))).concat(CUSTOMERS.filter(x=>x!==c&&c&&!x.prods.some(p=>c.prods.includes(p)))).slice(0,3);
-  document.getElementById('cs-more').innerHTML=more.map((x,i)=>`<a class="sc ${x.photos?'sc-ph t-'+(x.tint||'violet'):ARTS[CUSTOMERS.indexOf(x)%4]}" href="${storyUrl(x)}"${x.photos?` style="background-image:url('${ROOT}assets/customers/${x.photos[0]}')"`:''}><span class="chip${x.dark?' dark':''}">${mark(x)}</span><span><h3>${storyHead(x)}</h3><span class="rs">Read story <span class="chev">›</span></span></span></a>`).join('');
+  document.getElementById('cs-more').innerHTML=more.map((x,i)=>`<a class="sc ${x.photos?'sc-ph t-'+(x.tint||'violet'):ARTS[CUSTOMERS.indexOf(x)%4]}" href="${storyUrl(x)}"${x.photos?` style="background-image:url('${ROOT}assets/customers/${x.photos[0]}')${x.pos?';background-position:center '+x.pos:''}"`:''}><span class="chip${x.dark?' dark':''}">${mark(x)}</span><span><h3>${storyHead(x)}</h3><span class="rs">Read story <span class="chev">›</span></span></span></a>`).join('');
 })();
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
