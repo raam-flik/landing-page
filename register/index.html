@@ -1419,10 +1419,12 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 /* ===== Page: Create account (fields from merchant.flik.co.id/register, layout from the sign-in page; Raam, 18 Nov 2026). Reuses the header, .fld fields, .btn and the demo card ===== */
 body.lg-page{background:var(--bg);min-height:100vh;display:flex;flex-direction:column;position:relative;overflow-x:hidden}
 .lg-page .hdr{position:relative;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid var(--line)!important}
-.lg-page .nav,.lg-page .hdr-right{display:none}
+.lg-page .hdr{display:none} /* no top bar: the logo sits above the card (Raam, 18 Nov 2026) */
+.lg-logo{display:flex;justify-content:center;width:max-content;margin:0 auto 28px}
+.lg-page .skip:not(:focus){box-shadow:none} /* the hidden skip link sat just above the screen and its shadow showed */
 .lg-page main{flex:1;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center}
 .lg-page .hdr{z-index:2}
-.lg-in{position:relative;z-index:1;width:100%;max-width:500px;margin:0 auto;padding:24px 20px 88px}
+.lg-in{position:relative;z-index:1;width:100%;max-width:500px;margin:0 auto;padding:14px 20px 24px}
 .lg-card{padding:36px 40px}
 .lg-card form{display:grid;gap:18px}
 .lg-card form[hidden],.lg-done[hidden]{display:none}
@@ -1460,7 +1462,14 @@ body.lg-page{background:var(--bg);min-height:100vh;display:flex;flex-direction:c
 .lg-rs button{font:inherit;font-weight:500;color:var(--primary);background:none;border:0;padding:0;cursor:pointer}
 .lg-otpv .lg-go:disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
 @media (max-width:760px){.lg-otp{gap:8px}.fld .lg-otp input{height:48px}}
-.lg-page .foot{padding-top:32px;background:transparent;border-top:0;position:relative;z-index:1}
+.lg-page .foot{padding:24px 0 28px;background:transparent;border-top:0;position:absolute;left:0;right:0;bottom:0;z-index:1}
+.lg-page main{min-height:100vh} /* the card centres on the whole screen; the footer sits over the bottom edge */
+/* this form is tall: a tighter card that still centres on a laptop screen, with the footer below it (Raam, 18 Nov 2026) */
+.lg-page .foot{position:static}
+.lg-card{padding:28px 36px}
+.lg-card form{gap:14px}
+.lg-logo{margin-bottom:20px}
+.lg-alt{margin-top:18px}
 .lg-page .foot.guides::before,.lg-page .foot.guides::after{display:none}
 .lg-page .fbot{margin-top:0;padding-top:0;border-top:0}
 .lg-page .fbot .lang{display:none}
@@ -1470,7 +1479,7 @@ body.lg-page{background:var(--bg);min-height:100vh;display:flex;flex-direction:c
 .lg-page .foot .flegal{order:-1;margin:0 0 14px}
 .lg-page .fcols,.lg-page .flegal>p{display:none}
 .lg-page .flegal{margin-top:12px}
-@media (max-width:760px){.lg-in{padding:16px 16px 56px}.lg-card{padding:24px 20px}.lg-h{font-size:22px}@media (prefers-reduced-motion:reduce){.lg-card form{transition:none}}
+@media (max-width:760px){.lg-in{padding:56px 16px 124px}.lg-card{padding:24px 20px}.lg-h{font-size:22px}@media (prefers-reduced-motion:reduce){.lg-card form{transition:none}}
 </style>
 </head>
 <body class="lg-page">
@@ -1482,7 +1491,6 @@ body.lg-page{background:var(--bg);min-height:100vh;display:flex;flex-direction:c
 <!-- ===== Header ===== -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
-    <a href="../" class="logo" aria-label="FLIK home" id="logo"></a>
     <nav class="nav" id="nav" aria-label="Main"></nav>
     <div class="hdr-right">
       <button type="button" class="signin" data-act="signin">Sign in</button>
@@ -1496,6 +1504,7 @@ body.lg-page{background:var(--bg);min-height:100vh;display:flex;flex-direction:c
 
 <main id="top" tabindex="-1">
 <div class="lg-in">
+  <a href="../" class="logo lg-logo" aria-label="FLIK home" id="logo"></a>
   <div class="dm-card lg-card" id="lg-card">
     <form id="lg-form" novalidate aria-labelledby="lg-h">
       <h1 class="lg-h" id="lg-h">Create your FLIK account</h1>
