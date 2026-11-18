@@ -1823,7 +1823,7 @@ document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
   if(!a)return;
   if(a.closest('#drawer')&&(a.dataset.page||a.dataset.act))setDrawer(false);
-  if(a.dataset.act){e.preventDefault();({start:()=>open(REGISTER_URL,'_blank','noopener'),sales:()=>open(SALES_URL,'_blank','noopener'),signin:()=>toast('Opens the merchant dashboard sign-in.')})[a.dataset.act]()}
+  if(a.dataset.act){e.preventDefault();({start:()=>{location.href=(typeof ROOT==='string'?ROOT:'')+'register/'},sales:()=>open(SALES_URL,'_blank','noopener'),signin:()=>{location.href=(typeof ROOT==='string'?ROOT:'')+'login/'}})[a.dataset.act]()}
   else if(a.dataset.page){e.preventDefault();toast(a.dataset.page.startsWith('/')?`Page not in this prototype yet: ${a.dataset.page}`:`Opens ${a.dataset.page}`)}
   else if(a.dataset.toast){e.preventDefault();toast(a.dataset.toast)}
   else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.classList.toggle('on',b===a))));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}

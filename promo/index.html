@@ -1694,7 +1694,7 @@ const PROMOS=[
    intro:'Send packages across Indonesia with many couriers from your FLIK merchant dashboard:',
    couriers:[['ninjaxpress','Ninja Xpress','40% off'],['spx','SPX Express','30% off'],['jne','JNE','20% off'],['jnt','J&T Express','20% off'],['idexpress','ID Express','20% off'],['lionparcel','Lion Parcel','20% off']],
    terms:['No promo code required.','No minimum transaction.','The promotion is valid until 31 Dec 2026.','Used promos cannot be refunded, exchanged or redeemed for cash.','FLIK may cancel any order suspected of fraud or of breaking these terms and conditions.','These terms and conditions may change at any time without prior notice.','By joining this promotion, you agree to these terms and conditions.'],
-   cta:['Register as a merchant','https://merchant.flik.co.id/register/']}
+   cta:['Register as a merchant','../register/']}
 ];
 const WHO={shopper:['cart','For shoppers'],merchant:['truck','For merchants']};
 // runs after the whole script, so the modal helpers defined further down exist
@@ -1826,7 +1826,7 @@ document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
   if(!a)return;
   if(a.closest('#drawer')&&(a.dataset.page||a.dataset.act))setDrawer(false);
-  if(a.dataset.act){e.preventDefault();({start:()=>open(REGISTER_URL,'_blank','noopener'),sales:()=>open(SALES_URL,'_blank','noopener'),signin:()=>toast('Opens the merchant dashboard sign-in.')})[a.dataset.act]()}
+  if(a.dataset.act){e.preventDefault();({start:()=>{location.href=(typeof ROOT==='string'?ROOT:'')+'register/'},sales:()=>open(SALES_URL,'_blank','noopener'),signin:()=>{location.href=(typeof ROOT==='string'?ROOT:'')+'login/'}})[a.dataset.act]()}
   else if(a.dataset.page){e.preventDefault();toast(a.dataset.page.startsWith('/')?`Page not in this prototype yet: ${a.dataset.page}`:`Opens ${a.dataset.page}`)}
   else if(a.dataset.toast){e.preventDefault();toast(a.dataset.toast)}
   else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.classList.toggle('on',b===a))));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}
