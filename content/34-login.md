@@ -2,14 +2,14 @@
 
 - **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/login/
 - **Page file:** `login/index.html`, built from the Book a demo page kit (18 Nov 2026). Layout after dashboard.stripe.com/login: logo only, one centred card on a soft brand-ribbon glow, "New to FLIK?" link under the card, legal links in the footer. Components reused: header logo, form fields (`.fld`), primary button, the demo card, the success tick.
-- Every "Sign in" button on the site opens this page. In the prototype, signing in opens the dashboard prototype (`dashboard/`).
+- Every "Sign in" button on the site opens this page. Signing in opens the v4 merchant dashboard (flik-dashboard.vercel.app) with the account saved on that browser.
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 
 ## Things to confirm on this page
 
 - [ ] Sign-in methods: email and password only. Stripe also offers Google, passkey and SSO; left out until FLIK confirms which ones the merchant dashboard supports.
-- [ ] Where the live page sends the merchant after signing in (today: the dashboard prototype).
+- [ ] Where the live page sends the merchant after signing in (today: the v4 dashboard prototype on flik-dashboard.vercel.app).
 - [ ] "Remember me on this device" keeps only the email on this browser.
 
 ## Search results (SEO)

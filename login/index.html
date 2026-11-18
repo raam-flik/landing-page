@@ -1978,7 +1978,9 @@ document.querySelectorAll('svg.rbn').forEach(svg=>{
     try{document.getElementById('l-rem').checked?localStorage.setItem('flik_login_email',em):localStorage.removeItem('flik_login_email')}catch(_){}
     busy(b,true,'Signing in…');f.setAttribute('aria-busy','true');
     await new Promise(r=>setTimeout(r,REDUCE?0:900));
-    location.href=ROOT+'dashboard/'};
+    /* the v4 merchant dashboard, same address as after Create account: local prototype server while testing, the live dashboard otherwise.
+       It opens the account saved on this browser (the sample verified store unless someone signed up here) */
+    location.href=(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'http://localhost:8765/Home/prototype-v4.html':'https://flik-dashboard.vercel.app/')+'?signin=1#home'};
   document.getElementById('lg-forgot').onclick=e=>{e.preventDefault();const em=f.querySelector('#l-email').value.trim();
     rf.querySelector('#r-email').value=em;setErr(rf.querySelector('#r-email'),'');show(rf);document.getElementById('lg-rh').focus()};
   rf.onsubmit=async e=>{e.preventDefault();if(!check(rf))return;
