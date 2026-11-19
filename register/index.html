@@ -2032,7 +2032,23 @@ document.querySelectorAll('svg.rbn').forEach(svg=>{
     await new Promise(r=>setTimeout(r,REDUCE?0:900));
     ov.removeAttribute('aria-busy');ogo.classList.remove('dm-busy');ogo.textContent='Verify';
     if(code()==='000000'){oErr('That code isn\'t right. Check WhatsApp and try again.');ins.forEach(x=>x.value='');ins[0].focus();return}
-    clearInterval(tm);const q=new URLSearchParams({signup:'new',n:v('r-name').trim().split(/\s+/)[0],b:v('r-biz').trim()});location.href=`${DASH}?${q}#home`};
+    clearInterval(tm);const q=new URLSearchParams({signup:'new',n:v('r-name').trim().split(/\s+/)[0],b:v('r-biz').trim()});flikGo(`${DASH}?${q}#home`)};
+})();
+</script>
+<!-- Loading screen between Sign in / Create account and the dashboard: the animated FLIK logo (assets/loading), one full loop, then the dashboard opens -->
+<style>.fl-load{position:fixed;inset:0;z-index:2000;background:var(--bg);display:grid;place-items:center;opacity:0;transition:opacity .2s ease}.fl-load.on{opacity:1}.fl-load[hidden]{display:none}.fl-load-a{width:min(180px,43vw);aspect-ratio:1080/500}@media (prefers-reduced-motion:reduce){.fl-load{transition:none}}</style>
+<div class="fl-load" id="fl-load" role="status" aria-live="polite" hidden><div class="fl-load-a" id="fl-load-a"></div><span class="sr-only">Opening your dashboard…</span></div>
+<script>
+(()=>{const SRC='https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';let lib;
+  const getLib=()=>lib||(lib=new Promise((ok,no)=>{if(window.lottie)return ok(window.lottie);const s=document.createElement('script');s.src=SRC;s.onload=()=>ok(window.lottie);s.onerror=no;document.head.appendChild(s)}));
+  /* fetch the player early so the logo is ready when the merchant submits */
+  (window.requestIdleCallback||setTimeout)(()=>getLib().catch(()=>{}));
+  window.flikGo=url=>{const o=document.getElementById('fl-load'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    o.hidden=false;document.documentElement.style.overflow='hidden';requestAnimationFrame(()=>o.classList.add('on'));document.activeElement&&document.activeElement.blur();
+    let gone=false;const go=()=>{if(!gone){gone=true;location.href=url}};
+    setTimeout(go,reduce?1200:3600); /* never wait longer than one loop if the player can't load */
+    getLib().then(L=>{const a=L.loadAnimation({container:document.getElementById('fl-load-a'),renderer:'svg',loop:false,autoplay:!reduce,path:ROOT+'assets/loading/flik-loading.json'});
+      if(reduce)a.addEventListener('DOMLoaded',()=>a.goToAndStop(a.totalFrames-1,true));else a.addEventListener('complete',go)}).catch(()=>{})};
 })();
 </script>
 </body>

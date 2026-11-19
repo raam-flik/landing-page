@@ -34,5 +34,6 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Code:** 6 boxes. Typing, pasting or phone autofill fills them in order.
 - **Timer:** Resend code in 02:00, then: Didn't get it? Resend code (toast: We sent a new code to your WhatsApp)
 - **Button:** Verify (while checking: Verifying…). Off until all 6 digits are in.
+- **Loading screen:** after a correct code, the animated FLIK logo (`assets/loading/flik-loading.json`) plays once on a white screen, then the dashboard opens. Screen reader text: Opening your dashboard…
 - **Wrong code:** That code isn't right. Check WhatsApp and try again. (Prototype: 000000 is the wrong code; any other 6 digits pass, as in the dashboard prototype.)
 - **After a correct code:** the v4 merchant dashboard opens as a new merchant, not verified, with the welcome tour greeting the first name and the business name in the sidebar.

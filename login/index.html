@@ -1980,10 +1980,9 @@ document.querySelectorAll('svg.rbn').forEach(svg=>{
     const b=document.getElementById('lg-go'),em=f.querySelector('#l-email').value.trim();
     try{document.getElementById('l-rem').checked?localStorage.setItem('flik_login_email',em):localStorage.removeItem('flik_login_email')}catch(_){}
     busy(b,true,'Signing in…');f.setAttribute('aria-busy','true');
-    await new Promise(r=>setTimeout(r,REDUCE?0:900));
     /* the v4 merchant dashboard, same address as after Create account: local prototype server while testing, the live dashboard otherwise.
        It opens the account saved on this browser (the sample verified store unless someone signed up here) */
-    location.href=(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'http://localhost:8765/Home/prototype-v4.html':'https://flik-dashboard.vercel.app/')+'?signin=1#home'};
+    flikGo((/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'http://localhost:8765/Home/prototype-v4.html':'https://flik-dashboard.vercel.app/')+'?signin=1#home')};
   document.getElementById('lg-forgot').onclick=e=>{e.preventDefault();const em=f.querySelector('#l-email').value.trim();
     rf.querySelector('#r-email').value=em;setErr(rf.querySelector('#r-email'),'');show(rf);document.getElementById('lg-rh').focus()};
   rf.onsubmit=async e=>{e.preventDefault();if(!check(rf))return;
@@ -1992,6 +1991,22 @@ document.querySelectorAll('svg.rbn').forEach(svg=>{
     document.getElementById('lg-dsub').textContent=`If ${em} has a FLIK account, you'll get a link to set a new password. It can take a few minutes.`;
     show(done);document.getElementById('lg-dh').focus()};
   card.addEventListener('click',e=>{if(e.target.closest('[data-back]')){show(f);f.querySelector('#l-pass').focus()}});
+})();
+</script>
+<!-- Loading screen between Sign in / Create account and the dashboard: the animated FLIK logo (assets/loading), one full loop, then the dashboard opens -->
+<style>.fl-load{position:fixed;inset:0;z-index:2000;background:var(--bg);display:grid;place-items:center;opacity:0;transition:opacity .2s ease}.fl-load.on{opacity:1}.fl-load[hidden]{display:none}.fl-load-a{width:min(180px,43vw);aspect-ratio:1080/500}@media (prefers-reduced-motion:reduce){.fl-load{transition:none}}</style>
+<div class="fl-load" id="fl-load" role="status" aria-live="polite" hidden><div class="fl-load-a" id="fl-load-a"></div><span class="sr-only">Opening your dashboard…</span></div>
+<script>
+(()=>{const SRC='https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';let lib;
+  const getLib=()=>lib||(lib=new Promise((ok,no)=>{if(window.lottie)return ok(window.lottie);const s=document.createElement('script');s.src=SRC;s.onload=()=>ok(window.lottie);s.onerror=no;document.head.appendChild(s)}));
+  /* fetch the player early so the logo is ready when the merchant submits */
+  (window.requestIdleCallback||setTimeout)(()=>getLib().catch(()=>{}));
+  window.flikGo=url=>{const o=document.getElementById('fl-load'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    o.hidden=false;document.documentElement.style.overflow='hidden';requestAnimationFrame(()=>o.classList.add('on'));document.activeElement&&document.activeElement.blur();
+    let gone=false;const go=()=>{if(!gone){gone=true;location.href=url}};
+    setTimeout(go,reduce?1200:3600); /* never wait longer than one loop if the player can't load */
+    getLib().then(L=>{const a=L.loadAnimation({container:document.getElementById('fl-load-a'),renderer:'svg',loop:false,autoplay:!reduce,path:ROOT+'assets/loading/flik-loading.json'});
+      if(reduce)a.addEventListener('DOMLoaded',()=>a.goToAndStop(a.totalFrames-1,true));else a.addEventListener('complete',go)}).catch(()=>{})};
 })();
 </script>
 </body>

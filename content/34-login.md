@@ -24,6 +24,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Link:** Forgot your password?
 - **Checkbox:** Remember me on this device
 - **Button:** Sign in (while sending: Signing in…)
+- **Loading screen:** the animated FLIK logo (`assets/loading/flik-loading.json`) plays once on a white screen, then the dashboard opens. Screen reader text: Opening your dashboard…
 - **Errors:** Enter your email, like name@brand.co.id. · Enter your password.
 - **Under the card:** New to FLIK? Create an account
 
