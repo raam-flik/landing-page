@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Track Your Package, All Major Couriers | FLIK</title>
-<meta name="description" content="Track any package with one search: enter the order number or AWB (resi) and see the status, courier and estimated delivery for JNE, J&amp;T, SPX, AnterAja, SiCepat, Ninja Xpress and more.">
+<meta name="description" content="Track any package with one search: enter the order number or AWB (resi) and see the status, courier and estimated delivery for JNE, J&amp;T, SPX, AnterAja, SiCepat and more.">
 <link rel="canonical" href="https://flik.co.id/shipping/track">
 <link rel="alternate" hreflang="en" href="https://flik.co.id/shipping/track">
 <link rel="alternate" hreflang="id" href="https://flik.co.id/id/shipping/track">
@@ -1658,7 +1658,7 @@ const onScreen=el=>{let v=false;new IntersectionObserver(es=>{v=es[0].isIntersec
 const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return((h>>>0)%1000)/1000};
 
 /* ===== Shipment tracking (example data until the public tracking API exists) ===== */
-const COURIERS=[['jne','JNE',/^(JX|JNE|CGK|\d{15,16}$)/],['jnt','J&T Express',/^(JP|JD|JO)\d{8,}/],['spx','SPX Express',/^SPXID/],['anteraja','AnterAja',/^1100\d{10}$/],['sicepat','SiCepat',/^00\d{10}$/],['ninjaxpress','Ninja Xpress',/^(NV|NLIDAP)/],['idexpress','ID Express',/^IDE\d+/],['lionparcel','Lion Parcel',/^(11LP|LP)\d+/]];
+const COURIERS=[['jne','JNE',/^(JX|JNE|CGK|\d{15,16}$)/],['jnt','J&T Express',/^(JP|JD|JO)\d{8,}/],['spx','SPX Express',/^SPXID/],['anteraja','AnterAja',/^1100\d{10}$/],['sicepat','SiCepat',/^00\d{10}$/],['idexpress','ID Express',/^IDE\d+/],['lionparcel','Lion Parcel',/^(11LP|LP)\d+/]];
 const CN=Object.fromEntries(COURIERS.map(c=>[c[0],c[1]]));
 const STEPS=['Created','Picked up','At hub','Out for delivery','Delivered'];
 // example shipments: city level only, recipient masked, no phone, address, items or COD amount

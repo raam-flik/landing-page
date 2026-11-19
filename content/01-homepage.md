@@ -18,7 +18,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Copy pass (AG, 13 Nov 2026):** new hero, bento headings, stats, segment and funding headings, developers heading and final CTA heading. The voice has more character than the "calm and plain" house style, on purpose.
 - [ ] **Stats (AG, 13 Nov 2026):** now two scale stats; the COD fee is no longer a stat. "1M+ orders" may change to "Millions" once the all-time order count is confirmed.
 - [x] **New claims in the product pop-ups, confirmed (AG, 13 Nov 2026) and added to `product-facts.md`:** "Pay in one tap"; "Alerts when a delivery hits a problem" (tracking); "100K+ COD orders delivered this year".
-- [x] **Cross-border shipping** is in the Shipping pop-up; AG confirms FLIK ships cross-border (13 Nov 2026). This differs from the note in section 3 (Raam and Bintang, 13 Nov: off since Ninja closed it), so align with Bintang. The globe still ships to Medan and Makassar.
+- [x] **Cross-border shipping** is in the Shipping pop-up; AG confirms FLIK ships cross-border (13 Nov 2026). This differs from the note in section 3 (Raam and Bintang, 13 Nov: off since the courier partner closed it), so align with Bintang. The globe still ships to Medan and Makassar.
 - [x] **Auto reconciliation** added to the Payments pop-up and to `product-facts.md` (AG, 13 Nov 2026).
 - [ ] **Pop-up customer lines to confirm:** Shipping and COD show "Erigo runs delivery, payment and returns from one place with FLIK", kept for now (AG, 13 Nov 2026), though the customer list has Erigo on Merchant Cash Advance only. Tracking shows ZMNow.id, which was removed elsewhere for having no source.
 - [ ] **ERIGO's "up to 200%" figure:** confirm before launch (AG, 13 Nov 2026).
@@ -136,7 +136,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - Rp4.250.000 — Paid from Tokyo, Japan · Card → +Rp4.250.000 — Added to Aruna Studio balance
 - Shipped to Singapore — International · 2–4 days · FLK2610140031 → Delivered — Singapore · Order complete
 - Shipped to Malaysia — International · 2–4 days · FLK2610140036 → Delivered — Kuala Lumpur, Malaysia · Order complete
-- [x] **International (Raam, 12 Nov 2026; updated 13 Nov):** cross-border shipping is off (Ninja closed it; FLIK is working with Lion Parcel on a replacement, Bintang 13 Nov). The globe keeps a card payment from Japan, then ships to Medan and Makassar instead of Singapore and Malaysia.
+- [x] **International (Raam, 12 Nov 2026; updated 13 Nov):** cross-border shipping is off (the courier partner closed it; FLIK is working with Lion Parcel on a replacement, Bintang 13 Nov). The globe keeps a card payment from Japan, then ships to Medan and Makassar instead of Singapore and Malaysia.
 
 ## 4. Feature banner
 <!-- html: Feature banner -->

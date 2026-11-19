@@ -2039,7 +2039,7 @@ const hash=(s)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
   const CITIES=[['Jakarta',-6.2,106.8],['Bandung',-6.9,107.6],['Semarang',-7.0,110.4],['Yogyakarta',-7.8,110.4],['Surabaya',-7.25,112.75],['Denpasar',-8.65,115.2],['Medan',3.6,98.7],['Makassar',-5.15,119.4],['Balikpapan',-1.25,116.85],['Jayapura',-2.55,140.7]];
   // [short logo, courier, service, type, price factor] (example rates, no discount shown)
   const C=[
-    ['JNE','JNE','Reguler','reg',1.0],['J&T','J&T Express','EZ','reg',.97],['SCP','SiCepat','REG','reg',.92],['AA','AnterAja','Reguler','reg',.94],['NJV','Ninja Xpress','Standard','reg',.9],['IDX','ID Express','Standard','reg',.88],
+    ['JNE','JNE','Reguler','reg',1.0],['J&T','J&T Express','EZ','reg',.97],['SCP','SiCepat','REG','reg',.92],['AA','AnterAja','Reguler','reg',.94],['IDX','ID Express','Standard','reg',.88],
     ['JNE','JNE','YES','next',1.9],['SCP','SiCepat','BEST','next',1.75],
     ['J&T','J&T Cargo','Cargo','cargo',.55],['JNE','JNE','Trucking','cargo',.6],
     ['GO','GoSend','Instant','inst',1],['GRB','GrabExpress','Instant','inst',1.05],['GO','GoSend','Same Day','same',1],['PXL','Paxel','Same Day','same',.95]
@@ -2100,7 +2100,7 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
   const PRI=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim()||'#6A4BFF';
   // couriers under the globe
   const LOGO={jne:'img/jne.png',spx:'img/spx.png',lion:'img/lionparcel.png',aa:'img/anteraja.png'};
-  document.getElementById('sh-cour').innerHTML='<span>All major couriers, one dashboard</span>'+[['jne','JNE'],['jnt','J&T Express'],['sicepat','SiCepat'],['anteraja','AnterAja'],['lionparcel','Lion Parcel'],['ninjaxpress','Ninja Xpress'],['spx','SPX Express']].map(c=>`<img src="../assets/logos/courier/${c[0]}.png" alt="${c[1]}">`).join('')+'<span>and more</span>';
+  document.getElementById('sh-cour').innerHTML='<span>All major couriers, one dashboard</span>'+[['jne','JNE'],['jnt','J&T Express'],['sicepat','SiCepat'],['anteraja','AnterAja'],['lionparcel','Lion Parcel'],['spx','SPX Express']].map(c=>`<img src="../assets/logos/courier/${c[0]}.png" alt="${c[1]}">`).join('')+'<span>and more</span>';
   let W,H,R,cx,cy,dpr,pts=[],running=true,t0=performance.now();
   const N=110000,ga=Math.PI*(3-Math.sqrt(5)),D=Math.PI/180;
   // land mask, as on the homepage globe: dots are land, the sea stays empty
@@ -2234,12 +2234,12 @@ const LAND_MAP='5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;5a0;
 })();
 
 /* Courier logos (design-system/assets/Logos/courier) for the short keys used in the mockups */
-function cImg(k){const f={'JNE':'jne','J&T':'jnt','SCP':'sicepat','AA':'anteraja','NJV':'ninjaxpress','IDX':'idexpress','GO':'gosend','GRB':'grabexpress','PXL':'paxel'}[k];return`<img class="rr-lg" src="../assets/logos/courier/${f}.png" alt="">`}
+function cImg(k){const f={'JNE':'jne','J&T':'jnt','SCP':'sicepat','AA':'anteraja','IDX':'idexpress','GO':'gosend','GRB':'grabexpress','PXL':'paxel'}[k];return`<img class="rr-lg" src="../assets/logos/courier/${f}.png" alt="">`}
 
 /* ===== Courier performance by region (example data) ===== */
 (function(){
   const R=['Jabodetabek','Jawa Barat','Jawa Tengah & DIY','Jawa Timur','Bali & Nusa Tenggara','Sumatera','Kalimantan','Sulawesi','Papua & Maluku'];
-  const K=[['JNE','JNE'],['J&T','J&T Express'],['SCP','SiCepat'],['AA','AnterAja'],['NJV','Ninja Xpress']];
+  const K=[['JNE','JNE'],['J&T','J&T Express'],['SCP','SiCepat'],['AA','AnterAja']];
   const box=document.getElementById('cp-regions'),rows=document.getElementById('cp-rows');
   box.innerHTML=R.map((r,i)=>`<button role="tab" data-i="${i}">${r}<small class="num">${(400+Math.round(hash(r)*2400)).toLocaleString('id-ID')}</small></button>`).join('');
   const btns=[...box.children];let cur=0,hold=0;

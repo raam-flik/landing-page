@@ -24,7 +24,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 - **Page title:** Track Your Package, All Major Couriers | FLIK
 - **Page title (ID):** Cek Resi Semua Kurir | FLIK
-- **Description:** Track any package with one search: enter the order number or AWB (resi) and see the status, courier and estimated delivery for JNE, J&T, SPX, AnterAja, SiCepat, Ninja Xpress and more.
+- **Description:** Track any package with one search: enter the order number or AWB (resi) and see the status, courier and estimated delivery for JNE, J&T, SPX, AnterAja, SiCepat and more.
 
 ## 1. Search
 <!-- html: Search: order number or AWB, courier auto-detected or picked -->
@@ -39,7 +39,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Error:** Enter the full order number or AWB (resi).
 - **Error:** Too many searches. Try again in a minute.
 - **Text:** Try an example:
-- **Text:** Works with JNE, J&T Express, SPX Express, AnterAja, SiCepat, Ninja Xpress, ID Express, Lion Parcel and more
+- **Text:** Works with JNE, J&T Express, SPX Express, AnterAja, SiCepat, ID Express, Lion Parcel and more
 - **Text:** Tracking details come from the courier. We show only what's needed to follow the parcel.
 
 ## 2. Result

@@ -315,7 +315,7 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 - The Developers docs URL is still to be confirmed.
 - Payment methods: one page, or one page per category?
 - Funding: Balance & Payouts was removed from the menu (2026-10-15). Flexibility, Inventory Financing, Outlet Expansion and Marketing Budget were added; their product details are still to be written.
-- Shipping: coverage is Indonesia only. Cross-Border Shipping was removed from the menu on 2026-11-13: Ninja closed its cross-border service and FLIK is working with Lion Parcel on a replacement (Bintang).
+- Shipping: coverage is Indonesia only. Cross-Border Shipping was removed from the menu on 2026-11-13: the cross-border courier partner closed its service and FLIK is working with Lion Parcel on a replacement (Bintang).
 - Product item names: dashboard names or the English names above?
 - Real pricing will replace the placeholders on `/pricing` (rate card from AG / finance, FLI-50).
 - Payment: Early Settlement was added (2026-10-20, Linear FLI-46) with a prototype page at `/payment/early-settlement`. Its product facts (who can use it, payout timing, fee, eligible transactions, COD) are still to be confirmed; see `content/05-early-settlement.md`.
