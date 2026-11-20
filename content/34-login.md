@@ -11,6 +11,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] Sign-in methods: email and password only. Stripe also offers Google, passkey and SSO; left out until FLIK confirms which ones the merchant dashboard supports.
 - [ ] Where the live page sends the merchant after signing in (today: the v4 dashboard prototype on flik-dashboard.vercel.app).
 - [ ] "Remember me on this device" keeps only the email on this browser.
+- [ ] **Signed-in header (20 Nov 2026):** after Sign in or Create account, every page's header and mobile menu show **Dashboard ›** (the white secondary button) instead of Sign in, and it opens the dashboard. In the prototype this is a note on the browser (`flik_session`, no personal data) that lasts 30 days and is cleared when the dashboard's Log out brings the merchant back to this page. For production, engineering should share one sign-in cookie between flik.co.id and the dashboard's subdomain, so signing in or out anywhere updates both.
 
 ## Search results (SEO)
 
