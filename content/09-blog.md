@@ -2,17 +2,12 @@
 
 - **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/blog/ (an article opens at `/blog/?post=<slug>`)
 - **Page file:** `blog/index.html`. Each article is one entry in the `POSTS` list near the end of the page script (title, date, reading time, excerpt, body HTML). The newest entry is shown as the featured post.
-- **Source:** https://flik.co.id/en/blog (copied 21 Oct 2026, English versions).
+- **Source:** articles written for the new site (Oct–Nov 2026), each with a FLIK photo in `assets/blog/`.
 
 Edit the text after each label. Keep the labels and headings as they are, so the AI knows where each line goes.
 
 ## Things to confirm on this page
 
-- [ ] **Categories:** the CMS tags two website articles as "Environment" and the brand article as "Fashion". The page labels every article "Guide" instead. Fix the categories in the CMS if they should show.
-- [ ] **Images:** the stock photos from the CMS (Unsplash, Pexels) are not used. The design system asks for FLIK visuals, so each article shows a FLIK tile with an icon.
-- [ ] **Translation gap:** in "The Importance of a Website for a Brand", one heading was still in Bahasa Indonesia ("4. Bisa Diintegrasikan dengan Layanan Lain"). The page shows "4. Can Be Integrated with Other Services".
-- [ ] **Excerpts:** two articles have no SEO description in the CMS; their card text is the first sentence of the article.
-- [ ] **Article images:** the checkout article has one inline photo in the CMS; it is left out.
 - [x] **Claims check (AG rules, 24 Oct 2026):** the four articles have no 10M+/200+/>50% figures, no RTO or return-rate claims, no Malaysia/Singapore coverage and no COD fee wording, so nothing in them was changed. The final call to action now says "all major couriers" instead of "every courier".
 - [x] **Photos for the 4 new articles (20 Nov 2026):** made from the image prompts below and added to the blog and the homepage "latest articles" row.
 - [ ] **New articles copy check:** the four 20 Nov articles use only claims from `product-facts.md` (13 couriers and 38 shipping options; the 14:00 WIB same-day cut-off; Early Settlement fee shown before confirming, no timings). Confirm before publishing.
@@ -44,12 +39,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Article:** Which payment methods should your online store offer? — 11 Nov 2026 — 5 min read — Payments
 - **Article:** Sell on WhatsApp and Instagram with payment links — 4 Nov 2026 — 4 min read — Payment links
 - **Article:** Plan your stock and cash for 12.12 and other sale days — 28 Oct 2026 — 6 min read — Funding
-- **Article:** The Best Checkout System for Your E-Commerce Website — 12 Jun 2025 — 2 min read
-- **Article:** The Importance of Building a Brand for UMKM — 5 May 2025 — 2 min read
-- **Article:** The Importance of a Website for a Brand: A Digital Storefront That Never Closes — 15 Apr 2025 — 2 min read
-- **Article:** Benefits of Having a Website for Selling: Reach More, Work Smarter — 1 Apr 2025 — 2 min read
 
-The article bodies are the English texts from the FLIK CMS. Edit them in the CMS, or in the `POSTS` list.
+Edit the article bodies in the `POSTS` list. The four older articles copied from flik.co.id (Apr–Jun 2025, no photos) were removed on 20 Nov 2026; their text is in `archive/blog/removed-posts-2026-11-20.json`.
 
 ## 3. Article view
 <!-- html: Article view (?post=slug) -->
