@@ -1420,13 +1420,13 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <a href="../../" class="logo" aria-label="FLIK home" id="logo"></a>
     <nav class="nav" id="nav" aria-label="Main"></nav>
     <div class="hdr-right">
-      <button type="button" class="signin" data-act="signin">Sign in</button>
+      <button type="button" class="signin btn btn-secondary" data-act="signin">Sign in</button>
       <button class="btn btn-primary" data-act="sales">Contact sales <span class="chev">›</span></button>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>
-<script>/* Signed in on this browser (flik_session, set by Sign in and Create account, 30 days; cleared by the dashboard's Log out): the header and menu show Dashboard instead of Sign in */(()=>{let on=false;try{const s=JSON.parse(localStorage.getItem('flik_session')||'null');on=!!s&&Date.now()-s.ts<2592e6;if(s&&!on)localStorage.removeItem('flik_session')}catch(_){}window.FLIK_SIGNED=on;if(on){const b=document.querySelector('.hdr-right .signin');if(b){b.className='signin btn btn-secondary';b.dataset.act='dash';b.innerHTML='Dashboard <span class="chev">›</span>'}}})()</script>
+<script>/* Signed in on this browser (flik_session, set by Sign in and Create account, 30 days; cleared by the dashboard's Log out): the header and menu make Dashboard the main button */(()=>{let on=false;try{const s=JSON.parse(localStorage.getItem('flik_session')||'null');on=!!s&&Date.now()-s.ts<2592e6;if(s&&!on)localStorage.removeItem('flik_session')}catch(_){}window.FLIK_SIGNED=on;if(on){const b=document.querySelector('.hdr-right .signin'),p=document.querySelector('.hdr-right .btn-primary');if(b){b.dataset.act='sales';b.textContent='Contact sales'}if(p){p.dataset.act='dash';p.innerHTML='Dashboard <span class="chev">›</span>'}}})()</script>
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert></div>
 
 
@@ -1852,7 +1852,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openItem){const b=o
 const drawer=document.getElementById('drawer');
 drawer.innerHTML=`<div class="drawer-top"><span class="logo">${document.getElementById('logo').innerHTML}</span><button class="x" id="dclose" aria-label="Close menu">${ic('x',20)}</button></div>`+
   MENU.map(m=>`<div class="dgroup"><button aria-expanded="false">${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>{const L=c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('');return m.cols.reduce((n,x)=>n+x.items.length,0)>10?`<div class="dsub"><button aria-expanded="false">${c.h}${ic('down',14,2)}</button><div class="dsublist">${L}</div></div>`:`<h5>${c.h}</h5>${L}`}).join('')}</div></div>`).join('')+
-  `<div class="dgroup"><button data-page="/pricing">Pricing</button></div><div class="btns"><button class="btn btn-primary" data-act="start">Get started</button><button class="btn btn-secondary" data-act="sales">Contact sales</button><button class="btn btn-secondary" data-act="${window.FLIK_SIGNED?'dash':'signin'}">${window.FLIK_SIGNED?'Dashboard <span class="chev">›</span>':'Sign in'}</button></div>`;
+  `<div class="dgroup"><button data-page="/pricing">Pricing</button></div><div class="btns">${window.FLIK_SIGNED?'<button class="btn btn-primary" data-act="dash">Dashboard <span class="chev">›</span></button><button class="btn btn-secondary" data-act="sales">Contact sales</button>':'<button class="btn btn-primary" data-act="start">Get started</button><button class="btn btn-secondary" data-act="sales">Contact sales</button><button class="btn btn-secondary" data-act="signin">Sign in</button>'}</div>`;
 /* ===== kit: a11y-drawer ===== */
 /* Mobile drawer: inert while closed; focus moves in on open and back to the burger on close. setDrawer(false) on a closed drawer does nothing. */
 const burger=document.getElementById('burger');
