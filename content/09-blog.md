@@ -1,6 +1,6 @@
 # Blog
 
-- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/blog/ (an article opens at `/blog/?post=<slug>`)
+- **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/blog/ (each article has its own page at `/blog/<slug>/`, made by `python3 scripts/build_pages.py`; old `?post=` links forward there)
 - **Page file:** `blog/index.html`. Each article is one entry in the `POSTS` list near the end of the page script (title, date, reading time, excerpt, body HTML). The newest entry is shown as the featured post.
 - **Source:** articles written for the new site (Oct–Nov 2026), each with a FLIK photo in `assets/blog/`.
 
@@ -43,7 +43,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 Edit the article bodies in the `POSTS` list. The four older articles copied from flik.co.id (Apr–Jun 2025, no photos) were removed on 20 Nov 2026; their text is in `archive/blog/removed-posts-2026-11-20.json`.
 
 ## 3. Article view
-<!-- html: Article view (?post=slug) -->
+<!-- html: Article view (blog/<slug>/) -->
 
 - **Link:** All articles
 - **Small heading:** More from the blog
@@ -57,7 +57,7 @@ Edit the article bodies in the `POSTS` list. The four older articles copied from
 - **Button:** Explore Checkout
 
 ## 5. Image prompts
-<!-- Photos in assets/blog/: <name>-l.jpg (landscape, 1600×900, blog) and <name>-p.jpg (portrait, 928×1152, homepage cards). Same look as the existing four: a real product photo on a soft lilac backdrop. -->
+<!-- Photos in assets/blog/: keep the originals as <name>-l.jpg (landscape, 1600×900) and <name>-p.jpg (portrait, 928×1152); the pages use WebP copies (<name>-l.webp 1200 wide, <name>-p.webp 640 wide, under 100 KB each) and a 1200×630 <name>-og.jpg for link previews, made by scripts/build_pages.py. Same look as the existing four: a real product photo on a soft lilac backdrop. -->
 
 **Shared style (add to every prompt):** Photorealistic product photo, soft diffused daylight from the left, seamless pastel lilac backdrop with a faint warm pink glow on one side, matte lilac surface, shallow depth of field, calm and minimal, the subject centred with plenty of space around it. No people's faces, no hands in focus, no readable text except the FLIK logo, no other brand logos. Upload `FLIK.svg` as a reference image so the logo is drawn correctly (orange F mark, navy "LIK"). Make one 16:9 version and one 4:5 version.
 

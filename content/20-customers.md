@@ -1,7 +1,7 @@
 # Customers
 
 - **Live page:** https://landing-page-raams-projects-2709477f.vercel.app/customers/ (sections: `#by-product`, `#all`)
-- **Story page:** `/customers/story/?c=<slug>` (one template for every customer, for example `?c=emados`)
+- **Story page:** `/customers/<slug>/`, for example `/customers/emados/`. Each is made from the template `customers/story/index.html` by `python3 scripts/build_pages.py` (run it after changing `CUSTOMERS` or `STORIES`). Old `/customers/story/?c=<slug>` links forward there.
 - **Page files:** `customers/index.html` and `customers/story/index.html`. The customer list is `CUSTOMERS` and the product texts are `PRODUCTS` near the end of each page script (the same list is in both files; change both).
 - **Menu:** Resources › Learn › Customers. The homepage "Read Erigo's story" link opens Erigo's story.
 - **Source:** customer list per product from Raam, 12 Nov 2026. Structure follows stripe.com/customers and stripe.com/customers/lovable.

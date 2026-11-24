@@ -156,8 +156,8 @@ On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row 
 
 Shown on first visit as a compact bar (one row on desktop; one short line and one row of buttons on phones; made smaller, AG 13 Nov 2026). "Accept all" is the primary button and "Reject all" a secondary button (Raam, 26 Oct 2026). The preferences button is an icon (sliders, labelled "Cookie preferences" for screen readers); it expands the bar to show the switches. "Cookie settings" in the footer reopens it with the switches open.
 
-- **Heading (bold, start of the text):** We use cookies
-- **Text:** for analytics and marketing, with your OK. (On phones the middle part is hidden, so it reads "We use cookies, with your OK.")
+- **Heading (bold, start of the text):** We only use cookies
+- **Text:** that keep this site working. (CEO audit, 24 Nov 2026: no analytics or marketing tags load yet. When the GA4 / Google Ads IDs go live, switch back to "We use cookies for analytics and marketing, with your OK.")
 - **Link:** Cookie Policy (/legal/cookies)
 - **Button:** Reject all
 - **Button:** Accept all

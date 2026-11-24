@@ -67,3 +67,9 @@ Compare line by line. Each line is `- **Label:** text`. A changed text means: fi
 ## House style
 
 English, calm and plain (stripe.com tone). Money `Rp1.250.000`, dates `12 Oct 2026`, phone `+62 812-3456-7890`. The brand colours and logo are fixed; never change them for a text edit. `product-facts.md` lists what each product does and which claims can be made.
+
+## After editing (24 Nov 2026)
+
+- **Blog posts and customer stories have their own pages** (`blog/<slug>/`, `customers/<slug>/`), made from `blog/index.html` and `customers/story/index.html`. After changing `POSTS`, `CUSTOMERS` or `STORIES`, run `python3 scripts/build_pages.py`. It also rebuilds `sitemap.xml`. Never edit the generated pages by hand.
+- **Images:** use WebP under 100 KB, and bump the `?v=` number when you replace an image (assets are cached for 30 days).
+- **Links:** keep the real path in `href` next to `data-page`, for example `<a href="/pricing/" data-page="/pricing">`.

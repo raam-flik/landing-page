@@ -3,12 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FLIK | Merchant Growth Platform for Growing Brands</title>
+<title>FLIK: Checkout, Shipping &amp; Funding for Online Brands</title>
 <meta name="description" content="FLIK gives online brands a faster checkout, shipping with all major couriers for up to 45% off published rates, and inventory funding, all from one dashboard.">
 <link rel="canonical" href="https://flik.co.id/">
-<link rel="alternate" hreflang="en" href="https://flik.co.id/">
-<link rel="alternate" hreflang="id" href="https://flik.co.id/id/">
-<link rel="alternate" hreflang="x-default" href="https://flik.co.id/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FLIK">
+<meta property="og:title" content="FLIK: Checkout, Shipping &amp; Funding for Online Brands">
+<meta property="og:description" content="FLIK gives online brands a faster checkout, shipping with all major couriers for up to 45% off published rates, and inventory funding, all from one dashboard.">
+<meta property="og:url" content="https://flik.co.id/">
+<meta property="og:image" content="https://flik.co.id/assets/og/flik-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FLIK: Checkout, Shipping &amp; Funding for Online Brands">
+<meta name="twitter:description" content="FLIK gives online brands a faster checkout, shipping with all major couriers for up to 45% off published rates, and inventory funding, all from one dashboard.">
+<meta name="twitter:image" content="https://flik.co.id/assets/og/flik-og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <!-- ===== kit: fonts ===== -->
 <link rel="preload" href="fonts/Inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ===== /kit: fonts ===== -->
@@ -128,7 +140,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .dsub .dsublist{display:none;padding:0 0 8px 12px}
 .dsub.open .dsublist{display:block}
 .dsub.open>button svg{transform:rotate(180deg)}
-.dlist h5{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:12px 0 4px}
+.dlist .h5x{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:12px 0 4px}
 .dlist a{display:block;padding:8px 0;color:var(--primary);font-weight:500;font-size:15px}
 .drawer .btns{display:grid;gap:10px;margin-top:24px}
 .drawer .btns .btn{height:46px}
@@ -194,7 +206,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .co-store .sl{width:24px;height:24px;border-radius:6px;background:var(--ink);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center}
 .co-acc{margin-top:12px;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;background:var(--ok-soft);color:#0E6E48;font-size:12.5px}
 .co-sec{margin-top:14px}
-.co-sec h5{font-size:11.5px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.co-sec .h5x{font-size:11.5px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
 .co-row{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
 .co-row .m{color:var(--muted)}
 .co-row.green span:last-child{color:var(--ok)}
@@ -267,7 +279,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 .dash-side .brand span{width:22px;height:22px;border-radius:6px;background:var(--ink);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center}
 .dash-side a{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;color:var(--body);font-size:12.5px}
 .dash-side a.on{background:var(--primary-soft);color:var(--primary);font-weight:500}
-.dash-side h6{font-size:11px;color:var(--faint);font-weight:500;margin:12px 8px 4px}
+.dash-side .h6x{font-size:11px;color:var(--faint);font-weight:500;margin:12px 8px 4px}
 .dash-main{padding:16px 18px;min-width:0}
 .dash-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .dash-top h4{font-size:18px;font-weight:600}
@@ -354,7 +366,7 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 /* Footer */
 .foot{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg-alt)}
 .fcols{display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:32px}
-.fcols h6{font-size:14px;font-weight:500;margin-bottom:14px}
+.fcols .h6x{font-size:14px;font-weight:500;margin-bottom:14px}
 .fcols a{display:block;font-size:14px;color:var(--muted);padding:4px 0}
 .fcols a:hover{color:var(--ink)}
 .fcols .sup{font-size:14px;color:var(--muted);line-height:1.7}
@@ -705,8 +717,8 @@ h3{font-size:16px;line-height:1.4;font-weight:500}
 /* expanding panels: every brand stays visible; the one under the pointer (or tapped, or focused) widens and its caption shows in full */
 .en-spot{flex:1 1 0;min-width:0;cursor:pointer;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1)}
 .en-spot.on{flex-grow:3.2;cursor:default}
-.en-spot:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-.en-ph{position:relative;height:440px;background:#E3EDFF center/cover;border-radius:6px;overflow:hidden}
+.en-ph:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.en-ph{display:block;width:100%;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:inherit;position:relative;height:440px;background:#E3EDFF center/cover;border-radius:6px;overflow:hidden}
 .en-ph small{position:absolute;left:16px;top:16px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:5px 10px}
 .en-cap{margin-top:14px;font-size:15px;line-height:1.5;color:var(--body);white-space:nowrap;overflow:hidden}
 .en-spot.on .en-cap{text-overflow:ellipsis}
@@ -1230,6 +1242,17 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 </style>
 </head>
 <body>
+<script>
+/* ===== kit: lazy-bg ===== */
+/* Photos set as data-bg load only when they come near the screen (CEO audit, 24 Nov 2026). Works for cards added later by scripts too. */
+(function(){
+  const L=e=>{e.style.backgroundImage="url('"+e.dataset.bg+"')";e.removeAttribute('data-bg')};
+  const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){io.unobserve(x.target);L(x.target)}}),{rootMargin:'300px 200px'}):null;
+  const add=e=>io?io.observe(e):L(e);
+  new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType!==1)return;if(n.dataset.bg)add(n);n.querySelectorAll('[data-bg]').forEach(add)}))).observe(document.documentElement,{childList:true,subtree:true});
+})();
+/* ===== /kit: lazy-bg ===== */
+</script>
 <!-- ===== kit: a11y (skip link) ===== -->
 <a class="skip" href="#top">Skip to main content</a>
 <!-- ===== /kit: a11y ===== -->
@@ -1297,12 +1320,12 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
               <div class="co-store"><span class="sl">A</span>Aruna Studio</div>
               <div class="co-acc"><span data-ic="check-s"></span>Logged in with FLIK · +62 812-3456-7890</div>
               <div class="co-sec">
-                <h5>Order</h5>
+                <p class="h5x">Order</p>
                 <div class="co-row"><span>Linen Shirt, Sand, M</span><span class="num">Rp 349.000</span></div>
                 <div class="co-row"><span>Canvas Tote Bag</span><span class="num">Rp 189.000</span></div>
               </div>
               <div class="co-sec">
-                <h5>Delivery</h5>
+                <p class="h5x">Delivery</p>
                 <div class="opts" id="ship-opts">
                   <button class="opt on" data-ship="12000"><span class="rd"></span><span class="grow">Regular<br><small>2–3 days</small></span><span class="num">Rp 12.000</span></button>
                   <button class="opt" data-ship="28000"><span class="rd"></span><span class="grow">Same day<br><small>Arrives today</small></span><span class="num">Rp 28.000</span></button>
@@ -1310,7 +1333,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
               </div>
               </div>
               <div class="co-col">
-              <div class="co-sec"><h5>Payment</h5><div class="pay-grid" id="pay-grid"></div></div>
+              <div class="co-sec"><p class="h5x">Payment</p><div class="pay-grid" id="pay-grid"></div></div>
               <div class="co-sec">
                 <div class="co-row"><span class="m">Subtotal</span><span class="num">Rp 538.000</span></div>
                 <div class="co-row"><span class="m">Shipping</span><span class="num" id="co-ship">Rp 12.000</span></div>
@@ -1436,9 +1459,9 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
   <div class="wrap">
     <h2 class="sec-h">Enterprise brands run on FLIK too. <span class="soft">Each with a workflow built around them.</span></h2>
     <div class="en-spots">
-      <article class="en-spot on" tabindex="0" role="button" aria-expanded="true"><div class="en-ph" style="background-image:url('assets/sections/enterprise-property.jpg')"><small>Property</small></div><p class="en-cap"><b>Ruma</b><span> runs its property sales operations with FLIK.</span></p></article>
-      <article class="en-spot" tabindex="0" role="button" aria-expanded="false"><div class="en-ph" style="background-image:url('assets/sections/enterprise-school.jpg')"><small>Education</small></div><p class="en-cap"><b>Masakecil</b><span> collects term fees with FLIK.</span></p></article>
-      <article class="en-spot" tabindex="0" role="button" aria-expanded="false"><div class="en-ph" style="background-image:url('assets/sections/enterprise-hospital.jpg')"><small>Health</small></div><p class="en-cap"><b>Queen Latifa Hospital</b><span> settles in-patient bills at the counter with FLIK.</span></p></article>
+      <article class="en-spot on"><button type="button" class="en-ph" aria-expanded="true" data-bg="assets/sections/enterprise-property.webp?v=2"><small>Property</small></button><p class="en-cap"><b>Ruma</b><span> runs its property sales operations with FLIK.</span></p></article>
+      <article class="en-spot"><button type="button" class="en-ph" aria-expanded="false" data-bg="assets/sections/enterprise-school.webp?v=2"><small>Education</small></button><p class="en-cap"><b>Masakecil</b><span> collects term fees with FLIK.</span></p></article>
+      <article class="en-spot"><button type="button" class="en-ph" aria-expanded="false" data-bg="assets/sections/enterprise-hospital.webp?v=2"><small>Health</small></button><p class="en-cap"><b>Queen Latifa Hospital</b><span> settles in-patient bills at the counter with FLIK.</span></p></article>
     </div>
     <div class="hl-tri">
       <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><p><b>Customised workflows.</b> Work with a FLIK expert to shape payments, collections and settlement around your operation.</p><a href="#" class="link" data-act="sales" data-interest="Enterprise">Talk to an expert <span class="chev">›</span></a></div>
@@ -1455,7 +1478,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <h2 class="sec-h hl-h">Brands growing with FLIK. <span class="soft">See how they sell, ship and scale.</span></h2>
       <div class="car-nav"><button class="cbtn" data-car="bstories" data-dir="-1" aria-label="Previous stories">‹</button><button class="cbtn" data-car="bstories" data-dir="1" aria-label="Next stories">›</button></div>
     </div>
-    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/story/?c=osim" style="--t:0,45,93;background-image:url('assets/customers/osim-1.jpg?v=4');background-position:center" aria-label="Read OSIM's story"><span class="bs-logo"><img src="assets/logos/merchant/osim.png?v=2" alt="OSIM"></span></a><p>OSIM makes buying wellness online feel effortless.</p><a href="customers/story/?c=osim" class="link">Read OSIM's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=manta-liberta" style="--t:0,45,93;background-image:url('assets/customers/manta-liberta-1.jpg?v=4');background-position:center" aria-label="Read Manta Liberta's story"><span class="bs-logo"><img src="assets/logos/merchant/manta-liberta.png?v=2" alt="Manta Liberta"></span></a><p>Manta Liberta spends less time on shipping.</p><a href="customers/story/?c=manta-liberta" class="link">Read Manta Liberta's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=anita-family" style="--t:174,29,124;background-image:url('assets/customers/anita-family-1.jpg?v=4');background-position:center" aria-label="Read Anita Family's story"><span class="bs-logo"><img src="assets/logos/merchant/anita-family.png?v=2" alt="Anita Family"></span></a><p>Anita Family takes QRIS and cards at the counter with FLIK.</p><a href="customers/story/?c=anita-family" class="link">Read Anita Family's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all has-wall" href="#" data-page="/customers" aria-label="See all customer stories"><span class="all-wall" aria-hidden="true"><i><img src="assets/logos/merchant/sigit-store.png" alt=""></i><i class="dk"><img src="assets/logos/merchant/erigo.png" alt=""></i><i><img src="assets/logos/merchant/artch.png" alt=""></i><i><img src="assets/logos/merchant/heylocal.png" alt=""></i><i><img src="assets/logos/merchant/osim.png" alt=""></i><i><img src="assets/logos/merchant/paper.png" alt=""></i><i><img src="assets/logos/merchant/emandos.png?v=3" alt=""></i><i><img src="assets/logos/merchant/wakaigo.png" alt=""></i><i><img src="assets/logos/merchant/zaafer.png" alt=""></i><i><img src="assets/logos/merchant/kopikalyan.png" alt=""></i><i><img src="assets/logos/merchant/anita-family.png" alt=""></i><i><img src="assets/logos/merchant/geraihawa.png" alt=""></i><i><img src="assets/logos/merchant/haus.png" alt=""></i><i><img src="assets/logos/merchant/manta-liberta.png" alt=""></i><i><img src="assets/logos/merchant/donat-bahagia.png" alt=""></i><i><img src="assets/logos/merchant/teenage-death-star.png" alt=""></i><i><img src="assets/logos/merchant/sigit-store.png" alt=""></i><i class="dk"><img src="assets/logos/merchant/erigo.png" alt=""></i><i><img src="assets/logos/merchant/artch.png" alt=""></i><i><img src="assets/logos/merchant/heylocal.png" alt=""></i><i><img src="assets/logos/merchant/osim.png" alt=""></i><i><img src="assets/logos/merchant/paper.png" alt=""></i><i><img src="assets/logos/merchant/emandos.png?v=3" alt=""></i><i><img src="assets/logos/merchant/wakaigo.png" alt=""></i><i><img src="assets/logos/merchant/zaafer.png" alt=""></i><i><img src="assets/logos/merchant/kopikalyan.png" alt=""></i><i><img src="assets/logos/merchant/anita-family.png" alt=""></i><i><img src="assets/logos/merchant/geraihawa.png" alt=""></i><i><img src="assets/logos/merchant/haus.png" alt=""></i><i><img src="assets/logos/merchant/manta-liberta.png" alt=""></i><i><img src="assets/logos/merchant/donat-bahagia.png" alt=""></i></span><span></span><span class="bs-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="#" data-page="/customers" class="link">See all customer stories <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=artch" style="--t:59,36,168;background-image:url('assets/customers/artch-1.jpg?v=4');background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.png?v=2" alt="Artch"></span></a><p>Artch's checkout keeps up with its shoppers.</p><a href="customers/story/?c=artch" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=wakaigo" style="--t:0,45,93;background-image:url('assets/customers/wakaigo-1.jpg?v=4');background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.png?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/story/?c=wakaigo" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=emados" style="--t:120,52,10;background-image:url('assets/customers/emados-1.jpg?v=4');background-position:center 35%" aria-label="Read EMADO'S story"><span class="bs-logo"><img src="assets/logos/merchant/emandos.png?v=3" alt="EMADO'S"></span></a><p>EMADO'S opened 30+ branches across Indonesia with FLIK.</p><a href="customers/story/?c=emados" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=sigit-store" style="--t:0,45,93;background-image:url('assets/customers/sigit-store-1.jpg?v=6');background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.png?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/story/?c=sigit-store" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=kopikalyan" style="--t:0,45,93;background-image:url('assets/customers/kopikalyan-1.jpg?v=5');background-position:center" aria-label="Read Kopikalyan's story"><span class="bs-logo"><img src="assets/logos/merchant/kopikalyan.png?v=2" alt="Kopikalyan"></span></a><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="customers/story/?c=kopikalyan" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=erigo" style="--t:0,45,93;background-image:url('assets/customers/erigo-1.jpg?v=6');background-position:center 35%" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.png?v=2" alt="ERIGO"></span></a><p>Stock funding helped ERIGO grow sales up to 200%.</p><a href="customers/story/?c=erigo" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=heylocal" style="--t:174,29,124;background-image:url('assets/customers/heylocal-1.jpg?v=5');background-position:center top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.png?v=2" alt="HEYLOCAL"></span></a><p>HEYLOCAL stocked up in time for its peak season.</p><a href="customers/story/?c=heylocal" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/story/?c=paper" style="--t:174,29,124;background-image:url('assets/customers/paper-1.jpg?v=4');background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.png?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/story/?c=paper" class="link">Read Paper's story <span class="chev">›</span></a></article></div>
+    <div class="bs-row" id="bstories"><article class="bs-card"><a class="bs-art" href="customers/osim/" data-bg="assets/customers/osim-1.webp?v=7" style="--t:0,45,93;background-position:center" aria-label="Read OSIM's story"><span class="bs-logo"><img src="assets/logos/merchant/osim.webp?v=2" alt="OSIM"></span></a><p>OSIM makes buying wellness online feel effortless.</p><a href="customers/osim/" class="link">Read OSIM's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/manta-liberta/" data-bg="assets/customers/manta-liberta-1.webp?v=7" style="--t:0,45,93;background-position:center" aria-label="Read Manta Liberta's story"><span class="bs-logo"><img src="assets/logos/merchant/manta-liberta.webp?v=2" alt="Manta Liberta"></span></a><p>Manta Liberta spends less time on shipping.</p><a href="customers/manta-liberta/" class="link">Read Manta Liberta's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/anita-family/" data-bg="assets/customers/anita-family-1.webp?v=7" style="--t:174,29,124;background-position:center" aria-label="Read Anita Family's story"><span class="bs-logo"><img src="assets/logos/merchant/anita-family.webp?v=2" alt="Anita Family"></span></a><p>Anita Family takes QRIS and cards at the counter with FLIK.</p><a href="customers/anita-family/" class="link">Read Anita Family's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art bs-all has-wall" href="/customers/" data-page="/customers" aria-label="See all customer stories"><span class="all-wall" aria-hidden="true"><i><img src="assets/logos/merchant/sigit-store.webp?v=2" alt=""></i><i class="dk"><img src="assets/logos/merchant/erigo.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/artch.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/heylocal.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/osim.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/paper.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/emandos.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/wakaigo.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/zaafer.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/kopikalyan.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/anita-family.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/geraihawa.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/haus.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/manta-liberta.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/donat-bahagia.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/teenage-death-star.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/sigit-store.webp?v=2" alt=""></i><i class="dk"><img src="assets/logos/merchant/erigo.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/artch.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/heylocal.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/osim.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/paper.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/emandos.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/wakaigo.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/zaafer.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/kopikalyan.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/anita-family.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/geraihawa.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/haus.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/manta-liberta.webp?v=2" alt=""></i><i><img src="assets/logos/merchant/donat-bahagia.webp?v=2" alt=""></i></span><span></span><span class="bs-big">All stories</span></a><p>See how every brand sells, ships and grows with FLIK.</p><a href="/customers/" data-page="/customers" class="link">See all customer stories <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/artch/" data-bg="assets/customers/artch-1.webp?v=7" style="--t:59,36,168;background-position:center 30%" aria-label="Read Artch's story"><span class="bs-logo"><img src="assets/logos/merchant/artch.webp?v=2" alt="Artch"></span></a><p>Artch's checkout keeps up with its shoppers.</p><a href="customers/artch/" class="link">Read Artch's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/wakaigo/" data-bg="assets/customers/wakaigo-1.webp?v=7" style="--t:0,45,93;background-position:center" aria-label="Read WakaiGo's story"><span class="bs-logo"><img src="assets/logos/merchant/wakaigo.webp?v=2" alt="WakaiGo"></span></a><p>WakaiGo turns more visits into orders with FLIK Checkout.</p><a href="customers/wakaigo/" class="link">Read WakaiGo's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/emados/" data-bg="assets/customers/emados-1.webp?v=7" style="--t:120,52,10;background-position:center 35%" aria-label="Read EMADO'S story"><span class="bs-logo"><img src="assets/logos/merchant/emandos.webp?v=2" alt="EMADO'S"></span></a><p>EMADO'S opened 30+ branches across Indonesia with FLIK.</p><a href="customers/emados/" class="link">Read EMADO'S story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/sigit-store/" data-bg="assets/customers/sigit-store-1.webp?v=7" style="--t:0,45,93;background-position:center 35%" aria-label="Read Sigit Store's story"><span class="bs-logo"><img src="assets/logos/merchant/sigit-store.webp?v=2" alt="Sigit Store"></span></a><p>The SIGIT sells its merch straight to fans with FLIK Checkout.</p><a href="customers/sigit-store/" class="link">Read Sigit Store's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/kopikalyan/" data-bg="assets/customers/kopikalyan-1.webp?v=7" style="--t:0,45,93;background-position:center" aria-label="Read Kopikalyan's story"><span class="bs-logo"><img src="assets/logos/merchant/kopikalyan.webp?v=2" alt="Kopikalyan"></span></a><p>Kopikalyan serves the morning rush and funds its growth.</p><a href="customers/kopikalyan/" class="link">Read Kopikalyan's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/erigo/" data-bg="assets/customers/erigo-1.webp?v=7" style="--t:0,45,93;background-position:center 35%" aria-label="Read ERIGO's story"><span class="bs-logo dark"><img src="assets/logos/merchant/erigo.webp?v=2" alt="ERIGO"></span></a><p>Stock funding helped ERIGO grow sales up to 200%.</p><a href="customers/erigo/" class="link">Read ERIGO's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/heylocal/" data-bg="assets/customers/heylocal-1.webp?v=7" style="--t:174,29,124;background-position:center top" aria-label="Read HEYLOCAL's story"><span class="bs-logo"><img src="assets/logos/merchant/heylocal.webp?v=2" alt="HEYLOCAL"></span></a><p>HEYLOCAL stocked up in time for its peak season.</p><a href="customers/heylocal/" class="link">Read HEYLOCAL's story <span class="chev">›</span></a></article><article class="bs-card"><a class="bs-art" href="customers/paper/" data-bg="assets/customers/paper-1.webp?v=7" style="--t:174,29,124;background-position:center top" aria-label="Read Paper's story"><span class="bs-logo"><img src="assets/logos/merchant/paper.webp?v=2" alt="Paper"></span></a><p>Paper keeps its checkout as clean as its brand.</p><a href="customers/paper/" class="link">Read Paper's story <span class="chev">›</span></a></article></div>
   </div>
 </section>
 
@@ -1463,7 +1486,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <section class="pad-s guides">
   <div class="wrap">
     <div class="mc">
-      <div class="mc-card mc-fund"><p><b>FLIK Funding.</b> Upfront funding for selected brands. Your sales take care of the rest.</p><a href="#" class="link" data-page="/funding/merchant-cash-advance">Explore funding <span class="chev">›</span></a></div>
+      <div class="mc-card mc-fund"><p><b>FLIK Funding.</b> Upfront funding for selected brands. Your sales take care of the rest.</p><a href="/funding/merchant-cash-advance/" class="link" data-page="/funding/merchant-cash-advance">Explore funding <span class="chev">›</span></a></div>
       <div class="mc-card mc-reg"><p><b>Start for free.</b> No registration fee. Create your account and start selling.</p><a href="#" class="link" data-act="start">Get started <span class="chev">›</span></a></div>
     </div>
   </div>
@@ -1494,7 +1517,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 4 7-8M15 8h5v5"/></svg></span><p><b>Open a new revenue line.</b> Talk to us about offering FLIK Payments, Shipping and Funding to the merchants already on your platform.</p></div>
       <div><span class="hl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3z"/><path d="M12 8v8"/></svg></span><p><b>Manage platform risk.</b> Governance over who gets paid, when, and under which rules.</p></div>
     </div>
-    <div class="pf-cta"><a href="#" class="btn btn-primary" data-page="/payment/connect">Explore FLIK Connect <span class="chev">›</span></a><span class="pf-note">FLIK Connect is coming soon. Join the waitlist.</span></div>
+    <div class="pf-cta"><a href="/payment/connect/" class="btn btn-primary" data-page="/payment/connect">Explore FLIK Connect <span class="chev">›</span></a><span class="pf-note">FLIK Connect is coming soon. Join the waitlist.</span></div>
   </div>
 </section>
 
@@ -1504,7 +1527,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <div class="dv-intro">
         <h2 style="color:#fff">Go live without rebuilding your store.</h2>
         <p class="lead" style="margin-top:16px">Connect FLIK with a plugin, build with the API, or run everything from the dashboard with no code.</p>
-        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a href="#" class="btn btn-light" data-page="Developer docs">View developer docs <span class="chev">›</span></a></div>
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a href="/developers/" class="btn btn-light" data-page="Developer docs">View developer docs <span class="chev">›</span></a></div>
     </div>
 
     <!-- Connect to existing systems (like stripe.com) -->
@@ -1572,12 +1595,12 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
     <div>
       <h3>See what you'll pay</h3>
       <p class="txt">Free to register, with transparent pricing and no hidden fees.</p>
-      <div class="acts"><a href="#" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
+      <div class="acts"><a href="/pricing/" class="link" data-page="/pricing">Pricing details <span class="chev">›</span></a></div>
     </div>
     <div>
       <h3>Start building</h3>
       <p class="txt">Connect your store with our plugins or the FLIK API.</p>
-      <div class="acts"><a href="#" class="link" data-page="Developer docs">Integration options <span class="chev">›</span></a></div>
+      <div class="acts"><a href="/developers/" class="link" data-page="Developer docs">Integration options <span class="chev">›</span></a></div>
     </div>
   </div>
 </section>
@@ -1598,12 +1621,12 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
       <p><b>PT Flik Teknologi Indonesia</b> · Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560</p>
       <p>Payments are processed by licensed payment partners. FLIK is not a bank.</p>
       <ul class="flegal-links" aria-label="Legal">
-        <li><a href="/legal/terms" data-page="/legal/terms">Terms of Service</a></li>
-        <li><a href="/legal/privacy" data-page="/legal/privacy">Privacy Policy</a></li>
-        <li><a href="/legal/refund" data-page="/legal/refund">Refund Policy</a></li>
-        <li><a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></li>
+        <li><a href="/legal/terms/" data-page="/legal/terms">Terms of Service</a></li>
+        <li><a href="/legal/privacy/" data-page="/legal/privacy">Privacy Policy</a></li>
+        <li><a href="/legal/refund/" data-page="/legal/refund">Refund Policy</a></li>
+        <li><a href="/legal/cookies/" data-page="/legal/cookies">Cookie Policy</a></li>
         <li><button type="button" data-cookie-settings>Cookie settings</button></li>
-        <li><a href="/legal/data-request" data-page="/legal/data-request">Data request</a></li>
+        <li><a href="/legal/data-request/" data-page="/legal/data-request">Data request</a></li>
         <li><a href="mailto:privacy@flik.co.id">privacy@flik.co.id</a></li>
       </ul>
     </div>
@@ -1618,7 +1641,7 @@ html.anim-paused :is(.rv,.sr,.sr-f,.sr-f .sr-z,.sr-h .w){opacity:1;translate:non
 <!-- ===== kit: cookie-consent ===== -->
 <div class="cc" id="cc" hidden>
   <div class="cc-card" id="cc-card" role="dialog" aria-modal="false" aria-labelledby="cc-title" aria-describedby="cc-desc" tabindex="-1">
-    <p class="cc-p" id="cc-desc"><b id="cc-title">We use cookies</b><span class="cc-lg"> for analytics and marketing</span>, with your OK. <a href="/legal/cookies" data-page="/legal/cookies">Cookie Policy</a></p>
+    <p class="cc-p" id="cc-desc"><b id="cc-title">We only use cookies</b> that keep this site working. <a href="/legal/cookies/" data-page="/legal/cookies">Cookie Policy</a></p>
     <div class="cc-prefs" id="cc-prefs" hidden>
       <fieldset>
         <legend class="sr-only">Cookie preferences</legend>
@@ -1757,7 +1780,7 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-page^="doc
 /* ===== /kit: docs-links ===== */
 const nav=document.getElementById('nav');
 nav.innerHTML=MENU.map((m,i)=>`<div class="nav-item" data-i="${i}"><button class="nav-btn" aria-expanded="false" aria-controls="mega-${i}">${m.k}${ic('down',14,2)}</button>
-  <div class="mega" id="mega-${i}" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="#" class="nav-btn" data-page="/pricing">Pricing</a>`;
+  <div class="mega" id="mega-${i}" style="width:${m.w}px"><div class="mega-cols" style="grid-template-columns:repeat(${m.cols.length},1fr)">${m.cols.map(c=>`<div><h4>${c.h}</h4>${c.items.map(it=>`<a href="#" class="mi" data-page="${it[2]}"><b>${it[0]}</b><span>${it[1]}</span></a>`).join('')}</div>`).join('')}</div></div></div>`).join('')+`<a href="/pricing/" class="nav-btn" data-page="/pricing">Pricing</a>`;
 /* ===== kit: a11y-menu ===== */
 /* Mega menu (this page keeps its menu-aim hover logic): Escape closes and returns focus to the button, focus leaving an item closes it,
    a mouse leaving doesn't close a menu that still holds keyboard focus, and setOpen keeps aria-expanded in sync. */
@@ -1783,7 +1806,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openItem){const b=o
 /* Mobile drawer */
 const drawer=document.getElementById('drawer');
 drawer.innerHTML=`<div class="drawer-top"><span class="logo">${document.getElementById('logo').innerHTML}</span><button class="x" id="dclose" aria-label="Close menu">${ic('x',20)}</button></div>`+
-  MENU.map(m=>`<div class="dgroup"><button aria-expanded="false">${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>{const L=c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('');return m.cols.reduce((n,x)=>n+x.items.length,0)>10?`<div class="dsub"><button aria-expanded="false">${c.h}${ic('down',14,2)}</button><div class="dsublist">${L}</div></div>`:`<h5>${c.h}</h5>${L}`}).join('')}</div></div>`).join('')+
+  MENU.map(m=>`<div class="dgroup"><button aria-expanded="false">${m.k}${ic('down',16,2)}</button><div class="dlist">${m.cols.map(c=>{const L=c.items.map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('');return m.cols.reduce((n,x)=>n+x.items.length,0)>10?`<div class="dsub"><button aria-expanded="false">${c.h}${ic('down',14,2)}</button><div class="dsublist">${L}</div></div>`:`<p class="h5x">${c.h}</p>${L}`}).join('')}</div></div>`).join('')+
   `<div class="dgroup"><button data-page="/pricing">Pricing</button></div><div class="btns">${window.FLIK_SIGNED?'<button class="btn btn-primary" data-act="dash">Dashboard <span class="chev">›</span></button><button class="btn btn-secondary" data-act="sales">Contact sales</button>':'<button class="btn btn-primary" data-act="start">Get started</button><button class="btn btn-secondary" data-act="sales">Contact sales</button><button class="btn btn-secondary" data-act="signin">Sign in</button>'}</div>`;
 /* ===== kit: a11y-drawer ===== */
 /* Mobile drawer: inert while closed; focus moves in on open and back to the burger on close. setDrawer(false) on a closed drawer does nothing. */
@@ -1807,7 +1830,7 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passiv
 /* ===== Logos (placeholder wordmarks) ===== */
 /* Merchant logos (design-system/assets/Logos/merchant), shown with permission */
 const LOGOS=[['zmnow','ZMNow'],['ryusei','Ryusei'],['mayora','Mayora'],['keychron','Keychron'],['nuphy','NuPhy'],['elzatta','Elzatta'],['oxygen-denim','Oxygen Denim'],['roughneck','Roughneck'],['andall','Andall'],['cottonology','Cottonology'],['fertig','Fertig'],['gio-cardin','Gio Cardin'],['vincencio','Vincencio'],['makeblock','Makeblock'],['emrys','Emrys'],['hanoon','Hanoon'],['trooper','Trooper'],['moire','Moire']];
-const lgHtml=LOGOS.map(l=>`<img class="lg" src="assets/logos/merchant/${l[0]}.png" alt="${l[1]}" loading="lazy">`).join('');
+const lgHtml=LOGOS.map(l=>`<img class="lg" src="assets/logos/merchant/${l[0]}.webp?v=2" alt="${l[1]}" loading="lazy">`).join('');
 /* the second copy only makes the marquee loop: hidden from screen readers */
 document.getElementById('logos').innerHTML=lgHtml+'<span style="display:contents" aria-hidden="true">'+lgHtml.replace(/alt="[^"]*"/g,'alt=""')+'</span>';
 
@@ -2012,15 +2035,15 @@ if(document.getElementById('steps'))renderFund();
 /* ===== Integration tabs ===== */
 const ITABS={
   'No code':`<div class="isteps">${[['Create your account','Register and verify your business.'],['Set up checkout and shipping','Choose payment methods, couriers and your warehouses in the dashboard.'],['Start selling','Create shipments, track orders and manage your balance in one place.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>`,
-  'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><a href="#" class="link-l" data-page="/integrations/shopify">View Shopify integration <span class="chev">›</span></a>`,
-  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers pay in one tap with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><a href="#" class="link-l" data-page="/integrations/woocommerce">View WooCommerce integration <span class="chev">›</span></a>`,
+  'Shopify':`<div class="isteps">${[['We set it up','The FLIK team connects your Shopify store to your FLIK account.'],['Replace your checkout','Shoppers are redirected to FLIK Checkout after they add to cart.'],['Ship from the same dashboard','Orders appear in FLIK Shipping, ready to send.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><a href="/developers/#shopify" class="link-l" data-page="/integrations/shopify">View Shopify integration <span class="chev">›</span></a>`,
+  'WooCommerce':`<div class="isteps">${[['We set it up','The FLIK team connects your WordPress site to FLIK.'],['Turn on FLIK Checkout','Shoppers pay in one tap with their FLIK account.'],['Ship with all major couriers','Orders flow straight into FLIK Shipping.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><a href="/developers/#woocommerce" class="link-l" data-page="/integrations/woocommerce">View WooCommerce integration <span class="chev">›</span></a>`,
   'API':`<div class="isteps">${[['Get Sandbox credentials','Create API credentials in the dashboard. Sandbox never touches real money.'],['Create a checkout session','One call returns a payment page. Shoppers pay by virtual account or QRIS.'],['Go live','Add a webhook endpoint, verify your business, then switch to Live keys.']].map((s,i)=>`<div class="istep"><span class="n">${i+1}</span><div><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div><div class="code icode"><span class="c">// Step 2, shortened from the Accept a payment guide</span>
 <span class="k">const</span> url = <span class="s">'https://api.flik.co.id/v1/checkout/sessions'</span>;
 <span class="k">const</span> res = <span class="k">await</span> <span class="p">fetch</span>(url, {
   method: <span class="s">'POST'</span>,
   headers: { Authorization: <span class="s">\`Bearer \${token}\`</span> },
   body: JSON.<span class="p">stringify</span>({ line_items, success_url }),
-});</div><a href="#" class="link-l" data-page="API reference">Read the API reference <span class="chev">›</span></a>`
+});</div><a href="/developers/#api" class="link-l" data-page="API reference">Read the API reference <span class="chev">›</span></a>`
 };
 let itab='No code';
 function renderI(){
@@ -2033,8 +2056,8 @@ renderI();
 
 /* ===== Footer ===== */
 document.getElementById('fcols').innerHTML=`<div class="fbrand"><span class="logo">${document.getElementById('logo').innerHTML}</span></div>`+
-  MENU.map(m=>`<div><h6>${m.k}</h6>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="#" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
-  `<div><h6>Support</h6><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="#" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
+  MENU.map(m=>`<div><p class="h6x">${m.k}</p>${m.cols.flatMap(c=>c.items.slice(0,m.k==='Products'?99:9)).filter(it=>m.k!=='Products'||['/payment','/payment/checkout','/payment/in-store','/payment/payment-link','/payment/early-settlement','/payment/fraud-detection','/payment/connect','/shipping','/shipping/cod','/shipping/track','/funding/merchant-cash-advance'].includes(it[2])).map(it=>`<a href="#" data-page="${it[2]}">${it[0]}</a>`).join('')}${m.k==='Products'?'<a href="/pricing/" data-page="/pricing">Pricing</a>':''}</div>`).join('')+
+  `<div><p class="h6x">Support</p><p class="sup">Mon–Fri, 09:00–18:00 WIB<br><a href="mailto:support@flik.co.id" style="padding:0;display:inline">support@flik.co.id</a><br><a href="https://wa.me/6281335328100" target="_blank" rel="noopener" aria-label="WhatsApp +62 813-3532-8100 (opens in a new tab)" style="padding:0;display:inline">+62 813-3532-8100</a></p><a href="/sitemap.xml" data-page="/sitemap" style="margin-top:10px">Sitemap</a></div>`;
 
 /* ===== Toast ===== */
 const toastEl=document.getElementById('toast');let tt;
@@ -2119,7 +2142,7 @@ function salesModal(pre){
 // Get started opens merchant registration, Contact sales opens the intro call booking, both in a new tab
 const REGISTER_URL='https://merchant.flik.co.id/register/',SALES_URL='https://calendly.com/desmount-i7g/flikintro';
 /* Local routes (pages that exist in this prototype) */
-const ROUTES={'/about':'about/','/shipping/warehouses':'shipping/#bulk','/use-cases/enterprise':'use-cases/enterprise/','/industries/food-beverage':'industries/food-beverage/','/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/story/?c=erigo','Emados case study':'customers/story/?c=emados','Developer docs':'developers/','API reference':'developers/#api','/developers#sandbox':'developers/#sandbox','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
+const ROUTES={'/sitemap':'sitemap.xml','/about':'about/','/shipping/warehouses':'shipping/#bulk','/use-cases/enterprise':'use-cases/enterprise/','/industries/food-beverage':'industries/food-beverage/','/payment':'payment/','/payment/invoice':'payment/invoice/','/payment/payment-link':'payment/payment-link/','/use-cases/d2c-brands':'use-cases/d2c-brands/','/use-cases/cod-sellers':'use-cases/cod-sellers/','/use-cases/scaling-brands':'use-cases/scaling-brands/','/industries/fashion':'industries/fashion/','/industries/home-appliances':'industries/home-appliances/','/contact':'contact/','/demo':'demo/','/':'','/checkout':'checkout/','/payment/checkout':'checkout/','/shipping':'shipping/','/funding/merchant-cash-advance':'funding/merchant-cash-advance/','/payment/early-settlement':'payment/early-settlement/','/payment/fraud-detection':'payment/fraud-detection/','/payment/in-store':'payment/in-store/','/payment/connect':'payment/connect/','/pricing':'pricing/','/customers':'customers/','/customers#all':'customers/#all','/customers/story':'customers/story/','Erigo case study':'customers/erigo/','Emados case study':'customers/emados/','Developer docs':'developers/','API reference':'developers/#api','/developers#sandbox':'developers/#sandbox','/developers':'developers/','/promo':'promo/','/blog':'blog/','/help':'help/',
   // items without their own page yet jump to their section on the parent page (sitemap: thin pages start as sections)
   '/payment/methods':'checkout/#methods','/checkout/payment-methods':'checkout/#methods','/payment/flik-account':'checkout/#paths','/payment/personalization':'checkout/#dash','/integrations/shopify':'developers/#shopify','/integrations/woocommerce':'developers/#woocommerce',
   '/shipping/bulk':'shipping/#bulk','/shipping/cod':'shipping/#cod','/shipping/track':'shipping/track/','/shipping/returns':'shipping/#track','/shipping/courier-performance':'shipping/#performance',
@@ -2131,6 +2154,8 @@ const ROUTES={'/about':'about/','/shipping/warehouses':'shipping/#bulk','/use-ca
 // arriving with #section (from a menu item that has no page yet): scroll there once the page has rendered
 addEventListener('load',()=>{const t=location.hash&&document.getElementById(location.hash.slice(1));if(t)setTimeout(()=>t.scrollIntoView({behavior:'instant'}),60)});
 document.addEventListener('click',e=>{const a=e.target.closest('[data-page]');if(a&&ROUTES[a.dataset.page]){e.preventDefault();e.stopImmediatePropagation();if(a.target==='_blank')open(ROUTES[a.dataset.page],'_blank','noopener');else location.href=ROUTES[a.dataset.page]}},true);
+/* real hrefs on every routed link, so search engines can follow them (CEO audit, 24 Nov 2026) */
+(function(){let q=0;const fill=()=>{q=0;document.querySelectorAll('a[data-page]').forEach(a=>{const p=ROUTES[a.dataset.page];if(p!==undefined&&a.getAttribute('href')!=='/'+p)a.setAttribute('href','/'+p)})};fill();new MutationObserver(()=>{if(!q)q=requestAnimationFrame(fill)}).observe(document.documentElement,{childList:true,subtree:true})})();
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
   if(!a)return;
@@ -2213,9 +2238,12 @@ document.addEventListener('click',e=>{
   const fmt=d=>{d=Math.round(d||0);return Math.floor(d/60)+':'+String(d%60).padStart(2,'0')};
   const playPrev=()=>{if(!reduce&&!(typeof motionPaused==='function'&&motionPaused()))v.play().catch(()=>{})};
   v.addEventListener('error',()=>{card.hidden=true});                   // files missing (kept out of git)
-  v.addEventListener('loadedmetadata',()=>{card.hidden=false;
-    const probe=document.createElement('video');probe.preload='metadata';probe.src=FULL;probe.onloadedmetadata=()=>{dur.textContent=fmt(probe.duration)};
-    playPrev()});
+  // on phones the cookie banner and the film card both cover the hero, so the card waits until the banner is closed (CEO audit, 24 Nov 2026)
+  const reveal=()=>{card.hidden=false;playPrev()};
+  const showCard=()=>{let asked=true;try{asked=!!localStorage.getItem('flik_consent')}catch(_){}
+    if(!asked&&matchMedia('(max-width:760px)').matches)addEventListener('flik:consent',reveal,{once:true});else reveal()};
+  v.addEventListener('loadedmetadata',()=>{showCard();
+    const probe=document.createElement('video');probe.preload='metadata';probe.src=FULL;probe.onloadedmetadata=()=>{dur.textContent=fmt(probe.duration)}});
   v.load();
   function open(){
     openModal(`<div class="modal-h"><h3 id="modal-title" style="color:#fff">Introducing FLIK</h3><button type="button" class="x" data-close aria-label="Close" style="color:#fff">${ic('x',18)}</button></div><video class="film-v" src="${FULL}" controls autoplay playsinline></video>`);
@@ -2306,7 +2334,7 @@ function bdOpen(key,from){
   const card=document.querySelector(`#solutions .exp[data-prod="${key}"]`)?.closest('.bc');
   const btn1=p.cta[2]?`<button class="btn btn-primary" data-act="${p.cta[2]}" data-interest="Funding">${p.cta[0]} <span class="chev">›</span></button>`:`<a href="#" class="btn btn-primary" data-page="${p.cta[1]}">${p.cta[0]} <span class="chev">›</span></a>`;
   bd.innerHTML=`<button class="bd-x" data-bd-close aria-label="Close">${ic('x',18)}</button><div class="bd-in">
-    <div class="bd-head"><div><h2 id="bd-title">${p.t}</h2><p>${p.d}</p><div class="bd-btns">${btn1}<a href="#" class="btn btn-secondary" data-page="/pricing">See pricing</a></div></div>
+    <div class="bd-head"><div><h2 id="bd-title">${p.t}</h2><p>${p.d}</p><div class="bd-btns">${btn1}<a href="/pricing/" class="btn btn-secondary" data-page="/pricing">See pricing</a></div></div>
       <ul class="bd-list">${p.list.map(x=>`<li><span class="ck">${ic('check',11,3)}</span>${x}</li>`).join('')}</ul></div>
     <div class="bd-gfx"><div class="bd-art" aria-hidden="true"></div><div class="bd-side"><div class="bd-stat"><b class="num">${p.stat[0]}</b><span>${p.stat[1]}</span></div>${p.stat2?`<div class="bd-stat dark"><b class="num">${p.stat2[0]}</b><span>${p.stat2[1]}</span></div>`:''}</div></div>
     <div class="bd-details">${p.det.map(d=>`<div><span class="ic">${ic(d[0],18)}</span><p><b>${d[1]}</b> ${d[2]}</p></div>`).join('')}</div>
@@ -2345,9 +2373,9 @@ const NEWS=[
   ['Payments','daily-check-of-sales-and-payouts','sales-payout-routine','A 10-minute daily check of your sales and payouts','59,36,168'],
   ['Growth','turn-first-orders-into-repeat-customers','repeat-customers','Turn first orders into repeat customers','0,45,93']
 ];
-const newsCard=n=>`<article class="bs-card"><a class="bs-art bs-post" href="blog/?post=${n[1]}" style="--t:${n[4]};background-image:url('assets/blog/${n[2]}-p.jpg?v=2')" aria-label="Read: ${n[3]}"><span class="bs-logo bs-tag">${n[0]}</span></a><p>${n[3]}</p><a href="blog/?post=${n[1]}" class="link">Read article <span class="chev">›</span></a></article>`;
+const newsCard=n=>`<article class="bs-card"><a class="bs-art bs-post" href="blog/${n[1]}/" data-bg="assets/blog/${n[2]}-p.webp?v=3" style="--t:${n[4]}" aria-label="Read: ${n[3]}"><span class="bs-logo bs-tag">${n[0]}</span></a><p>${n[3]}</p><a href="blog/${n[1]}/" class="link">Read article <span class="chev">›</span></a></article>`;
 document.getElementById('news').innerHTML=NEWS.slice(0,3).map(newsCard).join('')+
-  `<article class="bs-card"><a class="bs-art bs-all has-wall" href="blog/" aria-label="See all articles"><span class="all-wall covers" aria-hidden="true"><i><img src="assets/blog/checkout-drop-off-p.jpg?v=2" alt=""></i><i><img src="assets/blog/shipping-service-choice-p.jpg?v=2" alt=""></i><i><img src="assets/blog/sales-payout-routine-p.jpg?v=2" alt=""></i><i><img src="assets/blog/repeat-customers-p.jpg?v=2" alt=""></i><i><img src="assets/blog/cod-failed-deliveries-p.jpg?v=2" alt=""></i><i><img src="assets/blog/payment-methods-indonesia-p.jpg?v=2" alt=""></i><i><img src="assets/blog/whatsapp-payment-links-p.jpg?v=2" alt=""></i><i><img src="assets/blog/sale-day-stock-plan-p.jpg?v=2" alt=""></i><i><img src="assets/blog/checkout-drop-off-p.jpg?v=2" alt=""></i><i><img src="assets/blog/shipping-service-choice-p.jpg?v=2" alt=""></i><i><img src="assets/blog/sales-payout-routine-p.jpg?v=2" alt=""></i><i><img src="assets/blog/repeat-customers-p.jpg?v=2" alt=""></i><i><img src="assets/blog/cod-failed-deliveries-p.jpg?v=2" alt=""></i><i><img src="assets/blog/payment-methods-indonesia-p.jpg?v=2" alt=""></i><i><img src="assets/blog/whatsapp-payment-links-p.jpg?v=2" alt=""></i><i><img src="assets/blog/sale-day-stock-plan-p.jpg?v=2" alt=""></i></span><span></span><span class="bs-big">All articles</span></a><p>Guides on payments, shipping and growing your brand.</p><a href="blog/" class="link">See all articles <span class="chev">›</span></a></article>`+
+  `<article class="bs-card"><a class="bs-art bs-all has-wall" href="blog/" aria-label="See all articles"><span class="all-wall covers" aria-hidden="true"><i><img loading="lazy" src="assets/blog/checkout-drop-off-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/shipping-service-choice-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/sales-payout-routine-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/repeat-customers-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/cod-failed-deliveries-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/payment-methods-indonesia-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/whatsapp-payment-links-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/sale-day-stock-plan-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/checkout-drop-off-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/shipping-service-choice-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/sales-payout-routine-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/repeat-customers-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/cod-failed-deliveries-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/payment-methods-indonesia-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/whatsapp-payment-links-p.webp?v=3" alt=""></i><i><img loading="lazy" src="assets/blog/sale-day-stock-plan-p.webp?v=3" alt=""></i></span><span></span><span class="bs-big">All articles</span></a><p>Guides on payments, shipping and growing your brand.</p><a href="blog/" class="link">See all articles <span class="chev">›</span></a></article>`+
   NEWS.slice(3).map(newsCard).join('');
 /* ===== Hover arrows: swap every › chevron for a two-part arrow (also ones rendered later) ===== */
 (function(){
@@ -2440,9 +2468,8 @@ document.getElementById('news').innerHTML=NEWS.slice(0,3).map(newsCard).join('')
 /* ===== Enterprise spotlights: expanding panels. Hover, tap or focus opens one; the first is open by default ===== */
 (function(){
   const s=[...document.querySelectorAll('.en-spot')];if(!s.length)return;
-  const open=e=>s.forEach(x=>{const a=x===e;x.classList.toggle('on',a);x.setAttribute('aria-expanded',String(a))});
-  s.forEach(x=>{x.addEventListener('mouseenter',()=>open(x));x.addEventListener('focus',()=>open(x));x.addEventListener('click',()=>open(x));
-    x.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(x)}})});
+  const open=e=>s.forEach(x=>{const a=x===e;x.classList.toggle('on',a);const b=x.querySelector('.en-ph');if(b)b.setAttribute('aria-expanded',String(a))});
+  s.forEach(x=>{x.addEventListener('mouseenter',()=>open(x));x.addEventListener('focusin',()=>open(x));x.addEventListener('click',()=>open(x))});
 })();
 
 /* ===== Banner particle stream: fine dots travel top left to bottom right along six diagonal paths and part around the pointer.

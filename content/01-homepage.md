@@ -25,7 +25,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Search results (SEO)
 
-- **Page title:** FLIK | Merchant Growth Platform for Growing Brands
+- **Page title:** FLIK: Checkout, Shipping & Funding for Online Brands
 - **Description:** FLIK gives online brands a faster checkout, shipping with all major couriers for up to 45% off published rates, and inventory funding, all from one dashboard.
 
 ## 1. Hero
@@ -266,7 +266,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Text:** PT Flik Teknologi Indonesia · Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560
 - **Text:** Payments are processed by licensed payment partners. FLIK is not a bank.
 - **Links:** Terms of Service · Privacy Policy · Refund Policy · Cookie Policy · Cookie settings · Data request · privacy@flik.co.id
-- **Cookie banner:** same as every page, see `00-menu-and-footer.md` (compact bar: We use cookies for analytics and marketing, with your OK.)
+- **Cookie banner:** same as every page, see `00-menu-and-footer.md` (compact bar: We only use cookies that keep this site working.)
 - **Buttons:** Cookie preferences (icon) · Reject all · Accept all · Save my choices
 - **Preferences:** Strictly necessary (always on) · Analytics (off) · Marketing (off)
 

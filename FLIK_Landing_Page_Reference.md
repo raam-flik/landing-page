@@ -291,14 +291,14 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
 | `/industries/fashion` | Checkout & Shipping for Fashion Brands \| FLIK | Checkout & Pengiriman untuk Brand Fashion \| FLIK | fashion ecommerce Indonesia / brand fashion online |
 
 **Technical**
-1. **Languages:** `hreflang` for `en` (at `/`), `id` (at `/id/`) and `x-default` (→ `/`). Every page has a self-referencing canonical URL.
+1. **Languages:** `hreflang` for `en` (at `/`), `id` (at `/id/`) and `x-default` (→ `/`), **added back only when `/id/` is live** (removed 24 Nov 2026, CEO audit: it pointed at a 404). Every page has a self-referencing canonical URL with the trailing slash the site serves (`https://flik.co.id/checkout/`).
 2. **One H1 per page.** The current homepage has none.
 3. **Structured data:**
    - Organization and WebSite on the homepage
    - Service on each product page
    - FAQPage on Shipping and Merchant Cash Advance
    - Article on blog posts
-4. **Crawling:** `sitemap.xml`, with both languages, listed in `robots.txt`, plus an HTML `/sitemap` page.
+4. **Crawling:** `sitemap.xml`, with both languages, listed in `robots.txt`, plus an HTML `/sitemap` page. In the prototype (24 Nov 2026): `robots.txt` and `sitemap.xml` (English only) are in the site root; `python3 scripts/build_pages.py` rebuilds the sitemap and the blog post and customer story pages. Every menu and in-page link has its real path in `href`; the JS routing still runs on top. The footer Sitemap link opens `sitemap.xml` until the HTML page exists.
 5. **Linking:**
    - every page is at most 2 clicks from home
    - the 3 products link to each other
@@ -308,7 +308,9 @@ Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (
    - **In the prototype (2026-10-21):** Payment Methods, FLIK Account, Checkout Personalisation, Shopify and WooCommerce → sections on Checkout; Bulk Shipping, COD Shipping, Shipment Tracking, Return Management, Courier Performance → sections on Shipping; Auto Settlement, Flexibility, Inventory Financing, Outlet Expansion, Marketing Budget → sections on Merchant Cash Advance. The `ROUTES` map in every page file holds this list. Items with no matching section (Payment, Invoice, Payment Link, Warehouses, Cross-Border Shipping, Pricing, Solutions, Developers docs, Resources) still show "Page not in this prototype yet".
 7. **Cek resi results:** `noindex` the result pages. Only `/shipping/track` itself is indexed.
 8. **Existing URLs:** the current site serves English under `/en/...`. Add 301 redirects from `/en/*` to `/*`.
-9. **Speed:** WebP images with explicit sizes, and alt text in both languages.
+9. **Speed:** WebP images with explicit sizes, and alt text in both languages. In the prototype (24 Nov 2026, CEO audit): photos are WebP at most 1200 px wide and under 100 KB, and card photos load only when they come near the screen (`data-bg` + the `lazy-bg` kit). Fonts are cached for a year and `/assets/` for 30 days (`vercel.json`), so **bump the `?v=` number whenever an image changes**.
+10. **Link previews:** every page has `og:title`, `og:description`, `og:image` (1200×630, `assets/og/flik-og.jpg`; blog posts use their own `-og.jpg`) and a Twitter card, plus `favicon.ico`, `favicon.svg` and `apple-touch-icon.png` from the real F mark.
+11. **Not indexed:** `/dashboard/` (copy of the merchant dashboard prototype) via an `X-Robots-Tag: noindex` header, and the story template `/customers/story/`.
 
 ### Open points
 - Use cases and industries are still to be confirmed.

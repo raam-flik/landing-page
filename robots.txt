@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# /dashboard/ (a copy of the merchant dashboard prototype) is kept out of search with an X-Robots-Tag: noindex header in vercel.json
+Sitemap: https://flik.co.id/sitemap.xml
