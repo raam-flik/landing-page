@@ -45,7 +45,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Phones:** the card shows centred above the logo strip (Raam, 12 Nov 2026).
 - **Behaviour:** visitors can drag the card anywhere in the hero; a click opens the full film with sound in a big pop-up player.
 - **Link:** Watch the film (the length shows next to it)
-- **Video files:** `assets/video/hero-film.mp4` (FLIK brand film v3, 1:03, compressed for the web), `hero-film-preview.mp4` (muted loop of the first 16 seconds) and `hero-film-poster.jpg`. The card hides itself if they are missing. To change the film, replace these three files with the same names.
+- **Video files:** `assets/video/hero-film-av1.mp4` (FLIK brand film v3, 1:03, AV1, 9 MB; played where the browser supports AV1, Raam 24 Nov 2026), `assets/video/hero-film.mp4` (the same film in H.264, 15 MB, for every other browser), `hero-film-preview.mp4` (muted loop of the first 16 seconds) and `hero-film-poster.jpg`. The card hides itself if they are missing. To change the film, replace these three files with the same names.
 - [x] FLIK brand film v3 added (Raam, 12 Nov 2026).
 
 *Event chips in the particle field (one at a time, examples only):*

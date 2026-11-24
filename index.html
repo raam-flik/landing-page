@@ -2231,7 +2231,8 @@ document.addEventListener('click',e=>{
 (function(){
   const card=document.getElementById('hx-film');if(!card)return;
   const v=document.getElementById('hx-film-prev'),dur=document.getElementById('hx-film-d'),hero=card.closest('.hx');
-  const FULL='assets/video/hero-film.mp4?v=3';  // bump ?v= when the film changes
+  // AV1 copy (9 MB) where the browser can play it, the H.264 film (15 MB) everywhere else, e.g. older iPhones. Bump ?v= when the film changes.
+  const FULL=(()=>{try{if(document.createElement('video').canPlayType('video/mp4; codecs="av01.0.08M.08"')==='probably')return 'assets/video/hero-film-av1.mp4?v=1'}catch(_){}return 'assets/video/hero-film.mp4?v=3'})();
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let closed=false;try{closed=sessionStorage.getItem('flik_film_closed')==='1'}catch(_){}
   if(closed)return;
