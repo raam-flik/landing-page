@@ -225,6 +225,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 
 - **Section heading:** What's happening
   - **Grey part:** See the latest from FLIK.
+- **Cards (live):** the 4 newest blog posts, each a photo with the title and Read article under it. No product tag on the photo (Raam, 24 Nov 2026). The list below is the older version.
 - **Tag:** Promo
 - **Small heading:** Ship for less this month
 - **Text:** Get extra cashback on shipments created from the FLIK dashboard.
