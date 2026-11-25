@@ -32,6 +32,21 @@ jobs:
       - name: Check out the site
         uses: actions/checkout@v4
 
+      # a release must point at a commit already on main, not an unmerged branch.
+      # (Guards against mistakes; a writer could edit this out, so the real gate is protecting main.)
+      - name: Check the release is on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(curl -sSf -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/compare/$GITHUB_SHA...main" |
+            python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])')
+          echo "$GITHUB_REF_NAME ($GITHUB_SHA) vs main: $status"
+          case "$status" in
+            identical|ahead) ;;
+            *) echo "::error::$GITHUB_REF_NAME is not on main ($status). Merge to main, then tag a commit on main."; exit 1 ;;
+          esac
+
       - name: Sign in to AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
