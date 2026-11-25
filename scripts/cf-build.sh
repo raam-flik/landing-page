@@ -6,6 +6,6 @@ set -e
 rm -rf dist
 mkdir dist
 tar --exclude=./dist --exclude=./.git --exclude=./archive --exclude=./scripts --exclude=./content \
-    --exclude='./*.md' --exclude=./vercel.json --exclude=./.vercelignore --exclude=./node_modules \
+    --exclude='./*.md' --exclude=./vercel.json --exclude=./.vercelignore --exclude=./wrangler.jsonc --exclude=./.gitignore --exclude=./node_modules \
     -cf - . | tar -xf - -C dist
 echo "dist ready: $(find dist -name index.html | wc -l) pages"

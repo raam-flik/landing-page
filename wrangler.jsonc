@@ -1,0 +1,14 @@
+// Cloudflare (Workers static assets) settings for flik.co.id.
+// Cloudflare build settings: build command `sh scripts/cf-build.sh`, deploy command `npx wrangler deploy`.
+// Redirects live in _redirects and headers in _headers (copied into dist by the build).
+{
+  "name": "flik-landing",
+  "compatibility_date": "2025-11-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

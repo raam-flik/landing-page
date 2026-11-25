@@ -45,7 +45,11 @@
 /blog/pentingnya-membangun-brand /blog/ 301
 /blog/pentingnya-website-untuk-sebuah-brand /blog/ 301
 /blog/sistem-checkout-terbaik-untuk-website-jualan /blog/ 301
-/en/blog/* /blog/ 301
+/en/blog/keuntungan-website-jualan /blog/ 301
+/en/blog/pentingnya-membangun-brand /blog/ 301
+/en/blog/pentingnya-website-untuk-sebuah-brand /blog/ 301
+/en/blog/sistem-checkout-terbaik-untuk-website-jualan /blog/ 301
+/en/blog /blog/ 301
 # any other /en address: same page without /en
 /en/* /:splat 301
 # older prototype paths
