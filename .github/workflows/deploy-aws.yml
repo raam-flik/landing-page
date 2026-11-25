@@ -1,5 +1,7 @@
 # Deploy flik.co.id to S3 + CloudFront on every push to main.
-# Setup (AWS role, bucket, distribution, repo variables): see .github/AWS-SETUP.md
+# Same setup as merchant-dashboard-revamp (aws-deploy.yaml): self-hosted aws-runner and
+# PROD_AWS_ACCESS_KEY_ID / PROD_AWS_SECRET_ACCESS_KEY secrets (here: a deploy-only IAM user).
+# Setup: sh scripts/aws-setup.sh (see .github/AWS-SETUP.md)
 name: Deploy to AWS
 
 on:
@@ -13,14 +15,16 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  id-token: write   # lets GitHub sign in to AWS without stored keys (OIDC)
   contents: read
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION || 'ap-southeast-1' }}
 
 jobs:
   deploy:
     # skips quietly until the repo variables are set
-    if: ${{ vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' && vars.AWS_ROLE_ARN != '' }}
-    runs-on: ubuntu-latest
+    if: ${{ vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+    runs-on: aws-runner
     environment: production
     steps:
       - name: Check out the site
@@ -29,8 +33,26 @@ jobs:
       - name: Sign in to AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION || 'ap-southeast-1' }}
+          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+
+      # aws-runner is shared with other repos, so never run an aws binary that another job
+      # could have left behind: install a fresh AWS CLI v2 into this job's temp dir every run
+      # (RUNNER_TEMP is wiped after each job)
+      - name: Install AWS CLI
+        run: |
+          command -v python3 >/dev/null || { echo "::error::python3 is missing on $RUNNER_NAME"; exit 1; }
+          dir="$RUNNER_TEMP/aws-cli"
+          curl -sSfL "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o "$RUNNER_TEMP/awscliv2.zip"
+          unzip -q "$RUNNER_TEMP/awscliv2.zip" -d "$RUNNER_TEMP"
+          "$RUNNER_TEMP/aws/install" --install-dir "$dir/dist" --bin-dir "$dir/bin"
+          rm -rf "$RUNNER_TEMP/awscliv2.zip" "$RUNNER_TEMP/aws"
+          echo "$dir/bin" >> "$GITHUB_PATH"
+          export PATH="$dir/bin:$PATH"
+          python3 --version
+          aws --version
+          aws sts get-caller-identity --query Arn --output text
 
       - name: Build and deploy
         env:

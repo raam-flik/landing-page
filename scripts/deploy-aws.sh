@@ -33,7 +33,7 @@ done
 if [ -n "$CLOUDFRONT_FUNCTION_NAME" ]; then
   ETAG=$(aws cloudfront describe-function --name "$CLOUDFRONT_FUNCTION_NAME" --stage DEVELOPMENT --query ETag --output text)
   ETAG=$(aws cloudfront update-function --name "$CLOUDFRONT_FUNCTION_NAME" --if-match "$ETAG" \
-    --function-config Comment="flik.co.id router, from _redirects",Runtime=cloudfront-js-2.0 \
+    --function-config '{"Comment":"flik.co.id router, from _redirects","Runtime":"cloudfront-js-2.0"}' \
     --function-code fileb://scripts/cloudfront-function.js --query ETag --output text)
   aws cloudfront publish-function --name "$CLOUDFRONT_FUNCTION_NAME" --if-match "$ETAG" >/dev/null
   echo "CloudFront Function $CLOUDFRONT_FUNCTION_NAME published"

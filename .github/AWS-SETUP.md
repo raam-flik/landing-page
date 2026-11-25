@@ -1,8 +1,24 @@
 # Deploying flik.co.id to S3 + CloudFront
 
-The workflow `.github/workflows/deploy-aws.yml` deploys `main` to AWS on every push. It stays switched off (skips) until the repo variables below are set. It needs an AWS admin to do the one-time setup.
+The workflow `.github/workflows/deploy-aws.yml` deploys `main` to AWS on every push. It stays switched off (skips) until the repo variables below are set. It needs an AWS admin to do the one-time setup. It uses the same runner and AWS keys as merchant-dashboard-revamp.
 
-## 1. One-time AWS setup
+## Quick way: scripts/aws-setup.sh
+
+`scripts/aws-setup.sh` does sections 1 and 2 with the AWS CLI. It can be rerun: it only creates what is missing and never overwrites a bucket policy it did not write.
+
+```sh
+aws sso login --profile flik-prod
+sh scripts/aws-setup.sh check          # read-only: what exists, what is missing
+sh scripts/aws-setup.sh create         # bucket, certificate, function, header policies, OAC, distribution, bucket policy
+#   -> add the certificate's 2 CNAMEs it prints in Cloudflare (DNS only)
+sh scripts/aws-setup.sh github         # deploy-only IAM user, its key as GitHub secrets, repo variables
+gh workflow run deploy-aws.yml         # first deploy; test the *.cloudfront.net address
+sh scripts/aws-setup.sh attach-domain  # once the certificate is ISSUED; then switch DNS (section 3)
+```
+
+Defaults: profile `flik-prod`, bucket `flik-landing-site`, region `ap-southeast-1`. Override with e.g. `BUCKET=other-name sh scripts/aws-setup.sh create`.
+
+## 1. One-time AWS setup (by hand)
 
 **S3 bucket** (ap-southeast-1), e.g. `flik-landing-site`. Keep "Block all public access" on.
 
@@ -21,28 +37,9 @@ The workflow `.github/workflows/deploy-aws.yml` deploys `main` to AWS on every p
 - Alternate domains `flik.co.id`, `www.flik.co.id` with the us-east-1 certificate. Default root object `index.html`.
 - Custom error responses: 403 and 404 → `/404.html`, response code 404.
 
-**GitHub sign-in for AWS (OIDC)**
-1. IAM → Identity providers → add `token.actions.githubusercontent.com`, audience `sts.amazonaws.com` (skip if it already exists).
-2. IAM → Roles → create `github-flik-landing-deploy` with this trust policy:
+**Deploy credentials**
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Principal": { "Federated": "arn:aws:iam::<ACCOUNT_ID>:oidc-provider/token.actions.githubusercontent.com" },
-    "Action": "sts:AssumeRoleWithWebIdentity",
-    "Condition": {
-      "StringEquals": {
-        "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-        "token.actions.githubusercontent.com:sub": "repo:useflik/landing-page:environment:production"
-      }
-    }
-  }]
-}
-```
-
-3. Give the role only what the deploy needs:
+The workflow runs on the self-hosted `aws-runner`, like merchant-dashboard-revamp, with secrets of the same names (`PROD_AWS_ACCESS_KEY_ID` / `PROD_AWS_SECRET_ACCESS_KEY`). They hold the key of a separate IAM user, `github-flik-landing-deploy`, that can only deploy this site (inline policy below), so a leak cannot reach merchant-dashboard or anything else in the account:
 
 ```json
 {
@@ -56,18 +53,21 @@ The workflow `.github/workflows/deploy-aws.yml` deploys `main` to AWS on every p
 }
 ```
 
-## 2. Repo variables (GitHub → useflik/landing-page → Settings → Secrets and variables → Actions → Variables)
+## 2. Secrets and variables (GitHub → useflik/landing-page → Settings → Secrets and variables → Actions)
+
+**Secrets** (in the `production` environment): `PROD_AWS_ACCESS_KEY_ID` and `PROD_AWS_SECRET_ACCESS_KEY`, the access key of `github-flik-landing-deploy`. `sh scripts/aws-setup.sh github` creates the key and stores it straight into GitHub without printing it.
+
+**Variables:**
 
 | Variable | Example |
 |---|---|
-| `AWS_ROLE_ARN` | `arn:aws:iam::<ACCOUNT_ID>:role/github-flik-landing-deploy` |
 | `S3_BUCKET` | `flik-landing-site` |
 | `CLOUDFRONT_DISTRIBUTION_ID` | `E1ABCDEF234567` |
 | `CLOUDFRONT_FUNCTION_NAME` | `flik-landing-router` (optional: keeps the function in step with `_redirects`) |
 | `AWS_REGION` | `ap-southeast-1` (optional, the default) |
 | `SITE_URL` | `https://dxxxxxxxx.cloudfront.net` while testing, then `https://flik.co.id` (optional: checks 4 pages after each deploy) |
 
-No AWS keys are stored in GitHub: the workflow signs in with the role above.
+The workflow skips until `S3_BUCKET` and `CLOUDFRONT_DISTRIBUTION_ID` are set. It runs on `aws-runner` (org runner group `default`); each run installs a fresh AWS CLI v2 into the job's temp folder, so it never runs an `aws` binary another repo's job could have changed. Note that `aws-runner` is shared with other repos, so the production keys are only as safe as that machine; a runner group limited to the deploy repos, or keyless OIDC login, would reduce that.
 
 ## 3. First deploy and go-live
 
