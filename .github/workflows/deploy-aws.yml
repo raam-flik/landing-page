@@ -22,8 +22,8 @@ env:
 
 jobs:
   deploy:
-    # skips quietly until the repo variables are set
-    if: ${{ vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+    # main only (the production environment is limited to main too); skips quietly until the repo variables are set
+    if: ${{ github.ref == 'refs/heads/main' && vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
     runs-on: aws-runner
     environment: production
     steps:

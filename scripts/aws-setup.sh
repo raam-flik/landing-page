@@ -276,8 +276,12 @@ EOF
   echo "  policy set (only this bucket, distribution and function)"
 
   say "GitHub environment 'production' on $REPO"
-  gh api -X PUT "repos/$REPO/environments/production" >/dev/null
-  echo "  ready"
+  # only main may use the environment (and so its secrets): a workflow pushed on another branch cannot read the key
+  echo '{"deployment_branch_policy":{"protected_branches":false,"custom_branch_policies":true}}' |
+    gh api -X PUT "repos/$REPO/environments/production" --input - >/dev/null
+  gh api "repos/$REPO/environments/production/deployment-branch-policies" --jq '.branch_policies[].name' | grep -qx main ||
+    gh api -X POST "repos/$REPO/environments/production/deployment-branch-policies" -f name=main -f type=branch >/dev/null
+  echo "  ready, limited to the main branch"
 
   say "Access key -> GitHub secrets (never printed)"
   n=$(aws iam list-access-keys --user-name "$DEPLOY_USER" --query 'length(AccessKeyMetadata)' --output text)
