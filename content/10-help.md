@@ -8,7 +8,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
-- [ ] **Support contacts:** email support@flik.co.id, WhatsApp +62 813-3532-8100, Monday to Friday 09:00–18:00 WIB (the same as the footer). The cards link to email and to WhatsApp (wa.me).
+- [ ] **Support contacts:** email support@flik.co.id, WhatsApp +62 812-9201-2668, Monday to Friday 09:00–18:00 WIB (the same as the footer). The cards link to email and to WhatsApp (wa.me).
 - [ ] **Consumer protection block** is copied word for word from flik.co.id/en/help. The Ditjen PKTN number links to WhatsApp (wa.me/6285311111010).
 - [ ] **Topics for shoppers:** there are no shopper questions yet (FLIK app, FLIK Points, refunds). Add them when the content exists.
 - [x] Early Settlement, Fraud Detection and In-Store Payment questions are not included while their answers are placeholders. Done (12 Nov 2026): six questions each (five for Fraud Detection), copied from the FAQs on those pages, each topic linking to its product page.
@@ -34,7 +34,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 <!-- html: Contact cards #contact -->
 
 - **Card:** Email — support@flik.co.id — Send an email
-- **Card:** WhatsApp — +62 813-3532-8100 — Chat with support
+- **Card:** WhatsApp — +62 812-9201-2668 — Chat with support
 - **Card:** Support hours — Monday to Friday, 09:00–18:00 WIB
 
 ## 3. Questions by topic
@@ -44,8 +44,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Topic:** All topics
 - **Topic:** General
   - **Question:** How do I contact FLIK support?
-    - **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.
-    - **Links:** Email support (mailto:support@flik.co.id) · Chat on WhatsApp (https://wa.me/6281335328100)
+    - **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.
+    - **Links:** Email support (mailto:support@flik.co.id) · Chat on WhatsApp (https://wa.me/6281292012668)
   - **Question:** Privacy and your data
     - **Answer:** Our Privacy Policy explains what personal data FLIK collects and how we use it. To ask for a copy of your data, or to correct or delete it, send a data request or email privacy@flik.co.id.
     - **Links:** Privacy Policy (/legal/privacy) · Data request (/legal/data-request) · privacy@flik.co.id

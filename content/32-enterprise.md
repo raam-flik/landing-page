@@ -8,7 +8,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Things to confirm on this page
 
 - [ ] AG: approve the new lines (hero, "Grow revenue. Cut the busywork.", "Your operation, your workflow.", "Every way you get paid.", "Plug FLIK into how you run today."). They follow the landing-copy voice but are not on the approved list yet.
-- [ ] Logos under the hero, a 3×2 grid of well-known brands (Mayora, ERIGO, OSIM, Elzatta, Keychron, EMADO'S) come from the homepage logo strip. Confirm these brands are happy to be shown as "Brands that run on FLIK" on an enterprise page.
+- [ ] Logos under the hero, a 3×2 grid of well-known brands (Haus!, ERIGO, OSIM, Elzatta, Keychron, EMADO'S; Haus! replaced Mayora, which no longer works with FLIK, Raam 25 Nov 2026) come from the homepage logo strip. Confirm these brands are happy to be shown as "Brands that run on FLIK" on an enterprise page.
 - [ ] "AI automations": confirm what is on offer today (same open point as the homepage).
 - [ ] Volume pricing on request: from the Pricing page lead. Confirm it applies to enterprise.
 - [ ] The dashboard card in the hero is example data (labelled "Example").

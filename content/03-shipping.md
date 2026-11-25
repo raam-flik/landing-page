@@ -279,7 +279,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - **Button:** How long does pickup take?
 - **Answer:** Regular: 3–5 hours after the AWB is ready. Same day: orders fulfilled before 14:00 WIB are picked up the same day, later ones the next day. Instant: a driver comes right away.
 - **Button:** How do I contact FLIK support?
-- **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 813-3532-8100.
+- **Answer:** Monday to Friday, 09:00–18:00 WIB, at support@flik.co.id or on WhatsApp at +62 812-9201-2668.
 - **Text:** Can't find what you need? Talk to the FLIK team
 
 ## 12. Resources

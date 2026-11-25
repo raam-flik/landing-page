@@ -40,6 +40,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 - [ ] **Terms note removed from the hero (Raam, 12 Nov 2026).** "By continuing you agree to the Terms and Privacy Policy" was added in the compliance pass. Get started opens merchant.flik.co.id/register, so the consent text must be on that sign-up form instead.
 
 *Mini film card (bottom right, desktop only; like sequencehq.com):*
+- **Status: taken out (Raam, 25 Nov 2026).** The film is still a dummy. The card is wrapped in `<template id="hx-film-off">` in `index.html`, so nothing shows or loads. Remove the `<template>` tags to bring it back.
 
 - **Title:** Introducing FLIK
 - **Phones:** the card shows centred above the logo strip (Raam, 12 Nov 2026).
@@ -175,7 +176,9 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 ### 5b. Brand stories (carousel)
 - **Section heading:** Brands growing with FLIK.
   - **Grey part:** See how they sell, ship and scale.
-- **Cards (headline from each customer story):** ERIGO, EMADO'S, Sigit Store, HEYLOCAL, Artch, Paper, WakaiGo, then "All stories — See every brand building with FLIK".
+- **Cards (headline from each customer story), in this order (Raam, 25 Nov 2026):** EMADO'S, ERIGO, Haus!, OSIM, then Manta Liberta, Anita Family, Artch, WakaiGo, Sigit Store, Kopikalyan, HEYLOCAL, Paper.
+- **Haus! card:** Haus! serves long queues faster and funds new stock with FLIK.
+- **All stories ›** is a link at the top right, after the arrows (Raam, 25 Nov 2026). There is no All stories card. On wide screens the grey part of the heading starts a new line so the heading, arrows and link fit one row.
 - **Link on each card:** Read [brand]'s story
 
 ### 5c. Funding and registration
@@ -226,6 +229,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Section heading:** What's happening
   - **Grey part:** See the latest from FLIK.
 - **Cards (live):** the 4 newest blog posts, each a photo with the title and Read article under it. No product tag on the photo (Raam, 24 Nov 2026). The list below is the older version.
+- **All articles ›** is a link at the top right, after the arrows (Raam, 25 Nov 2026). There is no All articles card. Live grey part: "Guides and news to help you sell more.", on its own line on wide screens.
 - **Tag:** Promo
 - **Small heading:** Ship for less this month
 - **Text:** Get extra cashback on shipments created from the FLIK dashboard.

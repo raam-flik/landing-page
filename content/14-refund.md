@@ -9,6 +9,8 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 
 ## Things to confirm on this page
 
+- [x] **Hidden (CEO, 25 Nov 2026)** until Legal finishes it: not linked, noindex, and /legal/refund/ redirects to the Terms of Service.
+
 
 ### Facts for AG to confirm
 
@@ -104,7 +106,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 - **Text:** **PT Flik Teknologi Indonesia**, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560.
 - **List item:** Email: support@flik.co.id
 - **List item:** Privacy questions and personal data requests: privacy@flik.co.id
-- **List item:** WhatsApp: +62 813-3532-8100
+- **List item:** WhatsApp: +62 812-9201-2668
 - **List item:** Support hours: Monday–Friday, 09:00–18:00 WIB
 - **Text:** If you're a consumer and you're not satisfied with how a complaint was handled, you may also have rights under Law No. 8 of 1999 on Consumer Protection†.
 

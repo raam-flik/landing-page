@@ -7,8 +7,10 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Sales email (launch answers, 25 Nov 2026):** sales@flik.co.id, shown under the Sales card ("Or email sales@flik.co.id."). Support is open on public holidays, with slower replies.
+
 - [ ] Structure follows stripe.com/contact (16 Nov 2026): three ways in (Sales, Help and support, and "Bought from a store?" in place of Stripe's Media and press, since FLIK has no press contact yet), other contacts (developers, personal data, complaints) and the office.
-- [ ] Contacts used: support@flik.co.id, WhatsApp +62 813-3532-8100, privacy@flik.co.id, Mon–Fri 09:00–18:00 WIB, office Cibis Nine Lantai 15 (all from the footer and Help Center). Does sales have its own email or phone? Is there a press or partnership contact? (tracker: mp-contact)
+- [ ] Contacts used: support@flik.co.id, WhatsApp +62 812-9201-2668, privacy@flik.co.id, Mon–Fri 09:00–18:00 WIB, office Cibis Nine Lantai 15 (all from the footer and Help Center). Does sales have its own email or phone? Is there a press or partnership contact? (tracker: mp-contact)
 - [ ] The hero card works out "Support is open now / closed" from Jakarta time, Monday to Friday 09:00–18:00. It does not know public holidays. Is support closed on public holidays?
 - [ ] "Talk to sales" opens the Calendly intro link (tracker: W-51).
 - [ ] The shopper card says to contact the store first, then FLIK support. It does not promise a response time until W-33 is answered.
@@ -65,7 +67,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## FAQ
 
 - **Question:** When is support available?
-  - **Answer:** Monday to Friday, 09:00–18:00 WIB, by email at support@flik.co.id or WhatsApp at +62 813-3532-8100.
+  - **Answer:** Monday to Friday, 09:00–18:00 WIB, by email at support@flik.co.id or WhatsApp at +62 812-9201-2668.
 - **Question:** I bought from a store that uses FLIK. Who do I contact?
   - **Answer:** Contact the store first about your order. If you can't reach them, contact FLIK support.
 - **Question:** How do I talk to sales?

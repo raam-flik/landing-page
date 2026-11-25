@@ -8,6 +8,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Not linked (launch answers, 25 Nov 2026):** Get started opens the live sign-up (https://merchant.flik.co.id/register/), which already shows the Terms and Privacy notice. This page stays in the repo, unlinked.
+
 - [ ] The WhatsApp code: 6 digits, resend after 2 minutes. Confirm both match the live sign-up.
 - [ ] "Free to register" matches the homepage ("Start for free. No registration fee.").
 

@@ -9,6 +9,8 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 
 ## Things to confirm on this page
 
+- [x] **Hidden (CEO, 25 Nov 2026)** until Legal finishes it: not linked, noindex, and /legal/data-request/ redirects to the Privacy Policy. Contact and Help now say "email privacy@flik.co.id".
+
 
 ### Facts for AG to confirm
 
@@ -100,7 +102,7 @@ Markers in the text: `[[…]]` is a fact FLIK still has to confirm (it shows hig
 
 - **List item:** Email: privacy@flik.co.id
 - **List item:** General support: support@flik.co.id
-- **List item:** WhatsApp: +62 813-3532-8100, Monday–Friday, 09:00–18:00 WIB
+- **List item:** WhatsApp: +62 812-9201-2668, Monday–Friday, 09:00–18:00 WIB
 - **List item:** Post: PT Flik Teknologi Indonesia, Cibis Nine, Lantai 15, Jl. Raya Cilandak KKO, Cilandak Timur, Pasar Minggu, Jakarta Selatan 12560
 - **Note for counsel:** privacy@flik.co.id is FLIK's privacy and data-request mailbox (AG, 24 Oct 2026). support@flik.co.id stays for general support. Who acts as Personal Data Protection Officer is still open (W-5).
 

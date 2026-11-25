@@ -7,10 +7,17 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **CEO, 25 Nov 2026:** the "What FLIK looks at" wording is safe as written, and Fraud Detection launches in December 2026 (the page shows no date).
+
 Rewritten on 12 Nov 2026 (AG) around fraud, chargebacks and fake COD orders. The page says what FLIK watches (payments, refunds, chargebacks, withdrawals, account changes, COD orders) and how merchants are helped, but not how the checks work. It makes no claim either way about blocking payments. Mechanics such as waiting periods, OTP channels and alert routes are left out on purpose.
 
 - [x] **Launch date:** removed from the page (AG, 13 Nov 2026).
+- [x] **FLIK can't hold money (Raam, 25 Nov 2026).** Removed every hold or stop: the "Nothing leaves without a second look" withdrawal walk-through (Cleared / Under review / Stopped), the "under review" and "stopped" counts in the hero, the FAQ "What happens when a withdrawal is held?", and "Unusual refund held for review". Withdrawals are now "watched", not "checked before money leaves". The hero reads "Every payment watched, every chargeback answered." The same wording is fixed on Payment, In-Store, D2C brands, Home appliances, Customers and the Help Center.
+- [x] **No guarantee (Raam, 25 Nov 2026):** the page must never promise to cover fraud losses or win chargebacks.
+- [x] **Shopper data (Raam, 25 Nov 2026):** OK to use for COD risk checks once the shopper privacy notice (W-25) is published.
+- [ ] **Tipping off:** Engineering decides (Raam, 25 Nov 2026).
 - [x] **Pricing:** included at no extra cost (AG, 12 Nov 2026).
+- [x] **Coming soon (Raam, 25 Nov 2026):** chargeback help and the COD tools (risk level per order, WhatsApp confirmation, address check) are marked "Coming soon": a tag above each section, "(coming soon)" in the hero list and the five-step row, a tag on their At a glance columns, and "Coming soon." at the start of their FAQ answers. The hero now reads "Every payment, refund and withdrawal watched." with "Chargeback help is coming soon." in the intro, and the search description says both are coming soon. The Payment, D2C brands, In-Store and Help Center pages say the same. Remove the tags when product confirms each is live.
 - [ ] **Chargeback help:** the page says merchants are told of a dispute with the reason and deadline, upload evidence in the dashboard, and FLIK sends it to the payment partner. Confirm this is live by the launch date.
 - [ ] **No tipping off:** since 13 Nov 2026 (AG) sections 2 and 5 show the kinds of signal FLIK looks at (size against usual, payout account, calendar, money in and out, refunds; for COD: delivery history, address, order size, order pattern, route). The page still never gives rules, thresholds or multiples. Compliance to confirm this is safe before it goes live.
 - [ ] **COD signals are proposals:** the five COD signals in section 5 are not specified yet. Product to confirm each, or change the mockup.

@@ -9,6 +9,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Hidden for launch (25 Nov 2026):** out of the menu, noindex, and /shipping/track/ redirects to the tracking section of the Shipping page until live tracking is ready.
+
 - [ ] **Data:** the page uses example shipments. Live status needs a public tracking API from the shipping backend (the same feed the dashboard uses), returning only: courier, service, status, city of origin and destination, masked recipient initial, estimated delivery, last update, and event descriptions with times.
 - [ ] **Privacy (the API must enforce this, not the page):** never return the shopper's name, phone, full address, item details or COD amount. City or kecamatan level only; recipient as one initial plus "***".
 - [ ] **Current cekresi.flik.co.id leaks personal data.** On 21 Oct 2026 its result pages showed the recipient's name, full phone number, full street address (RT/RW and house number), the sender and the COD payment type to anyone with the number. Fix or retire it before linking it anywhere.

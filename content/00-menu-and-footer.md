@@ -141,7 +141,7 @@ On phones, Products opens to three rows (Payment, Shipping, Funding). Tap a row 
 
 - Mon–Fri, 09:00–18:00 WIB
 - support@flik.co.id (link: mailto:support@flik.co.id)
-- +62 813-3532-8100 (link: https://wa.me/6281335328100, opens WhatsApp)
+- +62 812-9201-2668 (link: https://wa.me/6281292012668, opens WhatsApp) Changed from +62 813-3532-8100 (Raam, 25 Nov 2026).
 - Sitemap
 
 - **Copyright line:** © 2026 FLIK. All rights reserved.
@@ -171,3 +171,7 @@ Shown on first visit as a compact bar (one row on desktop; one short line and on
 ## Accessibility controls (every page)
 
 - **Skip link:** Skip to main content
+
+- **Launch answers (25 Nov 2026):** Sign in opens https://merchant.flik.co.id/login/ and Get started / Create account opens https://merchant.flik.co.id/register/. Promo and Shipment Tracking are out of the menu; /promo/ redirects to the homepage and /shipping/track/ to the tracking section of Shipping (vercel.json), and both pages are noindex.
+
+- [x] **Legal links (CEO, 25 Nov 2026):** the footer shows only Terms of Service and Privacy Policy. Refund Policy, Cookie Policy and Data request are hidden until Legal finishes them (noindex, and their addresses redirect: refund to Terms, cookies and data request to Privacy). The cookie banner links to the Privacy Policy.

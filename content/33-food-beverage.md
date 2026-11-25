@@ -8,7 +8,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 ## Things to confirm on this page
 
 - [ ] AG: approve the new lines (hero, "Serve the rush. Keep the line moving.", "Take orders wherever they come in.", "Ready for your next outlet?", "Run every outlet on FLIK."). They follow the landing-copy voice but are not on the approved list yet.
-- [ ] Logos under the hero: Mayora, EMADO'S, Haus!, Kopikalyan, Anita Family, Donat Bahagia. Confirm Mayora is happy to appear on an F&B page.
+- [ ] Logos under the hero: EMADO'S, Haus!, Donat Bahagia (top right), Anita Family, Zee.ro (bottom middle), Kopikalyan. Zee.ro replaced Mayora, which no longer works with FLIK (Raam, 25 Nov 2026). Confirm Zee.ro is happy to appear on an F&B page.
 - [ ] Scope kept to what exists: In-Store Payment (QRIS and cards on one device, receipt printer, settlement receipt), Payment Link, Checkout, Shipping instant and same-day, Early Settlement, Merchant Cash Advance for selected brands. Sales by outlet are "coming soon" (In-Store notes), so the page says one device per outlet and one balance, not per-outlet reports.
 - [ ] "Hours" for instant delivery comes from the Shipping services ("delivered in hours by motorbike").
 - [ ] The hero scene and the settlement card are example data (labelled "Example"). Confirm Haus! is happy to appear on the example receipt.

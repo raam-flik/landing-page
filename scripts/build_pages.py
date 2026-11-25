@@ -112,7 +112,7 @@ def build_blog():
 def build_stories():
     tpl = open('customers/story/index.html').read()
     i = tpl.index('const CUSTOMERS=['); j = tpl.index('\n', tpl.index('const storyHead='))
-    js = tpl[i:j] + "\nprocess.stdout.write(JSON.stringify(CUSTOMERS.map(c=>({slug:c.slug,name:c.name,head:storyHead(c),intro:STORIES[c.slug]?STORIES[c.slug].i:''}))))"
+    js = tpl[i:j] + "\nprocess.stdout.write(JSON.stringify(CUSTOMERS.map(c=>({slug:c.slug,name:c.name,head:storyHead(c),intro:STORIES[c.slug]?(STORIES[c.slug].p?Object.values(STORIES[c.slug].p)[0][1]:STORIES[c.slug].i):''}))))"
     customers = json.loads(subprocess.run(['node', '-e', js], capture_output=True, text=True, check=True).stdout)
     base = tpl.replace('<meta name="robots" content="noindex">\n', '', 1)
     made = []
@@ -120,6 +120,7 @@ def build_stories():
         slug = c['slug']
         canon = f'{SITE}/customers/{slug}/'
         head = re.sub(r'<[^>]+>', '', c['head'])
+        if head and head[-1] not in '.!?': head += '.'
         desc = (head + ' ' + re.sub(r'<[^>]+>', '', c['intro'])).strip()
         if len(desc) > 160: desc = desc[:157].rsplit(' ', 1)[0] + '…'
         s = set_head(base, f"{c['name']} customer story | FLIK", desc, canon)

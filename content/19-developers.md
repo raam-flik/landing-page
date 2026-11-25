@@ -11,6 +11,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page (engineering)
 
+- [x] **Docs address (launch answers, 25 Nov 2026):** `DOCS_URL` is https://docs.flik.co.id on every page.
+
 - [ ] **Docs address:** `DOCS_URL` (in every page file) points to the App Runner address. Swap it for the final address (docs.flik.co.id?) when the docs move there.
 - [ ] **Coming soon (16 Nov):** embedded checkout, headless sessions, more ways to pay, shipping and promotions are on the docs' "Coming" page. The SDK is coming (AG, 16 Nov 2026); its one-line description is draft wording. Customizable elements isn't on the docs' "Coming" page: confirm it belongs here. The Payment page still shows Embedded checkout and Customizable elements without a "Coming soon" label.
 - [ ] **Payout keys (13 Nov):** in the key table, because the docs publish them (one-time code and IP allowlist on live). Agent keys and 2FA stay off the page. Confirm with engineering.

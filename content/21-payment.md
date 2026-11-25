@@ -7,6 +7,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Debit and GPN cards (CEO, 25 Nov 2026):** same rate as credit cards. The Payment page now says "Credit and debit cards 2.8% + Rp2.000 + PPN"; Pricing already had one row for Visa, Mastercard and GPN.
+
 - [ ] Structure follows stripe.com/payments (13 Nov 2026), with FLIK facts only. Left out on purpose: uptime and certification claims (no confirmed figures), global payments (FLIK is Indonesia and rupiah only), customer quotes (none approved) and Stripe's sticky section tabs and ribbon (Raam, 13 Nov).
 - [ ] Hero and section mockups are example data (Aruna Studio is a sample store). The QR code in the hero is a drawing, not a working code.
 - [ ] The logo strip uses the site-wide merchant logos; the story cards are example stories except EMADO'S.

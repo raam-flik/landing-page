@@ -8,6 +8,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Hidden for launch (25 Nov 2026):** out of the menu, noindex, and /promo/ redirects to the homepage until the open points below are fixed.
+
 - [ ] **Tiento voucher code** is "NETIENTO" on flik.co.id. It is probably "NEWTIENTO" like the others. Check before the page goes public.
 - [ ] **Images:** the original promo banners are not used. The design system asks for FLIK-made visuals, so each card shows the offer on a FLIK tile. Confirm, or send banners in the v4 palette.
 - [ ] **Hero copy** is a rewrite of the flik.co.id intro without emoji or exclamation marks (design-system rule).

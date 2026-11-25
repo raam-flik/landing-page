@@ -7,6 +7,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Calendly only (launch answers, 25 Nov 2026):** the form is hidden. The card says "Book your demo. Pick a time that works for you. Free, online and with no commitment." with a Pick a time button that opens the Calendly link, and "Opens our booking calendar in a new tab."
+
 - [ ] Where the demo form sends its details (CRM, email or the Calendly booking). In the prototype it only shows the thank-you.
 - [ ] "Pick a time now" opens the Calendly link (calendly.com/desmount-i7g/flikintro). Confirm it is a FLIK company account (W-51).
 - [ ] Confirm the demo is free, online and has no commitment.

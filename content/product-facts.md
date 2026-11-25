@@ -29,7 +29,7 @@ Background for anyone writing copy, human or AI. Write only claims that are list
 - **Tracking alerts:** automatic triggers notify the merchant's operations team when a delivery hits a problem (AG, 13 Nov 2026).
 - **Failed delivery:** the courier tries again the next day, up to two attempts. Courier-direct services return the package straight away.
 - **Pickup** after the AWB is created: regular 3–5 hours, same day the same day if fulfilled before 14:00 WIB (otherwise the next day), instant straight away (courier terms doc, 13 Nov 2026).
-- Support: Monday to Friday, 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 813-3532-8100.
+- Support: Monday to Friday, 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 812-9201-2668. Changed from +62 813-3532-8100 (Raam, 25 Nov 2026).
 
 ## Merchant Cash Advance (Funding)
 

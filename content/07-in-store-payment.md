@@ -7,6 +7,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **three.js is self-hosted (launch answers, 25 Nov 2026):** `assets/vendor/three-r128.min.js` (r128, MIT), no longer loaded from cdnjs.
+
 In-Store Payment is in the menu but its scope was never written down (see the sitemap's open points). The device and the home screen come from the real FLIK EDC (Smart POS T10), but these points need product confirmation:
 
 - [x] **Live (AG, 13 Nov 2026):** In-Store Payment is live.

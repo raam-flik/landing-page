@@ -112,7 +112,7 @@ Ship for less up to 40% off! All couriers, real-time tracking, near-zero returns
 - **How do I contact FLIK customer service?**
   Monday to Friday, 09:00–18:00 WIB:
   - Email: support@flik.co.id
-  - WhatsApp: +62 813-3532-8100
+  - WhatsApp: +62 812-9201-2668
 
 ---
 
@@ -268,7 +268,7 @@ WhatsApp OTP login and Rewards are no longer separate menu items; they are featu
 ```
 
 ### Footer
-Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (including Company) | Support (Mon–Fri 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 813-3532-8100)
+Products (Payment · Shipping · Funding) | Solutions | Developers | Resources (including Company) | Support (Mon–Fri 09:00–18:00 WIB, support@flik.co.id, WhatsApp +62 812-9201-2668)
 
 ### SEO
 **Page titles and keywords (EN first, ID second)**

@@ -8,6 +8,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Not linked (launch answers, 25 Nov 2026):** Sign in opens the live merchant dashboard login (https://merchant.flik.co.id/login/). This page stays in the repo, unlinked.
+
 - [ ] Sign-in methods: email and password only. Stripe also offers Google, passkey and SSO; left out until FLIK confirms which ones the merchant dashboard supports.
 - [ ] Where the live page sends the merchant after signing in (today: the v4 dashboard prototype on flik-dashboard.vercel.app).
 - [ ] "Remember me on this device" keeps only the email on this browser.
