@@ -1,0 +1,57 @@
+# Cloudflare Pages redirects. Keep in step with vercel.json (the Vercel preview).
+# Hidden for launch (CEO answers, 25 Nov 2026)
+/promo / 302
+/promo/ / 302
+/shipping/track /shipping/#track 302
+/shipping/track/ /shipping/#track 302
+/legal/refund /legal/terms/ 302
+/legal/refund/ /legal/terms/ 302
+/legal/cookies /legal/privacy/ 302
+/legal/cookies/ /legal/privacy/ 302
+/legal/data-request /legal/privacy/ 302
+/legal/data-request/ /legal/privacy/ 302
+# Sign in and sign up live on the merchant dashboard
+/login https://merchant.flik.co.id/login/ 302
+/login/ https://merchant.flik.co.id/login/ 302
+/register https://merchant.flik.co.id/register/ 302
+/register/ https://merchant.flik.co.id/register/ 302
+# Old flik.co.id addresses (Nuxt site), with or without /en
+/qris /payment/in-store/ 301
+/en/qris /payment/in-store/ 301
+/jago-kurir /shipping/ 301
+/en/jago-kurir /shipping/ 301
+/order-form /payment/payment-link/ 301
+/en/order-form /payment/payment-link/ 301
+/merchant-cash-advance /funding/merchant-cash-advance/ 301
+/en/merchant-cash-advance /funding/merchant-cash-advance/ 301
+/download / 301
+/en/download / 301
+/privacy-policy /legal/privacy/ 301
+/en/privacy-policy /legal/privacy/ 301
+/term-of-service /legal/terms/ 301
+/en/term-of-service /legal/terms/ 301
+/term-of-service-kurir-kilat /legal/terms/#kurir-kilat 301
+/en/term-of-service-kurir-kilat /legal/terms/#kurir-kilat 301
+/term-of-service-merchant-cash-advance /legal/terms/ 301
+/en/term-of-service-merchant-cash-advance /legal/terms/ 301
+/cekresi /shipping/#track 301
+/en/cekresi /shipping/#track 301
+/track /shipping/#track 301
+/en/track /shipping/#track 301
+/en / 301
+/en/ / 301
+# old blog articles have no match on the new blog
+/blog/keuntungan-website-jualan /blog/ 301
+/blog/pentingnya-membangun-brand /blog/ 301
+/blog/pentingnya-website-untuk-sebuah-brand /blog/ 301
+/blog/sistem-checkout-terbaik-untuk-website-jualan /blog/ 301
+/en/blog/* /blog/ 301
+# any other /en address: same page without /en
+/en/* /:splat 301
+# older prototype paths
+/v4/* /:splat 302
+/v3/* /:splat 302
+/brand/dashboard/* /dashboard/ 302
+/brand/* / 302
+/v1/* / 302
+/v2/* / 302

@@ -60,7 +60,7 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Grey part:** Grow your brand with checkout, shipping and funding tools that work on their own or together.
 - **Heading:** Thirty seconds from cart to paid.
 - **Heading:** However they pay, you get paid.
-- **Heading:** Every major courier, at up to half the published rate.
+- **Heading:** Every major courier, at up to 45% off published rates.
 - **Heading:** Know where every package is. So do your shoppers.
 - **Heading:** Say yes to cash on delivery.
   - The 3% fee (excl. PPN) has left this heading; it stays in the card's mockup ("COD fee (3%, excl. PPN)") and in the COD dialog.
