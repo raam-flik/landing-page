@@ -1,15 +1,16 @@
-# Deploy flik.co.id to S3 + CloudFront on every push to main.
+# Deploy flik.co.id to S3 + CloudFront when a release is published (like merchant-dashboard's prod).
+# Redeploy or roll back: Actions -> Deploy to AWS -> Run workflow, choosing a release tag under "Use workflow from".
 # Same setup as merchant-dashboard-revamp (aws-deploy.yaml): self-hosted aws-runner and
 # PROD_AWS_ACCESS_KEY_ID / PROD_AWS_SECRET_ACCESS_KEY secrets (here: a deploy-only IAM user).
 # Setup: sh scripts/aws-setup.sh (see .github/AWS-SETUP.md)
 name: Deploy to AWS
 
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]   # not drafts; a draft deploys when it is published
   workflow_dispatch:
 
-# one deploy at a time; a newer push waits for the running one
+# one deploy at a time; a newer release waits for the running one
 concurrency:
   group: deploy-aws
   cancel-in-progress: false
@@ -22,8 +23,9 @@ env:
 
 jobs:
   deploy:
-    # main only (the production environment is limited to main too); skips quietly until the repo variables are set
-    if: ${{ github.ref == 'refs/heads/main' && vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+    # release tags only, also for manual runs (the production environment allows only tags too);
+    # skips quietly until the repo variables are set
+    if: ${{ startsWith(github.ref, 'refs/tags/') && vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
     runs-on: aws-runner
     environment: production
     steps:

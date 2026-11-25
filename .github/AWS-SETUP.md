@@ -1,6 +1,6 @@
 # Deploying flik.co.id to S3 + CloudFront
 
-The workflow `.github/workflows/deploy-aws.yml` deploys `main` to AWS on every push. It stays switched off (skips) until the repo variables below are set. It needs an AWS admin to do the one-time setup. It uses the same runner and AWS keys as merchant-dashboard-revamp.
+The workflow `.github/workflows/deploy-aws.yml` deploys to AWS when a GitHub release is published (like merchant-dashboard's production). Pushes to `main` do not deploy. It stays switched off (skips) until the repo variables below are set. It needs an AWS admin to do the one-time setup. It uses the same runner and AWS keys as merchant-dashboard-revamp.
 
 ## Quick way: scripts/aws-setup.sh
 
@@ -12,7 +12,7 @@ sh scripts/aws-setup.sh check          # read-only: what exists, what is missing
 sh scripts/aws-setup.sh create         # bucket, certificate, function, header policies, OAC, distribution, bucket policy
 #   -> add the certificate's 2 CNAMEs it prints in Cloudflare (DNS only)
 sh scripts/aws-setup.sh github         # deploy-only IAM user, its key as GitHub secrets, repo variables
-gh workflow run deploy-aws.yml         # first deploy; test the *.cloudfront.net address
+gh release create 1.0.0 --target main --generate-notes   # first deploy; test the *.cloudfront.net address
 sh scripts/aws-setup.sh attach-domain  # once the certificate is ISSUED; then switch DNS (section 3)
 ```
 
@@ -71,7 +71,7 @@ The workflow skips until `S3_BUCKET` and `CLOUDFRONT_DISTRIBUTION_ID` are set. I
 
 ## 3. First deploy and go-live
 
-1. GitHub → Actions → **Deploy to AWS** → **Run workflow**.
+1. Publish a release (GitHub → Releases → **Draft a new release**, new tag such as `1.0.0` on `main`, **Publish**). To redeploy or roll back: Actions → **Deploy to AWS** → **Run workflow**, and pick the release tag under "Use workflow from" (branches are refused).
 2. Test `https://dxxxxxxxx.cloudfront.net` (Claude reruns the full site check there).
 3. In Cloudflare DNS, replace the `flik.co.id` and `www` CNAMEs (today `ua2q2sgead.ap-southeast-1.awsapprunner.com`) with `dxxxxxxxx.cloudfront.net`, **DNS only**. Rollback: put the App Runner values back.
 

@@ -276,12 +276,16 @@ EOF
   echo "  policy set (only this bucket, distribution and function)"
 
   say "GitHub environment 'production' on $REPO"
-  # only main may use the environment (and so its secrets): a workflow pushed on another branch cannot read the key
+  # only release tags may use the environment (and so its secrets): a workflow pushed on a branch cannot read the key
   echo '{"deployment_branch_policy":{"protected_branches":false,"custom_branch_policies":true}}' |
     gh api -X PUT "repos/$REPO/environments/production" --input - >/dev/null
-  gh api "repos/$REPO/environments/production/deployment-branch-policies" --jq '.branch_policies[].name' | grep -qx main ||
-    gh api -X POST "repos/$REPO/environments/production/deployment-branch-policies" -f name=main -f type=branch >/dev/null
-  echo "  ready, limited to the main branch"
+  pol="repos/$REPO/environments/production/deployment-branch-policies"
+  gh api "$pol" --jq '.branch_policies[] | "\(.type) \(.name)"' | grep -qx 'tag \*' ||
+    gh api -X POST "$pol" -f name='*' -f type=tag >/dev/null
+  for id in $(gh api "$pol" --jq '.branch_policies[] | select(.type == "branch") | .id'); do
+    gh api -X DELETE "$pol/$id"   # deploys come from release tags only
+  done
+  echo "  ready, limited to tags (releases)"
 
   say "Access key -> GitHub secrets (never printed)"
   n=$(aws iam list-access-keys --user-name "$DEPLOY_USER" --query 'length(AccessKeyMetadata)' --output text)
@@ -303,8 +307,8 @@ EOF
   gh variable set CLOUDFRONT_FUNCTION_NAME -R "$REPO" --body "$FUNCTION_NAME"
   gh variable set AWS_REGION -R "$REPO" --body "$REGION"
   gh variable get SITE_URL -R "$REPO" >/dev/null 2>&1 || gh variable set SITE_URL -R "$REPO" --body "https://$CF"
-  echo "  set. The workflow now deploys on every push to main; start one now with:"
-  echo "  gh workflow run deploy-aws.yml -R $REPO"
+  echo "  set. The workflow deploys when a release is published, e.g.:"
+  echo "  gh release create 1.0.0 -R $REPO --target main --generate-notes"
 }
 
 # ---- attach-domain: flik.co.id + www on the distribution ----
