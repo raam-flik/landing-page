@@ -176,7 +176,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 ### 5b. Brand stories (carousel)
 - **Section heading:** Brands growing with FLIK.
   - **Grey part:** See how they sell, ship and scale.
-- **Cards (headline from each customer story), in this order (Raam, 25 Nov 2026):** EMADO'S, ERIGO, Haus!, OSIM, then Manta Liberta, Anita Family, Artch, WakaiGo, Sigit Store, Kopikalyan, HEYLOCAL, Paper.
+- **Cards (headline from each customer story), in this order (Raam, 25 Nov 2026):** EMADO'S, ERIGO, Haus!, OSIM, Manta Liberta, Kopikalyan, HEYLOCAL, WakaiGo, then Artch, Anita Family, Sigit Store, Paper (Raam, 25 Nov 2026: Kopikalyan, HEYLOCAL and WakaiGo after Manta Liberta).
 - **Haus! card:** Haus! serves long queues faster and funds new stock with FLIK.
 - **All stories ›** is a link at the top right, after the arrows (Raam, 25 Nov 2026). There is no All stories card. On wide screens the grey part of the heading starts a new line so the heading, arrows and link fit one row.
 - **Link on each card:** Read [brand]'s story
