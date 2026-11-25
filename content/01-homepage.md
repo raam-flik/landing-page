@@ -178,7 +178,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
   - **Grey part:** See how they sell, ship and scale.
 - **Cards (headline from each customer story), in this order (Raam, 25 Nov 2026):** EMADO'S, ERIGO, Haus!, OSIM, Manta Liberta, Kopikalyan, HEYLOCAL, WakaiGo, then Artch, Anita Family, Sigit Store, Paper (Raam, 25 Nov 2026: Kopikalyan, HEYLOCAL and WakaiGo after Manta Liberta).
 - **Haus! card:** Haus! serves long queues faster and funds new stock with FLIK.
-- **All stories ›** is a link at the top right, after the arrows (Raam, 25 Nov 2026). There is no All stories card. On wide screens the grey part of the heading starts a new line so the heading, arrows and link fit one row.
+- **All stories card** (Raam, 25 Nov 2026): back to the earlier card (the tilted wall of brand logos, "All stories", "See how every brand sells, ships and grows with FLIK.", link "See all customer stories"), now the **last** card in the row, after Paper. No All stories link in the header any more; the heading fits on one line again.
 - **Link on each card:** Read [brand]'s story
 
 ### 5c. Funding and registration
@@ -229,7 +229,7 @@ Replaced the three "Segments" blocks on 15 Nov 2026 (AG). The product cards high
 - **Section heading:** What's happening
   - **Grey part:** See the latest from FLIK.
 - **Cards (live):** the 4 newest blog posts, each a photo with the title and Read article under it. No product tag on the photo (Raam, 24 Nov 2026). The list below is the older version.
-- **All articles ›** is a link at the top right, after the arrows (Raam, 25 Nov 2026). There is no All articles card. Live grey part: "Guides and news to help you sell more.", on its own line on wide screens.
+- **All articles card** (Raam, 25 Nov 2026): back to the earlier card (a tilted wall of the article photos, "All articles", "Guides on payments, shipping and growing your brand.", link "See all articles"), now the **last** card in the row. No link in the header. Live grey part: "Guides and news to help you sell more."
 - **Tag:** Promo
 - **Small heading:** Ship for less this month
 - **Text:** Get extra cashback on shipments created from the FLIK dashboard.
