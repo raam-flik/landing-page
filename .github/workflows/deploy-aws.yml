@@ -1,0 +1,49 @@
+# Deploy flik.co.id to S3 + CloudFront on every push to main.
+# Setup (AWS role, bucket, distribution, repo variables): see .github/AWS-SETUP.md
+name: Deploy to AWS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# one deploy at a time; a newer push waits for the running one
+concurrency:
+  group: deploy-aws
+  cancel-in-progress: false
+
+permissions:
+  id-token: write   # lets GitHub sign in to AWS without stored keys (OIDC)
+  contents: read
+
+jobs:
+  deploy:
+    # skips quietly until the repo variables are set
+    if: ${{ vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' && vars.AWS_ROLE_ARN != '' }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Sign in to AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION || 'ap-southeast-1' }}
+
+      - name: Build and deploy
+        env:
+          S3_BUCKET: ${{ vars.S3_BUCKET }}
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+          CLOUDFRONT_FUNCTION_NAME: ${{ vars.CLOUDFRONT_FUNCTION_NAME }}
+        run: sh scripts/deploy-aws.sh
+
+      - name: Check the live site
+        if: ${{ vars.SITE_URL != '' }}
+        run: |
+          for p in / /pricing/ /legal/terms/ /customers/erigo/; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "${{ vars.SITE_URL }}$p")
+            echo "$code $p"
+            [ "$code" = 200 ] || exit 1
+          done

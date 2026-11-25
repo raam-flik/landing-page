@@ -35,7 +35,7 @@ You are updating the FLIK landing page with text edits made in the Markdown file
 The edited Markdown is the new text. The **original** text is the version of the same file in this repository before the edit:
 
 - If you have the git history, run `git diff` on `content/` (or compare with the last commit that touched the file).
-- If you were only given the edited files, fetch the originals from `https://github.com/raam-flik/landing-page/tree/main/content`.
+- If you were only given the edited files, fetch the originals from `https://github.com/useflik/landing-page/tree/main/content` (private: ask for access).
 
 Compare line by line. Each line is `- **Label:** text`. A changed text means: find the old text in the page file and replace it with the new text.
 
@@ -73,6 +73,7 @@ English, calm and plain (stripe.com tone). Money `Rp1.250.000`, dates `12 Oct 20
 - **Blog posts and customer stories have their own pages** (`blog/<slug>/`, `customers/<slug>/`), made from `blog/index.html` and `customers/story/index.html`. After changing `POSTS`, `CUSTOMERS` or `STORIES`, run `python3 scripts/build_pages.py`. It also rebuilds `sitemap.xml`. Never edit the generated pages by hand.
 - **Images:** use WebP under 100 KB, and bump the `?v=` number when you replace an image (assets are cached for 30 days).
 - **Logo and photo sizes (PageSpeed pass, 25 Nov 2026):** save images at about twice the size they're shown. Payment and courier logos are 72 px WebP (shown up to 34 px), platform logos 96 px. Merchant logos stay 96 px tall, because some are shown up to 83 px tall; the 18 logo-strip-only logos are 64 px tall. Use the `.webp` files; the `.png` and `.jpg` originals stay in the repo as sources.
+- **AWS option (Raam, 25 Nov 2026):** `.github/workflows/deploy-aws.yml` deploys `main` to S3 + CloudFront once the repo variables are set (setup in `.github/AWS-SETUP.md`). Redirects come from `_redirects` through `scripts/build_cf_function.py` → `scripts/cloudfront-function.js`; the upload and cache rules are in `scripts/deploy-aws.sh`.
 - **Security headers** (all pages, `vercel.json`): the site can't be framed by other sites (X-Frame-Options and CSP frame-ancestors), plus COOP, nosniff and a referrer policy. If a partner ever needs to embed a page in an iframe, that header has to change first.
 - **Hosting (Raam, 25 Nov 2026): Cloudflare (Workers static assets, project `flik-landing` in the Techteam account) for flik.co.id.** The Vercel link stays as a preview. Cloudflare settings: build command `sh scripts/cf-build.sh`, deploy command `npx wrangler deploy`; `wrangler.jsonc` serves the `dist` folder and uses `404.html` for missing pages (the script copies the site without `archive/`, `content/`, `scripts/`, notes and `vercel.json`). Redirects live in `_redirects` and headers in `_headers`; **change both `_redirects`/`_headers` and `vercel.json` together**. `_redirects` also sends the old flik.co.id addresses (`/en/...`, `/qris`, `/order-form`, `/jago-kurir`, `/term-of-service...`, `/privacy-policy`, old blog posts) to their new pages, and `/login`, `/register` to merchant.flik.co.id. `404.html` is the not-found page (absolute paths, noindex).
 - **Links:** keep the real path in `href` next to `data-page`, for example `<a href="/pricing/" data-page="/pricing">`.
