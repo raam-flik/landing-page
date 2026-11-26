@@ -1925,12 +1925,12 @@ function salesModal(pre){
 
 /* ===== Global click actions ===== */
 // Get started opens merchant registration, Contact sales opens the intro call booking, both in a new tab
-const REGISTER_URL='https://merchant.flik.co.id/register/',SALES_URL='https://calendly.com/desmount-i7g/flikintro';
+const REGISTER_URL='https://merchant.flik.co.id/register/',SALES_URL='https://calendly.com/desmount-i7g/flikintro'; const SHIP_SALES_URL='https://calendly.com/bintang-flik/30min';  // FLIK Shipping demos go to Bintang (Raam, 26 Nov 2026)
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-act],[data-page],[data-toast],[data-lang]');
   if(!a)return;
   if(a.closest('#drawer')&&(a.dataset.page||a.dataset.act))setDrawer(false);
-  if(a.dataset.act){e.preventDefault();({start:()=>{location.href='https://merchant.flik.co.id/register/'},sales:()=>open(SALES_URL,'_blank','noopener'),signin:()=>{location.href='https://merchant.flik.co.id/login/'},dash:()=>{location.href=(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'http://localhost:8765/Home/prototype-v4.html':'https://flik-dashboard.vercel.app/')+'#home'}})[a.dataset.act]()}
+  if(a.dataset.act){e.preventDefault();({start:()=>{location.href='https://merchant.flik.co.id/register/'},sales:()=>open((a.dataset.interest==='Shipping'||/^\/(shipping|use-cases\/cod-sellers)\//.test(location.pathname))?SHIP_SALES_URL:SALES_URL,'_blank','noopener'),signin:()=>{location.href='https://merchant.flik.co.id/login/'},dash:()=>{location.href=(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)?'http://localhost:8765/Home/prototype-v4.html':'https://flik-dashboard.vercel.app/')+'#home'}})[a.dataset.act]()}
   else if(a.dataset.page){e.preventDefault();toast(a.dataset.page.startsWith('/')?`Page not in this prototype yet: ${a.dataset.page}`:`Opens ${a.dataset.page}`)}
   else if(a.dataset.toast){e.preventDefault();toast(a.dataset.toast)}
   else if(a.dataset.lang){document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.classList.toggle('on',b===a))));toast(a.dataset.lang==='id'?'Bahasa Indonesia version (/id/) comes after the English copy is approved.':'English')}

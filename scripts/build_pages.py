@@ -142,7 +142,7 @@ def lastmod(path):
 def build_sitemap():
     urls = []
     for f in sorted(glob.glob('**/index.html', recursive=True)):
-        if f.startswith(('archive/', 'dashboard/', 'scripts/', 'assets/')): continue
+        if f.startswith(('archive/', 'dashboard/', 'scripts/', 'assets/', 'dist/', 'node_modules/')): continue
         path = '' if f == 'index.html' else f[:-len('index.html')]
         if path in NOT_IN_SITEMAP: continue
         if 'name="robots" content="noindex' in open(f).read(): continue

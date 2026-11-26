@@ -113,3 +113,5 @@ Edit the text after each label. Keep the labels and headings as they are, so the
   - **Answer:** Coming soon: a risk level for each order, WhatsApp confirmation before pickup and an address check.
 - **Question:** How do I withdraw my money?
   - **Answer:** Withdraw to your bank, or settle early when you need cash sooner.
+
+- [x] **Demo calls (Raam, 26 Nov 2026):** every Contact sales / Talk to the FLIK team button on this page opens Bintang's Calendly (https://calendly.com/bintang-flik/30min), like the Shipping pages.

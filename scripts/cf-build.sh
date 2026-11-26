@@ -8,4 +8,6 @@ mkdir dist
 tar --exclude=./dist --exclude=./.git --exclude=./.github --exclude=./archive --exclude=./scripts --exclude=./content \
     --exclude='./*.md' --exclude=./vercel.json --exclude=./.vercelignore --exclude=./wrangler.jsonc --exclude=./.gitignore --exclude=./node_modules \
     -cf - . | tar -xf - -C dist
+# minify the page styles in the live copies only (PageSpeed "Minify CSS"); the source stays readable
+python3 scripts/minify_css.py dist
 echo "dist ready: $(find dist -name index.html | wc -l) pages"

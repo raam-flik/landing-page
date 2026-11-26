@@ -7,6 +7,8 @@ Edit the text after each label. Keep the labels and headings as they are, so the
 
 ## Things to confirm on this page
 
+- [x] **Demo calls (Raam, 26 Nov 2026):** every Contact sales / Talk to the FLIK team button on the Shipping pages and the COD sellers page, and any button tagged `data-interest="Shipping"` elsewhere, opens Bintang's Calendly (https://calendly.com/bintang-flik/30min) instead of the general intro link. Set in each page as `SHIP_SALES_URL`.
+
 - [x] Coverage: Malaysia and Singapore removed everywhere, including the search data (`areaServed` is now Indonesia only). Coverage is "across Indonesia" (AG, 24 Oct 2026).
 - [x] Shipping discount is "up to 45% off published rates" (Raam, 16 Nov 2026; was "up to 50%", AG 12 Nov; "up to 40% less", AG 24 Oct). Claims: "up to 40% less", "COD fee 3% (excl. PPN)" and "99% of shipments created successfully" are allowed (AG, 24 Oct 2026). The "3 countries" stat is replaced with "15 payment methods".
 - [x] Struck-through "was" prices and invented discounts removed from the rate checker and the globe. Prices are labelled "Example" (AG, 24 Oct 2026).
